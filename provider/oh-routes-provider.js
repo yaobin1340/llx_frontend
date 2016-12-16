@@ -26,6 +26,12 @@ angular
         controller : 'SigninSignupCtrl'
     };
 
+    this.routes['signup'] = {
+        url : '/signup',
+        templateUrl : 'views/signup.html',
+        controller : 'SigninSignupCtrl'
+    };
+
     this.$get = function()
     {
         return( this.routes );
