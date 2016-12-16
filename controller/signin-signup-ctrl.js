@@ -31,7 +31,6 @@ angular
             	method: 'POST',
                 url: $config.api_uri + '/Apipublic/Apilogin/login_name_pw',
                 data: $scope.user,
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'}
             }).success(function (data) {
 					$rootScope.$isLogin = true;
 					$session.set('auth', data)

@@ -20,7 +20,7 @@ angular.module( 'ohapp',
     $urlRouterProvider.otherwise( '/home' );
 
     $httpProvider.interceptors.push('AuthInterceptor')
-    // $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
+    $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
     //$httpProvider.defaults.withCredentials = true;
 
     $locationProvider.html5Mode(true).hashPrefix('!');
