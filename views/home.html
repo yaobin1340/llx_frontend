@@ -1,36 +1,73 @@
-<div class="">
-	<div class="grid-menu">
-		<ul>
-			<li><a href="">Your Feed</a></li>
-			<li><a href="">Most Popular</a></li>
-			<li><a href="">Featured</a></li>
-		</ul>
-	</div>
-	<div layout-xs="column" class="dish-list">
-		<!--need to modify shareViews/dishList.html as well --->
-		<section class="dish margin-bottom-10" ng-repeat="dish in dishes">
-			<div layout="row">
-				<div flex="30" class="dish-image-container">
-					<img ng-src="{{dish.images.length > 0?dish.images[0].url:'http://media4.giphy.com/media/26tnlYdWMzIYdaocU/giphy.gif'}}" alt="tacos" ng-click="showDishModal($event,dish,$index)">
-				</div>
-				<div flex="70" class="info padding-10">
-					<h4 class="inline-block" ng-click="showDishModal($event,dish,$index)">{{dish.name | cut:true:25:'...'}}</h4>
-						<h5 class="inline-block float-right color-grey">${{dish.price}}</h5>
-						<div class="rating-star">
-							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
-						</div>
 
-						<p class="padding-vertical-5">{{dish.description | cut:true:85:'...'}}</p>
-						<div class="icons">
-							<a ng-if="dish.isLike" href="" ng-click="showUndoLike($event,dish._id,$index)"><i class="material-icons">favorite</i></a>
-							<a ng-if="!dish.isLike" href="" ng-click="showAddToLikeToast($event,dish._id,$index)"><i class="material-icons">favorite_border</i></a>
-
-							<a href="" ng-click="showAddToListModal($event,dish._id)"><i class="material-icons">add</i></a>
-							<a href="" ng-click="showConfirmationToast(dish)"><i class="material-icons">shopping_basket</i></a>
-						</div>
-				</div>
+<link rel="stylesheet" href="/assets/css/index.css">
+	<header>
+		<select name="address" id="">
+			<option value="">嘉定区</option>
+		</select>
+		<div class="soso">
+			<input type="text" placeholder="输入商家/商品/商圈关键字">
+			<img src="" alt="">
+		</div>
+	</header>
+	<nav>
+		<a href="">
+			<div>
+				<img src="images/restaurants.png" alt="餐饮饭店">
+				<span>餐饮饭店</span>
 			</div>
-		</section>
-
-	</div>
-</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_jiudianzhusu.png" alt="酒店住宿">
+				<span>酒店住宿</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_shuiguoshengxian.png" alt="水果生鲜">
+				<span>水果生鲜</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_meirongmeifa.png" alt="美容美发">
+				<span>美容美发</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_jianshenyule.png" alt="健身娱乐">
+				<span>健身娱乐</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_bianlichaoshi.png" alt="便利超市">
+				<span>便利超市</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/Maternal-and-child-supplies.png" alt="母婴商店">
+				<span>母婴商店</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_yiliaojiankang.png" alt="医疗健康">
+				<span>医疗健康</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_jifenshangcheng.png" alt="积分商城">
+				<span>积分商城</span>
+			</div>
+		</a>
+		<a href="">
+			<div>
+				<img src="images/img_gv_tuangouyouhui.png" alt="团购优惠">
+				<span>团购优惠</span>
+			</div>
+		</a>
+	</nav>

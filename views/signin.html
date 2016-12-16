@@ -1,5 +1,24 @@
-登陆
+<link rel="stylesheet" href="/assets/css/login.css">
 
-<input type="text" ng-model="user.mobile" placeholder="用户名">
-<input type="text" ng-model="user.password" placeholder="密码">
-<button ng-click="signin()">登陆</button>
+<div class="banner">
+    <img src="/assets/img/return.png" alt="返回">
+    <p>登陆</p>
+</div>
+<!-- 中间logo区域 -->
+<div class="center-img">
+    <img src="/assets/img/top-banner.png" alt="banner">
+</div>
+<!-- 表单控件区域 -->
+<div class="form">
+    <input type="text" class="form-control" ng-model="user.mobile" placeholder="请输入手机号">
+    <input type="password" class="form-control" ng-model="user.password" placeholder="请输入密码">
+    <div class="btn-submit" ng-click="signin()">登陆</div>
+</div>
+<div class="jump-others">
+    <a ui-sref="forgot_pwd">忘记密码</a>
+    <a ui-sref="signup">立刻注册</a>
+</div>
+<!-- 联系电话 -->
+<div class="telphone">
+    <p>服务电话：400-7731377</p>
+</div>
