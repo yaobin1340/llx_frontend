@@ -1,0 +1,206 @@
+<!--<div md-swipe-right="toggleLeft()">-->
+
+  <!--<div class="profile-info" flex>-->
+    <!--<div class="profile-pic-container" flex>-->
+      <!--<span><img src="http://zblogged.com/wp-content/uploads/2015/11/5.png" alt="profile"></span>-->
+    <!--</div>-->
+
+    <!--<div class="profile-information" layout="column" flex>-->
+      <!--<h3>{{profile.firstName}} {{profile.lastName}}</h3>-->
+      <!--<h3>{{profile.emailAddress}}</h3>-->
+      <!--<h4><a href=""><strong>Followers</strong> {{profile.follower.length}} </a> | <a href=""><strong>Following </strong> {{profile.following.length}}</a></h4>-->
+      <!--<br>-->
+      <!--<p>Delivery Address: <span class="radioValue"><strong>{{address}}</strong></span> </p>-->
+      <!--<md-radio-group ng-model="address">-->
+          <!--<md-radio-button value="{{key}}" ng-repeat="(key,address) in profile.address">{{key}}: {{address}}</md-radio-button>-->
+      <!--</md-radio-group>-->
+      <!--<br>-->
+      <!--<div layout="row">-->
+        <!--<div class="margin-auto">-->
+          <!--<md-button class="md-raised md-primary">Add Address</md-button>-->
+          <!--<md-button class="md-raised md-accent" ng-click="showUpdateProfileModal()">Update Profile</md-button>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<br/>-->
+  <!--</div>-->
+
+  <!--<md-divider></md-divider>-->
+
+  <!--&lt;!&ndash; DISHES &ndash;&gt;-->
+  <!--<div>-->
+    <!--<div class="grid-menu">-->
+      <!--<ul>-->
+        <!--<li><a ui-sref="main.profile.like">Liked Dishes</a></li>-->
+        <!--<li><a ui-sref="main.profile.list">Your Lists</a></li>-->
+        <!--<li><a ui-sref="main.profile.history">Order History</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+
+    <!--<div ui-view></div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+
+<div flex-offset-gt-sm="30" flex-sm="100" flex-gt-sm="40" class="profile">
+  <div class="profile-info">
+    <div class="profile-pic-container">
+      <span "profile-pic">
+      <div class="pos-relative">
+        <img src="{{profile.profileImage}}" alt="profile">
+        <md-button class="edit-profile-pic-btn reset-md-btn pos-abs"
+                   ngf-select="uploadFiles($files, $invalidFiles)" multiple
+                   accept="image/*" ngf-max-height="1000" ngf-max-size="1MB"
+                ><i class="material-icons">edit</i>Edit</md-button>
+      </div>
+      </span>
+    </div>
+
+    <div class="profile-information">
+      <h3 class="margin-10">{{profile.firstName}} {{profile.lastName}}</h3>
+      <md-button ng-click="logOut()">Log out</md-button>
+      <p class="margin-10">
+        <a href="" ng-click="showUsersModal('follower',profile.follower)">{{profile.follower.length}} Followers</a>
+        <span class="margin-horizontal-10"></span>
+        <a href="" ng-click="showUsersModal('following',profile.following)">{{profile.following.length}} Followings</a>
+      </p>
+      <div class="margin-10 padding-10">
+        <a href="" class="edit-profile-btn" ng-if="!showEditProfile" ng-click="editProfile()">Edit</a>
+        <a href="" class="edit-profile-btn" ng-if="showEditProfile" ng-click="editProfile()">Close</a>
+      </div>
+      <div class="slide padding-10" ng-show="showEditProfile">
+        <form name="updateProfileForm" novalidate="false">
+          <section layout="row" layout-wrap layout-align="center center">
+              <md-input-container flex-gt-md="40" class="md-icon-float md-block">
+                <md-icon md-svg-src="./assets/img/ic_person_black_24px.svg" class="name"></md-icon>
+                <input required name="firstName" ng-model="updateProfile.firstName" minlength="2" maxlength="30" placeholder="First Name" >
+                <div ng-messages="updateProfileForm.firstName.$error" role="alert" ng-if="updateProfileForm.firstName.$touched">
+                  <div ng-message="required">First Name is required!</div>
+                  <div ng-message="maxlength">First Name can be at most 30 characters long.</div>
+                  <div ng-message="minlength">First Name is too short.</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex-gt-md="40" class="md-icon-float md-block">
+                <md-icon md-svg-src="" class="name"></md-icon>
+                <input required name="lastName" ng-model="updateProfile.lastName" minlength="2" maxlength="30" placeholder="First Name" >
+                <div ng-messages="updateProfileForm.lastName.$error" ng-if="updateProfileForm.lastName.$touched">
+                  <div ng-message="required">Last Name is required!</div>
+                  <div ng-message="maxlength">Last Name can be at most 30 characters long.</div>
+                  <div ng-message="minlength">Last Name is too short.</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex-gt-md="20" md-no-float class="md-block">
+                <md-button class="md-raised" ng-click="UpdateName($event)">Update</md-button>
+              </md-input-container>
+          </section>
+
+          <section layout="row" layout-wrap layout-align="center center" ng-if="showChangePassword">
+              <md-input-container flex-gt-md="80" md-no-float class="md-block">
+                <md-icon md-svg-src="./assets/img/ic_vpn_key_black_24px.svg" class="password"></md-icon>
+                <input type="password" required name="password" ng-model="updateProfile.password" minlength="6" maxlength="100" placeholder="Password (required)" >
+                <div ng-messages="updateProfileForm.password.$error" ng-if="updateProfileForm.password.$touched">
+                  <div ng-message="required">Please enter a valid password combination</div>
+                  <div ng-message="maxlength">Password can be at most 100 characters long.</div>
+                  <div ng-message="minlength">Password is too short.</div>
+                </div>
+              </md-input-container>
+              <md-input-container flex-gt-md="20" md-no-float class="md-block">
+                <md-button class="md-raised" ng-click="updatePassword($event)">Update</md-button>
+              </md-input-container>
+          </section>
+
+          <section layout="row" layout-wrap layout-align="center center" class="text-left margin-vertical-10">
+            <h5><i class="fa fa-map"></i> Address Setting{{data.addres}}</h5>
+            <md-radio-group ng-model="radioData">
+              <md-radio-button value="{{key}}" ng-repeat="(key,address) in profile.address" ng-click="setDefaultAddress(key)">{{address.address}}, {{address.apt}}, {{address.city}}, {{address.state}}, {{address.zip}}</md-radio-button>
+            </md-radio-group>
+            <!-- menu to create new address-->
+            <md-menu md-offset="10 50">
+              <md-button class="md-raised" aria-label="Open demo menu" ng-click="$mdOpenMenu($event)">+ Add New Address</md-button>
+              <md-menu-content class="pop-up-menu" width="5">
+                <div class="padding-10" flex="70">
+                  <input type="text" class="width-100" placeholder="Address" ng-model="address.address" name="address" required>
+                  <div ng-messages="updateProfileForm.address.$error" ng-if="updateProfileForm.address.$touched">
+                    <div ng-message="required" style="color:red">Addredss is required!</div>
+                  </div>
+                </div>
+                <div class="padding-10" flex="30">
+                  <input type="text" class="width-100" placeholder="Apt" ng-model="address.apt">
+                </div>
+                <div class="padding-10" flex="100">
+                  <input type="text" class="margin-vertical-10" placeholder="City" ng-model="address.city" name="city" required>
+                  <div ng-messages="updateProfileForm.city.$error" ng-if="updateProfileForm.city.$touched">
+                    <div ng-message="required" style="color:red">Addredss is required!</div>
+                  </div>
+                  <input type="text" class="margin-vertical-10" placeholder="State" ng-model="address.state" name="state" required>
+                  <div ng-messages="updateProfileForm.state.$error" ng-if="updateProfileForm.state.$touched">
+                    <div ng-message="required" style="color:red">State is required!</div>
+                  </div>
+                  <input type="text" class="margin-vertical-10" placeholder="Zip Code" ng-model="address.zip" name="zip" required>
+                  <div ng-messages="updateProfileForm.zip.$error" ng-if="updateProfileForm.zip.$touched">
+                    <div ng-message="required" style="color:red">Zip Code is required!</div>
+                  </div>
+                </div>
+                <md-button class="md-raised" ng-click="addAddress()">Add</md-button>
+              </md-menu-content>
+            </md-menu>
+          </section>
+
+          <section layout="row" layout-wrap layout-align="center center" class="text-left margin-vertical-10">
+            <h5><i class="fa fa-credit-card-alt"></i> Card Setting</h5>
+            <md-radio-group ng-model="creditCardGroup">
+              <md-radio-button value="{{creditCard.id}}" ng-click="setDefaultCard(creditCard.id)" class="md-primary" ng-repeat="creditCard in creditCards">XXXX XXXX XXXX {{creditCard.last4}} | {{creditCard.brand}}</md-radio-button>
+            </md-radio-group>
+
+            <!-- menu to create new card-->
+            <md-menu md-offset="10 50">
+              <md-button class="md-raised" aria-label="Open demo menu" ng-click="showAddCard($event)">+ Add New Card</md-button>
+              <!--<md-menu-content class="pop-up-menu" width="5">-->
+                <!--<form layout="row" layout-wrap>-->
+                  <!--<div class="padding-10" flex="70">-->
+                    <!--<input type="text" class="width-100" ng-model="addCard.number" placeholder="xxxx xxxx xxxx xxxx" required>-->
+                  <!--</div>-->
+                  <!--<div class="padding-10" flex="30">-->
+                    <!--<input type="text" class="width-100" ng-model="addCard.cvc" placeholder="CVC" required>-->
+                  <!--</div>-->
+                  <!--<div class="padding-10" flex="100">-->
+                    <!--<input type="text" class="margin-vertical-10" ng-model="addCard.exp_month" placeholder="Expire Month" required>-->
+                    <!--<input type="text" class="margin-vertical-10" ng-model="addCard.exp_year" placeholder="Expire Year" required>-->
+                  <!--</div>-->
+                  <!--<div class="padding-10" flex="70">-->
+                    <!--<input type="text" class="width-100" ng-model="addCard.name" placeholder="Name" required>-->
+                  <!--</div>-->
+                  <!--<div class="padding-10" flex="70">-->
+                    <!--<input type="text" class="width-100" ng-model="addCard.address_line1" placeholder="Billing address 1" required>-->
+                  <!--</div>-->
+                  <!--<div class="padding-10" flex="70">-->
+                    <!--<input type="text" class="width-100" ng-model="addCard.address_line2" placeholder="Billing address 2">-->
+                  <!--</div>-->
+                  <!--<div class="padding-10" flex="100">-->
+                    <!--<input type="text" class="margin-vertical-10" ng-model="addCard.address_city" placeholder="City" required>-->
+                    <!--<input type="text" class="margin-vertical-10" ng-model="addCard.address_state" placeholder="State" required>-->
+                    <!--<input type="text" class="margin-vertical-10" ng-model="addCard.address_zip" placeholder="Zip" required>-->
+                  <!--</div>-->
+
+                  <!--<md-button class="md-raised" ng-click="createCard()">Add</md-button>-->
+                <!--</form>-->
+              <!--</md-menu-content>-->
+            </md-menu>
+          </section>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <md-divider></md-divider>
+
+  <div class="grid-menu">
+    <ul>
+      <li><a ui-sref="main.profile.orderHistory">Order History</a></li>
+    </ul>
+  </div>
+  <div ui-view></div>
+
+</div>

@@ -1,0 +1,166 @@
+<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" style="position:fixed; min-width:70%; max-width:300px">
+  <md-toolbar class="md-theme-indigo">
+  </md-toolbar>
+  <md-content layout-padding md-swipe-left="close()">
+    <p>
+      <ul>
+        <li ui-sref="home">
+          HOME
+        </li>
+        <li ui-sref="restaurant">
+          RESTAURANT
+        </li>
+        <li ui-sref="profile">
+          PROFILE
+        </li>
+      </ul>
+    </p>
+  </md-content>
+</md-sidenav>
+
+
+<div md-swipe-right="toggleLeft()">
+  <!-- mobile top bar -->
+  <div hide-gt-md class="padding-5 sm-menu" md-scroll-shrink>
+    <span ng-md-icon icon="menu" ng-click="toggleLeft()" size="30"></span>
+    <div>
+      <input type="text" placeholder="search">
+      <span class="fa fa-search nav-item"></span>
+      <span class="fa fa-shopping-basket nav-item"></span>
+    </div>
+  </div>
+  <md-button hide-gt-md class="md-accent md-fab md-fab-top-left fix-sm-menu-button" ng-click="toggleLeft()">
+    <span ng-md-icon icon="menu" size="30"></span>
+  </md-button>
+
+  <div class="header" hide-md hide-sm>
+    <nav>
+      <a ui-sref="home" class="nav-item">HOME</a>
+			<a ui-sref="restaurant" class="nav-item">RESTAURANTS</a>
+			<a ui-sref="profile" class="nav-item">PROFILE</a>
+			<div class="nav-icons">
+				<input type="text" placeholder="search">
+        <span class="fa fa-search"></span>
+				<span class="fa fa-shopping-basket nav-item"></span>
+			</div>
+		</nav>
+  </div>
+  <md-divider></md-divider>
+
+  <div class="tag-location" layout-gt-sm="row" layout-xs="column">
+    <div flex>
+      <span class="fa fa-map-marker"></span><input type="text" placeholder="your location">
+    </div>
+    <div flex>
+       <span class="fa fa-tag"></span><input type="text" placeholder="enter tags">
+    </div>
+  </div>
+  <md-divider></md-divider>
+
+  <div class="profile-info" flex>
+      <div class="profile-pic-container" flex>
+        <span "profile-pic"><img src="http://zblogged.com/wp-content/uploads/2015/11/5.png" alt="profile"></span>
+      </div>
+
+      <div class="profile-information" layout="column" flex>
+        <h3>My name here</h3>
+  			<h4><strong><a href="">Followers</strong> 380 </a> | <strong><a href="">Following </strong> 120</a></h4>
+        <div layout="row">
+          <div flex style="text-align:right">
+            <md-button class="md-raised md-accent width-50">SHARE</md-button>
+          </div>
+  			  <div flex style="text-align:left">
+            <md-button class="md-raised md-accent width-50">FOLLOW</md-button>
+          </div>
+        </div>
+    </div>
+    <md-divider></md-divider>
+  </div>
+  <br />
+
+  <!-- DISHES -->
+
+  <div style="background-color:#e0e0e0">
+    <div class="grid-menu">
+      <ul>
+        <li><a href="">3 Lists</a></li>
+      </ul>
+    </div>
+    <div layout-xs="column" layout-md="row" layout-gt-md="row" layout-wrap class="card-list">
+
+      <section flex-md="50" flex-gt-md="25">
+        <div class="margin-20 card">
+  				<img src="http://mediad.publicbroadcasting.net/p/kwmu/files/201508/tacos.jpg" alt="tacos">
+  				<div class="info">
+  					<h1>Delicious Tacos</h1>
+  					<h2>$13</h2>
+  					<h3><i class="fa fa-cutlery"></i> Recommended by <a href="">@charliefoodie</a></h3>
+  					<p>A mix of 3 tacos. Choose from Pastor, Chicken or Pork</p>
+  				</div>
+  				<hr>
+  				<div class="sharing-icons">
+  					<a href=""><i class="fa fa-heart"></i></a>
+  					<a href=""><i class="fa fa-plus-circle"></i></a>
+  					<a href=""><i class="fa fa-shopping-basket"></i></a>
+  				</div>
+        <div>
+			</section>
+
+      <section flex-md="50" flex-gt-md="25">
+        <div class="margin-20 card">
+  				<img src="http://mediad.publicbroadcasting.net/p/kwmu/files/201508/tacos.jpg" alt="tacos">
+  				<div class="info">
+  					<h1>Delicious Tacos</h1>
+  					<h2>$13</h2>
+  					<h3><i class="fa fa-cutlery"></i> Recommended by <a href="">@charliefoodie</a></h3>
+  					<p>A mix of 3 tacos. Choose from Pastor, Chicken or Pork</p>
+  				</div>
+  				<hr>
+  				<div class="sharing-icons">
+  					<a href=""><i class="fa fa-heart"></i></a>
+  					<a href=""><i class="fa fa-plus-circle"></i></a>
+  					<a href=""><i class="fa fa-shopping-basket"></i></a>
+  				</div>
+        <div>
+			</section>
+
+      <section flex-md="50" flex-gt-md="25">
+        <div class="margin-20 card">
+  				<img src="http://mediad.publicbroadcasting.net/p/kwmu/files/201508/tacos.jpg" alt="tacos">
+  				<div class="info">
+  					<h1>Delicious Tacos</h1>
+  					<h2>$13</h2>
+  					<h3><i class="fa fa-cutlery"></i> Recommended by <a href="">@charliefoodie</a></h3>
+  					<p>A mix of 3 tacos. Choose from Pastor, Chicken or Pork</p>
+  				</div>
+  				<hr>
+  				<div class="sharing-icons">
+  					<a href=""><i class="fa fa-heart"></i></a>
+  					<a href=""><i class="fa fa-plus-circle"></i></a>
+  					<a href=""><i class="fa fa-shopping-basket"></i></a>
+  				</div>
+        <div>
+			</section>
+
+      <section flex-md="50" flex-gt-md="25">
+        <div class="margin-20 card">
+  				<img src="http://mediad.publicbroadcasting.net/p/kwmu/files/201508/tacos.jpg" alt="tacos">
+  				<div class="info">
+  					<h1>Delicious Tacos</h1>
+  					<h2>$13</h2>
+  					<h3><i class="fa fa-cutlery"></i> Recommended by <a href="">@charliefoodie</a></h3>
+  					<p>A mix of 3 tacos. Choose from Pastor, Chicken or Pork</p>
+  				</div>
+  				<hr>
+  				<div class="sharing-icons">
+  					<a href=""><i class="fa fa-heart"></i></a>
+  					<a href=""><i class="fa fa-plus-circle"></i></a>
+  					<a href=""><i class="fa fa-shopping-basket"></i></a>
+  				</div>
+        <div>
+			</section>
+
+    </div>
+  </div>
+
+</div>

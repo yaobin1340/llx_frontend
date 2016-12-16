@@ -1,0 +1,36 @@
+<div class="">
+	<div class="grid-menu">
+		<ul>
+			<li><a href="">Your Feed</a></li>
+			<li><a href="">Most Popular</a></li>
+			<li><a href="">Featured</a></li>
+		</ul>
+	</div>
+	<div layout-xs="column" class="dish-list">
+		<!--need to modify shareViews/dishList.html as well --->
+		<section class="dish margin-bottom-10" ng-repeat="dish in dishes">
+			<div layout="row">
+				<div flex="30" class="dish-image-container">
+					<img ng-src="{{dish.images.length > 0?dish.images[0].url:'http://media4.giphy.com/media/26tnlYdWMzIYdaocU/giphy.gif'}}" alt="tacos" ng-click="showDishModal($event,dish,$index)">
+				</div>
+				<div flex="70" class="info padding-10">
+					<h4 class="inline-block" ng-click="showDishModal($event,dish,$index)">{{dish.name | cut:true:25:'...'}}</h4>
+						<h5 class="inline-block float-right color-grey">${{dish.price}}</h5>
+						<div class="rating-star">
+							<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+						</div>
+
+						<p class="padding-vertical-5">{{dish.description | cut:true:85:'...'}}</p>
+						<div class="icons">
+							<a ng-if="dish.isLike" href="" ng-click="showUndoLike($event,dish._id,$index)"><i class="material-icons">favorite</i></a>
+							<a ng-if="!dish.isLike" href="" ng-click="showAddToLikeToast($event,dish._id,$index)"><i class="material-icons">favorite_border</i></a>
+
+							<a href="" ng-click="showAddToListModal($event,dish._id)"><i class="material-icons">add</i></a>
+							<a href="" ng-click="showConfirmationToast(dish)"><i class="material-icons">shopping_basket</i></a>
+						</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+</div>
