@@ -1,0 +1,146 @@
+body {
+  background-color: #edf5f2;
+}
+.banner,
+.res-titlt,
+.address,
+.QRcode,
+.user-comment {
+  background-color: #fff;
+}
+.banner {
+  width: 100%;
+  height: 5.31944444rem;
+}
+.res-titlt {
+  width: 100%;
+  height: 2.01388889rem;
+}
+.address {
+  height: 1.25rem;
+  margin-top: 1px;
+  font-size: 0.375rem;
+  font-family: "SimHei";
+}
+.address-left {
+  width: 12.5%;
+  float: left;
+}
+.address-center {
+  width: 75%;
+  float: left;
+}
+.address-right {
+  width: 12.5%;
+  float: right;
+  text-align: center;
+}
+.address-right img {
+  width: 0.69444444rem;
+  height: 0.69444444rem;
+  margin: 0.26388889rem auto;
+}
+.address-message {
+  display: inline-block;
+  line-height: 1.23611111rem;
+}
+.img-center-left {
+  margin: 0.27777778rem auto auto 0.31944444rem;
+  width: 0.69444444rem;
+  height: 0.69444444rem;
+}
+.QRcode {
+  clear: both;
+  margin-top: 0.30555556rem;
+  padding: 30px auto;
+  font-family: "SimHei";
+  font-size: 0.375rem;
+  height: 1.22222222rem;
+}
+/* �û�������Ϣ */
+.user-comment {
+  margin-top: 0.30555556rem;
+}
+.user-co {
+  width: 100%;
+  height: 1.22222222rem;
+}
+.user-co span {
+  display: inline-block;
+  font-family: "SimHei";
+  font-size: 0.41666667rem;
+  line-height: 1.22222222rem;
+  margin-left: 0.40277778rem;
+}
+.btn-group {
+  margin: 0 auto 0.79166667rem 1.25rem;
+  width: 7.5rem;
+  height: 0.80555556rem;
+}
+.btn-group .btn {
+  width: 2.5rem;
+  height: 0.80555556rem;
+  font-size: 0.375rem;
+  font-family: "SimHei";
+  color: #3e96c1;
+  border: 3px solid #3e96c1;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+.btn-group .btnact {
+  background-color: #3e96c1;
+  color: white;
+}
+.commentMsg {
+  width: 100%;
+  font-size: 0.375rem;
+  font-family: "SimHei";
+}
+.commentMsg .userImg {
+  margin-left: 0.34722222rem;
+  float: left;
+  width: 1.34722222rem;
+  height: 1.34722222rem;
+}
+.commentMsg .userContent {
+  float: right;
+  width: 7.81944444rem;
+  margin-right: 0.48611111rem;
+}
+.commentMsg .userName {
+  margin-top: 0.16666667rem;
+  display: inline-block;
+}
+.commentMsg .userDate {
+  margin-top: 0.16666667rem;
+  float: right;
+  display: inline-block;
+  color: #7f8180;
+}
+.commentMsg .user-level {
+  margin-top: 0.16666667rem;
+  width: 0.375rem;
+  height: 0.375rem;
+}
+.commentMsg .star-level {
+  display: block;
+}
+.user-like span {
+  margin-top: 0.23611111rem;
+  display: inline-block;
+  color: #7f8180;
+  line-height: 0.76388889rem;
+}
+.user-like button {
+  margin-top: 0.23611111rem;
+  width: 1.94444444rem;
+  height: 0.76388889rem;
+  border: 1px solid #7f8180;
+  border-radius: 0.41666667rem;
+  float: right;
+  text-indent: 0.55555556rem;
+  line-height: 0.76388889rem;
+  background-color: #fff;
+  background: url("/assets/img/xin.png") no-repeat 0.20833333rem -0.04166667rem;
+}

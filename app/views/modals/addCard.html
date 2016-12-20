@@ -1,0 +1,58 @@
+<md-dialog aria-label="dish" class="ang-dialog" ng-cloak>
+    <md-button ng-click="closeModal()" class="close-dialog-btn">
+        <i id="close-icon" class="material-icons">close</i>
+    </md-button>
+
+    <div class="dialog-content">
+        <md-dialog-content class="text-center">
+            <div class="padding-10">
+                <h1 class="md-headline">Add New Card</h1>
+            </div>
+
+            <div class="margin-20">
+                <section class="text-left margin-vertical-10">
+                    <h5><i class="fa fa-credit-card-alt"></i> Card Information</h5>
+                    <!-- menu to create new card-->
+                    <form layout="row" layout-wrap>
+                        <div class="padding-10" flex="60">
+                            <input type="text" class="width-100" placeholder="Name" ng-model="addCard.name" aria-label="name">
+                        </div>
+                        <div class="padding-10" flex="70">
+                            <input type="number" class="width-100" ng-model="addCard.number" placeholder="xxxx xxxx xxxx xxxx" aria-label="card number">
+                        </div>
+                        <div class="padding-10" flex="30">
+                            <input type="number" class="width-100" placeholder="CSV" ng-model="addCard.cvc" aria-label="csv">
+                        </div>
+                        <div class="padding-10" flex="100">
+                            Expire Date: <input type="date" class="inline-block" placeholder="Expire Year" ng-model="addCard.exp_year" aria-label="expire date">
+                            <input type="date" class="inline-block" placeholder="Expire Month" ng-model="addCard.exp_month" aria-label="expire date">
+                        </div>
+                    </form>
+                    <h5 class="margin-top-10"><i class="fa fa-map"></i> Billing Address</h5>
+                    <div>
+                        <md-radio-group ng-model="cardAddress">
+                            <md-radio-button value="{{key}}" ng-repeat="(key,address) in profile.address" ng-click="setCardAddress(address,key)"><p>{{address.address}}, {{address.apt}}, {{address.city}}, {{address.state}}, {{address.zip}}</p></md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <form layout="row" layout-wrap>
+                        <div class="padding-10" flex-sm="100" flex="50">
+                            <input type="text" class="width-100" placeholder="Address" ng-model="addCard.address_line1" aria-label="address 1">
+                        </div>
+                        <div class="padding-10" flex-sm="100" flex="50">
+                            <input type="text" class="width-100" placeholder="Address 2" ng-model="addCard.address_line2" aria-label="address 2">
+                        </div>
+                        <div class="padding-10" flex="35">
+                            <input type="text" class="width-100" placeholder="City" ng-model="addCard.address_city" aria-label="city">
+                        </div>
+                        <div class="padding-10" flex="35">
+                            <input type="text" class="width-100" placeholder="State" ng-model="addCard.address_state" aria-label="state">
+                        </div>
+                        <div class="padding-10" flex="30">
+                            <input type="text" class="width-100" placeholder="Zip Code" ng-model="addCard.address_zip" aria-label="zip code">
+                        </div>
+                    </form>
+                    <md-button class="md-raised" ng-click="createCard();">Add</md-button>
+                </section>
+            </div>
+        </md-dialog-content>
+</md-dialog>

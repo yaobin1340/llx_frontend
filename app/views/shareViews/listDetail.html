@@ -1,0 +1,109 @@
+<div layout="column" class="edit-list">
+  <div class="padding-5">
+    <section>
+      <div class="list-title inline-block" style="position:relative">
+        <h3>{{mockListData[0].name}}</h3>
+        <div ng-if="!inCpProfile" class="edit-title-btn">
+          <!-- menu to update list name-->
+          <md-menu md-offset="10 50">
+            <md-button class="reset-md-btn" aria-label="Open demo menu" ng-click="$mdOpenMenu($event)"><i class="material-icons">edit</i>Edit</md-button>
+            <md-menu-content class="pop-up-menu" width="5">
+              <form>
+                <div class="padding-10">
+                  <input type="text" class="width-100" placeholder="List Name">
+                </div>
+                <md-button class="md-raised" ng-click="showToast('success')">Update</md-button>
+              </form>
+            </md-menu-content>
+          </md-menu>
+        </div>
+      </div>
+      <h6 class="inline-block margin-horizontal-10">10 Dishes</h6>
+      <md-menu class="padding-0 float-right" md-offset="2 0" md-position-mode="target-right target" >
+        <md-button class="edit-btn block reset-md-btn" ng-click="$mdOpenMenu($event)">
+          <i class="material-icons">share</i>
+        </md-button>
+        <md-menu-content width="2" layout-align="center center">
+          <md-menu-item>
+            <md-button class="md-fab md-mini md-primary" layout-align="center center" aria-label="login with facebook" style="padding-left:7px;">
+              <i class="fa fa-facebook fa-2x" style="color: white ; padding-top: 7px"></i>
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button class="md-fab md-mini md-primary" layout-align="center center" aria-label="login with google" style="padding-left:7px;">
+              <i class="fa fa-google fa-2x"  style="color: white ; padding-top: 7px"></i>
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button class="md-fab md-mini md-primary" layout-align="center center" aria-label="login with instagram" style="padding-left:7px;">
+              <i class="fa fa-instagram fa-2x"  style="color: white ; padding-top: 7px"></i>
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button class="md-fab md-mini md-primary" layout-align="center center" aria-label="login with twitter" style="padding-left:7px;">
+              <i class="fa fa-twitter fa-2x"  style="color: white ; padding-top: 7px"></i>
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    </section>
+
+    <section class="margin-vertical-20">
+      <p>This is the greatest list of all the list ever be a list</p>
+    </section>
+
+    <section class="margin-vertical-10">
+      <i class="material-icons md-caption" style="font-size:1em;">local_offer</i>
+      <span class="md-body-1 margin-horizontal-5" ng-repeat="tag in mockListData[0].tags">#{{tag}}</span>
+      <input ng-if="!inCpProfile" type="text">
+    </section>
+  </div>
+  <section class="edit-image" style="position:relative">
+    <img class="width-100 height-100" ng-src="{{mockListData[0].background}}">
+    <div ng-if="!inCpProfile" class="width-100 height-100 text-right color-white" style="position:absolute;top:0;">
+      <!-- menu to update list image-->
+      <md-menu class="edit-image-btn " md-offset="10 50">
+        <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)"><i class="material-icons">edit</i>Edit</md-button>
+        <md-menu-content class="pop-up-menu" width="5">
+          <form>
+            <div class="padding-10">
+              <input type="file" class="width-100" placeholder="List Name">
+            </div>
+            <md-button class="md-raised" ng-click="showToast('success')">Update</md-button>
+          </form>
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </section>
+
+  <div layout-xs="column" layout-wrap class="margin-top-10 dish-list">
+    <section class="dish margin-bottom-10" ng-repeat="dish in mockDishesData | filter: {tags: tags}">
+      <div layout="row">
+        <div flex="30" class="dish-image-container">
+          <img ng-src="{{dish.giphy}}" alt="tacos" ng-click="showDishModal($event)">
+        </div>
+        <div flex="60" class="info padding-10" style="position:relative">
+          <h4 class="inline-block" ng-click="showDishModal($event)">{{dish.name}}</h4>
+            <h5 class="float-right color-grey">${{dish.price}}</h5>
+
+            <div class="rating-star">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+            </div>
+
+            <p class="padding-vertical-5">{{dish.description}}</p>
+            <div class="icons">
+              <a href="" ng-click="showToast('like')"><i class="material-icons">favorite_border</i></a>
+              <a href="" ng-click="showAddToListModal()"><i class="material-icons">add</i></a>
+              <a href="" ng-click="showToast('bag')"><i class="fa fa-shopping-basket icon-style"></i></a>
+            </div>
+        </div>
+        <div flex="10">
+          <md-button ng-if="!inCpProfile" class="reset-md-btn close-btn padding-5 float-right">
+            <i class="material-icons">close</i>
+          </md-button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>

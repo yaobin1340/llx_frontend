@@ -1,0 +1,132 @@
+
+
+<!--<md-dialog aria-label="dish" class="ang-dialog" ng-cloak ng-model="dish">-->
+  <!--<md-button ng-click="closeModal()" class="close-dialog-btn">-->
+    <!--<i id="close-icon" class="material-icons">close</i>-->
+  <!--</md-button>-->
+
+  <!--<div class="dialog-content">-->
+    <!--<md-dialog-content class="dish-content">-->
+      <!--<div class="pos-relative">-->
+        <!--<h1 class="padding-horizontal-10 dish-price md-display-1">${{dish.price}}</h1>-->
+          <!--<img style="margin: auto; max-width: 100%;" alt="image" src="{{dish.images.length > 0?dish.images[0].url:'./assets/img/tacos.jpg'}}">-->
+      <!--</div>-->
+      <!--<div class="md-dialog-content">-->
+        <!--<div layout="row">-->
+          <!--<h2 class="md-headline">{{dish.name}}-->
+            <!--<div class="rating-star">-->
+              <!--<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>-->
+            <!--</div>-->
+          <!--</h2>-->
+        <!--</div>-->
+        <!--<p class="padding-5">{{dish.description}}</p>-->
+
+        <!--<div layout="row">-->
+          <!--<div flex>-->
+            <!--<md-button ng-if="!dish.isLike" flex class="dish-modal-button" aria-label="like dish"  ng-click="showAddToLikeToast($event,dish._id,dish.index)">-->
+              <!--<i class="material-icons">favorite_border</i>-->
+            <!--</md-button>-->
+            <!--<md-button ng-if="dish.isLike" flex class="dish-modal-button" aria-label="like dish"  ng-click="showUndoLike($event,dish._id,dish.index)">-->
+              <!--<i class="material-icons">favorite</i>-->
+            <!--</md-button>-->
+            <!--<a href="" ng-click="showUsersModal('userLike',dish.like)">{{dish.like.length}}</a>-->
+          <!--</div>-->
+          <!--<div flex>-->
+            <!--<md-button flex class="dish-modal-button" aria-label="add to list" ng-click="showAddToListModal()">-->
+              <!--<i class="material-icons">add</i>-->
+            <!--</md-button>-->
+            <!--<a href="" ng-click="showUsersModal('addedToList',dish.added)">{{dish.added.length}}</a>-->
+          <!--</div>-->
+          <!--<div flex>-->
+            <!--<md-button flex class="dish-modal-button" aria-label="order the dish">-->
+              <!--<i class="material-icons">shopping_basket</i>-->
+            <!--</md-button>-->
+            <!--<a href="" ng-click="showUsersModal('addedToList',dish.ordered)">{{dish.ordered.length}}</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--<div layout="row">-->
+        <!--<md-button flex class="md-raised md-accent" ng-click="showConfirmationToast(dish)">ADD TO BAG</md-button>-->
+      <!--</div>-->
+
+      <!--<div>-->
+        <!--<h5 class="text-center">Order from our Partner</h5>-->
+        <!--<div layout="row">-->
+          <!--<div flex class="padding-10 margin-auto">-->
+            <!--<a href=""><img src="./assets/img/seamless_logo.png" style="width: auto;max-height:50px"/></a>-->
+          <!--</div>-->
+          <!--<div flex class="padding-10 margin-auto">-->
+            <!--<a href=""><img src="./assets/img/grubhub.png" style="width: auto;max-height:50px"/></a>-->
+          <!--</div>-->
+          <!--<div flex class="padding-10 margin-auto">-->
+            <!--<a href=""><img src="./assets/img/Postmates_logo.png" style="width: auto;max-height:50px"/></a>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      <!--</div>-->
+
+    <!--</md-dialog-content>-->
+  <!--</div>-->
+<!--</md-dialog>-->
+
+
+
+
+
+<md-dialog aria-label="dish" class="ang-dialog" ng-cloak ng-model="dish">
+  <md-button ng-click="closeModal()" class="close-dialog-btn color-white">
+    <i id="close-icon" class="material-icons">close</i>
+  </md-button>
+
+  <div class="dialog-content">
+    <md-dialog-content class="dish-content">
+      <div class="pos-relative">
+        <div style="background:radial-gradient(rgba(0,0,0,0), rgba(0,0,0,.2));width:100%; height:100%; position:absolute"></div>
+        <h1 class="padding-horizontal-10 dish-price md-display-1">${{dish.price}}</h1>
+        <img class="dish-image" alt="image" src="{{dish.images.length > 0?dish.images[0].url:'./assets/img/dishImagePlaceholder.png'}}">
+        <!--<md-menu ng-if="currentUserRole > 50" class="right bottom color-white reset-md-btn pos-abs" md-offset="10 50">-->
+          <!--<md-button class="bk-color-black" aria-label="Open demo menu" ng-click="$mdOpenMenu($event)"><i class="material-icons">edit</i>Edit</md-button>-->
+          <!--<md-menu-content class="pop-up-menu" width="5">-->
+            <!--<form>-->
+              <!--<div class="padding-10">-->
+                <!--<input type="file" class="width-100" placeholder="List Name" aria-label="last name">-->
+              <!--</div>-->
+              <!--<md-button class="md-raised" ng-click="showToast('success')">Update</md-button>-->
+            <!--</form>-->
+          <!--</md-menu-content>-->
+        <!--</md-menu>-->
+      </div>
+      <div class="md-dialog-content">
+        <div layout="row">
+          <h2 class="md-headline">{{dish.name}}
+            <div class="rating-star">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-o"></i><i class="fa fa-star-o"></i>
+            </div>
+          </h2>
+        </div>
+        <p class="padding-5">{{dish.description}}</p>
+      </div>
+
+      <div layout="row">
+        <md-button flex class="md-raised md-accent" ng-click="showConfirmationToast(dish)">ADD TO BAG</md-button>
+      </div>
+
+      <div>
+        <h5 class="text-center">Order from our Partner</h5>
+        <div layout="row" layout-sm="column">
+          <div flex class="padding-10 margin-auto" ng-repeat="(key, partner) in dish.partnerMenuId">
+            <a href="{{partner.url}}" target="blank">
+              <img class="block margin-auto" src="./assets/img/deliverycom.png" style="width: auto;max-height:50px" ng-if="key === 'delivery'"/>
+              <img class="block margin-auto" src="./assets/img/eat-street-logo-footer.png" style="width: auto;max-height:50px" ng-if="key === 'eatstreet'"/>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </md-dialog-content>
+  </div>
+</md-dialog>
+
+
