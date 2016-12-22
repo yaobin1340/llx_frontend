@@ -2,10 +2,16 @@
 	<link rel="stylesheet" href="/assets/css/reset.css">
 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css">
 	<div class="banner">
-	<img src="{{detail.photo}}" alt="" style="width: 100%;height: 100%;">
-		<div class="cir cir-left"></div>
-		<div class="cir cir-right"></div>
-		<div class="cir cir-right"></div>
+	<!-- <img src="{{detail.photo}}" alt="" style="width: 100%;height: 100%;float: left;"> -->
+		<div class="cir cir-left img-circle">
+			<img src="/assets/img/img_back_shop_detail.png" alt="">
+		</div>
+		<div class="cir cir-right img-circle">
+			<img src="/assets/img/img_menu_shop_detail.png" alt="">
+		</div>
+		<div class="cir cir-right img-circle">
+			<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin-top: 0.02rem;">
+		</div>
 	</div>
 	<div class="res-titlt">
 		{{detail.shop_name}}
@@ -17,9 +23,9 @@
 		<div class="address-center">
 			<span class="address-message">{{detail.addr}}</span>
 		</div>
-		<!-- <div class="address-right">
+		<div class="address-right">
 			<img src="/assets/img/address.png" alt="">
-		</div> -->
+		</div>
 	</div>
 
 	<div class="address">
@@ -81,12 +87,12 @@
 		</div>
 		<!-- 评论相关信息 -->
 		<div class="commentMsg clearfix">
-			<img src="http://139.224.222.18:8080/attachs/{{user_face}}" alt="用户头像" class="userImg">
+			<img src="http://139.224.222.18:8080/attachs/{{user_face}}" alt="" class="userImg">
 			<div class="userContent">
 				<span class="userName">{{list.user_nickname}}</span>
-				<img src="" alt="等级" class="user-level">
+				<img src="" alt="" class="user-level">
 				<span class="userDate">{{list.create_time}}</span>
-				<img src="" alt="星级" class="star-level">
+				<img src="" alt="" class="star-level">
 				<div class="contentText">{{list.contents}}</div>
 				<div class="eatType"></div>
 				<table class="userPhoto"></table>

@@ -18,14 +18,19 @@
 .bannerBar .p-top {
   font-family: "SimHei";
   font-size: 0.41666667rem;
-  line-height: 0.69444444rem;
+  margin-bottom: 0.06944444rem;
   color: white;
 }
 .bannerBar .p-bottom {
   font-family: "SimHei";
   font-size: 0.27777778rem;
-  line-height: 0.27777778rem;
   color: white;
+}
+.bannerBar .border {
+  margin-top: 0.13888889rem;
+}
+.bannerBar .border-left {
+  border-left: 1px solid #ababab;
 }
 .preferential {
   width: 100%;
@@ -107,6 +112,12 @@ footer {
   line-height: 0.625rem;
   color: #ababab;
 }
+.footer-p-img {
+  background: url(/assets/img/img_mcr_menu_type.png) no-repeat 1.6rem;
+  background-size: 0.4rem;
+}
 .tel-footer {
   border-left: 0.01388889rem solid #ababab;
+  background: url(/assets/img/img_phone_call.png) no-repeat 1.15rem;
+  background-size: 0.4rem;
 }

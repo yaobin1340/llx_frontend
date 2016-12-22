@@ -13,7 +13,7 @@ angular
 
     this.routes[ 'main.home' ] =
     {
-        url: 'home:shop_id',
+        url: 'home',
         title: 'Home',
         templateUrl: 'views/restaurants.html',
         controller: 'RestaurantCtrl'

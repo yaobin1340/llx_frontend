@@ -13,6 +13,7 @@ angular
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',$scope.shop_id)
 				.success(function (data) {
 					$scope.detail = data.detail;
+					console.log(data);
 				})
 				.error(function (err) {
 					$scope.apiError = err.error_msg;

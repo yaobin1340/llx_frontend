@@ -2,12 +2,13 @@
 	<link rel="stylesheet" href="/assets/css/reset.css">
 	<link rel="stylesheet" href="/assets/css/main.css">
 	<header>
-		<select name="address" ng-model="selected" ng-change="selectedCity()">
-			<option value="" ng-disabled="1">请选择</option>
-			<option value="{{city.city_id}}" ng-repeat="city in city_list">{{city.name}}</option>
+		<select name="address" ng-model="selected" ng-change="selectedCity(city.area_id)">
+			<option value="" ng-disabled="1" selected>请选择</option>
+			<option value="{{city.city_id}}+{{city.area_id}}" ng-repeat="city in city_list">{{city.name||city.area_name}}</option>
 		</select>
 		<div class="soso">
 			<input type="text" placeholder="输入商家/商品/商圈关键字">
+			<span class="search-shop"></span>
 		</div>
 	</header>
 	<nav>

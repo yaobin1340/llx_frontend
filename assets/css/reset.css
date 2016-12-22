@@ -21,7 +21,9 @@ time, mark, audio, video,input,nav,footer{
   border: 0;
   font: inherit;
   font-size: 100%;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+  text-overflow : ellipsis; 
+   }
 
 /* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html {
@@ -60,3 +62,4 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 a:hover{
   // text-decoration: none;
 }
+  img { pointer-events: none; }//图片长按没有保存、复制效果

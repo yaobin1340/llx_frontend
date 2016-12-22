@@ -64,6 +64,15 @@ select::-ms-expand { display: none; }
 	font-family: "微软雅黑";
 	font-size: 0.4rem;
 }
+.search-shop{
+	display: inline-block;
+	float: right;
+	height: 0.843rem !important;
+	width: 0.843rem !important;
+	background-color: #7ca5d1;
+	background: url(/assets/img/glyphicons-halflings-white.png) -1.15rem 0.25rem no-repeat;
+	background-size: 13rem;
+}
 /* 火狐浏览器 */
 .soso input::-moz-placeholder { 
 	color: #e1e1e3;
