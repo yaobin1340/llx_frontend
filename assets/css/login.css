@@ -87,9 +87,9 @@ a{
 }
 .getCard{
 	position: absolute;
-	// right: 0.94rem;
+	/*right: 0.94rem;*/
 	right: 1.333rem;
-	top: 8.45rem;
+	top: 8.38rem;
 	width: 2.5rem;
 	height: 0.8rem;
 	border:1px solid #3e9ece;

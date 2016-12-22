@@ -1,0 +1,59 @@
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/smallShop.css">
+	<div class="banner"></div>
+	<div class="bannerBar">
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<p class="p-top">366</p>
+				<p class="p-bottom">收藏</p>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6 border-left">
+				<p class="p-top">上海</p>
+				<p class="p-bottom">所在地</p>
+			</div>
+		</div>
+	</div>
+	<div class="preferential">
+		<img src="" alt="">
+		<span>本店会员</span>
+	</div>
+	<div class="bgc clearfix">
+		<div class="hotBuy">
+			<div class="hotBuyTitle">热销</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in hot_goods_list">
+					<div class="userProducts">
+						<img src="{{hot_goods.photo}}" alt="">
+						<p>{{hot_goods.title}}</p>
+						<span class="price">￥{{hot_goods.mall_price}}</span>
+						<span class="show">销量{{hot_goods.sold_num}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="allDish">
+			<div class="hotBuyTitle">全部商品</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="goods in goods_list">
+					<div class="userProducts">
+						<img src="{{goods.photo}}" alt="">
+						<p>{{goods.title}}</p>
+						<span class="price">￥{{goods.mall_price}}</span>
+						<span class="show">销量{{goods.sold_num}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<footer>
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<p class="footer-p">分类</p>
+			</div>
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<p class="footer-p tel-footer">联系商家</p>
+			</div>
+		</div>
+	</footer>

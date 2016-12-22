@@ -13,11 +13,12 @@ angular
 
     this.routes[ 'main.home' ] =
     {
-        url: '^/home',
+        url: 'home:shop_id',
         title: 'Home',
-        templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
+        templateUrl: 'views/restaurants.html',
+        controller: 'RestaurantCtrl'
     };
+
 
     this.routes['signin'] = {
         url : '/signin',
@@ -31,12 +32,21 @@ angular
         controller : 'SigninSignupCtrl'
     };
 
-    this.routes['forgot_pwd'] = {
-        url : '/forgot_pwd',
-        templateUrl : 'views/forgot_pwd.html',
-        controller : 'SigninSignupCtrl'
+    this.routes['forgot'] = {
+        url : '/forgot',
+        templateUrl : 'views/forgot-password.html',
+        controller:'forgotCtrl'
     };
-
+     this.routes['description'] = {
+        url : '/description',
+        templateUrl : 'views/descriptionProducts.html',
+        controller:'descriptionCrtl'
+    };
+     this.routes['smallShop'] = {
+        url : '/smallShop',
+        templateUrl : 'views/smallShop.html',
+        controller:'smallShopCrtl'
+    };
     this.$get = function()
     {
         return( this.routes );

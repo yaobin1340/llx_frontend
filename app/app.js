@@ -1,60 +1,109 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+angular.module( 'ohapp',
+    [
+        'ngResource',
+        'ipCookie',
+        'ui.router',
+        'ui.bootstrap',
+        'ohRoutes',
+        'ohConfig',
+    ]
+)
+.config( function config( $injector, $locationProvider)
+{
+    var $stateProvider = $injector.get( '$stateProvider' );
+    var $urlRouterProvider = $injector.get( '$urlRouterProvider' );
+    var $routesProvider = $injector.get( '$routesProvider' );
+    var $httpProvider = $injector.get( '$httpProvider' );
+    var $config = $injector.get('$configProvider').$get();
 
-var homeRouter = require('./server/homeRouter');
 
-var app = express();
+    $urlRouterProvider.otherwise( '/home' );
 
-// view engine setup
-app.set('views', path.join(__dirname, 'public'));
-app.set('view engine', 'ejs');
+    $httpProvider.interceptors.push('AuthInterceptor')
+    // $httpProvider.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded;charset=utf-8";
+    //$httpProvider.defaults.withCredentials = true;
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+    $locationProvider.html5Mode(true).hashPrefix('!');
 
-console.log('applicaiton running on port: ', process.env.PORT);
-app.all('*', homeRouter);
+    var routes = $routesProvider.routes;
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  res.redirect('/');
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
-
-// error handlers
-
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.json({
-      message: err.message,
-      error: err
+    angular.forEach( routes, function( value, key )
+    {
+        $stateProvider.state( key, routes[ key ] );
     });
-  });
+
+
+})
+.directive("scroll", function ($window) {
+    return function(scope, element, attrs) {
+        angular.element($window).bind("scroll", function() {
+            if (this.pageYOffset >= 60) {
+                scope.showFloatMenu = true;
+            } else {
+                scope.showFloatMenu = false;
+            }
+            scope.$apply();
+        });
+    };
+})
+.run( function( $injector )
+{
+    var $rootScope = $injector.get( '$rootScope' );
+    var $state = $injector.get( '$state' );
+    var $stateParams = $injector.get( '$stateParams' );
+    var $session = $injector.get('$session');
+    $rootScope.$isLogin = false;
+
+    if ($session.get('auth').authToken) {
+        $rootScope.$isLogin = true;
+    }
+
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
+})
+.filter('trustHtml', function ($sce) {
+    return function (input) {
+        return $sce.trustAsHtml(input);
+    }
+})
+.filter('trustAsResourceUrl', function($sce) {
+    return function(input) {
+        return $sce.trustAsResourceUrl(input);
+    };
+})
+.filter('cut', function () {
+    return function (value, wordwise, max, tail) {
+        if (!value) return '';
+
+        max = parseInt(max, 10);
+        if (!max) return value;
+        if (value.length <= max) return value;
+
+        value = value.substr(0, max);
+        if (wordwise) {
+            var lastspace = value.lastIndexOf(' ');
+            if (lastspace != -1) {
+                value = value.substr(0, lastspace);
+            }
+        }
+
+        return value + (tail || ' …');
+    };
+})
+.animation('.slide', function() {
+    var NG_HIDE_CLASS = 'ng-hide';
+    return {
+        beforeAddClass: function(element, className, done) {
+            if(className === NG_HIDE_CLASS) {
+                element.slideUp(done);
+            }
+        },
+        removeClass: function(element, className, done) {
+            if(className === NG_HIDE_CLASS) {
+                element.hide().slideDown(done);
+            }
+        }
+    };
 }
+)
 
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.json({
-    message: err.message,
-    error: {}
-  });
-});
-
-
-module.exports = app;

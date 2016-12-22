@@ -26,12 +26,9 @@ angular
 		};
 
 		$scope.signin = function () {
-
-            $http({
-            	method: 'POST',
-                url: $config.api_uri + '/Apipublic/Apilogin/login_name_pw',
-                data: $scope.user,
-            }).success(function (data) {
+			$http
+				.post($config.api_uri + '/Apipublic/Apilogin/login_name_pw', $scope.user)
+				.success(function (data) {
 					$rootScope.$isLogin = true;
 					$session.set('auth', data)
 					$session.save()
@@ -40,7 +37,7 @@ angular
 					$mdDialog.hide();
 				})
 				.error(function (data) {
-					$scope.apiError = data.error
+					$scope.apiError = data.error_msg
 					$scope.user = {emailAddress: emailAddress}
 				})
 		}
@@ -74,7 +71,7 @@ angular
 					$mdDialog.hide();
 				})
 				.error(function (data) {
-					$scope.apiError = data.error
+					$scope.apiError = data.error_msg;
 				})
 		}
 
