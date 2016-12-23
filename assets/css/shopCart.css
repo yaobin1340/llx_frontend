@@ -1,0 +1,115 @@
+body {
+  font-family: "SimHei";
+}
+.banner {
+  height: 1.40277778rem;
+  background-color: #3e96c1;
+  color: white;
+}
+.banner img {
+  float: left;
+  display: inline-block;
+  width: 0.69444444rem;
+  height: 0.69444444rem;
+  margin: 0.34722222rem 0 0 0.55555556rem;
+}
+.banner span {
+  float: left;
+  width: 8.33333333rem;
+  display: inline-block;
+  font-size: 0.44444444rem;
+  line-height: 1.40277778rem;
+  text-align: center;
+}
+.products {
+  height: 2.77777778rem;
+  border-top: 0.02777778rem solid #c6c6c6;
+  border-bottom: 0.02777778rem solid #c6c6c6;
+  margin: 0.13888889rem 0;
+}
+.products .pro-img {
+  float: left;
+  width: 1.875rem;
+  height: 1.90277778rem;
+}
+.products .productItem {
+  height: 2.11111111rem;
+  margin: 0.33333333rem 0.13888889rem;
+}
+.products .productMsg {
+  margin-left: 0.41666667rem;
+  width: 5.27777778rem;
+  height: 1.94444444rem;
+  float: left;
+}
+.products .productMsg p {
+  font-size: 0.38888889rem;
+  color: #b5b5b5;
+  line-height: 0.625rem;
+}
+.products .delect {
+  float: right;
+  width: 0.76388889rem;
+  margin: 1.04166667rem 0.18055556rem 0 0;
+}
+.products .price-one {
+  color: #3e96c1;
+  font-size: 0.33333333rem;
+  line-height: 0.55555556rem;
+}
+.products .price-all {
+  margin-left: 0.625rem;
+  color: black;
+  font-size: 0.33333333rem;
+  line-height: 0.58333333rem;
+}
+.products button {
+  float: left;
+  width: 0.69444444rem;
+  height: 0.72222222rem;
+  background-color: #fff;
+  border: 0.02777778rem solid #c6c6c6;
+  font-size: 0.55555556rem;
+  color: #c6c6c6;
+}
+.products input {
+  float: left;
+  width: 0.90277778rem;
+  height: 0.72222222rem;
+  margin: 0 0.27777778rem;
+  border: 0.02777778rem solid #c6c6c6;
+  font-size: 0.27777778rem;
+  text-align: center;
+}
+.products .btn-add {
+  border: 0.02777778rem solid #3e96c1;
+  color: #3e96c1;
+}
+footer {
+  height: 1.30555556rem;
+  border-top: 0.02777778rem solid #c6c6c6 !important;
+}
+footer img {
+  float: left;
+  width: 0.76388889rem;
+  height: 0.76388889rem;
+  margin: 0.27777778rem 0 0 0.13888889rem;
+}
+footer span {
+  float: left;
+  display: inline-block;
+  line-height: 1.30555556rem;
+  font-size: 0.41666667rem;
+  margin-left: 0.48611111rem;
+  color: #3e96c1;
+}
+footer .goPay {
+  width: 2.81944444rem;
+  height: 100%;
+  float: right;
+  text-align: center;
+  color: white;
+  font-size: 0.41666667rem;
+  line-height: 1.30555556rem;
+  background-color: #3e96c1;
+}

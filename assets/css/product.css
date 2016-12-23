@@ -5,7 +5,9 @@ body {
 .proMsg,
 .certification,
 .discuss,
-.discuss-cen {
+.discuss-cen,
+.p-introduce,
+footer {
   background-color: #fff;
 }
 .banner {
@@ -19,9 +21,10 @@ body {
 .banner div {
   width: 0.90277778rem;
   height: 0.90277778rem;
-  background-color: gray;
-  border: 1px solid gray;
+  background-color: #a2a3a0;
+  border: 1px solid #a2a3a0;
   border-radius: 50%;
+  opacity: 0.5;
   display: inline-block;
   margin: 0.30555556rem 0.22222222rem;
 }
@@ -74,15 +77,18 @@ body {
   font-size: 0.38888889rem;
 }
 .certification {
-  height: 0.91666667rem;
+  min-height: 0.91666667rem;
   margin-top: 0.04166667rem;
 }
 .certification p {
+  background: url(/assets/img/img_identi_sp.png) no-repeat 0.25rem 0.16666667rem;
+}
+.certification span {
+  display: inline-block;
   font-size: 0.33333333rem;
   font-family: "SimHei";
   text-indent: 0.83333333rem;
   line-height: 0.91666667rem;
-  background: url(/assets/img/img_identi_sp.png) no-repeat 0.25rem 0.16666667rem;
 }
 .discuss {
   height: 1.11111111rem;
@@ -145,4 +151,64 @@ body {
 }
 .discuss-cen .dis-photo {
   margin: 0.625rem 0;
+}
+.p-introduce {
+  margin-bottom: 1.38888889rem;
+}
+.p-introduce p {
+  margin: 0 0.36111111rem;
+  font-size: 0.36111111rem;
+  font-family: "SimHei";
+  line-height: 0.48611111rem;
+  color: #ababab;
+}
+.p-introduce img {
+  width: 100%;
+}
+footer {
+  height: 1.25rem;
+  border-top: 0.02777778rem solid #000000;
+}
+footer p {
+  font-family: "SimHei";
+  color: #ababab;
+  font-size: 0.30555556rem;
+  margin-top: 0.55555556rem;
+  line-height: 0.69444444rem;
+}
+footer div {
+  float: left;
+  text-align: center;
+}
+footer .runin {
+  width: 2.34722222rem;
+  background: url(/assets/img/img_enter_shop_pd.png) no-repeat center 0.13888889rem;
+  background-size: 0.55555556rem;
+}
+footer .collection {
+  width: 2.34722222rem;
+  background: url(/assets/img/img_collect_pd.png) no-repeat center 0.13888889rem;
+  background-size: 0.55555556rem;
+}
+footer .line {
+  width: 0.02777778rem;
+  height: 0.69444444rem;
+  margin-top: 0.27777778rem;
+  background-color: #c6c6c6;
+}
+footer .addCart,
+footer .goPay {
+  width: 2.63888889rem;
+  float: left;
+  height: 100%;
+  line-height: 1.25rem;
+  color: white;
+  font-family: "SimHei";
+  font-size: 0.38888889rem;
+}
+footer .addCart {
+  background-color: #fcc04b;
+}
+footer .goPay {
+  background-color: #fc5d4b;
 }

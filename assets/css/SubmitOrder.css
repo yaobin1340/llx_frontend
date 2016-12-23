@@ -1,0 +1,62 @@
+body {
+  font-family: "SimHei";
+  background-color: ;
+}
+.banner {
+  height: 1.40277778rem;
+  background-color: #3e96c1;
+  color: white;
+}
+.banner img {
+  float: left;
+  display: inline-block;
+  width: 0.69444444rem;
+  height: 0.69444444rem;
+  margin: 0.34722222rem 0 0 0.55555556rem;
+}
+.banner span {
+  float: left;
+  width: 8.33333333rem;
+  display: inline-block;
+  font-size: 0.44444444rem;
+  line-height: 1.40277778rem;
+  text-align: center;
+}
+.shopname {
+  height: 0.97222222rem;
+  line-height: 0.97222222rem;
+  color: #bababa;
+  font-size: 0.45833333rem;
+  margin-left: 0.27777778rem;
+  background: url(/assets/img/img_store.png) no-repeat center left;
+  background-size: 0.55555556rem;
+  text-indent: 0.69444444rem;
+}
+.bg {
+  width: 100%;
+  height: 0.27777778rem;
+  background-color: #f1f3eb;
+}
+.bgs {
+  width: 100%;
+  height: 0.02777778rem;
+  background-color: #f1f3eb;
+}
+.pr-name {
+  font-size: 0.45833333rem;
+  color: block;
+  line-height: 0.97222222rem;
+  margin-left: 0.27777778rem;
+}
+.pr-num {
+  text-align: right;
+  color: #bababa;
+  font-size: 0.45833333rem;
+  line-height: 0.97222222rem;
+}
+.pro-pri {
+  text-align: right;
+  color: black;
+  font-size: 0.45833333rem;
+  line-height: 0.97222222rem;
+}

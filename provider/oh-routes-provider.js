@@ -52,6 +52,17 @@ angular
         templateUrl : 'views/product.html',
         controller:'productCtrl'
     };
+    this.routes['shopcart'] = {
+        url : '/shopcart',
+        templateUrl : 'views/shopCart.html',
+        controller:'shopcartCtrl'
+    };
+    this.routes['SubmitOrder'] = {
+        url : '/SubmitOrder',
+        templateUrl : 'views/SubmitOrder.html',
+        controller:'SubmitOrder'
+    };
+    
     this.$get = function()
     {
         return( this.routes );

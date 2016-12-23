@@ -10,15 +10,16 @@ angular
 
 
 
-    //     $http
-				// .get($config.api_uri + '/Apipublic/ApiPmall/getshops',{area_id : $scope.area_id,city_id : $scope.shop_id,order:1})
-				// .success(function (data) {
-				// 	$scope.cate_list = data.cate_list;
-				// 	console.log(data);
-				// })
-				// .error(function (err) {
+        $http
+				.get($config.api_uri + '/Apipublic/ApiPshop/goodsdetail',{goods_id:16})
+				.success(function (data) {
+					$scope.productMsg_list = data.detail;
+					$scope.productMsg=data;
+					console.log(data);
+				})
+				.error(function (err) {
 					
-				// })
+				})
 
 
 
