@@ -10,10 +10,10 @@ angular
 
         	//获取商家详情页
         	 $http
-				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',$scope.shop_id)
+				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$scope.shop_id||12})
 				.success(function (data) {
 					$scope.detail = data.detail;
-					console.log(data);
+					
 				})
 				.error(function (err) {
 					$scope.apiError = err.error_msg;
@@ -21,7 +21,7 @@ angular
 
 			//获取用户评论信息
 			$http
-				.post($config.api_uri + '/Apipublic/ApiPshop/shopDianPing',$scope.shop_id)
+				.post($config.api_uri + '/Apipublic/ApiPshop/shopDianPing',{shop_id:$scope.shop_id||12})
 				.success(function (data) {
 					$scope.list = data.list;
 				})

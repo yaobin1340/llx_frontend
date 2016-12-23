@@ -1,0 +1,148 @@
+body {
+  background-color: #f5f5f5;
+}
+.photo-p,
+.proMsg,
+.certification,
+.discuss,
+.discuss-cen {
+  background-color: #fff;
+}
+.banner {
+  width: 100%;
+  height: 1.51388889rem;
+  background-color: #f5f5f5;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.banner div {
+  width: 0.90277778rem;
+  height: 0.90277778rem;
+  background-color: gray;
+  border: 1px solid gray;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.30555556rem 0.22222222rem;
+}
+.banner .banner-left {
+  float: left;
+}
+.banner .banner-right {
+  float: right;
+}
+.banner img {
+  width: 0.69444444rem;
+  height: 0.69444444rem;
+  margin: 0.09722222rem 0 0 0.05555556rem;
+}
+.photo-p {
+  width: 100%;
+  height: 9.69444444rem;
+  border-bottom: 0.02777778rem solid #000000;
+}
+.photo-p .product-pho {
+  width: 100%;
+  height: 9.69444444rem;
+}
+.proMsg {
+  width: 100%;
+  height: 3.44444444rem;
+  text-indent: 0.36111111rem;
+}
+.proMsg h1 {
+  margin-top: 0.97222222rem;
+  font-family: "SimHei";
+  font-size: 0.66666667rem;
+  line-height: 0.97222222rem;
+}
+.proMsg span {
+  display: inline-block;
+  font-family: "楷体";
+  font-size: 0.66666667rem;
+  color: #3598c8;
+  margin: 0.13888889rem 0;
+}
+.proMsg img {
+  height: 0.69444444rem;
+  vertical-align: bottom;
+  margin: 0.13888889rem 0;
+}
+.proMsg p {
+  font-family: "SimHei";
+  color: #ababab;
+  font-size: 0.38888889rem;
+}
+.certification {
+  height: 0.91666667rem;
+  margin-top: 0.04166667rem;
+}
+.certification p {
+  font-size: 0.33333333rem;
+  font-family: "SimHei";
+  text-indent: 0.83333333rem;
+  line-height: 0.91666667rem;
+  background: url(/assets/img/img_identi_sp.png) no-repeat 0.25rem 0.16666667rem;
+}
+.discuss {
+  height: 1.11111111rem;
+  margin-top: 0.20833333rem;
+  font-family: "SimHei";
+  line-height: 0.41666667rem;
+}
+.discuss .discuss-title {
+  float: left;
+  font-size: 0.38888889rem;
+  display: inline-block;
+  margin-top: 0.34722222rem;
+  border-left: 0.06944444rem solid #ff0000;
+  text-indent: 0.36111111rem;
+}
+.discuss .see-all {
+  float: right;
+  margin-top: 0.34722222rem;
+  font-size: 0.33333333rem;
+  display: inline-block;
+  padding-right: 0.76388889rem;
+  background: url(/assets/img/line.png) no-repeat 1.80555556rem -0.15277778rem;
+}
+.discuss-cen .contianers {
+  margin: 0 0.36111111rem;
+  display: inline-block;
+  width: 9.27777778rem;
+}
+.discuss-cen .dis-top {
+  height: 0.69444444rem;
+}
+.discuss-cen .dis-tou {
+  width: 0.69444444rem;
+  height: 0.69444444rem;
+  float: left;
+}
+.discuss-cen .dis-name,
+.discuss-cen .dis-data,
+.discuss-cen .dis-cont {
+  font-family: "SimHei";
+  font-size: 0.33333333rem;
+  color: #ababab;
+  line-height: 0.69444444rem;
+}
+.discuss-cen .dis-name {
+  float: left;
+}
+.discuss-cen .dis-data {
+  float: right;
+}
+.discuss-cen .dis-cont {
+  color: black;
+  line-height: 0.83333333rem;
+}
+.discuss-cen .dis-type {
+  font-family: "SimHei";
+  font-size: 0.27777778rem;
+  line-height: 0.41666667rem;
+  color: #ababab;
+}
+.discuss-cen .dis-photo {
+  margin: 0.625rem 0;
+}

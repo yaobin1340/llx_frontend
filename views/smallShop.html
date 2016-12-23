@@ -1,7 +1,17 @@
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/reset.css">
 	<link rel="stylesheet" href="/assets/css/smallShop.css">
-	<div class="banner"></div>
+	<div class="banner">
+		<div class="cir cir-left img-circle">
+			<img src="/assets/img/img_back_shop_detail.png" alt="">
+		</div>
+		<div class="cir cir-right img-circle">
+			<img src="/assets/img/img_menu_shop_detail.png" alt="">
+		</div>
+		<div class="cir cir-right img-circle">
+			<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin-top: 0.02rem;">
+		</div>
+	</div>
 	<div class="bannerBar">
 		<div class="row">
 			<div class="col-md-6 col-sm-6 col-xs-6">
@@ -28,7 +38,7 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in hot_goods_list">
 					<div class="userProducts">
-						<img src="{{hot_goods.photo}}" alt="">
+						<img src="http://139.224.222.18:8080/attachs/{{hot_goods.photo}}" alt="">
 						<p>{{hot_goods.title}}</p>
 						<span class="price">￥{{hot_goods.mall_price}}</span>
 						<span class="show">销量{{hot_goods.sold_num}}</span>

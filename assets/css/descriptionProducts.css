@@ -35,6 +35,10 @@ body {
 .res-titlt {
   width: 100%;
   height: 2.01388889rem;
+  font-size: 0.55555556rem;
+  font-family: "SimHei";
+  line-height: 1.25rem;
+  text-indent: 0.41666667rem;
 }
 .address {
   height: 1.25rem;
@@ -113,9 +117,11 @@ body {
   color: white;
 }
 .commentMsg {
-  width: 100%;
+  width: 94%;
   font-size: 0.375rem;
   font-family: "SimHei";
+  margin: 0 3%;
+  border-bottom: 0.02777778rem solid #7f8180;
 }
 .commentMsg .userImg {
   margin-left: 0.34722222rem;
@@ -125,12 +131,17 @@ body {
 }
 .commentMsg .userContent {
   float: right;
-  width: 7.81944444rem;
+  width: 6.94444444rem;
   margin-right: 0.48611111rem;
 }
 .commentMsg .userName {
   margin-top: 0.16666667rem;
   display: inline-block;
+}
+.commentMsg .contentText {
+  height: 1.38888889rem;
+  font-size: 0.41666667rem;
+  line-height: 0.625rem;
 }
 .commentMsg .userDate {
   margin-top: 0.16666667rem;
@@ -145,6 +156,9 @@ body {
 }
 .commentMsg .star-level {
   display: block;
+}
+.user-like {
+  margin: 0.13888889rem auto;
 }
 .user-like span {
   margin-top: 0.23611111rem;

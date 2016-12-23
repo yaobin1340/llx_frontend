@@ -42,10 +42,15 @@ angular
         templateUrl : 'views/descriptionProducts.html',
         controller:'descriptionCrtl'
     };
-     this.routes['smallShop'] = {
+    this.routes['smallShop'] = {
         url : '/smallShop',
         templateUrl : 'views/smallShop.html',
         controller:'smallShopCrtl'
+    };
+    this.routes['product'] = {
+        url : '/product',
+        templateUrl : 'views/product.html',
+        controller:'productCtrl'
     };
     this.$get = function()
     {
