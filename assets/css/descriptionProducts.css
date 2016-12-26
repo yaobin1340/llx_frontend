@@ -1,5 +1,5 @@
 body {
-  background-color: #edf5f2;
+  background-color: #f1f3eb;
 }
 .banner,
 .res-titlt,
@@ -177,4 +177,5 @@ body {
   line-height: 0.76388889rem;
   background-color: #fff;
   background: url("/assets/img/xin.png") no-repeat 0.20833333rem -0.04166667rem;
+  background-size: 0.83333333rem;
 }

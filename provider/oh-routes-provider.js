@@ -19,7 +19,6 @@ angular
         controller: 'RestaurantCtrl'
     };
 
-
     this.routes['signin'] = {
         url : '/signin',
         templateUrl : 'views/signin.html',
@@ -61,6 +60,11 @@ angular
         url : '/SubmitOrder',
         templateUrl : 'views/SubmitOrder.html',
         controller:'SubmitOrder'
+    };
+    this.routes['payment'] = {
+        url : '/payment',
+        templateUrl : 'views/payment.html',
+        controller:'paymentCtrl'
     };
     
     this.$get = function()

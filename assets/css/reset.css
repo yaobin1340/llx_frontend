@@ -62,4 +62,3 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 a:hover{
   // text-decoration: none;
 }
-  img { pointer-events: none; }//图片长按没有保存、复制效果

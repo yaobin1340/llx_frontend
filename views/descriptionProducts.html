@@ -3,13 +3,13 @@
 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css">
 	<div class="banner" style="background: url(http://139.224.222.18:8888/attachs/{{detail.photo}});">
 		<div class="cir cir-left img-circle">
-			<img src="/assets/img/img_back_shop_detail.png" alt="">
+			<img ng-src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
 		</div>
 		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_menu_shop_detail.png" alt="">
+			<img ng-src="/assets/img/img_menu_shop_detail.png" alt="">
 		</div>
 		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin-top: 0.02rem;">
+			<img ng-src="/assets/img/img_collect_shop_detail.png" alt="" style="margin-top: 0.02rem;">
 		</div>
 	</div>	
 	<div class="res-titlt">
@@ -17,58 +17,58 @@
 	</div>
 	<div class="address">
 		<div class="address-left">
-			<img src="/assets/img/address2.png" alt="" class="img-center-left">
+			<img ng-src="/assets/img/address2.png" alt="" class="img-center-left">
 		</div>
 		<div class="address-center">
 			<span class="address-message">{{detail.addr}}</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/address.png" alt="">
+			<img ng-src="/assets/img/address.png" alt="">
 		</div>
 	</div>
 
 	<div class="address">
 		<div class="address-left">
-			<img src="/assets/img/tel.png" alt="" class="img-center-left">
+			<img ng-src="/assets/img/tel.png" alt="" class="img-center-left">
 		</div>
 		<div class="address-center">
 			<span class="address-message">{{detail.tel}}</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/phone.png" alt="">
+			<img ng-src="/assets/img/phone.png" alt="">
 		</div>
 	</div>
 	<div class="QRcode">
 		<div class="address-left">
-			<img src="/assets/img/QRcode.png" alt="" class="img-center-left">
+			<img ng-src="/assets/img/QRcode.png" alt="" class="img-center-left">
 		</div>
 		<div class="address-center">
 			<span class="address-message">二维码名片</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/line.png" alt="">
+			<img ng-src="/assets/img/line.png" alt="">
 		</div>
 	</div>
 	<div class="QRcode">
 		<div class="address-left">
-			<img src="/assets/img/userMag.png" alt="" class="img-center-left">
+			<img ng-src="/assets/img/userMag.png" alt="" class="img-center-left">
 		</div>
 		<div class="address-center">
 			<span class="address-message">商户信息</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/line.png" alt="">
+			<img ng-src="/assets/img/line.png" alt="">
 		</div>
 	</div>
 	<div class="QRcode">
 		<div class="address-left">
-			<img src="/assets/img/user.png" alt="" class="img-center-left">
+			<img ng-src="/assets/img/user.png" alt="" class="img-center-left">
 		</div>
 		<div class="address-center">
 			<span class="address-message">去逛逛商家微店</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/line.png" alt="">
+			<img ng-src="/assets/img/line.png" alt="">
 		</div>
 	</div>
 	<!-- 用户评价 -->
@@ -76,7 +76,7 @@
 		<div class="user-co">
 			<span>用户评价</span>
 			<div class="address-right">
-			<img src="/assets/img/line.png" alt="">
+			<img ng-src="/assets/img/line.png" alt="">
 			</div>
 		</div>
 		<div class="btn-group">
@@ -86,19 +86,19 @@
 		</div>
 		<!-- 评论相关信息 -->
 		<div class="commentMsg clearfix" ng-repeat="userContent in list">
-			<img src="http://139.224.222.18:8080/attachs/{{userContent.user_face}}" alt="" class="userImg">
+			<img ng-src="http://139.224.222.18:8080/attachs/{{userContent.user_face}}" alt="" class="userImg">
 			<div class="userContent">
 				<span class="userName">{{userContent.user_nickname}}</span>
-				<img src="" alt="" class="user-level">
+				<img ng-src="" alt="" class="user-level">
 				<span class="userDate">{{userContent.create_time|date:"yyyy-MM-dd"}}</span>
-				<img src="" alt="" class="star-level">
+				<img ng-src="" alt="" class="star-level">
 				<div class="contentText">{{userContent.contents}}</div>
 				<div class="eatType"></div>
 				<table class="userPhoto"></table>
 				<div class="userPhoto">
 					<div class="row">
 						<div class="col-md-4" ng-repeat="photo in pics.pic">
-							<img src="{{userContent.pic}}" alt="">
+							<img ng-src="{{userContent.pic}}" alt="">
 						</div>
 					</div>
 				</div>

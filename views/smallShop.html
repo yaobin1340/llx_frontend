@@ -3,13 +3,13 @@
 	<link rel="stylesheet" href="/assets/css/smallShop.css">
 	<div class="banner">
 		<div class="cir cir-left img-circle">
-			<img src="/assets/img/img_back_shop_detail.png" alt="">
+			<img ng-src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
 		</div>
 		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_menu_shop_detail.png" alt="">
+			<img ng-src="/assets/img/img_menu_shop_detail.png" alt="">
 		</div>
 		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin-top: 0.02rem;">
+			<img ng-src="/assets/img/img_collect_shop_detail.png" alt="" style="margin-top: 0.02rem;">
 		</div>
 	</div>
 	<div class="bannerBar">
@@ -29,7 +29,7 @@
 		</div>
 	</div>
 	<div class="preferential">
-		<img src="" alt="">
+		<img ng-src="" alt="">
 		<span>本店会员</span>
 	</div>
 	<div class="bgc clearfix">
@@ -38,7 +38,7 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in hot_goods_list">
 					<div class="userProducts">
-						<img src="http://139.224.222.18:8080/attachs/{{hot_goods.photo}}" alt="">
+						<img ng-src="http://139.224.222.18:8080/attachs/{{hot_goods.photo}}" alt="">
 						<p>{{hot_goods.title}}</p>
 						<span class="price">￥{{hot_goods.mall_price}}</span>
 						<span class="show">销量{{hot_goods.sold_num}}</span>
@@ -51,7 +51,7 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="goods in goods_list">
 					<div class="userProducts">
-						<img src="{{goods.photo}}" alt="">
+						<img ng-src="{{goods.photo}}" alt="">
 						<p>{{goods.title}}</p>
 						<span class="price">￥{{goods.mall_price}}</span>
 						<span class="show">销量{{goods.sold_num}}</span>

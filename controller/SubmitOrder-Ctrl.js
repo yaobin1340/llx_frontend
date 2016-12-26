@@ -10,16 +10,16 @@ angular
 
 
 
-    //     $http
-				// .get($config.api_uri + '/Apipublic/ApiPshop/goodsdetail',{goods_id:16})
-				// .success(function (data) {
-				// 	$scope.productMsg_list = data.detail;
-				// 	$scope.productMsg=data;
-				// 	console.log(data);
-				// })
-				// .error(function (err) {
+        $http
+				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail')
+				.success(function (data) {
 					
-				// })
+				})
+				.error(function (err) {
+					
+				})
+
+       
 
 
 

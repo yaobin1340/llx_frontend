@@ -27,7 +27,7 @@ angular
 
 		$scope.signin = function () {
 			$http
-				.post($config.api_uri + '/Apipublic/Apilogin/login_name_pw', $scope.user)
+				.post($config.api_uri + '/Apipublic/Apilogin/login_name_pw',{mobile:$scope.user.mobile,password:$scope.user.password})
 				.success(function (data) {
 					$rootScope.$isLogin = true;
 					$session.set('auth', data)
@@ -61,7 +61,7 @@ angular
 			}
 
 			$http
-				.post($config.api_uri + '/signup', $scope.user)
+				.post($config.api_uri + '/signup',{mobile:15601769656})
 				.success(function (data) {
 					$rootScope.$isLogin = true;
 					$session.set('auth', data)

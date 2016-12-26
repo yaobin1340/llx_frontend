@@ -31,18 +31,13 @@ body {
   float: left;
   width: 1.875rem;
   height: 1.90277778rem;
+  margin-right: 0.18055556rem;
 }
 .products .productItem {
   height: 2.11111111rem;
   margin: 0.33333333rem 0.13888889rem;
 }
-.products .productMsg {
-  margin-left: 0.41666667rem;
-  width: 5.27777778rem;
-  height: 1.94444444rem;
-  float: left;
-}
-.products .productMsg p {
+.products .pro-title {
   font-size: 0.38888889rem;
   color: #b5b5b5;
   line-height: 0.625rem;
@@ -50,7 +45,11 @@ body {
 .products .delect {
   float: right;
   width: 0.76388889rem;
-  margin: 1.04166667rem 0.18055556rem 0 0;
+}
+.products .delect-div {
+  float: right;
+  width: 0.76388889rem;
+  height: 0.83333333rem;
 }
 .products .price-one {
   color: #3e96c1;

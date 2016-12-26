@@ -1,6 +1,5 @@
 body {
   font-family: "SimHei";
-  background-color: ;
 }
 .row {
   margin: 0 !important;
@@ -99,31 +98,41 @@ body {
   background-color: #f1f3eb;
 }
 .pr-name {
-  font-size: 0.45833333rem;
+  font-size: 0.38888889rem;
   color: block;
   line-height: 0.97222222rem;
-  margin-left: 0.13888889rem;
 }
-.pr-num {
-  text-align: right;
-  color: #bababa;
-  font-size: 0.45833333rem;
-  line-height: 0.97222222rem;
+.bg-text {
+  height: 0.65277778rem;
+  font-size: 0.38888889rem;
+  color: block;
+  line-height: 0.65277778rem;
+  padding-left: 0.27777778rem;
 }
-.pr-color {
-  color: #bababa;
+.pay-now {
+  height: 1.31944444rem;
 }
-.pro-pri {
-  text-align: right;
-  color: black;
-  font-size: 0.45833333rem;
-  line-height: 0.97222222rem;
+.pay-now p {
+  font-size: 0.41666667rem;
+  margin-top: 0.13888889rem;
+  line-height: 0.55555556rem;
+  margin-left: 0.27777778rem;
+}
+.pay-now span {
+  font-size: 0.33333333rem;
+  margin-left: 0.27777778rem;
+  line-height: 0.41666667rem;
+}
+.pay-now .weixin {
+  width: 0.90277778rem;
+  margin-top: 0.20833333rem;
+}
+.pay-now .default {
+  width: 0.76388889rem;
+  margin-top: 0.20833333rem;
 }
 .span-color {
-  color: #3e96c1;
-}
-.price-c {
-  color: #ed3331;
+  color: #bababa;
 }
 .subOrder {
   width: 9.40277778rem;
