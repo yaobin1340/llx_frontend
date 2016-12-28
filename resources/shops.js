@@ -16,12 +16,11 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		$http({
 			method: 'POST',
 			url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
-			data: {page:this.page},
+			data: {lng:121.547502,lat:31.227906,page:this.page},
 		}).success(function (data) {
 			console.log(data);
-			this.page++;
 			if (data.success) {
-				if(!data.shop_list.length){
+				if(data.shop_list==null||!data.shop_list.length){
 					this.end = true;
 					return
 				}
@@ -31,7 +30,7 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 				}
 				this.after = "t3_" + this.items[this.items.length - 1].id;
 				this.busy = false;
-				this.page += 1;
+				this.page++;
 			} else {
 
 			}

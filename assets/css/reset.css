@@ -22,7 +22,7 @@ time, mark, audio, video,input,nav,footer{
   font: inherit;
   font-size: 100%;
   vertical-align: baseline;
-  text-overflow : ellipsis; 
+
    }
 
 /* line 22, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
@@ -61,4 +61,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block; }
 a:hover{
   // text-decoration: none;
+}
+.text-overflow{
+  text-overflow : ellipsis; 
+   word-wrap:nowrap; overflow:hidden;
 }

@@ -13,7 +13,7 @@ angular
 
     this.routes[ 'main.home' ] =
     {
-        url: 'home',
+        url: '^/home',
         title: 'Home',
         templateUrl: 'views/restaurants.html',
         controller: 'RestaurantCtrl'
@@ -37,17 +37,17 @@ angular
         controller:'forgotCtrl'
     };
      this.routes['description'] = {
-        url : '/description',
+        url : '/description?shop_id',
         templateUrl : 'views/descriptionProducts.html',
         controller:'descriptionCrtl'
     };
     this.routes['smallShop'] = {
-        url : '/smallShop',
+        url : '/smallShop?shop_id',
         templateUrl : 'views/smallShop.html',
         controller:'smallShopCrtl'
     };
     this.routes['product'] = {
-        url : '/product',
+        url : '/product?goods_id',
         templateUrl : 'views/product.html',
         controller:'productCtrl'
     };
@@ -66,8 +66,8 @@ angular
         templateUrl : 'views/payment.html',
         controller:'paymentCtrl'
     };
-    this.routes['personal'] = {
-        url : '/personal',
+    this.routes['main.personal'] = {
+        url : '^/personal',
         templateUrl : 'views/personal.html',
         controller:'personalCtrl'
     };
