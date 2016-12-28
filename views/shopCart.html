@@ -3,25 +3,24 @@
 	<link rel="stylesheet" href="/assets/css/shopCart.css">
 	
 	<div class="banner">
-		<img ng-src="/assets/img/552cc14536532_128.png" alt="" onClick="javascript:history.go(-1);">
+		<img src="/assets/img/552cc14536532_128.png" alt="" onClick="javascript:history.go(-1);">
 		<span>购物车</span>
 	</div>
-	<div class="products">
-
-		<div class="productItem" ng-repeat="carts in cart_list">
+	<div class="products" ng-show="cart_list.length">
+		<div class="productItem" ng-repeat="carts in cart_list" >
 			<img ng-src="{{carts.photo}}" alt="" class="pro-img">
 				<p  class="pro-title">{{carts.title}}</p>
 				<span class="price-one">单价：￥{{carts.mall_price}}</span>
-				<span class="price-all">合计：<span  class="price-one">￥8</span></span><br>
-				<button ng-click="remo()">-</button><input type="text" ng-model="num" id="num" ng-keyup="only_number(num)"><button class="btn-add" ng-click="add()">+</button>
-			<div ng-click="delect()" class="delect-div">
-				<img ng-src="/assets/img/img_delete.png" alt="" class="delect">
+				<span class="price-all">合计：<span  class="price-one">￥{{carts.mall_price*num}}</span></span><br>
+				<button ng-click="remo()">-</button><input type="text" ng-model="num" ng-keyup="only_number(num)"><button class="btn-add" ng-click="add()">+</button>
+			<div ng-click="delect(carts.cart_id)" class="delect-div">
+				<img src="/assets/img/img_delete.png" alt="" class="delect">
 			</div>
 		</div>
 	</div>
 
 	<footer class="navbar-fixed-bottom">
-		<img ng-src="/assets/img/img_shopcart.png" alt="">
+		<img src="/assets/img/img_shopcart.png" alt="">
 		<span>￥8</span>
 		<div class="goPay" ng-click="goPay()" ui-sref="SubmitOrder">结算</div>
 	</footer>

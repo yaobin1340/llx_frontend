@@ -12,7 +12,9 @@ angular
         	$http
         		.post($config.api_uri + '/Apipublic/Apilogin/resetpw_yzm',$scope.phone)
         		.success(function(data){
-        			$scope.getY=data.yzm;
+                    if(data.success){
+                        $scope.getY=data.yzm;
+                    }
         		})
         		.error(function(err){
         			$scope.apiError = err.error_msg;
@@ -30,7 +32,9 @@ angular
         	$http
         		.post($config.api_uri + '/Apipublic/Apilogin/resetpw',{mobile:$scope.phone,Npassword:$scope.Npassword})
         		.success(function(data){
-
+                    if(data.success){
+                        
+                    }
         		})
         		.error(function(err){
         			$scope.apiError = err.error_msg;

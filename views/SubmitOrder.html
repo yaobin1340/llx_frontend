@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="/assets/css/SubmitOrder.css">
 	
 	<div class="banner">
-		<img ng-src="/assets/img/552cc14536532_128.png" alt=""  onClick="javascript:history.go(-1);">
+		<img src="/assets/img/552cc14536532_128.png" alt=""  onClick="javascript:history.go(-1);">
 		<span>提交订单</span>
 	</div>
 	<div class="bg"></div>
@@ -104,6 +104,6 @@
 	<div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
 				<div class="col-sm-12 col-xs-12">
-					<button class="subOrder">提交订单</button>
+					<button class="subOrder" ng-click="subOrder()" ui-sref="payment">提交订单</button>
 				</div>
 		</div>

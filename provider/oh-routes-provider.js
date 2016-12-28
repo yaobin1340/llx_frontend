@@ -66,6 +66,11 @@ angular
         templateUrl : 'views/payment.html',
         controller:'paymentCtrl'
     };
+    this.routes['personal'] = {
+        url : '/personal',
+        templateUrl : 'views/personal.html',
+        controller:'personalCtrl'
+    };
     
     this.$get = function()
     {

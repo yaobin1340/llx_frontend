@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'paymentCtrl', function paymentCtrl( $scope, $injector, $rootScope) {
+    .controller( 'personalCtrl', function personalCtrl( $scope, $injector, $rootScope) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );

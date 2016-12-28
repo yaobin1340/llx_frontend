@@ -11,7 +11,10 @@ angular
         	 $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/hot_goods',{shop_id:$scope.shop_id||12})
 				.success(function (data) {
-					$scope.hot_goods_list = data.goods_list;
+					if(data.success){
+						$scope.hot_goods_list = data.goods_list;
+					}
+					
 					console.log(data);
 				})
 				.error(function (err) {

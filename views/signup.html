@@ -2,11 +2,11 @@
 <link rel="stylesheet" href="/assets/css/reset.css">
 <link rel="stylesheet" href="/assets/css/login.css">
 <div class="banner">
-	<img ng-src="/assets/img/return.png" alt="返回" onClick="javascript:history.go(-1);">
+	<img src="/assets/img/return.png" alt="返回" onClick="javascript:history.go(-1);">
 	<p>注册</p>
 </div>
 <div class="center-img">
-	<img ng-src="/assets/img/top-banner.png" alt="banner">
+	<img src="/assets/img/top-banner.png" alt="banner">
 </div>
 <div class="form">
 	<input type="text" class="form-control" placeholder="请输入手机号">
@@ -16,7 +16,7 @@
 	</div>
 	<input type="password" class="form-control" placeholder="请输入密码">
 	<input type="password" class="form-control" placeholder="重复输入密码">
-	<div class="btn-submit">注册</div>
+	<div class="btn-submit" ng-click="signup()">注册</div>
 </div>
 <div class="telphone">
 	<p>服务电话：400-7731377</p>

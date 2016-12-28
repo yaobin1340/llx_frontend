@@ -2,24 +2,26 @@ angular
     .module( 'ohapp' )
     .controller( 'SubmitOrder', function SubmitOrder( $scope, $injector, $rootScope) {
         var $http = $injector.get( '$http' );
-        var $location = $injector.get('$location');
-        var $state = $injector.get( '$state' );
-        var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
+        var $timeout = $injector.get( '$timeout' );
         var $session = $injector.get('$session');
-
-
-
+        var $window = $injector.get('$window')
+        var $location = $injector.get('$location');
+        
         $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail')
 				.success(function (data) {
-					
+					if(data.success){
+
+                    }
 				})
 				.error(function (err) {
 					
 				})
 
-       
+        $scope.subOrder=function(){
+            $rootScope.$page = 'payment'
+        }
 
 
 

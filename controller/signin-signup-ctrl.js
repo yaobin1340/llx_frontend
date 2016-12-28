@@ -35,6 +35,7 @@ angular
 					$rootScope.firstName = data.firstName
 					$rootScope.lastName = data.lastName
 					$mdDialog.hide();
+					console.log(data);
 				})
 				.error(function (data) {
 					$scope.apiError = data.error_msg
@@ -42,26 +43,10 @@ angular
 				})
 		}
 
-		$scope.signup = function () {
-			if(!$scope.signupForm['firstName'].$valid){
-				$scope.signupForm.firstName.$touched = true
-				return;
-			}
-			if(!$scope.signupForm['lastName'].$valid){
-				$scope.signupForm.lastName.$touched = true
-				return;
-			}
-			if(!$scope.signupForm['emailAddress'].$valid){
-				$scope.signupForm.emailAddress.$touched = true
-				return;
-			}
-			if(!$scope.signupForm['password'].$valid){
-				$scope.signupForm.password.$touched = true
-				return;
-			}
 
+		$scope.getCard=function(){
 			$http
-				.post($config.api_uri + '/signup',{mobile:15601769656})
+				.post($config.api_uri + '/Apipublic/Apilogin/get_yzm',{mobile:15601769656})
 				.success(function (data) {
 					$rootScope.$isLogin = true;
 					$session.set('auth', data)
@@ -69,6 +54,40 @@ angular
 					$rootScope.firstName = data.firstName
 					$rootScope.lastName = data.lastName
 					$mdDialog.hide();
+					console.log(data);
+				})
+				.error(function (data) {
+					$scope.apiError = data.error_msg;
+				})
+		}
+		$scope.signup = function () {
+			// if(!$scope.signupForm['firstName'].$valid){
+			// 	$scope.signupForm.firstName.$touched = true
+			// 	return;
+			// }
+			// if(!$scope.signupForm['lastName'].$valid){
+			// 	$scope.signupForm.lastName.$touched = true
+			// 	return;
+			// }
+			// if(!$scope.signupForm['emailAddress'].$valid){
+			// 	$scope.signupForm.emailAddress.$touched = true
+			// 	return;
+			// }
+			// if(!$scope.signupForm['password'].$valid){
+			// 	$scope.signupForm.password.$touched = true
+			// 	return;
+			// }
+
+			$http
+				.post($config.api_uri + '/Apipublic/Apilogin/save_user',{mobile:15601769656,password:147258369,nickname:147})
+				.success(function (data) {
+					$rootScope.$isLogin = true;
+					$session.set('auth', data)
+					$session.save()
+					$rootScope.firstName = data.firstName
+					$rootScope.lastName = data.lastName
+					$mdDialog.hide();
+					console.log(data);
 				})
 				.error(function (data) {
 					$scope.apiError = data.error_msg;

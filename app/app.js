@@ -6,6 +6,7 @@ angular.module( 'ohapp',
         'ui.bootstrap',
         'ohRoutes',
         'ohConfig',
+        'infinite-scroll'
     ]
 )
 .config( function config( $injector, $locationProvider)

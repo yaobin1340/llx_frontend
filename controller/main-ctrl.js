@@ -1,5 +1,5 @@
 angular
-    .module( 'ohapp' )
+    .module( 'ohapp')
     .controller( 'MainCtrl', function MainCtrl( $scope, $injector, $rootScope) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
@@ -12,7 +12,10 @@ angular
         	 $http
 				.post($config.api_uri + '/Apipublic/ApiPmall/getcity')
 				.success(function (data) {
-					$scope.city_list = data.city_list;
+					if(data.success){
+						$scope.city_list = data.city_list;
+					}
+					
 				})
 				.error(function (err) {
 					$scope.apiError = err.error_msg;
@@ -23,7 +26,10 @@ angular
 					$http
 						.post($config.api_uri + '/Apipublic/ApiPmall/getarea',{city_id:$scope.selected})
 						.success(function (data) {
-							$scope.city_list = data.area_list;
+							if(data.success){
+								$scope.city_list = data.area_list;
+							}
+
 							console.log($scope.city_list);
 						})
 						.error(function (err) {
@@ -32,14 +38,21 @@ angular
 				}
 
 			 
-				
+			 var postCfg = {
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                transformRequest: function (d) {
+                    return $.param(d);
+                }
+       		 };	
 
 
 
         $http
-				.get($config.api_uri + '/Apipublic/ApiPmall/getshops',{area_id : $scope.area_id,city_id : $scope.shop_id,order:1})
+				.post($config.api_uri + '/Apipublic/ApiPmall/getshops',{area_id :15,city_id : 12,order:1,page:2},postCfg)
 				.success(function (data) {
-					$scope.cate_list = data.cate_list;
+					if(data.success){
+						$scope.cate_list = data.cate_list;
+					}
 					console.log(data);
 				})
 				.error(function (err) {
@@ -48,8 +61,22 @@ angular
 
 
 
-
-
+		//瀑布流下拉加载
+		// $scope.page = 1; 
+		// $scope.nextPage = function(){
+		// 	$scope.page++;
+		// 	$http
+		// 		.post($config.api_uri + '/Apipublic/ApiPmall/getshops',{area_id :15,city_id : 12,order:1,page:$scope.page})
+		// 		.success(function (data) {
+		// 			if(data.success){
+		// 				$scope.cate_list = data.cate_list;
+		// 			}
+		// 			console.log(data);
+		// 		})
+		// 		.error(function (err) {
+					
+		// 		})
+		// }
 
 
 

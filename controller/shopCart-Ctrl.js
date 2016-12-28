@@ -7,44 +7,45 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
+
+        
         $http
-				.post($config.api_uri + '/Apiuser/cart/cart_list',{token:$scope.token})
+				.post($config.api_uri + '/Apiuser/cart/cart_list',{token:'jYqEe46caKuB0H7Ls4WJmrCjyauHmoxmhKl1oQ=='})
 				.success(function (data) {
-					$scope.cart_list=data.cart_list;
-                    $scope.num=data.cart_list.cart_num;
+                    if(data.success){
+                        $scope.cart_list=data.cart_list;
+                    }
+					
+                    console.log(data);
 				})
 				.error(function (err) {
 					
 				})
 
-
-            $scope.delect=function(){
+            $scope.delect=function(id){
                 $http
-                .post($config.api_uri + '/Apiuser/cart/cartdel',{card_id:$scope.card_id})
+                .post($config.api_uri + '/Apiuser/cart/cartdel',{card_id:id,token:"jYqEe46caKuB0H7Ls4WJmrCjyauHhISthJl1oQ=="})
                 .success(function (data) {
-
-                    data.cart_list.cart_id.splice(card_id,1);
-
+                    if(data.success){
+                        $scope.cart_list=data.cart_list;
+                    }
                 })
                 .error(function (err) {
                     
                 })
             };
-            $scope.goPay=function(ev){
-                var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-                $mdDialog.show({
-                controller: 'SubmitOrder',
-                templateUrl: 'views/SubmitOrder.html',
-                parent: angular.element(document.body),
-                targetEvent: ev,
-                clickOutsideToClose:true,
-                fullscreen: useFullScreen
-                });
+            $scope.goPay=function(){
+
                 $rootScope.$page = 'SubmitOrder'
             };
      
             $scope.only_number = function(a) {
-                $scope.num = a.replace(/\D/g, '');
+                var num=parseInt(a.replace(/\D/g, ''));
+                if(num>=1){
+                    $scope.num=num;
+                }else{
+                    $scope.num=1;
+                }
             };
             $scope.remo=function(){
                 if($scope.num>1){

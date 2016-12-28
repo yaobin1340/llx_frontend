@@ -34,10 +34,19 @@ footer {
 .banner .banner-right {
   float: right;
 }
-.banner img {
+.banner .back {
+  position: absolute;
+  left: 0.29166667rem;
+  top: 0.41666667rem;
   width: 0.69444444rem;
   height: 0.69444444rem;
-  margin: 0.09722222rem 0 0 0.05555556rem;
+}
+.banner .share {
+  position: absolute;
+  right: 0.31944444rem;
+  top: 0.41666667rem;
+  width: 0.69444444rem;
+  height: 0.69444444rem;
 }
 .photo-p {
   width: 100%;
