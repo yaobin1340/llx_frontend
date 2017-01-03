@@ -9,7 +9,6 @@ angular
         var $session = $injector.get('$session');
 
        $scope.api_uri = $config.api_uri;
-		$scope.currentPage = 0;
 		$scope.scroll_switch = 1;
 		$scope.shops = new Shops();
 //获取下拉列表的城市信息
@@ -18,11 +17,15 @@ angular
 				.success(function (data) {
 					if(data.success){
 						$scope.city_list = data.city_list;
+					}else{
+						$scope.dialog={open: true};
+                        $scope.err=data.error_msg;
 					}
 					
 				})
 				.error(function (err) {
-					$scope.apiError = err.error_msg;
+					$scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 
 				$scope.selectedCity=function(e){
@@ -32,49 +35,18 @@ angular
 						.success(function (data) {
 							if(data.success){
 								$scope.city_list = data.area_list;
+							}else{
+								$scope.dialog={open: true};
+                        		$scope.err=data.error_msg;
 							}
-							console.log($scope.city_list);
 						})
 						.error(function (err) {
-							$scope.apiError = err.error_msg;
+							$scope.dialog={open: true};
+							$scope.err = err.error_msg;
 						})
 				}
 
 			 
-	
-
-
-
-    //     $http
-				// .post($config.api_uri + '/Apipublic/ApiPmall/getshops',{lng:121.547502,lat:31.227906})
-				// .success(function (data) {
-				// 	if(data.success){
-				// 		$scope.shop_list = data.shop_list;
-				// 	}
-				// })
-				// .error(function (err) {
-					
-				// })
-
-
-
-		// 瀑布流下拉加载
-		// $scope.page = 1; 
-		// $scope.nextPage = function(){
-		// 	$scope.page++;
-		// 	$http
-		// 		.post($config.api_uri + '/Apipublic/ApiPmall/getshops',{lng:121.547502,lat:31.227906,page:$scope.page})
-		// 		.success(function (data) {
-		// 			if(data.success){
-		// 				$scope.shop_list = data.shop_list;
-		// 			}
-		// 			console.log(data);
-		// 		})
-		// 		.error(function (err) {
-					
-		// 		})
-		// }
-       
 
 
 

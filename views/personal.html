@@ -8,24 +8,27 @@
 		<div class="banner-right"></div>
 		<img src="/assets/img/img_mine_msg_icon.png" alt="" class="share">
 		<div class="personal-img">
-			<img src="" alt="">
+			<img src="{{userMsg.face}}" alt="" ng-show="{{showup}}">
+			<div ng-hide="{{showup}}" class="sign">
+				<a ui-sref="signin">登陆</a>/<a ui-sref="signup">注册</a>
+			</div>
 		</div>
 		<div class="personal-name">
-			心往
+			{{userMsg.nickname}}
 		</div>
 		<div class="personMsg">
 			<div class="msg-left">
-				<p>366</p>
+				<p>{{userMsg.money}}</p>
 				<span>秀币</span>
 			</div>
 			<div class="line"></div>
 			<div class="msg-center">
-				<p>366</p>
+				<p>{{userMsg.yhk}}</p>
 				<span>优惠卡</span>
 			</div>
 			<div class="line"></div>
 			<div class="msg-right">
-				<p>366</p>
+				<p>{{userMsg.integral}}</p>
 				<span>余额</span>
 			</div>
 		</div>
@@ -35,7 +38,7 @@
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_zhanghuguanli.png" alt="">
 		</div>
-		<div class="col-sm-9 col-xs-9">
+		<div class="col-sm-9 col-xs-9" ui-sref="Account">
 			账户管理
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
@@ -47,7 +50,7 @@
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_zijinguanli.png" alt="">
 		</div>
-		<div class="col-sm-9 col-xs-9">
+		<div class="col-sm-9 col-xs-9" ui-sref="applyCash" >
 			资金管理
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
@@ -139,9 +142,13 @@
 		</div>
 	</div>
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row" ng-show="{{showup}}">
 		<div class="col-sm-12 col-xs-12">
-			<button class="subOrder" ng-click="subOrder()" ui-sref="payment">退出登录</button>
+			<button class="subOrder" ng-click="exit()">退出登录</button>
 		</div>
 	</div>
-
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城提醒您</div>
+    <div dialog-content>您还没有登陆，是否现在登陆?</div>
+    <div dialog-buttons><button autofocus ui-sref="signin" ng-click="$close()">确定</button><button ng-click="$close()">取消</button></div>
+</dialog>

@@ -6,7 +6,8 @@ angular.module( 'ohapp',
         'ui.bootstrap',
         'ohRoutes',
         'ohConfig',
-        'infinite-scroll'
+        'infinite-scroll',
+        'angular-popups'
     ]
 )
 .config( function config( $injector, $locationProvider)
@@ -88,6 +89,72 @@ angular.module( 'ohapp',
         });
     };
 })
+    .directive('timerbutton', function($timeout, $interval){
+        return {
+            restrict: 'AE',
+            scope: {
+                showTimer: '=',
+                timeout: '='
+            },
+            link: function(scope, element, attrs){
+                scope.timer = false;
+                scope.timeout = 60000;
+                scope.timerCount = scope.timeout / 1000;
+                scope.text = "获取验证码";
+
+                scope.getYzm = function(){
+                    scope.showTimer = true;
+                    scope.timer = true;
+                    scope.text = "秒后重新获取";
+                    var counter = $interval(function(){
+                        scope.timerCount = scope.timerCount - 1;
+                    }, 1000);
+
+                    $timeout(function(){
+                        scope.text = "获取验证码";
+                        scope.timer = false;
+                        $interval.cancel(counter);
+                        scope.showTimer = false;
+                        scope.timerCount = scope.timeout / 1000;
+                    }, scope.timeout);
+                }
+            },
+            template: '<button ng-click="getYzm()" ng-click="getYzms()" class="getCard button button-calm xgmm-btn" ng-disabled="timer"><span ng-if="showTimer">{{ timerCount }}</span>{{text}}</button>'
+        };
+    })
+    .directive('getbutton', function($timeout, $interval){
+        return {
+            restrict: 'AE',
+            scope: {
+                showTimer: '=',
+                timeout: '='
+            },
+            link: function(scope, element, attrs){
+                scope.timer = false;
+                scope.timeout = 60000;
+                scope.timerCount = scope.timeout / 1000;
+                scope.text = "发送校验码";
+
+                scope.getYzm = function(){
+                    scope.showTimer = true;
+                    scope.timer = true;
+                    scope.text = "秒后重新发送";
+                    var counter = $interval(function(){
+                        scope.timerCount = scope.timerCount - 1;
+                    }, 1000);
+
+                    $timeout(function(){
+                        scope.text = "发送校验码";
+                        scope.timer = false;
+                        $interval.cancel(counter);
+                        scope.showTimer = false;
+                        scope.timerCount = scope.timeout / 1000;
+                    }, scope.timeout);
+                }
+            },
+            template: '<button ng-click="getYzm()" ng-disabled="timer" class="btn-sty"><span ng-if="showTimer">{{ timerCount }}</span>{{text}}</button>'
+        };
+    })
 .run( function( $injector )
 {
     var $rootScope = $injector.get( '$rootScope' );
@@ -113,6 +180,11 @@ angular.module( 'ohapp',
         return $sce.trustAsResourceUrl(input);
     };
 })
+.filter('to_trusted', ['$sce', function ($sce) {
+    return function (text) {
+        return $sce.trustAsHtml(text);
+    };
+}])
 .filter('cut', function () {
     return function (value, wordwise, max, tail) {
         if (!value) return '';

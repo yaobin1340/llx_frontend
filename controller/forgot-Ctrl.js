@@ -8,36 +8,45 @@ angular
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
 
-        $scope.getYzm=function(){
+
+
+
+
+        $scope.getCards=function(){
         	$http
         		.post($config.api_uri + '/Apipublic/Apilogin/resetpw_yzm',$scope.phone)
         		.success(function(data){
                     if(data.success){
-                        $scope.getY=data.yzm;
+                        $scope.yzm=data.yzm;
+                    }else{
+                        $scope.dialog={open: true};
+                        $scope.err=data.error_msg;
                     }
         		})
         		.error(function(err){
-        			$scope.apiError = err.error_msg;
+                    $scope.dialog={open: true};
+        			$scope.err = err.error_msg;
         		})
         }
 
         $scope.changePWD=function(){
-        	if($scope.getY=!$scope.yzm){
+        	if($scope.yzm=!$scope.yzms){
         		$scope.apiError = "验证码不正确";
         		return;
-        	}
-        	if($scope.Npassword!=$scope.Npasswords){
-        		
         	}
         	$http
         		.post($config.api_uri + '/Apipublic/Apilogin/resetpw',{mobile:$scope.phone,Npassword:$scope.Npassword})
         		.success(function(data){
                     if(data.success){
-                        
+                        $state.go('signin');
+                    }else{
+                        $scope.dialog={open: true};
+                        $scope.err=data.error_msg;
                     }
         		})
         		.error(function(err){
-        			$scope.apiError = err.error_msg;
+                    $scope.dialog={open: true};
+        			$scope.err = err.error_msg;
         		})
         }
 

@@ -52,7 +52,7 @@ angular
         controller:'productCtrl'
     };
     this.routes['shopcart'] = {
-        url : '/shopcart',
+        url : '/shopcart?message',
         templateUrl : 'views/shopCart.html',
         controller:'shopcartCtrl'
     };
@@ -70,6 +70,21 @@ angular
         url : '^/personal',
         templateUrl : 'views/personal.html',
         controller:'personalCtrl'
+    };
+     this.routes['applyCash'] = {
+        url : '/applyCash',
+        templateUrl : 'views/applyCash.html',
+        controller:'applyCashCtrl'
+    };
+    this.routes['Account'] = {
+        url : '/Account',
+        templateUrl : 'views/Account.html',
+        controller:'AccountCtrl'
+    };
+    this.routes['changePwd'] = {
+        url : '/changePwd',
+        templateUrl : 'views/changePwd.html',
+        controller:'changePwdCtrl'
     };
     
     this.$get = function()

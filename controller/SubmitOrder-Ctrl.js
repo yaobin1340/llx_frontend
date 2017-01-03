@@ -13,10 +13,14 @@ angular
 				.success(function (data) {
 					if(data.success){
 
+                    }else{
+                        $scope.dialog={open: true};
+                        $scope.err=data.error_msg;
                     }
 				})
 				.error(function (err) {
-					
+                    $scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 
         $scope.subOrder=function(){

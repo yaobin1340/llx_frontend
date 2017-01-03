@@ -100,8 +100,19 @@ body {
   width: 1.640625rem;
   height: 1.640625rem;
   margin: 0 4.1796875rem;
-  background-color: red;
   border-radius: 50%;
+}
+.personal-img .sign {
+  width: 1.875rem;
+  height: 1.7rem;
+  margin: 0 4.1796875rem;
+  text-align: center;
+  line-height: 1.64rem;
+  font-size: 0.3rem;
+  color: #fff;
+}
+.personal-img .sign a {
+  color: #fff;
 }
 .personal-name {
   height: 1.171875rem;

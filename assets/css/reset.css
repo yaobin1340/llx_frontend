@@ -64,5 +64,14 @@ a:hover{
 }
 .text-overflow{
   text-overflow : ellipsis; 
-   word-wrap:nowrap; overflow:hidden;
+  white-space:nowrap;overflow:hidden;
+
+}
+button[disabled]{
+  background-color: gray;
+  border-color: gray;
+}
+div[disabled]{
+  background-color: gray;
+  border-color: gray;
 }

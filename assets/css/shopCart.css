@@ -1,6 +1,12 @@
 body {
   font-family: "SimHei";
 }
+.none {
+  height: 2.77777778rem;
+  font-size: 0.55555556rem;
+  margin-top: 1.38888889rem;
+  text-align: center;
+}
 .banner {
   height: 1.40277778rem;
   background-color: #3e96c1;

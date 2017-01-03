@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/reset.css">
+<link rel="stylesheet" href="/assets/css/applyCash.css">
+<div class="banner">
+    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
+    <p>资金管理</p>
+</div>
+<div class="menu row">
+	<div class="col-sm-4 col-xs-4"ng-class="{'border':chose1}" ng-click="chose(1)">资金日志</div>
+	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose2}" ng-click="chose(2)">提现日志</div>
+	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose3}"   ng-click="chose(3)">申请提现</div>
+</div>
+<div ng-include="'views/money.html'" ng-if="chose1==1">
+	
+</div>
+<div  ng-include="'views/journal.html'" ng-if="chose2==1">
+	
+</div>
+<div ng-include="'views/drawal.html'"ng-if="chose3==1">
+	
+</div>
+

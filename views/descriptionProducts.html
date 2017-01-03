@@ -2,16 +2,16 @@
 	<link rel="stylesheet" href="/assets/css/reset.css">
 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css">
 	<div class="banner" style="background: url(http://139.224.222.18:8888/attachs/{{detail.photo}});">
-		<div class="cir cir-left img-circle">
-			<img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
-		</div>
-		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_menu_shop_detail.png" alt="">
-		</div>
-		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin-top: 0.02rem;">
-		</div>
-	</div>	
+			<div class="cir cir-left img-circle">
+				<img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
+			</div>
+			<div class="cir cir-right img-circle">
+				<img src="/assets/img/img_menu_shop_detail.png" alt="">
+			</div>
+			<div class="cir cir-right img-circle">
+				<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin: 0.05rem auto auto 0.05rem;">
+			</div>
+	</div>
 	<div class="res-titlt">
 		{{detail.shop_name}}
 	</div>
@@ -80,13 +80,17 @@
 			</div>
 		</div>
 		<div class="btn-group">
-  			<button class="btn btnact">全部</button>
-  			<button class="btn">最新</button>
-  			<button class="btn">晒图评价</button>
+  			<button class="btn btnact" ng-click="change(1)" ng-if="num==1">全部</button>
+  			<button class="btn" ng-click="change(1)" ng-if="num!=1">全部</button>
+  			<button class="btn btnact" ng-click="change(2)" ng-if="num==2">最新</button>
+  			<button class="btn" ng-click="change(2)" ng-if="num!=2">最新</button>
+  			<button class="btn btnact" ng-click="change(3)" ng-if="num==3">晒图评价</button>
+  			<button class="btn" ng-click="change(3)" ng-if="num!=3">晒图评价</button>
 		</div>
+		<div class="none clearfix" ng-if="list==null">暂无评论信息</div>
 		<!-- 评论相关信息 -->
 		<div class="commentMsg clearfix" ng-repeat="userContent in list">
-			<img ng-src="http://139.224.222.18:8080/attachs/{{userContent.user_face}}" alt="" class="userImg">
+			<img ng-src="http://139.224.222.18:8888/attachs/{{userContent.user_face}}" alt="" class="userImg">
 			<div class="userContent">
 				<span class="userName">{{userContent.user_nickname}}</span>
 				<img ng-src="" alt="" class="user-level">
@@ -110,3 +114,7 @@
 			</div>
 		</div>
 	</div>
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城</div>
+    <div dialog-content>{{err}}</div>
+</dialog>

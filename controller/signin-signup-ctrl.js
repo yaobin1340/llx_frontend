@@ -4,6 +4,7 @@ angular
 		var $http = $injector.get( '$http' );
 		var $config = $injector.get( '$config' );
 		var $timeout = $injector.get( '$timeout' );
+		var $state = $injector.get( '$state' );
 		var $session = $injector.get('$session');
 		var $window = $injector.get('$window')
 		var $location = $injector.get('$location');
@@ -29,38 +30,53 @@ angular
 			$http
 				.post($config.api_uri + '/Apipublic/Apilogin/login_name_pw',{mobile:$scope.user.mobile,password:$scope.user.password})
 				.success(function (data) {
-					$rootScope.$isLogin = true;
-					$session.set('auth', data)
-					$session.save()
-					$rootScope.firstName = data.firstName
-					$rootScope.lastName = data.lastName
-					$mdDialog.hide();
-					console.log(data);
+					if(data.success){
+						$rootScope.$isLogin = true;
+						$session.set('auth', data)
+						$session.save()
+						$rootScope.firstName = data.firstName
+						$rootScope.lastName = data.lastName
+						// $mdDialog.hide();
+						$state.go('main.personal');
+					}else{
+						$scope.dialog={open: true};
+                        $scope.err=data.error_msg;
+					}
 				})
 				.error(function (data) {
-					$scope.apiError = data.error_msg
-					$scope.user = {emailAddress: emailAddress}
+					$scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 		}
-
 
 		$scope.getCard=function(){
 			$http
-				.post($config.api_uri + '/Apipublic/Apilogin/get_yzm',{mobile:15601769656})
+				.post($config.api_uri + '/Apipublic/Apilogin/get_yzm',{mobile:$scope.user.mobile})
 				.success(function (data) {
-					$rootScope.$isLogin = true;
-					$session.set('auth', data)
-					$session.save()
-					$rootScope.firstName = data.firstName
-					$rootScope.lastName = data.lastName
-					$mdDialog.hide();
-					console.log(data);
+					if(data.success){
+						$rootScope.$isLogin = true;
+						$session.set('auth', data)
+						$session.save()
+						$rootScope.firstName = data.firstName
+						$rootScope.lastName = data.lastName
+						// $mdDialog.hide();
+						$scope.yzm=data.yzm;
+					}else{
+						$scope.dialog={open: true};
+                        $scope.err=data.error_msg;
+					}
+					
 				})
 				.error(function (data) {
-					$scope.apiError = data.error_msg;
+					$scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 		}
 		$scope.signup = function () {
+			if($scope.yzm!=$scope.cards){
+				console.log("验证码输入错误")
+				return;
+			}
 			// if(!$scope.signupForm['firstName'].$valid){
 			// 	$scope.signupForm.firstName.$touched = true
 			// 	return;
@@ -79,18 +95,24 @@ angular
 			// }
 
 			$http
-				.post($config.api_uri + '/Apipublic/Apilogin/save_user',{mobile:15601769656,password:147258369,nickname:147})
+				.post($config.api_uri + '/Apipublic/Apilogin/save_user',{mobile:$scope.user.mobile,password:$scope.user.password})
 				.success(function (data) {
-					$rootScope.$isLogin = true;
-					$session.set('auth', data)
-					$session.save()
-					$rootScope.firstName = data.firstName
-					$rootScope.lastName = data.lastName
-					$mdDialog.hide();
-					console.log(data);
+					if(data.success){
+						$rootScope.$isLogin = true;
+						$session.set('auth', data)
+						$session.save()
+						$rootScope.firstName = data.firstName
+						$rootScope.lastName = data.lastName
+						// $mdDialog.hide();
+					}else{
+						$scope.dialog={open: true};
+                        $scope.err=data.error_msg;
+					}
+					
 				})
 				.error(function (data) {
-					$scope.apiError = data.error_msg;
+					$scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 		}
 

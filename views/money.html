@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/assets/css/money.css">
+<link rel="stylesheet" href="/assets/css/common.css">
+<div class="row bgc">
+	<div class="col-sm-6 col-xs-6">
+		<input type="text" placeholder="开始时间" class="kbtn input-time" id="beginTime" ng-model="beDate">
+	</div>
+	<div class="col-sm-6 col-xs-6">
+		<input type="text" placeholder="结束时间" class="kbtn input-time" id="endTime" ng-model="endDate">
+	</div>
+	<div id="datePlugin"></div> 
+	<div class="col-sm-12 col-xs-12">
+		<button class="soso" ng-click="soso()" ng-disabled="0">搜索</button>
+	</div>
+</div>
+<div class="row mar-bo">
+	<div class="col-sm-12 col-xs-12" ng-repeat="m in money">
+		<div class="moneyMsg">
+			<p>说明：{{m.list.info}}</p>
+			<p>资金：{{m.list.gold}}</p>
+			<p>时间：{{m.list.create_time}}</p>
+		</div>
+	</div>
+</div>
+<dialog ng-if="dialog.open" duration="1500" close="dialog.open=false">
+    <div dialog-content>{{err}}</div>
+</dialog>
+<script>
+	$(function(){  
+    	$('#beginTime').date();
+    	$('#endTime').date();
+    	
+    }); 
+</script>

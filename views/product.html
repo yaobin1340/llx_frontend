@@ -17,11 +17,11 @@
 		<p>原价：<del>￥{{productMsg_list.price}}</del>&nbsp;月售：{{productMsg_list.sold_num}}笔 &nbsp;库存：{{productMsg_list.num}}张</p>
 	</div>
 	<div class="certification">
-		<p><span ng-show="productMsg_list.is_vs1=='1'">认证商家</span><span ng-show="productMsg_list.is_vs2=='1'">正品保证</span><span ng-show="productMsg_list.is_vs3=='1'">假一赔十</span><span ng-show="productMsg_list.is_vs4=='1'">当日送达</span><span ng-show="productMsg_list.is_vs5=='1'">免运费</span><span ng-show="productMsg_list.is_vs6=='1'">货到付款</span></p>
+		<p><span ng-if="productMsg_list.is_vs1==1">认证商家</span><span ng-if="productMsg_list.is_vs2==1">正品保证</span><span ng-if="productMsg_list.is_vs3==1">假一赔十</span><span ng-if="productMsg_list.is_vs4==1">当日送达</span><span ng-if="productMsg_list.is_vs5==1">免运费</span><span ng-if="productMsg_list.is_vs6==1">货到付款</span></p>
 	</div>
 	<div class="discuss">
 		<span class="discuss-title">评论（{{productMsg.pingnum}}）</span>
-		<span class="see-all">查看全部评论</span>
+		<span class="see-all"ng-click="seeAll()">查看全部评论</span>
 	</div>
 	<div class="discuss-cen">
 		<div class="contianers">
@@ -44,7 +44,7 @@
 		<span class="discuss-title">商品介绍</span>
 	</div>
 	<div class="p-introduce">
-		<p>{{productMsg_list.details}}</p>
+		<p ng-bind-html="productMsg_list.details | to_trusted"></p>
 		<img ng-src="http://139.224.222.18:8888/attachs/{{productMsg.pics.photo}}" alt="">
 	</div>
 	<footer class="navbar-fixed-bottom">
@@ -55,6 +55,10 @@
 		<div class="runin" ui-sref="description({shop_id:productMsg_list.shop_id})">
 			<p>进店</p>
 		</div>
-		<div class="addCart" ui-sref="description({goods_id:productMsg_list.shop_id})">加入购物车</div>
+		<div class="addCart" ng-click="addCart()">加入购物车</div>
 		<div class="goPay">立即购买</div>
 	</footer>
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城</div>
+    <div dialog-content>{{err}}</div>
+</dialog>

@@ -86,3 +86,7 @@
 					<button class="subOrder">立即支付</button>
 				</div>
 		</div>
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城</div>
+    <div dialog-content>{{err}}</div>
+</dialog>

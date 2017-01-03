@@ -105,7 +105,7 @@
 					{{shop.juli}}Km
 				</div>
 				<div class="col-sm-12 col-xs-12 shopAddress text-overflow">
-					{{shop.addr}}
+					{{shop.addr|cut}}
 				</div>
 				<div class="col-5">
 					<img src="/assets/img/star.png" alt="" class="star">
@@ -124,3 +124,7 @@
 		</div>
 		<div class="home_shop_nomore clearfix" ng-show='shops.end'>-暂无更多店铺-</div>
 	</div>
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城</div>
+    <div dialog-content>{{err}}</div>
+</dialog>

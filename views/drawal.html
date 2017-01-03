@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/assets/css/drawal.css">
+<div class="row row-one">
+	<div class="col-sm-12 col-xs-12 div-drawal">提现金额</div>
+	<div class="col-sm-12 col-xs-12 div-money">
+		<div class="col-sm-1 col-xs-1">
+			<label for="money">￥</label>
+		</div>
+		<div class="col-sm-8 col-xs-8 text-overflow">
+			<input type="text" id="money" ng-model="money">
+		</div>
+	</div>
+</div>
+<div class="row row-two">
+	<div class="border-tb div-two">
+		<div class="col-sm-8 col-xs-8 yue">可用余额{{12152}}</div>
+		<div class="col-sm-4 col-xs-4 tixian">全部提现</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 border-tb">
+		<label for="person">持卡人</label>
+		<input type="text" id="person" placeholder="姓名" ng-model="person">
+	</div>
+	<div class="col-sm-12 col-xs-12 border-tb">
+		<label for="cardNum">卡号</label>
+		<input type="text" id="cardNum" placeholder="银行卡号" ng-model="cardNum">
+	</div>
+	<div class="col-sm-12 col-xs-12 border-tb">
+		<label for="cardType">卡类型</label>
+		<input type="text" id="cardType" placeholder="用户银行" ng-model="cardType">
+	</div>
+	<div class="col-sm-12 col-xs-12 border-tb">
+		<label for="iphone">手机号</label>
+		<input type="text" id="iphone" placeholder="开户手机号" ng-model="user.mobile">
+	</div>
+	<div class="col-sm-12 col-xs-12 border-tb">
+		<div class="div-yzm">
+			<label for="yzm">校验码</label>
+			<input type="text" id="yzm" placeholder="输入短信校验码" class="yzm" ng-model="yzms">
+		</div>
+		<div class="div-yzms">
+		<div class="line"></div>
+			<getbutton ng-click="getCard()" class="btn-sty"></getbutton>
+		</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 prompt">
+		<span class="promptMsg">小提示:</span>
+		<span>请您认真填写，否则影响提现到账！</span>
+	</div>
+
+</div>
+<div class="row">
+	<div class="col-sm-12 col-xs-12">
+		<button class="btn-submit" ng-click="drawalMoney()" ng-disabled="yzms.length!=6">确认申请</button>
+	</div>
+</div>
+
+
+<dialog ng-if="dialog.open" close="dialog.open=false" duration="2000">
+    <div dialog-content>{{msg}}</div>
+</dialog>

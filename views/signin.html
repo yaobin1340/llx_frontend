@@ -11,9 +11,9 @@
 </div>
 <!-- 表单控件区域 -->
 <div class="form">
-    <input type="text" class="form-control" ng-model="user.mobile" placeholder="请输入手机号">
-    <input type="password" class="form-control" ng-model="user.password" placeholder="请输入密码">
-    <div class="btn-submit" ng-click="signin()">登陆</div>
+    <input type="text" class="form-control" ng-model="user.mobile" placeholder="请输入手机号" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required>
+    <input type="password" class="form-control" ng-model="user.password" placeholder="请输入密码" required>
+    <div class="btn-submit" ng-click="signin()" ng-disabled="user.mobile.length!=11&&user.password.length">登陆</div>
 </div>
 <div class="jump-others">
     <a ui-sref="forgot">忘记密码</a>
@@ -23,3 +23,7 @@
 <div class="telphone">
     <p>服务电话：400-7731377</p>
 </div>
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城</div>
+    <div dialog-content>{{err}}</div>
+</dialog>

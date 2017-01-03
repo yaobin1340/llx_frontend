@@ -1,0 +1,46 @@
+body {
+  font-family: "SimHei";
+  color: #ababab;
+}
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.banner {
+  width: 100%;
+  height: 1.38rem;
+  background-color: #3e9ece;
+}
+.banner img {
+  width: 0.69444444rem;
+  position: absolute;
+  margin-top: 0.35rem;
+  float: left;
+  margin-left: 0.69444444rem;
+}
+.banner p {
+  text-align: center;
+  line-height: 1.38rem;
+  color: #fff;
+  font-size: 0.41666667rem;
+}
+.lines {
+  margin-top: 0.27777778rem;
+  width: 0.83333333rem;
+}
+.div-section {
+  height: 1.38888889rem;
+  border-bottom: 0.02777778rem solid #e5e5e5;
+  line-height: 1.38888889rem;
+  font-size: 0.38888889rem;
+}
+.line {
+  height: 0.33333333rem;
+  background-color: #e5e5e5;
+}
+.phone-color {
+  color: #3e9ece;
+}
+.marbom {
+  margin-bottom: 1.38888889rem;
+}

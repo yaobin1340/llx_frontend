@@ -1,0 +1,30 @@
+body {
+  font-family: "SimHei";
+}
+.bannerMsg {
+  font-family: "方正大黑筒体";
+  font-size: 0.38888889rem;
+  line-height: 0.97222222rem;
+  text-align: center;
+  border-top: 0.11111111rem solid #fafafa;
+  border-bottom: 0.04166667rem solid #e5e5e5;
+}
+.bannerMsg div {
+  height: 0.97222222rem;
+}
+.hr {
+  height: 0.27777778rem;
+  background-color: #fafafa;
+  border-bottom: 0.01388889rem solid #e5e5e5;
+}
+.num {
+  margin-bottom: 0.83333333rem;
+}
+.num div {
+  height: 1.34722222rem;
+  font-size: 0.36111111rem;
+  color: #ababab;
+  text-align: center;
+  line-height: 1.34722222rem;
+  border-bottom: 0.01388889rem solid #e5e5e5;
+}

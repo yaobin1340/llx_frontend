@@ -7,31 +7,37 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-
-        
+        $scope.items=[];
         $http
-				.post($config.api_uri + '/Apiuser/cart/cart_list',{token:'jYqEe46caKuB0H7Ls4WJmrCjyauHmoxmhKl1oQ=='})
+				.post($config.api_uri + '/Apiuser/cart/cart_list',{token:$scope.token})
 				.success(function (data) {
                     if(data.success){
                         $scope.cart_list=data.cart_list;
+                    }else{
+                        $scope.dialog={open: true};
+                        $scope.err=data.error_msg;
                     }
-					
-                    console.log(data);
 				})
 				.error(function (err) {
-					
+                    $scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 
             $scope.delect=function(id){
+                console.log(id);
                 $http
-                .post($config.api_uri + '/Apiuser/cart/cartdel',{card_id:id,token:"jYqEe46caKuB0H7Ls4WJmrCjyauHhISthJl1oQ=="})
+                .post($config.api_uri + '/Apiuser/cart/cartdel',{card_id:id,token:$session.get('auth').token})
                 .success(function (data) {
                     if(data.success){
                         $scope.cart_list=data.cart_list;
+                    }else{
+                        $scope.dialog={open: true};
+                        $scope.err=data.error_msg;
                     }
                 })
                 .error(function (err) {
-                    
+                    $scope.dialog={open: true};
+                    $scope.err = err.error_msg;
                 })
             };
             $scope.goPay=function(){
@@ -55,11 +61,12 @@ angular
                              if(data.success){
                                 $scope.num--;
                              }else{
-                                console.log("修改失败");
+                                $scope.dialog={open: true};
+                                $scope.err=data.error_msg;
                              }
                         })
                         .error(function (err) {
-                          console.log("修改失败");
+                          $scope.err = err.error_msg;
                         })
                 }else{
                     return $scope.num=1;
@@ -72,15 +79,22 @@ angular
                      if(data.success){
                         $scope.num++;
                      }else{
-                        console.log("修改失败");
+                        $scope.dialog={open: true};
+                        $scope.err=data.error_msg;
                      }
                 })
                 .error(function (err) {
-                    console.log("修改失败");
+                    $scope.dialog={open: true};
+                    $scope.err = err.error_msg;
                 })
             }
-
-
+            $scope.totalPrice = function(){
+                var total = 0;
+                for ( var i = 0,len = $scope.items.length;i<len;i++) {
+                    total += $scope . items [ i ]. price * $scope . items [ i ]. quantity;
+                }
+                return total ;
+            }
 
 
 

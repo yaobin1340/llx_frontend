@@ -53,7 +53,7 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in hot_goods_list" ui-sref="product({goods_id:hot_goods.goods_id})">
 					<div class="userProducts">
-						<img ng-src="http://139.224.222.18:8080/attachs/{{hot_goods.photo}}" alt="">
+						<img ng-src="http://139.224.222.18:8888/attachs/{{hot_goods.photo}}" alt="">
 						<p>{{hot_goods.title}}</p>
 						<span class="price">￥{{hot_goods.mall_price}}</span>
 						<span class="show">销量{{hot_goods.sold_num}}</span>
@@ -63,10 +63,11 @@
 		</div>
 		<div class="allDish">
 			<div class="hotBuyTitle">全部商品</div>
+
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="goods in goods_list" ui-sref="product({goods_id:goods.goods_id})">
 					<div class="userProducts">
-						<img ng-src="{{goods.photo}}" alt="">
+						<img ng-src="http://139.224.222.18:8888/attachs/{{goods.photo}}" alt="">
 						<p>{{goods.title}}</p>
 						<span class="price">￥{{goods.mall_price}}</span>
 						<span class="show">销量{{goods.sold_num}}</span>
@@ -86,3 +87,7 @@
 			</div>
 		</div>
 	</footer>
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城</div>
+    <div dialog-content>{{err}}</div>
+</dialog>

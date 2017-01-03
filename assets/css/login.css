@@ -6,24 +6,23 @@ a{
 	text-decoration: none;
 }
 /* banner区域的书写 */
-.banner{
-	width: 100%;
-	height: 1.38rem;
-	background-color: #3e9ece;
+.banner {
+  width: 100%;
+  height: 1.38rem;
+  background-color: #3e9ece;
 }
-.banner img{
-	position: absolute;
-	margin-top: 0.21rem;
-	height: 1rem;
-	float: left;
-	margin-left: 0.694rem;
+.banner img {
+  width: 0.55rem;
+  position: absolute;
+  margin-top: 0.35rem;
+  float: left;
+  margin-left: 0.69444444rem;
 }
-.banner p{
-	text-align: center;
-	line-height: 1.38rem;
-	color: #fff;
-	font-family: "微软雅黑";
-	font-size: 0.6rem;
+.banner p {
+  text-align: center;
+  line-height: 1.38rem;
+  color: #fff;
+  font-size: 0.41666667rem;
 }
 
 /* 中间大图区域 */
@@ -86,7 +85,7 @@ a{
     line-height: 100%;
 }
 .getCard{
-	width: 2.5rem;
+	min-width: 2.5rem;
 	height: 0.8333333333rem;
 	border:1px solid #3e9ece;
 	border-radius: 0.1rem;

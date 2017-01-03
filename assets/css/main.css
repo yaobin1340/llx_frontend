@@ -205,9 +205,6 @@ nav span {
   height: 0.390625rem;
   font-size: 0.406rem;
   margin-top: 0.34rem;
-  text-overflow: ellipsis;
-  word-wrap: nowrap;
-  overflow: hidden;
 }
 .shopDistance {
   font-size: 0.38rem;
@@ -223,9 +220,6 @@ nav span {
   width: 3.28125rem;
   height: 3.125rem;
   margin-top: 0.0625rem;
-  text-overflow: ellipsis;
-  word-wrap: nowrap;
-  overflow: hidden;
 }
 .shopAddress {
   color: #585858;
@@ -236,7 +230,7 @@ nav span {
   background-size: 0.3rem;
   margin-top: 0.2rem;
   overflow: hidden;
-  height: 0.34375rem;
+  height: 0.4rem;
 }
 .star {
   float: left;

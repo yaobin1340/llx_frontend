@@ -12,20 +12,29 @@ angular
 				.success(function (data) {
 					if(data.success){
 						$scope.hot_goods_list = data.goods_list;
+					}else{
+						$scope.dialog={open: true};
+                        $scope.err=data.error_msg;
 					}
-					console.log(data);
 				})
 				.error(function (err) {
-					$scope.apiError = err.error_msg;
+					$scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 
 			$http
 				.post($config.api_uri + '/Apipublic/ApiPshop/goods_list',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
-					$scope.goods_list = data.goods_list;
+					if(data.success){
+						$scope.goods_list = data.goods_list;
+					}else{
+						$scope.dialog={open: true};
+                        $scope.err=data.error_msg;
+					}
 				})
 				.error(function (err) {
-					$scope.apiError = err.error_msg;
+					$scope.dialog={open: true};
+					$scope.err = err.error_msg;
 				})
 
 

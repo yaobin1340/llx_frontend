@@ -6,6 +6,7 @@
 		<img src="/assets/img/552cc14536532_128.png" alt="" onClick="javascript:history.go(-1);">
 		<span>购物车</span>
 	</div>
+	<div class="none" ng-show="!cart_list.length">您的购物车里是空的</div>
 	<div class="products" ng-show="cart_list.length">
 		<div class="productItem" ng-repeat="carts in cart_list" >
 			<img ng-src="{{carts.photo}}" alt="" class="pro-img">
@@ -21,6 +22,10 @@
 
 	<footer class="navbar-fixed-bottom">
 		<img src="/assets/img/img_shopcart.png" alt="">
-		<span>￥8</span>
+		<span>￥{{total}}</span>
 		<div class="goPay" ng-click="goPay()" ui-sref="SubmitOrder">结算</div>
 	</footer>
+<dialog ng-if="dialog.open" close="dialog.open=false">
+    <div dialog-title>拉拉秀商城</div>
+    <div dialog-content>{{err}}</div>
+</dialog>
