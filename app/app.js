@@ -6,6 +6,7 @@ angular.module( 'ohapp',
         'ui.bootstrap',
         'ohRoutes',
         'ohConfig',
+        'ohConfig2',
         'infinite-scroll',
         'angular-popups'
     ]
@@ -101,7 +102,6 @@ angular.module( 'ohapp',
                 scope.timeout = 60000;
                 scope.timerCount = scope.timeout / 1000;
                 scope.text = "获取验证码";
-
                 scope.getYzm = function(){
                     scope.showTimer = true;
                     scope.timer = true;
@@ -115,6 +115,7 @@ angular.module( 'ohapp',
                         scope.timer = false;
                         $interval.cancel(counter);
                         scope.showTimer = false;
+
                         scope.timerCount = scope.timeout / 1000;
                     }, scope.timeout);
                 }

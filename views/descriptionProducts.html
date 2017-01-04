@@ -102,11 +102,11 @@
 				<div class="userPhoto">
 					<div class="row">
 						<div class="col-md-4" ng-repeat="photo in pics.pic">
-							<img ng-src="{{userContent.pic}}" alt="">
+							<img ng-src="{{userContent.pic}}" alt="shibai">
 						</div>
 					</div>
 				</div>
-				<div class="BusinessRe">{{userContent.reply}}</div>
+				<div class="BusinessRe" ng-if="userContent.reply.length>0"><span>商家回复：</span>{{userContent.reply}}</div>
 				<div class="user-like">
 					<span>赞{{7088}}</span>
 					<button ng-click="">赞</button>

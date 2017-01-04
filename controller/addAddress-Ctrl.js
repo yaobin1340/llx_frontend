@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'AccountCtrl', function AccountCtrl( $scope, $injector, $rootScope) {
+    .controller( 'addAddressCtrl', function addAddressCtrl( $scope, $injector, $rootScope) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );

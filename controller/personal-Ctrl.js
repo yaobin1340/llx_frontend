@@ -5,11 +5,10 @@ angular
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
         var $timeout = $injector.get( '$timeout' );
-        var $config = $injector.get( '$config' );
+        var $config = $injector.get( '$config2' );
         var $session = $injector.get('$session');
         if(!$session.get('auth').token){
-               $scope.dialog={open: true};
-               $scope.showup=0;
+               $scope.showup=0;return;
         }else{
             $scope.showup=1;
             $http
@@ -18,22 +17,22 @@ angular
                     if(data.success){
                         $scope.userMsg=data;
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $scope.dialog2={open: true};
+                        $scope.err="登陆失败";
                     }
                 })
                 .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
+                    $scope.dialog2={open: true};
+                    $scope.err = "登陆失败";
                 })
          }
         $scope.exit = function(){
             $session.purge('auth');
-
-            // if(!$session.get('auth').token){
-            //     $scope.dialog={open: true};
-            //     $scope.err="退出成功";
-            // }
+            if(!$session.get('auth').token){
+                window.location.reload();
+                $scope.dialog2={open: true};
+                $scope.err="退出成功";
+            }
         }
 
 

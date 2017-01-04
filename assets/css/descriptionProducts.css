@@ -138,7 +138,6 @@ body {
   display: inline-block;
 }
 .commentMsg .contentText {
-  height: 1.38888889rem;
   font-size: 0.41666667rem;
   line-height: 0.625rem;
 }
@@ -177,4 +176,11 @@ body {
   background-color: #fff;
   background: url("/assets/img/xin.png") no-repeat 0.20833333rem -0.04166667rem;
   background-size: 0.83333333rem;
+}
+.BusinessRe {
+  padding: 0.2rem;
+  background-color: #e5e5e5;
+}
+.BusinessRe span {
+  color: #3e9ece;
 }

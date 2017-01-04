@@ -9,7 +9,7 @@ angular
         var $session = $injector.get('$session');
         $scope.items=[];
         $http
-				.post($config.api_uri + '/Apiuser/cart/cart_list',{token:$scope.token})
+				.post($config.api_uri + '/Apiuser/cart/cart_list')
 				.success(function (data) {
                     if(data.success){
                         $scope.cart_list=data.cart_list;
