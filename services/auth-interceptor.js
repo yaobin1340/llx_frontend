@@ -4,7 +4,6 @@ angular
     return {
       request: function (response) {
         var token = $session.get('auth').token
-
         var ignoreUrl = [
               '//maps.googleapis.com/maps/api/geocode/json'
         ]
