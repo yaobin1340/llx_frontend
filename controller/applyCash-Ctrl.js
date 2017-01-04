@@ -18,11 +18,11 @@ angular
                 break;
                 case 2 :
                 $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
-                drawal();
+                journal();
                 break;
                 case 3 :
                 $scope.chose1=0;$scope.chose2=0;$scope.chose3=1;
-                journal();
+                drawal();
                 break;
             }
         }
@@ -32,25 +32,21 @@ angular
             $scope.soso = function(){
                 $scope.beDate=$("#beginTime").val();
                 $scope.endDate=$("#endTime").val();
-                if($scope.beDate&&$scope.endDate){
                     $http
-                    .post($config.api_uri + '/Apiuser/Money/detail',{bg_data:$scope.beDate,end_data:$scope.endDate})
+                    .post($config.api_uri + '/Apiuser/Money/detail',{bg_date:$scope.beDate,end_date:$scope.endDate})
                     .success(function (data) {
                         if(data.success){
-                            $scope.money = data;
+                            $scope.money = data.list;
                         }else{
                             $scope.dialog={open: true};
                             $scope.err=data.error_msg;
                         }
+                        console.log(data);
                     })
                     .error(function (err) {
                         $scope.dialog={open: true};
                         $scope.err = err.error_msg;
                     })
-                }else{
-                    $scope.dialog={open: true};
-                    $scope.err = "您输入的信息有误";
-                }
             }
         }
         function drawal(){
@@ -98,6 +94,7 @@ angular
                     }else{
                         
                     }
+                    console.log(data);
                 })
                 .error(function (err) {
                     

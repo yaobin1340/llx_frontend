@@ -13,7 +13,7 @@
 <div class="form">
     <input type="text" class="form-control" ng-model="user.mobile" placeholder="请输入手机号" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required>
     <input type="password" class="form-control" ng-model="user.password" placeholder="请输入密码" required>
-    <div class="btn-submit" ng-click="signin()" ng-disabled="user.mobile.length!=11&&user.password.length">登陆</div>
+    <div class="btn-submit" ng-click="signin()" ng-disabled="user.mobile.length!=11||user.password==undefined">登陆</div>
 </div>
 <div class="jump-others">
     <a ui-sref="forgot">忘记密码</a>

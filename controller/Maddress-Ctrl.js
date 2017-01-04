@@ -1,11 +1,11 @@
 angular
     .module( 'ohapp' )
-    .controller( 'AccountCtrl', function AccountCtrl( $scope, $injector, $rootScope) {
+    .controller( 'MaddressCtrl', function MaddressCtrl( $scope, $injector, $rootScope) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
         var $timeout = $injector.get( '$timeout' );
-        var $config = $injector.get( '$config2' );
+        var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
 	
 

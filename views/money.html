@@ -15,11 +15,12 @@
 <div class="row mar-bo">
 	<div class="col-sm-12 col-xs-12" ng-repeat="m in money">
 		<div class="moneyMsg">
-			<p>说明：{{m.list.info}}</p>
-			<p>资金：{{m.list.gold}}</p>
-			<p>时间：{{m.list.create_time}}</p>
+			<p>说明：{{m.intro}}</p>
+			<p>资金：{{m.gold}}</p>
+			<p>时间：{{m.create_time*1000|date:'yyyy-MM-dd'}}</p>
 		</div>
 	</div>
+	<div ng-if="money==null" class="nullMoney">当前日期内暂无资金日志</div>
 </div>
 <dialog ng-if="dialog.open" duration="1500" close="dialog.open=false">
     <div dialog-content>{{err}}</div>
@@ -28,6 +29,5 @@
 	$(function(){  
     	$('#beginTime').date();
     	$('#endTime').date();
-    	
     }); 
 </script>

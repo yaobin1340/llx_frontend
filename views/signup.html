@@ -16,7 +16,7 @@
 	</div>
 	<input type="password" class="form-control" placeholder="请输入密码" ng-model="pwd1">
 	<input type="password" class="form-control" placeholder="重复输入密码" ng-model="pwd2">
-	<div class="btn-submit" ng-click="signup()" ng-disabled="cards.length!=6&&pwd1==pwd2">注册</div>
+	<div class="btn-submit" ng-click="signup()" ng-disabled="cards.length!=6||pwd1!=pwd2||pwd1==undefined||pwd2==undefined">注册</div>
 </div>
 <div class="telphone">
 	<p>服务电话：400-7731377</p>

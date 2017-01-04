@@ -96,3 +96,8 @@ input::-moz-placeholder {
   font-size: 0.38888889rem;
   line-height: 0.55555556rem;
 }
+.nullMoney {
+  font-size: 0.38888889rem;
+  text-align: center;
+  line-height: 0.69444444rem;
+}

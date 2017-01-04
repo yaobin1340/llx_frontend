@@ -16,7 +16,7 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		$http({
 			method: 'POST',
 			url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
-			data: {lng:121.547502,lat:31.227906,page:this.page},
+			data: {lng:121.547502,lat:35.227906,page:this.page},
 		}).success(function (data) {
 			if (data.success) {
 				if(data.shop_list==null||!data.shop_list.length){

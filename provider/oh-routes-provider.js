@@ -86,6 +86,26 @@ angular
         templateUrl : 'views/changePwd.html',
         controller:'changePwdCtrl'
     };
+    this.routes['Maddress'] = {
+        url : '/Maddress',
+        templateUrl : 'views/Maddress.html',
+        controller:'MaddressCtrl'
+    };
+    this.routes['addAddress'] = {
+        url : '/addAddress',
+        templateUrl : 'views/addAddress.html',
+        controller:'addAddressCtrl'
+    };
+    this.routes['chaAddress'] = {
+        url : '/chaAddress',
+        templateUrl : 'views/chaAddress.html',
+        controller:'chaAddressCtrl'
+    };
+    this.routes['updataTotal'] = {
+        url : '/updataTotal',
+        templateUrl : 'views/updataTotal.html',
+        controller:'updataTotalCtrl'
+    };
     
     this.$get = function()
     {

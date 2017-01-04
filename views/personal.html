@@ -38,11 +38,11 @@
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_zhanghuguanli.png" alt="">
 		</div>
-		<div class="col-sm-9 col-xs-9" ui-sref="Account">
+		<div class="col-sm-9 col-xs-9">
 			账户管理
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines">
+			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="Account">
 		</div>
 	</div>
 	<div class="bgs"></div>
@@ -50,11 +50,11 @@
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_zijinguanli.png" alt="">
 		</div>
-		<div class="col-sm-9 col-xs-9" ui-sref="applyCash" >
+		<div class="col-sm-9 col-xs-9">
 			资金管理
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines">
+			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="applyCash" >
 		</div>
 	</div>
 	<div class="bgs"></div>
@@ -147,8 +147,6 @@
 			<button class="subOrder" ng-click="exit()">退出登录</button>
 		</div>
 	</div>
-<dialog ng-if="dialog.open" close="dialog.open=false">
-    <div dialog-title>拉拉秀商城提醒您</div>
-    <div dialog-content>您还没有登陆，是否现在登陆?</div>
-    <div dialog-buttons><button autofocus ui-sref="signin" ng-click="$close()">确定</button><button ng-click="$close()">取消</button></div>
+<dialog ng-if="dialog2.open" duration="2000" close="dialog2.open=false">
+    <div dialog-content>{{err}}</div>
 </dialog>
