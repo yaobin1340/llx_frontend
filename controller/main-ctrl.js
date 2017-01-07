@@ -12,6 +12,7 @@ angular
 	        $scope.changeImg = function(data){
 	        	$scope.num=data;
 	        }
+            console.log($scope.num);
 
 
 

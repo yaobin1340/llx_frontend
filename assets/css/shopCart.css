@@ -11,6 +11,7 @@ body {
   height: 1.40277778rem;
   background-color: #3e96c1;
   color: white;
+  border-bottom: 0.02777778rem solid #c6c6c6;
 }
 .banner img {
   float: left;
@@ -29,7 +30,6 @@ body {
 }
 .products {
   height: 2.77777778rem;
-  border-top: 0.02777778rem solid #c6c6c6;
   border-bottom: 0.02777778rem solid #c6c6c6;
   margin: 0.13888889rem 0;
 }
@@ -91,6 +91,7 @@ body {
   color: #3e96c1;
 }
 footer {
+  position: relative;
   height: 1.30555556rem;
   border-top: 0.02777778rem solid #c6c6c6 !important;
 }
@@ -117,4 +118,18 @@ footer .goPay {
   font-size: 0.41666667rem;
   line-height: 1.30555556rem;
   background-color: #3e96c1;
+}
+.cir {
+  position: absolute;
+  left: 0.55555556rem;
+  top: 0.13888889rem;
+  text-align: center;
+  font-size: 0.38888889rem;
+  line-height: 0.55555556rem;
+  width: 0.55555556rem;
+  height: 0.55555556rem;
+  border: 0.01388889rem solid #ea6200;
+  border-radius: 50%;
+  background-color: #ea6200;
+  color: #fff;
 }

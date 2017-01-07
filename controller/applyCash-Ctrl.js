@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'applyCashCtrl', function applyCashCtrl( $scope, $injector, $rootScope) {
+    .controller( 'applyCashCtrl', function applyCashCtrl( $scope, $injector, $rootScope,journals) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -18,38 +18,33 @@ angular
                 break;
                 case 2 :
                 $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
-                journal();
+                $scope.journal();
                 break;
                 case 3 :
                 $scope.chose1=0;$scope.chose2=0;$scope.chose3=1;
-                drawal();
+                $scope.drawal();
                 break;
             }
         }
 
-
-        function money(){
+$(window).scroll(function(){
+　　var scrollTop = $(this).scrollTop();
+　　var scrollHeight = $(document).height();
+　　var windowHeight = $(this).height();
+　　if(scrollTop + windowHeight == scrollHeight){
+　　　　
+        $scope.page++;$scope.leadMore();
+　　}
+});
+       function money(){
+            $scope.arr=[];
+            $scope.page=1;
             $scope.soso = function(){
-                $scope.beDate=$("#beginTime").val();
-                $scope.endDate=$("#endTime").val();
-                    $http
-                    .post($config.api_uri + '/Apiuser/Money/detail',{bg_date:$scope.beDate,end_date:$scope.endDate})
-                    .success(function (data) {
-                        if(data.success){
-                            $scope.money = data.list;
-                        }else{
-                            $scope.dialog={open: true};
-                            $scope.err=data.error_msg;
-                        }
-                        console.log(data);
-                    })
-                    .error(function (err) {
-                        $scope.dialog={open: true};
-                        $scope.err = err.error_msg;
-                    })
-            }
+            $scope.arr=[];
+            $scope.page=1;
+            $scope.leadMore()
         }
-        function drawal(){
+        $scope.drawal = function(){
             $scope.getCard = function(){
             $http
                 .post($config.api_uri + '/Apiuser/Money/sendsms')
@@ -85,32 +80,37 @@ angular
                 })   
             }
         }
-        function journal(){
-             $http
-                .post($config.api_uri + '/Apiuser/Money/cashlogs')
-                .success(function (data) {
-                    if(data.success){
-                        $scope.journal=data.list;
-                    }else{
-                        
-                    }
-                    console.log(data);
-                })
-                .error(function (err) {
-                    
-                })   
+        $scope.journal=function(){
+            $scope.scroll_switch = 1;
+            $scope.journals = new journals(); 
         }
 
-
-
-
-
-
-
-
-
-
-
+        $scope.leadMore =function(){
+            $scope.beDate=$("#beginTime").val();
+            $scope.endDate=$("#endTime").val();
+                    $http
+                    .post($config.api_uri + '/Apiuser/Money/detail',{bg_date:$scope.beDate,end_date:$scope.endDate,page:$scope.page})
+                    .success(function (data) {
+                        if(data.success){
+                            if(data.list==null||!data.list.length){
+                                $scope.noLead=1;
+                                return
+                            }
+                             var items = data.list;
+                              for (var i = 0; i < items.length; i++) {
+                                $scope.arr.push(items[i]);
+                            }
+                        }else{
+                            $scope.dialog={open: true};
+                            $scope.err=data.error_msg;
+                        }
+                    })
+                    .error(function (err) {
+                        $scope.dialog={open: true};
+                        $scope.err = err.error_msg;
+                    })
+            }
+        }
 
 
     });

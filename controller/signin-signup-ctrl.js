@@ -33,6 +33,7 @@ angular
 					if(data.success){
 						$rootScope.$isLogin = true;
 						$session.set('auth', data)
+						$session.set('phone', $scope.user.mobile)
 						$session.save()
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName
@@ -56,6 +57,7 @@ angular
 					if(data.success){
 						$rootScope.$isLogin = true;
 						$session.set('auth', data)
+						$session.set('phone', $scope.user.mobile)
 						$session.save()
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName
@@ -95,11 +97,12 @@ angular
 			// }
 
 			$http
-				.post($config.api_uri + '/Apipublic/Apilogin/save_user',{mobile:$scope.user.mobile,password:$scope.user.password})
+				.post($config.api_uri + '/Apipublic/Apilogin/save_user',{mobile:$scope.user.mobile,password:$scope.pwd1})
 				.success(function (data) {
 					if(data.success){
 						$rootScope.$isLogin = true;
 						$session.set('auth', data)
+						$session.set('phone', $scope.user.mobile)
 						$session.save()
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName

@@ -19,21 +19,25 @@ angular
                     }
 				})
 				.error(function (err) {
-                    $scope.dialog={open: true};
-					$scope.err = err.error_msg;
+                
 				})
 
             $scope.delect=function(id){
-                console.log(id);
                 $http
-                .post($config.api_uri + '/Apiuser/cart/cartdel',{card_id:id,token:$session.get('auth').token})
+                .post($config.api_uri + '/Apiuser/cart/cartdel',{card_id:id})
                 .success(function (data) {
                     if(data.success){
-                        $scope.cart_list=data.cart_list;
+                        angular.forEach($scope.cart_list,function(item, index){
+                            if(item.cart_id==id){
+                                $scope.cart_list.splice(index, 1);
+                                return;
+                            }
+                        })
                     }else{
                         $scope.dialog={open: true};
                         $scope.err=data.error_msg;
                     }
+                    console.log(data);
                 })
                 .error(function (err) {
                     $scope.dialog={open: true};
@@ -41,60 +45,69 @@ angular
                 })
             };
             $scope.goPay=function(){
-
-                $rootScope.$page = 'SubmitOrder'
+                angular.forEach($scope.cart_list, function (item) {
+                    $scope.items.push(item.cart_id);
+                });
+                $state.go('payment', {shopcartId: $scope.items});
             };
-     
-            $scope.only_number = function(a) {
-                var num=parseInt(a.replace(/\D/g, ''));
-                if(num>=1){
-                    $scope.num=num;
-                }else{
-                    $scope.num=1;
-                }
-            };
-            $scope.remo=function(){
-                if($scope.num>1){
+            
+            // $scope.only_number = function(data) {
+            //     num=a.replace(/\D/g,'');
+            //     if(num>=1){
+            //         $scope.num=num;
+            //     }else{
+            //         $scope.num=1;
+            //     }
+            // };
+            $scope.remo=function(id){
+                if(id.cart_num>1){
                     $http
-                        .post($config.api_uri + '/Apiuser/cart/cartedit',{card_id:16,token:$scope.token,num:$scope.num-1})
+                        .post($config.api_uri + '/Apiuser/cart/cartedit',{card_id:id.cart_id,num:id.cart_num-1})
                         .success(function (data) {
                              if(data.success){
-                                $scope.num--;
+                                id.cart_num--;
                              }else{
                                 $scope.dialog={open: true};
                                 $scope.err=data.error_msg;
                              }
+                             console.log(data);
                         })
                         .error(function (err) {
                           $scope.err = err.error_msg;
                         })
                 }else{
-                    return $scope.num=1;
+                    return id.cart_num=1;
                 }
             }
-            $scope.add=function(){
+            $scope.add=function(id){
                 $http
-                .post($config.api_uri + '/Apiuser/cart/cartedit',{card_id:16,token:$scope.token,num:$scope.num+1})
+                .post($config.api_uri + '/Apiuser/cart/cartedit',{card_id:id.cart_id,num:id.cart_num+1})
                 .success(function (data) {
                      if(data.success){
-                        $scope.num++;
+                        id.cart_num++;
                      }else{
                         $scope.dialog={open: true};
                         $scope.err=data.error_msg;
                      }
+                     console.log(data);
                 })
                 .error(function (err) {
                     $scope.dialog={open: true};
                     $scope.err = err.error_msg;
                 })
             }
-            $scope.totalPrice = function(){
-                var total = 0;
-                for ( var i = 0,len = $scope.items.length;i<len;i++) {
-                    total += $scope . items [ i ]. price * $scope . items [ i ]. quantity;
-                }
-                return total ;
-            }
+           $scope.getTotalAmount = function () {
+                var totalAmount = 0;
+                angular.forEach($scope.cart_list, function (item, index, array) {
+                    totalAmount += parseInt(item.cart_num);  });
+                    return (totalAmount>99?"99+":totalAmount);
+             };
+             $scope.getTotalPrice = function () {
+                var totalPrice = 0;
+                angular.forEach($scope.cart_list, function (item, index, array) {
+                    totalPrice += item.mall_price * item.cart_num;  });
+                    return totalPrice;
+             };
 
 
 

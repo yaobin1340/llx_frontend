@@ -1,10 +1,10 @@
 body {
   font-family: "SimHei";
-  background-color: #e5e5e5;
+  background-color: #eff0eb;
 }
 .row {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
 }
 .row div {
   background-color: #fff;
@@ -84,7 +84,7 @@ body {
   height: 1.33333333rem;
   font-size: 0.38888889rem;
   line-height: 1.30555556rem;
-  border-bottom: 0.02777778rem solid #e5e5e5;
+  border-bottom: 0.02777778rem solid #eff0eb;
 }
 .row input {
   outline: none;
@@ -114,7 +114,7 @@ textarea {
   text-align: left;
 }
 .default {
-  border-top: 0.23611111rem solid #e5e5e5;
+  border-top: 0.23611111rem solid #eff0eb;
 }
 .default a {
   color: #ed3331;

@@ -9,19 +9,19 @@
 	<img src="/assets/img/top-banner.png" alt="banner">
 </div>
 <div class="form">
-	<input type="text" class="form-control" placeholder="请输入手机号" ng-model="user.mobile" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required>
+	<input type="text" class="form-control phone" placeholder="请输入手机号" ng-model="user.mobile" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required>
 	<div class="card">
-		<input type="text" class="form-control" placeholder="请输入验证码" ng-model="cards" ng-maxlength="6" required>
+		<input type="text" class="form-control phone2" placeholder="请输入验证码" ng-model="cards" ng-maxlength="6" required>
 		<timerbutton ng-click="getCard()"></timerbutton>
 	</div>
-	<input type="password" class="form-control" placeholder="请输入密码" ng-model="pwd1">
-	<input type="password" class="form-control" placeholder="重复输入密码" ng-model="pwd2">
+	<input type="password" class="form-control pwd" placeholder="请输入密码" ng-model="pwd1">
+	<input type="password" class="form-control pwd2" placeholder="重复输入密码" ng-model="pwd2">
 	<div class="btn-submit" ng-click="signup()" ng-disabled="cards.length!=6||pwd1!=pwd2||pwd1==undefined||pwd2==undefined">注册</div>
 </div>
 <div class="telphone">
 	<p>服务电话：400-7731377</p>
 </div>
-<dialog ng-if="dialog.open" close="dialog.open=false">
+<dialog ng-if="dialog.open" close="dialog.open=false" close-action="esc outerchick">
     <div dialog-title>拉拉秀商城</div>
     <div dialog-content>{{err}}</div>
 </dialog>

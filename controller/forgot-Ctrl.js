@@ -14,7 +14,7 @@ angular
 
         $scope.getCards=function(){
         	$http
-        		.post($config.api_uri + '/Apipublic/Apilogin/resetpw_yzm',$scope.phone)
+        		.post($config.api_uri + '/Apipublic/Apilogin/resetpw_yzm',{mobile:$scope.phone})
         		.success(function(data){
                     if(data.success){
                         $scope.yzm=data.yzm;
@@ -35,7 +35,7 @@ angular
         		return;
         	}
         	$http
-        		.post($config.api_uri + '/Apipublic/Apilogin/resetpw',{mobile:$scope.phone,Npassword:$scope.Npassword})
+        		.post($config.api_uri + '/Apipublic/Apilogin/resetpw',{mobile:$scope.phone,Npassword:$scope.password})
         		.success(function(data){
                     if(data.success){
                         $state.go('signin');

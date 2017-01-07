@@ -197,6 +197,7 @@ nav span {
 /* 附近商店 */
 .nearShop {
   height: 3.28rem;
+  width: 60%;
 }
 .top-titlemap {
   height: 0.85rem;
@@ -257,15 +258,13 @@ nav span {
   font-size: 0.35rem;
   line-height: 0.45rem;
 }
-.marbtm {
-  margin-bottom: 3.8rem;
-}
 .home_shop_nomore {
   width: 100%;
   height: 1.5625rem;
   text-align: center;
   line-height: 1.5625rem;
   font-size: 0.45rem;
+  margin-bottom: 1.5625rem;
 }
 /* 固定在底部的样式 */
 footer {

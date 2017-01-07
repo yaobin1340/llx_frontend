@@ -97,9 +97,9 @@
 	<div class="row marbtm clearfix"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shop.busy' infinite-scroll-distance='1' >
 		<div ng-repeat="shop in shops.items" ui-sref="smallShop({shop_id:shop.shop_id})">
 			<div class="col-md-4 col-sm-4 col-xs-4">
-				<img ng-src="/assets/img/11748057_141932278338_2.jpg" alt="" class="pro-photo">
+				<img ng-src="http://wap.51loveshow.com/attachs/{{shop.photo}}" alt="" class="pro-photo">
 			</div>
-			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop border-t-p">
+			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
 				<div class="col-sm-9 col-xs-9 div-name text-overflow">{{shop.shop_name}}</div>
 				<div class="col-sm-3 col-xs-3 shopDistance">
 					{{shop.juli}}Km
@@ -122,9 +122,9 @@
 				</div>
 			</div>
 		</div>
-		<div class="home_shop_nomore clearfix" ng-show='shops.end'>-暂无更多店铺-</div>
 	</div>
-<dialog ng-if="dialog.open" close="dialog.open=false">
+	<div class="home_shop_nomore" ng-show='shops.end'>-暂无更多店铺-</div>
+<dialog ng-if="dialog.open" close="dialog.open=false"  close-action="esc outerchick">
     <div dialog-title>拉拉秀商城</div>
     <div dialog-content>{{err}}</div>
 </dialog>

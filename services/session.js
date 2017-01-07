@@ -34,6 +34,7 @@ angular
         if (key) {
           delete this.data[key]
           delete $window.localStorage[key]
+          $window.localStorage.clear() //修改
         } else {
           this.data = {}
           $window.localStorage.clear()

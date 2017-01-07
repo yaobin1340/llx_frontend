@@ -25,7 +25,8 @@ body {
 }
 .menu {
   height: 0.97222222rem;
-  border-bottom: 0.02777778rem solid #e5e5e5;
+  border-bottom: 0.02777778rem solid #eff0eb;
+  background-color: #fff;
 }
 .menu div {
   height: 0.95833333rem;

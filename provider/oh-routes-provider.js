@@ -62,7 +62,7 @@ angular
         controller:'SubmitOrder'
     };
     this.routes['payment'] = {
-        url : '/payment',
+        url : '/payment?shopcartId',
         templateUrl : 'views/payment.html',
         controller:'paymentCtrl'
     };
@@ -70,6 +70,11 @@ angular
         url : '^/personal',
         templateUrl : 'views/personal.html',
         controller:'personalCtrl'
+    };
+    this.routes['main.information'] = {
+        url : '^/information',
+        templateUrl : 'views/information.html',
+        controller:'informationCtrl'
     };
      this.routes['applyCash'] = {
         url : '/applyCash',
@@ -106,6 +111,37 @@ angular
         templateUrl : 'views/updataTotal.html',
         controller:'updataTotalCtrl'
     };
+    this.routes['Mycart'] = {
+        url : '/Mycart',
+        templateUrl : 'views/Mycart.html',
+        controller:'MycartCtrl'
+    };
+    this.routes['choseAddress'] = {
+        url : '/choseAddress',
+        templateUrl : 'views/choseAddress.html',
+        controller:'choseAddressCtrl'
+    };
+    this.routes['nickname'] = {
+        url : '/nickname',
+        templateUrl : 'views/nickname.html',
+        controller:'nicknameCtrl'
+    };
+    this.routes['IndentMsg'] = {
+        url : '/IndentMsg?order_id',
+        templateUrl : 'views/IndentMsg.html',
+        controller:'IndentMsgCtrl'
+    };
+    this.routes['preferential'] = {
+        url : '/preferential',
+        templateUrl : 'views/preferential.html',
+        controller:'preferentialCtrl'
+    };
+     this.routes['Opinion'] = {
+        url : '/Opinion',
+        templateUrl : 'views/Opinion.html',
+        controller:'OpinionCtrl'
+    };
+
     
     this.$get = function()
     {

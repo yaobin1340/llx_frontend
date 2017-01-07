@@ -8,12 +8,12 @@
 		<div class="banner-right"></div>
 		<img src="/assets/img/img_mine_msg_icon.png" alt="" class="share">
 		<div class="personal-img">
-			<img src="{{userMsg.face}}" alt="" ng-show="{{showup}}">
+			<img src="http://106.14.57.99:8888/attachs/{{userMsg.face}}" alt="" ng-show="{{showup}}">
 			<div ng-hide="{{showup}}" class="sign">
 				<a ui-sref="signin">登陆</a>/<a ui-sref="signup">注册</a>
 			</div>
 		</div>
-		<div class="personal-name">
+		<div class="personal-name" ui-sref="nickname">
 			{{userMsg.nickname}}
 		</div>
 		<div class="personMsg">
@@ -57,18 +57,21 @@
 			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="applyCash" >
 		</div>
 	</div>
-	<div class="bgs"></div>
-	<div class="row">
-		<div class="col-sm-1 col-xs-1">
-			<img src="/assets/img/img_mine_guanliwodeshangjia.png" alt="">
-		</div>
-		<div class="col-sm-9 col-xs-9">
-			管理我的商家<span>(天天海鲜)</span>
-		</div>
-		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines">
+	<div ng-if="userMsg.shopflag==2">
+		<div class="bgs"></div>
+		<div class="row">
+			<div class="col-sm-1 col-xs-1">
+				<img src="/assets/img/img_mine_guanliwodeshangjia.png" alt="">
+			</div>
+			<div class="col-sm-9 col-xs-9">
+				管理我的商家<span>(天天海鲜)</span>
+			</div>
+			<div class="col-sm-2 col-xs-2 text-right">
+				<img src="/assets/img/line.png" alt="" class="lines">
+			</div>
 		</div>
 	</div>
+	
 	<div class="bgs"></div>
 	<div class="row">
 		<div class="col-sm-1 col-xs-1">
@@ -78,7 +81,7 @@
 			我的订单
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines">
+			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="Mycart">
 		</div>
 	</div>
 	<div class="bgs"></div>
@@ -102,7 +105,7 @@
 			我的优惠卡
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines">
+			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="preferential">
 		</div>
 	</div>
 	<div class="bgs"></div>
@@ -147,6 +150,6 @@
 			<button class="subOrder" ng-click="exit()">退出登录</button>
 		</div>
 	</div>
-<dialog ng-if="dialog2.open" duration="2000" close="dialog2.open=false">
+<dialog ng-if="dialog2.open" duration="2000" close="dialog2.open=false"  close-action="esc outerchick">
     <div dialog-content>{{err}}</div>
 </dialog>

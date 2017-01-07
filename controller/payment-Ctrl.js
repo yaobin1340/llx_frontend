@@ -1,19 +1,15 @@
 angular
     .module( 'ohapp' )
-    .controller( 'paymentCtrl', function paymentCtrl( $scope, $injector, $rootScope) {
+    .controller( 'paymentCtrl', function paymentCtrl( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-
-        if(!$session.get('auth').token){
-               $scope.dialog={open: true};
-               $scope.err="请先登录";
-        }else{
+        console.log($stateParams.shopcartId)
             $http
-    				.post($config.api_uri + '/Apiuser/cart/cartedit',{token:$session.get('auth').token})
+    				.post($config.api_uri + '/Apiuser/cart/cartedit',{cart_id:$stateParams.shopcartId})
     				.success(function (data) {
                         if(data.success){
                             
@@ -21,14 +17,12 @@ angular
                             $scope.dialog={open: true};
                             $scope.err=data.error_msg;
                         }
-    					
+    					console.log(data);
     				})
     				.error(function (err) {
                         $scope.dialog={open: true};
     					$scope.err = err.error_msg;
     				})
-
-                }
 
 
 

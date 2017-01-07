@@ -7,25 +7,25 @@
 		<span>购物车</span>
 	</div>
 	<div class="none" ng-show="!cart_list.length">您的购物车里是空的</div>
-	<div class="products" ng-show="cart_list.length">
-		<div class="productItem" ng-repeat="carts in cart_list" >
-			<img ng-src="{{carts.photo}}" alt="" class="pro-img">
+	<div class="products" ng-show="cart_list.length"ng-repeat="carts in cart_list">
+		<div class="productItem"  >
+			<img ng-src="http://wap.51loveshow.com/attachs/{{carts.photo}}" alt="" class="pro-img">
 				<p  class="pro-title">{{carts.title}}</p>
 				<span class="price-one">单价：￥{{carts.mall_price}}</span>
-				<span class="price-all">合计：<span  class="price-one">￥{{carts.mall_price*num}}</span></span><br>
-				<button ng-click="remo()">-</button><input type="text" ng-model="num" ng-keyup="only_number(num)"><button class="btn-add" ng-click="add()">+</button>
-			<div ng-click="delect(carts.cart_id)" class="delect-div">
+				<span class="price-all">合计：<span  class="price-one">￥{{carts.mall_price*carts.cart_num}}</span></span><br>
+				<button ng-click="remo(carts)">-</button><input type="text" ng-model="carts.cart_num"><button class="btn-add" ng-click="add(carts)">+</button>
+			<div ng-click="delect(carts.cart_id)"  class="delect-div">
 				<img src="/assets/img/img_delete.png" alt="" class="delect">
 			</div>
 		</div>
 	</div>
-
-	<footer class="navbar-fixed-bottom">
+	<footer class="navbar-fixed-bottom" style="background-color: #fff;">
+	<div class="cir">{{getTotalAmount()}}</div>
 		<img src="/assets/img/img_shopcart.png" alt="">
-		<span>￥{{total}}</span>
-		<div class="goPay" ng-click="goPay()" ui-sref="SubmitOrder">结算</div>
+		<span>￥{{getTotalPrice()}}</span>
+		<div class="goPay" ng-click="goPay()">结算</div>
 	</footer>
-<dialog ng-if="dialog.open" close="dialog.open=false">
+<dialog ng-if="dialog.open" close="dialog.open=false" close-action="esc outerchick">
     <div dialog-title>拉拉秀商城</div>
     <div dialog-content>{{err}}</div>
 </dialog>

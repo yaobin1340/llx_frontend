@@ -55,7 +55,7 @@
   margin-top: 0.33333333rem;
   width: 4.51388889rem;
   height: 0.97222222rem;
-  border: 0.02777778rem solid #e5e5e5;
+  border: 0.02777778rem solid #eff0eb;
   border-radius: 0.13888889rem;
   font-size: 0.38888889rem;
   text-indent: 0.41666667rem;
@@ -72,7 +72,7 @@ input::-moz-placeholder {
 .bgc {
   height: 3.19444444rem;
   background-color: #fafafa;
-  border-bottom: 0.02777778rem solid #e5e5e5;
+  border-bottom: 0.02777778rem solid #eff0eb;
 }
 .soso {
   width: 100%;
@@ -90,7 +90,7 @@ input::-moz-placeholder {
 }
 .moneyMsg {
   padding: 0.27777778rem 0;
-  border-bottom: 0.02777778rem solid #e5e5e5;
+  border-bottom: 0.02777778rem solid #eff0eb;
 }
 .moneyMsg p {
   font-size: 0.38888889rem;

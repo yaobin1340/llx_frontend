@@ -1,10 +1,10 @@
 body {
   font-family: "SimHei";
-  color: #ababab;
+  color: #7f8180;
 }
 .row {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
 }
 .banner {
   width: 100%;
@@ -30,13 +30,13 @@ body {
 }
 .div-section {
   height: 1.38888889rem;
-  border-bottom: 0.02777778rem solid #e5e5e5;
+  border-bottom: 0.02777778rem solid #eff0eb;
   line-height: 1.38888889rem;
   font-size: 0.38888889rem;
 }
 .line {
   height: 0.33333333rem;
-  background-color: #e5e5e5;
+  background-color: #eff0eb;
 }
 .phone-color {
   color: #3e9ece;

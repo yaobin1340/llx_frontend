@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'SubmitOrder', function SubmitOrder( $scope, $injector, $rootScope) {
+    .controller( 'SubmitOrder', function SubmitOrder( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $config = $injector.get( '$config' );
         var $timeout = $injector.get( '$timeout' );

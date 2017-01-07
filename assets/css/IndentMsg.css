@@ -1,0 +1,148 @@
+body {
+  font-family: "SimHei";
+  color: #7f8180;
+}
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0.20833333rem;
+  padding-left: 0.20833333rem;
+}
+.banner {
+  width: 100%;
+  height: 1.38rem;
+  background-color: #3e9ece;
+}
+.banner img {
+  width: 0.69444444rem;
+  position: absolute;
+  margin-top: 0.35rem;
+  float: left;
+  margin-left: 0.69444444rem;
+}
+.banner p {
+  text-align: center;
+  line-height: 1.38rem;
+  color: #fff;
+  font-size: 0.41666667rem;
+}
+.row {
+  height: 1.38888889rem;
+  border-bottom: 0.02777778rem solid #eff0eb;
+}
+.row div {
+  font-size: 0.38888889rem;
+  line-height: 1.38888889rem;
+}
+.row .text-color {
+  font-size: 0.41666667rem;
+  color: #ed3331;
+}
+.hr-tp {
+  height: 0.58333333rem;
+  width: 100%;
+  background-color: #eff0eb;
+}
+.prMsg {
+  height: 2.48611111rem;
+  width: 100%;
+  border-bottom: 0.02777778rem solid #eff0eb;
+}
+.prMsg .prMsg-pic {
+  margin-left: 0.20833333rem;
+  float: left;
+  width: 2.13888889rem;
+  height: 2.48611111rem;
+}
+.prMsg .prMsg-pic img {
+  margin-top: 0.13888889rem;
+  width: 2.13888889rem;
+  height: 2.13888889rem;
+}
+.prMsg .prMsg-title {
+  float: left;
+  width: 4.58333333rem;
+  margin-left: 0.41666667rem;
+  height: 2.48611111rem;
+}
+.prMsg .prMsg-title p {
+  font-size: 0.38888889rem;
+  line-height: 0.83333333rem;
+}
+.prMsg .prMsg-title span {
+  margin-top: 0.48611111rem;
+  display: block;
+  font-size: 0.55555556rem;
+  color: #ed3331;
+}
+.prMsg .prMsg-num {
+  margin-right: 0.20833333rem;
+  float: right;
+  width: 2.08333333rem;
+  height: 2.48611111rem;
+  font-size: 0.38888889rem;
+}
+.prMsg .prMsg-num p {
+  margin-top: 1.38888889rem;
+}
+.success {
+  margin: 1.73611111rem auto 1.38888889rem auto;
+  width: 100%;
+  height: 1.23611111rem;
+  background-color: #3e9ece;
+  font-size: 0.5rem;
+  color: white;
+  border: 0.01388889rem solid  #3e9ece;
+  border-radius: 0.06944444rem;
+}

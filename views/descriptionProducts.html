@@ -1,7 +1,8 @@
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/reset.css">
 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css">
-	<div class="banner" style="background: url(http://139.224.222.18:8888/attachs/{{detail.photo}});">
+	<div class="banner" style="background: url(http://wap.51loveshow.com/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
+	background-size: 100%;">
 			<div class="cir cir-left img-circle">
 				<img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
 			</div>
@@ -19,8 +20,8 @@
 		<div class="address-left">
 			<img src="/assets/img/address2.png" alt="" class="img-center-left">
 		</div>
-		<div class="address-center">
-			<span class="address-message">{{detail.addr}}</span>
+		<div class="address-center text-overflow">
+			<span class="address-message  text-overflow">{{detail.addr}}</span>
 		</div>
 		<div class="address-right">
 			<img src="/assets/img/address.png" alt="">
@@ -90,7 +91,7 @@
 		<div class="none clearfix" ng-if="list==null">暂无评论信息</div>
 		<!-- 评论相关信息 -->
 		<div class="commentMsg clearfix" ng-repeat="userContent in list">
-			<img ng-src="http://139.224.222.18:8888/attachs/{{userContent.user_face}}" alt="" class="userImg">
+			<img ng-src="http://wap.51loveshow.com/attachs/{{userContent.user_face}}" alt="" class="userImg">
 			<div class="userContent">
 				<span class="userName">{{userContent.user_nickname}}</span>
 				<img ng-src="" alt="" class="user-level">
@@ -102,7 +103,7 @@
 				<div class="userPhoto">
 					<div class="row">
 						<div class="col-md-4" ng-repeat="photo in pics.pic">
-							<img ng-src="{{userContent.pic}}" alt="shibai">
+							<img ng-src="http://wap.51loveshow.com/attachs{{userContent.pic}}" alt="shibai">
 						</div>
 					</div>
 				</div>
@@ -114,7 +115,7 @@
 			</div>
 		</div>
 	</div>
-<dialog ng-if="dialog.open" close="dialog.open=false">
+<dialog ng-if="dialog.open" close="dialog.open=false"  close-action="esc outerchick">
     <div dialog-title>拉拉秀商城</div>
     <div dialog-content>{{err}}</div>
 </dialog>

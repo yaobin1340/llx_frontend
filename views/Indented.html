@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/assets/css/allIndent.css">
+<div class="row"  ng-repeat="pr in arr">
+	<div class="col-sm-12 col-xs-12 indentMsg">
+		<div class="indentId">订单ID：{{pr.order_id}}</div>
+		<div class="indemtTime">
+			下单时间：{{pr.create_time}}
+		</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 bgt">
+		<div class="indent-center">
+			<div class="indentPhoto">
+				<img ng-src="http://wap.51loveshow.com/attachs/{{pr.g_photo}}" alt="">
+			</div>
+			<div class="indent-num">
+				<p class="text-overflow">{{pr.g_title}}</p>
+				<div>小计：<span>￥{{pr.price/100}}x{{pr.num}}={{pr.total_price/100}}元</span></div>
+				<div>使用秀币：<span>{{pr.use_integral}}抵现：{{pr.use_integral/100}}元</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 indentMsg">
+		<div ng-if="pr.is_daofu==0">实际支付：<span class="indentPrice">￥{{pr.need_pay/100}}</span> 元</div>
+		<div ng-if="pr.is_daofu==1">实际支付：<span class="indentPrice">￥{{(pr.total_price-pr.mobile_fan-pr.use_integral)/100}}</span> 元</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 btmindent">
+		<div>
+			<button class="pingjia" ng-if="pr.is_dianping==0" ui-sref="Opinion">我要评价</button>
+			<button class="pingjia" ng-if="pr.is_dianping==1">已点评</button>
+			<button class="productIt" ui-sref="IndentMsg({order_id:pr.order_id})">详情</button>
+		</div>
+	</div>
+</div>
+<div class="home_shop_nomore" ng-if='noLead'>-您已加载到底了-</div>

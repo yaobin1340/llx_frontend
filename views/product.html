@@ -2,12 +2,12 @@
 	<link rel="stylesheet" href="/assets/css/reset.css">
 	<link rel="stylesheet" href="/assets/css/product.css">
 	<div class="photo-p">
-	<img ng-src="http://139.224.222.18:8888/attachs/{{productMsg_list.photo}}" alt="" class="product-pho">
+	<img ng-src="http://wap.51loveshow.com/attachs/{{productMsg_list.photo}}" alt="" class="product-pho">
 		<div class="banner">
 			<div class="banner-left"></div>
 			<img src="/assets/img/552cc14536532_128.png" alt=""  onClick="javascript:history.go(-1);" class="back">
 			<div class="banner-right"></div>
-			<img src="/assets/img/img_shopcart_white_pd.png" alt="" class="share">
+			<img src="/assets/img/img_shopcart_white_pd.png" alt="" class="share" ui-sref="shopcart">
 		</div>		
 	</div>
 	<div class="proMsg clearfix">
@@ -45,7 +45,7 @@
 	</div>
 	<div class="p-introduce">
 		<p ng-bind-html="productMsg_list.details | to_trusted"></p>
-		<img ng-src="http://139.224.222.18:8888/attachs/{{productMsg.pics.photo}}" alt="">
+		<img ng-src="http://wap.51loveshow.com/attachs/{{productMsg.pics.photo}}" alt="">
 	</div>
 	<footer class="navbar-fixed-bottom">
 		<div class="collection">
@@ -58,7 +58,7 @@
 		<div class="addCart" ng-click="addCart()">加入购物车</div>
 		<div class="goPay">立即购买</div>
 	</footer>
-<dialog ng-if="dialog.open" close="dialog.open=false">
+<dialog ng-if="dialog.open" close="dialog.open=false"  close-action="esc outerchick">
     <div dialog-title>拉拉秀商城</div>
     <div dialog-content>{{err}}</div>
 </dialog>

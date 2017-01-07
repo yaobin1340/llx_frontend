@@ -1,5 +1,4 @@
 angular.module('ohapp').factory('Shops', function ($config, $http) {
-
 	var Shops = function () {
 		this.items = [];
 		this.busy = false;

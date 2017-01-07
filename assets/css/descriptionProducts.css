@@ -51,15 +51,18 @@ body {
   font-size: 0.375rem;
 }
 .address-left {
-  width: 12.5%;
+  width: 1.25rem;
   float: left;
+  height: 1.25rem;
 }
 .address-center {
-  width: 75%;
+  width: 7.5rem;
   float: left;
+  height: 1.25rem;
 }
 .address-right {
-  width: 12.5%;
+  width: 1.25rem;
+  height: 1.25rem;
   float: right;
   text-align: center;
 }
@@ -71,6 +74,7 @@ body {
 .address-message {
   display: inline-block;
   line-height: 1.23611111rem;
+  width: 100%;
 }
 .img-center-left {
   margin: 0.27777778rem auto auto 0.31944444rem;
@@ -179,7 +183,7 @@ body {
 }
 .BusinessRe {
   padding: 0.2rem;
-  background-color: #e5e5e5;
+  background-color: #eff0eb;
 }
 .BusinessRe span {
   color: #3e9ece;

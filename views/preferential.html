@@ -1,0 +1,37 @@
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/preferential.css">
+
+	<div class="banner">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
+	    <p>优惠卡</p>
+	</div>
+
+	<div class="proMsg" ng-repeat="Yhk in yhk">
+		<div class="row proMsg-top">
+			<div class="col-sm-9 col-xs-9 proMsg-top-shop">
+				商家：{{Yhk.shop_name}}(商家ID:{{Yhk.shop_id}})
+			</div>
+			<div class="col-sm-3 cll-xs-3 proMsg-top-price text-right">
+				余额:{{Yhk.yhk}}
+			</div>
+		</div>
+		<div class="row proMsg-center">
+			<div class="col-sm-6 col-xs-6 ">
+				<img src="http://wap.51loveshow.com/attachs/{{Yhk.logo}}" alt="" class="proMsg-center-img">
+			</div>
+			<div class="col-sm-6 cll-xs-6 proMsg-center-num">
+				<p>赠品：</p>
+				<p ng-repeat="(key,value) in Yhk.zp"><span>{{key}} x{{value}}</span></p>
+			</div>
+		</div>
+		<div class="row proMsg-bottom">
+			<div class="col-sm-12 cll-xs-12">
+				<button class="fenxiao">分销</button>
+			</div>
+		</div>
+	</div>
+	<div class="toBottom" ng-if="yhk.length==0">-暂无更多优惠卡消息-</div>
+	<div class="marbom"></div>
+
+	

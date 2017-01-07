@@ -9,16 +9,19 @@
 	<div class="row">
 		<div class="col-sm-12 col-xs-12 border-tb">
 			<label for="oldpwd">新设密码</label>
-			<input type="text" id="oldpwd">
+			<input type="text" id="oldpwd" ng-model="password">
 		</div>
 		<div class="col-sm-12 col-xs-12 border-tb">
 			<label for="newpwd">确认密码</label>
-			<input type="text" id="newpwd">
+			<input type="text" id="newpwd" ng-model="Npasswords">
 		</div>
 	</div>
 	
 	<div class="row">
 	<div class="col-sm-12 col-xs-12">
-		<button class="btn-submit">立刻修改</button>
+		<button class="btn-submit" ng-click="change()" ng-disabled="password!=Npasswords||password==undefined||Npasswords==undefined">立刻修改</button>
 	</div>
 </div>
+<dialog ng-if="dialog.open" duration="2000" close="dialog.open=false"  close-action="esc outerchick">
+    <div dialog-content>{{err}}</div>
+</dialog>
