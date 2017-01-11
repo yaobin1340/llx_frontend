@@ -133,3 +133,7 @@ footer .goPay {
   background-color: #ea6200;
   color: #fff;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

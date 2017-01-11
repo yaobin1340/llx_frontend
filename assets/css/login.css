@@ -86,6 +86,9 @@ a{
     line-height: 100%;
 }
 .getCard{
+	float: right;
+	margin-right: 0.594rem;
+	margin-top: 0.208rem;
 	min-width: 2.5rem;
 	height: 0.8333333333rem;
 	border:1px solid #3e9ece;
@@ -95,7 +98,6 @@ a{
 	font-size: 0.3rem;
 	font-family: "微软雅黑";
 	cursor: pointer;
-	margin-left: 0.43rem;
 	outline: none;
 	
 }
@@ -108,7 +110,7 @@ a{
 	border-radius: 0.1rem;
 }
 .card input{
-	width: 5rem;
+	width: 4.9rem;
 	margin: 0;
 	display: inline-block;
 	border:none;
@@ -119,7 +121,6 @@ a{
 .btn-submit{
 	width: 8.85rem;
 	margin: 0.82rem 0.58rem 0 0.58rem;
-	height: 1rem;
 	border:1px solid #3e9ece;
 	border-radius: 0.1rem;
 	background-color: #3e9ece;

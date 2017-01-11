@@ -4,7 +4,9 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		this.busy = false;
 		this.after = '';
 		this.page = 1;
-		this.end = false;
+		this.end = false
+		this.lat = '';
+		this.lng = '';
 	};
 
 	Shops.prototype.nextPage = function () {
@@ -15,7 +17,7 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		$http({
 			method: 'POST',
 			url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
-			data: {lng:121.547502,lat:35.227906,page:this.page},
+			data: {page:this.page,lat:this.lat,lng:this.lng},
 		}).success(function (data) {
 			if (data.success) {
 				if(data.shop_list==null||!data.shop_list.length){

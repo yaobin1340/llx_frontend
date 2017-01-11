@@ -54,13 +54,18 @@ q, blockquote {
 
 /* line 32, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 a img {
-  border: none; }
+  border: none; 
+  }
 
 /* line 116, C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block; }
 a:hover{
-  // text-decoration: none;
+  text-decoration: none;
+}
+li{
+  border:none;
+  outline: none;
 }
 .text-overflow{
   text-overflow : ellipsis; 
@@ -83,3 +88,10 @@ input[type='number'] {
     -webkit-appearance: none;
     margin: 0;
   }
+  div,img{
+    outline:none;
+  }
+  //兼容angular弹出框
+.navbar-fixed-top, .navbar-fixed-bottom{
+  z-index: 5;
+}

@@ -1,5 +1,4 @@
 
-<link rel="stylesheet" href="/assets/css/reset.css">
 <link rel="stylesheet" href="/assets/css/login.css">
 <div class="banner">
 	<img src="/assets/img/return.png" alt="返回" onClick="javascript:history.go(-1);">
@@ -16,7 +15,7 @@
 	</div>
 	<input type="password" class="form-control pwd" placeholder="请输入密码" ng-model="pwd1">
 	<input type="password" class="form-control pwd2" placeholder="重复输入密码" ng-model="pwd2">
-	<div class="btn-submit" ng-click="signup()" ng-disabled="cards.length!=6||pwd1!=pwd2||pwd1==undefined||pwd2==undefined">注册</div>
+	<button class="btn-submit" ng-click="signup()" ng-disabled="cards.length!=6||pwd1!=pwd2||pwd1==undefined||pwd2==undefined">注册</button>
 </div>
 <div class="telphone">
 	<p>服务电话：400-7731377</p>

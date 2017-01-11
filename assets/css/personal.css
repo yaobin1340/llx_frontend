@@ -97,9 +97,10 @@ body {
   margin-top: -0.46875rem;
 }
 .personal-img img {
+  display: block;
   width: 1.640625rem;
   height: 1.640625rem;
-  margin: 0 4.1796875rem;
+  margin: 0 auto;
   border-radius: 50%;
 }
 .personal-img .sign {
@@ -123,11 +124,11 @@ body {
 }
 .personMsg {
   height: 1.09375rem;
-  background-color: #7ca8bc;
+  background-color: #33000000;
 }
 .personMsg div {
   float: left;
-  width: 3.3125rem;
+  width: 33%;
   height: 1.09375rem;
   text-align: center;
   color: #fff;
@@ -135,6 +136,7 @@ body {
 }
 .personMsg .line {
   width: 0.015625rem;
+  min-width: 1px;
   height: 0.78125rem;
   background-color: #fff;
   margin-top: 0.15625rem;
@@ -171,16 +173,20 @@ body {
   margin-right: -0.203125rem;
 }
 .subOrder {
-  width: 9.40277778rem;
+  width: 100%;
   height: 1.23611111rem;
   background-color: #ed3331;
   font-size: 0.5625rem;
   line-height: 1.236rem;
   color: white;
-  margin: 0.83333333rem 0;
+  margin: 0.83333333rem auto;
   border: 0.01388889rem solid #ff0000;
   border-radius: 0.08rem;
   margin-bottom: 2.34375rem;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
 }
 footer {
   width: 100%;
@@ -197,12 +203,11 @@ footer img {
   display: block;
   width: 0.937rem;
   height: 0.937rem;
-  margin: 0.10rem 0.5rem;
+  margin: 0.1rem auto;
 }
 footer span {
   width: 100%;
   color: #000;
   display: block;
-  font-family: "微软雅黑";
   font-size: 0.262rem;
 }

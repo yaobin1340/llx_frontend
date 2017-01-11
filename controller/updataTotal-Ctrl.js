@@ -7,7 +7,9 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');
 	
         $scope.show=true;
         $scope.face=$session.get("face");
@@ -19,13 +21,12 @@ angular
                         $scope.face = data.face;
                         $scope.show=false;
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
-                })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
                 })
     }
     $('.now-change').click(function(){
@@ -33,17 +34,19 @@ angular
                 .post($config.api_uri + '/Apiuser/Userinfo/changeface',{face:$scope.face})
                 .success(function (data) {
                     if(data.success){
-                        $scope.dialog={open: true};
-                        $scope.err="修改成功"
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content("修改成功")
+                            .hideDelay(1000)
+                        );
                         $scope.show=true;
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
-                })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
                 })
     })
 

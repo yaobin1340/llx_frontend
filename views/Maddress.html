@@ -1,5 +1,4 @@
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/reset.css">
+
 	<link rel="stylesheet" href="/assets/css/Maddress.css">
 
 	<div class="banner">
@@ -16,10 +15,11 @@
 		</div>
 		<div class="col-sm-6 col-xs-6 chose">
 			<img src="/assets/img/chose.png" alt="">
+			<img src="/assets/img/chosef.png" alt="">
 			<p class="active">默认地址</p>
 		</div>
 		<div class="col-sm-6 col-xs-6 add-change">
-			<div>
+			<div ng-click="delect()">
 				<span>删除</span>
 				<img src="/assets/img/img_delete_black.png" alt="">
 			</div>
@@ -27,31 +27,8 @@
 				<span>编辑</span>
 				<img src="/assets/img/img_edit.png" alt="" ui-sref="chaAddress">
 			</div>
-			
-			
 		</div>
 		<div class="bgc"></div>
-	</div>
-	<div class="row">
-		<div class="col-sm-6 col-xs-6 address-name">许圆圆</div>
-		<div class="col-sm-6 col-xs-6 address-phone text-right">12345678900</div>
-		<div class="col-sm-12 col-xs-12 address">
-			上海市嘉定区江桥万达
-		</div>
-		<div class="col-sm-6 col-xs-6 chose">
-			<img src="/assets/img/chosef.png" alt="">
-			<p>默认地址</p>
-		</div>
-		<div class="col-sm-6 col-xs-6 add-change">
-			<div>
-				<span>删除</span>
-				<img src="/assets/img/img_delete_black.png" alt="">
-			</div>
-			<div ui-sref="chaAddress">
-				<span>编辑</span>
-				<img src="/assets/img/img_edit.png" alt="" ui-sref="chaAddress">
-			</div>
-		</div>
 	</div>
 
 

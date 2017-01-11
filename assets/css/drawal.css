@@ -71,6 +71,11 @@
   display: block;
   font-size: 0.83333333rem;
 }
+.div-money .danbi {
+  font-size: 0.38888889rem;
+  line-height: 1.38888889rem;
+  color: #b6b6b6;
+}
 .row-two div {
   height: 1.31944444rem;
   font-size: 0.44444444rem;
@@ -138,7 +143,7 @@ input::-moz-placeholder {
   color: #b6b6b6;
 }
 .btn-submit {
-  width: 9.40277778rem;
+  width: 100%;
   height: 1.23611111rem;
   background-color: #ed3331;
   font-size: 0.5rem;

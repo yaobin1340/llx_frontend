@@ -77,15 +77,15 @@ body {
   color: #fff;
   font-size: 0.41666667rem;
 }
-.row {
+.rows {
   border-bottom: 0.02777778rem solid #eff0eb;
 }
-.row div {
-  height: 1.31944444rem;
+.rows div {
+  height: 1.4rem;
   font-size: 0.38888889rem;
   line-height: 1.31944444rem;
 }
-.row .lines {
+.rows .lines {
   margin-top: 0.27777778rem;
   width: 0.83333333rem;
 }

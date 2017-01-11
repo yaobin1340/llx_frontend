@@ -7,22 +7,29 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');
 
             $scope.change = function(){
                  $http
                     .post($config.api_uri + '/Apipublic/Apilogin/resetpw',{mobile:$session.get('phone'),Npassword:$scope.password})
                     .success(function (data) {
                         if(data.success){
-                             $scope.dialog={open: true};
-                             $scope.err="密码修改成功"
+                             $mdToast.show(
+                            $mdToast.simple()
+                                .content("密码修改成功")
+                                .hideDelay(1000)
+                            );
+                             $session.purge('auth');
+                             $state.go('signin');
                         }else{
-                            $scope.dialog={open: true};
-                            $scope.err=data.error_msg;
+                            $mdToast.show(
+                            $mdToast.simple()
+                                .content(data.error_msg)
+                                .hideDelay(1000)
+                            );
                         }
-                    })
-                    .error(function (err) {
-                        // $scope.dialog={open: true};
-                        // $scope.err = err.error_msg;
                     })
             }
            

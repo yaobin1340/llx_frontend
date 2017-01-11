@@ -80,13 +80,13 @@ body {
   color: #fff;
   font-size: 0.41666667rem;
 }
-.row div {
-  height: 1.33333333rem;
+.rows div {
   font-size: 0.38888889rem;
   line-height: 1.30555556rem;
+  height: 1.4rem;
   border-bottom: 0.02777778rem solid #eff0eb;
 }
-.row input {
+.rows input {
   outline: none;
   brder: none;
 }
@@ -101,6 +101,8 @@ body {
 #tear,
 .chosead {
   color: #b5b5b5;
+  height: 1rem;
+  line-height: 1rem;
 }
 textarea {
   display: block;
@@ -119,6 +121,9 @@ textarea {
 .default a {
   color: #ed3331;
 }
+.default-img {
+  height: 1.33333333rem;
+}
 .default-img img {
   float: right;
   width: 0.41666667rem;
@@ -126,7 +131,7 @@ textarea {
 }
 .btn-submit {
   margin: 2.18055556rem auto 1.38888889rem auto;
-  width: 9.40277778rem;
+  width: 100%;
   height: 1.23611111rem;
   background-color: #ed3331;
   font-size: 0.5rem;

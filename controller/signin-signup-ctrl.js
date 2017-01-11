@@ -8,6 +8,9 @@ angular
 		var $session = $injector.get('$session');
 		var $window = $injector.get('$window')
 		var $location = $injector.get('$location');
+		var $mdDialog = $injector.get('$mdDialog');
+		var $mdMedia = $injector.get('$mdMedia');
+		var $mdToast = $injector.get('$mdToast');
 
 		$scope.page = $rootScope.$page
 
@@ -37,20 +40,26 @@ angular
 						$session.save()
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName
-						// $mdDialog.hide();
 						$state.go('main.personal');
 					}else{
-						$scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+					);
 					}
-				})
-				.error(function (data) {
-					$scope.dialog={open: true};
-					$scope.err = err.error_msg;
 				})
 		}
 
 		$scope.getCard=function(){
+			if(!(/^1[34578]\d{9}$/.test($(".phone").val()))){
+				$mdToast.show(
+					$mdToast.simple()
+							.content("您的手机号输入有误")
+							.hideDelay(1000)
+					);
+				return;
+			}
 			$http
 				.post($config.api_uri + '/Apipublic/Apilogin/get_yzm',{mobile:$scope.user.mobile})
 				.success(function (data) {
@@ -61,22 +70,24 @@ angular
 						$session.save()
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName
-						// $mdDialog.hide();
+						$mdDialog.hide();
 						$scope.yzm=data.yzm;
 					}else{
-						$scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
 					}
-					
-				})
-				.error(function (data) {
-					$scope.dialog={open: true};
-					$scope.err = err.error_msg;
 				})
 		}
 		$scope.signup = function () {
 			if($scope.yzm!=$scope.cards){
-				console.log("验证码输入错误")
+				$mdToast.show(
+					$mdToast.simple()
+							.content('验证码输入错误')
+							.hideDelay(1000)
+					);
 				return;
 			}
 			// if(!$scope.signupForm['firstName'].$valid){
@@ -106,16 +117,15 @@ angular
 						$session.save()
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName
-						// $mdDialog.hide();
+						$mdDialog.hide();
 					}else{
-						$scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
 					}
 					
-				})
-				.error(function (data) {
-					$scope.dialog={open: true};
-					$scope.err = err.error_msg;
 				})
 		}
 

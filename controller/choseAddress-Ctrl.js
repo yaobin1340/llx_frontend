@@ -7,7 +7,9 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-	
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');	
 
         $http
                 .post($config.api_uri + '/Apipublic/ApiPmall/get_nprovince')
@@ -15,13 +17,12 @@ angular
                     if(data.success){
                         $scope.add_p = data.province_list;
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                       $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
-                })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
                 })
 
         $scope.province_code = function(privence){
@@ -31,13 +32,12 @@ angular
                         $scope.add_p=[];
                         $scope.add_c = data.city_list;
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
-                })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
                 })
         }
 
@@ -49,14 +49,14 @@ angular
                         $scope.add_c=[];
                         $scope.add_near=data.area_list;
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
                 })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
-                })
+                
         }
 
         $scope.toacrt = function(near){

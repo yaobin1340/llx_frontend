@@ -1,44 +1,73 @@
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/reset.css">
-	<link rel="stylesheet" href="/assets/css/addAddress.css">
 
+	<link rel="stylesheet" href="/assets/css/addAddress.css">
+<div ng-show="add==0">
 	<div class="banner">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>修改地址</p>
 	</div>
-	<div class="row">
+	<div class="row rows">
 		<div class="col-sm-12 col-xs-12">
 			<label for="shou">收货人</label>
-			<input type="text" id="shou">
+			<input type="text" id="shou" ng-model="shoup">
 		</div>
 		<div class="col-sm-12 col-xs-12">
 			<label for="tel">联系电话</label>
-			<input type="text" id="tel">
+			<input type="text" id="tel" ng-model="shoutel">
 		</div>
 		<div class="col-sm-3 col-xs-3">
 			<label for="addr">所在地区</label>
 		</div>
-		<div class="col-sm-9 col-xs-9 text-right">
+		<div class="col-sm-9 col-xs-9 text-right" ng-click="choseAdd()">
+		{{p}}{{c}}{{n}}
 			<label for="" class="chosead">请选择</label>
 			<img src="/assets/img/line.png" alt="" class="chose-img">
 		</div>
 		<div class="col-sm-12 col-xs-12 xiangxi">
 			<label for="tear" class="chosead">详细地址</label>
-			<textarea id="tear" ></textarea>
+			<textarea id="tear" ng-model="shoutear"></textarea>
 		</div>
 	</div>
-	<div class="row default">
+	<div class="row default rows">
 		<div class="col-sm-6 col-xs-6">设为默认地址</div>
 		<div class="col-sm-6 col-xs-6 default-img text-right">
 			<img src="/assets/img/chosef.png" alt="">
 		</div>
 	</div>
-	<div class="row default">
+	<div class="row default rows">
 		<div class="col-sm-12 col-xs-12">
 			<a href="">删除地址</a>
 		</div>
 	</div>
 	<div class="col-sm-12 col-xs-12">
-		<button class="btn-submit">保存</button>
+		<button class="btn-submit"ng-disabled="shoup==null||shoup==''||shoutel==null||shoutel==''||shoutear==null||shoutear==''||n==null||n==''">保存</button>
 	</div>
+</div>
+
+
+<link rel="stylesheet" href="/assets/css/choseAddress.css">
+<div class="containers" ng-show="add==1">
+	<div class="banner">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
+	    <p>选择地区</p>
+	</div>
+	<div class="row rows" ng-repeat="p in add_p">
+		<div class="col-sm-10 col-xs-10">{{p.name}}</div>
+		<div class="col-sm-2 col-xs-2 text-right">
+			<img src="/assets/img/line.png" alt="" class="lines" ng-click="province_code(p.code,p.name)">
+		</div>
+	</div>
+	<div class="row rows" ng-repeat="c in add_c">
+		<div class="col-sm-10 col-xs-10">{{c.name}}</div>
+		<div class="col-sm-2 col-xs-2 text-right">
+			<img src="/assets/img/line.png" alt="" class="lines" ng-click="choseNear(c.code,c.name)">
+		</div>
+	</div>
+		<div class="row rows" ng-repeat="n in add_near">
+		<div class="col-sm-10 col-xs-10">{{n.name}}</div>
+		<div class="col-sm-2 col-xs-2 text-right">
+			<img src="/assets/img/line.png" alt="" class="lines" ng-click="toacrt(n.code,n.name)">
+		</div>
+	</div>
+	<div class="toBottom">-到底了-</div>
+</div>
 	

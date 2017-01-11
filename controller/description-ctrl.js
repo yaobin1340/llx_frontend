@@ -7,11 +7,13 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
+		var $mdDialog = $injector.get('$mdDialog');
+		var $mdMedia = $injector.get('$mdMedia');
+		var $mdToast = $injector.get('$mdToast');
 
         $scope.num=1;
         $scope.change = function(data){
         	 $scope.num=data;
-        	 console.log($scope.num);
         }
         	//获取商家详情页
         	 $http
@@ -20,13 +22,12 @@ angular
 					if(data.success){
 						$scope.detail = data.detail;
 					}else{
-						$scope.dialog={open: true};
-						$scope.err=data.error_msg;
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
 					}
-				})
-				.error(function (err) {
-					$scope.dialog={open: true};
-					$scope.err = err.error_msg;
 				})
 
 			//获取用户评论信息
@@ -35,12 +36,15 @@ angular
 				.success(function (data) {
 					if(data.success){
 						$scope.list = data.list;
+					}else{
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
 					}
 				})
-				.error(function (err) {
-					$scope.dialog={open: true};
-					$scope.err = err.error_msg;
-				})
+
 
 
 

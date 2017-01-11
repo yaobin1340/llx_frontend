@@ -11,6 +11,7 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
+
         var userId = $session.get('auth')._id
 
         $scope.showDishModal = function(ev,dish,index) {

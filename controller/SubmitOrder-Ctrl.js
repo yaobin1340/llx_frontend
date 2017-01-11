@@ -7,6 +7,9 @@ angular
         var $session = $injector.get('$session');
         var $window = $injector.get('$window')
         var $location = $injector.get('$location');
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast'); 
         
         $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail')
@@ -14,13 +17,12 @@ angular
 					if(data.success){
 
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
-				})
-				.error(function (err) {
-                    $scope.dialog={open: true};
-					$scope.err = err.error_msg;
 				})
 
         $scope.subOrder=function(){

@@ -7,22 +7,24 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-        console.log($stateParams.shopcartId)
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');
+        
             $http
     				.post($config.api_uri + '/Apiuser/cart/cartedit',{cart_id:$stateParams.shopcartId})
     				.success(function (data) {
                         if(data.success){
                             
                         }else{
-                            $scope.dialog={open: true};
-                            $scope.err=data.error_msg;
+                            $mdToast.show(
+                            $mdToast.simple()
+                                .content(data.error_msg)
+                                .hideDelay(1000)
+                            );
                         }
-    					console.log(data);
     				})
-    				.error(function (err) {
-                        $scope.dialog={open: true};
-    					$scope.err = err.error_msg;
-    				})
+
 
 
 

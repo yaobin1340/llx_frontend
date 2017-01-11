@@ -7,19 +7,24 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');
+
         $scope.items=[];
         $http
 				.post($config.api_uri + '/Apiuser/cart/cart_list')
 				.success(function (data) {
                     if(data.success){
                         $scope.cart_list=data.cart_list;
+                        console.log(data);
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
-				})
-				.error(function (err) {
-                
 				})
 
             $scope.delect=function(id){
@@ -34,14 +39,12 @@ angular
                             }
                         })
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
-                    console.log(data);
-                })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
                 })
             };
             $scope.goPay=function(){
@@ -67,13 +70,12 @@ angular
                              if(data.success){
                                 id.cart_num--;
                              }else{
-                                $scope.dialog={open: true};
-                                $scope.err=data.error_msg;
+                                $mdToast.show(
+                                $mdToast.simple()
+                                    .content(data.error_msg)
+                                    .hideDelay(1000)
+                                );
                              }
-                             console.log(data);
-                        })
-                        .error(function (err) {
-                          $scope.err = err.error_msg;
                         })
                 }else{
                     return id.cart_num=1;
@@ -86,14 +88,12 @@ angular
                      if(data.success){
                         id.cart_num++;
                      }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                      }
-                     console.log(data);
-                })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
                 })
             }
            $scope.getTotalAmount = function () {

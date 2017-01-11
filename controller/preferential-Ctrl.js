@@ -7,23 +7,42 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');
+        
             $http
                 .post($config.api_uri + '/Apiuser/Yhk/index')
                 .success(function (data) {
                     if(data.success){
                         $scope.yhk = data.yhk;
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
                 })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
-                })
 
+                $scope.preferential = function(id){
+                    $http
+                        .post($config.api_uri + '/Apiuser/Yhk/share',{shop_id:id})
+                        .success(function (data) {
+                            if(data.success){
+                                $scope.url = data.url;
+                                $("#qrcode").html("");
+                                new QRCode(document.getElementById('qrcode'), $scope.url);
 
+                            }else{
+                                $mdToast.show(
+                                $mdToast.simple()
+                                    .content(data.error_msg)
+                                    .hideDelay(1000)
+                                );
+                            }
+                        })
+                }
 
 
 

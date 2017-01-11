@@ -7,7 +7,9 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');
 
 
        $scope.nickname=$session.get("nickname");
@@ -17,17 +19,22 @@ angular
                 .post($config.api_uri + '/Apiuser/Userinfo/nickname',{nickname:$scope.nickname})
                 .success(function (data) {
                     if(data.success){
-                        $scope.dialog={open: true};
-                        $scope.err="修改成功";
+                        $session.set('nickname', $scope.nickname);
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content("修改成功")
+                            .hideDelay(1000)
+                        );
+
                     }else{
-                        $scope.dialog={open: true};
-                        $scope.err=data.error_msg;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
                 })
-                .error(function (err) {
-                    $scope.dialog={open: true};
-                    $scope.err = err.error_msg;
-                })
+
 
        }
 

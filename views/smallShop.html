@@ -1,12 +1,11 @@
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/reset.css">
+
 	<link rel="stylesheet" href="/assets/css/smallShop.css">
 	<div class="banner">
 		<div class="cir cir-left img-circle">
 			<img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
 		</div>
-		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_fenxiang.png" alt="">
+		<div class="cir cir-right img-circle" onclick="sharBtn()">
+			<img src="/assets/img/img_fenxiang.png" alt="" >
 		</div>
 		<div class="cir cir-right img-circle">
 			<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin:0.08rem 0 0 0.1rem;">
@@ -20,7 +19,7 @@
 				</tr>
 				<tr>
 					<td class="td-msg">
-						<p>公告：奥迪男的检测擦擦啊阿帆啊 寄生虫句</p>
+						<p>公告：</p>
 					</td>
 				</tr>
 			</td>
@@ -83,7 +82,7 @@
 				<p class="footer-p footer-p-img">分类</p>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-6">
-				<p class="footer-p tel-footer">联系商家</p>
+				<p class="footer-p tel-footer" ng-href="tel:{{goods.tel}}">联系商家</p>
 			</div>
 		</div>
 	</footer>
@@ -91,3 +90,174 @@
     <div dialog-title>拉拉秀商城</div>
     <div dialog-content>{{err}}</div>
 </dialog>
+
+
+<script>
+	function sharBtn() {
+		var shareData = {};  
+		shareData.imgUrl = window.ImgPrex + result.PicUrls;  
+		shareData.link = window.location.href;  
+		shareData.content = delHtmlTag($("#Contents").html());  
+		shareData.title = document.title;  
+		Share(shareData);
+	}
+	function Share(shareData) {  
+  
+        var data = {};  
+        var wxdata = {};  
+        data.method = "GetConfig";  
+        data.url = window.location.href.split('#')[0];  
+        //这里是ajax向后台请求签名，appid等的方法  
+        ajaxProcess("/h5/share.aspx?", data, function callSuccess(oRet) {  
+            //var data = oRet;  
+            var result = oRet;  
+            if (result != null) {  
+                wx.config({  
+                    debug: false,  
+                    appId: result.AppId,  
+                    timestamp: result.Timestamp,  
+                    nonceStr: result.NonceStr,  
+                    signature: result.Signature,  
+                    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']  
+                });  
+  
+  
+            }  
+        }, function callError(e) {  
+            alert(e);  
+        });  
+  
+  
+        wxdata.imgUrl = shareData.imgUrl;  
+        wxdata.link = shareData.link;  
+        var content = shareData.content;  
+        content = delHtmlTag(content);  
+        if (content.length > 100) {  
+            wxdata.desc = content.substring(0, 100);  
+        } else {  
+            wxdata.desc = content;  
+        }  
+        wxdata.title = shareData.title;  
+  
+  
+        var friendcallback = function(res) {  
+            //alert("分享成功");  
+        };  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareTimeline({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareAppMessage({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareQQ({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareWeibo({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareQZone({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+  
+  
+            });  
+  
+  
+        });  
+    }  
+		  
+
+</script>

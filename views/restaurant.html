@@ -1,0 +1,74 @@
+	<link rel="stylesheet" href="/assets/css/main.css">
+
+	<div class="banner">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
+	    <p>餐饮饭店</p>
+	</div>
+	<div class="centerImgbanner">
+		<img src="" alt="">
+	</div>
+	<div class="row chose">
+		<div class="col-sm-6 col-xs-6">
+			<div class="orderby" ng-click="choseStep(1)">
+				<span>排序</span><img src="/assets/img/line-down.png" alt=""></div>
+			</div>
+		<div class="col-sm-6 col-xs-6">
+			<div class="chosemore" ng-click="choseStep(2)">
+				<span>筛选</span><img src="/assets/img/line-down.png" alt=""></div>
+			</div>
+		</div>
+			
+			<div class="row clearfix">
+			<div class="clearfix chosexix" ng-if="step==2">
+				<div class="col-sm-12 col-xs-12 choseItemone">
+					暂无该模块
+				</div>
+			</div>
+
+			<div class="row clearfix">
+			<div class="clearfix chosexix" ng-if="step==1">
+				<div class="col-sm-12 col-xs-12 choseItemone">
+					<ul>
+						<li ng-click="choseStep()" class="choseThis">智能排序</li>
+						<li ng-click="choseStep()">离我最近</li>
+						<li ng-click="choseStep()">好评优先</li>
+						<li ng-click="choseStep()">附近</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+	<div class="row marbtm clearfix martop"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
+		<div ng-repeat="shop in shops.items" ui-sref="smallShop({shop_id:shop.shop_id})">
+			<div class="col-md-4 col-sm-4 col-xs-4" style="
+			position: relative;">
+				<img ng-src="http://wap.51loveshow.com/attachs/{{shop.photo}}" alt="" class="pro-photo">
+				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:-0.35rem;width: 2rem;">
+			</div>
+			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
+				<div class="col-sm-9 col-xs-9 div-name text-overflow">{{shop.shop_name}}</div>
+				<div class="col-sm-3 col-xs-3 shopDistance">
+					{{shop.juli}}Km
+				</div>
+				<div class="col-sm-12 col-xs-12 shopAddress text-overflow">
+					{{shop.addr|cut}}
+				</div>
+				<div class="col-5">
+					<img src="/assets/img/star.png" alt="" class="star">
+					<img src="/assets/img/star.png" alt="" class="star">
+					<img src="/assets/img/star.png" alt="" class="star">
+					<img src="/assets/img/star.png" alt="" class="star">
+					<img src="/assets/img/star2.png" alt="" class="star">
+				</div>
+				<div class="col-sm-7 col-xs-7 text-left">
+					<p class="On-sale">月售{{shop.allsold_num}}单</p>
+				</div>
+				<div class="col-sm-12 col-xs-12"><p class="ourmembers">本店会员：满￥<span class="ourprice">{{100}}</span>送￥<span class="ourprice">{{shop.yhk1}}</span></p></div>
+				<div class="col-sm-12 col-xs-12"><p  class="ourmembers">平台会员：满￥<span class="ourprice">{{100}}</span>送￥<span class="ourprice">{{shop.yhk1}}</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="home_shop_nomore" ng-show='shops.end'>-暂无更多店铺-</div>

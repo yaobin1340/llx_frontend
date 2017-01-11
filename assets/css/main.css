@@ -2,7 +2,7 @@ html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "微软雅黑";
+  font-family: "SimHei";
 }
 .col-xs-1,
 .col-sm-1,
@@ -63,43 +63,29 @@ header {
   height: 1.84rem;
   background-color: #3e9ece;
 }
-select {
-  /*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/
-  border: solid 0.015rem #fff;
-  border-radius: 0.1rem;
-  /*很关键：将默认的select选择框样式清除*/
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  /*在选择框的最右侧中间显示小箭头图片*/
-  background: url("/assets/img/drop-down.png") no-repeat scroll 95% 60% transparent;
-  background-size: 30%;
-  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
-  padding-right: 14px;
-  width: 2.17rem;
-  height: 0.843rem;
-  margin: 0.5rem auto 0 0.2rem;
-  color: #fff;
-  font-size: 0.4rem;
-  text-indent: 0.15rem;
-  font-family: "微软雅黑";
+.select {
   float: left;
-  background-color: #3e9ece;
-}
-/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
-select::-ms-expand {
-  display: none;
+  margin: 0.5rem auto auto 0.2rem;
+  width: 2.5rem;
+  height: 0.859rem;
+  font-size: 0.4rem;
+  text-indent: 0.2rem;
+  background: url(/assets/img/drop-down.png) no-repeat right;
+  border: 0.01388889rem solid #ffffff;
+  border-radius: 0.06944444rem;
+  background-size: 0.69444444rem;
+  color: #fff;
 }
 /* 搜索框的样式 */
 .soso {
-  width: 7.15rem;
+  width: 6.5rem;
   height: 0.859rem;
   background-color: #7ca5d1;
-  float: left;
-  margin: 0.5rem auto auto 0.09rem;
+  float: right;
+  margin: 0.5rem 0.25rem auto 0.09rem;
 }
 .soso input {
-  width: 6.25rem;
+  width: 5.5rem;
   height: 0.843rem;
   background-color: #7ca5d1;
   outline: none;
@@ -108,6 +94,12 @@ select::-ms-expand {
   font-family: "微软雅黑";
   font-size: 0.4rem;
   text-indent: 0.2rem;
+}
+.select::-webkit-input-placeholder {
+  color: #fff;
+}
+.select::-moz-placeholder {
+  color: #fff;
 }
 /* placeholder兼容问题处理 */
 /* webkit 浏览器 */
@@ -203,14 +195,14 @@ nav span {
   height: 0.85rem;
 }
 .div-name {
-  height: 0.390625rem;
+  height: 0.34722222rem;
   font-size: 0.406rem;
   margin-top: 0.34rem;
 }
 .shopDistance {
   font-size: 0.38rem;
   color: #b6b6b6;
-  height: 0.390625rem;
+  height: 0.34722222rem;
   margin-top: 0.34rem;
 }
 .row {
@@ -218,9 +210,9 @@ nav span {
   padding: 0;
 }
 .pro-photo {
-  width: 3.28125rem;
-  height: 3.125rem;
-  margin-top: 0.0625rem;
+  width: 2.91666667rem;
+  height: 2.77777778rem;
+  margin-top: 0.05555556rem;
 }
 .shopAddress {
   color: #585858;
@@ -260,11 +252,110 @@ nav span {
 }
 .home_shop_nomore {
   width: 100%;
-  height: 1.5625rem;
+  height: 1.38888889rem;
   text-align: center;
-  line-height: 1.5625rem;
+  line-height: 1.38888889rem;
   font-size: 0.45rem;
-  margin-bottom: 1.5625rem;
+  margin-bottom: 1.38888889rem;
+}
+.banner {
+  width: 100%;
+  height: 1.38rem;
+  background-color: #3e9ece;
+}
+.banner img {
+  width: 0.69444444rem;
+  position: absolute;
+  margin-top: 0.35rem;
+  float: left;
+  margin-left: 0.69444444rem;
+}
+.banner p {
+  text-align: center;
+  line-height: 1.38rem;
+  color: #fff;
+  font-size: 0.41666667rem;
+}
+.centerImgbanner {
+  height: 2.41666667rem;
+}
+.centerImgbanner img {
+  width: 100%;
+  height: 2.41666667rem;
+  background-color: red;
+}
+.chose {
+  font-size: 0.38888889rem;
+  line-height: 1.125rem;
+  text-align: center;
+}
+.martop {
+  border-top: 0.27777778rem solid #eeeeee;
+}
+.choseAdr,
+.orderby,
+.chosemore {
+  height: 1.125rem;
+}
+.choseAdr img,
+.orderby img,
+.chosemore img {
+  width: 0.69444444rem;
+  height: 0.97222222rem;
+  vertical-align: top;
+}
+.choseAdr span,
+.orderby span,
+.chosemore span {
+  display: inline-block;
+  font-size: 0.38888889rem;
+  line-height: 1.125rem;
+}
+.shangquan,
+.ditie {
+  height: 1.125rem;
+  font-size: 0.36111111rem;
+  line-height: 1.125rem;
+  text-align: center;
+  border-top: 0.02777778rem solid #eeeeee;
+  color: #7f8180;
+  background-color: #fff;
+}
+.choseActive {
+  border-bottom: 0.08333333rem solid #3e9ece;
+}
+.chosexix {
+  background-color: #eaeaea;
+}
+.choseItemone {
+  font-size: 0.36111111rem;
+  line-height: 1.125rem;
+  text-align: center;
+  border-top: 0.02777778rem solid #eaeaea;
+  color: #7f8180;
+  background-color: #fff;
+}
+.choseItemone li {
+  border-bottom: 0.02777778rem solid #eaeaea;
+  text-align: left;
+  padding-left: 0.77777778rem;
+}
+.choseItemtwo {
+  font-size: 0.36111111rem;
+  line-height: 1.125rem;
+  text-align: center;
+  border-top: 0.02777778rem solid #eeeeee;
+  color: #7f8180;
+  background-color: #f2f2f2;
+}
+.choseItemtwo li {
+  border-bottom: 0.02777778rem solid #eaeaea;
+  text-align: left;
+  padding-left: 0.77777778rem;
+}
+.choseThis {
+  background: #f2f2f2 url(/assets/img/552cc1f1200a3_128.png) no-repeat 0.20833333rem;
+  background-size: 0.55555556rem;
 }
 /* 固定在底部的样式 */
 footer {
@@ -282,12 +373,15 @@ footer img {
   display: block;
   width: 0.937rem;
   height: 0.937rem;
-  margin: 0.10rem 0.5rem;
+  margin: 0.1rem auto;
 }
 footer span {
   width: 100%;
   color: #000;
   display: block;
-  font-family: "微软雅黑";
   font-size: 0.262rem;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
 }

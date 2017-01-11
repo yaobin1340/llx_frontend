@@ -2,10 +2,10 @@
 <html lang="en" ng-app="ohapp">
 <head>
     <base href="/">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta charset="utf-8">
-
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
     <script src="./assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="./assets/bower_components/angular/angular.js"></script>
     <script src="./assets/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="./assets/bower_components/angular-resource/angular-resource.js"></script>
@@ -13,6 +13,10 @@
     <script src="./assets/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="./assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     
+    <script src="./assets/bower_components/angular-material/angular-material.min.js"></script>
+    <script src="./assets/bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="./assets/bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="./assets/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
     <script src="./assets/js/ng-infinite-scroll.min.js"></script>
     <script src="./assets/js/date.js"></script>
     <script src="./assets/js/iscroll.js"></script>
@@ -28,6 +32,7 @@
 
     <script src="resources/shops.js"></script>
     <script src="resources/journal.js"></script>
+    <script src="resources/OfferPay.js"></script>
     
     <script src="controller/main-Ctrl.js"></script>
     <script src="controller/home-Ctrl.js"></script>
@@ -55,8 +60,23 @@
     <script src="controller/preferential-Ctrl.js"></script>
     <script src="controller/Opinion-Ctrl.js"></script>
     <script src="controller/information-Ctrl.js"></script>
+    <script src="controller/OfferPay-Ctrl.js"></script>
+    <script src="controller/restaurants-Ctrl.js"></script>
+    <script src="controller/hotel-Ctrl.js"></script>
+    <script src="controller/fruit-Ctrl.js"></script>
+    <script src="controller/hair-Ctrl.js"></script>
+    <script src="controller/fitness-Ctrl.js"></script>
+    <script src="controller/supermarket-Ctrl.js"></script>
+    <script src="controller/articles-Ctrl.js"></script>
+    <script src="controller/medical-Ctrl.js"></script>
+    <script src="controller/integral-Ctrl.js"></script>
+    <script src="controller/favorable-Ctrl.js"></script>
     
     <script src="/assets/js/flexible.js"></script>
+
+    <link href='./assets/bower_components/angular-material/angular-material.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
     <title>{{$state.current.title}}</title>
 </head>
 <body>

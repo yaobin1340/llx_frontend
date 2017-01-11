@@ -1,5 +1,4 @@
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/reset.css">
+
 	<link rel="stylesheet" href="/assets/css/Opinion.css">
 
 	<div class="banner">
@@ -9,37 +8,115 @@
 	<div class="proMsg">
 		<div class="proMsg-top">
 			<div class="proMsg-top-img">
-				<img src="" alt="">
+				<img src="http://wap.51loveshow.com/attachs/{{Msg.order_goods_info[0].photo}}" alt="">
 			</div>
 			<div class="proMsg-top-title">
-				<p>拉拉秀至尊钻石</p>
-				<span>实付金额</span>
-				<span>使用积分</span>
+				<p>{{Msg.order_goods_info[0].title}}</p>
+				<span>实付金额{{Msg.detail.need_pay}}</span>
+				<span>使用积分{{Msg.detail.can_use_integral}}</span>
 			</div>
 		</div>
 		<div class="proMsg-center">
 			<span>评价：</span>
-			<img src="/assets/img/img_collect_shop_detail.png" alt="">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="">
+			<div id="xzw_starBox">
+			<ul class="star" id="star">
+				<li><a href="javascript:void(0)" title="1" class="one-star">1</a></li>
+				<li><a href="javascript:void(0)" title="2" class="two-stars">2</a></li>
+				<li><a href="javascript:void(0)" title="3" class="three-stars">3</a></li>
+				<li><a href="javascript:void(0)" title="4" class="four-stars">4</a></li>
+				<li><a href="javascript:void(0)" title="5" class="five-stars">5</a></li>
+			</ul>
+			<div class="current-rating" id="showb"></div>
+			</div>
 		</div>
 		<div class="proMsg-bottom clearfix">
 			<textarea placeholder="还记得这家店吗？写点评记录生活、分享体验"></textarea>
 			<div class="col-sm-3 col-xs-3 photo clearfix">
-				<img src="" alt="">
+				<img src="" alt="" id="chooseImage">
 			</div>
 		</div>
 	</div>
 
 	<div class="rows">
 		<div class="col-sm-12 col-xs-12">
-			<button class="tijiao">提交评价</button>
+			<button class="tijiao" id="uploadImage">提交评价</button>
 		</div>
 	</div>
+<script>
 
+$(document).ready(function(){
+    var stepW = 0.6;
+    var stars = $("#star > li");
+    $("#showb").css("width",0);
+    stars.each(function(i){
+        $(stars[i]).click(function(e){
+            var n = i+1;
+            $("#showb").css({"width":stepW*n+"rem"});
+            $(this).find('a').blur();
+            return stopDefault(e);
+        });
+    });
+});
+function stopDefault(e){
+    if(e && e.preventDefault)
+           e.preventDefault();
+    else
+           window.event.returnValue = false;
+    return false;
+};
 
+</script>
 
+<script>
+
+//选择图片
+var images = {
+    localId: [],
+    serverId: []
+  };
+  document.querySelector('#chooseImage').onclick = function () {
+    wx.chooseImage({
+      success: function (res) {
+        images.localId = res.localIds;
+      }
+    });
+  };
+
+  // //图片预览
+  //   wx.previewImage({
+  //     current: 'http://img5.douban.com/view/photo/photo/public/p1353993776.jpg',
+  //     urls: [
+  //       'http://img3.douban.com/view/photo/photo/public/p2152117150.jpg',
+  //       'http://img5.douban.com/view/photo/photo/public/p1353993776.jpg',
+  //       'http://img3.douban.com/view/photo/photo/public/p2152134700.jpg'
+  //     ]
+  //   });
+
+  //上传图片
+  document.querySelector('#uploadImage').onclick = function () {
+    if (images.localId.length == 0) {
+      alert('请先选择图片');
+      return;
+    }
+    var i = 0, length = images.localId.length;
+    images.serverId = [];
+    function upload() {
+      wx.uploadImage({
+        localId: images.localId[i],
+        success: function (res) {
+          i++;
+          images.serverId.push(res.serverId);
+          if (i < length) {
+            upload();
+          }
+        },
+        fail: function (res) {
+          alert(JSON.stringify(res));
+        }
+      });
+    }
+    upload();
+  };
+</script>
 
 	

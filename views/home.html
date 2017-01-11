@@ -1,72 +1,69 @@
-	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/reset.css">
+
 	<link rel="stylesheet" href="/assets/css/main.css">
+<div ng-show="add==0">
 	<header>
-		<select name="address" ng-model="selected" ng-change="selectedCity(city.area_id)">
-			<option value="" ng-disabled="1" selected>请选择</option>
-			<option value="{{city.city_id}}+{{city.area_id}}" ng-repeat="city in city_list">{{city.name||city.area_name}}</option>
-		</select>
+		<input type="text" value="{{n}}" ng-click="choseAdd()" class="select" placeholder="请选择">
 		<div class="soso">
 			<input type="text" placeholder="输入商家/商品/商圈关键字">
 			<span class="search-shop"></span>
 		</div>
 	</header>
 	<nav>
-		<a href="">
+		<a ui-sref="restaurant">
 			<div>
 				<img src="/assets/img/restaurants.png" alt="餐饮饭店">
 				<span>餐饮饭店</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="hotel">
 			<div>
 				<img src="/assets/img/img_gv_jiudianzhusu.png" alt="酒店住宿">
 				<span>酒店住宿</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="fruit">
 			<div>
 				<img src="/assets/img/img_gv_shuiguoshengxian.png" alt="水果生鲜">
 				<span>水果生鲜</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="hair">
 			<div>
 				<img src="/assets/img/img_gv_meirongmeifa.png" alt="美容美发">
 				<span>美容美发</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="fitness">
 			<div>
 				<img src="/assets/img/img_gv_jianshenyule.png" alt="健身娱乐">
 				<span>健身娱乐</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="supermarket">
 			<div>
 				<img src="/assets/img/img_gv_bianlichaoshi.png" alt="便利超市">
 				<span>便利超市</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="articles">
 			<div>
 				<img src="/assets/img/Maternal-and-child-supplies.png" alt="母婴商店">
 				<span>母婴商店</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="medical">
 			<div>
 				<img src="/assets/img/img_gv_yiliaojiankang.png" alt="医疗健康">
 				<span>医疗健康</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="integral">
 			<div>
 				<img src="/assets/img/img_gv_jifenshangcheng.png" alt="积分商城">
 				<span>积分商城</span>
 			</div>
 		</a>
-		<a href="">
+		<a ui-sref="favorable">
 			<div>
 				<img src="/assets/img/img_gv_tuangouyouhui.png" alt="团购优惠">
 				<span>团购优惠</span>
@@ -94,10 +91,12 @@
 	</div>
 	<hr class="hr-change">
 	<span class="shop-title">—&nbsp;附近店铺&nbsp;—</span>
-	<div class="row marbtm clearfix"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shop.busy' infinite-scroll-distance='1' >
+	<div class="row marbtm clearfix"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
 		<div ng-repeat="shop in shops.items" ui-sref="smallShop({shop_id:shop.shop_id})">
-			<div class="col-md-4 col-sm-4 col-xs-4">
+			<div class="col-md-4 col-sm-4 col-xs-4" style="
+			position: relative;">
 				<img ng-src="http://wap.51loveshow.com/attachs/{{shop.photo}}" alt="" class="pro-photo">
+				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:-0.35rem;width: 2rem;">
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
 				<div class="col-sm-9 col-xs-9 div-name text-overflow">{{shop.shop_name}}</div>
@@ -124,7 +123,85 @@
 		</div>
 	</div>
 	<div class="home_shop_nomore" ng-show='shops.end'>-暂无更多店铺-</div>
+</div>
+
 <dialog ng-if="dialog.open" close="dialog.open=false"  close-action="esc outerchick">
     <div dialog-title>拉拉秀商城</div>
     <div dialog-content>{{err}}</div>
 </dialog>
+
+<link rel="stylesheet" href="/assets/css/choseAddress.css">
+<div class="containers" ng-show="add==1">
+	<div class="banner">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
+	    <p>选择地区</p>
+	</div>
+	<div class="row rows" ng-repeat="p in add_p">
+		<div class="col-sm-10 col-xs-10">{{p.name}}</div>
+		<div class="col-sm-2 col-xs-2 text-right">
+			<img src="/assets/img/line.png" alt="" class="lines" ng-click="province_code(p.code,p.name)">
+		</div>
+	</div>
+	<div class="row rows" ng-repeat="c in add_c">
+		<div class="col-sm-10 col-xs-10">{{c.name}}</div>
+		<div class="col-sm-2 col-xs-2 text-right">
+			<img src="/assets/img/line.png" alt="" class="lines" ng-click="choseNear(c.code,c.name)">
+		</div>
+	</div>
+		<div class="row rows" ng-repeat="n in add_near">
+		<div class="col-sm-10 col-xs-10">{{n.name}}</div>
+		<div class="col-sm-2 col-xs-2 text-right">
+			<img src="/assets/img/line.png" alt="" class="lines" ng-click="toacrt(n.code,n.name)">
+		</div>
+	</div>
+	<div class="toBottom">-到底了-</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+// 	function wxConfig(){
+// 		$.getJSON('',function(data){
+// 			wx.config({
+// 				debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+// 				appId: data.wxappId, // 必填，公众号的唯一标识
+// 				timestamp: data.wxtimestamp, // 必填，生成签名的时间戳
+// 				nonceStr: data.wxnonceStr, // 必填，生成签名的随机串
+// 				signature: data.wxsignature,// 必填，签名，见附录1
+// 				jsApiList: ['getLocation']
+// 			});
+// 		});
+// 	}
+
+
+// wx.ready(function() {
+// 	wx.getLocation({
+// 		type: 'wgs84',
+// 		success: function (res) {
+// 			var element = angular.element(document.getElementById("ohapp"));
+// 			var $scope = element.scope();
+// 			$scope.$$childTail.shops.lat = res.latitude;
+// 			$scope.$$childTail.shops.lng = res.longitude;
+// 			$scope.$apply();
+// 			$scope.$$childTail.getIndex();
+// 		}
+// 	});
+// })
+
+
+</script>

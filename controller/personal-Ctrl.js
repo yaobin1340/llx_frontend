@@ -7,7 +7,12 @@ angular
         var $timeout = $injector.get( '$timeout' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
-        
+        var $mdDialog = $injector.get('$mdDialog');
+        var $mdMedia = $injector.get('$mdMedia');
+        var $mdToast = $injector.get('$mdToast');
+          
+            $scope.$emit('changeImg', 5); 
+
             $scope.showup=1;
             $http
                 .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
@@ -17,19 +22,25 @@ angular
                         $session.set('face', data.face)
                         $session.set('nickname', data.nickname);
                         $session.save()
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
                     }
                 })
-                .error(function (err) {
-                    
-                })
+    
         $scope.exit = function(){
             $session.purge('auth');
             if(!$session.get('auth').token){
                 window.location.reload();
-                $scope.dialog2={open: true};
-                $scope.err="退出成功";
+                $mdToast.show(
+                        $mdToast.simple()
+                            .content("退出成功")
+                            .hideDelay(1000)
+                        );
             }
         }
-
 
     });

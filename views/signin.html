@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/assets/css/login.css">
-<link rel="stylesheet" href="/assets/css/reset.css">
 
 <div class="banner">
     <img src="/assets/img/return.png" alt="返回" ui-sref="main.home">
@@ -11,9 +10,9 @@
 </div>
 <!-- 表单控件区域 -->
 <div class="form">
-    <input type="text" class="form-control phone" ng-model="user.mobile" placeholder="请输入手机号" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required>
+    <input type="text" class="form-control phone" ng-model="user.mobile" placeholder="请输入手机号" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required >
     <input type="password" class="form-control pwd" ng-model="user.password" placeholder="请输入密码" required>
-    <div class="btn-submit" ng-click="signin()" ng-disabled="user.mobile.length!=11||user.password==undefined">登陆</div>
+    <button class="btn-submit" ng-click="signin()" ng-disabled="user.mobile.length!=11||user.password==null||user.password==''">登陆</button>
 </div>
 <div class="jump-others">
     <a ui-sref="forgot">忘记密码</a>

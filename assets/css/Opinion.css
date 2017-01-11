@@ -162,3 +162,58 @@ body {
   border: 0.01388889rem solid #ff0000;
   border-radius: 0.06944444rem;
 }
+#xzw_starBox {
+  position: relative;
+  width: 3.05555556rem;
+  float: left;
+  margin-top: 0.20833333rem;
+}
+.star {
+  height: 0.625rem;
+  width: 3.05555556rem;
+  position: relative;
+  background: url(/assets/img/123.png) repeat-x;
+  background-size: 0.625rem;
+  cursor: pointer;
+}
+.star li {
+  float: left;
+  padding: 0px;
+  margin: 0px;
+}
+.star li a {
+  display: block;
+  width: 0.55555556rem;
+  height: 0.625rem;
+  overflow: hidden;
+  text-indent: -9999px;
+  position: absolute;
+  z-index: 5;
+}
+.star a.one-star {
+  left: 0;
+}
+.star a.two-stars {
+  left: 0.66666667rem;
+}
+.star a.three-stars {
+  left: 1.33333333rem;
+}
+.star a.three-stars:hover {
+  width: 2rem;
+}
+.star a.four-stars {
+  left: 2rem;
+}
+.star a.five-stars {
+  left: 2.66666667rem;
+}
+.current-rating {
+  background: url(/assets/img/123.png) 0 -0.69444444rem repeat-x;
+  background-size: 0.625rem;
+  position: absolute;
+  height: 0.625rem;
+  z-index: 1;
+  top: 0.015rem;
+  left: 0;
+}

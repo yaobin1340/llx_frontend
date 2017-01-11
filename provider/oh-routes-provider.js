@@ -15,8 +15,23 @@ angular
     {
         url: '^/home',
         title: 'Home',
-        templateUrl: 'views/restaurants.html',
+        templateUrl: 'views/home.html',
         controller: 'RestaurantCtrl'
+    };
+    this.routes['main.OfferPay'] = {
+        url : '^/OfferPay',
+        templateUrl : 'views/OfferPay.html',
+        controller:'OfferPayCtrl'
+    };
+    this.routes['main.information'] = {
+        url : '^/information',
+        templateUrl : 'views/information.html',
+        controller:'informationCtrl'
+    };
+    this.routes['main.personal'] = {
+        url : '^/personal',
+        templateUrl : 'views/personal.html',
+        controller:'personalCtrl'
     };
 
     this.routes['signin'] = {
@@ -30,12 +45,12 @@ angular
         templateUrl : 'views/signup.html',
         controller : 'SigninSignupCtrl'
     };
-
     this.routes['forgot'] = {
         url : '/forgot',
         templateUrl : 'views/forgot-password.html',
         controller:'forgotCtrl'
     };
+
      this.routes['description'] = {
         url : '/description?shop_id',
         templateUrl : 'views/descriptionProducts.html',
@@ -56,6 +71,7 @@ angular
         templateUrl : 'views/shopCart.html',
         controller:'shopcartCtrl'
     };
+
     this.routes['SubmitOrder'] = {
         url : '/SubmitOrder',
         templateUrl : 'views/SubmitOrder.html',
@@ -66,18 +82,8 @@ angular
         templateUrl : 'views/payment.html',
         controller:'paymentCtrl'
     };
-    this.routes['main.personal'] = {
-        url : '^/personal',
-        templateUrl : 'views/personal.html',
-        controller:'personalCtrl'
-    };
-    this.routes['main.information'] = {
-        url : '^/information',
-        templateUrl : 'views/information.html',
-        controller:'informationCtrl'
-    };
      this.routes['applyCash'] = {
-        url : '/applyCash',
+        url : '/applyCash?type',
         templateUrl : 'views/applyCash.html',
         controller:'applyCashCtrl'
     };
@@ -137,10 +143,61 @@ angular
         controller:'preferentialCtrl'
     };
      this.routes['Opinion'] = {
-        url : '/Opinion',
+        url : '/Opinion?order_id',
         templateUrl : 'views/Opinion.html',
         controller:'OpinionCtrl'
     };
+    this.routes['restaurant'] = {
+        url : '/restaurant',
+        templateUrl : 'views/restaurant.html',
+        controller:'restaurantsCtrl'
+    };
+    this.routes['hotel'] = {
+        url : '/hotel',
+        templateUrl : 'views/hotel.html',
+        controller:'hotelCtrl'
+    };
+    this.routes['fruit'] = {
+        url : '/fruit',
+        templateUrl : 'views/fruit.html',
+        controller:'fruitCtrl'
+    };
+    this.routes['hair'] = {
+        url : '/hair',
+        templateUrl : 'views/hair.html',
+        controller:'hairCtrl'
+    };
+    this.routes['fitness'] = {
+        url : '/fitness',
+        templateUrl : 'views/fitness.html',
+        controller:'fitnessCtrl'
+    };
+    this.routes['supermarket'] = {
+        url : '/supermarket',
+        templateUrl : 'views/supermarket.html',
+        controller:'supermarketCtrl'
+    };
+    this.routes['articles'] = {
+        url : '/articles',
+        templateUrl : 'views/articles.html',
+        controller:'articlesCtrl'
+    };
+    this.routes['medical'] = {
+        url : '/medical',
+        templateUrl : 'views/medical.html',
+        controller:'medicalCtrl'
+    };
+    this.routes['integral'] = {
+        url : '/integral',
+        templateUrl : 'views/integral.html',
+        controller:'integralCtrl'
+    };
+    this.routes['favorable'] = {
+        url : '/favorable',
+        templateUrl : 'views/favorable.html',
+        controller:'favorableCtrl'
+    };
+
 
     
     this.$get = function()

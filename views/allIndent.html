@@ -24,7 +24,7 @@
 	</div>
 	<div class="col-sm-12 col-xs-12 btmindent">
 		<div>
-			<button class="pingjia" ng-if="pr.is_dianping==0" ui-sref="Opinion">我要评价</button>
+			<button class="pingjia" ng-if="pr.is_dianping==0" ui-sref="Opinion({order_id:pr.order_id})">我要评价</button>
 			<button class="pingjia" ng-if="pr.is_dianping==1">已点评</button>
 			<button class="productIt" ui-sref="IndentMsg({order_id:pr.order_id})">详情</button>
 		</div>

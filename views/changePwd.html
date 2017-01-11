@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/assets/css/reset.css">
+
 	<link rel="stylesheet" href="/assets/css/changePwd.css">
 
 	<div class="banner">
@@ -19,7 +18,7 @@
 	
 	<div class="row">
 	<div class="col-sm-12 col-xs-12">
-		<button class="btn-submit" ng-click="change()" ng-disabled="password!=Npasswords||password==undefined||Npasswords==undefined">立刻修改</button>
+		<button class="btn-submit" ng-click="change()" ng-disabled="password!=Npasswords||password==''||password==null||Npasswords==null||Npasswords==''">立刻修改</button>
 	</div>
 </div>
 <dialog ng-if="dialog.open" duration="2000" close="dialog.open=false"  close-action="esc outerchick">
