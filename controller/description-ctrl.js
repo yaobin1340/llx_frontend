@@ -11,7 +11,7 @@ angular
 		var $mdMedia = $injector.get('$mdMedia');
 		var $mdToast = $injector.get('$mdToast');
 
-        $scope.num=1;
+        $scope.num=1;$scope.choseEwk=0;
         $scope.change = function(data){
         	 $scope.num=data;
         }
@@ -44,6 +44,12 @@ angular
 						);
 					}
 				})
+
+		$scope.ewk = function(){
+			$scope.choseEwk=1;
+			$("#qrcode").html("");
+			new QRCode(document.getElementById('qrcode'), window.location.href);
+		}
 
 
 

@@ -5,19 +5,19 @@
 	    <p>餐饮饭店</p>
 	</div>
 	<div class="centerImgbanner">
-		<img src="" alt="">
+		<img src="" alt="图片区域">
 	</div>
 	<div class="row chose">
 		<div class="col-sm-6 col-xs-6">
 			<div class="orderby" ng-click="choseStep(1)">
-				<span>排序</span><img src="/assets/img/line-down.png" alt=""></div>
+				<span>{{chosech}}</span><img src="/assets/img/line-down.png" alt=""></div>
 			</div>
 		<div class="col-sm-6 col-xs-6">
 			<div class="chosemore" ng-click="choseStep(2)">
 				<span>筛选</span><img src="/assets/img/line-down.png" alt=""></div>
 			</div>
 		</div>
-			
+
 			<div class="row clearfix">
 			<div class="clearfix chosexix" ng-if="step==2">
 				<div class="col-sm-12 col-xs-12 choseItemone">
@@ -29,10 +29,10 @@
 			<div class="clearfix chosexix" ng-if="step==1">
 				<div class="col-sm-12 col-xs-12 choseItemone">
 					<ul>
-						<li ng-click="choseStep()" class="choseThis">智能排序</li>
-						<li ng-click="choseStep()">离我最近</li>
-						<li ng-click="choseStep()">好评优先</li>
-						<li ng-click="choseStep()">附近</li>
+						<li ng-click="choseStep2(11)" ng-class="{choseThis:step2==11}">智能排序</li>
+						<li ng-click="choseStep2(12)" ng-class="{choseThis:step2==12}">离我最近</li>
+						<li ng-click="choseStep2(13)" ng-class="{choseThis:step2==13}">好评优先</li>
+						<li ng-click="choseStep2(14)" ng-class="{choseThis:step2==14}">附近</li>
 					</ul>
 				</div>
 			</div>

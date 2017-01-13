@@ -22,9 +22,7 @@
 	</div>
 	<div ng-if='noLead' class="nullMoney">当前日期内暂无资金日志</div>
 </div>
-<dialog ng-if="dialog.open" duration="1500" close="dialog.open=false"  close-action="esc outerchick">
-    <div dialog-content>{{err}}</div>
-</dialog>
+
 <script>
 	$(function(){  
     	$('#beginTime').date();

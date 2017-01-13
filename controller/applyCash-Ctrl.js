@@ -10,6 +10,7 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
+
         if($stateParams.type=='drawal'){
             $scope.chose1=0;$scope.chose2=0;$scope.chose3=1;
             drawal();
@@ -54,13 +55,15 @@ angular
             }
         }
          function drawal(){
-
+            $scope.phone=$session.get('phone');
             //获取相关提现信息
+            
             $http
                 .post($config.api_uri + '/Apiuser/Money/cash')
                 .success(function (data) {
                     if(data.success){
                         $scope.dan=data;
+                        $scope.info=data.info;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -71,7 +74,7 @@ angular
                 })
 
             $scope.tixian = function(){
-                if($scope.money>=$scope.dan.cash_money){
+                if($scope.dan.gold>=$scope.dan.cash_money){
                     $scope.money=$scope.dan.gold>$scope.dan.cash_money_big?$scope.dan.cash_money_big:$scope.dan.gold;
                 }else{
                     $mdToast.show(
@@ -85,7 +88,7 @@ angular
 
             $scope.getCard = function(){
             $http
-                .post($config.api_uri + '/Apiuser/Money/sendsms')
+                .post($config.api_uri + '/Apiuser/Money/sendsms',{mobile:$scope.phone})
                 .success(function (data) {
                     if(data.success){
                         $scope.yzm=data.yzm;
@@ -101,13 +104,23 @@ angular
 
 
         $scope.drawalMoney = function(){
+            if($scope.yzms!=$scope.yzm){
+                $mdToast.show(
+                        $mdToast.simple()
+                            .content("验证码错误")
+                            .hideDelay(1000)
+                        );
+                return;
+            }
+            $scope.money=$("#money").val();
             $http
-                .post($config.api_uri + '/Apiuser/Money/cash',{gold:$scope.money,bank_name:scope.cardType,bank_num:scope.cardNum,bank_branch:scope.branch,bank_realname:scope.person,mobile:scope.user.mobile})
+                .post($config.api_uri + '/Apiuser/Money/cash',{gold:$scope.money,bank_name:$scope.info.bank_name,bank_num:$scope.info.bank_num,bank_branch:$scope.branch,bank_realname:$scope.info.bank_realname,mobile:$scope.phone})
                 .success(function (data) {
+                    console.log(data);
                     if(data.success){
                         $mdToast.show(
                         $mdToast.simple()
-                            .content("您的申请已成功提交")
+                            .content(data.error_msg)
                             .hideDelay(1000)
                         );
                     }else{

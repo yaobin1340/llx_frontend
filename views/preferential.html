@@ -1,12 +1,11 @@
 
 	<link rel="stylesheet" href="/assets/css/preferential.css">
 		<script src="/assets/js/qrcode.min.js"></script>
-
+<div ng-show="fenxiao==0">
 	<div class="banner">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>优惠卡</p>
 	</div>
-
 	<div class="proMsg" ng-repeat="Yhk in yhk">
 		<div class="row proMsg-top">
 			<div class="col-sm-9 col-xs-9 proMsg-top-shop">
@@ -30,12 +29,19 @@
 				<button class="fenxiao" ng-click="preferential(Yhk.shop_id)">分销</button>
 			</div>
 			<br>
-			<div class="col-sm-12 col-xs-12" id="qrcode">
-				
-			</div>
 		</div>
 	</div>
 	<div class="toBottom" ng-if="yhk.length==0">-暂无更多优惠卡消息-</div>
 	<div class="marbom"></div>
+</div>
+
+	<div ng-show="fenxiao==1">
+		<div class="banner">
+		    <img src="/assets/img/552cc14536532_128.png" alt="返回" ng-click="fenxiao=0">
+		    <p>分销二维码</p>
+		</div>
+		<div id="qrcode"></div>
+	</div>
+	
 
 	

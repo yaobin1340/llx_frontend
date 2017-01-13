@@ -11,8 +11,7 @@ angular.module( 'ohapp',
         'ngMaterial',
         'ngMdIcons',
         'ngAria',
-        'infinite-scroll',
-        'angular-popups'
+        'infinite-scroll'
     ]
 )
 .config( function config( $injector, $locationProvider)

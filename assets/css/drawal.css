@@ -152,3 +152,7 @@ input::-moz-placeholder {
   border: 0.01388889rem solid #ff0000;
   border-radius: 0.06944444rem;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

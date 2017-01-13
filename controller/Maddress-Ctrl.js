@@ -11,25 +11,80 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');	
 
-        // $http
-        //         .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
-        //         .success(function (data) {
-        //             if(data.success){
-        //                 $scope.account = data;
-        //             }else{
-        //                 $scope.dialog={open: true};
-        //                 $scope.err=data.error_msg;
-        //             }
-        //         })
-        //         .error(function (err) {
-        //             $scope.dialog={open: true};
-        //             $scope.err = err.error_msg;
-        //         })
+$scope.page=1;
+        $scope.load = function(){
+            $http
+                .post($config.api_uri + '/Apiuser/Adr/index',{page:$scope.page})
+                .success(function (data) {
+                    if(data.success){
+                        $scope.address = data.addr;
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
 
-        $scope.delect =  function(){
-            console.log("删除接口")
+                    }
+                })
+        }
+        $scope.load();
+
+
+
+
+
+
+        $scope.delect =  function(adrId){
+            $http
+                .post($config.api_uri + '/Apiuser/Adr/delete',{addr_id:adrId})
+                .success(function (data) {
+                    if(data.status=="success"){
+                        $mdToast.show(
+                                $mdToast.simple()
+                                    .content(data.error_msg)
+                                    .hideDelay(1000)
+                                ); 
+                        angular.forEach($scope.address,function(item, index){
+                            if(item.addr_id==adrId){
+                                $scope.address.splice(index, 1); 
+                                return;
+                            }
+                        })
+                        
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
         }
 
+        $scope.changeImg = function(addr){
+            $http
+                .post($config.api_uri + '/Apiuser/Adr/update_addr',{addr_id:addr})
+                .success(function (data) {
+                    if(data.success){
+                        $http
+                            .post($config.api_uri + '/Apiuser/Adr/index')
+                            .success(function (data) {
+                                if(data.success){
+                                $scope.address = data.addr;
+                                }else{
+                                    window.history.go(0);
+                                }
+                            })
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+        }
 
 
 

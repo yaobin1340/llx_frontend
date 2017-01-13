@@ -222,3 +222,7 @@ footer .addCart {
 footer .goPay {
   background-color: #fc5d4b;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

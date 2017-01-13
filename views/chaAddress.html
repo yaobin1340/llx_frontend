@@ -30,16 +30,17 @@
 	<div class="row default rows">
 		<div class="col-sm-6 col-xs-6">设为默认地址</div>
 		<div class="col-sm-6 col-xs-6 default-img text-right">
-			<img src="/assets/img/chosef.png" alt="">
+			<img src="/assets/img/chosef.png" alt="" ng-if="chosedefault==0" ng-model="chosedefault" ng-click="choseImg()">
+			<img src="/assets/img/chose.png" alt="" ng-if="chosedefault==1" ng-model="chosedefault" ng-click="choseImg()">
 		</div>
 	</div>
 	<div class="row default rows">
 		<div class="col-sm-12 col-xs-12">
-			<a href="">删除地址</a>
+			<a href="" ng-click="deladdr()">删除地址</a>
 		</div>
 	</div>
 	<div class="col-sm-12 col-xs-12">
-		<button class="btn-submit"ng-disabled="shoup==null||shoup==''||shoutel==null||shoutel==''||shoutear==null||shoutear==''||n==null||n==''">保存</button>
+		<button class="btn-submit"ng-disabled="shoup==null||shoup==''||shoutel==null||shoutel==''||shoutear==null||shoutear==''||n==null||n==''" ng-click="baocun()">保存</button>
 	</div>
 </div>
 

@@ -11,8 +11,41 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-		$scope.scroll_switch = 1;
-		$scope.shops = new Shops();
+		$scope.currentPage = 0;
+        $scope.scroll_switch = 1;
+        $scope.shops = new Shops();
+        $scope.shops.busy = true;
+        $scope.shops.lat = '';
+        $scope.shops.lng = '';
+        $scope.isReady = false;
+
+        // $scope.$on('$viewContentLoaded', function() {
+        //     window.wxConfig();
+        // });
+        //获取经纬度所在地区
+        $scope.getIndex = function(){
+            $http({
+                method: 'POST',
+                url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
+                data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
+            }).success(function (data) {
+                if (data.success) {
+                    $scope.area_name = data.area_name;
+                    $scope.shops.area_code = data.area_code;
+                    $scope.shops.busy = false;
+                    $scope.shops.nextPage()
+                } else {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(2000)
+                    );
+                }
+
+            })
+        }
+
+
 
 
 		$scope.choseAdd = function(){
@@ -69,6 +102,13 @@ angular
         $scope.toacrt = function(near,an){
             $scope.add=0;
             $scope.n=an;
+            $scope.shops.area_code =near;
+            $scope.area_name = an;
+            $scope.shops.items = [];
+            $scope.shops.end = false;
+            $scope.shops.busy = false;
+            $scope.shops.page = 1;
+            $scope.shops.nextPage();
         }
     }
 			 

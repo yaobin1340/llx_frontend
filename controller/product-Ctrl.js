@@ -11,6 +11,7 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
         
+        $scope.good_id=$stateParams.goods_id;
         $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail',{goods_id:$stateParams.goods_id})
 				.success(function (data) {
@@ -27,14 +28,15 @@ angular
 				})
 
         $scope.addCart = function(){
-            if(!$session.get('auth').token){
-                $state.go('signin');
-            }else{
             $http
                 .post($config.api_uri + '/Apiuser/cart/cartadd',{goods_id:$stateParams.goods_id})
                 .success(function (data) {
                     if(data.success){
-                       console.log(data);
+                       $mdToast.show(
+                        $mdToast.simple()
+                            .content("加入购物车成功")
+                            .hideDelay(1000)
+                        );
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -43,12 +45,6 @@ angular
                         );
                     }
                 })
-
-
-
-
-
-            }
         }
 
 

@@ -12,8 +12,9 @@ angular
         var $mdToast = $injector.get('$mdToast');
         
             $http
-    				.post($config.api_uri + '/Apiuser/cart/cartedit',{cart_id:$stateParams.shopcartId})
+    				.post($config.api_uri + '/Apiuser/Orderinfo/order_cart',{cart_id:$stateParams.shopcartId})
     				.success(function (data) {
+                        console.log(data);
                         if(data.success){
                             
                         }else{

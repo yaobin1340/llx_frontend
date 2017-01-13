@@ -111,7 +111,7 @@ body {
 .rowpay div p {
   line-height: 0.69444444rem;
 }
-.rowpay div span {
+.rowpay div .rowpay-btn {
   color: #ed3331;
 }
 .rowpay button {
@@ -125,8 +125,11 @@ body {
   border-radius: 0.13888889rem;
 }
 .marbom {
+  text-align: center;
+  line-height: 1.38888889rem;
+  font-size: 0.45rem;
   background-color: #eff0eb;
-  height: 2rem;
+  height: 3rem;
 }
 footer {
   width: 100%;
@@ -149,7 +152,7 @@ footer span {
   width: 100%;
   color: #000;
   display: block;
-  font-size: 0.262rem;
+  font-size: 0.35rem;
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {

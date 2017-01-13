@@ -12,8 +12,9 @@
 				<p  class="pro-title">{{carts.title}}</p>
 				<span class="price-one">单价：￥{{carts.mall_price}}</span>
 				<span class="price-all">合计：<span  class="price-one">￥{{carts.mall_price*carts.cart_num}}</span></span><br>
-				<button ng-click="remo(carts)">-</button><input type="text" ng-model="carts.cart_num"><button class="btn-add" ng-click="add(carts)">+</button>
-			<div ng-click="delect(carts.cart_id)"  class="delect-div">
+				<button ng-click="remo(carts)">-</button><input type="text" ng-model="carts.cart_num"
+				 ><button class="btn-add" ng-click="add(carts)">+</button>
+			<div ng-click="delect(carts)"  class="delect-div">
 				<img src="/assets/img/img_delete.png" alt="" class="delect">
 			</div>
 		</div>
@@ -24,7 +25,3 @@
 		<span>￥{{getTotalPrice()}}</span>
 		<div class="goPay" ng-click="goPay()">结算</div>
 	</footer>
-<dialog ng-if="dialog.open" close="dialog.open=false" close-action="esc outerchick">
-    <div dialog-title>拉拉秀商城</div>
-    <div dialog-content>{{err}}</div>
-</dialog>

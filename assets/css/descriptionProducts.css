@@ -188,3 +188,40 @@ body {
 .BusinessRe span {
   color: #3e9ece;
 }
+.banners {
+  width: 100%;
+  height: 1.38rem;
+  background-color: #3e9ece;
+}
+.banners img {
+  width: 0.69444444rem;
+  position: absolute;
+  margin-top: 0.35rem;
+  float: left;
+  margin-left: 0.69444444rem;
+}
+.banners p {
+  text-align: center;
+  line-height: 1.38rem;
+  color: #fff;
+  font-size: 0.41666667rem;
+  margin-bottom: 0.02777778rem;
+}
+#qrcode {
+  width: 80%;
+  margin: 30% 10%;
+}
+#qrcode img {
+  margin: 0 auto;
+  width: 80%;
+  padding-bottom: 0.4rem;
+}
+#qrcode canvas {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

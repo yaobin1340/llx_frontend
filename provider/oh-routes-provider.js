@@ -73,7 +73,7 @@ angular
     };
 
     this.routes['SubmitOrder'] = {
-        url : '/SubmitOrder',
+        url : '/SubmitOrder?goods_id',
         templateUrl : 'views/SubmitOrder.html',
         controller:'SubmitOrder'
     };
@@ -108,7 +108,7 @@ angular
         controller:'addAddressCtrl'
     };
     this.routes['chaAddress'] = {
-        url : '/chaAddress',
+        url : '/chaAddress?addr_id',
         templateUrl : 'views/chaAddress.html',
         controller:'chaAddressCtrl'
     };
@@ -118,7 +118,7 @@ angular
         controller:'updataTotalCtrl'
     };
     this.routes['Mycart'] = {
-        url : '/Mycart',
+        url : '/Mycart?type',
         templateUrl : 'views/Mycart.html',
         controller:'MycartCtrl'
     };
@@ -197,6 +197,22 @@ angular
         templateUrl : 'views/favorable.html',
         controller:'favorableCtrl'
     };
+    this.routes['systemMsg'] = {
+        url : '/systemMsg?msg_id',
+        templateUrl : 'views/systemMsg.html',
+        controller:'systemMsgCtrl'
+    };
+    this.routes['mumberMsg'] = {
+        url : '/mumberMsg?msg_id',
+        templateUrl : 'views/mumberMsg.html',
+        controller:'mumberMsgCtrl'
+    };
+    this.routes['navigation'] = {
+        url : '/navigation?lng&?lat?name',
+        templateUrl : 'views/navigation.html',
+        controller:'navigationCtrl'
+    };
+    
 
 
     

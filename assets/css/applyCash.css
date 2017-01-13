@@ -38,3 +38,7 @@ body {
 .menu .border {
   border-bottom: 0.06944444rem solid #3e9ece;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

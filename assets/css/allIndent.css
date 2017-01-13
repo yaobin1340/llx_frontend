@@ -140,3 +140,7 @@ body {
   line-height: 1.38888889rem;
   font-size: 0.45rem;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

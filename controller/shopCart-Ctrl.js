@@ -17,7 +17,7 @@ angular
 				.success(function (data) {
                     if(data.success){
                         $scope.cart_list=data.cart_list;
-                        console.log(data);
+                        
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -29,11 +29,12 @@ angular
 
             $scope.delect=function(id){
                 $http
-                .post($config.api_uri + '/Apiuser/cart/cartdel',{card_id:id})
+                .post($config.api_uri + '/Apiuser/cart/cartdel',{cart_id:id.cart_id})
                 .success(function (data) {
+                    console.log(data);
                     if(data.success){
                         angular.forEach($scope.cart_list,function(item, index){
-                            if(item.cart_id==id){
+                            if(item.cart_id==id.cart_id){
                                 $scope.cart_list.splice(index, 1);
                                 return;
                             }
@@ -47,28 +48,40 @@ angular
                     }
                 })
             };
+
             $scope.goPay=function(){
+                $scope.items=[];
                 angular.forEach($scope.cart_list, function (item) {
                     $scope.items.push(item.cart_id);
                 });
-                $state.go('payment', {shopcartId: $scope.items});
+                $http
+                        .post($config.api_uri + '/Apiuser/Orderinfo/order_cart',{cart_id:$scope.items})
+                        .success(function (data) {
+                            console.log(data);
+                             if(data.success){
+                                if(data.order_id==-1){
+                                    $state.go('Mycart', {type:'noIndent'});
+                                }else{
+                                    $state.go('payment', {shopcartId: data.order_id});
+                                }
+                             }else{
+                                $mdToast.show(
+                                $mdToast.simple()
+                                    .content(data.error_msg)
+                                    .hideDelay(1000)
+                                );
+                             }
+                        })
             };
             
-            // $scope.only_number = function(data) {
-            //     num=a.replace(/\D/g,'');
-            //     if(num>=1){
-            //         $scope.num=num;
-            //     }else{
-            //         $scope.num=1;
-            //     }
-            // };
+
             $scope.remo=function(id){
                 if(id.cart_num>1){
                     $http
-                        .post($config.api_uri + '/Apiuser/cart/cartedit',{card_id:id.cart_id,num:id.cart_num-1})
+                        .post($config.api_uri + '/Apiuser/cart/cartedit',{cart_id:id.cart_id,num:parseInt(id.cart_num)-1})
                         .success(function (data) {
                              if(data.success){
-                                id.cart_num--;
+                                id.cart_num=parseInt(id.cart_num)-1;
                              }else{
                                 $mdToast.show(
                                 $mdToast.simple()
@@ -83,10 +96,10 @@ angular
             }
             $scope.add=function(id){
                 $http
-                .post($config.api_uri + '/Apiuser/cart/cartedit',{card_id:id.cart_id,num:id.cart_num+1})
+                .post($config.api_uri + '/Apiuser/cart/cartedit',{cart_id:id.cart_id,num:parseInt(id.cart_num)+1})
                 .success(function (data) {
                      if(data.success){
-                        id.cart_num++;
+                        id.cart_num=parseInt(id.cart_num)+1;
                      }else{
                         $mdToast.show(
                         $mdToast.simple()

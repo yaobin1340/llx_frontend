@@ -1,5 +1,7 @@
 
 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css">
+	<script src="/assets/js/qrcode.min.js"></script>
+<div ng-show="choseEwk==0">
 	<div class="banner" style="background: url(http://wap.51loveshow.com/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
 	background-size: 100%;">
 			<div class="cir cir-left img-circle">
@@ -23,7 +25,7 @@
 			<span class="address-message  text-overflow">{{detail.addr}}</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/address.png" alt="">
+			<img src="/assets/img/address.png" alt="" ng-click="daohang()" ui-sref="navigation({lng:detail.lng,lat:detail.lat,name:detail.shop_name})">
 		</div>
 	</div>
 
@@ -46,7 +48,7 @@
 			<span class="address-message">二维码名片</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/line.png" alt="">
+			<img src="/assets/img/line.png" alt="" ng-click="ewk()">
 		</div>
 	</div>
 	<div class="QRcode">
@@ -64,11 +66,11 @@
 		<div class="address-left">
 			<img src="/assets/img/user.png" alt="" class="img-center-left">
 		</div>
-		<div class="address-center" ui-sref="smallShop({shop_id:detail.shop_id})">
+		<div class="address-center">
 			<span class="address-message">去逛逛商家微店</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/line.png" alt="">
+			<img src="/assets/img/line.png" alt="" ui-sref="smallShop({shop_id:detail.shop_id})">
 		</div>
 	</div>
 	<!-- 用户评价 -->
@@ -114,7 +116,14 @@
 			</div>
 		</div>
 	</div>
-<dialog ng-if="dialog.open" close="dialog.open=false"  close-action="esc outerchick">
-    <div dialog-title>拉拉秀商城</div>
-    <div dialog-content>{{err}}</div>
-</dialog>
+</div>
+
+
+
+<div ng-show="choseEwk==1">
+	<div class="banners">
+		    <img src="/assets/img/552cc14536532_128.png" alt="返回" ng-click="choseEwk=0">
+		    <p>店铺二维码</p>
+		</div>
+		<div id="qrcode"></div>
+</div>

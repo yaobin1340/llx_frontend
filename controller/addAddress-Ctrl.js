@@ -12,21 +12,6 @@ angular
         var $mdToast = $injector.get('$mdToast');
         $scope.add=0;
 
-        // $http
-        //         .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
-        //         .success(function (data) {
-        //             if(data.success){
-        //                 $scope.account = data;
-        //             }else{
-        //                 $scope.dialog={open: true};
-        //                 $scope.err=data.error_msg;
-        //             }
-        //         })
-        //         .error(function (err) {
-        //             $scope.dialog={open: true};
-        //             $scope.err = err.error_msg;
-        //         })
-
 
     $scope.choseAdd = function(){
         $scope.add=1;
@@ -49,6 +34,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.p=ap;
+                        $scope.privence=privence;
                         $scope.add_p=[];
                         $scope.add_c = data.city_list;
                     }else{
@@ -69,6 +55,7 @@ angular
                         $scope.add_p=[];
                         $scope.add_c=[];
                         $scope.add_near=data.area_list;
+                        $scope.city=city;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -82,24 +69,36 @@ angular
         $scope.toacrt = function(near,an){
             $scope.add=0;
             $scope.n=an;
+            $scope.near=near;
         }
     }
-
+    $scope.chosedefault=0;
+    $scope.choseImg = function(){
+        $scope.chosedefault=!$scope.chosedefault;
+    }
     $scope.submitAdd = function(){
-        // $http.post($config.api_uri + '')
-        //         .success(function (data) {
-        //             if(data.success){
-                        
-        //             }else{
-        //                 $scope.dialog={open: true};
-        //                 $scope.err=data.error_msg;
-        //             }
-        //         })
-        //         .error(function (err) {
-        //             $scope.dialog={open: true};
-        //             $scope.err = err.error_msg;
-        //         })
-        console.log("保存成功暂无接口");
+        if($scope.chosedefault){
+            $scope.isdefault=1
+        }else{
+            $scope.isdefault=0
+        }
+        $http.post($config.api_uri + '/Apiuser/Adr/add_addr',{name:$scope.shoup,city_code:$scope.city,area_code:$scope.near,province_code:$scope.privence,mobile:$scope.shoutel,addr:$scope.shoutear,default:$scope.isdefault})
+                .success(function (data) {
+                    if(data.status=='success'){
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                        window.history.go(-1);
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
     }
 
     });

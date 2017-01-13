@@ -10,7 +10,7 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-        
+        $scope.fenxiao=0;
             $http
                 .post($config.api_uri + '/Apiuser/Yhk/index')
                 .success(function (data) {
@@ -32,8 +32,8 @@ angular
                             if(data.success){
                                 $scope.url = data.url;
                                 $("#qrcode").html("");
+                                $scope.fenxiao=1;
                                 new QRCode(document.getElementById('qrcode'), $scope.url);
-
                             }else{
                                 $mdToast.show(
                                 $mdToast.simple()

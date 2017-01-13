@@ -146,3 +146,7 @@ body {
   border: 0.01388889rem solid  #3e9ece;
   border-radius: 0.06944444rem;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

@@ -11,14 +11,21 @@
 		<div class="col-sm-6 col-xs-6 pos-r" ng-class="{'border':chose2}" ng-click="chose(2)">会员信息</div>
 		<p class="cir cir2">99</p>
 	</div>
-	<div class="systemMsg">
-		<div class="Msg-now">
-			<div class="Msg-now-left text-overflow">放哪儿放阿瓦达家的娃都没爱我的阿瓦打我娃娃们安尔碘挖到阿瓦打我娃娃们安尔碘挖到阿瓦打我娃娃们安尔碘挖到阿瓦打我娃娃们安尔碘挖到阿瓦打我娃娃们安尔碘挖到阿瓦打我娃娃们安尔碘挖到阿瓦打我娃娃们安尔碘挖到阿瓦打我娃娃们安尔碘挖到</div>
-			<div class="Msg-now-time">2016</div>
+	<div class="systemMsg"   infinite-scroll='messages.nextPage()' infinite-scroll-disabled='messages.busy' infinite-scroll-distance='1' ng-if="chose1==1">
+		<div class="Msg-now" ng-repeat="msg in messages.items" ui-sref="systemMsg({msg_id:msg.msg_id})">
+			<div class="Msg-now-left text-overflow">{{msg.intro}}</div>
+			<div class="Msg-now-time">{{msg.create_time}}</div>
 		</div>
-		<div class="Msg-old">
-			<div class="Msg-old-left text-overflow">放哪儿放阿瓦达家的娃都没爱我的阿瓦打我娃娃们安尔碘挖到</div>
-			<div class="Msg-old-time">16-12-31</div>
-		</div>
-	</div>
+		<div class="home_shop_nomore" ng-show='messages.end'>-暂无更多信息-</div>
 		
+	</div>
+
+	<div class="systemMsg"   infinite-scroll='messagem.nextPage()' infinite-scroll-disabled='messagem.busy' infinite-scroll-distance='1' ng-if="chose2==1">
+		<div class="Msg-now" ng-repeat="msg in messagem.items" ui-sref="mumberMsg({msg_id:msg.msg_id})">
+			<div class="Msg-now-left text-overflow">{{msg.intro}}</div>
+			<div class="Msg-now-time">{{msg.create_time}}</div>
+		</div>
+		<div class="home_shop_nomore" ng-show='messagem.end'>-暂无更多信息-</div>
+		
+	</div>
+	

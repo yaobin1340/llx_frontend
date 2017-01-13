@@ -86,9 +86,9 @@ a{
     line-height: 100%;
 }
 .getCard{
-	float: right;
-	margin-right: 0.594rem;
-	margin-top: 0.208rem;
+	position:absolute;
+	right: 0.594rem;
+	top: 0.208rem;
 	min-width: 2.5rem;
 	height: 0.8333333333rem;
 	border:1px solid #3e9ece;
@@ -108,9 +108,10 @@ a{
 	display: block;
 	border:1px solid #bfbfbf;
 	border-radius: 0.1rem;
+	position:relative;
 }
 .card input{
-	width: 4.9rem;
+	width: 8.85rem;
 	margin: 0;
 	display: inline-block;
 	border:none;

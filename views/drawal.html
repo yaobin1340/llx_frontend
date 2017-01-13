@@ -6,7 +6,7 @@
 			<label for="money">￥</label>
 		</div>
 		<div class="col-sm-4 col-xs-4 text-overflow">
-			<input type="number" id="money" ng-model="money">
+			<input type="text" id="money" ng-model="money">
 		</div>
 		<div class="col-sm-7 col-xs-7 text-overflow danbi text-right">
 			单笔提现金额{{dan.cash_money}}元-{{dan.cash_money_big}}元
@@ -20,19 +20,19 @@
 	</div>
 	<div class="col-sm-12 col-xs-12 border-tb">
 		<label for="person">持卡人</label>
-		<input type="text" id="person" placeholder="姓名" ng-model="person">
+		<input type="text" id="person" placeholder="姓名" ng-model="info.bank_realname">
 	</div>
 	<div class="col-sm-12 col-xs-12 border-tb">
 		<label for="cardNum">卡号</label>
-		<input type="text" id="cardNum" placeholder="银行卡号" ng-model="cardNum" value="{{dan.info.bank_num}}">
+		<input type="text" id="cardNum" placeholder="银行卡号" ng-model="info.bank_num">
 	</div>
 	<div class="col-sm-12 col-xs-12 border-tb">
 		<label for="cardType">卡类型</label>
-		<input type="text" id="cardType" placeholder="用户银行" ng-model="cardType" value="{{dan.info.bank_name}}">
+		<input type="text" id="cardType" placeholder="用户银行" ng-model="info.bank_name">
 	</div>
 	<div class="col-sm-12 col-xs-12 border-tb">
 		<label for="iphone">手机号</label>
-		<input type="text" id="iphone" placeholder="开户手机号" ng-model="user.mobile">
+		<input type="text" id="iphone" placeholder="开户手机号" ng-model="phone">
 	</div>
 	<div class="col-sm-12 col-xs-12 border-tb">
 		<div class="div-yzm">
@@ -56,7 +56,3 @@
 	</div>
 </div>
 
-
-<dialog ng-if="dialog.open" close="dialog.open=false" duration="2000" close-action="esc outerchick">
-    <div dialog-content>{{msg}}</div>
-</dialog>

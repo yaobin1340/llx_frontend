@@ -141,6 +141,8 @@ body {
 }
 .photo {
   height: 2.5rem;
+  position: relative;
+  text-align: center;
   background-size: 1rem;
 }
 .photo img {
@@ -216,4 +218,19 @@ body {
   z-index: 1;
   top: 0.015rem;
   left: 0;
+}
+#fileToUpload {
+  width: 2.09722222rem;
+  height: 2.09722222rem;
+  margin: 0.20833333rem auto;
+  position: absolute;
+  font-size: 2.09722222rem;
+  left: 0;
+  top: 0;
+  z-index: 15;
+  opacity: 0;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
 }

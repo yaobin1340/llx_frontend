@@ -166,3 +166,7 @@ footer {
   background: url(/assets/img/img_phone_call.png) no-repeat 1.15rem;
   background-size: 0.4rem;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

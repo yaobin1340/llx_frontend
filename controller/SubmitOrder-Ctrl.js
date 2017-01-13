@@ -12,7 +12,7 @@ angular
         var $mdToast = $injector.get('$mdToast'); 
         
         $http
-				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail')
+				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail',{})
 				.success(function (data) {
 					if(data.success){
 
@@ -25,9 +25,9 @@ angular
                     }
 				})
 
-        $scope.subOrder=function(){
-            $rootScope.$page = 'payment'
-        }
+        // $scope.subOrder=function(){
+        //     $rootScope.$page = 'payment'
+        // }
 
 
 

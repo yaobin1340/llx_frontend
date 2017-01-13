@@ -101,3 +101,7 @@ input::-moz-placeholder {
   text-align: center;
   line-height: 0.69444444rem;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}

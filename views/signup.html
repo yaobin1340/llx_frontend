@@ -8,7 +8,7 @@
 	<img src="/assets/img/top-banner.png" alt="banner">
 </div>
 <div class="form">
-	<input type="text" class="form-control phone" placeholder="请输入手机号" ng-model="user.mobile" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required>
+	<input type="tel" class="form-control phone" placeholder="请输入手机号" ng-model="user.mobile" ng-maxlength="11" ng-pattern="/^1[34578]\d{9}$/" required>
 	<div class="card">
 		<input type="text" class="form-control phone2" placeholder="请输入验证码" ng-model="cards" ng-maxlength="6" required>
 		<timerbutton ng-click="getCard()"></timerbutton>
@@ -20,7 +20,3 @@
 <div class="telphone">
 	<p>服务电话：400-7731377</p>
 </div>
-<dialog ng-if="dialog.open" close="dialog.open=false" close-action="esc outerchick">
-    <div dialog-title>拉拉秀商城</div>
-    <div dialog-content>{{err}}</div>
-</dialog>

@@ -133,6 +133,10 @@ body {
 .add-change div {
   float: left;
 }
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}
 .marbom {
   margin-bottom: 1.38888889rem;
 }

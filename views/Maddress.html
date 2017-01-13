@@ -6,29 +6,30 @@
 	    <p>管理收货地址</p>
 	    <img src="/assets/img/img_add.png" alt="添加收货地址" class="img_add" ui-sref="addAddress">
 	</div>
-
+	<div ng-repeat="adr in address">
 	<div class="row">
-		<div class="col-sm-6 col-xs-6 address-name">许圆圆</div>
-		<div class="col-sm-6 col-xs-6 address-phone text-right">12345678900</div>
+		<div class="col-sm-6 col-xs-6 address-name">{{adr.name}}</div>
+		<div class="col-sm-6 col-xs-6 address-phone text-right">{{adr.mobile}}</div>
 		<div class="col-sm-12 col-xs-12 address">
-			上海市嘉定区江桥万达
+			{{adr.province_name}}{{adr.city_name}}{{adr.area_name}}{{adr.addr}}
 		</div>
 		<div class="col-sm-6 col-xs-6 chose">
-			<img src="/assets/img/chose.png" alt="">
-			<img src="/assets/img/chosef.png" alt="">
-			<p class="active">默认地址</p>
+			<img src="/assets/img/chose.png" alt="" ng-if="adr.is_default==1" ng-click="changeImg(adr.addr_id)">
+			<img src="/assets/img/chosef.png" alt="" ng-if="adr.is_default==0" ng-click="changeImg(adr.addr_id)">
+			<p ng-class="{active:adr.is_default==1}">默认地址</p>
 		</div>
 		<div class="col-sm-6 col-xs-6 add-change">
-			<div ng-click="delect()">
+			<div ng-click="delect(adr.addr_id)">
 				<span>删除</span>
 				<img src="/assets/img/img_delete_black.png" alt="">
 			</div>
-			<div ui-sref="chaAddress">
+			<div ui-sref="chaAddress({addr_id:adr.addr_id})">
 				<span>编辑</span>
 				<img src="/assets/img/img_edit.png" alt="" ui-sref="chaAddress">
 			</div>
 		</div>
 		<div class="bgc"></div>
+	</div>
 	</div>
 
 

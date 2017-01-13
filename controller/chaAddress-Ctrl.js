@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'chaAddressCtrl', function chaAddressCtrl( $scope, $injector, $rootScope) {
+    .controller( 'chaAddressCtrl', function chaAddressCtrl( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -12,21 +12,35 @@ angular
         var $mdToast = $injector.get('$mdToast');
 	
         $scope.add=0;
-        // $http
-        //         .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
-        //         .success(function (data) {
-        //             if(data.success){
-        //                 $scope.account = data;
-        //             }else{
-        //                 $scope.dialog={open: true};
-        //                 $scope.err=data.error_msg;
-        //             }
-        //         })
-        //         .error(function (err) {
-        //             $scope.dialog={open: true};
-        //             $scope.err = err.error_msg;
-        //         })
 
+
+        $http
+                .post($config.api_uri + '/Apiuser/Adr/index')
+                .success(function (data) {
+                    if(data.success){
+                        angular.forEach(data.addr,function(item, index){
+                            if(item.addr_id==$stateParams.addr_id){
+                                $scope.adr=item;
+                                $scope.shoup=item.name;
+                                $scope.shoutel=item.mobile;
+                                $scope.p=item.province_name;
+                                $scope.c=item.city_name;
+                                $scope.n=item.area_name;
+                                $scope.shoutear=item.addr;
+                                $scope.chosedefault=item.is_default;
+                                $scope.privence=item.province_code;
+                                $scope.city=item.city_code;
+                                $scope.near=item.area_code;
+                            }
+                        })
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
 
     $scope.choseAdd = function(){
         $scope.add=1;
@@ -85,9 +99,50 @@ angular
         }
     }
 
+    $scope.choseImg = function(){
+        $scope.chosedefault==0?$scope.chosedefault=1:$scope.chosedefault=0;
+    }
 
+    $scope.baocun = function(){
+        $http.post($config.api_uri + '/Apiuser/Adr/edit_addr',{addr_id:$stateParams.addr_id,name:$scope.shoup,city_code:$scope.city,area_code:$scope.near,province_code:$scope.privence,mobile:$scope.shoutel,addr:$scope.shoutear,default:$scope.chosedefault})
+                .success(function (data) {
+                    if(data.status=='success'){
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                        window.history.go(-1);
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
 
+    }
 
+   $scope.deladdr =  function(){
+       $http.post($config.api_uri + '/Apiuser/Adr/delete',{addr_id:$stateParams.addr_id})
+                .success(function (data) {
+                    if(data.status=="success"){
+                        window.history.go(-1);
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })     
+    }
 
 
 

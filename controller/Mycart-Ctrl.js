@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'MycartCtrl', function MycartCtrl( $scope, $injector, $rootScope) {
+    .controller( 'MycartCtrl', function MycartCtrl( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -10,9 +10,15 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-        
-		$scope.chose1=1;$scope.chose2=0;$scope.chose3=0;
-        allIndent();
+
+
+        if($stateParams.type=='noIndent'){
+            $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
+            noIndent();
+        }else{
+            $scope.chose1=1;$scope.chose2=0;$scope.chose3=0;
+            allIndent();
+        }
 
         $scope.chose = function(id){
             switch (id) {
