@@ -20,7 +20,7 @@ angular
         $scope.isReady = false;
 
         $scope.$on('$viewContentLoaded', function() {
-            window.wxConfig();
+            wxConfig();
         });
         //获取经纬度所在地区
         $scope.getIndex = function(){

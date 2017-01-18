@@ -166,7 +166,6 @@ angular
             });  
         });  
   
-  
         wx.ready(function() {  
             wx.onMenuShareQQ({  
                 title: wxdata.title,  

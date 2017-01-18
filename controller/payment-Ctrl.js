@@ -17,11 +17,12 @@ angular
 
         $scope.zhifu = function(){
             $http
-                .post($config.api_uri + '/Apipublic/WxPay/aj_pay'{log_id:$scope.log_id})
+                .post($config.api_uri + '/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id})
                 .success(function (data) {
                     console.log(data);
                     if(data.success){
-                        
+                        $scope.data=data.result.parameters;
+                        zhifu();
                     }else{
                        $mdToast.show(
                         $mdToast.simple()
@@ -31,38 +32,20 @@ angular
                     }
                 })  
         }
-        // function zhifu(){
-        //     wx.ready(function(){
+        function zhifu(){
             //支付
-            // wx.chooseWXPay({
-            //     timestamp: ${StringUtil.wrapString(requestAttributes.timeStamp)?default(0)!}, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
-            //     nonceStr: '${StringUtil.wrapString(requestAttributes.nonceStr)!}', // 支付签名随机串，不长于 32 位
-            //     package: '${StringUtil.wrapString(requestAttributes.package)!}', // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
-            //     signType: '${StringUtil.wrapString(requestAttributes.signType)!}', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
-            //     paySign: '${StringUtil.wrapString(requestAttributes.paySign)!}', // 支付签名
-            //     success: function (res) {
-            //         // 支付成功后的回调函数
-                    // $http
-                    //     .get($config.api_uri + '/Apipublic/WxPay/aj_pay?log_id='+$scope.log_id)
-                    //     .success(function (data) {
-                    //         console.log(data);
-                    //         if(data.success){
-                    //             $scope.data=data;
-                    //         }else{
-                    //             $mdToast.show(
-                    //             $mdToast.simple()
-                    //                 .content(data.error_msg)
-                    //                 .hideDelay(1000)
-                    //             );
-                    //         }
-             //    })
-            //         if(!res.err_msg){
-            //                     //支付完后.跳转到成功页面.
-            //         location.href="orderconfirm?orderId=${StringUtil.wrapString(requestAttributes.out_trade_no)!}";
-            //         }
-            //     }
-            // });
-        // }
+            wx.chooseWXPay({
+                timestamp: data.wxtimestamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+                nonceStr: data.wxnonceStr, // 支付签名随机串，不长于 32 位
+                package: data.wxpackage, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+                signType: data.wxsignType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+                paySign: data.wxpaySign, // 支付签名
+                success: function (res) {
+                    // 支付成功后的回调函数
+                   console.log(res+"支付成功") 
+                }
+            })
+        }
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
