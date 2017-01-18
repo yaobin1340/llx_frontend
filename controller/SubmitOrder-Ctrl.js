@@ -14,7 +14,6 @@ angular
         $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/orderdetail',{order_id:$stateParams.order_id})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                         $scope.ds=data;
                         $scope.msg = data.detail;

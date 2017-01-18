@@ -16,11 +16,23 @@ angular
         $scope.log_id=$session.get('log_id');
 
         $scope.zhifu = function(){
-            
+            $http
+                .post($config.api_uri + '/Apipublic/WxPay/aj_pay'{log_id:$scope.log_id})
+                .success(function (data) {
+                    console.log(data);
+                    if(data.success){
+                        
+                    }else{
+                       $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })  
         }
-        function zhifu(){
-            wx.ready(function(){
-                console.log(1);
+        // function zhifu(){
+        //     wx.ready(function(){
             //支付
             // wx.chooseWXPay({
             //     timestamp: ${StringUtil.wrapString(requestAttributes.timeStamp)?default(0)!}, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
@@ -49,8 +61,8 @@ angular
             //         location.href="orderconfirm?orderId=${StringUtil.wrapString(requestAttributes.out_trade_no)!}";
             //         }
             //     }
-            });
-        }
+            // });
+        // }
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
@@ -61,9 +73,10 @@ angular
                 signature: data.wxsignature,// 必填，签名，见附录1
                 jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
+
         });
     }
-    wxConfig()
+
 
 
 

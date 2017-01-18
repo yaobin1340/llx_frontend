@@ -23,27 +23,30 @@ angular
             window.wxConfig();
         });
         //获取经纬度所在地区
-        // $scope.getIndex = function(){
-        //     $http({
-        //         method: 'POST',
-        //         url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
-        //         data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
-        //     }).success(function (data) {
-        //         if (data.success) {
-        //             $scope.area_name = data.area_name;
-        //             $scope.shops.area_code = data.area_code;
-        //             $scope.shops.busy = false;
-        //             $scope.shops.nextPage()
-        //         } else {
-        //             $mdToast.show(
-        //                 $mdToast.simple()
-        //                     .content(data.error_msg)
-        //                     .hideDelay(1000)
-        //             );
-        //         }
+        $scope.getIndex = function(){
+            $http({
+                method: 'POST',
+                url: $config.api_uri + '/Apipublic/Apilogin/use_QQmap',
+                data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
+            }).success(function (data) {
+                if (data.success) {
+                    $scope.area_name = data.map.district;
+                    $scope.shops.area_code = data.map.adcode;
+                    $session.set('near_code', data.map.adcode);
+                    $session.set('near_name', data.map.district);
+                    $session.save();
+                    $scope.shops.busy = false;
+                    $scope.shops.nextPage()
+                } else {
+                    $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                    );
+                }
 
-        //     })
-        // }
+            })
+        }
 
 
 
@@ -101,7 +104,6 @@ angular
 
         $scope.toacrt = function(near,an){
             $scope.add=0;
-            $scope.n=an;
             $session.set('near_code', near);
             $session.set('near_name', an);
             $session.save();
@@ -168,6 +170,28 @@ angular
         $scope.shops.nextPage();
     }
 
+    function wxConfig(){
+        $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: data.wxappId, // 必填，公众号的唯一标识
+                timestamp: data.wxtimestamp, // 必填，生成签名的时间戳
+                nonceStr: data.wxnonceStr, // 必填，生成签名的随机串
+                signature: data.wxsignature,// 必填，签名，见附录1
+                jsApiList: ['getLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+        });
+    }
+    wx.ready(function() {
+    wx.getLocation({
+        type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+        success: function (res) {
+            $scope.shops.lat = res.latitude;
+            $scope.shops.lng = res.longitude;
+            $scope.getIndex();
+        }
+    });
+})
 
 
 
