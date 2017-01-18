@@ -6275,8 +6275,7 @@ md-content {
 
 md-dialog {
   opacity: 0;
-  min-width: 240px;
-  max-width: 80%;
+  width: 80%;
   max-height: 80%;
   position: relative;
   overflow: auto;
@@ -8741,6 +8740,7 @@ md-switch {
     background-color: #fff; } }
 
 md-toast {
+  //修改部分代码span
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -8750,16 +8750,16 @@ md-toast {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 48px;
+  min-height: 1.2rem;
   padding-left: 24px;
   padding-right: 24px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 0.5rem;
   cursor: default;
   height: 0px;
-  max-height: 168px;
-  max-width: 100%;
+  // max-height: 168px;
+  width: 100%;
   overflow: hidden;
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0) rotateZ(0deg);

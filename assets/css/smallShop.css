@@ -8,33 +8,52 @@ body {
 .userProducts {
   background-color: #fff;
 }
+.blur {
+  -webkit-filter: blur(10px);
+  /* Chrome, Opera */
+  -moz-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
 .banner {
   width: 100%;
   height: 3.95833333rem;
+}
+.banner .imgbg {
+  position: absolute;
+  width: 100%;
+  max-height: 3.95833333rem;
 }
 .banner .cir {
   display: inline-block;
   width: 0.90277778rem;
   height: 0.90277778rem;
   background-color: gray;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 .banner .cir img {
   width: 0.69444444rem;
   margin: 0.11111111rem 0 0 0.05555556rem;
 }
 .banner .cir-left {
-  float: left;
-  margin: 0.23611111rem 0 0 0.38888889rem;
+  position: absolute;
+  top: 0.23611111rem;
+  left: 0.38888889rem;
 }
 .banner .cir-right {
-  float: right;
-  margin: 0.23611111rem 0.44444444rem 0 0;
+  position: absolute;
+  top: 0.23611111rem;
+  right: 0.38888889rem;
+}
+.banner .cir-rights {
+  position: absolute;
+  top: 0.23611111rem;
+  right: 1.38888889rem;
 }
 .bannerBar {
   width: 100%;
   height: 1.02777778rem;
-  background-color: #9ebfd7;
+  background-color: #8bb6d4;
 }
 .bannerBar .p-top {
   font-size: 0.41666667rem;
@@ -54,6 +73,7 @@ body {
 .preferential {
   width: 100%;
   height: 1.15277778rem;
+  background-color: #f7f7f7;
   border-bottom: 0.01388889rem solid #ababab;
 }
 .preferential img {
@@ -69,25 +89,31 @@ body {
   font-size: 0.38888889rem;
 }
 .table-proMsg {
-  width: 100%;
+  position: absolute;
+  top: 1.22222222rem;
   height: 1.80555556rem;
+  margin-right: 1rem;
 }
 .table-proMsg .table-img {
   width: 1.73611111rem;
   height: 1.73611111rem;
   border-radius: 50%;
-  margin: 0.20833333rem 0 0 0.56944444rem;
+  margin: 0 0 0 0.56944444rem;
 }
 .table-proMsg .td-proname {
   font-size: 0.55555556rem;
   vertical-align: middle;
   height: 1.06944444rem;
   overflow: hidden;
+  margin-top: 0.38rem;
+  padding-left: 0.5rem;
 }
 .table-proMsg .td-msg {
+  padding-left: 0.5rem;
   vertical-align: top;
 }
 .table-proMsg .td-msg p {
+  margin-top: 0.34722222rem;
   font-size: 0.34722222rem;
   width: 4.44444444rem;
   height: 0.34722222rem;
@@ -150,6 +176,7 @@ footer {
   padding: 0;
 }
 .footer-p {
+  display: block;
   width: 100%;
   height: 0.625rem;
   margin-top: 0.34722222rem;

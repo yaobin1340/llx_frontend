@@ -11,7 +11,6 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-
         if($stateParams.type=='noIndent'){
             $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
             noIndent();
@@ -40,47 +39,49 @@ angular
         function allIndent(){
             $scope.arr=[];
             $scope.page=1;
-            leadMore();
+            $scope.aready='';
+            leadMore($scope.aready);
             $(window).scroll(function(){
             　　var scrollTop = $(this).scrollTop();
             　　var scrollHeight = $(document).height();
             　　var windowHeight = $(this).height();
             　　if(scrollTop + windowHeight == scrollHeight){
             　　　　
-                    $scope.page++;leadMore();
+                    $scope.page++;leadMore($scope.aready);
             　　}
             });
         }
         function noIndent(){
             $scope.arr=[];
             $scope.page=1;
-            leadMore(1);
+            $scope.aready=1;
+            leadMore($scope.aready);
             $(window).scroll(function(){
             　　var scrollTop = $(this).scrollTop();
             　　var scrollHeight = $(document).height();
             　　var windowHeight = $(this).height();
             　　if(scrollTop + windowHeight == scrollHeight){
             　　　　
-                    $scope.page++;leadMore(1);
+                    $scope.page++;leadMore($scope.aready);
             　　}
             });
         }
         function Indented(){
             $scope.arr=[];
             $scope.page=1;
-            leadMore(4);
+            $scope.aready=4;
+            leadMore($scope.aready);
             $(window).scroll(function(){
             　　var scrollTop = $(this).scrollTop();
             　　var scrollHeight = $(document).height();
             　　var windowHeight = $(this).height();
             　　if(scrollTop + windowHeight == scrollHeight){
             　　　　
-                    $scope.page++;leadMore(4);
+                    $scope.page++;leadMore($scope.aready);
             　　}
             });
         } 
         
-
         function leadMore (aready){
                     $http
                     .post($config.api_uri + '/Apiuser/Orderinfo/orderlist',{page:$scope.page,aready:aready})
@@ -90,12 +91,16 @@ angular
                                 $scope.noLead=1;
                                 return
                             }
-                             var items = data.order_list;
-                             var goods = data.goods;
-                              for (var i = 0; i < items.length; i++) {
-                                var obj = Object.assign(items[i],goods[i])
-                                $scope.arr.push(obj);
-                            }
+                            $scope.arr=[];
+                            
+                            angular.forEach(data.order_list,function(item, index){
+                                $scope.arr.push({orders:item,goods:[]})
+                                angular.forEach(data.goods,function(items, indexs){
+                                    if(item.order_id==items.order_id){
+                                        $scope.arr[index].goods.push(items)
+                                    }
+                                })
+                            })
                         }else{
                             $mdToast.show(
                             $mdToast.simple()
@@ -105,17 +110,6 @@ angular
                         }
                     })
         }
-
-$(window).scroll(function(){
-　　var scrollTop = $(this).scrollTop();
-　　var scrollHeight = $(document).height();
-　　var windowHeight = $(this).height();
-　　if(scrollTop + windowHeight == scrollHeight){
-　　　　
-        $scope.page++;leadMore();
-　　}
-});
-
 
 
 

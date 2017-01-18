@@ -1,10 +1,11 @@
 
 	<link rel="stylesheet" href="/assets/css/payment.css">
-	
-	<div class="banner">
+	<scriptscr="http://mch.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=11_1"></script>
+	<div class="banner navbar-fixed-top">
 		<img src="/assets/img/552cc14536532_128.png" alt="" onClick="javascript:history.go(-1);">
 		<span>订单支付</span>
 	</div>
+	<div class="padding"></div>
 	<div class="bg"></div>
 	<div class="row">
 			<div class="col-sm-6 col-xs-6">
@@ -15,11 +16,10 @@
 					
 				</div>
 				<div class="col-sm-6 col-xs-6">
-					<p class="pr-name text-right">27297</p>
+					<p ng-cloak class="pr-name text-right">{{order_id}}</p>
 				</div>
 			</div>
 		</div>
-
 	<div class="bgs"></div><div class="bgs"></div>
 	<div class="row">
 			<div class="col-sm-6 col-xs-6">
@@ -45,7 +45,7 @@
 					
 				</div>
 				<div class="col-sm-6 col-xs-6">
-					<p class="pr-name text-right">8元</p>
+					<p ng-cloak class="pr-name text-right">{{need_pay}}元</p>
 				</div>
 			</div>
 		</div>
@@ -82,6 +82,7 @@
 	<div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
 				<div class="col-sm-12 col-xs-12">
-					<button class="subOrder">立即支付</button>
+					<button class="subOrder" ng-click="zhifu()">立即支付</button>
 				</div>
 		</div>
+

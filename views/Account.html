@@ -1,9 +1,10 @@
 	<link rel="stylesheet" href="/assets/css/Account.css">
 
-	<div class="banner">
+	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>账户信息</p>
 	</div>
+	<div class="padding"></div>
 	<div class="row">
 		<div class="col-sm-9 col-xs-9 div-section">
 			上传头像
@@ -16,7 +17,7 @@
 		<div class="col-sm-9 col-xs-9 div-section">
 			用户昵称
 		</div>
-		<div class="col-sm-3 col-xs-3 text-right div-section" ui-sref="nickname">
+		<div ng-cloak class="col-sm-3 col-xs-3 text-right div-section" ui-sref="nickname">
 			{{nickname}}
 		</div>
 	</div>
@@ -33,7 +34,7 @@
 		<div class="col-sm-8 col-xs-8 div-section">
 			绑定手机
 		</div>
-		<div class="col-sm-4 col-xs-4 text-right div-section phone-color">
+		<div ng-cloak class="col-sm-4 col-xs-4 text-right div-section phone-color">
 			{{phone}}
 		</div>
 	</div>

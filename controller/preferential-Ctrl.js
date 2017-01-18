@@ -25,15 +25,29 @@ angular
                     }
                 })
 
+
                 $scope.preferential = function(id){
                     $http
                         .post($config.api_uri + '/Apiuser/Yhk/share',{shop_id:id})
                         .success(function (data) {
                             if(data.success){
                                 $scope.url = data.url;
-                                $("#qrcode").html("");
-                                $scope.fenxiao=1;
-                                new QRCode(document.getElementById('qrcode'), $scope.url);
+                                $mdDialog.show({
+                                    scope: $scope,
+                                    preserveScope: true,
+                                    templateUrl: 'views/erweima.html',
+                                    parent: angular.element(document.body),
+                                    clickOutsideToClose: true,
+                                    fullscreen: true
+
+                                });
+                                var timer = setInterval(function(){
+                                    if($("#qrcode").html()!=undefined){
+                                        new QRCode(document.getElementById('qrcode'),$scope.url);
+                                         clearInterval(timer);
+                                         console.log($scope.url);
+                                    }
+                                  },1000)
                             }else{
                                 $mdToast.show(
                                 $mdToast.simple()
@@ -42,6 +56,9 @@ angular
                                 );
                             }
                         })
+                }
+                $scope.closeDialog = function(){
+                    $mdDialog.hide();
                 }
 
 

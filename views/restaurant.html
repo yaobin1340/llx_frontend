@@ -1,16 +1,17 @@
 	<link rel="stylesheet" href="/assets/css/main.css">
 
-	<div class="banner">
+	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
-	    <p>餐饮饭店</p>
+	    <p ng-cloak >{{cate_name}}</p>
 	</div>
+	<div class="padding"></div>
 	<div class="centerImgbanner">
 		<img src="" alt="图片区域">
 	</div>
 	<div class="row chose">
 		<div class="col-sm-6 col-xs-6">
 			<div class="orderby" ng-click="choseStep(1)">
-				<span>{{chosech}}</span><img src="/assets/img/line-down.png" alt=""></div>
+				<span ng-cloak>{{chosech}}</span><img src="/assets/img/line-down.png" alt=""></div>
 			</div>
 		<div class="col-sm-6 col-xs-6">
 			<div class="chosemore" ng-click="choseStep(2)">
@@ -31,8 +32,8 @@
 					<ul>
 						<li ng-click="choseStep2(11)" ng-class="{choseThis:step2==11}">智能排序</li>
 						<li ng-click="choseStep2(12)" ng-class="{choseThis:step2==12}">离我最近</li>
-						<li ng-click="choseStep2(13)" ng-class="{choseThis:step2==13}">好评优先</li>
-						<li ng-click="choseStep2(14)" ng-class="{choseThis:step2==14}">附近</li>
+						<li ng-click="choseStep2(13)" ng-class="{choseThis:step2==13}">人气最高</li>
+						<li ng-click="choseStep2(14)" ng-class="{choseThis:step2==14}">好评优先</li>
 					</ul>
 				</div>
 			</div>
@@ -48,11 +49,11 @@
 				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:-0.35rem;width: 2rem;">
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
-				<div class="col-sm-9 col-xs-9 div-name text-overflow">{{shop.shop_name}}</div>
-				<div class="col-sm-3 col-xs-3 shopDistance">
+				<div ng-cloak class="col-sm-9 col-xs-9 div-name text-overflow">{{shop.shop_name}}</div>
+				<div ng-cloak class="col-sm-3 col-xs-3 shopDistance">
 					{{shop.juli}}Km
 				</div>
-				<div class="col-sm-12 col-xs-12 shopAddress text-overflow">
+				<div ng-cloak class="col-sm-12 col-xs-12 shopAddress text-overflow">
 					{{shop.addr|cut}}
 				</div>
 				<div class="col-5">
@@ -63,10 +64,10 @@
 					<img src="/assets/img/star2.png" alt="" class="star">
 				</div>
 				<div class="col-sm-7 col-xs-7 text-left">
-					<p class="On-sale">月售{{shop.allsold_num}}单</p>
+					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
 				</div>
-				<div class="col-sm-12 col-xs-12"><p class="ourmembers">本店会员：满￥<span class="ourprice">{{100}}</span>送￥<span class="ourprice">{{shop.yhk1}}</span></p></div>
-				<div class="col-sm-12 col-xs-12"><p  class="ourmembers">平台会员：满￥<span class="ourprice">{{100}}</span>送￥<span class="ourprice">{{shop.yhk1}}</span></p>
+				<div class="col-sm-12 col-xs-12"><p class="ourmembers">本店会员：满￥<span ng-cloak class="ourprice">{{100}}</span>送￥<span ng-cloak class="ourprice">{{shop.yhk1}}</span></p></div>
+				<div ng-cloak class="col-sm-12 col-xs-12"><p  class="ourmembers">平台会员：满￥<span ng-cloak class="ourprice">{{100}}</span>送￥<span ng-cloak class="ourprice">{{shop.yhk1}}</span></p>
 				</div>
 			</div>
 		</div>

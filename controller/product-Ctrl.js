@@ -10,13 +10,21 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-        
+
+            var currIndex = 0;
+            $scope.myInterval = 4000;
+            var slides = $scope.slides = [];
         $scope.good_id=$stateParams.goods_id;
         $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail',{goods_id:$stateParams.goods_id})
 				.success(function (data) {
                     if(data.success){
                         $scope.productMsg_list = data.detail;
+                        $scope.slide=data.pics;
+                        angular.forEach(
+                            $scope.slide, function (item, index) {
+                            slides.push({image:item.photo,id:currIndex++})}
+                        )
                         $scope.productMsg=data;
                     }else{
                         $mdToast.show(
@@ -47,7 +55,42 @@ angular
                 })
         }
 
+        $scope.love = function(){
+            $http
+                .post($config.api_uri + '/Apiuser/Favourite/goods_favourites',{goods_id:$stateParams.goods_id})
+                .success(function (data) {
+                    if(data.success){
+                       $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+        }
 
+        $scope.gopay = function(id){
+            console.log(id);
+            $http
+                .post($config.api_uri + '/Apiuser/cart/cartadd',{goods_id:id})
+                .success(function (data) {
+                    if(data.success){
+                       $state.go('shopcart')
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+        }
 
 
 

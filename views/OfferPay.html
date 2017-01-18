@@ -1,31 +1,32 @@
 	<link rel="stylesheet" href="/assets/css/OfferPay.css">
 
-	<div class="banner">
+	<div class="banner  navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>优惠买单</p>
 	</div>
+	<div class="padding"></div>
 	<div class="Msg"  infinite-scroll='offerpay.nextPage()' infinite-scroll-disabled='offerpay.busy' infinite-scroll-distance='1' >
 		<div class="pepeatMsg" ng-repeat="Msg in offerpay.items">
 			<div class="row rowid">
-				<div class="col-sm-5 col-xs-5">ID:{{Msg.id}}</div>
-				<div class="sm-7 col-xs-7 text-right">创建时间:{{Msg.create_time*1000|date:'yyyy-MM-dd'}}</div>
+				<div ng-cloak class="col-sm-5 col-xs-5">ID:{{Msg.id}}</div>
+				<div ng-cloak class="sm-7 col-xs-7 text-right">创建时间:{{Msg.create_time*1000|date:'yyyy-MM-dd'}}</div>
 			</div>
 			<div class="row rowmsg">
-				<div class="col-sm-12 xol-xs-12">商家：{{Msg.shop_name}}</div>
-				<div class="col-sm-12 xol-xs-12">消费金额：{{Msg.total}}</div>
-				<div class="col-sm-12 xol-xs-12">优惠券抵扣：{{Msg.integral/100}}</div>
-				<div class="col-sm-12 xol-xs-12">备注：{{Msg.rmark}}</div>
+				<div ng-cloak class="col-sm-12 xol-xs-12">商家：{{Msg.shop_name}}</div>
+				<div ng-cloak class="col-sm-12 xol-xs-12">消费金额：{{Msg.total}}</div>
+				<div ng-cloak class="col-sm-12 xol-xs-12">优惠券抵扣：{{Msg.integral/100}}</div>
+				<div ng-cloak class="col-sm-12 xol-xs-12">备注：{{Msg.rmark}}</div>
 				<div class="col-sm-12 xol-xs-12">
 				<div style="float: left;">赠品消费：</div>
 				<div ng-repeat="re in Msg.zp" style="float: left;">
-					<span>{{re}}</span>
+					<span ng-cloak>{{re}}</span>
 				</div>
 				</div>
 			</div>
 			<div class="row rowpay">
 				<div class="col-sm-7 col-xs-7">
-					<p>实付：<span class="rowpay-btn">{{90}}</span></p>
-					<p>付款时间：{{Msg.pay_time*1000|date:'yyyy-MM-dd'}}</p>
+					<p>实付：<span ng-cloak class="rowpay-btn">{{90}}</span></p>
+					<p ng-cloak>付款时间：{{Msg.pay_time*1000|date:'yyyy-MM-dd'}}</p>
 				</div>
 				<div class="col-5 col-xs-5 text-right">
 					<button>

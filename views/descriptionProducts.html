@@ -1,20 +1,19 @@
 
 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css">
 	<script src="/assets/js/qrcode.min.js"></script>
-<div ng-show="choseEwk==0">
 	<div class="banner" style="background: url(http://wap.51loveshow.com/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
-	background-size: 100%;">
+	background-size:auto 100%;">
 			<div class="cir cir-left img-circle">
 				<img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
 			</div>
 			<div class="cir cir-right img-circle">
 				<img src="/assets/img/img_menu_shop_detail.png" alt="">
 			</div>
-			<div class="cir cir-right img-circle">
+			<div class="cir cir-right img-circle" ng-click="love()">
 				<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin: 0.05rem auto auto 0.05rem;">
 			</div>
 	</div>
-	<div class="res-titlt">
+	<div ng-cloak class="res-titlt">
 		{{detail.shop_name}}
 	</div>
 	<div class="address">
@@ -22,7 +21,7 @@
 			<img src="/assets/img/address2.png" alt="" class="img-center-left">
 		</div>
 		<div class="address-center text-overflow">
-			<span class="address-message  text-overflow">{{detail.addr}}</span>
+			<span ng-cloak class="address-message  text-overflow">{{detail.addr}}</span>
 		</div>
 		<div class="address-right">
 			<img src="/assets/img/address.png" alt="" ng-click="daohang()" ui-sref="navigation({lng:detail.lng,lat:detail.lat,name:detail.shop_name})">
@@ -34,10 +33,10 @@
 			<img src="/assets/img/tel.png" alt="" class="img-center-left">
 		</div>
 		<div class="address-center">
-			<span class="address-message">{{detail.tel}}</span>
+			<span ng-cloak class="address-message">{{detail.tel}}</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/phone.png" alt="" ng-href="tel:{{detail.tel}}">
+			<a href="tel:{{detail.tel}}"></a>
 		</div>
 	</div>
 	<div class="QRcode">
@@ -59,7 +58,7 @@
 			<span class="address-message">商户信息</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/line.png" alt="">
+			<img src="/assets/img/line.png" alt=""ui-sref="shopMsg({shop_id:shops_id})">
 		</div>
 	</div>
 	<div class="QRcode">
@@ -94,11 +93,11 @@
 		<div class="commentMsg clearfix" ng-repeat="userContent in list">
 			<img ng-src="http://wap.51loveshow.com/attachs/{{userContent.user_face}}" alt="" class="userImg">
 			<div class="userContent">
-				<span class="userName">{{userContent.user_nickname}}</span>
+				<span ng-cloak class="userName">{{userContent.user_nickname}}</span>
 				<img ng-src="" alt="" class="user-level">
-				<span class="userDate">{{userContent.create_time|date:"yyyy-MM-dd"}}</span>
+				<span ng-cloak class="userDate">{{userContent.create_time|date:"yyyy-MM-dd"}}</span>
 				<img ng-src="" alt="" class="star-level">
-				<div class="contentText">{{userContent.contents}}</div>
+				<div ng-cloak class="contentText">{{userContent.contents}}</div>
 				<div class="eatType"></div>
 				<table class="userPhoto"></table>
 				<div class="userPhoto">
@@ -108,22 +107,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="BusinessRe" ng-if="userContent.reply.length>0"><span>商家回复：</span>{{userContent.reply}}</div>
+				<div class="BusinessRe" ng-if="userContent.reply.length>0"><span>商家回复：</span ng-cloak>{{userContent.reply}}</div>
 				<div class="user-like">
-					<span>赞{{7088}}</span>
+					<span ng-cloak>赞{{7088}}</span>
 					<button ng-click="">赞</button>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-
-
-<div ng-show="choseEwk==1">
-	<div class="banners">
-		    <img src="/assets/img/552cc14536532_128.png" alt="返回" ng-click="choseEwk=0">
-		    <p>店铺二维码</p>
-		</div>
-		<div id="qrcode"></div>
-</div>

@@ -4,8 +4,8 @@ body {
   background-color: #eff0eb;
 }
 .row {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
   border-bottom: 0.22222222rem solid #eff0eb;
 }
 .col-xs-1,

@@ -1,16 +1,17 @@
 
 	<link rel="stylesheet" href="/assets/css/Maddress.css">
 
-	<div class="banner">
+	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>管理收货地址</p>
 	    <img src="/assets/img/img_add.png" alt="添加收货地址" class="img_add" ui-sref="addAddress">
 	</div>
+	<div class="padding"></div>
 	<div ng-repeat="adr in address">
 	<div class="row">
-		<div class="col-sm-6 col-xs-6 address-name">{{adr.name}}</div>
-		<div class="col-sm-6 col-xs-6 address-phone text-right">{{adr.mobile}}</div>
-		<div class="col-sm-12 col-xs-12 address">
+		<div ng-cloak class="col-sm-6 col-xs-6 address-name">{{adr.name}}</div>
+		<div ng-cloak class="col-sm-6 col-xs-6 address-phone text-right">{{adr.mobile}}</div>
+		<div ng-cloak class="col-sm-12 col-xs-12 address">
 			{{adr.province_name}}{{adr.city_name}}{{adr.area_name}}{{adr.addr}}
 		</div>
 		<div class="col-sm-6 col-xs-6 chose">

@@ -1,25 +1,25 @@
-
 	<link rel="stylesheet" href="/assets/css/smallShop.css">
 	<div class="banner">
-		<div class="cir cir-left img-circle">
-			<img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
-		</div>
-		<div class="cir cir-right img-circle" onclick="sharBtn()">
-			<img src="/assets/img/img_fenxiang.png" alt="" >
-		</div>
-		<div class="cir cir-right img-circle">
-			<img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin:0.08rem 0 0 0.1rem;">
-		</div>
+    <img src="http://wap.51loveshow.com/attachs/{{detail.logo}}" alt="" class="blur imgbg">
+        <div class="cir cir-left img-circle">
+            <img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
+        </div>
+        <div class="cir cir-right img-circle" ng-click="shareBtn()">
+            <img src="/assets/img/img_fenxiang.png" alt="" >
+        </div>
+        <div class="cir cir-rights img-circle">
+            <img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin:0.08rem 0 0 0.1rem;" ng-click="love()">
+        </div>
 		<table class="table-proMsg">
 		<tr>
-			<td rowspan="3"><img src="" alt="" class="table-img"></td>
+			<td rowspan="3"><img src="http://wap.51loveshow.com/attachs/{{detail.logo}}" alt="" class="table-img"></td>
 			<td>
 				<tr>
-					<td class="td-proname">{{goods_list[0].intro}}</td>
+					<td ng-cloak class="td-proname">{{detail.shop_name}}</td>
 				</tr>
 				<tr>
 					<td class="td-msg">
-						<p>公告：</p>
+						<p ng-cloak class="text-overflow">公告：</p>
 					</td>
 				</tr>
 			</td>
@@ -30,7 +30,7 @@
 		<div class="row">
 			<div class="col-md-6 col-sm-6 col-xs-6">
 				<div class="border">
-					<p class="p-top">366</p>
+					<p ng-cloak class="p-top">{{msg.favnum}}</p>
 					<p class="p-bottom">收藏</p>
 				</div>
 			</div>
@@ -53,9 +53,9 @@
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in hot_goods_list" ui-sref="product({goods_id:hot_goods.goods_id})">
 					<div class="userProducts">
 						<img ng-src="http://wap.51loveshow.com/attachs/{{hot_goods.photo}}" alt="">
-						<p>{{hot_goods.title}}</p>
-						<span class="price">￥{{hot_goods.mall_price}}</span>
-						<span class="show">销量{{hot_goods.sold_num}}</span>
+						<p ng-cloak>{{hot_goods.title}}</p>
+						<span ng-cloak class="price">￥{{hot_goods.mall_price/100}}</span>
+						<span ng-cloak class="show">销量{{hot_goods.sold_num}}</span>
 					</div>
 				</div>
 			</div>
@@ -67,9 +67,9 @@
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="goods in goods_list" ui-sref="product({goods_id:goods.goods_id})">
 					<div class="userProducts">
 						<img ng-src="http://wap.51loveshow.com/attachs/{{goods.photo}}" alt="">
-						<p>{{goods.title}}</p>
-						<span class="price">￥{{goods.mall_price}}</span>
-						<span class="show">销量{{goods.sold_num}}</span>
+						<p ng-cloak>{{goods.title}}</p>
+						<span ng-cloak class="price">￥{{goods.mall_price/100}}</span>
+						<span ng-cloak class="show">销量{{goods.sold_num}}</span>
 					</div>
 				</div>
 			</div>
@@ -82,178 +82,7 @@
 				<p class="footer-p footer-p-img">分类</p>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-6">
-				<p class="footer-p tel-footer" ng-href="tel:{{goods.tel}}">联系商家</p>
+				<a class="footer-p tel-footer"href="tel:{{goods.tel}}">联系商家</a>
 			</div>
 		</div>
 	</footer>
-
-
-<script>
-	function sharBtn() {
-		var shareData = {};  
-		shareData.imgUrl = window.ImgPrex + result.PicUrls;  
-		shareData.link = window.location.href;  
-		shareData.content = delHtmlTag($("#Contents").html());  
-		shareData.title = document.title;  
-		Share(shareData);
-	}
-	function Share(shareData) {  
-  
-        var data = {};  
-        var wxdata = {};  
-        data.method = "GetConfig";  
-        data.url = window.location.href.split('#')[0];  
-        //这里是ajax向后台请求签名，appid等的方法  
-        ajaxProcess("/h5/share.aspx?", data, function callSuccess(oRet) {  
-            //var data = oRet;  
-            var result = oRet;  
-            if (result != null) {  
-                wx.config({  
-                    debug: false,  
-                    appId: result.AppId,  
-                    timestamp: result.Timestamp,  
-                    nonceStr: result.NonceStr,  
-                    signature: result.Signature,  
-                    jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']  
-                });  
-  
-  
-            }  
-        }, function callError(e) {  
-            alert(e);  
-        });  
-  
-  
-        wxdata.imgUrl = shareData.imgUrl;  
-        wxdata.link = shareData.link;  
-        var content = shareData.content;  
-        content = delHtmlTag(content);  
-        if (content.length > 100) {  
-            wxdata.desc = content.substring(0, 100);  
-        } else {  
-            wxdata.desc = content;  
-        }  
-        wxdata.title = shareData.title;  
-  
-  
-        var friendcallback = function(res) {  
-            //alert("分享成功");  
-        };  
-  
-  
-        wx.ready(function() {  
-            wx.onMenuShareTimeline({  
-                title: wxdata.title,  
-                desc: wxdata.desc,  
-                link: wxdata.link,  
-                imgUrl: wxdata.imgUrl,  
-                img_width: 200,  
-                img_height: 200,  
-                trigger: function(res) {  
-                },  
-                success: function(res) {  
-                    friendcallback(res);  
-                },  
-                cancel: function(res) {  
-                },  
-                fail: function(res) {  
-                    alert(JSON.stringify(res));  
-                }  
-            });  
-        });  
-  
-  
-        wx.ready(function() {  
-            wx.onMenuShareAppMessage({  
-                title: wxdata.title,  
-                desc: wxdata.desc,  
-                link: wxdata.link,  
-                imgUrl: wxdata.imgUrl,  
-                img_width: 200,  
-                img_height: 200,  
-                trigger: function(res) {  
-                },  
-                success: function(res) {  
-                    friendcallback(res);  
-                },  
-                cancel: function(res) {  
-                },  
-                fail: function(res) {  
-                    alert(JSON.stringify(res));  
-                }  
-            });  
-        });  
-  
-  
-        wx.ready(function() {  
-            wx.onMenuShareQQ({  
-                title: wxdata.title,  
-                desc: wxdata.desc,  
-                link: wxdata.link,  
-                imgUrl: wxdata.imgUrl,  
-                img_width: 200,  
-                img_height: 200,  
-                trigger: function(res) {  
-                },  
-                success: function(res) {  
-                    friendcallback(res);  
-                },  
-                cancel: function(res) {  
-                },  
-                fail: function(res) {  
-                    alert(JSON.stringify(res));  
-                }  
-            });  
-        });  
-  
-  
-        wx.ready(function() {  
-            wx.onMenuShareWeibo({  
-                title: wxdata.title,  
-                desc: wxdata.desc,  
-                link: wxdata.link,  
-                imgUrl: wxdata.imgUrl,  
-                img_width: 200,  
-                img_height: 200,  
-                trigger: function(res) {  
-                },  
-                success: function(res) {  
-                    friendcallback(res);  
-                },  
-                cancel: function(res) {  
-                },  
-                fail: function(res) {  
-                    alert(JSON.stringify(res));  
-                }  
-            });  
-        });  
-  
-  
-        wx.ready(function() {  
-            wx.onMenuShareQZone({  
-                title: wxdata.title,  
-                desc: wxdata.desc,  
-                link: wxdata.link,  
-                imgUrl: wxdata.imgUrl,  
-                img_width: 200,  
-                img_height: 200,  
-                trigger: function(res) {  
-                },  
-                success: function(res) {  
-                    friendcallback(res);  
-                },  
-                cancel: function(res) {  
-                },  
-                fail: function(res) {  
-                    alert(JSON.stringify(res));  
-                }  
-  
-  
-            });  
-  
-  
-        });  
-    }  
-		  
-
-</script>

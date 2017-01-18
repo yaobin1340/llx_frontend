@@ -76,14 +76,12 @@ a{
     color: #7f8180;
     font-family: "微软雅黑";
     font-size: 0.5rem;
-    line-height: 100%;
 }
 /* 火狐浏览器 */
 .form input::-moz-placeholder { 
 	color: #7f8180;
     font-family: "微软雅黑";
     font-size: 0.5rem;
-    line-height: 100%;
 }
 .getCard{
 	position:absolute;

@@ -12,22 +12,22 @@
 				<a ui-sref="signin">登陆</a>/<a ui-sref="signup">注册</a>
 			</div>
 		</div>
-		<div class="personal-name" ui-sref="nickname">
+		<div ng-cloak class="personal-name" ui-sref="nickname">
 			{{userMsg.nickname}}
 		</div>
 		<div class="personMsg">
 			<div class="msg-left">
-				<p>{{userMsg.money}}</p>
+				<p ng-cloak>{{userMsg.money}}</p>
 				<span>秀币</span>
 			</div>
 			<div class="line"></div>
 			<div class="msg-center">
-				<p>{{userMsg.yhk}}</p>
+				<p ng-cloak >{{userMsg.yhk}}</p>
 				<span>优惠卡</span>
 			</div>
 			<div class="line"></div>
 			<div class="msg-right">
-				<p>{{userMsg.integral}}</p>
+				<p ng-cloak>{{userMsg.integral}}</p>
 				<span>余额</span>
 			</div>
 		</div>

@@ -10,7 +10,23 @@ angular
 		var $mdDialog = $injector.get('$mdDialog');
 		var $mdMedia = $injector.get('$mdMedia');
 		var $mdToast = $injector.get('$mdToast'); 
- 
+ 			
+			$http
+				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
+				.success(function (data) {
+					if(data.success){
+						$scope.detail=data.detail;
+						$scope.msg=data;
+					}else{
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
+					}
+				})
+
+
         	 $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/hot_goods',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
@@ -40,9 +56,186 @@ angular
 				})
 
 
+			$scope.love = function(){
+			$http
+				.post($config.api_uri + '/Apiuser/Favourite/shop_favourites',{shop_id:$stateParams.shop_id})
+				.success(function (data) {
+					console.log(data)
+					if(data.success){
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
+					}else{
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
+					}
+				})
+		}
 
 
 
+	$scope.shareBtn=function() {
+		var shareData = {};  
+		shareData.imgUrl ='http://wap.51loveshow.com/attachs/'+$scope.detail.logo;  
+		shareData.link = window.location.href;  
+		shareData.content = '我给你分享了一个店铺，快去看看吧';  
+		shareData.title = $scope.detail.shop_name;  
+		Share(shareData);
+	}
+	function Share(shareData) {  
+        var wxdata = {};   
+        $.getJSON('http://106.14.57.99:8888/Apipublic/Apilogin/get_wxconfig',function(data){
+            console.log(data);
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: data.wxappId, // 必填，公众号的唯一标识
+                timestamp: data.wxtimestamp, // 必填，生成签名的时间戳
+                nonceStr: data.wxnonceStr, // 必填，生成签名的随机串
+                signature: data.wxsignature,// 必填，签名，见附录1
+                jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']   // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+        });
+
+  
+  
+        wxdata.imgUrl = shareData.imgUrl;  
+        wxdata.link = shareData.link;  
+        var content = shareData.content;  
+        if (content.length > 100) {  
+            wxdata.desc = content.substring(0, 100);  
+        } else {  
+            wxdata.desc = content;  
+        }  
+        wxdata.title = shareData.title;  
+  
+  
+        var friendcallback = function(res) {  
+             $mdToast.show(
+                $mdToast.simple()
+                    .content("分享成功")
+                    .hideDelay(1000)
+                );
+        };  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareTimeline({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareAppMessage({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareQQ({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareWeibo({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+            });  
+        });  
+  
+  
+        wx.ready(function() {  
+            wx.onMenuShareQZone({  
+                title: wxdata.title,  
+                desc: wxdata.desc,  
+                link: wxdata.link,  
+                imgUrl: wxdata.imgUrl,  
+                img_width: 200,  
+                img_height: 200,  
+                trigger: function(res) {  
+                },  
+                success: function(res) {  
+                    friendcallback(res);  
+                },  
+                cancel: function(res) {  
+                },  
+                fail: function(res) {  
+                    alert(JSON.stringify(res));  
+                }  
+  
+  
+            });  
+  
+  
+        });  
+    }  
 
 
 

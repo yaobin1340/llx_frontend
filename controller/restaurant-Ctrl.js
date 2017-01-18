@@ -19,31 +19,31 @@ angular
         $scope.shops.lng = '';
         $scope.isReady = false;
 
-        // $scope.$on('$viewContentLoaded', function() {
-        //     window.wxConfig();
-        // });
+        $scope.$on('$viewContentLoaded', function() {
+            window.wxConfig();
+        });
         //获取经纬度所在地区
-        $scope.getIndex = function(){
-            $http({
-                method: 'POST',
-                url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
-                data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
-            }).success(function (data) {
-                if (data.success) {
-                    $scope.area_name = data.area_name;
-                    $scope.shops.area_code = data.area_code;
-                    $scope.shops.busy = false;
-                    $scope.shops.nextPage()
-                } else {
-                    $mdToast.show(
-                        $mdToast.simple()
-                            .content(data.error_msg)
-                            .hideDelay(2000)
-                    );
-                }
+        // $scope.getIndex = function(){
+        //     $http({
+        //         method: 'POST',
+        //         url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
+        //         data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
+        //     }).success(function (data) {
+        //         if (data.success) {
+        //             $scope.area_name = data.area_name;
+        //             $scope.shops.area_code = data.area_code;
+        //             $scope.shops.busy = false;
+        //             $scope.shops.nextPage()
+        //         } else {
+        //             $mdToast.show(
+        //                 $mdToast.simple()
+        //                     .content(data.error_msg)
+        //                     .hideDelay(1000)
+        //             );
+        //         }
 
-            })
-        }
+        //     })
+        // }
 
 
 
@@ -102,7 +102,10 @@ angular
         $scope.toacrt = function(near,an){
             $scope.add=0;
             $scope.n=an;
-            $scope.shops.area_code =near;
+            $session.set('near_code', near);
+            $session.set('near_name', an);
+            $session.save();
+            $scope.shops.area_code = near;
             $scope.area_name = an;
             $scope.shops.items = [];
             $scope.shops.end = false;
@@ -111,14 +114,59 @@ angular
             $scope.shops.nextPage();
         }
     }
-			 
+            $scope.shops.area_code = $session.get("near_code");
+            $scope.area_name = $session.get('near_name');
+           if(JSON.stringify($session.get('near_name')) != "{}"){$scope.n= $session.get('near_name');}  
+            $scope.shops.items = [];
+            $scope.shops.end = false;
+            $scope.shops.busy = false;
+            $scope.shops.page = 1;
+            $scope.shops.nextPage();
 
 
 
+    $scope.choseTWO = function(type){
+         $http.post($config.api_uri + '/Apipublic/ApiPmall/getshopscate')
+                .success(function (data) {
+                    if(data.success){
+                       $scope.cate_list=data.cate_list;
+                       angular.forEach(data.cate_list,function(item, index){
+                            if(item.cate_name==type){
+                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name})
+                                return;
+                            }
+                        })
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+    }
 
 
-
-
+    window.filterByEnter = function(e){
+            if(e.keyCode==13){
+                $scope.$apply(function(){
+                    $scope.shops.shop_name = $scope.text;
+                    $scope.shops.items = [];
+                    $scope.shops.end = false;
+                    $scope.shops.busy = false;
+                    $scope.shops.page = 1;
+                    $scope.shops.nextPage();
+                })
+            }
+        };
+    $scope.soso = function(){
+        $scope.shops.shop_name = $scope.text;
+        $scope.shops.items = [];
+        $scope.shops.end = false;
+        $scope.shops.busy = false;
+        $scope.shops.page = 1;
+        $scope.shops.nextPage();
+    }
 
 
 

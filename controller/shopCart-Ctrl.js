@@ -31,7 +31,6 @@ angular
                 $http
                 .post($config.api_uri + '/Apiuser/cart/cartdel',{cart_id:id.cart_id})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                         angular.forEach($scope.cart_list,function(item, index){
                             if(item.cart_id==id.cart_id){
@@ -48,22 +47,25 @@ angular
                     }
                 })
             };
-
             $scope.goPay=function(){
                 $scope.items=[];
                 angular.forEach($scope.cart_list, function (item) {
                     $scope.items.push(item.cart_id);
                 });
                 $http
-                        .post($config.api_uri + '/Apiuser/Orderinfo/order_cart',{cart_id:$scope.items})
+                        .post($config.api_uri + '/Apiuser/Orderinfo/order_cart',{cart_ids:$scope.items})
                         .success(function (data) {
-                            console.log(data);
                              if(data.success){
                                 if(data.order_id==-1){
                                     $state.go('Mycart', {type:'noIndent'});
                                 }else{
-                                    $state.go('payment', {shopcartId: data.order_id});
+                                    $state.go('SubmitOrder', {order_id: data.order_id});
                                 }
+                                $mdToast.show(
+                                $mdToast.simple()
+                                    .content("下单成功")
+                                    .hideDelay(1000)
+                                );
                              }else{
                                 $mdToast.show(
                                 $mdToast.simple()
@@ -118,7 +120,7 @@ angular
              $scope.getTotalPrice = function () {
                 var totalPrice = 0;
                 angular.forEach($scope.cart_list, function (item, index, array) {
-                    totalPrice += item.mall_price * item.cart_num;  });
+                    totalPrice += item.mall_price/100 * item.cart_num;  });
                     return totalPrice;
              };
 

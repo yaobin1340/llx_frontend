@@ -3,9 +3,10 @@
 <head>
     <base href="/">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <script src="./assets/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
     <script src="./assets/bower_components/angular/angular.js"></script>
     <script src="./assets/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="./assets/bower_components/angular-resource/angular-resource.js"></script>
@@ -31,60 +32,54 @@
 
     <script src="resources/shops.js"></script>
     <script src="resources/journal.js"></script>
-    <script src="resources/OfferPay.js"></script>
+    <script src="resources/offerpay.js"></script>
     <script src="resources/system.js"></script>
     <script src="resources/mumber.js"></script>
+    <script src="resources/evaluate.js"></script>
     
-    <script src="controller/main-Ctrl.js"></script>
-    <script src="controller/home-Ctrl.js"></script>
-    <script src="controller/signin-signup-Ctrl.js"></script>
-    <script src="controller/smallShop-Ctrl.js"></script>
-    <script src="controller/description-Ctrl.js"></script>
-    <script src="controller/forgot-Ctrl.js"></script>
-    <script src="controller/Restaurant-Ctrl.js"></script>
-    <script src="controller/product-Ctrl.js"></script>
-    <script src="controller/shopCart-Ctrl.js"></script>
-    <script src="controller/SubmitOrder-Ctrl.js"></script>
-    <script src="controller/payment-Ctrl.js"></script>
-    <script src="controller/personal-Ctrl.js"></script>
-    <script src="controller/applyCash-Ctrl.js"></script>
-    <script src="controller/Account-Ctrl.js"></script>
-    <script src="controller/changePwd-Ctrl.js"></script>
-    <script src="controller/Maddress-Ctrl.js"></script>
-    <script src="controller/addAddress-Ctrl.js"></script>
-    <script src="controller/chaAddress-Ctrl.js"></script>
-    <script src="controller/updataTotal-Ctrl.js"></script>
-    <script src="controller/Mycart-Ctrl.js"></script>
-    <script src="controller/choseAddress-Ctrl.js"></script>
-    <script src="controller/nickname-Ctrl.js"></script>
-    <script src="controller/IndentMsg-Ctrl.js"></script>
-    <script src="controller/preferential-Ctrl.js"></script>
-    <script src="controller/Opinion-Ctrl.js"></script>
-    <script src="controller/information-Ctrl.js"></script>
-    <script src="controller/OfferPay-Ctrl.js"></script>
-    <script src="controller/restaurants-Ctrl.js"></script>
-    <script src="controller/hotel-Ctrl.js"></script>
-    <script src="controller/fruit-Ctrl.js"></script>
-    <script src="controller/hair-Ctrl.js"></script>
-    <script src="controller/fitness-Ctrl.js"></script>
-    <script src="controller/supermarket-Ctrl.js"></script>
-    <script src="controller/articles-Ctrl.js"></script>
-    <script src="controller/medical-Ctrl.js"></script>
-    <script src="controller/integral-Ctrl.js"></script>
-    <script src="controller/favorable-Ctrl.js"></script>
-    <script src="controller/systemMsg-Ctrl.js"></script>
-    <script src="controller/mumberMsg-Ctrl.js"></script>
-    <script src="controller/navigation-Ctrl.js"></script>
+    <script src="controller/main-ctrl.js"></script>
+    <script src="controller/home-ctrl.js"></script>
+    <script src="controller/signin-signup-ctrl.js"></script>
+    <script src="controller/smallshop-ctrl.js"></script>
+    <script src="controller/description-ctrl.js"></script>
+    <script src="controller/forgot-ctrl.js"></script>
+    <script src="controller/restaurant-ctrl.js"></script>
+    <script src="controller/product-ctrl.js"></script>
+    <script src="controller/shopcart-ctrl.js"></script>
+    <script src="controller/submitorder-ctrl.js"></script>
+    <script src="controller/payment-ctrl.js"></script>
+    <script src="controller/personal-ctrl.js"></script>
+    <script src="controller/applycash-ctrl.js"></script>
+    <script src="controller/account-ctrl.js"></script>
+    <script src="controller/changepwd-ctrl.js"></script>
+    <script src="controller/maddress-ctrl.js"></script>
+    <script src="controller/addaddress-ctrl.js"></script>
+    <script src="controller/chaaddress-ctrl.js"></script>
+    <script src="controller/updatatotal-ctrl.js"></script>
+    <script src="controller/mycart-ctrl.js"></script>
+    <script src="controller/choseaddress-ctrl.js"></script>
+    <script src="controller/nickname-ctrl.js"></script>
+    <script src="controller/indentmsg-ctrl.js"></script>
+    <script src="controller/preferential-ctrl.js"></script>
+    <script src="controller/opinion-ctrl.js"></script>
+    <script src="controller/information-ctrl.js"></script>
+    <script src="controller/offerpay-ctrl.js"></script>
+    <script src="controller/restaurants-ctrl.js"></script>
+    <script src="controller/systemmsg-ctrl.js"></script>
+    <script src="controller/mumbermsg-ctrl.js"></script>
+    <script src="controller/navigation-ctrl.js"></script>
+    <script src="controller/shopmsg-ctrl.js"></script>
     
     <script src="/assets/js/flexible.js"></script>
 
-    <link href='./assets/bower_components/angular-material/angular-material.min.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link href='./assets/bower_components/angular-material/angular-material.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/angular-csp.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/css/reset.css">
     <title>{{$state.current.title}}</title>
 </head>
 <body>
-<div ui-view ng-cloak scroll>
+<div ui-view ng-cloak scroll style="height:100%">
     
 </div>
 </body>

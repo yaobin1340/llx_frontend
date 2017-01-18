@@ -10,27 +10,60 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-        
-            $http
-    				.post($config.api_uri + '/Apiuser/Orderinfo/order_cart',{cart_id:$stateParams.shopcartId})
-    				.success(function (data) {
-                        console.log(data);
-                        if(data.success){
-                            
-                        }else{
-                            $mdToast.show(
-                            $mdToast.simple()
-                                .content(data.error_msg)
-                                .hideDelay(1000)
-                            );
-                        }
-    				})
 
+        $scope.order_id=$session.get('order_id');
+        $scope.need_pay=$session.get('need_pay');
+        $scope.log_id=$session.get('log_id');
 
-
-
-
-
+        $scope.zhifu = function(){
+            
+        }
+        function zhifu(){
+            wx.ready(function(){
+                console.log(1);
+            //支付
+            // wx.chooseWXPay({
+            //     timestamp: ${StringUtil.wrapString(requestAttributes.timeStamp)?default(0)!}, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+            //     nonceStr: '${StringUtil.wrapString(requestAttributes.nonceStr)!}', // 支付签名随机串，不长于 32 位
+            //     package: '${StringUtil.wrapString(requestAttributes.package)!}', // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=***）
+            //     signType: '${StringUtil.wrapString(requestAttributes.signType)!}', // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+            //     paySign: '${StringUtil.wrapString(requestAttributes.paySign)!}', // 支付签名
+            //     success: function (res) {
+            //         // 支付成功后的回调函数
+                    // $http
+                    //     .get($config.api_uri + '/Apipublic/WxPay/aj_pay?log_id='+$scope.log_id)
+                    //     .success(function (data) {
+                    //         console.log(data);
+                    //         if(data.success){
+                    //             $scope.data=data;
+                    //         }else{
+                    //             $mdToast.show(
+                    //             $mdToast.simple()
+                    //                 .content(data.error_msg)
+                    //                 .hideDelay(1000)
+                    //             );
+                    //         }
+             //    })
+            //         if(!res.err_msg){
+            //                     //支付完后.跳转到成功页面.
+            //         location.href="orderconfirm?orderId=${StringUtil.wrapString(requestAttributes.out_trade_no)!}";
+            //         }
+            //     }
+            });
+        }
+    function wxConfig(){
+        $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
+            wx.config({
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                appId: data.wxappId, // 必填，公众号的唯一标识
+                timestamp: data.wxtimestamp, // 必填，生成签名的时间戳
+                nonceStr: data.wxnonceStr, // 必填，生成签名的随机串
+                signature: data.wxsignature,// 必填，签名，见附录1
+                jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+            });
+        });
+    }
+    wxConfig()
 
 
 

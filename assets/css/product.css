@@ -86,6 +86,15 @@ footer {
   font-size: 0.38888889rem;
   line-height: 0.48611111rem;
 }
+.proMsg .zhekou {
+  display: inline;
+  padding: 0.06944444rem 0.13888889rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.55555556rem;
+  line-height: 0.66666667rem;
+  background-color: #4195c4;
+}
 .certification {
   min-height: 0.91666667rem;
   margin-top: 0.04166667rem;

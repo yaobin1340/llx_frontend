@@ -11,7 +11,7 @@ angular
 		var $mdMedia = $injector.get('$mdMedia');
 		var $mdToast = $injector.get('$mdToast');
 
-        $scope.num=1;$scope.choseEwk=0;
+        $scope.num=1;$scope.shops_id=$stateParams.shop_id;
         $scope.change = function(data){
         	 $scope.num=data;
         }
@@ -46,10 +46,43 @@ angular
 				})
 
 		$scope.ewk = function(){
-			$scope.choseEwk=1;
-			$("#qrcode").html("");
-			new QRCode(document.getElementById('qrcode'), window.location.href);
+				$mdDialog.show({
+                    scope: $scope,
+                    preserveScope: true,
+                    templateUrl: 'views/shop_code.html',
+                    parent: angular.element(document.body),
+                    clickOutsideToClose: true,
+                    fullscreen: true
+                });
+            var timer = setInterval(function(){
+              	if($("#qrcode").html()!=undefined){
+              		new QRCode(document.getElementById('qrcode'), window.location.href);
+              		 clearInterval(timer);
+              		console.log(1);
+              	}
+              },1000)
 		}
+		$scope.love = function(){
+			$http
+				.post($config.api_uri + '/Apiuser/Favourite/shop_favourites',{shop_id:$stateParams.shop_id})
+				.success(function (data) {
+					console.log(data)
+					if(data.success){
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
+					}else{
+						$mdToast.show(
+						$mdToast.simple()
+							.content(data.error_msg)
+							.hideDelay(1000)
+						);
+					}
+				})
+		}
+
 
 
 

@@ -1,17 +1,18 @@
 
 	<link rel="stylesheet" href="/assets/css/preferential.css">
-		<script src="/assets/js/qrcode.min.js"></script>
-<div ng-show="fenxiao==0">
-	<div class="banner">
+	<script src="/assets/js/qrcode.min.js"></script>
+
+	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>优惠卡</p>
 	</div>
+	<div class="padding"></div>
 	<div class="proMsg" ng-repeat="Yhk in yhk">
 		<div class="row proMsg-top">
-			<div class="col-sm-9 col-xs-9 proMsg-top-shop">
+			<div ng-cloak class="col-sm-8 col-xs-8 proMsg-top-shop text-overflow">
 				商家：{{Yhk.shop_name}}(商家ID:{{Yhk.shop_id}})
 			</div>
-			<div class="col-sm-3 cll-xs-3 proMsg-top-price text-right">
+			<div ng-cloak class="col-sm-4 cll-xs-4 proMsg-top-price text-right  text-overflow">
 				余额:{{Yhk.yhk}}
 			</div>
 		</div>
@@ -19,9 +20,9 @@
 			<div class="col-sm-6 col-xs-6 ">
 				<img src="http://wap.51loveshow.com/attachs/{{Yhk.logo}}" alt="" class="proMsg-center-img">
 			</div>
-			<div class="col-sm-6 cll-xs-6 proMsg-center-num">
+			<div class="col-sm-6 cll-xs-6 proMsg-center-num  text-overflow">
 				<p>赠品：</p>
-				<p ng-repeat="(key,value) in Yhk.zp"><span>{{key}} x{{value}}</span></p>
+				<p ng-repeat="(key,value) in Yhk.zp"><span ng-cloak>{{key}} x{{value}}</span></p>
 			</div>
 		</div>
 		<div class="row proMsg-bottom">
@@ -33,15 +34,8 @@
 	</div>
 	<div class="toBottom" ng-if="yhk.length==0">-暂无更多优惠卡消息-</div>
 	<div class="marbom"></div>
-</div>
 
-	<div ng-show="fenxiao==1">
-		<div class="banner">
-		    <img src="/assets/img/552cc14536532_128.png" alt="返回" ng-click="fenxiao=0">
-		    <p>分销二维码</p>
-		</div>
-		<div id="qrcode"></div>
-	</div>
+
 	
 
 	

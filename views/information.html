@@ -1,20 +1,21 @@
 
 	<link rel="stylesheet" href="/assets/css/information.css">
 
-	<div class="banner">
+	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>消息</p>
 	</div>
+	<div class="padding"></div>
 	<div class="menu row">
 		<div class="col-sm-6 col-xs-6 pos-r"ng-class="{'border':chose1}" ng-click="chose(1)">系统通知</div>
-		<p class="cir cir1">99</p>
+		<!-- <p class="cir cir1">99</p> -->
 		<div class="col-sm-6 col-xs-6 pos-r" ng-class="{'border':chose2}" ng-click="chose(2)">会员信息</div>
-		<p class="cir cir2">99</p>
+		<!-- <p class="cir cir2">99</p> -->
 	</div>
 	<div class="systemMsg"   infinite-scroll='messages.nextPage()' infinite-scroll-disabled='messages.busy' infinite-scroll-distance='1' ng-if="chose1==1">
 		<div class="Msg-now" ng-repeat="msg in messages.items" ui-sref="systemMsg({msg_id:msg.msg_id})">
-			<div class="Msg-now-left text-overflow">{{msg.intro}}</div>
-			<div class="Msg-now-time">{{msg.create_time}}</div>
+			<div ng-cloak class="Msg-now-left text-overflow">{{msg.intro}}</div>
+			<div ng-cloak class="Msg-now-time">{{msg.create_time}}</div>
 		</div>
 		<div class="home_shop_nomore" ng-show='messages.end'>-暂无更多信息-</div>
 		
@@ -22,8 +23,8 @@
 
 	<div class="systemMsg"   infinite-scroll='messagem.nextPage()' infinite-scroll-disabled='messagem.busy' infinite-scroll-distance='1' ng-if="chose2==1">
 		<div class="Msg-now" ng-repeat="msg in messagem.items" ui-sref="mumberMsg({msg_id:msg.msg_id})">
-			<div class="Msg-now-left text-overflow">{{msg.intro}}</div>
-			<div class="Msg-now-time">{{msg.create_time}}</div>
+			<div ng-cloak class="Msg-now-left text-overflow">{{msg.intro}}</div>
+			<div ng-cloak class="Msg-now-time">{{msg.create_time}}</div>
 		</div>
 		<div class="home_shop_nomore" ng-show='messagem.end'>-暂无更多信息-</div>
 		

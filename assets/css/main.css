@@ -4,59 +4,6 @@ body {
   height: 100%;
   font-family: "SimHei";
 }
-.col-xs-1,
-.col-sm-1,
-.col-md-1,
-.col-lg-1,
-.col-xs-2,
-.col-sm-2,
-.col-md-2,
-.col-lg-2,
-.col-xs-3,
-.col-sm-3,
-.col-md-3,
-.col-lg-3,
-.col-xs-4,
-.col-sm-4,
-.col-md-4,
-.col-lg-4,
-.col-xs-5,
-.col-sm-5,
-.col-md-5,
-.col-lg-5,
-.col-xs-6,
-.col-sm-6,
-.col-md-6,
-.col-lg-6,
-.col-xs-7,
-.col-sm-7,
-.col-md-7,
-.col-lg-7,
-.col-xs-8,
-.col-sm-8,
-.col-md-8,
-.col-lg-8,
-.col-xs-9,
-.col-sm-9,
-.col-md-9,
-.col-lg-9,
-.col-xs-10,
-.col-sm-10,
-.col-md-10,
-.col-lg-10,
-.col-xs-11,
-.col-sm-11,
-.col-md-11,
-.col-lg-11,
-.col-xs-12,
-.col-sm-12,
-.col-md-12,
-.col-lg-12 {
-  position: relative;
-  min-height: 1px;
-  padding-right: 0;
-  padding-left: 0;
-}
 /* header区域 */
 header {
   width: 100%;
@@ -65,28 +12,29 @@ header {
 }
 .select {
   float: left;
-  margin: 0.5rem auto auto 0.2rem;
-  width: 2.5rem;
-  height: 0.859rem;
+  text-align: center;
+  margin: 0.46875rem auto auto 0.203125rem;
+  width: 2.171875rem;
+  height: 0.90625rem;
   font-size: 0.4rem;
-  text-indent: 0.2rem;
+  padding: 0 0.65rem 0 0;
   background: url(/assets/img/drop-down.png) no-repeat right;
-  border: 0.01388889rem solid #ffffff;
-  border-radius: 0.06944444rem;
-  background-size: 0.69444444rem;
+  border: 1px solid #fff;
+  border-radius: 0.078125rem;
+  background-size: 0.78125rem;
   color: #fff;
 }
 /* 搜索框的样式 */
 .soso {
-  width: 6.5rem;
-  height: 0.859rem;
+  float: left;
+  width: 7.15625rem;
+  height: 0.859375rem;
   background-color: #7ca5d1;
-  float: right;
-  margin: 0.5rem 0.25rem auto 0.09rem;
+  margin: 0.5rem auto auto 0.078125rem;
 }
 .soso input {
-  width: 5.5rem;
-  height: 0.843rem;
+  width: 6.25rem;
+  height: 0.859375rem;
   background-color: #7ca5d1;
   outline: none;
   border: none;
@@ -97,31 +45,33 @@ header {
 }
 .select::-webkit-input-placeholder {
   color: #fff;
+  font-size: 0.4rem;
+  line-height: normal;
 }
 .select::-moz-placeholder {
   color: #fff;
+  font-size: 0.4rem;
+  line-height: normal;
 }
 /* placeholder兼容问题处理 */
 /* webkit 浏览器 */
 .soso input::-webkit-input-placeholder {
   color: #e1e1e3;
-  font-family: "微软雅黑";
   font-size: 0.4rem;
+  line-height: normal;
 }
 .search-shop {
-  display: inline-block;
   float: right;
-  height: 0.843rem !important;
-  width: 0.843rem !important;
-  background-color: #7ca5d1;
-  background: url(/assets/img/glyphicons-halflings-white.png) -1.15rem 0.25rem no-repeat;
+  height: 0.843rem;
+  width: 0.843rem;
+  background: #7ca5d1 url(/assets/img/glyphicons-halflings-white.png) -1.15rem 0.25rem no-repeat;
   background-size: 13rem;
 }
 /* 火狐浏览器 */
 .soso input::-moz-placeholder {
   color: #e1e1e3;
-  font-family: "微软雅黑";
   font-size: 0.4rem;
+  line-height: normal;
 }
 .search-soso {
   display: inline-block;
@@ -149,7 +99,6 @@ nav img {
 nav span {
   color: #000;
   font-family: "微软雅黑";
-  font-size: 0.28rem;
   font-size: 0.35rem;
 }
 /* 分割线的样式 */
@@ -161,23 +110,42 @@ nav span {
   margin: 0;
   padding: 0;
 }
-.two-page {
-  height: 3.43rem;
-  border-bottom: 1px solid #666;
-  border-right: 1px solid #666;
+.advertisement {
+  width: 100%;
 }
-.three-page {
-  height: 3.43rem;
-  border-right: 1px solid #666;
+.advertisement .top-left,
+.advertisement .top-right {
+  float: left;
+  width: 4.984375rem;
+  height: 3.125rem;
 }
-.page-no {
-  border-right: none;
+.advertisement .top-left {
+  border-right: 0.015625rem solid #d8d8d8;
+}
+.advertisement .bottom-left,
+.advertisement .bottom-right {
+  float: left;
+  width: 3.3125rem;
+  height: 3.515625rem;
+  border-top: 0.015625rem solid #d8d8d8;
+}
+.advertisement .bottom-left {
+  border-right: 0.015625rem solid #d8d8d8;
+}
+.advertisement a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.advertisement a img {
+  width: 100%;
+  height: 100%;
 }
 .border-t-b {
-  border-bottom: 1px solid #666;
+  border-bottom: 1px solid #d8d8d8;
 }
 .border-t-p {
-  border-top: 1px solid #666;
+  border-top: 1px solid #d8d8d8;
 }
 .shop-title {
   color: #d8d8d8;
@@ -196,14 +164,14 @@ nav span {
   height: 0.85rem;
 }
 .div-name {
-  height: 0.34722222rem;
+  height: 0.390625rem;
   font-size: 0.406rem;
   margin-top: 0.34rem;
 }
 .shopDistance {
   font-size: 0.38rem;
   color: #b6b6b6;
-  height: 0.34722222rem;
+  height: 0.390625rem;
   margin-top: 0.34rem;
 }
 .row {
@@ -211,9 +179,9 @@ nav span {
   padding: 0;
 }
 .pro-photo {
-  width: 2.91666667rem;
-  height: 2.77777778rem;
-  margin-top: 0.05555556rem;
+  width: 100%;
+  height: 100%;
+  margin-top: 0.16rem;
 }
 .shopAddress {
   color: #585858;
@@ -243,21 +211,23 @@ nav span {
 .ourmembers {
   font-family: "微软雅黑";
   font-size: 0.25rem;
-  text-indent: 0.35rem;
+  text-indent: 0.3rem;
+  line-height: 0.390625rem;
 }
 .ourprice {
   font-family: "微软雅黑";
   color: red;
   font-size: 0.35rem;
   line-height: 0.45rem;
+  padding-right: 0.1rem;
 }
 .home_shop_nomore {
   width: 100%;
-  height: 1.38888889rem;
+  height: 1.5625rem;
   text-align: center;
-  line-height: 1.38888889rem;
+  line-height: 1.5625rem;
   font-size: 0.45rem;
-  margin-bottom: 1.38888889rem;
+  margin-bottom: 1.5625rem;
 }
 .banner {
   width: 100%;
@@ -265,97 +235,97 @@ nav span {
   background-color: #3e9ece;
 }
 .banner img {
-  width: 0.69444444rem;
+  width: 0.78125rem;
   position: absolute;
   margin-top: 0.35rem;
   float: left;
-  margin-left: 0.69444444rem;
+  margin-left: 0.78125rem;
 }
 .banner p {
   text-align: center;
   line-height: 1.38rem;
   color: #fff;
-  font-size: 0.41666667rem;
+  font-size: 0.46875rem;
 }
 .centerImgbanner {
-  height: 2.41666667rem;
+  height: 2.71875rem;
 }
 .centerImgbanner img {
   width: 100%;
-  height: 2.41666667rem;
+  height: 2.71875rem;
 }
 .chose {
-  font-size: 0.38888889rem;
-  line-height: 1.125rem;
+  font-size: 0.4375rem;
+  line-height: 1.265625rem;
   text-align: center;
 }
 .martop {
-  border-top: 0.27777778rem solid #eeeeee;
+  border-top: 0.3125rem solid #eeeeee;
 }
 .choseAdr,
 .orderby,
 .chosemore {
-  height: 1.125rem;
+  height: 1.265625rem;
 }
 .choseAdr img,
 .orderby img,
 .chosemore img {
-  width: 0.69444444rem;
-  height: 0.97222222rem;
+  width: 0.78125rem;
+  height: 1.09375rem;
   vertical-align: top;
 }
 .choseAdr span,
 .orderby span,
 .chosemore span {
   display: inline-block;
-  font-size: 0.38888889rem;
-  line-height: 1.125rem;
+  font-size: 0.4375rem;
+  line-height: 1.265625rem;
 }
 .shangquan,
 .ditie {
-  height: 1.125rem;
-  font-size: 0.36111111rem;
-  line-height: 1.125rem;
+  height: 1.265625rem;
+  font-size: 0.40625rem;
+  line-height: 1.265625rem;
   text-align: center;
-  border-top: 0.02777778rem solid #eeeeee;
+  border-top: 0.03125rem solid #eeeeee;
   color: #7f8180;
   background-color: #fff;
 }
 .choseActive {
-  border-bottom: 0.08333333rem solid #3e9ece;
+  border-bottom: 0.09375rem solid #3e9ece;
 }
 .chosexix {
   background-color: #eaeaea;
 }
 .choseItemone {
-  font-size: 0.36111111rem;
-  line-height: 1.125rem;
+  font-size: 0.40625rem;
+  line-height: 1.265625rem;
   text-align: center;
-  border-top: 0.02777778rem solid #eaeaea;
+  border-top: 0.03125rem solid #eaeaea;
   color: #7f8180;
   background-color: #fff;
 }
 .choseItemone li {
-  border-bottom: 0.02777778rem solid #eaeaea;
+  border-bottom: 0.03125rem solid #eaeaea;
   text-align: left;
-  padding-left: 0.77777778rem;
+  padding-left: 0.875rem;
 }
 .choseItemtwo {
-  font-size: 0.36111111rem;
-  line-height: 1.125rem;
+  font-size: 0.40625rem;
+  line-height: 1.265625rem;
   text-align: center;
-  border-top: 0.02777778rem solid #eeeeee;
+  border-top: 0.03125rem solid #eeeeee;
   color: #7f8180;
   background-color: #f2f2f2;
 }
 .choseItemtwo li {
-  border-bottom: 0.02777778rem solid #eaeaea;
+  border-bottom: 0.03125rem solid #eaeaea;
   text-align: left;
-  padding-left: 0.77777778rem;
+  padding-left: 0.875rem;
 }
 .choseThis {
-  background: #f2f2f2 url(/assets/img/552cc1f1200a3_128.png) no-repeat 0.20833333rem;
-  background-size: 0.55555556rem;
+  background: #f2f2f2 url(/assets/img/552cc1f1200a3_128.png) no-repeat 0.234375rem;
+  background-size: 0.625rem;
 }
 /* 固定在底部的样式 */
 footer {

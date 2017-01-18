@@ -1,16 +1,17 @@
 
 	<link rel="stylesheet" href="/assets/css/IndentMsg.css">
 
-	<div class="banner">
+	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>订单详情</p>
 	</div>
+	<div class="padding"></div>
 	<div class="centerMsg">
 		<div class="row">
 			<div class="col-sm-4 col-xs-4">
 				订单编号
 			</div>
-			<div class="col-xm-8 col-xs-8 text-right">
+			<div ng-cloak class="col-xm-8 col-xs-8 text-right">
 				{{msg.order_id}}
 			</div>
 		</div>
@@ -18,7 +19,7 @@
 			<div class="col-sm-4 col-xs-4">
 				订单金额
 			</div>
-			<div class="col-xm-8 col-xs-8 text-right text-color">
+			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
 				￥{{msg.order_id/100}}元
 			</div>
 		</div>
@@ -26,7 +27,7 @@
 			<div class="col-sm-4 col-xs-4">
 				秀币抵现
 			</div>
-			<div class="col-xm-8 col-xs-8 text-right text-color">
+			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
 				￥{{msg.can_use_integral/100}}元
 			</div>
 		</div>
@@ -34,7 +35,7 @@
 			<div class="col-sm-4 col-xs-4">
 				实际支付
 			</div>
-			<div class="col-xm-8 col-xs-8 text-right text-color">
+			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
 				￥{{msg.need_pay/100}}元
 			</div>
 		</div>
@@ -42,7 +43,7 @@
 			<div class="col-sm-4 col-xs-4">
 				下单时间
 			</div>
-			<div class="col-xm-8 col-xs-8 text-right">
+			<div ng-cloak class="col-xm-8 col-xs-8 text-right">
 				{{msg.c_time}}
 			</div>
 		</div>
@@ -52,11 +53,11 @@
 				<img ng-src="http://wap.51loveshow.com/attachs/{{goods.photo}}" alt="">
 			</div>
 			<div class="prMsg-title">
-				<p>{{goods.title}}</p>
-				<span>￥{{goods.price}}</span>
+				<p ng-cloak>{{goods.title}}</p>
+				<span ng-cloak>￥{{goods.price}}</span>
 			</div>
 			<div class="prMsg-num">
-			<p class="text-right">x{{goods.num}}</p>
+			<p ng-cloak class="text-right">x{{goods.num}}</p>
 			</div>
 		</div>
 	</div>

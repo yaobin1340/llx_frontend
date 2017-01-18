@@ -2,8 +2,8 @@ body {
   font-family: "SimHei";
 }
 .row {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
 }
 .col-xs-1,
 .col-sm-1,

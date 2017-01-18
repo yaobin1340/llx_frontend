@@ -15,6 +15,7 @@ angular.module('ohapp').factory('OfferPay', function ($config, $http) {
             url: $config.api_uri + '/Apiuser/Pay/index',
             data: {page:this.page},
         }).success(function (data) {
+            
             if (data.success) {
                 if(data.list==null||!data.list.length){
                     this.end = true;

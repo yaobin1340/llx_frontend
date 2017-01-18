@@ -73,12 +73,12 @@ angular
     };
 
     this.routes['SubmitOrder'] = {
-        url : '/SubmitOrder?goods_id',
+        url : '/SubmitOrder?goods_id,order_id',
         templateUrl : 'views/SubmitOrder.html',
         controller:'SubmitOrder'
     };
     this.routes['payment'] = {
-        url : '/payment?shopcartId',
+        url : '/payment',
         templateUrl : 'views/payment.html',
         controller:'paymentCtrl'
     };
@@ -148,7 +148,7 @@ angular
         controller:'OpinionCtrl'
     };
     this.routes['restaurant'] = {
-        url : '/restaurant',
+        url : '/restaurant?cate_id,cate_name',
         templateUrl : 'views/restaurant.html',
         controller:'restaurantsCtrl'
     };
@@ -211,6 +211,11 @@ angular
         url : '/navigation?lng&?lat?name',
         templateUrl : 'views/navigation.html',
         controller:'navigationCtrl'
+    };
+    this.routes['shopMsg'] = {
+        url : '/shopMsg?shop_id',
+        templateUrl : 'views/shopMsg.html',
+        controller:'shopMsgCtrl'
     };
     
 
