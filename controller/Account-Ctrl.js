@@ -12,7 +12,7 @@ angular
         var $mdToast = $injector.get('$mdToast');
        $scope.nickname=$session.get("nickname");
        $scope.phone=$session.get('phone').slice(0,3)+"****"+$session.get('phone').slice(7,11);
-
+// 注释信息
 
 
 
