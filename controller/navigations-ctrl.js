@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'navigationCtrl', function navigationCtrl( $scope, $injector, $rootScope,$stateParams) {
+    .controller( 'navigationsCtrl', function navigationsCtrl( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $config = $injector.get( '$config' );
         var $timeout = $injector.get( '$timeout' );

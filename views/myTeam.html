@@ -1,4 +1,4 @@
-	<link rel="stylesheet" href="/assets/css/Account.css">
+	<link rel="stylesheet" href="/assets/css/myTeam.css">
 
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
@@ -6,7 +6,10 @@
 	</div>
 	<div class="padding"></div>
 	<div class="choseShop">
-		
+		<select ng-change="selectChange(dateValue)" ng-model="dateValue">
+			<option value="" ng-disabled="true">请选择店铺</option>
+			<option value="{{shops.shop_id}}" ng-repeat="shops in shop">{{shops.shop_name}}</option>
+		</select>
 	</div>
 	<div class="teamItems">
 		<div class="itemstotal">
@@ -14,17 +17,60 @@
 				一级会员
 			</div>
 			<div class="itemstotal-right">
-				人数1
+				人数{{team1_info.length}}
 			</div>
 		</div>
-		<div class="itemstotal-list">
+		<div class="itemstotal-list" ng-if="team1_info.length!=0" ng-repeat="team1 in team1_info">
 			<div class="listitems">
 				<div class="itemstotal-list-left">
-					<img src="" alt="">
+					<img ng-src="http://wap.51loveshow.com/attachs/{{team1.face}}" alt="">
 				</div>
 				<div class="itemstotal-list-right">
-					<p>昵称：</p>
-					<p>电话：</p>
+					<p>昵称：{{team1.nickname}}</p>
+					<p>电话：{{team1.mobile}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="teamItems">
+		<div class="itemstotal">
+			<div class="itemstotal-left">
+				二级会员
+			</div>
+			<div class="itemstotal-right">
+				人数{{team2_info.length}}
+			</div>
+		</div>
+		<div class="itemstotal-list" ng-if="team2_info.length!=0" ng-repeat="team2 in team2_info">
+			<div class="listitems">
+				<div class="itemstotal-list-left">
+					<img ng-src="http://wap.51loveshow.com/attachs/{{team2.face}}" alt="">
+				</div>
+				<div class="itemstotal-list-right">
+					<p>昵称：{{team2.nickname}}</p>
+					<p>电话：{{team2.mobile}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="teamItems">
+		<div class="itemstotal">
+			<div class="itemstotal-left">
+				三级会员
+			</div>
+			<div class="itemstotal-right">
+				人数{{team3_info.length}}
+			</div>
+		</div>
+		<div class="itemstotal-list" ng-if="team3_info.length!=0" ng-repeat="team3 in team3_info">
+			<div class="listitems">
+				<div class="itemstotal-list-left">
+					<img ng-src="http://wap.51loveshow.com/attachs/{{team3.face}}" alt="">
+				</div>
+				<div class="itemstotal-list-right">
+					<p>昵称：{{team3.nickname}}</p>
+					<p>电话：{{team3.mobile}}</p>
 				</div>
 			</div>
 		</div>

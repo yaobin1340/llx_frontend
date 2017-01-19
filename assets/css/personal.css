@@ -238,12 +238,21 @@ footer span {
   float: left;
   width: 4.16666667rem;
   height: 2.59722222rem;
+  position: relative;
 }
 .shop-img .shop-img-left img {
   display: block;
   width: 3.05555556rem;
   height: 2.01388889rem;
   margin: 0.13888889rem 0 0 0.55555556rem;
+}
+.shop-img .shop-img-left span {
+  position: absolute;
+  width: 1.38888889rem;
+  height: 0.38888889rem;
+  left: 2.08333333rem;
+  top: 1.80555556rem;
+  background-color: #3e9ece;
 }
 .shop-img .shop-img-right {
   height: 2.59722222rem;

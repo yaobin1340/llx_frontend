@@ -17,20 +17,22 @@ angular
 
         $scope.zhifu = function(){
             console.log("开始请求测试区")
+
+                GetRequest();
             // 测试区域
-                $http
-                    .post("http://be.51loveshow.com/Apipublic/WxPay/aj_openid")
-                    .success(function (data) {
-                        console.log(data);
-                        $scope.ds=data;
-                        chosepay();
-                    })  
+                // $http
+                //     .post("http://be.51loveshow.com/Apipublic/WxPay/aj_openid")
+                //     .success(function (data) {
+                //         console.log(data);
+                //         $scope.ds=data;
+                //         chosepay();
+                //     })  
         }
             // 测试区域
         console.log("开始请求")
-        function chosepay(){
+        function chosepay(id){
                 $http
-                    .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$scope.ds.openid})
+                    .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:id})
                     .success(function (data) {
                         console.log(data);
                         if(data.success){
@@ -76,6 +78,34 @@ angular
     }
 
 
+
+    function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        if(!GetRequest().code){
+            var redirect_url = 'http://llx.51loveshow.com/payment';
+            location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+$session.get('appId')+"&redirect_uri" 
+
+        +encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
+        }else{
+            $http({
+                method: 'POST',
+                url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
+                data:{code:GetRequest().code}
+            }).success(function (data) {
+                console.log(data)
+                chosepay(data.openid);
+            })
+        }
 
 
 

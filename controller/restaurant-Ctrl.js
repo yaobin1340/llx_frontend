@@ -180,6 +180,8 @@ angular
                 signature: data.wxsignature,// 必填，签名，见附录1
                 jsApiList: ['getLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
+            $session.set('appId', data.wxappId);
+            $session.save();
         });
     }
     wx.ready(function() {

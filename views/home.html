@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="/assets/css/choseAddress.css">
 <div ng-show="add==0">
 	<header>
-		<input type="text" value="{{area_name}}" ng-click="choseAdd()" class="select text-overflow" placeholder="请选择">
+		<input ng-clock type="text" value="{{area_name}}" ng-click="choseAdd()" class="select text-overflow" placeholder="请选择">
 		<div class="soso">
 			<input type="text" placeholder="输入商家/商品/商圈关键字" ng-model="text" onkeydown="filterByEnter(event)">
 			<span class="search-shop" ng-click="soso()"></span>

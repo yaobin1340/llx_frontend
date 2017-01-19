@@ -6,17 +6,17 @@
 	</div>
 	<div class="padding"></div>
 	<div class="bg"></div>
-
 		<div class="shop-img">
 			<div class="shop-img-left">
-				<img src="" alt="">
+				<img ng-src="http://wap.51loveshow.com/attachs/{{shopdata.shop_info.logo}}" alt="">
+				<span>申请认证</span>
 			</div>
 			<div class="shop-img-right">
-				<p>悠山庭院度假酒店(ID:88)</p>
+				<p>{{shopdata.shop_info.shop_name}}(ID:{{shopdata.shop_info.shop_id}})</p>
 				<span>暂无评价</span>
-				<span>类  型：三星级</span>
-				<span>商户资金：￥88.88<a>提现</a></span>
-				<span>商户秀币：688<a>提现</a></span>
+				<span>类  型：{{shopdata.shop_cate_name}}</span>
+				<span>商户资金：￥{{shopdata.user_info.gold}}<a>提现</a></span>
+				<span>商户秀币：{{shopdata.user_info.integral}}<a>提现</a></span>
 			</div>
 		</div>
 

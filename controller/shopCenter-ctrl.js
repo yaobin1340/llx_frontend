@@ -10,8 +10,20 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-
-
+            $http
+                    .post($config.api_uri+'/Apishop/ApiSmall/index')
+                    .success(function (data) {
+                        console.log(data);
+                        if(data.success){
+                            $scope.shopdata=data;
+                        }else{
+                           $mdToast.show(
+                            $mdToast.simple()
+                                .content(data.error_msg)
+                                .hideDelay(1000)
+                            );
+                        }
+                    })
 
 
 
