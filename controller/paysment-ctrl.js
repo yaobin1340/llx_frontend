@@ -14,7 +14,7 @@ angular
         $scope.order_id=$session.get('order_id');
         $scope.need_pay=$session.get('need_pay');
         $scope.log_id=$session.get('log_id');
-
+        console.log($session.get('order_id'));
 
         //重定向获取code
         if(!GetRequest().code){
@@ -29,7 +29,6 @@ angular
                 }).success(function (data) {
                     console.log(data)
                     $scope.openid=data.openid;
-                    console.log($scope.order_id);
                 })
         }
         $scope.zhifu = function(){
