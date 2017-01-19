@@ -35,6 +35,7 @@ angular
                     $session.set('near_code', data.map.adcode);
                     $session.set('near_name', data.map.district);
                     $session.save();
+                    console.log(data.map);
                     console.log($scope.area_name);
                     console.log($scope.shops.area_code);
                     console.log(data.map.district);

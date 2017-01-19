@@ -29,9 +29,7 @@ angular
                 }).success(function (data) {
                     console.log(data)
                     $scope.openid=data.openid;
-                    $scope.order_id=$session.get('order_id');
-                    $scope.need_pay=$session.get('need_pay');
-                    $scope.log_id=$session.get('log_id');
+                    console.log($scope.order_id);
                 })
         }
         $scope.zhifu = function(){
