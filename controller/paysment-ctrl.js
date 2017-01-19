@@ -22,29 +22,29 @@ angular
                 .post($config.api_uri +'/Apipublic/WxPay/aj_openid')
                 .success(function (data) {
                     console.log(data);
+                    chosepay();
                 })  
         }
             // 测试区域
-            console.log("开始请求")
+        console.log("开始请求")
         function chosepay(){
                 $http
-                .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:data.openid})
-                .success(function (data) {
-                    console.log(data);
-                    if(data.success){
-                        alert("请求成功")
-                        $scope.data=data.result.parameters;
-                        zhifu();
-                    }else{
-                       $mdToast.show(
-                        $mdToast.simple()
-                            .content("请求失败")
-                            .hideDelay(1000)
-                        );
+                    .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:data.openid})
+                    .success(function (data) {
+                        console.log(data);
+                        if(data.success){
+                            alert("请求成功")
+                            $scope.data=data.result.parameters;
+                            zhifu();
+                        }else{
+                           $mdToast.show(
+                            $mdToast.simple()
+                                .content("请求失败")
+                                .hideDelay(1000)
+                            );
+                        }
                     }
-                })
-            }    
-        }
+        }    
         function zhifu(){
             //支付
             alert("开始支付")
