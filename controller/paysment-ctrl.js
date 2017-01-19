@@ -22,6 +22,7 @@ angular
                 .post($config.api_uri +'/Apipublic/WxPay/aj_openid')
                 .success(function (data) {
                     console.log(data);
+                    $scope.ds=data;
                     chosepay();
                 })  
         }
@@ -29,7 +30,7 @@ angular
         console.log("开始请求")
         function chosepay(){
                 $http
-                    .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:data.openid})
+                    .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$scope.ds.openid})
                     .success(function (data) {
                         console.log(data);
                         if(data.success){
@@ -43,8 +44,8 @@ angular
                                 .hideDelay(1000)
                             );
                         }
-                    }
-        }    
+                    })
+        };  
         function zhifu(){
             //支付
             alert("开始支付")
