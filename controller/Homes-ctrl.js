@@ -31,10 +31,10 @@ angular
             }).success(function (data) {
                 console.log(data);
                 if (data.success) {
-                    $scope.area_name = data.map.district;
+                    $scope.area_name = data.location.district;
                     $scope.shops.area_code = data.map.adcode;
                     $session.set('near_code', data.map.adcode);
-                    $session.set('near_name', data.map.district);
+                    $session.set('near_name', data.location.district);
                     $session.save();
                     $scope.shops.items = [];
                     $scope.shops.end = false;
