@@ -17,7 +17,7 @@ angular
 
 
         //重定向获取code
-        if(!GetRequest().code){console.log("no")
+        if(!GetRequest().code){
                 var redirect_url = 'http://llx.51loveshow.com/payment';
                 location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
             }else{
@@ -27,8 +27,7 @@ angular
                     url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
                     data:{code:GetRequest().code}
                 }).success(function (data) {
-                    console.log("获取openid"+data)
-                    // chosepay(data.openid);
+                    console.log(data)
                     $scope.openid=data.openid;
                 })
         }
@@ -37,7 +36,7 @@ angular
             chosepay()
         }
             // 测试区域
-        function chosepay(id){
+        function chosepay(){
                 $http
                     .post('http://be.51loveshow.com/Apipublic/WxPay/aj_openid',{log_id:$scope.log_id,openid:$scope.openid})
                     .success(function (data) {

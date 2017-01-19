@@ -29,13 +29,14 @@ angular
                 url: $config.api_uri + '/Apipublic/Apilogin/use_QQmap',
                 data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
             }).success(function (data) {
-                console.log(data);
                 if (data.success) {
-                    $scope.area_name = data.location.district;
+                    $scope.area_name = data.map.district;
                     $scope.shops.area_code = data.map.adcode;
                     $session.set('near_code', data.map.adcode);
-                    $session.set('near_name', data.location.district);
+                    $session.set('near_name', data.map.district);
                     $session.save();
+                    console.log($scope.area_name);
+                    console.log($scope.shops.area_code);
                     $scope.shops.items = [];
                     $scope.shops.end = false;
                     $scope.shops.busy = false;
@@ -108,9 +109,9 @@ angular
 
         $scope.toacrt = function(near,an){
             $scope.add=0;
-            $session.set('near_code', near);
-            $session.set('near_name', an);
-            $session.save();
+            // $session.set('near_code', near);
+            // $session.set('near_name', an);
+            // $session.save();
             $scope.shops.area_code = near;
             $scope.area_name = an;
             $scope.shops.items = [];
@@ -120,14 +121,14 @@ angular
             $scope.shops.nextPage();
         }
     }
-            $scope.shops.area_code = $session.get("near_code");
-            $scope.area_name = $session.get('near_name');
-           if(JSON.stringify($session.get('near_name')) != "{}"){$scope.n= $session.get('near_name');}  
-            $scope.shops.items = [];
-            $scope.shops.end = false;
-            $scope.shops.busy = false;
-            $scope.shops.page = 1;
-            $scope.shops.nextPage();
+           //  $scope.shops.area_code = $session.get("near_code");
+           //  $scope.area_name = $session.get('near_name');
+           // if(JSON.stringify($session.get('near_name')) != "{}"){$scope.n= $session.get('near_name');}  
+           //  $scope.shops.items = [];
+           //  $scope.shops.end = false;
+           //  $scope.shops.busy = false;
+           //  $scope.shops.page = 1;
+           //  $scope.shops.nextPage();
 
 
 
