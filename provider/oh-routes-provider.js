@@ -10,13 +10,13 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
     };
-
+// 修改调试
     this.routes[ 'main.home' ] =
     {
         url: '^/home',
         title: 'Home',
         templateUrl: 'views/home.html',
-        controller: 'RestaurantCtrl'
+        controller: 'HomesCtrl'
     };
     this.routes['main.OfferPay'] = {
         url : '^/OfferPay',
@@ -77,10 +77,11 @@ angular
         templateUrl : 'views/SubmitOrder.html',
         controller:'SubmitOrder'
     };
+    // 修改调试
     this.routes['payment'] = {
         url : '/payment',
         templateUrl : 'views/payment.html',
-        controller:'paymentCtrl'
+        controller:'paysmentCtrl'
     };
      this.routes['applyCash'] = {
         url : '/applyCash?type',
