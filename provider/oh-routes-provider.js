@@ -238,6 +238,11 @@ angular
         templateUrl : 'views/addPay.html',
         controller:'addPayCtrl'
     };
+    this.routes['payShop'] = {
+        url : '/payShop',
+        templateUrl : 'views/payShop.html',
+        controller:'payShopCtrl'
+    };
     
 
 

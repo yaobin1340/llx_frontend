@@ -29,14 +29,18 @@ angular
                 url: $config.api_uri + '/Apipublic/Apilogin/use_QQmap',
                 data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
             }).success(function (data) {
+                console.log(data);
                 if (data.success) {
                     $scope.area_name = data.map.district;
                     $scope.shops.area_code = data.map.adcode;
                     $session.set('near_code', data.map.adcode);
                     $session.set('near_name', data.map.district);
                     $session.save();
+                    $scope.shops.items = [];
+                    $scope.shops.end = false;
                     $scope.shops.busy = false;
-                    $scope.shops.nextPage()
+                    $scope.shops.page = 1;
+                    $scope.shops.nextPage();
                 } else {
                     $mdToast.show(
                         $mdToast.simple()
