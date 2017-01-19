@@ -37,6 +37,8 @@ angular
                     $session.save();
                     console.log($scope.area_name);
                     console.log($scope.shops.area_code);
+                    console.log(data.map.district);
+                    console.log(data.map.adcode);
                     $scope.shops.items = [];
                     $scope.shops.end = false;
                     $scope.shops.busy = false;
