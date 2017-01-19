@@ -25,7 +25,7 @@ angular
                         $scope.ds=data;
                         chosepay();
                     })  
-        
+        }
             // 测试区域
         console.log("开始请求")
         function chosepay(){
