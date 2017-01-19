@@ -34,6 +34,9 @@ angular
                     $scope.shops.area_code = data.map.adcode;
                     $session.set('near_code', data.map.adcode);
                     $session.set('near_name', data.map.district);
+                    console.log(data.map.district);
+                    console.log($scope.area_name);
+                    console.log(data);
                     $session.save();
                     $scope.shops.busy = false;
                     $scope.shops.nextPage()
@@ -180,8 +183,6 @@ angular
                 signature: data.wxsignature,// 必填，签名，见附录1
                 jsApiList: ['getLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
-            $session.set('appId', data.wxappId);
-            $session.save();
         });
     }
     wx.ready(function() {
