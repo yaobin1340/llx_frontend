@@ -291,6 +291,10 @@ footer span {
   line-height: 1.27777778rem;
   border-bottom: 1px solid #eff0eb;
 }
+.msg-items span {
+  display: inline-block;
+  width: 2.22222222rem;
+}
 .msg-items input {
   width: 6.25rem;
   font-size: 0.5rem;
@@ -322,4 +326,29 @@ footer span {
   border: 0.01388889rem solid #ff0000;
   border-radius: 0.08rem;
   margin-bottom: 2.08333333rem;
+}
+.zenpin {
+  width: 3.44444444rem !important;
+  float: left;
+}
+.anniu {
+  width: 0.625rem;
+  height: 0.625rem;
+  margin: 0.27777778rem 0;
+  padding: 0 0;
+  font-size: 0.625rem;
+  text-align: center;
+  color: #3e9ece;
+  line-height: 0.625rem;
+  border: 1px solid #3e9ece;
+  border-radius: 0.11111111rem;
+  background-color: #fff;
+  float: left;
+}
+.munZen {
+  width: 0.97222222rem;
+  height: 0.625rem;
+  text-align: center;
+  background-color: #fff;
+  float: left;
 }

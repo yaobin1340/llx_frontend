@@ -158,3 +158,29 @@ footer span {
 .navbar-fixed-bottom {
   z-index: 5;
 }
+.input-phone div {
+  height: 1.05555556rem;
+  width: 8.38888889rem;
+  margin: 0.34722222rem auto 0 auto;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 0.48611111rem;
+}
+.input-phone input {
+  float: left;
+  outline: none;
+  width: 6.38888889rem;
+  height: 1.02777778rem;
+  margin-left: 0.51388889rem;
+  font-size: 0.36111111rem;
+}
+.input-phone button {
+  float: left;
+  width: 1.02777778rem;
+  height: 0.75rem;
+  margin: 0.13888889rem 0;
+  outline: none;
+  background-color: #fff;
+  border: none;
+  border-left: 1px solid #3e9ece;
+}

@@ -19,13 +19,13 @@ angular
             console.log("开始请求测试区")
             // 测试区域
                 $http
-                .post($config.api_uri +'/Apipublic/WxPay/aj_openid')
-                .success(function (data) {
-                    console.log(data);
-                    $scope.ds=data;
-                    chosepay();
-                })  
-        }
+                    .post("http://be.51loveshow.com/Apipublic/WxPay/aj_openid")
+                    .success(function (data) {
+                        console.log(data);
+                        $scope.ds=data;
+                        chosepay();
+                    })  
+        
             // 测试区域
         console.log("开始请求")
         function chosepay(){
