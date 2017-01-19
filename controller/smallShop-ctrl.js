@@ -78,9 +78,9 @@ angular
 		}
 
 
-
+        var shareData,wxdata;
 	$scope.shareBtn=function() {
-		var shareData = {};  
+		shareData = {};  
 		shareData.imgUrl ='http://wap.51loveshow.com/attachs/'+$scope.detail.logo;  
 		shareData.link = window.location.href;  
 		shareData.content = '我给你分享了一个店铺，快去看看吧';  
@@ -88,9 +88,8 @@ angular
 		Share(shareData);
 	}
 	function Share(shareData) {  
-        var wxdata = {};   
+        wxdata = {};   
         $.getJSON('http://106.14.57.99:8888/Apipublic/Apilogin/get_wxconfig',function(data){
-            console.log(data);
             wx.config({
                 debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                 appId: data.wxappId, // 必填，公众号的唯一标识
@@ -132,11 +131,14 @@ angular
                 img_width: 200,  
                 img_height: 200,  
                 trigger: function(res) {  
+                    console.log("用户点击")
                 },  
                 success: function(res) {  
-                    friendcallback(res);  
+                    friendcallback(res); 
+                    console.log("成功") 
                 },  
                 cancel: function(res) {  
+                    console.log("失败")
                 },  
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
@@ -154,15 +156,18 @@ angular
                 img_width: 200,  
                 img_height: 200,  
                 trigger: function(res) {  
+                    console.log("用户点击")
                 },  
                 success: function(res) {  
-                    friendcallback(res);  
+                    friendcallback(res); 
+                    console.log("成功") 
                 },  
                 cancel: function(res) {  
+                    console.log("失败")
                 },  
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
-                }  
+                }    
             });  
         });  
   
@@ -175,15 +180,18 @@ angular
                 img_width: 200,  
                 img_height: 200,  
                 trigger: function(res) {  
+                    console.log("用户点击")
                 },  
                 success: function(res) {  
-                    friendcallback(res);  
+                    friendcallback(res); 
+                    console.log("成功") 
                 },  
                 cancel: function(res) {  
+                    console.log("失败")
                 },  
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
-                }  
+                }   
             });  
         });  
   
@@ -197,11 +205,14 @@ angular
                 img_width: 200,  
                 img_height: 200,  
                 trigger: function(res) {  
+                    console.log("用户点击")
                 },  
                 success: function(res) {  
-                    friendcallback(res);  
+                    friendcallback(res); 
+                    console.log("成功") 
                 },  
                 cancel: function(res) {  
+                    console.log("失败")
                 },  
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
@@ -219,11 +230,14 @@ angular
                 img_width: 200,  
                 img_height: 200,  
                 trigger: function(res) {  
+                    console.log("用户点击")
                 },  
                 success: function(res) {  
-                    friendcallback(res);  
+                    friendcallback(res); 
+                    console.log("成功") 
                 },  
                 cancel: function(res) {  
+                    console.log("失败")
                 },  
                 fail: function(res) {  
                     alert(JSON.stringify(res));  

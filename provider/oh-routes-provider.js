@@ -217,6 +217,26 @@ angular
         templateUrl : 'views/shopMsg.html',
         controller:'shopMsgCtrl'
     };
+    this.routes['shopCenter'] = {
+        url : '/shopCenter',
+        templateUrl : 'views/shopCenter.html',
+        controller:'shopCenterCtrl'
+    };
+    this.routes['basic'] = {
+        url : '/basic',
+        templateUrl : 'views/basic.html',
+        controller:'basicCtrl'
+    };
+    this.routes['addEnvironment'] = {
+        url : '/addEnvironment',
+        templateUrl : 'views/addEnvironment.html',
+        controller:'addEnvironmentCtrl'
+    };
+    this.routes['addPay'] = {
+        url : '/addPay',
+        templateUrl : 'views/addPay.html',
+        controller:'addPayCtrl'
+    };
     
 
 

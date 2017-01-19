@@ -1,0 +1,18 @@
+
+	<link rel="stylesheet" href="/assets/css/information.css">
+
+	<div class="banner navbar-fixed-top">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
+	    <p>基本设置</p>
+	</div>
+	<div class="padding"></div>
+	<div class="menu row">
+		<div class="col-sm-6 col-xs-6 pos-r"ng-class="{'border':chose1}" ng-click="chose(1)">基本设置</div>
+		<div class="col-sm-6 col-xs-6 pos-r" ng-class="{'border':chose2}" ng-click="chose(2)">环境图</div>
+	</div>
+<div ng-include="'views/basicMsg.html'" ng-if="chose1==1">
+	
+</div>
+<div  ng-include="'views/environmentMsg.html'" ng-if="chose2==1">
+	
+</div>

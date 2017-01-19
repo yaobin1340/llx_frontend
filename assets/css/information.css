@@ -121,3 +121,205 @@ footer span {
 .navbar-fixed-bottom {
   z-index: 5;
 }
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 0.20833333rem;
+  padding-left: 0.20833333rem;
+}
+.jiben {
+  height: 1.02777778rem;
+  border-bottom: 1px solid #eff0eb;
+}
+.jiben div {
+  text-align: center;
+  font-size: 0.36111111rem;
+  line-height: 1.02777778rem;
+}
+.jiben div input {
+  width: 100%;
+  height: 0.94444444rem;
+  font-size: 0.36111111rem;
+  outline: none;
+  color: black;
+}
+.env-item {
+  height: 3.38888889rem;
+  border-top: 0.31944444rem solid #eff0eb;
+  border-bottom: 0.31944444rem solid #eff0eb;
+  background-color: #fff;
+}
+.env-item .items-top {
+  height: 0.51388889rem;
+  padding: 0 0.55555556rem;
+  font-size: 0.27777778rem;
+  line-height: 0.51388889rem;
+}
+.env-item .items-top .top-left {
+  float: left;
+}
+.env-item .items-top .top-right {
+  float: right;
+}
+.env-item .items-center {
+  height: 2.23611111rem;
+  border-top: 1px solid #eff0eb;
+  padding: 0 0.55555556rem;
+}
+.env-item .items-center .center-left {
+  float: left;
+  height: 2.22222222rem;
+  width: 3.33333333rem;
+}
+.env-item .items-center .center-left img {
+  width: 2.36111111rem;
+  height: 1.86111111rem;
+  margin-top: 0.16666667rem;
+}
+.env-item .items-center .center-right {
+  float: right;
+  width: 5.55555556rem;
+  height: 2.22222222rem;
+  font-size: 0.33333333rem;
+}
+.env-item .items-center .center-right p {
+  line-height: 0.55555556rem;
+}
+.env-item .items-center .center-right .mar-p {
+  margin-top: 0.18055556rem;
+}
+.env-item .items-center .center-right .shenhe {
+  font-size: 0.27777778rem;
+  padding: 0.20833333rem 0.23611111rem;
+  color: #3e9ece;
+  border: 1px solid #3e9ece;
+  border-radius: 0.09722222rem;
+  background-color: #fff;
+  float: right;
+  margin-right: 0.27777778rem;
+}
+.env-item .items-center .center-right .delect {
+  font-size: 0.27777778rem;
+  padding: 0.20833333rem 0.23611111rem;
+  color: red;
+  border: 1px solid red;
+  border-radius: 0.09722222rem;
+  background-color: #fff;
+  float: right;
+}
+.upload {
+  position: relative;
+  height: 2.34722222rem;
+  border-bottom: 0.31944444rem solid #eff0eb;
+  background-color: #fff;
+}
+.upload input {
+  position: absolute;
+  left: 3.75rem;
+  top: 0.63888889rem;
+  display: block;
+  width: 2.48611111rem;
+  height: 0.77777778rem;
+  font-size: 0.55555556rem;
+  opacity: 0;
+}
+.upload button {
+  background-color: #fff;
+  display: inline-block;
+  width: 2.48611111rem;
+  height: 0.77777778rem;
+  border: 2px solid #3e9ece;
+  margin: 0 auto;
+  font-size: 0.38888889rem;
+  color: #3e9ece;
+  margin: 0.63888889rem 0 0 3.73611111rem;
+}
+.uploadMsgs {
+  border-top: 0.27777778rem solid #eff0eb;
+}
+.msg-items {
+  height: 1.30555556rem;
+  padding: 0 0.55555556rem;
+  font-size: 0.5rem;
+  line-height: 1.27777778rem;
+  border-bottom: 1px solid #eff0eb;
+}
+.msg-items input {
+  width: 6.25rem;
+  font-size: 0.5rem;
+  outline: none;
+}
+.msg-item {
+  height: 0.86111111rem;
+  padding: 0 0.55555556rem;
+  font-size: 0.38888889rem;
+  line-height: 0.83333333rem;
+  border-bottom: 1px solid #eff0eb;
+}
+.msg-item span {
+  color: #3e9ece;
+}
+.msg-item input {
+  width: 6.25rem;
+  font-size: 0.38888889rem;
+  outline: none;
+}
+.choseAdd {
+  width: 8.61111111rem;
+  display: block;
+  height: 1.11111111rem;
+  background-color: #ed3331;
+  font-size: 0.5rem;
+  color: white;
+  margin: 1.31944444rem auto;
+  border: 0.01388889rem solid #ff0000;
+  border-radius: 0.08rem;
+  margin-bottom: 2.08333333rem;
+}
