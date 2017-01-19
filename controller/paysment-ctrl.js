@@ -15,9 +15,9 @@ angular
         $scope.need_pay=$session.get('need_pay');
         $scope.log_id=$session.get('log_id');
 
-        $scope.zhifu = function(){
-            console.log("开始请求测试区")
-            if(!GetRequest().code){console.log("no")
+
+        //重定向获取code
+        if(!GetRequest().code){console.log("no")
                 var redirect_url = 'http://llx.51loveshow.com/payment';
                 location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
             }else{
@@ -30,8 +30,9 @@ angular
                     console.log("获取openid"+data)
                     // chosepay(data.openid);
                 })
-            }
-             
+        }
+        $scope.zhifu = function(){
+            console.log("开始请求测试区")
         }
             // 测试区域
         console.log("开始请求")
