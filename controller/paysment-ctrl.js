@@ -32,7 +32,7 @@ angular
         console.log("开始请求")
         function chosepay(id){
                 $http
-                    .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:id})
+                    .post('http://be.51loveshow.com/Apipublic/WxPay/aj_openid',{log_id:$scope.log_id,openid:id})
                     .success(function (data) {
                         console.log(data);
                         if(data.success){
