@@ -30,16 +30,16 @@ angular
                 data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
             }).success(function (data) {
                 if (data.success) {
-                    $scope.area_name = data.map.district;
+                    $scope.area_name = data.location.district;
                     $scope.shops.area_code = data.map.adcode;
                     $session.set('near_code', data.map.adcode);
-                    $session.set('near_name', data.map.district);
-                    console.log(data.map.district);
-                    console.log($scope.area_name);
-                    console.log(data);
+                    $session.set('near_name', data.location.district);
                     $session.save();
+                    $scope.shops.items = [];
+                    $scope.shops.end = false;
                     $scope.shops.busy = false;
-                    $scope.shops.nextPage()
+                    $scope.shops.page = 1;
+                    $scope.shops.nextPage();
                 } else {
                     $mdToast.show(
                         $mdToast.simple()

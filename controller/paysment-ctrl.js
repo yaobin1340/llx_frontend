@@ -29,16 +29,17 @@ angular
                 }).success(function (data) {
                     console.log("获取openid"+data)
                     // chosepay(data.openid);
+                    $scope.openid=data.openid;
                 })
         }
         $scope.zhifu = function(){
             console.log("开始请求测试区")
+            chosepay()
         }
             // 测试区域
-        console.log("开始请求")
         function chosepay(id){
                 $http
-                    .post('http://be.51loveshow.com/Apipublic/WxPay/aj_openid',{log_id:$scope.log_id,openid:id})
+                    .post('http://be.51loveshow.com/Apipublic/WxPay/aj_openid',{log_id:$scope.log_id,openid:$scope.openid})
                     .success(function (data) {
                         console.log(data);
                         if(data.success){
