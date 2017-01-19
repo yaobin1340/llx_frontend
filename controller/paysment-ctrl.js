@@ -17,16 +17,20 @@ angular
 
         $scope.zhifu = function(){
             console.log("开始请求测试区")
-
-                GetRequest();
-            // 测试区域
-                // $http
-                //     .post("http://be.51loveshow.com/Apipublic/WxPay/aj_openid")
-                //     .success(function (data) {
-                //         console.log(data);
-                //         $scope.ds=data;
-                //         chosepay();
-                //     })  
+            if(!GetRequest().code){console.log("no")
+                var redirect_url = 'http://llx.51loveshow.com/payment';
+                location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
+            }else{
+                $http({
+                    method: 'POST',
+                    url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
+                    data:{code:GetRequest().code}
+                }).success(function (data) {
+                    console.log("获取openid"+data)
+                    // chosepay(data.openid);
+                })
+            }
+             
         }
             // 测试区域
         console.log("开始请求")
@@ -91,19 +95,19 @@ angular
             }
             return theRequest;
         }
-        if(!GetRequest().code){
-            var redirect_url = 'http://llx.51loveshow.com/payment';
-            location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
-        }else{
-            $http({
-                method: 'POST',
-                url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
-                data:{code:GetRequest().code}
-            }).success(function (data) {
-                console.log("获取openid"+data)
-                chosepay(data.openid);
-            })
-        }
+        // if(!GetRequest().code){
+        //     var redirect_url = 'http://llx.51loveshow.com/payment';
+        //     location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
+        // }else{
+        //     $http({
+        //         method: 'POST',
+        //         url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
+        //         data:{code:GetRequest().code}
+        //     }).success(function (data) {
+        //         console.log("获取openid"+data)
+        //         // chosepay(data.openid);
+        //     })
+        // }
 
 
 
