@@ -16,24 +16,38 @@ angular
         $scope.log_id=$session.get('log_id');
 
         $scope.zhifu = function(){
-            $http
-                .post($config.api_uri + '/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id})
+            console.log("开始请求测试区")
+            // 测试区域
+                $http
+                .post($config.api_uri +'/Apipublic/WxPay/aj_openid')
+                .success(function (data) {
+                    console.log(data);
+                })  
+        }
+            // 测试区域
+            console.log("开始请求")
+        function chosepay(){
+                $http
+                .post($config.api_uri+'/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:data.openid})
                 .success(function (data) {
                     console.log(data);
                     if(data.success){
+                        alert("请求成功")
                         $scope.data=data.result.parameters;
                         zhifu();
                     }else{
                        $mdToast.show(
                         $mdToast.simple()
-                            .content(data.error_msg)
+                            .content("请求失败")
                             .hideDelay(1000)
                         );
                     }
-                })  
+                })
+            }    
         }
         function zhifu(){
             //支付
+            alert("开始支付")
             wx.chooseWXPay({
                 timestamp: data.wxtimestamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
                 nonceStr: data.wxnonceStr, // 支付签名随机串，不长于 32 位
