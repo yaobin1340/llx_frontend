@@ -31,7 +31,6 @@ angular
                 })
         }
         $scope.zhifu = function(){
-            console.log("开始请求测试区")
             chosepay()
         }
             // 测试区域
@@ -41,11 +40,7 @@ angular
                     .success(function (data) {
                         console.log(data);
                         if(data.success){
-                            alert("请求成功")
                             $scope.data=$.parseJSON(data.result.parameters);
-                            console.log($scope.data);
-                            console.log(typeof($scope.data));
-                            console.log($scope.data.appId);
                             zhifu();
                         }else{
                            $mdToast.show(
@@ -58,12 +53,6 @@ angular
         };  
         function zhifu(){
             function onBridgeReady(){
-                console.log("appid"+$scope.data.appId)
-                console.log("timeStamp"+$scope.data.timeStamp)
-                console.log("nonceStr"+$scope.data.nonceStr)
-                console.log("package"+$scope.data.package)
-                console.log("signType"+$scope.data.signType)
-                console.log("paySign"+$scope.data.paySign)
                WeixinJSBridge.invoke(
                    'getBrandWCPayRequest', {
                         "appId":$scope.data.appId,     //公众号名称，由商户传入     
@@ -73,8 +62,8 @@ angular
                         "signType":$scope.data.signType,         //微信签名方式：     
                         "paySign":$scope.data.paySign //微信签名 
                    },
-                   function(res){   
-                   alert(res);
+                   function(res){ 
+                   alert(res.err_msg);
                        if(res.err_msg == "get_brand_wcpay_request：ok" ) {
                             //完成支付，返回后台数据
 
