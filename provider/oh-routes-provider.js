@@ -253,6 +253,11 @@ angular
         templateUrl : 'views/myTeam.html',
         controller:'myTeamCtrl'
     };
+    this.routes['code'] = {
+        url : '/code',
+        templateUrl : 'views/code.html',
+        controller:'codeCtrl'
+    };
     
 
 

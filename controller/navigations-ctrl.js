@@ -41,7 +41,7 @@ angular
           name: $stateParams.name,
           address: $stateParams.addr,
           scale: 14,
-          infoUrl: 'http://llx.51loveshow.com/navigation',
+          infoUrl: 'http://llx.51loveshow.com/home',
             success: function(res) { 
             },  
             fail: function(res) {  
