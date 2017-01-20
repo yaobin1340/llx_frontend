@@ -22,7 +22,7 @@ angular
                 }).success(function (data) {
                     $session.set("code",data.openid);
                     $session.save();
-                    $rootScope.$page = 'payment';
+                     $state.go('payment');
                 })
         }
 
