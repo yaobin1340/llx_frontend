@@ -24,7 +24,7 @@ angular
                     .post('http://be.51loveshow.com/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$session.get('code')})
                     .success(function (datas) {
                         if(datas.success){
-                            $scope.data=datas.data;
+                            $scope.data=datas;
                             console.log($scope.data);
                             zhifu();
                         }else{
