@@ -30,16 +30,9 @@ angular
                 data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
             }).success(function (data) {
                 if (data.success) {
-                    $scope.area_name = data.map.district;
-                    $scope.shops.area_code = data.map.adcode;
-                    $session.set('near_code', data.map.adcode);
-                    $session.set('near_name', data.map.district);
-                    $session.save();
-                    console.log(data.map);
-                    console.log($scope.area_name);
-                    console.log($scope.shops.area_code);
-                    console.log(data.map.district);
-                    console.log(data.map.adcode);
+                    $scope.area_name = data.map.name;
+                    $scope.shops.area_code = data.map.citycode;
+                    //加载附近商铺
                     $scope.shops.items = [];
                     $scope.shops.end = false;
                     $scope.shops.busy = false;
