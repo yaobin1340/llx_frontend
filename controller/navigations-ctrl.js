@@ -41,7 +41,14 @@ angular
           name: $stateParams.name,
           address: $stateParams.addr,
           scale: 14,
-          infoUrl: 'http://weixin.qq.com'
+          infoUrl: 'http://llx.51loveshow.com/navigation',
+            success: function(res) {  
+                alert("成功");
+            },  
+            fail: function(res) {  
+                alert("刷新重试");
+                location.replace(location.href);
+            } 
         });
     });
        // $("iframe").attr("src","http://apis.map.qq.com/tools/routeplan/eword=故宫博物馆&epointx=116.39710&epointy=39.917200?referer=myapp&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77");

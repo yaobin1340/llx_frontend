@@ -129,15 +129,8 @@ angular
                 imgUrl: wxdata.imgUrl,  
                 img_width: 200,  
                 img_height: 200,  
-                trigger: function(res) {  
-                    console.log("用户点击")
-                },  
                 success: function(res) {  
                     friendcallback(res); 
-                    console.log("成功") 
-                },  
-                cancel: function(res) {  
-                    console.log("失败")
                 },  
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
@@ -154,16 +147,10 @@ angular
                 imgUrl: wxdata.imgUrl,  
                 img_width: 200,  
                 img_height: 200,  
-                trigger: function(res) {  
-                    console.log("用户点击")
-                },  
                 success: function(res) {  
                     friendcallback(res); 
                     console.log("成功") 
-                },  
-                cancel: function(res) {  
-                    console.log("失败")
-                },  
+                },    
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
                 }    
@@ -177,16 +164,9 @@ angular
                 link: wxdata.link,  
                 imgUrl: wxdata.imgUrl,  
                 img_width: 200,  
-                img_height: 200,  
-                trigger: function(res) {  
-                    console.log("用户点击")
-                },  
+                img_height: 200,   
                 success: function(res) {  
                     friendcallback(res); 
-                    console.log("成功") 
-                },  
-                cancel: function(res) {  
-                    console.log("失败")
                 },  
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
@@ -203,16 +183,9 @@ angular
                 imgUrl: wxdata.imgUrl,  
                 img_width: 200,  
                 img_height: 200,  
-                trigger: function(res) {  
-                    console.log("用户点击")
-                },  
                 success: function(res) {  
                     friendcallback(res); 
-                    console.log("成功") 
-                },  
-                cancel: function(res) {  
-                    console.log("失败")
-                },  
+                },   
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
                 }  
@@ -228,16 +201,10 @@ angular
                 imgUrl: wxdata.imgUrl,  
                 img_width: 200,  
                 img_height: 200,  
-                trigger: function(res) {  
-                    console.log("用户点击")
-                },  
                 success: function(res) {  
                     friendcallback(res); 
                     console.log("成功") 
-                },  
-                cancel: function(res) {  
-                    console.log("失败")
-                },  
+                },    
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
                 }  
