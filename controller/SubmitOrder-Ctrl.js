@@ -37,7 +37,7 @@ angular
                     $session.set('need_pay', data.logs.need_pay/100)
                     $session.set('log_id', data.logs.log_id)
                     $session.save()
-                     $state.go('payment');
+                     $state.go('code');
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
