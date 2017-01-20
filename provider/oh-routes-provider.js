@@ -47,7 +47,7 @@ angular
     };
     this.routes['forgot'] = {
         url : '/forgot',
-        templateUrl : 'views/forgot-password.html',
+        templateUrl : 'views/Forgot-password.html',
         controller:'forgotCtrl'
     };
 
@@ -209,7 +209,7 @@ angular
         controller:'mumberMsgCtrl'
     };
     this.routes['navigation'] = {
-        url : '/navigation?lng?lat?name',
+        url : '/navigation?lng?lat?name?addr',
         templateUrl : 'views/navigation.html',
         controller:'navigationsCtrl'
     };

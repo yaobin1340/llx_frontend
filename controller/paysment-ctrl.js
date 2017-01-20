@@ -38,7 +38,7 @@ angular
             // 测试区域
         function chosepay(){
                 $http
-                    .post('http://be.51loveshow.com/Apipublic/WxPay/aj_openid',{log_id:$scope.log_id,openid:$scope.openid})
+                    .post('http://be.51loveshow.com/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$scope.openid})
                     .success(function (data) {
                         console.log(data);
                         if(data.success){

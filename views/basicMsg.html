@@ -1,25 +1,36 @@
 <link rel="stylesheet" href="/assets/css/information.css">
 <div class="row jiben">
 	<div class="col-sm-3 col-xs-3">
-		店铺地址：
+		<label for="addr">店铺地址：</label>
 	</div>
 	<div class="col-sm-9 col-xs-9">
-		<input type="text">
+		<input type="text" id="addr" ng-model="addr">
 	</div>
 </div>
 <div class="row jiben">
 	<div class="col-sm-3 col-xs-3">
-		联系人：
+		<label for="personal">联系人：</label>
 	</div>
 	<div class="col-sm-9 col-xs-9">
-		<input type="text">
+		<input type="text" id="personal" ng-model="personal">
 	</div>
 </div>
 <div class="row jiben">
 	<div class="col-sm-3 col-xs-3">
-		营业时间：
+		<label for="tel">联系电话：</label>
 	</div>
 	<div class="col-sm-9 col-xs-9">
-		<input type="text">
+		<input type="tel" id="tel" ng-model="tel">
 	</div>
 </div>
+<div class="row jiben">
+	<div class="col-sm-3 col-xs-3">
+		<label for="times">营业时间：</label>
+	</div>
+	<div class="col-sm-9 col-xs-9">
+		<input type="text" id="times" ng-model="times">
+	</div>
+</div>
+
+<button class="subOrder" ng-disabled="addr.length==0||addr==undefined||addr==''||personal.length==0||personal==undefined||personal==''||times.length==0||times==undefined||times==''||tel.length==0||tel==undefined||tel==''" ng-click="baseMsg()">保存</button>
+

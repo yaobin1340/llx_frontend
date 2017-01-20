@@ -9,14 +9,23 @@ angular
         var $session = $injector.get('$session');
 		var $mdDialog = $injector.get('$mdDialog');
 		var $mdMedia = $injector.get('$mdMedia');
-		var $mdToast = $injector.get('$mdToast'); 
- 			
+		var $mdToast = $injector.get('$mdToast');
+
+ 			var shareData,wxdata;
+
 			$http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
 						$scope.detail=data.detail;
 						$scope.msg=data;
+                        //注册微信分享信息
+                        shareData = {};  
+                        shareData.imgUrl ='http://wap.51loveshow.com/attachs/'+$scope.detail.logo;  
+                        shareData.link = window.location.href;  
+                        shareData.content = '我通过拉拉秀给你分享了一个店铺，快去看看吧';  
+                        shareData.title = $scope.detail.shop_name;  
+                        Share(shareData);
 					}else{
 						$mdToast.show(
 						$mdToast.simple()
@@ -76,17 +85,7 @@ angular
 					}
 				})
 		}
-
-
-        var shareData,wxdata;
-	$scope.shareBtn=function() {
-		shareData = {};  
-		shareData.imgUrl ='http://wap.51loveshow.com/attachs/'+$scope.detail.logo;  
-		shareData.link = window.location.href;  
-		shareData.content = '我给你分享了一个店铺，快去看看吧';  
-		shareData.title = $scope.detail.shop_name;  
-		Share(shareData);
-	}
+		
 	function Share(shareData) {  
         wxdata = {};   
         $.getJSON('http://106.14.57.99:8888/Apipublic/Apilogin/get_wxconfig',function(data){

@@ -190,6 +190,18 @@ footer span {
   outline: none;
   color: black;
 }
+.subOrder {
+  width: 90%;
+  display: block;
+  height: 1.23611111rem;
+  background-color: #ed3331;
+  font-size: 0.5rem;
+  color: white;
+  margin: 0.83333333rem auto;
+  border: 0.01388889rem solid #ff0000;
+  border-radius: 0.08rem;
+  margin-bottom: 2.08333333rem;
+}
 .env-item {
   height: 3.38888889rem;
   border-top: 0.31944444rem solid #eff0eb;

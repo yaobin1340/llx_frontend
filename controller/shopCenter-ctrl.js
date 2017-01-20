@@ -13,7 +13,6 @@ angular
             $http
                     .post($config.api_uri+'/Apishop/ApiSmall/index')
                     .success(function (data) {
-                        console.log(data);
                         if(data.success){
                             $scope.shopdata=data;
                         }else{

@@ -177,7 +177,6 @@ body {
   height: 1.23611111rem;
   background-color: #ed3331;
   font-size: 0.5rem;
-  line-height: 1.236rem;
   color: white;
   margin: 0.83333333rem auto;
   border: 0.01388889rem solid #ff0000;
@@ -248,11 +247,13 @@ footer span {
 }
 .shop-img .shop-img-left span {
   position: absolute;
-  width: 1.38888889rem;
-  height: 0.38888889rem;
-  left: 2.08333333rem;
-  top: 1.80555556rem;
+  right: 0.55rem;
+  bottom: 0.45rem;
+  text-align: center;
+  padding: 0.11111111rem 0.13888889rem;
+  font-size: 0.27777778rem;
   background-color: #3e9ece;
+  color: #fff;
 }
 .shop-img .shop-img-right {
   height: 2.59722222rem;
