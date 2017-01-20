@@ -25,6 +25,7 @@ angular
                     .success(function (datas) {
                         if(datas.success){
                             $scope.data=datas.data;
+                            console.log($scope.data);
                             zhifu();
                         }else{
                            $mdToast.show(
