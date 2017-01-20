@@ -57,7 +57,7 @@ angular
             //支付
             wxConfig();
             console.log("开始支付");
-            alert(data.result.);
+            alert(data.result);
             console.log(data.parameters);
             console.log(data.parameters.timeStamp);
             console.log(data.parameters.nonceStr);
