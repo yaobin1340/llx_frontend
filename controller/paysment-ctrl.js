@@ -69,7 +69,7 @@ angular
                        console.log(res+"支付成功") 
                     }
                 })
-            }
+            })
         }
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
