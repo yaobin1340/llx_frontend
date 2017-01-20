@@ -42,9 +42,10 @@ angular
                         console.log(data);
                         if(data.success){
                             alert("请求成功")
-                            $scope.data=data.result.parameters;
+                            $scope.data=$.parseJSON(data.result.parameters);
                             console.log($scope.data);
                             console.log(typeof($scope.data));
+                            console.log($scope.data.appId);
                             zhifu();
                         }else{
                            $mdToast.show(
