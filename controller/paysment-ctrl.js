@@ -57,7 +57,10 @@ angular
             //支付
             wxConfig();
             console.log("开始支付");
-            alert($scope.data.timeStamp);
+            alert(data.result.);
+            console.log(data.parameters);
+            console.log(data.parameters.timeStamp);
+            console.log(data.parameters.nonceStr);
             wx.ready(function() {
                 wx.chooseWXPay({
                     timeStamp: $scope.data.timeStamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
