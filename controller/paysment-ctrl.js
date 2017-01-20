@@ -22,9 +22,9 @@ angular
         function chosepay(){
                 $http
                     .post('http://be.51loveshow.com/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$session.get('code')})
-                    .success(function (data) {
-                        if(data.success){
-                            $scope.data=$.parseJSON(data.result.parameters);
+                    .success(function (datas) {
+                        if(datas.success){
+                            $scope.data=datas.data;
                             zhifu();
                         }else{
                            $mdToast.show(
@@ -46,7 +46,7 @@ angular
                         "signType":$scope.data.signType,         //微信签名方式：     
                         "paySign":$scope.data.paySign //微信签名 
                    },
-                   alert(res.err_msg),
+                   alert($scope.data.appId),
                    function(res){ 
                     alert(res.err_msg);
                        if(res.err_msg == "get_brand_wcpay_request：ok" ) {
