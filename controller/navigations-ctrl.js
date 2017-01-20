@@ -11,9 +11,9 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast'); 
         
-    $scope.$on('$viewContentLoaded', function() {
-            wxConfig();
-        });
+    // $scope.$on('$viewContentLoaded', function() {
+    //         wxConfig();
+    //     });
     // function wxConfig(){
     //     $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
     //         wx.config({
