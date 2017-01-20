@@ -46,12 +46,12 @@ angular
                         "signType":$scope.data.signType,         //微信签名方式：     
                         "paySign":$scope.data.paySign //微信签名 
                    },
-                   alert($scope.data.appId)
-                   alert($scope.data.timeStamp)
-                   alert($scope.data.nonceStr)
-                   alert($scope.data.package)
-                   alert($scope.data.signType)
-                   alert($scope.data.paySign)
+                   alert($scope.data.appId),
+                   alert($scope.data.timeStamp),
+                   alert($scope.data.nonceStr),
+                   alert($scope.data.package),
+                   alert($scope.data.signType),
+                   alert($scope.data.paySign),
                    function(res){ 
                        if(res.err_msg == "get_brand_wcpay_request：ok" ) {
                             //完成支付，返回后台数据
