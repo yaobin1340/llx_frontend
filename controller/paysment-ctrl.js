@@ -46,12 +46,18 @@ angular
                         "signType":$scope.data.signType,         //微信签名方式：     
                         "paySign":$scope.data.paySign //微信签名 
                    },
+                   alert($scope.data.appId);
+                   alert($scope.data.timeStamp);
+                   alert($scope.data.nonceStr);
+                   alert($scope.data.package);
+                   alert($scope.data.signType);
+                   alert($scope.data.paySign);
                    function(res){ 
-                   alert(res.err_msg);
                        if(res.err_msg == "get_brand_wcpay_request：ok" ) {
                             //完成支付，返回后台数据
                             
-                       }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
+                       }
+                       alert(res.err_msg);     
                    }
                ); 
             }
