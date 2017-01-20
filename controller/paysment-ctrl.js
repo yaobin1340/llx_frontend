@@ -43,6 +43,8 @@ angular
                         if(data.success){
                             alert("请求成功")
                             $scope.data=data.result.parameters;
+                            console.log(data.result.parameters.timeStamp)
+                            console.log(data.result.parameters.timestamp)
                             zhifu();
                         }else{
                            $mdToast.show(
