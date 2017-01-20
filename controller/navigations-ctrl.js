@@ -42,11 +42,10 @@ angular
           address: $stateParams.addr,
           scale: 14,
           infoUrl: 'http://llx.51loveshow.com/navigation',
-            success: function(res) {  
-                alert("成功");
+            success: function(res) { 
             },  
             fail: function(res) {  
-                alert("刷新重试");
+                alert("获取失败，请刷新重试");
                 location.replace(location.href);
             } 
         });
