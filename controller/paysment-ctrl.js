@@ -22,9 +22,9 @@ angular
         function chosepay(){
                 $http
                     .post('http://be.51loveshow.com/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$session.get('code')})
-                    .success(function (datas) {
-                        if(datas.success){
-                            $scope.data=datas;
+                    .success(function (data) {
+                        if(data.success){
+                            $scope.data=data.result.data;
                             console.log($scope.data);
                             zhifu();
                         }else{
