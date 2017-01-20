@@ -53,6 +53,7 @@ angular
                    alert($scope.data.signType),
                    alert($scope.data.paySign),
                    function(res){ 
+                    alert(res.err_msg);
                        if(res.err_msg == "get_brand_wcpay_request：ok" ) {
                             //完成支付，返回后台数据
                             
