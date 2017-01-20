@@ -94,7 +94,7 @@ angular
                     success: function (res) {
                         // 支付成功后的回调函数
                        console.log(res+"支付成功") 
-                    }
+                    },
                     fail: function (res) {
                         alert(JSON.stringify(res));
                       }
