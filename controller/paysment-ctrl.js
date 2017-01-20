@@ -43,12 +43,9 @@ angular
                         if(data.success){
                             alert("请求成功")
                             $scope.data=data.result.parameters;
-                            console.log("appid+"+$scope.data.appId)
-                            console.log("timeStamp+"+$scope.data.timeStamp)
-                            console.log("nonceStr+"+$scope.data.nonceStr)
-                            console.log("package+"+$scope.data.package)
-                            console.log("signType+"+$scope.data.signType)
-                            console.log("paySign+"+$scope.data.paySign)
+                            console.log($scope.data);
+                            console.log($scope.data.appId)
+                            console.log($scope.data."appId")
                             zhifu();
                         }else{
                            $mdToast.show(
