@@ -62,7 +62,7 @@ body {
 .banner {
   width: 100%;
   height: 1.38rem;
-  background-color: #3e9ece;
+  background-color: #00a2f2;
 }
 .banner img {
   width: 0.69444444rem;
@@ -140,10 +140,10 @@ body {
   margin: 1.73611111rem auto 1.38888889rem auto;
   width: 100%;
   height: 1.23611111rem;
-  background-color: #3e9ece;
+  background-color: #00a2f2;
   font-size: 0.5rem;
   color: white;
-  border: 0.01388889rem solid  #3e9ece;
+  border: 0.01388889rem solid  #00a2f2;
   border-radius: 0.06944444rem;
 }
 .navbar-fixed-top,

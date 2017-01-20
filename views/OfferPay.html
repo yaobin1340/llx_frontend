@@ -12,11 +12,11 @@
 				<div ng-cloak class="sm-7 col-xs-7 text-right">创建时间:{{Msg.create_time*1000|date:'yyyy-MM-dd'}}</div>
 			</div>
 			<div class="row rowmsg">
-				<div ng-cloak class="col-sm-12 xol-xs-12">商家：{{Msg.shop_name}}</div>
-				<div ng-cloak class="col-sm-12 xol-xs-12">消费金额：{{Msg.total}}</div>
-				<div ng-cloak class="col-sm-12 xol-xs-12">优惠券抵扣：{{Msg.integral/100}}</div>
-				<div ng-cloak class="col-sm-12 xol-xs-12">备注：{{Msg.rmark}}</div>
-				<div class="col-sm-12 xol-xs-12">
+				<div ng-cloak class="col-sm-12 col-xs-12">商家：{{Msg.shop_name}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">消费金额：{{Msg.total}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：{{Msg.integral/100}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">备注：{{Msg.rmark}}</div>
+				<div class="col-sm-12 col-xs-12">
 				<div style="float: left;">赠品消费：</div>
 				<div ng-repeat="re in Msg.zp" style="float: left;">
 					<span ng-cloak>{{re}}</span>

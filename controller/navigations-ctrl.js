@@ -27,14 +27,6 @@ angular
         });
     }
     wx.ready(function() {
-        // wx.getLocation({
-        //     type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-        //     success: function (res) {
-        //         $scope.lat = res.latitude;
-        //         $scope.lng = res.longitude;
-        //         $("iframe").attr("src","http://apis.map.qq.com/tools/routeplan/sword=我的位置&spointx="+$scope.lng+"&spointy="+$scope.lat+"eword="+$stateParams.name+"&epointx="+$stateParams.lng+"&epointy="+$stateParams.lat+"?referer=myapp&key=RLZBZ-EBGW4-YPXUT-XUQZC-7BAQK-JYFFO");
-        //     }
-        // });
         wx.openLocation({
           latitude: $stateParams.lat,
           longitude: $stateParams.lng,
@@ -44,15 +36,11 @@ angular
           infoUrl: 'http://llx.51loveshow.com/home',
             success: function(res) { 
             },  
-            fail: function(res) {  
-                alert("获取失败，请刷新重试");
+            fail: function(res) { 
                 location.replace(location.href);
             } 
         });
     });
-       // $("iframe").attr("src","http://apis.map.qq.com/tools/routeplan/eword=故宫博物馆&epointx=116.39710&epointy=39.917200?referer=myapp&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77");
-       // $("iframe").attr("src","http://apis.map.qq.com/uri/v1/routeplan?type=bus&from=我的家&fromcoord=39.980683,116.302&to=中关村&tocoord=39.9836,116.3164&policy=1&referer=myapp");
-   
 
 
 

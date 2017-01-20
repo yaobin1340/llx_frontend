@@ -10,7 +10,6 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-        $scope.addr;
         $scope.chose1=1;$scope.chose2=0;
         $scope.chose = function(id){
                 switch (id) {
@@ -23,19 +22,36 @@ angular
                     break;
                 }
             }
+                $scope.baseMsg = function (){
+                    console.log($("#addr").val());
+                    $http
+                        .post($config.api_uri+'/Apishop/ApiSmall/save_about',{addr:$("#addr").val(),contact:$("#personal").val(),tel:$("#tel").val(),business_time:$("#times").val()})
+                        .success(function (data) {
+                            console.log(data);
+                            if(data.success){
+                                $mdToast.show(
+                                $mdToast.simple()
+                                    .content("保存成功")
+                                    .hideDelay(1000)
+                                );
+                            }else{
+                               $mdToast.show(
+                                $mdToast.simple()
+                                    .content(data.error_msg)
+                                    .hideDelay(1000)
+                                );
+                            }
+                        })
+                }
+            
 
-            $scope.baseMsg = function (){
-                console.log($scope.addr)
+            function anImg (){
                 $http
-                    .post($config.api_uri+'/Apishop/ApiSmall/save_about',{addr:$scope.addr,contact:$scope.personal,tel:$scope.tel,business_time:$scope.times})
+                    .post($config.api_uri+'/Apishop/ApiSmall/photo')
                     .success(function (data) {
                         console.log(data);
                         if(data.success){
-                            $mdToast.show(
-                            $mdToast.simple()
-                                .content(data.error_msg)
-                                .hideDelay(1000)
-                            );
+                            $scope.shop_pics=data.shop_pics;
                         }else{
                            $mdToast.show(
                             $mdToast.simple()
@@ -46,13 +62,17 @@ angular
                     })
             }
 
-            function anImg (){
+            $scope.delect=function(){
                 $http
-                    .post($config.api_uri+'/Apishop/ApiSmall/photo')
+                    .post($config.api_uri+'/Apishop/ApiSmall/photo_delete')
                     .success(function (data) {
                         console.log(data);
                         if(data.success){
-                            
+                            $mdToast.show(
+                            $mdToast.simple()
+                                .content("删除成功")
+                                .hideDelay(1000)
+                            );
                         }else{
                            $mdToast.show(
                             $mdToast.simple()

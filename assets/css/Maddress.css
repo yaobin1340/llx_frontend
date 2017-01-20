@@ -67,7 +67,7 @@ body {
 .banner {
   width: 100%;
   height: 1.38rem;
-  background-color: #3e9ece;
+  background-color: #00a2f2;
 }
 .banner img {
   width: 0.69444444rem;
@@ -115,7 +115,7 @@ body {
   display: inline-block;
 }
 .chose .active {
-  color: #3e9ece;
+  color: #00a2f2;
 }
 .add-change {
   height: 1.16666667rem;

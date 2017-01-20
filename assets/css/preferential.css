@@ -62,7 +62,7 @@ body {
 .banner {
   width: 100%;
   height: 1.38rem;
-  background-color: #3e9ece;
+  background-color: #00a2f2;
 }
 .banner img {
   width: 0.69444444rem;
@@ -104,7 +104,7 @@ body {
   margin: 0.27777778rem 0.55555556rem auto 0;
 }
 .proMsg-center .proMsg-center-num p {
-  color: #3e9ece;
+  color: #00a2f2;
   margin-top: 0.34722222rem;
 }
 .proMsg-center .proMsg-center-num span {

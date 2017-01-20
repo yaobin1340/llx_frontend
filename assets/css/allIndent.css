@@ -103,7 +103,7 @@ body {
   line-height: 0.55555556rem;
 }
 .indent-num span {
-  color: #3e9ece;
+  color: #00a2f2;
 }
 .indentPrice {
   color: #ed3331;
@@ -115,13 +115,13 @@ body {
 .btmindent div {
   float: right;
   font-size: 0.33333333rem;
-  color: #3e9ece;
+  color: #00a2f2;
 }
 .btmindent .pingjia {
   margin-top: 0.27777778rem;
   width: 1.94444444rem;
   height: 0.83333333rem;
-  border: 0.02777778rem solid #3e9ece;
+  border: 0.02777778rem solid #00a2f2;
   border-radius: 0.13888889rem;
   background-color: #fff;
 }
@@ -129,7 +129,7 @@ body {
   margin-top: 0.27777778rem;
   width: 1.29166667rem;
   height: 0.83333333rem;
-  border: 0.02777778rem solid #3e9ece;
+  border: 0.02777778rem solid #00a2f2;
   border-radius: 0.13888889rem;
   background-color: #fff;
 }

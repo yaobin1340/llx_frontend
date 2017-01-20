@@ -3,26 +3,27 @@
 	<div class="banner  navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>优惠买单</p>
+	    <img src="/assets/img/add.png" alt="" class="add" ng-click="add()">
 	</div>
 	<div class="padding"></div>
 	<div class="input-phone">
 		<div>
-			<input type="tel">
-			<button></button>
+			<input type="tel" onkeydown="filterByEnter(event)" ng-model="mobile" placeholder="请输入会员手机号">
+			<button ng-click="soso()"></button>
 		</div>
 	</div>
 	<div class="Msg"  infinite-scroll='offerpay.nextPage()' infinite-scroll-disabled='offerpay.busy' infinite-scroll-distance='1' >
-		<div class="pepeatMsg">
+		<div class="pepeatMsg" ng-repeat="Msg in offerpay.items">
 			<div class="row rowid">
 				<div ng-cloak class="col-sm-5 col-xs-5">ID:{{Msg.id}}</div>
 				<div ng-cloak class="sm-7 col-xs-7 text-right">创建时间:{{Msg.create_time*1000|date:'yyyy-MM-dd'}}</div>
 			</div>
 			<div class="row rowmsg">
-				<div ng-cloak class="col-sm-12 xol-xs-12">商家：{{Msg.shop_name}}</div>
-				<div ng-cloak class="col-sm-12 xol-xs-12">消费金额：{{Msg.total}}</div>
-				<div ng-cloak class="col-sm-12 xol-xs-12">优惠券抵扣：{{Msg.integral/100}}</div>
-				<div ng-cloak class="col-sm-12 xol-xs-12">备注：{{Msg.rmark}}</div>
-				<div class="col-sm-12 xol-xs-12">
+				<div ng-cloak class="col-sm-12 col-xs-12">会员手机：{{Msg.mobile}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">消费金额：{{Msg.total}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：{{Msg.integral/100}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">备注：{{Msg.rmark}}</div>
+				<div class="col-sm-12 col-xs-12">
 				<div style="float: left;">赠品消费：</div>
 				<div ng-repeat="re in Msg.zp" style="float: left;">
 					<span ng-cloak>{{re}}</span>
