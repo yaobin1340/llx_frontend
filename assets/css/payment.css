@@ -71,7 +71,7 @@ body {
 }
 .banner span {
   float: left;
-  width: 8.33333333rem;
+  width: 100%;
   display: inline-block;
   font-size: 0.44444444rem;
   line-height: 1.40277778rem;

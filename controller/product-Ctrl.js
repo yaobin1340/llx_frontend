@@ -76,7 +76,6 @@ angular
         }
 
         $scope.gopay = function(id){
-            console.log(id);
             $http
                 .post($config.api_uri + '/Apiuser/cart/cartadd',{goods_id:id})
                 .success(function (data) {
