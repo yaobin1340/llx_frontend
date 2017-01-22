@@ -1,6 +1,5 @@
 
 	<link rel="stylesheet" href="/assets/css/personal.css">
-
 	<div class="banner">
 		<div class="banner-left"></div>
 		<img src="/assets/img/552cc14536532_128.png" alt=""  onClick="javascript:history.go(-1);" class="back" >
@@ -27,7 +26,7 @@
 			</div>
 			<div class="line"></div>
 			<div class="msg-right">
-				<p ng-cloak>{{userMsg.money}}</p>
+				<p ng-cloak>{{userMsg.gold/100}}</p>
 				<span>余额</span>
 			</div>
 		</div>
@@ -149,3 +148,4 @@
 			<button class="subOrder" ng-click="exit()">退出登录</button>
 		</div>
 	</div>
+	

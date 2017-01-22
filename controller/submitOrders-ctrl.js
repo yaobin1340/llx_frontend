@@ -11,9 +11,29 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast'); 
+
+
+        //获取账号余额信息
+        $http
+                .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
+                .success(function (data) {
+                    if(data.success){
+                        $scope.gold=data.gold/100;
+                        console.log($scope.gold);
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+
+
         $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/orderdetail',{order_id:$stateParams.order_id})
                 .success(function (data) {
+                    console.log(data);
                     if(data.success){
                         $scope.ds=data;
                         $scope.msg = data.detail;
@@ -30,7 +50,7 @@ angular
 
         $scope.subOrder=function(){
             $http
-                .post($config.api_uri + '/Apiuser/Orderinfo/check_order',{order_id:$stateParams.order_id,integral:$scope.xiubi})
+                .post($config.api_uri + '/Apiuser/Orderinfo/check_order',{order_id:$stateParams.order_id,gold:$scope.gold})
                 .success(function (data) {
                     if(data.success){
                     $session.set('order_id', data.logs.order_id)

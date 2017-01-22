@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="/assets/css/angular-csp.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.css">
     <link rel="stylesheet" href="/assets/css/reset.css">
-
     <script src="./assets/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 
@@ -25,6 +24,7 @@
     <script src="./assets/bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="./assets/bower_components/angular-material-icons/angular-material-icons.min.js"></script>
     <script src="./assets/js/ng-infinite-scroll.min.js"></script>
+      <script src="./assets/js/angular-busy.js"></script>
     <script src="./assets/js/date.js"></script>
     <script src="./assets/js/iscroll.js"></script>
     <script src="app/app.js"></script>
@@ -50,11 +50,9 @@
     <script src="controller/smallShop-ctrl.js"></script>
     <script src="controller/description-ctrl.js"></script>
     <script src="controller/forgot-ctrl.js"></script>
-    <script src="controller/restaurant-ctrl.js"></script>
     <script src="controller/product-ctrl.js"></script>
     <script src="controller/shopCart-ctrl.js"></script>
     <script src="controller/submitOrders-ctrl.js"></script>
-    <!-- <script src="controller/payment-ctrl.js"></script> -->
     <script src="controller/personal-ctrl.js"></script>
     <script src="controller/applyCash-ctrl.js"></script>
     <script src="controller/account-ctrl.js"></script>
@@ -74,7 +72,6 @@
     <script src="controller/restaurants-ctrl.js"></script>
     <script src="controller/systemMsg-ctrl.js"></script>
     <script src="controller/mumberMsg-ctrl.js"></script>
-    <!-- <script src="controller/navigation-ctrl.js"></script> -->
     <script src="controller/shopMsg-ctrl.js"></script>
     <script src="controller/shopCenter-ctrl.js"></script>
     <script src="controller/basic-ctrl.js"></script>
@@ -85,14 +82,12 @@
     <script src="controller/code-ctrl.js"></script>
     <script src="controller/shopFans-ctrl.js"></script>
     <script src="controller/certification-ctrl.js"></script>
-    <!-- 测试专用 -->
     <script src="controller/Homes-ctrl.js"></script>
     <script src="controller/paysment-ctrl.js"></script>
     <script src="controller/navigations-ctrl.js"></script>
-    <!-- 测试专用 -->
     
     <script src="/assets/js/flexible.js"></script>
-    <title>{{$state.current.title}}</title>
+    <title ng-cloak>{{$state.current.title}}</title>
 </head>
 <body>
 <div ui-view ng-cloak scroll style="height:100%">

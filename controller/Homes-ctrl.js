@@ -105,9 +105,6 @@ angular
 
         $scope.toacrt = function(near,an){
             $scope.add=0;
-            // $session.set('near_code', near);
-            // $session.set('near_name', an);
-            // $session.save();
             $scope.shops.area_code = near;
             $scope.area_name = an;
             $scope.shops.items = [];
@@ -117,15 +114,6 @@ angular
             $scope.shops.nextPage();
         }
     }
-           //  $scope.shops.area_code = $session.get("near_code");
-           //  $scope.area_name = $session.get('near_name');
-           // if(JSON.stringify($session.get('near_name')) != "{}"){$scope.n= $session.get('near_name');}  
-           //  $scope.shops.items = [];
-           //  $scope.shops.end = false;
-           //  $scope.shops.busy = false;
-           //  $scope.shops.page = 1;
-           //  $scope.shops.nextPage();
-
 
 
     $scope.choseTWO = function(type){
@@ -135,6 +123,7 @@ angular
                        $scope.cate_list=data.cate_list;
                        angular.forEach(data.cate_list,function(item, index){
                             if(item.cate_name==type){
+                                console.log(item)
                                 $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name})
                                 return;
                             }
@@ -154,6 +143,8 @@ angular
             if(e.keyCode==13){
                 $scope.$apply(function(){
                     $scope.shops.shop_name = $scope.text;
+                    $scope.shops.area_code = '';
+                    $scope.area_name = '请选择';
                     $scope.shops.items = [];
                     $scope.shops.end = false;
                     $scope.shops.busy = false;
@@ -164,6 +155,8 @@ angular
         };
     $scope.soso = function(){
         $scope.shops.shop_name = $scope.text;
+        $scope.shops.area_code = '';
+        $scope.area_name = '请选择';
         $scope.shops.items = [];
         $scope.shops.end = false;
         $scope.shops.busy = false;

@@ -14,6 +14,8 @@ angular
             $scope.$emit('changeImg', 5); 
 
             $scope.showup=1;
+
+
             $http
                 .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
                 .success(function (data) {
