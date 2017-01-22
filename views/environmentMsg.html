@@ -1,24 +1,25 @@
 <link rel="stylesheet" href="/assets/css/information.css">
-<div class="env">
+<div class="env" ng-repeat="shop_pic in shop_pics">
 	<div class="env-item">
 		<div class="items-top">
 			<div class="top-left">
-				ID:28
+				ID:{{shop_pic.shop_id}}
 			</div>
 			<div class="top-right">
-				上传时间：2016-12-12 12:12:12
+				上传时间：{{shop_pic.cdate}}
 			</div>
 		</div>
 		
 		<div class="items-center">
 			<div class="center-left">
-				<img src="" alt="">
+				<img ng-src="http://106.14.57.99:8888/attachs/{{shop_pic.photo}}" alt="">
 			</div>
 			<div class="center-right">
-				<p class="mar-p">标题：外部图</p>
-				<p>排序：0</p>
-				<button class="delect" ng-click="delect()">删除</button>
-				<button class="shenhe">已审核</button>
+				<p class="mar-p">标题：{{shop_pic.title}}</p>
+				<p>排序：{{shop_pic.orderby}}</p>
+				<button class="delect" ng-click="delect(shop_pic.pic_id)">删除</button>
+				<button class="shenhe" ng-if="{{shop_pic.audit==0}}">审核中</button>
+				<button class="shenhe" ng-if="{{shop_pic.audit!=0}}">已审核</button>
 			</div>
 		</div>
 	</div>

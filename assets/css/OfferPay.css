@@ -191,3 +191,28 @@ footer span {
   background: #ffffff url(/assets/img/search.png) no-repeat center;
   background-size: 0.625rem;
 }
+.fansList {
+  background-color: #fff;
+}
+.fansList .fansitems {
+  height: 1.94444444rem;
+  border-bottom: 1px solid #eff0eb;
+}
+.fansList .fansitems-left {
+  float: left;
+  width: 2.77777778rem;
+  height: 1.93055556rem;
+}
+.fansList .fansitems-left img {
+  width: 1.34722222rem;
+  height: 1.34722222rem;
+  margin: 0.29166667rem 0 0.29166667rem 0.55555556rem;
+}
+.fansList .fansitems-right {
+  float: left;
+  padding-top: 0.16666667rem;
+  width: 6.66666667rem;
+  height: 1.93055556rem;
+  font-size: 0.38888889rem;
+  line-height: 0.83333333rem;
+}

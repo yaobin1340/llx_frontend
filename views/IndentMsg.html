@@ -2,8 +2,9 @@
 	<link rel="stylesheet" href="/assets/css/IndentMsg.css">
 
 	<div class="banner navbar-fixed-top">
-	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
-	    <p>订单详情</p>
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">订单详情</p>
 	</div>
 	<div class="padding"></div>
 	<div class="centerMsg">
@@ -20,7 +21,7 @@
 				订单金额
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.order_id/100}}元
+				￥{{msg.total_price/100}}元
 			</div>
 		</div>
 		<div class="row">
@@ -28,7 +29,7 @@
 				秀币抵现
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.can_use_integral/100}}元
+				￥{{msg.use_integral/100}}元
 			</div>
 		</div>
 		<div class="row">
@@ -52,9 +53,9 @@
 			<div class="prMsg-pic">
 				<img ng-src="http://wap.51loveshow.com/attachs/{{goods.photo}}" alt="">
 			</div>
-			<div class="prMsg-title">
-				<p ng-cloak>{{goods.title}}</p>
-				<span ng-cloak>￥{{goods.price}}</span>
+			<div class="prMsg-title text-overflow">
+				<p ng-cloak class="text-overflow">{{goods.title}}</p>
+				<span ng-cloak>￥{{goods.price/100}}</span>
 			</div>
 			<div class="prMsg-num">
 			<p ng-cloak class="text-right">x{{goods.num}}</p>
@@ -64,8 +65,11 @@
 
 	<div class="rows">
 		<div class="col-sm-12 col-xs-12">
-			<button class="success">
+			<button class="success" ng-if="msg.is_daofu==0&&msg.status!=0">
 				已完成
+			</button>
+			<button class="success" ng-if="msg.is_daofu==0&&msg.status==0" ui-sref="SubmitOrder({order_id:msg.order_id})">
+				立即付款
 			</button>
 		</div>
 	</div>

@@ -4,7 +4,7 @@
 		<label for="addr">店铺地址：</label>
 	</div>
 	<div class="col-sm-9 col-xs-9">
-		<input type="text" id="addr" ng-model="addr">
+		<input type="text" id="addr" ng-model="shopdata.shop_info.addr">
 	</div>
 </div>
 <div class="row jiben">
@@ -12,7 +12,7 @@
 		<label for="personal">联系人：</label>
 	</div>
 	<div class="col-sm-9 col-xs-9">
-		<input type="text" id="personal" ng-model="personal">
+		<input type="text" id="personal" ng-model="shopdata.shop_info.contact">
 	</div>
 </div>
 <div class="row jiben">
@@ -20,7 +20,7 @@
 		<label for="tel">联系电话：</label>
 	</div>
 	<div class="col-sm-9 col-xs-9">
-		<input type="tel" id="tel" ng-model="tel">
+		<input type="tel" id="tel" ng-model="shopdata.shop_info.tel">
 	</div>
 </div>
 <div class="row jiben">
@@ -28,9 +28,9 @@
 		<label for="times">营业时间：</label>
 	</div>
 	<div class="col-sm-9 col-xs-9">
-		<input type="text" id="times" ng-model="times">
+		<input type="text" id="times" ng-model="shopdata.shop_detail.business_time">
 	</div>
-</div>
+</div>s
 
-<button class="subOrder" ng-disabled="addr.length==0||addr==undefined||addr==''||personal.length==0||personal==undefined||personal==''||times.length==0||times==undefined||times==''||tel.length==0||tel==undefined||tel==''" ng-click="baseMsg()">保存</button>
+<button class="subOrder" ng-disabled="shopdata.shop_info.addr.length==0||shopdata.shop_info.addr==undefined||shopdata.shop_info.addr==''||shopdata.shop_info.contact.length==0||shopdata.shop_info.contact==undefined||shopdata.shop_info.contact==''||shopdata.shop_detail.business_time.length==0||shopdata.shop_detail.business_time==undefined||shopdata.shop_detail.business_time==''||shopdata.shop_info.tel.length==0||shopdata.shop_info.tel==undefined||shopdata.shop_info.tel==''" ng-click="baseMsg()">保存</button>
 

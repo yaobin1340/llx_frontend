@@ -1,0 +1,59 @@
+
+//top部分
+.banner{
+    width: 100%;
+    height: 1.38rem;
+    background-color: #00a2f2;
+}
+.banner img{
+    width: 50*@rems !importrant;
+    position: absolute;
+    margin-top: 0.35rem;
+    float: left;
+    margin-left: 50*@rems !importrant;
+}
+.banner p{
+    text-align: center;
+    line-height: 1.38rem;
+    color: #fff;
+    font-size: 30*@rems;
+}
+.add{
+    position: absolute;
+    right:45*@rems;
+    bottom:25*@rems;
+    width: 35*@rems;
+}
+
+
+//footer区域
+footer{
+ width: 100%;
+ height: 1.6rem;
+ border-top:1px solid #666;
+ background-color: #fff;
+}
+footer div{
+ width: 20%;
+ float: left;
+ text-align: center;
+}
+footer img{
+ display: block;
+ width:0.937rem;
+ height: 0.937rem;
+ margin:0.1rem auto;
+}
+footer span{
+ width: 100%;
+ color: #000;
+ display: block;
+ font-size: 0.35rem;
+}
+
+
+
+//兼容angular弹出框
+.navbar-fixed-top, .navbar-fixed-bottom{
+  z-index: 5;
+}

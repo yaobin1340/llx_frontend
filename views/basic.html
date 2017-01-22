@@ -2,8 +2,10 @@
 	<link rel="stylesheet" href="/assets/css/information.css">
 
 	<div class="banner navbar-fixed-top">
-	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
-	    <p>基本设置</p>
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">基本设置</p>
+	    <img src="/assets/img/add.png" alt="" class="add" ng-click="add()" ui-sref="addEnvironment">
 	</div>
 	<div class="padding"></div>
 	<div class="menu row">
@@ -17,3 +19,5 @@
 <div  ng-include="'views/environmentMsg.html'" ng-if="chose2==1">
 	
 </div>
+	<script src="/assets/js/localResizeIMG.js"></script>
+	<script src="/assets/js/mobileBUGFix.mini.js"></script>

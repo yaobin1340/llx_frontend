@@ -3,23 +3,27 @@
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
-	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">账户信息</p>
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">商户认证中心</p>
 	</div>
 	<div class="padding"></div>
 <div class="upload">
 	<input size="100" id="fileToUpload" accept="image/*" name="fileToUpload" type="file" class="file" ng-show="show==0"/>
-	<button ng-show="show==0">上传环境图</button>
-	<img ng-src="http://106.14.57.99:8888/attachs/{{shop_pic}}" ng-show="show==1">
+	<button ng-show="show==0">上传营业执照</button>
+	<img ng-src="" ng-show="show==1">
 </div>
 
 <div class="uploadMsg">
 	<div class="msg-item">
-		<span>标题：</span>
-		<input type="text" placeholder="请填写图片名称" id="title">
+		<span>企业名称：</span>
+		<input type="text" id="">
 	</div>
 	<div class="msg-item">
-		<span>排序：</span>
-		<input type="text" id="orderby">
+		<span>注册号：</span>
+		<input type="text" id="">
+	</div>
+	<div class="msg-item">
+		<span>营业地址：</span>
+		<input type="text" id="">
 	</div>
 
 	<button ng-click="choseAdd()" class="choseAdd">确认添加</button>	

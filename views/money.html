@@ -16,8 +16,8 @@
 	<div class="col-sm-12 col-xs-12" ng-repeat="m in arr">
 		<div class="moneyMsg">
 			<p ng-cloak>说明：{{m.intro}}</p>
-			<p ng-cloak>资金：{{m.gold}}</p>
-			<p ng-cloak>时间：{{m.create_time*1000|date:'yyyy-MM-dd'}}</p>
+			<p ng-cloak>资金：￥{{m.gold/100}}</p>
+			<p ng-cloak>时间：{{m.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</p>
 		</div>
 	</div>
 	<div ng-if='noLead' class="nullMoney">当前日期内暂无资金日志</div>

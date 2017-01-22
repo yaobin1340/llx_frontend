@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'payShopCtrl', function payShopCtrl( $scope, $injector, $rootScope,OfferPay) {
+    .controller( 'payShopCtrl', function payShopCtrl( $scope, $injector, $rootScope,payShop) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -13,7 +13,7 @@ angular
         $scope.$emit('changeImg', 3); 
 
         $scope.scroll_switch = 1;
-        $scope.offerpay = new OfferPay();
+        $scope.offerpay = new payShop();
 
 
         //soso界面

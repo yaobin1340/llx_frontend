@@ -10,7 +10,7 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-
+        var i=0;
         if($stateParams.type=='noIndent'){
             $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
             noIndent();
@@ -39,6 +39,7 @@ angular
         function allIndent(){
             $scope.arr=[];
             $scope.page=1;
+            i=0;
             $scope.aready='';
             leadMore($scope.aready);
             $(window).scroll(function(){
@@ -54,6 +55,7 @@ angular
         function noIndent(){
             $scope.arr=[];
             $scope.page=1;
+            i=0;
             $scope.aready=1;
             leadMore($scope.aready);
             $(window).scroll(function(){
@@ -69,6 +71,7 @@ angular
         function Indented(){
             $scope.arr=[];
             $scope.page=1;
+            i=0;
             $scope.aready=4;
             leadMore($scope.aready);
             $(window).scroll(function(){
@@ -91,15 +94,14 @@ angular
                                 $scope.noLead=1;
                                 return
                             }
-                            $scope.arr=[];
-                            
                             angular.forEach(data.order_list,function(item, index){
                                 $scope.arr.push({orders:item,goods:[]})
                                 angular.forEach(data.goods,function(items, indexs){
                                     if(item.order_id==items.order_id){
-                                        $scope.arr[index].goods.push(items)
+                                        $scope.arr[i].goods.push(items)
                                     }
                                 })
+                                i++;
                             })
                         }else{
                             $mdToast.show(

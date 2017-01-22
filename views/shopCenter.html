@@ -1,22 +1,24 @@
 
 	<link rel="stylesheet" href="/assets/css/personal.css">
 	<div class="banners navbar-fixed-top">
-	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
-	    <p>商户中心</p>
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">商户中心</p>
 	</div>
 	<div class="padding"></div>
 	<div class="bg"></div>
 		<div class="shop-img">
 			<div class="shop-img-left">
 				<img ng-src="http://wap.51loveshow.com/attachs/{{shopdata.shop_info.logo}}" alt="">
-				<span>申请认证</span>
+				<span ng-if="shopdata.shop_info.is_renzheng!=1" ui-sref="certification">申请认证</span>
+				<span ng-if="shopdata.shop_info.is_renzheng==1">已认证</span>
 			</div>
 			<div class="shop-img-right">
 				<p>{{shopdata.shop_info.shop_name}}(ID:{{shopdata.shop_info.shop_id}})</p>
 				<span>暂无评价</span>
 				<span>类  型：{{shopdata.shop_cate_name}}</span>
-				<span>商户资金：￥{{shopdata.user_info.gold}}<a>提现</a></span>
-				<span>商户秀币：{{shopdata.user_info.integral}}<a>提现</a></span>
+				<span>商户资金：￥{{shopdata.user_info.gold/100}}<a>提现</a></span>
+				<span>商户秀币：{{shopdata.user_info.integral/100}}<a>提现</a></span>
 			</div>
 		</div>
 
@@ -54,7 +56,7 @@
 				粉丝
 			</div>
 			<div class="col-sm-2 col-xs-2 text-right">
-				<img src="/assets/img/line.png" alt="" class="lines">
+				<img src="/assets/img/line.png" alt="" class="lines" ui-sref="shopFans">
 			</div>
 		</div>
 	</div>

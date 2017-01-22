@@ -258,6 +258,16 @@ angular
         templateUrl : 'views/code.html',
         controller:'codeCtrl'
     };
+    this.routes['shopFans'] = {
+        url : '/shopFans',
+        templateUrl : 'views/shopFans.html',
+        controller:'shopFansCtrl'
+    };
+    this.routes['certification'] = {
+        url : '/certification',
+        templateUrl : 'views/certification.html',
+        controller:'certificationCtrl'
+    };
     
 
 

@@ -22,12 +22,27 @@ angular
                     break;
                 }
             }
+            //获取信息
+            $http
+                    .post($config.api_uri+'/Apishop/ApiSmall/index')
+                    .success(function (data) {
+                        if(data.success){
+                            $scope.shopdata=data;
+                        }else{
+                           $mdToast.show(
+                            $mdToast.simple()
+                                .content(data.error_msg)
+                                .hideDelay(1000)
+                            );
+                        }
+                    })
+
+
+
                 $scope.baseMsg = function (){
-                    console.log($("#addr").val());
                     $http
-                        .post($config.api_uri+'/Apishop/ApiSmall/save_about',{addr:$("#addr").val(),contact:$("#personal").val(),tel:$("#tel").val(),business_time:$("#times").val()})
+                        .post($config.api_uri+'/Apishop/ApiSmall/save_about',{addr:$scope.shopdata.shop_info.addr,contact:$scope.shopdata.shop_info.contact,tel:$scope.shopdata.shop_info.tel,business_time:$scope.shopdata.shop_detail.business_time})
                         .success(function (data) {
-                            console.log(data);
                             if(data.success){
                                 $mdToast.show(
                                 $mdToast.simple()
@@ -49,7 +64,6 @@ angular
                 $http
                     .post($config.api_uri+'/Apishop/ApiSmall/photo')
                     .success(function (data) {
-                        console.log(data);
                         if(data.success){
                             $scope.shop_pics=data.shop_pics;
                         }else{
@@ -62,12 +76,17 @@ angular
                     })
             }
 
-            $scope.delect=function(){
+            $scope.delect=function(id){
                 $http
-                    .post($config.api_uri+'/Apishop/ApiSmall/photo_delete')
+                    .post($config.api_uri+'/Apishop/ApiSmall/photo_delete',{pic_id:id})
                     .success(function (data) {
-                        console.log(data);
                         if(data.success){
+                            angular.forEach($scope.shop_pics,function(item, index){
+                                if(item.pic_id==id){
+                                    $scope.shop_pics.splice(index, 1);
+                                    return;
+                                }
+                            });
                             $mdToast.show(
                             $mdToast.simple()
                                 .content("删除成功")

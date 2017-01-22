@@ -202,6 +202,12 @@ footer span {
   border-radius: 0.08rem;
   margin-bottom: 2.08333333rem;
 }
+.add {
+  position: absolute;
+  right: 0.625rem;
+  bottom: 0.34722222rem;
+  width: 0.48611111rem;
+}
 .env-item {
   height: 3.38888889rem;
   border-top: 0.31944444rem solid #eff0eb;
@@ -285,13 +291,18 @@ footer span {
 .upload button {
   background-color: #fff;
   display: inline-block;
-  width: 2.48611111rem;
   height: 0.77777778rem;
   border: 2px solid #00a2f2;
   margin: 0 auto;
   font-size: 0.38888889rem;
   color: #00a2f2;
   margin: 0.63888889rem 0 0 3.73611111rem;
+}
+.upload img {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: 2.34722222rem;
 }
 .uploadMsgs {
   border-top: 0.27777778rem solid #eff0eb;

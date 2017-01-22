@@ -17,6 +17,21 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.shop = data.shop;
+                    }else{
+                       $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+
+
+        $scope.selectChange = function(id){
+            $http
+                .post($config.api_uri + '/Apiuser/Team/index',{shop_id:id})
+                .success(function (data) {
+                    if(data.success){
                         $scope.team1_info = data.team1_info;
                         $scope.team2_info = data.team2_info;
                         $scope.team3_info = data.team3_info;
@@ -28,6 +43,7 @@ angular
                         );
                     }
                 })
+        }
 
 
 
