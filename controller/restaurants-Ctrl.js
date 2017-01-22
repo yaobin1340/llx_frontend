@@ -11,8 +11,14 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
+            $scope.cate_id=$stateParams.cate_id;
+            $scope.cate_name=$stateParams.cate_name;
+            $scope.$on('$viewContentLoaded', function() {
+                wxConfig();
+            });
             //初始化加载页面
-            
+            $scope.scroll_switch = 1;
+            $scope.shops = new Shops();
             //控制筛选
         $scope.jiazai = function(){
             $scope.shops.cate_id=$scope.cate_id;
@@ -69,7 +75,7 @@ angular
         }
 
 
-        function wxConfig(){
+    function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
                 debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -90,8 +96,11 @@ angular
             $scope.shops.cate_name=$stateParams.cate_name;
             $scope.shops.cate_id=$stateParams.cate_id;
             $scope.order='';
-            $scope.scroll_switch = 1;
-            $scope.shops = new Shops();
+            $scope.shops.items = [];
+            $scope.shops.end = false;
+            $scope.shops.busy = false;
+            $scope.shops.page = 1;
+            $scope.shops.nextPage();
             $scope.shops.cate_id=$scope.cate_id;
             $scope.shops.order=$scope.order;
         },
