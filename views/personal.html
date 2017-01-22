@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<div class="bg"></div>
-	<div class="row">
+	<div class="row " ui-sref="Account">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_zhanghuguanli.png" alt="">
 		</div>
@@ -40,11 +40,11 @@
 			账户管理
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="Account">
+			<img src="/assets/img/line.png" alt="" class="lines">
 		</div>
 	</div>
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row " ui-sref="applyCash">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_zijinguanli.png" alt="">
 		</div>
@@ -52,12 +52,12 @@
 			资金管理
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="applyCash" >
+			<img src="/assets/img/line.png" alt="" class="lines" >
 		</div>
 	</div>
-	<div ng-if="userMsg.shopflag==2">
+	<div ng-if="userMsg.shopflag==2" ui-sref="shopCenter">
 		<div class="bgs"></div>
-		<div class="row">
+		<div class="row ">
 			<div class="col-sm-1 col-xs-1">
 				<img src="/assets/img/img_mine_guanliwodeshangjia.png" alt="">
 			</div>
@@ -65,13 +65,13 @@
 				管理我的商家
 			</div>
 			<div class="col-sm-2 col-xs-2 text-right">
-				<img src="/assets/img/line.png" alt="" class="lines"ui-sref="shopCenter">
+				<img src="/assets/img/line.png" alt="" class="lines">
 			</div>
 		</div>
 	</div>
 	
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row " ui-sref="Mycart">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_wodedingdan.png" alt="">
 		</div>
@@ -79,11 +79,11 @@
 			我的订单
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="Mycart">
+			<img src="/assets/img/line.png" alt="" class="lines">
 		</div>
 	</div>
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row " ui-sref="myTeam">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_wodetuandui.png" alt="">
 		</div>
@@ -91,11 +91,11 @@
 			我的团队
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="myTeam">
+			<img src="/assets/img/line.png" alt="" class="lines">
 		</div>
 	</div>
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row " ui-sref="preferential">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_wodeyouhuika.png" alt="">
 		</div>
@@ -103,11 +103,11 @@
 			我的优惠卡
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="preferential">
+			<img src="/assets/img/line.png" alt="" class="lines">
 		</div>
 	</div>
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row " ui-sref="applyCash({type:'drawal'})">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_yuetixian.png" alt="">
 		</div>
@@ -115,11 +115,11 @@
 			余额提现
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="applyCash({type:'drawal'})">
+			<img src="/assets/img/line.png" alt="" class="lines">
 		</div>
 	</div>
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row "ui-sref="main.OfferPay">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_youhuimaidan.png" alt="">
 		</div>
@@ -127,11 +127,11 @@
 			优惠买单
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="main.OfferPay">
+			<img src="/assets/img/line.png" alt="" class="lines" >
 		</div>
 	</div>
 	<div class="bgs"></div>
-	<div class="row">
+	<div class="row " ui-sref="main.information">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/img_mine_xiaoxizhongxin.png" alt="">
 		</div>
@@ -139,13 +139,13 @@
 			消息中心
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ui-sref="main.information">
+			<img src="/assets/img/line.png" alt="" class="lines">
 		</div>
 	</div>
 	<div class="bgs"></div>
 	<div class="row" ng-show="{{showup}}">
 		<div class="col-sm-12 col-xs-12">
-			<button class="subOrder" ng-click="exit()">退出登录</button>
+			<button class="subOrder " ng-click="exit()">退出登录</button>
 		</div>
 	</div>
 	

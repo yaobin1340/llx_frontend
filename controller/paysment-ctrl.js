@@ -51,13 +51,25 @@ angular
                         "paySign":$scope.data.paySign //微信签名 
                    },
                    function(res){ 
-                    alert(res.err_msg);
                        if(res.err_msg == "get_brand_wcpay_request：ok" ) {
                             //完成支付，返回后台数据 
                             callback();
      
                        }
-                       alert(res.err_code+res.err_desc+res.err_msg); 
+                       else if(res.err_msg == "get_brand_wcpay_request：cancel"){
+                          $mdToast.show(
+                            $mdToast.simple()
+                                .content("您已取消支付")
+                                .hideDelay(1000)
+                            );
+                       }
+                       else if(res.err_msg == "get_brand_wcpay_request：fail"){
+                          $mdToast.show(
+                            $mdToast.simple()
+                                .content("支付失败")
+                                .hideDelay(1000)
+                            );
+                       }
                    }
                ); 
             }

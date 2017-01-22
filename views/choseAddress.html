@@ -8,21 +8,27 @@
 	</div>
 	<div class="padding"></div>
 	<div class="row" ng-repeat="p in add_p">
-		<div ng-cloak class="col-sm-10 col-xs-10">{{p.name}}</div>
-		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ng-click="province_code(p.code)">
+		<div ng-click="province_code(p.code)">
+			<div ng-cloak class="col-sm-10 col-xs-10">{{p.name}}</div>
+			<div class="col-sm-2 col-xs-2 text-right">
+				<img src="/assets/img/line.png" alt="" class="lines">
+			</div>
 		</div>
 	</div>
 	<div class="row" ng-repeat="c in add_c">
-		<div ng-cloak class="col-sm-10 col-xs-10">{{c.name}}</div>
-		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ng-click="choseNear(c.code)">
+		<div ng-click="choseNear(c.code)">
+			<div ng-cloak class="col-sm-10 col-xs-10">{{c.name}}</div>
+			<div class="col-sm-2 col-xs-2 text-right">
+				<img src="/assets/img/line.png" alt="" class="lines">
+			</div>
 		</div>
 	</div>
 		<div class="row" ng-repeat="n in add_near">
-		<div ng-cloak class="col-sm-10 col-xs-10">{{n.name}}</div>
-		<div class="col-sm-2 col-xs-2 text-right">
-			<img src="/assets/img/line.png" alt="" class="lines" ng-click="toacrt(n.code)">
-		</div>
+		<div ng-click="toacrt(n.code)">
+			<div ng-cloak class="col-sm-10 col-xs-10">{{n.name}}</div>
+			<div class="col-sm-2 col-xs-2 text-right">
+				<img src="/assets/img/line.png" alt="" class="lines">
+			</div>
+		</div>	
 	</div>
 	<div class="toBottom">-到底了-</div>

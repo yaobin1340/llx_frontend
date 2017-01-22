@@ -26,10 +26,10 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-4 col-xs-4">
-				秀币抵现
+				余额抵现
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.use_integral/100}}元
+				￥{{msg.use_gold/100}}元
 			</div>
 		</div>
 		<div class="row">
@@ -68,7 +68,7 @@
 			<button class="success" ng-if="msg.is_daofu==0&&msg.status!=0">
 				已完成
 			</button>
-			<button class="success" ng-if="msg.is_daofu==0&&msg.status==0" ui-sref="SubmitOrder({order_id:msg.order_id})">
+			<button class="success " ng-if="msg.is_daofu==0&&msg.status==0" ui-sref="SubmitOrder({order_id:msg.order_id})">
 				立即付款
 			</button>
 		</div>
