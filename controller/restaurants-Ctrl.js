@@ -94,6 +94,13 @@ angular
             $scope.shops = new Shops();
             $scope.shops.cate_id=$scope.cate_id;
             $scope.shops.order=$scope.order;
+        },
+        fail: function (res) {
+            $mdToast.show(
+                $mdToast.simple()
+                    .content("定位失败")
+                    .hideDelay(1000)
+                );
         }
     });
     });

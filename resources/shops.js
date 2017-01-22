@@ -21,7 +21,7 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		$http({
 			method: 'POST',
 			url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
-			data: {page:this.page,lat:18,lng:20,area_code:this.area_code,order:this.order,cate_id:this.cate_id,shop_name:this.cate_name},
+			data: {page:this.page,lat:this.lat,lng:this.lng,area_code:this.area_code,order:this.order,cate_id:this.cate_id,shop_name:this.cate_name},
 		}).success(function (data) {
 			console.log(data)
 			if (data.success) {

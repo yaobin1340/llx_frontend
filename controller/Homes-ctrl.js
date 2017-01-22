@@ -88,6 +88,7 @@ angular
         $scope.choseNear = function(city,ac){
             $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
+                    console.log(data);
                     if(data.success){
                         $scope.c=ac;
                         $scope.add_p=[];
@@ -183,7 +184,14 @@ angular
             $scope.shops.lat = res.latitude;
             $scope.shops.lng = res.longitude;
             $scope.getIndex();
-        }
+        },
+        fail: function (res) {
+            $mdToast.show(
+                $mdToast.simple()
+                    .content("定位失败")
+                    .hideDelay(1000)
+                );
+      }
     });
 })
 
