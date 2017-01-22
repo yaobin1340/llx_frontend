@@ -89,7 +89,7 @@ angular
 
 
         // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后
- 
+            wx.ready(function () {
                 wx.chooseWXPay({
                     timestamp: $scope.data.timeStamp, // 支付签名时间戳 注意这里的s 文档新版大写 但是我的小写才好使
                     nonceStr: $scope.data.nonceStr, // 支付签名随机串
@@ -111,6 +111,6 @@ angular
                      }
                  }
                 });
-
+            });
 
     });
