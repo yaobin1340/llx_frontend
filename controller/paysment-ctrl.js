@@ -15,17 +15,18 @@ angular
         $scope.need_pay=$session.get('need_pay');
         $scope.log_id=$session.get('log_id');
         
+        //点击支付按钮
         $scope.zhifu = function(){
             chosepay()
         }
-            // 测试区域
+          
+        //获取构建参数信息
         function chosepay(){
                 $http
                     .post('http://be.51loveshow.com/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$session.get('code')})
                     .success(function (data) {
                         if(data.success){
                             $scope.data=data.result.data;
-                            console.log($scope.data);
                             zhifu();
                         }else{
                            $mdToast.show(
@@ -35,7 +36,9 @@ angular
                             );
                         }
                     })
-        };  
+        }; 
+
+        //执行支付操作
         function zhifu(){
             function onBridgeReady(){
                WeixinJSBridge.invoke(
@@ -50,7 +53,8 @@ angular
                    function(res){ 
                     alert(res.err_msg);
                        if(res.err_msg == "get_brand_wcpay_request：ok" ) {
-                            //完成支付，返回后台数据
+                            //完成支付，返回后台数据 
+                            callback();
      
                        }
                        alert(res.err_msg);     
@@ -67,50 +71,23 @@ angular
             }else{
                onBridgeReady();
             } 
-
-          // wxConfig();
         }
 
 
+        //返回函数
+        function callback(){
+            $http
+                    .post($config.api_uri + '/Apipublic/WxPay/notify_tb',{log_id:$scope.log_id})
+                    .success(function (data) {
+                        if(data.success){
+                            $mdToast.show(
+                            $mdToast.simple()
+                                .content("支付成功")
+                                .hideDelay(1000)
+                            );
+                        }
+                    })
+        }
 
-        // function wxConfig(){
-        //     $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
-        //         wx.config({
-        //             debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-        //             appId: data.wxappId, // 必填，公众号的唯一标识
-        //             timestamp: data.wxtimestamp, // 必填，生成签名的时间戳
-        //             nonceStr: data.wxnonceStr, // 必填，生成签名的随机串
-        //             signature: data.wxsignature,// 必填，签名，见附录1
-        //             jsApiList: ['chooseWXPay'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
-        //         });
-
-        //     });
-        // }
-
-
-        // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后
-            wx.ready(function () {
-                wx.chooseWXPay({
-                    timestamp: $scope.data.timeStamp, // 支付签名时间戳 注意这里的s 文档新版大写 但是我的小写才好使
-                    nonceStr: $scope.data.nonceStr, // 支付签名随机串
-                    package: $scope.data.package, // 统一支付接口返回的package包
-                    signType: $scope.data.signType, // 签名方式，'MD5'
-                    paySign: $scope.data.paySign, // 支付签名
-                 success: function (res) {
-                     if (res.err_msg == "get_brand_wcpay_request:ok") {
-                         alert("支付成功");
-                         // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。 
-                     }
-                     else if (res.err_msg == "get_brand_wcpay_request:cancel") {
-                         alert("cancel");
-                         // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。 
-                     }
-                     else if (res.err_msg == "get_brand_wcpay_request:fail") {
-                         alert("fail");
-                         // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回ok，但并不保证它绝对可靠。 
-                     }
-                 }
-                });
-            });
 
     });
