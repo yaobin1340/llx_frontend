@@ -38,11 +38,27 @@ angular
             },  
             fail: function(res) { 
                 wxConfig();
-                console.log(res);
+                atime();
             } 
         });
     });
 
+        function atime(){
+            wx.openLocation({
+              latitude: $stateParams.lat,
+              longitude: $stateParams.lng,
+              name: $stateParams.name,
+              address: $stateParams.addr,
+              scale: 14,
+              infoUrl: 'http://llx.51loveshow.com/home',
+                success: function(res) { 
+                },  
+                fail: function(res) { 
+                    wxConfig();
+                    atime();
+                } 
+            });
+        }
 
 
 
