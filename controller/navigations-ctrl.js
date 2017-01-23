@@ -37,7 +37,7 @@ angular
             success: function(res) { 
             },  
             fail: function(res) { 
-                location.replace(location.href);
+                wxConfig();
             } 
         });
     });

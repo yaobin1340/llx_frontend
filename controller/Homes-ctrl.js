@@ -18,9 +18,9 @@ angular
         $scope.shops.lat = '';
         $scope.shops.lng = '';
         $scope.isReady = false;
-
+        console.log($scope.area_name);
         $scope.$on('$viewContentLoaded', function() {
-            wxConfig();
+            if($scope.area_name==undefined){wxConfig();}
         });
         //获取经纬度所在地区
         $scope.getIndex = function(){
@@ -103,7 +103,6 @@ angular
                     }
                 })
         }
-
         $scope.toacrt = function(near,an){
             $scope.add=0;
             $scope.shops.area_code = near;
@@ -124,7 +123,6 @@ angular
                        $scope.cate_list=data.cate_list;
                        angular.forEach(data.cate_list,function(item, index){
                             if(item.cate_name==type){
-                                console.log(item)
                                 $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name})
                                 return;
                             }

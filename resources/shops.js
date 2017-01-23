@@ -17,13 +17,11 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		if (this.busy) return;
 		if (this.end) return;
 		this.busy = true;
-		console.log(this.cate_name)
 		$http({
 			method: 'POST',
 			url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
 			data: {page:this.page,lat:this.lat,lng:this.lng,area_code:this.area_code,order:this.order,cate_id:this.cate_id,shop_name:this.cate_name},
 		}).success(function (data) {
-			console.log(data)
 			if (data.success) {
 				if(data.shop_list==null||!data.shop_list.length){
 					this.end = true;

@@ -37,10 +37,10 @@ angular
                                 if(data.success){
                                     $mdToast.show(
                                     $mdToast.simple()
-                                        .content("修改成功")
+                                        .content("添加成功")
                                         .hideDelay(1000)
                                     );
-                                    $scope.show=true;
+                                    
                                 }else{
                                     $mdToast.show(
                                     $mdToast.simple()

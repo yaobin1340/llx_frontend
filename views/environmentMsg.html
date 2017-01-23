@@ -18,8 +18,8 @@
 				<p class="mar-p">标题：{{shop_pic.title}}</p>
 				<p>排序：{{shop_pic.orderby}}</p>
 				<button class="delect" ng-click="delect(shop_pic.pic_id)">删除</button>
-				<button class="shenhe" ng-if="{{shop_pic.audit==0}}">审核中</button>
-				<button class="shenhe" ng-if="{{shop_pic.audit!=0}}">已审核</button>
+				<button class="shenhe" ng-if="shop_pic.audit==0">审核中</button>
+				<button class="shenhe" ng-if="shop_pic.audit!=0">已审核</button>
 			</div>
 		</div>
 	</div>

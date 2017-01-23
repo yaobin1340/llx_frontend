@@ -66,6 +66,7 @@ angular
                     .success(function (data) {
                         if(data.success){
                             $scope.shop_pics=data.shop_pics;
+                            console.log(data);
                         }else{
                            $mdToast.show(
                             $mdToast.simple()

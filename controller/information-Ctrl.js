@@ -20,13 +20,24 @@ angular
                 switch (id) {
                     case 1 :
                     $scope.chose1=1;$scope.chose2=0;
-                    $scope.scroll_switch = 1;
-                    $scope.messages = new system();
+                    $scope.messages.items = [];
+                    $scope.messages.end = false;
+                    $scope.messages.busy = false;
+                    $scope.messages.page = 1;
+                    $scope.messages.nextPage();
                     break;
                     case 2 :
                     $scope.chose1=0;$scope.chose2=1;
-                    $scope.scroll_switch = 1;
-                    $scope.messagem = new mumber();
+                    if($scope.messagem==undefined){
+                         $scope.scroll_switch = 1;
+                        $scope.messagem = new mumber();
+                    }else{
+                        $scope.messagem.items = [];
+                        $scope.messagem.end = false;
+                        $scope.messagem.busy = false;
+                        $scope.messagem.page = 1;
+                        $scope.messagem.nextPage();
+                    }
                     break;
                 }
             }

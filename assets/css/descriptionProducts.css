@@ -2,6 +2,9 @@ body {
   background-color: #f1f3eb;
   font-family: "SimHei";
 }
+a {
+  color: black;
+}
 .none {
   height: 2.77777778rem;
   font-size: 0.55555556rem;
@@ -71,7 +74,7 @@ body {
   height: 0.69444444rem;
   margin: 0.26388889rem auto;
 }
-.address-right a {
+.address-right .telphone {
   display: inline-block;
   width: 0.69444444rem;
   height: 0.69444444rem;

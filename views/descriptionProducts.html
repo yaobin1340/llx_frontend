@@ -28,17 +28,17 @@
 		</div>
 	</div>
 	<a href="tel:{{detail.tel}}">
-	<div class="address ">
-		<div class="address-left">
-			<img src="/assets/img/tel.png" alt="" class="img-center-left">
+		<div class="address ">
+			<div class="address-left">
+				<img src="/assets/img/tel.png" alt="" class="img-center-left">
+			</div>
+			<div class="address-center">
+				<span ng-cloak class="address-message">{{detail.tel}}</span>
+			</div>
+			<div class="address-right">
+				<span href="tel:{{detail.tel}}" class="telphone"></span>
+			</div>
 		</div>
-		<div class="address-center">
-			<span ng-cloak class="address-message">{{detail.tel}}</span>
-		</div>
-		<div class="address-right">
-			<a href="tel:{{detail.tel}}"></a>
-		</div>
-	</div>
 	</a>
 	<div class="QRcode " ng-click="ewk()">
 		<div class="address-left">
