@@ -26,8 +26,27 @@ angular
             });
             console.log(1)
         });
+        openLocation();
     }
-    wx.ready(function() {
+    // wx.ready(function() {
+    //     wx.openLocation({
+    //       latitude: $stateParams.lat,
+    //       longitude: $stateParams.lng,
+    //       name: $stateParams.name,
+    //       address: $stateParams.addr,
+    //       scale: 14,
+    //       infoUrl: 'http://llx.51loveshow.com/home',
+    //         success: function(res) { 
+    //         },  
+    //         fail: function(res) { 
+    //             wxConfig();
+    //             atime();
+    //         } 
+    //     });
+    // });
+
+    function openLocation(){
+        console.log(2);
         wx.openLocation({
           latitude: $stateParams.lat,
           longitude: $stateParams.lng,
@@ -39,10 +58,13 @@ angular
             },  
             fail: function(res) { 
                 wxConfig();
-                atime();
+                return;
             } 
         });
-    });
+        
+    }
+
+
 
         function atime(){
             console.log(2)
