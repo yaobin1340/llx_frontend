@@ -36,8 +36,9 @@ angular
           infoUrl: 'http://llx.51loveshow.com/home',
             success: function(res) { 
             },  
-            error: function(res) { 
+            fail: function(res) { 
                 wxConfig();
+                console.log(res);
             } 
         });
     });
