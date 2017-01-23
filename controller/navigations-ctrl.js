@@ -10,8 +10,10 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast'); 
-
-
+        
+    $scope.$on('$viewContentLoaded', function() {
+        wxConfig();
+    });
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
@@ -22,9 +24,9 @@ angular
                 signature: data.wxsignature,// 必填，签名，见附录1
                 jsApiList: ['openLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
+            console.log(1)
         });
     }
-    wxConfig();
     wx.ready(function() {
         wx.openLocation({
           latitude: $stateParams.lat,
@@ -36,10 +38,27 @@ angular
             success: function(res) { 
             },  
             fail: function(res) { 
-                
+                wxConfig();
+                atime();
             } 
         });
     });
+
+        function atime(){
+            console.log(2)
+            wx.openLocation({
+              latitude: $stateParams.lat,
+              longitude: $stateParams.lng,
+              name: $stateParams.name,
+              address: $stateParams.addr,
+              scale: 14,
+              infoUrl: 'http://llx.51loveshow.com/home',
+                success: function(res) { 
+                },  
+                fail: function(res) { 
+                } 
+            });
+        }
 
 
 
