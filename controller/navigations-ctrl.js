@@ -24,38 +24,52 @@ angular
                 signature: data.wxsignature,// 必填，签名，见附录1
                 jsApiList: ['openLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
-            console.log(1)
+            wx.openLocation({
+              latitude: $stateParams.lat,
+              longitude: $stateParams.lng,
+              name: $stateParams.name,
+              address: $stateParams.addr,
+              scale: 14,
+              infoUrl: 'http://llx.51loveshow.com/home',
+                success: function(res) { 
+                },  
+                fail: function(res) {
+                    wxConfig();
+                } 
+            });
         });
+
     }
-    wx.ready(function() {
-        console.log(2)
-        wx.openLocation({
-          latitude: $stateParams.lat,
-          longitude: $stateParams.lng,
-          name: $stateParams.name,
-          address: $stateParams.addr,
-          scale: 14,
-          infoUrl: 'http://llx.51loveshow.com/home',
-            success: function(res) { 
-            },  
-            fail: function(res) { 
-                wxConfig();
-            } 
-        });
-    });
-    console.log(3)
-    wx.openLocation({
-          latitude: $stateParams.lat,
-          longitude: $stateParams.lng,
-          name: $stateParams.name,
-          address: $stateParams.addr,
-          scale: 14,
-          infoUrl: 'http://llx.51loveshow.com/home',
-            success: function(res) { 
-            },  
-            fail: function(res) { 
-            } 
-        });
+
+    // wx.ready(function() {
+    //     console.log(2)
+    //     wx.openLocation({
+    //       latitude: $stateParams.lat,
+    //       longitude: $stateParams.lng,
+    //       name: $stateParams.name,
+    //       address: $stateParams.addr,
+    //       scale: 14,
+    //       infoUrl: 'http://llx.51loveshow.com/home',
+    //         success: function(res) { 
+    //         },  
+    //         fail: function(res) { 
+    //             wxConfig();
+    //         } 
+    //     });
+    // });
+    // console.log(3)
+    // wx.openLocation({
+    //       latitude: $stateParams.lat,
+    //       longitude: $stateParams.lng,
+    //       name: $stateParams.name,
+    //       address: $stateParams.addr,
+    //       scale: 14,
+    //       infoUrl: 'http://llx.51loveshow.com/home',
+    //         success: function(res) { 
+    //         },  
+    //         fail: function(res) { 
+    //         } 
+    //     });
 
 
 
