@@ -225,11 +225,11 @@ angular
         templateUrl : 'views/mumberMsg.html',
         controller:'mumberMsgCtrl'
     };
-    this.routes['navigation'] = {
-        url : '/navigation?lng?lat?name?addr',
-        templateUrl : 'views/navigation.html',
-        controller:'navigationsCtrl'
-    };
+    // this.routes['navigation'] = {
+    //     url : '/navigation?lng?lat?name?addr',
+    //     templateUrl : 'views/navigation.html',
+    //     controller:'navigationsCtrl'
+    // };
     this.routes['shopMsg'] = {
         url : '/shopMsg?shop_id',
         templateUrl : 'views/shopMsg.html',

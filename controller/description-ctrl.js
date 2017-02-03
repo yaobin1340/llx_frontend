@@ -96,8 +96,10 @@ angular
                 signature: data.wxsignature,// 必填，签名，见附录1
                 jsApiList: ['openLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
-            
         });
+    };
+
+    wx.ready(function() {
         wx.openLocation({
               latitude: $scope.detail.lat,
               longitude: $scope.detail.lng,
@@ -108,12 +110,14 @@ angular
                 success: function(res) { 
                 },  
                 fail: function(res) {
-                    // wxConfig();
+                	$mdToast.show(
+						$mdToast.simple()
+							.content('导航失败，请重试')
+							.hideDelay(1000)
+						);
                 } 
             });
-
-    };
-
+    });
     
 
 

@@ -118,9 +118,11 @@ angular
             $scope.add=0;
             $scope.shops.area_code = near;
             $scope.area_name = an;
-            $session.set('area_code',near);
-            $session.set('area_name',an);
-            $session.save();
+            // $session.set('area_code',near);
+            // $session.set('area_name',an);
+            // $session.save();
+            sessionStorage.setItem('area_code',near);
+            sessionStorage.setItem('area_name',an);
             $scope.shops.items = [];
             $scope.shops.end = false;
             $scope.shops.busy = false;
@@ -157,7 +159,6 @@ angular
                 $scope.$apply(function(){
                     $scope.shops.shop_name = $scope.text;
                     $scope.shops.area_code = '';
-                    $scope.area_name = '请选择';
                     $scope.shops.items = [];
                     $scope.shops.end = false;
                     $scope.shops.busy = false;
@@ -196,18 +197,19 @@ angular
                 $scope.shops.lat = res.latitude;
                 $scope.shops.lng = res.longitude;
                 // $scope.getIndex();
-                if(JSON.stringify($session.get('area_name'))=='{}'){$scope.getIndex();}else{
-                $scope.area_name = $session.get('area_name');
-                $scope.shops.area_code = $session.get('area_code');
+                if(JSON.stringify(sessionStorage.getItem('area_name'))=='{}'){$scope.getIndex();}else{
+
+                $scope.area_name = sessionStorage.getItem('area_name');
+                $scope.shops.area_code = sessionStorage.getItem('area_code');
                     //加载附近商铺
                     $scope.shops.items = [];
                     $scope.shops.end = false;
                     $scope.shops.busy = false;
                     $scope.shops.page = 1;
                     $scope.shops.nextPage();
-                    if (JSON.stringify($session.get('juli'))!='{}'){
-                        $(document).scrollTop($session.get('juli'));
-                    }
+                    if (JSON.stringify(sessionStorage.getItem('juli'))!='{}'){
+                        $(document).scrollTop(sessionStorage.getItem('juli'));
+                    }console.log($(document).scrollTop());
                 }
             },
             fail: function (res) {
@@ -222,12 +224,8 @@ angular
 
 
     $scope.choseShop = function(id){
-        $session.set("jili",$(document).scrollTop())
+        sessionStorage.setItem("juli",$(document).scrollTop())
         $state.go('description',{shop_id:id});
     }
-
-
-
-
 
 });
