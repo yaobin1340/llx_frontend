@@ -54,10 +54,14 @@ angular
                 .success(function (data) {
                     if(data.success){
                     $session.set('order_id', data.logs.order_id)
+                    console.log(1)
                     $session.set('need_pay', data.logs.need_pay/100)
+                    console.log(2)
                     $session.set('log_id', data.logs.log_id)
+                    console.log(3)
                     $session.save()
-                     $state.go('code');
+                    console.log(4)
+                    $state.go('code');
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
