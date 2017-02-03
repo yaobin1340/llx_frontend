@@ -11,19 +11,25 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-        $scope.order_id = $session.get('order_id');
-        $scope.need_pay = $session.get('need_pay');
-        $scope.log_id = $session.get('log_id');
-        
+        if(JSON.stringify($session.get('log_id'))=='{}'||JSON.stringify($session.get('code'))=='{}'){
+           location.replace(location.href);
+           console.log(1);
+           return ;
+        }else{
+          $scope.order_id=$session.get('order_id');
+          $scope.need_pay=$session.get('need_pay');
+          $scope.log_id=$session.get('log_id');
+          $scope.code=$session.get('code');
+        }
         //点击支付按钮
         $scope.zhifu = function(){
-            chosepay();
+            chosepay()
         }
           
         //获取构建参数信息
         function chosepay(){
                 $http
-                    .post('http://be.51loveshow.com/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$session.get('code')})
+                    .post('http://be.51loveshow.com/Apipublic/WxPay/aj_pay',{log_id:$scope.log_id,openid:$scope.code})
                     .success(function (data) {
                         if(data.success){
                             $scope.data=data.result.data;
