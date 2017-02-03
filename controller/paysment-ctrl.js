@@ -11,10 +11,15 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-        $scope.order_id=$session.get('order_id');
-        $scope.need_pay=$session.get('need_pay');
-        $scope.log_id=$session.get('log_id');
         
+        if(JSON.stringify($session.get('order_id'))=='{}'){
+           location.replace(location.href);
+           return;
+         }else{
+          $scope.order_id=$session.get('order_id');
+          $scope.need_pay=$session.get('need_pay');
+          $scope.log_id=$session.get('log_id');
+         }
         //点击支付按钮
         $scope.zhifu = function(){
             chosepay()
