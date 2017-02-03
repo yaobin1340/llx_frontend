@@ -24,7 +24,17 @@ angular
                         }
                     })
 
-
+        $scope.exit = function(){
+            $session.purge('auth');
+            if(!$session.get('auth').token){
+                window.location.reload();
+                $mdToast.show(
+                        $mdToast.simple()
+                            .content("退出成功")
+                            .hideDelay(1000)
+                        );
+            }
+        }
 
 
 
