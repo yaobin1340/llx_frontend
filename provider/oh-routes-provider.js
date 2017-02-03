@@ -20,44 +20,52 @@ angular
     };
     this.routes['main.OfferPay'] = {
         url : '^/OfferPay',
+        title: '优惠买单',
         templateUrl : 'views/OfferPay.html',
         controller:'OfferPayCtrl'
     };
     this.routes['main.information'] = {
         url : '^/information',
+        title: '消息',
         templateUrl : 'views/information.html',
         controller:'informationCtrl'
     };
     this.routes['main.personal'] = {
         url : '^/personal',
+        title: '会员中心',
         templateUrl : 'views/personal.html',
         controller:'personalCtrl'
     };
 
     this.routes['signin'] = {
         url : '/signin',
+        title: '登陆',
         templateUrl : 'views/signin.html',
         controller : 'SigninSignupCtrl'
     };
 
     this.routes['signup'] = {
         url : '/signup',
+        title: '注册',
         templateUrl : 'views/signup.html',
         controller : 'SigninSignupCtrl'
     };
     this.routes['forgot'] = {
         url : '/forgot',
+        title: '忘记密码',
         templateUrl : 'views/Forgot-password.html',
         controller:'forgotCtrl'
     };
 
      this.routes['description'] = {
         url : '/description?shop_id',
+        title: '商户信息',
         templateUrl : 'views/descriptionProducts.html',
         controller:'descriptionCrtl'
     };
     this.routes['smallShop'] = {
         url : '/smallShop?shop_id',
+        title: '微店',
         templateUrl : 'views/smallShop.html',
         controller:'smallShopCrtl'
     };
@@ -68,48 +76,57 @@ angular
     };
     this.routes['shopcart'] = {
         url : '/shopcart?message',
+        title: '购物车',
         templateUrl : 'views/shopCart.html',
         controller:'shopcartCtrl'
     };
 
     this.routes['SubmitOrder'] = {
         url : '/SubmitOrder?goods_id,order_id',
+        title: '提交订单',
         templateUrl : 'views/SubmitOrder.html',
         controller:'SubmitOrder'
     };
     // 修改调试
     this.routes['payment'] = {
         url : '/payment',
+        title: '订单支付',
         templateUrl : 'views/payment.html',
         controller:'paysmentCtrl'
     };
      this.routes['applyCash'] = {
         url : '/applyCash?type',
+        title:'资金管理',
         templateUrl : 'views/applyCash.html',
         controller:'applyCashCtrl'
     };
     this.routes['Account'] = {
         url : '/Account',
+        title: '账户信息',
         templateUrl : 'views/Account.html',
         controller:'AccountCtrl'
     };
     this.routes['changePwd'] = {
         url : '/changePwd',
+        title: '修改密码',
         templateUrl : 'views/changePwd.html',
         controller:'changePwdCtrl'
     };
     this.routes['Maddress'] = {
         url : '/Maddress',
+        title: '管理收货地址',
         templateUrl : 'views/Maddress.html',
         controller:'MaddressCtrl'
     };
     this.routes['addAddress'] = {
         url : '/addAddress',
+        title: '添加新地址',
         templateUrl : 'views/addAddress.html',
         controller:'addAddressCtrl'
     };
     this.routes['chaAddress'] = {
         url : '/chaAddress?addr_id',
+        title: '修改地址',
         templateUrl : 'views/chaAddress.html',
         controller:'chaAddressCtrl'
     };

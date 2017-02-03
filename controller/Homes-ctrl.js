@@ -5,6 +5,7 @@ angular
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
         var $timeout = $injector.get( '$timeout' );
+        var $state = $injector.get( '$state' );
         var $config = $injector.get( '$config' );
         var $session = $injector.get('$session');
         var $mdDialog = $injector.get('$mdDialog');
@@ -18,9 +19,19 @@ angular
         $scope.shops.lat = '';
         $scope.shops.lng = '';
         $scope.isReady = false;
-        console.log($scope.area_name);
         $scope.$on('$viewContentLoaded', function() {
-            if($scope.area_name==undefined){wxConfig();}
+            wxConfig();
+            // if(JSON.stringify($session.get('area_name'))=='{}'){wxConfig();}else{
+            //     $scope.area_name = $session.get('area_name');
+            //     $scope.shops.area_code = $session.get('area_code');
+            //         //加载附近商铺
+            //         $scope.shops.items = [];
+            //         $scope.shops.end = false;
+            //         $scope.shops.busy = false;
+            //         $scope.shops.page = 1;
+            //         $scope.shops.nextPage();
+                    
+            // }
         });
         //获取经纬度所在地区
         $scope.getIndex = function(){
@@ -107,6 +118,9 @@ angular
             $scope.add=0;
             $scope.shops.area_code = near;
             $scope.area_name = an;
+            $session.set('area_code',near);
+            $session.set('area_name',an);
+            $session.save();
             $scope.shops.items = [];
             $scope.shops.end = false;
             $scope.shops.busy = false;
@@ -176,27 +190,44 @@ angular
         });
     }
     wx.ready(function() {
-    wx.getLocation({
-        type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
-        success: function (res) {
-            $scope.shops.lat = res.latitude;
-            $scope.shops.lng = res.longitude;
-            $scope.getIndex();
-        },
-        fail: function (res) {
-            $mdToast.show(
-                $mdToast.simple()
-                    .content("定位失败")
-                    .hideDelay(1000)
-                );
-      }
+        wx.getLocation({
+            type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+            success: function (res) {
+                $scope.shops.lat = res.latitude;
+                $scope.shops.lng = res.longitude;
+                // $scope.getIndex();
+                if(JSON.stringify($session.get('area_name'))=='{}'){$scope.getIndex();}else{
+                $scope.area_name = $session.get('area_name');
+                $scope.shops.area_code = $session.get('area_code');
+                    //加载附近商铺
+                    $scope.shops.items = [];
+                    $scope.shops.end = false;
+                    $scope.shops.busy = false;
+                    $scope.shops.page = 1;
+                    $scope.shops.nextPage();
+                    if (JSON.stringify($session.get('juli'))!='{}'){
+                        $(document).scrollTop($session.get('juli'));
+                    }
+                }
+            },
+            fail: function (res) {
+                $mdToast.show(
+                    $mdToast.simple()
+                        .content("定位失败,请重试或手动选择地区")
+                        .hideDelay(2000)
+                    );
+          }
+        });
     });
-})
+
+
+    $scope.choseShop = function(id){
+        $session.set("jili",$(document).scrollTop())
+        $state.go('description',{shop_id:id});
+    }
 
 
 
 
 
-
-
-    });
+});

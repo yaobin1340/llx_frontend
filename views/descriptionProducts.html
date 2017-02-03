@@ -16,7 +16,7 @@
 	<div ng-cloak class="res-titlt">
 		{{detail.shop_name}}
 	</div>
-	<div class="address " ui-sref="navigation({lng:detail.lng,lat:detail.lat,name:detail.shop_name,addr:detail.addr})">
+	<div class="address " ng-click="daohang()">
 		<div class="address-left">
 			<img src="/assets/img/address2.png" alt="" class="img-center-left">
 		</div>
@@ -24,7 +24,7 @@
 			<span ng-cloak class="address-message  text-overflow">{{detail.addr}}</span>
 		</div>
 		<div class="address-right">
-			<img src="/assets/img/address.png" alt="" ng-click="daohang()">
+			<img src="/assets/img/address.png" alt="">
 		</div>
 	</div>
 	<a href="tel:{{detail.tel}}">

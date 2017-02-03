@@ -92,7 +92,7 @@
 	<hr class="hr-change">
 	<span class="shop-title">—&nbsp;附近店铺&nbsp;—</span>
 	<div class="row marbtm clearfix"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
-		<div ng-repeat="shop in shops.items" ui-sref="description({shop_id:shop.shop_id})" >
+		<div ng-repeat="shop in shops.items" ng-click="choseShop(shop.shop_id)">
 			<div class="col-md-4 col-sm-4 col-xs-4" style="
 			position: relative;">
 				<img ng-src="http://wap.51loveshow.com/attachs/{{shop.photo}}" alt="" class="pro-photo">

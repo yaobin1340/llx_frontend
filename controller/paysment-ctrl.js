@@ -51,19 +51,19 @@ angular
                         "paySign":$scope.data.paySign //微信签名 
                    },
                    function(res){ 
-                       if(res.err_msg == "get_brand_wcpay_request：ok" ) {
+                       if(res.err_msg == "get_brand_wcpay_request:ok" ) {
                             //完成支付，返回后台数据 
                             callback();
      
                        }
-                       else if(res.err_msg == "get_brand_wcpay_request：cancel"){
+                       else if(res.err_msg == "get_brand_wcpay_request:cancel"){
                           $mdToast.show(
                             $mdToast.simple()
                                 .content("您已取消支付")
                                 .hideDelay(1000)
                             );
                        }
-                       else if(res.err_msg == "get_brand_wcpay_request：fail"){
+                       else if(res.err_msg == "get_brand_wcpay_request:fail"){
                           $mdToast.show(
                             $mdToast.simple()
                                 .content("支付失败")
