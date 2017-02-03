@@ -118,9 +118,6 @@ angular
             $scope.add=0;
             $scope.shops.area_code = near;
             $scope.area_name = an;
-            // $session.set('area_code',near);
-            // $session.set('area_name',an);
-            // $session.save();
             sessionStorage.setItem('area_code',near);
             sessionStorage.setItem('area_name',an);
             $scope.shops.items = [];
@@ -197,7 +194,7 @@ angular
                 $scope.shops.lat = res.latitude;
                 $scope.shops.lng = res.longitude;
                 // $scope.getIndex();
-                if(JSON.stringify(sessionStorage.getItem('area_name'))=='{}'){$scope.getIndex();}else{
+                if(sessionStorage.getItem('area_name')==null){$scope.getIndex();}else{
 
                 $scope.area_name = sessionStorage.getItem('area_name');
                 $scope.shops.area_code = sessionStorage.getItem('area_code');
@@ -207,7 +204,7 @@ angular
                     $scope.shops.busy = false;
                     $scope.shops.page = 1;
                     $scope.shops.nextPage();
-                    if (JSON.stringify(sessionStorage.getItem('juli'))!='{}'){
+                    if (sessionStorage.getItem('juli')!=null){
                         $(document).scrollTop(sessionStorage.getItem('juli'));
                     }console.log($(document).scrollTop());
                 }
