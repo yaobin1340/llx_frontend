@@ -21,8 +21,9 @@ angular
         $scope.promise = null;
 			$scope.promise = $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
-				.success(function (data) {
+				.success(function (data) {console.log(data);
 					if(data.success){
+                        
 						$scope.detail=data.detail;
 						$scope.msg=data;
                         //注册微信分享信息

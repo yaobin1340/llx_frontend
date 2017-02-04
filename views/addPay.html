@@ -9,32 +9,34 @@
 <div class="uploadMsgs">
 	<div class="msg-items">
 		<span>会员手机</span>
-		<input type="text" ng-model="moblie">
+		<input type="text" ng-model="mobile" ng-keyup="chose()">
 	</div>
 	<div class="msg-items">
 		<span>消费金额</span>
-		<input type="text" ng-model="total">
+		<input type="text" ng-model="total" ng-keyup="jiner()">
+	</div>
+	<div class="msg-items">
+		<span>优惠券</span>
+		<input type="text" ng-model="bd" readonly="">
 	</div>
 	<!-- 默认不显示部分 -->
-	<div class="msg-items">
-		<span style="text-indent: 1em;float: left;">赠品</span>
-		<input type="text" class="zenpin" ng-model="desc1">
-		<button class="anniu">-</button>
-		<p class="munZen" ng-model="qty1">0</p>
-		<button class="anniu">+</button>
+	<div ng-repeat="zp in pay.zp_list">
+		<div class="msg-items">
+			<span style="text-indent: 1em;float: left;">赠品</span>
+			<input type="text" class="zenpin desc1" ng-model="zp.zp_name">
+			<button class="anniu" ng-click="zp.zp_num=(zp.zp_num-1)>0?(zp.zp_num-1):0">-</button>
+			<input class="munZen" ng-model="zp.zp_num" style="width:1.0rem;height:1.2rem">
+			<button class="anniu" ng-click="zp.zp_num=zp.zp_num+1">+</button>
+		</div>
 	</div>
-	<div class="msg-items">
-		<span style="text-indent: 1em;float: left;visibility: hidden;">赠品</span>
-		<input type="text" class="zenpin" ng-model="desc2">
-		<button class="anniu">-</button>
-		<p class="munZen" ng-model="qty2">0</p>
-		<button class="anniu">+</button>
-	</div>
+	
+	<!-- <div class="msg-items czhao" style="text-align: center;" ng-click="add()" ng-if="total!=undefined||total!=null">
+		+
+	</div> -->
 	<!-- 默认不显示部分 -->
 	<div class="msg-items">
 		<span style="text-indent: 1em;">备注</span>
 		<input type="text" ng-model="remark">
 	</div>
-
 	<button ng-click="affirm()" class="choseAdd">确认保存</button>	
 </div>

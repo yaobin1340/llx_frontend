@@ -285,6 +285,12 @@ angular
         templateUrl : 'views/certification.html',
         controller:'certificationCtrl'
     };
+    this.routes['xiubi'] = {
+        url : '/xiubi',
+        title:'秀币记录',
+        templateUrl : 'views/xiubi.html',
+        controller:'applyCashCtrl'
+    };
     
 
 

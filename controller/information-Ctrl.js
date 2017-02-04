@@ -15,6 +15,8 @@ angular
 	        $scope.chose1=1;$scope.chose2=0;
             $scope.scroll_switch = 1;
             $scope.messages = new system();
+            $scope.scroll_switch = 1;
+            $scope.messagem = new mumber();
             $scope.chose = function(id){
                 switch (id) {
                     case 1 :

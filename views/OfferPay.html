@@ -31,9 +31,7 @@
 				</div>
 				<div class="col-5 col-xs-5 text-right">
 					<button>
-					<span ng-if="Msg.status==1">未支付</span>
-					<span ng-if="Msg.status==2">已支付</span><span ng-if="Msg.is_offline==1">(在线)</span>
-					<span ng-if="Msg.is_offline==2">(线下)</span>
+						<span ng-if="Msg.status==1">未支付</span><span ng-if="Msg.status==2">已支付</span><span ng-if="Msg.is_offline==1&&Msg.status!=1">(在线)</span><span ng-if="Msg.is_offline==2&&Msg.status!=1">(线下)</span>
 					</button>
 				</div>
 			</div>

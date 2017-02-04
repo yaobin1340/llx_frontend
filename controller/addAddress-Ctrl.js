@@ -97,7 +97,7 @@ angular
                             .content(data.error_msg)
                             .hideDelay(1000)
                         );
-                        window.history.go(-1);
+                        $state.go("Maddress");
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

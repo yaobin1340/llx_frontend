@@ -139,9 +139,15 @@ angular
                 }) 
             }
         }
+        
+        $scope.scroll_switch = 1;
+        $scope.journals = new journals();
         $scope.journal=function(){
-            $scope.scroll_switch = 1;
-            $scope.journals = new journals(); 
+            $scope.journals.items = [];
+            $scope.journals.end = false;
+            $scope.journals.busy = false;
+            $scope.journals.page = 1;
+            $scope.journals.nextPage(); 
         }
 
         $scope.leadMore =function(){

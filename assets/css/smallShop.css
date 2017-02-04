@@ -9,11 +9,11 @@ body {
   background-color: #fff;
 }
 .blur {
-  -webkit-filter: blur(10px);
+  -webkit-filter: blur(20px);
   /* Chrome, Opera */
-  -moz-filter: blur(10px);
-  -ms-filter: blur(10px);
-  filter: blur(10px);
+  -moz-filter: blur(20px);
+  -ms-filter: blur(20px);
+  filter: blur(20px);
 }
 a:hover {
   color: #ababab;
@@ -80,16 +80,15 @@ a:hover {
   border-bottom: 0.01388889rem solid #ababab;
 }
 .preferential img {
-  margin-left: 0.55555556rem;
+  margin-left: 0.27777778rem;
   width: 0.48611111rem;
   margin-top: 0.34722222rem;
   vertical-align: top;
 }
-.preferential span {
-  margin-left: 0.20833333rem;
+.preferential p {
   display: inline-block;
   line-height: 1.15277778rem;
-  font-size: 0.38888889rem;
+  font-size: 0.34722222rem;
 }
 .table-proMsg {
   position: absolute;

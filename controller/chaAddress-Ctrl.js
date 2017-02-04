@@ -69,6 +69,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.p=ap;
+                        $scope.privence=privence;
                         $scope.add_p=[];
                         $scope.add_c = data.city_list;
                     }else{
@@ -86,6 +87,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.c=ac;
+                        $scope.city=city;
                         $scope.add_p=[];
                         $scope.add_c=[];
                         $scope.add_near=data.area_list;
@@ -102,6 +104,7 @@ angular
         $scope.toacrt = function(near,an){
             $scope.add=0;
             $scope.n=an;
+            $scope.near=near;
         }
     }
 
@@ -118,7 +121,7 @@ angular
                             .content(data.error_msg)
                             .hideDelay(1000)
                         );
-                        window.history.go(-1);
+                        $state.go("Maddress");
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -134,12 +137,12 @@ angular
        $http.post($config.api_uri + '/Apiuser/Adr/delete',{addr_id:$stateParams.addr_id})
                 .success(function (data) {
                     if(data.status=="success"){
-                        window.history.go(-1);
                         $mdToast.show(
                         $mdToast.simple()
                             .content(data.error_msg)
                             .hideDelay(1000)
                         );
+                        $state.go("Maddress");
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
