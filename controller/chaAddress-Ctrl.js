@@ -54,6 +54,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.add_p = data.province_list;
+                        $scope.add_near=[];
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
