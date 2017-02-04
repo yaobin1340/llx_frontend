@@ -14,7 +14,15 @@ angular
             $scope.$emit('changeImg', 5); 
 
             $scope.showup=1;
-            $http
+
+            //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+
+            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
                 .success(function (data) {
                     if(data.success){

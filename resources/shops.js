@@ -11,13 +11,16 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		this.cate_id='';
 		this.order='';
 		this.cate_name='';
+		this.message = '正在加载...';
+        this.backdrop = true;
+        this.promise = null;
 	};
 
 	Shops.prototype.nextPage = function () {
 		if (this.busy) return;
 		if (this.end) return;
 		this.busy = true;
-		$http({
+		this.promise = $http({
 			method: 'POST',
 			url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
 			data: {page:this.page,lat:this.lat,lng:this.lng,area_code:this.area_code,order:this.order,cate_id:this.cate_id,shop_name:this.cate_name},

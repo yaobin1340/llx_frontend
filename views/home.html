@@ -99,7 +99,7 @@
 				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:-0.35rem;width: 2rem;">
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
-				<div ng-cloak class="col-sm-9 col-xs-9 div-name text-overflow" style="padding:0;color:black;">{{shop.shop_name}}</div>
+				<div ng-cloak class="col-sm-9 col-xs-9 div-name text-overflow" style="padding:0.25rem 0 0 0;color:black;">{{shop.shop_name}}</div>
 				<div ng-cloak class="col-sm-3 col-xs-3 shopDistance text-right"style="padding:0;">
 					{{shop.juli}}Km
 				</div>
@@ -122,6 +122,7 @@
 			</div>
 		</div>
 	</div>
+	<div cg-busy="{promise:shops.promise,templateUrl:shops.templateUrl,message:shops.message,backdrop:shops.backdrop,delay:shops.delay,minDuration:shops.minDuration}"></div>
 	<div class="home_shop_nomore" ng-show='shops.end'>-暂无更多店铺-</div>
 </div>
 

@@ -10,8 +10,15 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-      
-        $http
+        
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+
+        $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/orderdetail',{order_id:$stateParams.order_id})
                 .success(function (data) {
                     if(data.success){
@@ -28,7 +35,7 @@ angular
 
     $scope.i=4;
       $scope.tijiao = function(){
-        $http
+        $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/dianping',{order_id:$stateParams.order_id,score:$scope.i,contents:$scope.contents,photos_path:$scope.pic})
                 .success(function (data) {
                     if(data.success){

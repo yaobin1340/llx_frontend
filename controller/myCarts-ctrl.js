@@ -11,6 +11,14 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
         var i=0;
+
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+
         if($stateParams.type=='noIndent'){
             $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
             noIndent();
@@ -86,7 +94,7 @@ angular
         } 
         
         function leadMore (aready){
-                    $http
+            $scope.promise = $http
                     .post($config.api_uri + '/Apiuser/Orderinfo/orderlist',{page:$scope.page,aready:aready})
                     .success(function (data) {
                         if(data.success){

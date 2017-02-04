@@ -10,6 +10,7 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
+        
        $scope.nickname=$session.get("nickname");
        $scope.phones=JSON.stringify($session.get('phone'));
        $scope.phone=$scope.phones.slice(1,4)+"****"+$scope.phones.slice(7,11);

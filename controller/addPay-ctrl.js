@@ -11,12 +11,22 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在创建中...';
+        $scope.backdrop = true;
+        $scope.promise = null;
         $scope.affirm = function(){
-            $http
+            $scope.promise = $http
                     .post($config.api_uri+'/Apishop/ApiSorder/create',{moblie:$scope.moblie,remark:$scope.remark,total:$scope.total,desc:[$scope.desc1,$scope.desc2],qty:[$scope.qty1,$scope.qty2]})
                     .success(function (data) {
                         if(data.success){
-                            console.log(data);
+                            $mdToast.show(
+                            $mdToast.simple()
+                                .content("创建成功")
+                                .hideDelay(1000)
+                            );
                         }else{
                            $mdToast.show(
                             $mdToast.simple()

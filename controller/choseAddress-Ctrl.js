@@ -11,7 +11,14 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');	
 
-        $http
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+        
+        $scope.promise = $http
                 .post($config.api_uri + '/Apipublic/ApiPmall/get_nprovince')
                 .success(function (data) {
                     if(data.success){
@@ -26,7 +33,7 @@ angular
                 })
 
         $scope.province_code = function(privence){
-            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
+            $scope.promise = $http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
                 .success(function (data) {
                     if(data.success){
                         $scope.add_p=[];
@@ -42,7 +49,7 @@ angular
         }
 
         $scope.choseNear = function(city){
-            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
+            $scope.promise = $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
                     if(data.success){
                         $scope.add_p=[];

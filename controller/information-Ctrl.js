@@ -12,7 +12,6 @@ angular
         var $mdToast = $injector.get('$mdToast');
 
             $scope.$emit('changeImg', 4); 
-
 	        $scope.chose1=1;$scope.chose2=0;
             $scope.scroll_switch = 1;
             $scope.messages = new system();

@@ -15,7 +15,14 @@ angular
             $scope.myInterval = 4000;
             var slides = $scope.slides = [];
         $scope.good_id=$stateParams.goods_id;
-        $http
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+        
+        $scope.promise = $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail',{goods_id:$stateParams.goods_id})
 				.success(function (data) {
                     if(data.success){

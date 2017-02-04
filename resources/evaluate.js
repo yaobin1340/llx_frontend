@@ -6,12 +6,16 @@ angular.module('ohapp').factory('Evaluate', function ($config, $http) {
         this.page = 1;
         this.end = false;
         this.shop_id='';
+        this.minDuration = 0;
+        this.message = '正在加载...';
+        this.backdrop = true;
+        this.promise = null;
     };
     Evaluate.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
-        $http({
+        this.promise = $http({
             method: 'POST',
             url: $config.api_uri + '/Apipublic/ApiPshop/shopDianPing',
             data: {shop_id:this.shop_id,page:this.page},

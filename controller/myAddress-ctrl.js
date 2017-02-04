@@ -11,9 +11,16 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');	
 
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+        
 $scope.page=1;
         $scope.load = function(){
-            $http
+            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Adr/index',{page:$scope.page})
                 .success(function (data) {
                     if(data.success){
@@ -36,7 +43,7 @@ $scope.page=1;
 
 
         $scope.delect =  function(adrId){
-            $http
+            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Adr/delete',{addr_id:adrId})
                 .success(function (data) {
                     if(data.status=="success"){
@@ -63,7 +70,7 @@ $scope.page=1;
         }
 
         $scope.changeImg = function(addr){
-            $http
+            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Adr/update_addr',{addr_id:addr})
                 .success(function (data) {
                     if(data.success){

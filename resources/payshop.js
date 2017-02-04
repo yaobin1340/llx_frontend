@@ -5,12 +5,16 @@ angular.module('ohapp').factory('payShop', function ($config, $http) {
         this.after = '';
         this.page = 1;
         this.end = false;
+        this.minDuration = 0;
+        this.message = '正在加载...';
+        this.backdrop = true;
+        this.promise = null;
     };
     payShop.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
-        $http({
+        this.promise = $http({
             method: 'POST',
             url: $config.api_uri + '/Apishop/ApiSorder/index',
             data: {page:this.page,keyword:this.mobile},

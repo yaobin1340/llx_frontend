@@ -11,8 +11,15 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+
         $scope.getCards=function(){
-        	$http
+        	$scope.promise = $http
         		.post($config.api_uri + '/Apipublic/Apilogin/resetpw_yzm',{mobile:$scope.phone})
         		.success(function(data){
                     if(data.success){
@@ -41,7 +48,7 @@ angular
                         );
         		return;
         	}
-        	$http
+        	$scope.promise = $http
         		.post($config.api_uri + '/Apipublic/Apilogin/resetpw',{mobile:$scope.phone,Npassword:$scope.password})
         		.success(function(data){
                     if(data.success){

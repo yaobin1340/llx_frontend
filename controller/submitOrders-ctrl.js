@@ -12,9 +12,14 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast'); 
 
-
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
         //获取账号余额信息
-        $http
+        $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
                 .success(function (data) {
                     if(data.success){
@@ -30,7 +35,7 @@ angular
                 })
 
 
-        $http
+        $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/orderdetail',{order_id:$stateParams.order_id})
                 .success(function (data) {
                     console.log(data);

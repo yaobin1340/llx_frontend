@@ -11,8 +11,15 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
+         //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在修改...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+
             $scope.change = function(){
-                 $http
+                 $scope.promise = $http
                     .post($config.api_uri + '/Apipublic/Apilogin/resetpw',{mobile:$session.get('phone'),Npassword:$scope.password})
                     .success(function (data) {
                         if(data.success){

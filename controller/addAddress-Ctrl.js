@@ -12,10 +12,16 @@ angular
         var $mdToast = $injector.get('$mdToast');
         $scope.add=0;
 
+         //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
 
     $scope.choseAdd = function(){
         $scope.add=1;
-        $http
+        $scope.promise = $http
                 .post($config.api_uri + '/Apipublic/ApiPmall/get_nprovince')
                 .success(function (data) {
                     if(data.success){
@@ -30,7 +36,7 @@ angular
                 })
 
         $scope.province_code = function(privence,ap){
-            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
+            $scope.promise = $http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
                 .success(function (data) {
                     if(data.success){
                         $scope.p=ap;
@@ -48,7 +54,7 @@ angular
         }
 
         $scope.choseNear = function(city,ac){
-            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
+            $scope.promise = $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
                     if(data.success){
                         $scope.c=ac;
@@ -82,7 +88,7 @@ angular
         }else{
             $scope.isdefault=0
         }
-        $http.post($config.api_uri + '/Apiuser/Adr/add_addr',{name:$scope.shoup,city_code:$scope.city,area_code:$scope.near,province_code:$scope.privence,mobile:$scope.shoutel,addr:$scope.shoutear,default:$scope.isdefault})
+        $scope.promise = $http.post($config.api_uri + '/Apiuser/Adr/add_addr',{name:$scope.shoup,city_code:$scope.city,area_code:$scope.near,province_code:$scope.privence,mobile:$scope.shoutel,addr:$scope.shoutear,default:$scope.isdefault})
                 .success(function (data) {
                     if(data.status=='success'){
                         $mdToast.show(

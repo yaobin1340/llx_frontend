@@ -15,8 +15,14 @@ angular
         $scope.change = function(data){
         	 $scope.num=data;
         }
+        //加载动画
+        $scope.delay = 0;
+		$scope.minDuration = 0;
+		$scope.message = '正在加载...';
+		$scope.backdrop = true;
+		$scope.promise = null;
         	//获取商家详情页
-        	 $http
+        $scope.promise=$http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
@@ -31,7 +37,7 @@ angular
 				})
 
 			//获取用户评论信息
-			$http
+			$scope.promise=$http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopDianPing',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
@@ -62,7 +68,8 @@ angular
               },1000)
 		}
 		$scope.love = function(){
-			$http
+
+			$scope.promise=$http
 				.post($config.api_uri + '/Apiuser/Favourite/shop_favourites',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					console.log(data)

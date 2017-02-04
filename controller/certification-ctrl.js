@@ -11,13 +11,17 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-
+         //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.backdrop = true;
+        $scope.promise = null;
         $scope.show=0;
         //上传图片
                 function ajaxupload(data) {
                         //保存图片地址，暂无数据
-
-                        // $http
+                        //$scope.message = '正在上传图片...';
+                        // $scope.promise = $http
                         //     .post($config.api_uri + '/Apishop/ApiSmall/upload',{shop_pic:data})
                         //     .success(function (data) {
                         //         console.log(data);
@@ -35,7 +39,8 @@ angular
                 };
                 $scope.choseAdd = function(){
                         //调用后台，暂缺数据
-                    // $http
+                        //$scope.message = '正在保存修改...'
+                    // $scope.promise = $http
                     //         .post($config.api_uri + '/Apishop/ApiSmall/add_shop_pic')
                     //         .success(function (data) {
                     //             if(data.success){

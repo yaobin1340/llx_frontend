@@ -4,12 +4,17 @@ angular.module('ohapp').factory('system', function ($config, $http) {
         this.busy = false;
         this.page = 1;
         this.end = false;
+        this.delay = 0;
+        this.minDuration = 0;
+        this.message = '正在加载...';
+        this.backdrop = true;
+        this.promise = null;
     };
     system.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
-        $http({
+        this.promise = $http({
             method: 'POST',
             url: $config.api_uri + '/Apiuser/Message/index',
             data: {page:this.page},

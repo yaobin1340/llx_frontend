@@ -11,8 +11,14 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
 
-        $http
+        $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Team/index')
                 .success(function (data) {
                     if(data.success){
@@ -28,7 +34,7 @@ angular
 
 
         $scope.selectChange = function(id){
-            $http
+            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Team/index',{shop_id:id})
                 .success(function (data) {
                     if(data.success){

@@ -187,10 +187,9 @@ nav span {
   color: #585858;
   font-size: 0.35rem;
   display: block;
-  background: url(/assets/img/maps.png) no-repeat;
+  background: url(/assets/img/maps.png) no-repeat left bottom;
   text-indent: 0.4rem;
   background-size: 0.3rem;
-  margin-top: 0.25rem;
   overflow: hidden;
 }
 .star {

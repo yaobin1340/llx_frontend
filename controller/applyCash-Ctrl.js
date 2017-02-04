@@ -11,6 +11,13 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+
         if($stateParams.type=='drawal'){
             $scope.chose1=0;$scope.chose2=0;$scope.chose3=1;
             drawal();
@@ -58,7 +65,7 @@ angular
             $scope.phone=$session.get('phone');
             //获取相关提现信息
             
-            $http
+           $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Money/cash')
                 .success(function (data) {
                     if(data.success){
@@ -87,7 +94,7 @@ angular
 
 
             $scope.getCard = function(){
-            $http
+            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Money/sendsms',{mobile:$scope.phone})
                 .success(function (data) {
                     if(data.success){
@@ -113,7 +120,7 @@ angular
                 return;
             }
             $scope.money=$("#money").val();
-            $http
+           $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Money/cash',{gold:$scope.money,bank_name:$scope.info.bank_name,bank_num:$scope.info.bank_num,bank_branch:$scope.branch,bank_realname:$scope.info.bank_realname,mobile:$scope.phone})
                 .success(function (data) {
                     if(data.success){
@@ -140,7 +147,7 @@ angular
         $scope.leadMore =function(){
             $scope.beDate=$("#beginTime").val();
             $scope.endDate=$("#endTime").val();
-                    $http
+            $scope.promise = $http
                     .post($config.api_uri + '/Apiuser/Money/detail',{bg_date:$scope.beDate,end_date:$scope.endDate,page:$scope.page})
                     .success(function (data) {
                         if(data.success){

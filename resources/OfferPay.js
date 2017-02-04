@@ -5,12 +5,16 @@ angular.module('ohapp').factory('OfferPay', function ($config, $http) {
         this.after = '';
         this.page = 1;
         this.end = false;
+        this.minDuration = 0;
+        this.message = '正在加载...';
+        this.backdrop = true;
+        this.promise = null;
     };
     OfferPay.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
-        $http({
+        this.promise = $http({
             method: 'POST',
             url: $config.api_uri + '/Apiuser/Pay/index',
             data: {page:this.page},

@@ -13,7 +13,13 @@ angular
 
  			var shareData,wxdata;
 
-			$http
+            //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+			$scope.promise = $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
@@ -36,7 +42,7 @@ angular
 				})
 
 
-        	 $http
+        	 $scope.promise = $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/hot_goods',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
@@ -50,7 +56,7 @@ angular
 					}
 				})
 
-			$http
+			$scope.promise = $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/goods_list',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){

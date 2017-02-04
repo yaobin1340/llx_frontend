@@ -22,8 +22,15 @@ angular
                     break;
                 }
             }
+
+        //加载动画
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在加载...';
+        $scope.backdrop = true;
+        $scope.promise = null;
             //获取信息
-            $http
+            $scope.promise = $http
                     .post($config.api_uri+'/Apishop/ApiSmall/index')
                     .success(function (data) {
                         if(data.success){
@@ -40,7 +47,7 @@ angular
 
 
                 $scope.baseMsg = function (){
-                    $http
+                    $scope.promise = $http
                         .post($config.api_uri+'/Apishop/ApiSmall/save_about',{addr:$scope.shopdata.shop_info.addr,contact:$scope.shopdata.shop_info.contact,tel:$scope.shopdata.shop_info.tel,business_time:$scope.shopdata.shop_detail.business_time})
                         .success(function (data) {
                             if(data.success){
@@ -61,7 +68,7 @@ angular
             
 
             function anImg (){
-                $http
+                $scope.promise = $http
                     .post($config.api_uri+'/Apishop/ApiSmall/photo')
                     .success(function (data) {
                         if(data.success){
@@ -78,7 +85,7 @@ angular
             }
 
             $scope.delect=function(id){
-                $http
+                $scope.promise = $http
                     .post($config.api_uri+'/Apishop/ApiSmall/photo_delete',{pic_id:id})
                     .success(function (data) {
                         if(data.success){
