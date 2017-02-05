@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'applyCashCtrl', function applyCashCtrl( $scope, $injector, $rootScope,Journals,$stateParams) {
+    .controller( 'applyCashCtrl', function applyCashCtrl( $scope, $injector, $rootScope,journals,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -151,7 +151,7 @@ angular
         
         $scope.journal=function(){
             $scope.scroll_switch = 1;
-            $scope.journals = new Journals();  
+            $scope.journals = new journals();  
         }
 
         $scope.leadMore =function(){

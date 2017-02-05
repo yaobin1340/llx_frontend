@@ -28,7 +28,7 @@ angular
                         $session.save()
                         $scope.nickname=data.nickname;
                         $scope.phones=data.mobile;
-                        $scope.phone=$scope.phones.slice(1,4)+"****"+$scope.phones.slice(7,11);
+                        $scope.phone=$scope.phones.slice(0,3)+"****"+$scope.phones.slice(7,11);
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

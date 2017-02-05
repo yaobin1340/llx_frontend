@@ -1,5 +1,5 @@
-angular.module('ohapp').factory('Journals', function ($config, $http) {
-    var Journals = function () {
+angular.module('ohapp').factory('journals', function ($config, $http) {
+    var journals = function () {
         this.items = [];
         this.busy = false;
         this.after = '';
@@ -10,7 +10,7 @@ angular.module('ohapp').factory('Journals', function ($config, $http) {
         this.backdrop = true;
         this.promise = null;
     };
-    Journals.prototype.nextPage = function () {
+    journals.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
@@ -39,6 +39,6 @@ angular.module('ohapp').factory('Journals', function ($config, $http) {
         }.bind(this))
     };
 
-    return Journals;
+    return journals;
 
 });
