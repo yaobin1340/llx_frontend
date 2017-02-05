@@ -149,22 +149,9 @@ angular
             }
         }
         
-       // var i=0;
         $scope.journal=function(){
-            // console.log(i)
-            // if(i==0){
             $scope.scroll_switch = 1;
-            $scope.journals = new Journals();
-            // i++;
-            // }else{
-                // $scope.journals.items = [];
-                // $scope.journals.end = false;
-                // $scope.journals.busy = false;
-                // $scope.journals.page = 1;
-                // $scope.journals.nextPage(); 
-            // }
-            
-            
+            $scope.journals = new Journals();  
         }
 
         $scope.leadMore =function(){
