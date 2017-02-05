@@ -111,6 +111,7 @@ angular
                                 })
                                 i++;
                             })
+                            console.log($scope.arr);
                         }else{
                             $mdToast.show(
                             $mdToast.simple()

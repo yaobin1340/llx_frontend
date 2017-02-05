@@ -25,7 +25,7 @@
 	</div>
 	<div class="col-sm-12 col-xs-12 btmindent">
 		<div>
-			<button class="pingjia" ng-if="pr.orders.status==3&&pr.orders.is_dianping==0" ui-sref="Opinion({order_id:pr.orders.order_id})">我要评价</button>
+			<button class="pingjia" ng-if="pr.orders.is_daofu==1&&pr.orders.status==3&&pr.orders.is_dianping==0||pr.orders.is_daofu==0&&pr.orders.status==8&&pr.orders.is_dianping==0" ui-sref="Opinion({order_id:pr.orders.order_id})">我要评价</button>
 			<button class="pingjia" ng-if="pr.orders.is_dianping==1">已点评</button>
 			<button class="pingjia" ng-if="pr.orders.status==0">取消订单</button>
 			<button class="productIt" ui-sref="SubmitOrder({order_id:pr.orders.order_id})" ng-if="pr.orders.status==0">付款</button>

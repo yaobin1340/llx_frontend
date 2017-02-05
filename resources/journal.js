@@ -1,5 +1,5 @@
-angular.module('ohapp').factory('journals', function ($config, $http) {
-    var journals = function () {
+angular.module('ohapp').factory('Journals', function ($config, $http) {
+    var Journals = function () {
         this.items = [];
         this.busy = false;
         this.after = '';
@@ -10,7 +10,7 @@ angular.module('ohapp').factory('journals', function ($config, $http) {
         this.backdrop = true;
         this.promise = null;
     };
-    journals.prototype.nextPage = function () {
+    Journals.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
@@ -19,6 +19,7 @@ angular.module('ohapp').factory('journals', function ($config, $http) {
             url: $config.api_uri + '/Apiuser/Money/cashlogs',
             data: {page:this.page},
         }).success(function (data) {
+            console.log(this.page)
             if (data.success) {
                 if(data.list==null||!data.list.length){
                     this.end = true;
@@ -38,6 +39,6 @@ angular.module('ohapp').factory('journals', function ($config, $http) {
         }.bind(this))
     };
 
-    return journals;
+    return Journals;
 
 });

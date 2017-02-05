@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'personalCtrl', function personalCtrl( $scope, $injector, $rootScope) {
+    .controller( 'outlinePayCtrl', function outlinePayCtrl( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -10,25 +10,21 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-          
-            $scope.$emit('changeImg', 5); 
 
-            $scope.showup=1;
-
-            //加载动画
+        //加载动画
         $scope.delay = 0;
         $scope.minDuration = 0;
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
-
             $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
+                .post($config.api_uri + '/Apishop/ApiSorder/pay',{id:$stateParams.pay_id})
                 .success(function (data) {
                     if(data.success){
-                        $scope.userMsg=data;
-                        $session.set('face', data.face)
-                        $session.save()
+                        console.log(data);
+                        $scope.detail=data.detail;
+                        $scope.zp_list=data.zp_list;
+                        $scope.needPay=data.detail.total-data.detail.yhk;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -37,17 +33,41 @@ angular
                         );
                     }
                 })
-    
-        $scope.exit = function(){
-            $session.purge('auth');
-            $state.go("signin");
-            if(!$session.get('auth').token){
-                $mdToast.show(
+
+
+        $scope.affirm = function(){
+            $scope.promise = $http
+                .post($config.api_uri + '/Apishop/ApiSorder/check_pay',{id:$stateParams.pay_id})
+                .success(function (data) {
+                    console.log(data);
+                    if(data.success){
+                        $mdToast.show(
                         $mdToast.simple()
-                            .content("退出成功")
+                            .content("支付成功")
                             .hideDelay(1000)
                         );
-            }
+                        $state.go("payShop");
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     });

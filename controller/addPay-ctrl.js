@@ -83,6 +83,7 @@ angular
                                 .content("创建成功")
                                 .hideDelay(2000)
                             );
+                            $state.go("payShop");
                         }else{
                            $mdToast.show(
                             $mdToast.simple()

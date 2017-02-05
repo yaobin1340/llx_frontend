@@ -16,30 +16,35 @@
 	<div class="Msg"  infinite-scroll='offerpay.nextPage()' infinite-scroll-disabled='offerpay.busy' infinite-scroll-distance='1' >
 		<div class="pepeatMsg" ng-repeat="Msg in offerpay.items">
 			<div class="row rowid">
-				<div ng-cloak class="col-sm-5 col-xs-5">ID:{{Msg.id}}</div>
-				<div ng-cloak class="sm-7 col-xs-7 text-right">创建时间:{{Msg.cdate}}</div>
+				<div ng-cloak class="col-sm-4 col-xs-4">ID:{{Msg.id}}</div>
+				<div ng-cloak class="col-sm-8 col-xs-8 text-right">创建时间:{{Msg.cdate}}</div>
 			</div>
 			<div class="row rowmsg">
 				<div ng-cloak class="col-sm-12 col-xs-12">会员手机：{{Msg.mobile}}</div>
 				<div ng-cloak class="col-sm-12 col-xs-12">消费金额：{{Msg.total}}</div>
-				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：-{{Msg.yhk}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：{{-Msg.yhk}}</div>
 				<div ng-cloak class="col-sm-12 col-xs-12">备注：{{Msg.remark}}</div>
 				<div class="col-sm-12 col-xs-12">
 				<div style="float: left;">赠品消费：</div>
-				<div ng-repeat="re in Msg.zp" style="float: left;">
-					<span ng-cloak>{{re}}</span>
+				<div ng-repeat="re in Msg.zp_list" style="float: left;">
+					<span ng-cloak style="margin-right: 0.2rem;">{{re.zp_name}}:{{re.zp_num}}</span>
 				</div>
 				</div>
 			</div>
 			<div class="row rowpay">
 				<div class="col-sm-8 col-xs-8">
 					<p>实付：<span ng-cloak class="rowpay-btn">￥{{Msg.total-Msg.yhk}}</span></p>
-					<p ng-cloak>付款时间：{{Msg.pdate}}</p>
+					<p ng-cloak ng-if="Msg.status!=1">付款时间：{{Msg.pdate}}</p>
+					<p ng-cloak ng-if="Msg.status==1">付款时间：等待付款</p>
 				</div>
 				<div class="col-4 col-xs-4 text-right">
-					<button>
-					<span ng-if="Msg.status==1">未支付</span><span ng-if="Msg.status==2">已支付</span><span ng-if="Msg.is_offline==1&&Msg.status!=1">(在线)</span><span ng-if="Msg.is_offline==2&&Msg.status!=1">(线下)</span>
+					<button ng-if="Msg.status==1" style="background-color: red; color:#fff; border: 1px solid red;" ui-sref="outlinePay({pay_id:Msg.id})">
+					线下支付
 					</button>
+					<button ng-if="Msg.status==1" style="background-color: red; color:#fff; border: 1px solid red;margin-bottom: 0.27rem;" ng-click="delect(Msg.id)">
+					删除
+					</button>
+					<button ng-if="Msg.status==2"><span>已支付</span><span ng-if="Msg.is_offline==1&&Msg.status!=1">(在线)</span><span ng-if="Msg.is_offline==2&&Msg.status!=1">(线下)</span></button>
 				</div>
 			</div>
 		</div>

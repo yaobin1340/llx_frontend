@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'applyCashCtrl', function applyCashCtrl( $scope, $injector, $rootScope,journals,$stateParams) {
+    .controller( 'applyCashCtrl', function applyCashCtrl( $scope, $injector, $rootScope,Journals,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -28,14 +28,23 @@ angular
         $scope.chose = function(id){
             switch (id) {
                 case 1 :
+                if($scope.chose1==1){
+                    return;
+                }
                 $scope.chose1=1;$scope.chose2=0;$scope.chose3=0;
                 money();
                 break;
                 case 2 :
+                if($scope.chose2==1){
+                    return;
+                }
                 $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
                 $scope.journal();
                 break;
                 case 3 :
+                if($scope.chose3==1){
+                    return;
+                }
                 $scope.chose1=0;$scope.chose2=0;$scope.chose3=1;
                 drawal();
                 break;
@@ -140,20 +149,28 @@ angular
             }
         }
         
-        $scope.scroll_switch = 1;
-        $scope.journals = new journals();
+       // var i=0;
         $scope.journal=function(){
-            $scope.journals.items = [];
-            $scope.journals.end = false;
-            $scope.journals.busy = false;
-            $scope.journals.page = 1;
-            $scope.journals.nextPage(); 
+            // console.log(i)
+            // if(i==0){
+            $scope.scroll_switch = 1;
+            $scope.journals = new Journals();
+            // i++;
+            // }else{
+                // $scope.journals.items = [];
+                // $scope.journals.end = false;
+                // $scope.journals.busy = false;
+                // $scope.journals.page = 1;
+                // $scope.journals.nextPage(); 
+            // }
+            
+            
         }
 
         $scope.leadMore =function(){
             $scope.beDate=$("#beginTime").val();
             $scope.endDate=$("#endTime").val();
-            $scope.promise = $http
+            $http
                     .post($config.api_uri + '/Apiuser/Money/detail',{bg_date:$scope.beDate,end_date:$scope.endDate,page:$scope.page})
                     .success(function (data) {
                         if(data.success){

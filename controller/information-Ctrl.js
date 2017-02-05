@@ -20,6 +20,9 @@ angular
             $scope.chose = function(id){
                 switch (id) {
                     case 1 :
+                    if($scope.chose1==1){
+                        return;
+                    }
                     $scope.chose1=1;$scope.chose2=0;
                     $scope.messages.items = [];
                     $scope.messages.end = false;
@@ -28,6 +31,9 @@ angular
                     $scope.messages.nextPage();
                     break;
                     case 2 :
+                    if($scope.chose2==1){
+                        return;
+                    }
                     $scope.chose1=0;$scope.chose2=1;
                     if($scope.messagem==undefined){
                          $scope.scroll_switch = 1;

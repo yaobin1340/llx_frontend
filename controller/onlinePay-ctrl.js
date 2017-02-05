@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'personalCtrl', function personalCtrl( $scope, $injector, $rootScope) {
+    .controller( 'onlinePayCtrl', function onlinePayCtrl( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -10,25 +10,21 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-          
-            $scope.$emit('changeImg', 5); 
 
-            $scope.showup=1;
-
-            //加载动画
+        //加载动画
         $scope.delay = 0;
         $scope.minDuration = 0;
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
-
             $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
+                .post($config.api_uri + '/Apishop/ApiSorder/pay',{id:$stateParams.pay_id})
                 .success(function (data) {
                     if(data.success){
-                        $scope.userMsg=data;
-                        $session.set('face', data.face)
-                        $session.save()
+                        console.log(data);
+                        $scope.detail=data.detail;
+                        $scope.zp_list=data.zp_list;
+                        $scope.needPay=data.detail.total-data.detail.yhk;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -37,17 +33,40 @@ angular
                         );
                     }
                 })
-    
-        $scope.exit = function(){
-            $session.purge('auth');
-            $state.go("signin");
-            if(!$session.get('auth').token){
-                $mdToast.show(
+
+
+        $scope.affirm = function(){
+            $scope.promise = $http
+                .post($config.api_uri + '/Apiuser/pay/check_order',{id:$stateParams.pay_id})
+                .success(function (data) {
+                    console.log(data);
+                    if(data.success){
+                    $session.set('order_id', data.logs.order_id)
+                    $session.set('need_pay', data.logs.need_pay/100)
+                    $session.set('log_id', data.logs.log_id)
+                    $session.save()
+                    $state.go('code');
+                    }else{
+                        $mdToast.show(
                         $mdToast.simple()
-                            .content("退出成功")
+                            .content(data.error_msg)
                             .hideDelay(1000)
                         );
-            }
+                    }
+                })
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     });

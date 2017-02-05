@@ -3,40 +3,37 @@
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
-	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">创建支付</p>
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">线上支付</p>
 	</div>
 	<div class="padding"></div>
 <div class="uploadMsgs">
 	<div class="msg-items">
-		<span>会员手机</span>
-		<input type="text" ng-model="mobile" ng-keyup="chose()">
+		<span>商家</span>
+		<input type="text" ng-model="detail.shop_name" readonly="">
 	</div>
 	<div class="msg-items">
 		<span>消费金额</span>
-		<input type="text" ng-model="total" ng-keyup="jiner()">
+		<input type="text" ng-model="detail.total" readonly="">
 	</div>
 	<div class="msg-items">
-		<span>优惠券</span>
-		<input type="text" ng-model="bd" readonly="">
+		<span style="width: 2.5rem;">优惠券抵扣</span>
+		<input type="text" ng-model="detail.yhk" readonly="" style="width: 2.5rem;">
 	</div>
 	<!-- 默认不显示部分 -->
-	<div ng-repeat="zp in pay.zp_list">
+	<div ng-repeat="zp in zp_list">
 		<div class="msg-items">
 			<span style="text-indent: 1em;float: left;">赠品</span>
 			<input type="text" class="zenpin desc1" ng-model="zp.zp_name" readonly="">
-			<button class="anniu" ng-click="zp.zp_num=(zp.zp_num-1)>0?(zp.zp_num-1):0">-</button>
 			<input class="munZen" ng-model="zp.zp_num" style="min-width:1.1rem;max-width:1.8rem;height:1.2rem" readonly="">
-			<button class="anniu" ng-click="zp.zp_num=zp.zp_num+1">+</button>
 		</div>
 	</div>
-	
-	<!-- <div class="msg-items czhao" style="text-align: center;" ng-click="add()" ng-if="total!=undefined||total!=null">
-		+
-	</div> -->
-	<!-- 默认不显示部分 -->
 	<div class="msg-items">
 		<span style="text-indent: 1em;">备注</span>
-		<input type="text" ng-model="remark">
+		<input type="text" ng-model="detail.remark" class="text-overflow">
 	</div>
-	<button ng-click="affirm()" class="choseAdd">确认保存</button>	
+		<div class="msg-items">
+		<span>实付</span>
+		<input type="text" ng-model="needPay" readonly="">
+	</div>
+	<button ng-click="affirm()" class="choseAdd">确认支付</button>	
 </div>

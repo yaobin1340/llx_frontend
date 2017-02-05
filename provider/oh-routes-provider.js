@@ -291,6 +291,18 @@ angular
         templateUrl : 'views/xiubi.html',
         controller:'applyCashCtrl'
     };
+    this.routes['outlinePay'] = {
+        url : '/outlinePay?pay_id',
+        title:'线下支付',
+        templateUrl : 'views/outlinePay.html',
+        controller:'outlinePayCtrl'
+    };
+    this.routes['onlinePay'] = {
+        url : '/onlinePay?pay_id',
+        title:'线上支付',
+        templateUrl : 'views/onlinePay.html',
+        controller:'onlinePayCtrl'
+    };
     
 
 

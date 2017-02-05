@@ -38,8 +38,51 @@ angular
             $scope.offerpay.nextPage();
         }
 
-
-
+        $scope.delay = 0;
+        $scope.minDuration = 0;
+        $scope.message = '正在删除...';
+        $scope.backdrop = true;
+        $scope.promise = null;
+        $scope.delect = function(id){
+            if(confirm("确认删除此订单？")){
+                $scope.promise = $http
+                .post($config.api_uri + '/Apishop/ApiSorder/delete',{id:id})
+                .success(function (data) {
+                    if(data.success){
+                        $scope.offerpay.items = [];
+                        $scope.offerpay.end = false;
+                        $scope.offerpay.busy = false;
+                        $scope.offerpay.page = 1;
+                        $scope.offerpay.nextPage();
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+            }else{
+                
+            }
+            // $scope.promise = $http
+            //     .post($config.api_uri + '/Apishop/ApiSorder/delete',{id:id})
+            //     .success(function (data) {
+            //         if(data.success){
+            //             $scope.offerpay.items = [];
+            //             $scope.offerpay.end = false;
+            //             $scope.offerpay.busy = false;
+            //             $scope.offerpay.page = 1;
+            //             $scope.offerpay.nextPage();
+            //         }else{
+            //             $mdToast.show(
+            //             $mdToast.simple()
+            //                 .content(data.error_msg)
+            //                 .hideDelay(1000)
+            //             );
+            //         }
+            //     })
+        }
 
 
 
