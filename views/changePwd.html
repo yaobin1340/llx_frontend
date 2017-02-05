@@ -9,6 +9,15 @@
 	<div class="padding"></div>
 	<div class="row">
 		<div class="col-sm-12 col-xs-12 border-tb">
+			<label for="oldpwd">手机号</label>
+			<input type="text" id="oldpwd" ng-model="mobile" readonly="">
+		</div>
+		<div class="col-sm-12 col-xs-12 border-tb">
+			<label for="oldpwd">验证码</label>
+			<input type="text" id="oldpwd" ng-model="yzm">
+			<getbutton ng-click="getCard()" class="btn-sty"></getbutton>
+		</div>
+		<div class="col-sm-12 col-xs-12 border-tb">
 			<label for="oldpwd">新设密码</label>
 			<input type="text" id="oldpwd" ng-model="password">
 		</div>
@@ -20,6 +29,6 @@
 	
 	<div class="row">
 	<div class="col-sm-12 col-xs-12">
-		<button class="btn-submit " ng-click="change()" ng-disabled="password!=Npasswords||password==''||password==null||Npasswords==null||Npasswords==''">立刻修改</button>
+		<button class="btn-submit " ng-click="change()" ng-disabled="password!=Npasswords||password==''||password==null||Npasswords==null||Npasswords==''||yzm==''||yzm==null">立刻修改</button>
 	</div>
 </div>

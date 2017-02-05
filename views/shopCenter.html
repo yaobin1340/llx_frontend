@@ -18,7 +18,7 @@
 				<p>{{shopdata.shop_info.shop_name}}(ID:{{shopdata.shop_info.shop_id}})</p>
 				<span>暂无评价</span>
 				<span>类  型：{{shopdata.shop_cate_name}}</span>
-				<span>商户资金：￥{{shopdata.user_info.gold/100}}<a ui-sref="applyCash({type:'drawal'})">提现</a></span>
+				<span>商户资金：￥{{shopdata.user_info.gold/100}}<a ui-sref="shopCash({type:'drawal'})">提现</a></span>
 				<span>商户秀币：{{shopdata.user_info.integral/100}}</span>
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 	</div>
 
 	<div class="bgs"></div>
-	<div class="row" ui-sref="applyCash">
+	<div class="row" ui-sref="shopCash">
 		<div class="col-sm-1 col-xs-1">
 			<img src="/assets/img/moneys.png" alt="">
 		</div>

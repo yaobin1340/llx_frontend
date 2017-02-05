@@ -289,7 +289,7 @@ angular
         url : '/xiubi',
         title:'秀币记录',
         templateUrl : 'views/xiubi.html',
-        controller:'applyCashCtrl'
+        controller:'xiubiCtrl'
     };
     this.routes['outlinePay'] = {
         url : '/outlinePay?pay_id',
@@ -302,6 +302,12 @@ angular
         title:'线上支付',
         templateUrl : 'views/onlinePay.html',
         controller:'onlinePayCtrl'
+    };
+    this.routes['shopCash'] = {
+        url : '/shopCash?type',
+        title:'资金结算',
+        templateUrl : 'views/shopCash.html',
+        controller:'shopCashCtrl'
     };
     
 

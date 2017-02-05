@@ -14,14 +14,17 @@
 		</div>
 	</div>
 	<div class="padding"></div>
-	<!-- <div class="fansList">
-		<div class="fansitems">
+	<div class="fansList" infinite-scroll='offerpay.nextPage()' infinite-scroll-disabled='offerpay.busy' infinite-scroll-distance='1'>
+		<div class="fansitems" ng-repeat="Msg in offerpay.items">
 			<div class="fansitems-left">
-				<img src="" alt="">
+				<img ng-src="http://106.14.57.99:8888/attachs/{{Msg.face}}" alt="">
 			</div>
 			<div class="fansitems-right">
-				<p class="text-overflow">昵称：拉拉秀集团</p>
-				<p>手机号：123456789</p>
+				<p class="text-overflow">昵称：{{Msg.nickname}}</p>
+				<p>手机号：{{Msg.mobile}}</p>
 			</div>
 		</div>
-	</div> -->
+	</div>
+<div  cg-busy="{promise:offerpay.promise,templateUrl:offerpay.templateUrl,message:offerpay.message,backdrop:offerpay.backdrop,delay:offerpay.delay,minDuration:offerpay.minDuration}"></div>
+<div class="marbom text-center clearfix"
+ ng-show='offerpay.end'>-暂无更多信息-</div>
