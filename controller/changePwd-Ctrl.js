@@ -34,7 +34,7 @@ angular
 
         $scope.getCard = function(){
                  $scope.promise = $http
-                    .post($config.api_uri + '/Apipublic/Apilogin/resetpw_yzm',{mobile:$scope.mobile})
+                    .post($config.api_uri + '/Apipublic/Apilogin/resetpw_yzm',{mobile:$scope.phones})
                     .success(function (data) {
                         if(data.success){
                              $scope.getYzm=data.yzm;

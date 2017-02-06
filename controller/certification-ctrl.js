@@ -16,17 +16,23 @@ angular
         $scope.minDuration = 0;
         $scope.backdrop = true;
         $scope.promise = null;
-        $scope.show=0;
+        $scope.show=0;$scope.shows=0;
         //上传图片
-                function ajaxupload(data) {
+                function ajaxupload(data,type) {
                         //保存图片地址，暂无数据
                         $scope.message = '正在上传图片...';
                         $scope.promise = $http
                             .post($config.api_uri + '/Apishop/Audit/uploadpic',{photo:data})
                             .success(function (data) {
                                 if(data.success){
-                                    $scope.photo = data.pic_path;
-                                    $scope.show=1;
+                                    if(type==1){
+                                        $scope.photo = data.pic_path;
+                                        $scope.show=1;
+                                    }else if(type==2){
+                                        $scope.pic = data.pic_path;
+                                        $scope.shows=1;
+                                    }
+                                    
                                 }else{
                                     $mdToast.show(
                                     $mdToast.simple()
@@ -38,9 +44,10 @@ angular
                 };
                 $scope.choseAdd = function(){
                         //调用后台，暂缺数据
+                        console.log($scope.photo);
                     $scope.message = '正在保存修改...'
                     $scope.promise = $http
-                            .post($config.api_uri + '/Apishop/Audit',{photo:$scope.photo,name:$scope.name,zhucehao:$scope.zhucehao,addr:$scope.addr})
+                            .post($config.api_uri + '/Apishop/Audit',{photo:$scope.photo,name:$scope.name,zhucehao:$scope.zhucehao,addr:$scope.addr,pic:$scope.pic,zuzhidaima:$scope.zuzhidaima,end_date:$scope.end_date})
                             .success(function (data) {
                                 if(data.success){
                                     $mdToast.show(
@@ -69,7 +76,18 @@ angular
                             var a=$("#img_input").val(result.base64);
                             img =new Image;
                             img.src = result.base64;
-                            ajaxupload(img.src);
+                            ajaxupload(img.src,1);
+                        }
+                    });
+                    $('#fileToUploads').localResizeIMG({
+                        width: 300,
+                        height: 300,
+                        quality: 1,
+                        success: function (result) {
+                            var a=$("#img_input").val(result.base64);
+                            img =new Image;
+                            img.src = result.base64;
+                            ajaxupload(img.src,2);
                         }
                     });
                 });

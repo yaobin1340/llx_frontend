@@ -23,8 +23,10 @@ angular
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
-                        
+                        $scope.lat=data.detail.lat;
+                        $scope.lng=data.detail.lng;
 						$scope.detail=data.detail;
+                        $scope.getIndex();
 						$scope.msg=data;
                         //注册微信分享信息
                         shareData = {};  
@@ -221,6 +223,20 @@ angular
     }  
 
 
+    $scope.getIndex = function(){
+            $http({
+                method: 'POST',
+                url: $config.api_uri + '/Apipublic/Apilogin/use_QQmap',
+                data: {lat:$scope.lat,lng:$scope.lng}
+            }).success(function (data) {
+                if (data.success) {
+                    $scope.area_name = data.map.name;
+                } else {
+                    $scope.area_name="暂无";
+                }
+
+            })
+        }
 
 
 

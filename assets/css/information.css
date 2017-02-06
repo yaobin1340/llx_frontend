@@ -280,10 +280,10 @@ footer span {
 }
 .upload input {
   position: absolute;
-  left: 3.75rem;
+  left: 3.2rem;
   top: 0.63888889rem;
   display: block;
-  width: 2.48611111rem;
+  width: 2.75rem;
   height: 0.77777778rem;
   font-size: 0.55555556rem;
   opacity: 0;
@@ -296,9 +296,41 @@ footer span {
   margin: 0 auto;
   font-size: 0.38888889rem;
   color: #00a2f2;
-  margin: 0.63888889rem 0 0 3.73611111rem;
+  margin: 0.63888889rem 0 0 3.2rem;
 }
 .upload img {
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  width: 2.34722222rem;
+}
+.uploads {
+  position: relative;
+  height: 2.34722222rem;
+  border-bottom: 0.31944444rem solid #eff0eb;
+  background-color: #fff;
+}
+.uploads input {
+  position: absolute;
+  left: 3rem;
+  top: 0.63888889rem;
+  display: block;
+  width: 3.2rem;
+  height: 0.77777778rem;
+  font-size: 0.55555556rem;
+  opacity: 0;
+}
+.uploads button {
+  background-color: #fff;
+  display: inline-block;
+  height: 0.77777778rem;
+  border: 2px solid #00a2f2;
+  margin: 0 auto;
+  font-size: 0.38888889rem;
+  color: #00a2f2;
+  margin: 0.63888889rem 0 0 3rem;
+}
+.uploads img {
   display: block;
   margin: 0 auto;
   height: 100%;
@@ -319,7 +351,7 @@ footer span {
   width: 2.22222222rem;
 }
 .msg-items input {
-  width: 6.25rem;
+  width: 5.8rem;
   font-size: 0.5rem;
   outline: none;
 }
@@ -334,7 +366,7 @@ footer span {
   color: #00a2f2;
 }
 .msg-item input {
-  width: 6.25rem;
+  width: 5.8rem;
   font-size: 0.38888889rem;
   outline: none;
 }

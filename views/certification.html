@@ -11,6 +11,11 @@
 	<button ng-show="show==0" >上传营业执照</button>
 	<img ng-src="http://wap.51loveshow.com/attachs/{{photo}}" ng-show="show==1">
 </div>
+<div class="uploads">
+	<input size="100" id="fileToUploads" accept="image/*" name="fileToUploads" type="file" class="file" ng-show="shows==0"/>
+	<button ng-show="shows==0">上传经营许可证</button>
+	<img ng-src="http://wap.51loveshow.com/attachs/{{pic}}" ng-show="shows==1">
+</div>
 
 <div class="uploadMsg">
 	<div class="msg-item">
@@ -24,6 +29,14 @@
 	<div class="msg-item">
 		<span>营业地址：</span>
 		<input type="text" id="" ng-model="addr">
+	</div>
+	<div class="msg-item">
+		<span>到期时间：</span>
+		<input type="text" id="" ng-model="end_date" placeholder="格式：2017-02-06">
+	</div>
+	<div class="msg-item">
+		<span>组织机构代码：</span>
+		<input type="text" id="" ng-model="zuzhidaima">
 	</div>
 
 	<button ng-click="choseAdd()" class="choseAdd">确认添加</button>	
