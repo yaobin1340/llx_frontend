@@ -166,7 +166,7 @@ angular
         controller:'OpinionCtrl'
     };
     this.routes['restaurant'] = {
-        url : '/restaurant?cate_id,cate_name',
+        url : '/restaurant?cate_id,cate_name,area_code,lat,lng',
         templateUrl : 'views/restaurant.html',
         controller:'restaurantsCtrl'
     };

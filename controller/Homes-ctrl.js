@@ -137,7 +137,7 @@ angular
                        $scope.cate_list=data.cate_list;
                        angular.forEach(data.cate_list,function(item, index){
                             if(item.cate_name==type){
-                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name})
+                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:$scope.shops.lat,lng:$scope.shops.lng})
                                 return;
                             }
                         })
@@ -212,6 +212,7 @@ angular
             },
             fail: function (res) {
                 $mdToast.show(
+                    $scope.area_name = '请选择';
                     $mdToast.simple()
                         .content("定位失败,请重试或手动选择地区")
                         .hideDelay(2000)
