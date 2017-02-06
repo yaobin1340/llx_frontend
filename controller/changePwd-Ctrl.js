@@ -14,7 +14,7 @@ angular
          //加载动画
         $scope.delay = 0;
         $scope.minDuration = 0;
-        $scope.message = '正在修改...';
+        $scope.message = '正在获取信息...';
         $scope.backdrop = true;
         $scope.promise = null;
         $scope.promise = $http

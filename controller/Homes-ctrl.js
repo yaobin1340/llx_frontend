@@ -211,12 +211,12 @@ angular
                 }
             },
             fail: function (res) {
-                
                 $mdToast.show(
                     $mdToast.simple()
                         .content("定位失败,请重试或手动选择地区")
                         .hideDelay(2000)
                     );
+                $scope.area_name='请选择';
           }
         });
     });
