@@ -24,7 +24,6 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.gold=data.gold/100;
-                        console.log($scope.gold);
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -38,7 +37,6 @@ angular
         $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/orderdetail',{order_id:$stateParams.order_id})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                         $scope.ds=data;
                         $scope.msg = data.detail;

@@ -21,7 +21,6 @@ angular
                 .post($config.api_uri + '/Apishop/ApiSorder/pay',{id:$stateParams.pay_id})
                 .success(function (data) {
                     if(data.success){
-                        console.log(data);
                         $scope.detail=data.detail;
                         $scope.zp_list=data.zp_list;
                         $scope.needPay=data.detail.total-data.detail.yhk;
@@ -39,7 +38,6 @@ angular
             $scope.promise = $http
                 .post($config.api_uri + '/Apishop/ApiSorder/check_pay',{id:$stateParams.pay_id})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                         $mdToast.show(
                         $mdToast.simple()

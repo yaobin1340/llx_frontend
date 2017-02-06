@@ -51,7 +51,6 @@ angular
                                     if($("#qrcode").html()!=undefined){
                                         new QRCode(document.getElementById('qrcode'),$scope.url);
                                          clearInterval(timer);
-                                         console.log($scope.url);
                                     }
                                   },1000)
                             }else{

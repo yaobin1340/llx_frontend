@@ -20,44 +20,43 @@ angular
         //上传图片
                 function ajaxupload(data) {
                         //保存图片地址，暂无数据
-                        //$scope.message = '正在上传图片...';
-                        // $scope.promise = $http
-                        //     .post($config.api_uri + '/Apishop/ApiSmall/upload',{shop_pic:data})
-                        //     .success(function (data) {
-                        //         console.log(data);
-                        //         if(data.success){
-                        //             $scope.shop_pic = data.path;
-                        //             $scope.show=1;
-                        //         }else{
-                        //             $mdToast.show(
-                        //             $mdToast.simple()
-                        //                 .content(data.error_msg)
-                        //                 .hideDelay(1000)
-                        //             );
-                        //         }
-                        //     })
+                        $scope.message = '正在上传图片...';
+                        $scope.promise = $http
+                            .post($config.api_uri + '/Apishop/Audit/uploadpic',{photo:data})
+                            .success(function (data) {
+                                if(data.success){
+                                    $scope.photo = data.pic_path;
+                                    $scope.show=1;
+                                }else{
+                                    $mdToast.show(
+                                    $mdToast.simple()
+                                        .content(data.error_msg)
+                                        .hideDelay(1000)
+                                    );
+                                }
+                            })
                 };
                 $scope.choseAdd = function(){
                         //调用后台，暂缺数据
-                        //$scope.message = '正在保存修改...'
-                    // $scope.promise = $http
-                    //         .post($config.api_uri + '/Apishop/ApiSmall/add_shop_pic')
-                    //         .success(function (data) {
-                    //             if(data.success){
-                    //                 $mdToast.show(
-                    //                 $mdToast.simple()
-                    //                     .content("修改成功")
-                    //                     .hideDelay(1000)
-                    //                 );
-                    //                 $scope.show=true;
-                    //             }else{
-                    //                 $mdToast.show(
-                    //                 $mdToast.simple()
-                    //                     .content(data.error_msg)
-                    //                     .hideDelay(1000)
-                    //                 );
-                    //             }
-                    //         })
+                    $scope.message = '正在保存修改...'
+                    $scope.promise = $http
+                            .post($config.api_uri + '/Apishop/Audit',{photo:$scope.photo,name:$scope.name,zhucehao:$scope.zhucehao,addr:$scope.addr})
+                            .success(function (data) {
+                                if(data.success){
+                                    $mdToast.show(
+                                    $mdToast.simple()
+                                        .content("添加成功")
+                                        .hideDelay(1000)
+                                    );
+                                    $scope.show=true;
+                                }else{
+                                    $mdToast.show(
+                                    $mdToast.simple()
+                                        .content(data.error_msg)
+                                        .hideDelay(1000)
+                                    );
+                                }
+                            })
                 }
 
                 $(document).ready(function () {

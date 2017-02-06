@@ -111,7 +111,6 @@ angular
                                 })
                                 i++;
                             })
-                            console.log($scope.arr);
                         }else{
                             $mdToast.show(
                             $mdToast.simple()
@@ -122,7 +121,31 @@ angular
                     })
         }
 
+        $scope.delect = function(id){
+            console.log(id);
+            $scope.promise = $http
+                .post($config.api_uri + '/Apiuser/Orderinfo/order_del',{order_id:id})
+                .success(function (data) {
+                    console.log(data);
+                    if(data.success){
+                        angular.forEach($scope.arr,function(item, index){
+                            if(item.orders.order_id==id){
+                                console.log(index)
+                                $scope.arr.splice(index,1);
+                                i--;
+                                return;
+                            }
+                        })
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
 
+                    }
+                })
+        }
 
 
 

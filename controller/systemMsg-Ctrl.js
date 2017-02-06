@@ -11,7 +11,6 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-        console.log($stateParams.msg_id);
 
 
 

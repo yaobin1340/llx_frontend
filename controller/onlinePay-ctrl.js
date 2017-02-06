@@ -21,7 +21,6 @@ angular
                 .post($config.api_uri + '/Apishop/ApiSorder/pay',{id:$stateParams.pay_id})
                 .success(function (data) {
                     if(data.success){
-                        console.log(data);
                         $scope.detail=data.detail;
                         $scope.zp_list=data.zp_list;
                         $scope.needPay=data.detail.total-data.detail.yhk;
@@ -37,9 +36,8 @@ angular
 
         $scope.affirm = function(){
             $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/pay/check_order',{id:$stateParams.pay_id})
+                .post($config.api_uri + '/Apiuser/pay/check_pay',{id:$stateParams.pay_id})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                     $session.set('order_id', data.logs.order_id)
                     $session.set('need_pay', data.logs.need_pay/100)

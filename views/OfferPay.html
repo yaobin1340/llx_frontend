@@ -31,8 +31,8 @@
 					<p ng-cloak ng-if="Msg.status==1">付款时间：未支付</p>
 				</div>
 				<div class="col-4 col-xs-4 text-right">
-					<button>
-					<span ng-if="Msg.status==1" ui-sref="onlinePay({pay_id:Msg.id})">立即支付</span><span ng-if="Msg.status==2">已支付</span><span ng-if="Msg.is_offline==1&&Msg.status!=1">(在线)</span><span ng-if="Msg.is_offline==2&&Msg.status!=1">(线下)</span>
+					<button ng-if="Msg.status==1" style="background-color: red; color:#fff; border: 1px solid red;" ui-sref="onlinePay({pay_id:Msg.id})">立即支付</button>
+					<button ng-if="Msg.status==2"><span>已支付</span><span ng-if="Msg.is_offline==1&&Msg.status!=1">(在线)</span><span ng-if="Msg.is_offline==2&&Msg.status!=1">(线下)</span>
 					</button>
 				</div>
 			</div>

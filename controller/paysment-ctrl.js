@@ -104,6 +104,7 @@ angular
                                 .hideDelay(1000)
                             );
                         }
+                        $state.go("home");
                     })
         }
 

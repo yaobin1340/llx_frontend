@@ -23,7 +23,6 @@ angular
                         $scope.promise = $http
                             .post($config.api_uri + '/Apishop/ApiSmall/upload',{shop_pic:data})
                             .success(function (data) {
-                                console.log(data);
                                 if(data.success){
                                     $scope.shop_pic = data.path;
                                     $scope.show=1;

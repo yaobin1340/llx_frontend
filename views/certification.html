@@ -9,24 +9,24 @@
 <div class="upload">
 	<input size="100" id="fileToUpload" accept="image/*" name="fileToUpload" type="file" class="file" ng-show="show==0"/>
 	<button ng-show="show==0" >上传营业执照</button>
-	<img ng-src="" ng-show="show==1">
+	<img ng-src="http://106.14.57.99:8888/attachs/{{photo}}" ng-show="show==1">
 </div>
 
 <div class="uploadMsg">
 	<div class="msg-item">
 		<span>企业名称：</span>
-		<input type="text" id="" >
+		<input type="text" id="" ng-model="name">
 	</div>
 	<div class="msg-item">
 		<span>注册号：</span>
-		<input type="text" id="" >
+		<input type="text" id="" ng-model="zhucehao">
 	</div>
 	<div class="msg-item">
 		<span>营业地址：</span>
-		<input type="text" id="" >
+		<input type="text" id="" ng-model="addr">
 	</div>
 
-	<button ng-click="choseAdd()" class="choseAdd ">确认添加</button>	
+	<button ng-click="choseAdd()" class="choseAdd">确认添加</button>	
 </div>
 	<script src="/assets/js/localResizeIMG.js"></script>
 	<script src="/assets/js/mobileBUGFix.mini.js"></script>

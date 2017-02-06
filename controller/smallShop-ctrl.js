@@ -21,7 +21,7 @@ angular
         $scope.promise = null;
 			$scope.promise = $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
-				.success(function (data) {console.log(data);
+				.success(function (data) {
 					if(data.success){
                         
 						$scope.detail=data.detail;
@@ -76,7 +76,6 @@ angular
 			$http
 				.post($config.api_uri + '/Apiuser/Favourite/shop_favourites',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
-					console.log(data)
 					if(data.success){
 						$mdToast.show(
 						$mdToast.simple()
@@ -156,7 +155,6 @@ angular
                 img_height: 200,  
                 success: function(res) {  
                     friendcallback(res); 
-                    console.log("成功") 
                 },    
                 fail: function(res) {  
                     alert(JSON.stringify(res));  
@@ -210,7 +208,6 @@ angular
                 img_height: 200,  
                 success: function(res) {  
                     friendcallback(res); 
-                    console.log("成功") 
                 },    
                 fail: function(res) {  
                     alert(JSON.stringify(res));  

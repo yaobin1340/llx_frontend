@@ -101,7 +101,6 @@ angular
         $scope.choseNear = function(city,ac){
             $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                         $scope.c=ac;
                         $scope.add_p=[];
@@ -156,7 +155,7 @@ angular
     window.filterByEnter = function(e){
             if(e.keyCode==13){
                 $scope.$apply(function(){
-                    $scope.shops.shop_name = $scope.text;
+                    $scope.shops.cate_name = $scope.text;
                     $scope.shops.area_code = '';
                     $scope.shops.items = [];
                     $scope.shops.end = false;
@@ -167,7 +166,7 @@ angular
             }
         };
     $scope.soso = function(){
-        $scope.shops.shop_name = $scope.text;
+        $scope.shops.cate_name = $scope.text;
         $scope.shops.area_code = '';
         $scope.area_name = '请选择';
         $scope.shops.items = [];
@@ -208,7 +207,7 @@ angular
                     $scope.shops.nextPage();
                     if (sessionStorage.getItem('juli')!=null){
                         $(document).scrollTop(sessionStorage.getItem('juli'));
-                    }console.log($(document).scrollTop());
+                    }
                 }
             },
             fail: function (res) {

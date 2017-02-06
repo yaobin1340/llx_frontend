@@ -72,7 +72,6 @@ angular
 			$scope.promise=$http
 				.post($config.api_uri + '/Apiuser/Favourite/shop_favourites',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
-					console.log(data)
 					if(data.success){
 						$mdToast.show(
 						$mdToast.simple()
