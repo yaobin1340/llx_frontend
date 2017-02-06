@@ -28,6 +28,7 @@ angular
                     if(data.success){
                         $scope.userMsg=data;
                         $session.set('face', data.face)
+                        $session.set('phone', data.mobile)
                         $session.save()
                     }else{
                         $mdToast.show(
