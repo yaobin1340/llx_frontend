@@ -211,8 +211,8 @@ angular
                 }
             },
             fail: function (res) {
+                
                 $mdToast.show(
-                    $scope.area_name = '请选择';
                     $mdToast.simple()
                         .content("定位失败,请重试或手动选择地区")
                         .hideDelay(2000)
