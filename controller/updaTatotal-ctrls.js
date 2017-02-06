@@ -49,7 +49,7 @@ angular
                     }
                 })
     })
-
+    //点击上传按钮
     $(document).ready(function () {
         var img;
         $('#fileToUpload').localResizeIMG({
