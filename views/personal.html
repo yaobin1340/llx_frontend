@@ -2,10 +2,10 @@
 	<link rel="stylesheet" href="/assets/css/personal.css">
 	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
 	<div class="banner">
-		<div class="banner-left"></div>
-		<img src="/assets/img/552cc14536532_128.png" alt=""  onClick="javascript:history.go(-1);" class="back"style="position: absolute;left: 0.27777778rem;top: 0.38888889rem;width: 0.69444444rem;height: 0.69444444rem;" >
-		<div class="banner-right"></div>
-		<img src="/assets/img/img_mine_msg_icon.png" alt="" class="share" ui-sref="main.information">
+		<div class="banner-left">
+		<img src="/assets/img/552cc14536532_128.png" alt=""  onClick="javascript:history.go(-1);" class="back"style="width: 0.69444444rem;height: 0.69444444rem;" ></div>
+		<div class="banner-right">
+		<img src="/assets/img/img_mine_msg_icon.png" alt="" class="share" ui-sref="main.information" style="margin-top:0.2rem;margin-left:0.12rem;height:0.34722222rem;"></div>
 		<div class="personal-img">
 			<img src="http://wap.51loveshow.com/attachs/{{userMsg.face}}" alt="" ng-show="{{showup}}">
 			<div ng-hide="{{showup}}" class="sign">

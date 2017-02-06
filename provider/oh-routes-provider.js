@@ -14,7 +14,7 @@ angular
     this.routes[ 'main.home' ] =
     {
         url: '^/home',
-        title: 'Home',
+        title: '首页',
         templateUrl: 'views/home.html',
         controller: 'HomesCtrl'
     };
@@ -71,6 +71,7 @@ angular
     };
     this.routes['product'] = {
         url : '/product?goods_id',
+        title: '产品详情',
         templateUrl : 'views/product.html',
         controller:'productCtrl'
     };

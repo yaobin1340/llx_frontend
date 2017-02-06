@@ -79,16 +79,12 @@ body {
   float: right;
 }
 .banner .back {
-  position: absolute;
-  left: 0.27777778rem;
-  top: 0.38888889rem;
   width: 0.69444444rem;
   height: 0.69444444rem;
 }
 .banner .share {
-  position: absolute;
-  right: 0.375rem;
-  top: 0.55555556rem;
+  margin-top: 0.2rem;
+  margin-left: 0.12rem;
   height: 0.34722222rem;
 }
 .personal-img {
