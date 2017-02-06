@@ -133,11 +133,13 @@ angular
     };
     this.routes['updataTotal'] = {
         url : '/updataTotal',
+        title: '修改头像',
         templateUrl : 'views/updataTotal.html',
         controller:'updataTotalCtrl'
     };
     this.routes['Mycart'] = {
         url : '/Mycart?type',
+        title: '购物订单',
         templateUrl : 'views/Mycart.html',
         controller:'MycartCtrl'
     };
@@ -148,26 +150,31 @@ angular
     };
     this.routes['nickname'] = {
         url : '/nickname',
+        title: '修改昵称',
         templateUrl : 'views/nickname.html',
         controller:'nicknameCtrl'
     };
     this.routes['IndentMsg'] = {
         url : '/IndentMsg?order_id',
+        title: '订单详情',
         templateUrl : 'views/IndentMsg.html',
         controller:'IndentMsgCtrl'
     };
     this.routes['preferential'] = {
         url : '/preferential',
+        title: '优惠卡',
         templateUrl : 'views/preferential.html',
         controller:'preferentialCtrl'
     };
      this.routes['Opinion'] = {
         url : '/Opinion?order_id',
+        title: '商品点评',
         templateUrl : 'views/Opinion.html',
         controller:'OpinionCtrl'
     };
     this.routes['restaurant'] = {
         url : '/restaurant?cate_id,cate_name,area_code,lat,lng',
+        title: '二级菜单',
         templateUrl : 'views/restaurant.html',
         controller:'restaurantsCtrl'
     };
@@ -218,71 +225,73 @@ angular
     // };
     this.routes['systemMsg'] = {
         url : '/systemMsg?msg_id',
+        title: '系统信息',
         templateUrl : 'views/systemMsg.html',
         controller:'systemMsgCtrl'
     };
     this.routes['mumberMsg'] = {
         url : '/mumberMsg?msg_id',
+        title: '会员信息',
         templateUrl : 'views/mumberMsg.html',
         controller:'mumberMsgCtrl'
     };
-    // this.routes['navigation'] = {
-    //     url : '/navigation?lng?lat?name?addr',
-    //     templateUrl : 'views/navigation.html',
-    //     controller:'navigationsCtrl'
-    // };
     this.routes['shopMsg'] = {
         url : '/shopMsg?shop_id',
+        title: '商户信息',
         templateUrl : 'views/shopMsg.html',
         controller:'shopMsgCtrl'
     };
     this.routes['shopCenter'] = {
         url : '/shopCenter',
+        title: '商户中心',
         templateUrl : 'views/shopCenter.html',
         controller:'shopCenterCtrl'
     };
     this.routes['basic'] = {
         url : '/basic',
+        title: '基本设置',
         templateUrl : 'views/basic.html',
         controller:'basicCtrl'
     };
     this.routes['addEnvironment'] = {
         url : '/addEnvironment',
+        title: '账户信息',
         templateUrl : 'views/addEnvironment.html',
         controller:'addEnvironmentCtrl'
     };
     this.routes['addPay'] = {
         url : '/addPay',
+        title: '创建支付',
         templateUrl : 'views/addPay.html',
         controller:'addPayCtrl'
     };
     this.routes['payShop'] = {
         url : '/payShop',
+        title: '优惠买单',
         templateUrl : 'views/payShop.html',
         controller:'payShopCtrl'
     };
-    this.routes['addPays'] = {
-        url : '/addPays',
-        templateUrl : 'views/addPays.html',
-        controller:'addPaysCtrl'
-    };
     this.routes['myTeam'] = {
         url : '/myTeam',
+        title: '我的团队',
         templateUrl : 'views/myTeam.html',
         controller:'myTeamCtrl'
     };
     this.routes['code'] = {
         url : '/code',
+        title: '正在获取信息',
         templateUrl : 'views/code.html',
         controller:'codeCtrl'
     };
     this.routes['shopFans'] = {
         url : '/shopFans',
+        title: '粉丝列表',
         templateUrl : 'views/shopFans.html',
         controller:'shopFansCtrl'
     };
     this.routes['certification'] = {
         url : '/certification',
+        title: '商户认证中心',
         templateUrl : 'views/certification.html',
         controller:'certificationCtrl'
     };
