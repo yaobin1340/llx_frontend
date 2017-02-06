@@ -89,7 +89,7 @@
 			</div>
 			<div class="col-sm-3 col-xs-3">
 				<p class="pr-name text-left text-overflow">
-					<input class="text-overflow" type="text"style="width:100%;height: 100%;" ng-model="gold">
+					<input class="text-overflow" type="text"style="width:100%;height: 100%;" ng-model="needgold" ng-keyup="notcut()">
 				</p>
 			</div>
 			<div class="col-sm-5 col-xs-5">
@@ -103,7 +103,7 @@
 				<p class="pr-name pr-color">实付</p>
 			</div>
 			<div class="col-sm-2 col-xs-2">
-				<p ng-cloak class="pr-name text-left price-c">{{msg.total_price/100-gold}}</p>
+				<p ng-cloak class="pr-name text-left price-c">{{msg.total_price/100-needgold}}</p>
 			</div>
 		</div>
 
