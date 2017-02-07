@@ -20,7 +20,24 @@ angular
         $scope.shops.lng = '';
         $scope.isReady = false;
         $scope.$on('$viewContentLoaded', function() {
-            wxConfig();
+            //判断是否有缓存地址和经纬度
+            if(sessionStorage.getItem('area_name')==null||sessionStorage.getItem('lat')==null||sessionStorage.getItem('lng')==null){wxConfig();}else{
+                $scope.area_name = sessionStorage.getItem('area_name');
+                $scope.shops.area_code = sessionStorage.getItem('area_code');
+                $scope.shops.lat = sessionStorage.getItem('lat');
+                $scope.shops.lng = sessionStorage.getItem('lng');
+                    //加载附近商铺
+                    $scope.shops.items = [];
+                    $scope.shops.end = false;
+                    $scope.shops.busy = false;
+                    $scope.shops.page = 1;
+                    $scope.shops.nextPage();
+                    if (sessionStorage.getItem('juli')!=null){
+                        $(document).scrollTop(sessionStorage.getItem('juli'));
+                        console.log($(document).scrollTop());
+                    }
+                }
+            // wxConfig();
             // if(JSON.stringify($session.get('area_name'))=='{}'){wxConfig();}else{
             //     $scope.area_name = $session.get('area_name');
             //     $scope.shops.area_code = $session.get('area_code');
@@ -101,6 +118,7 @@ angular
         $scope.choseNear = function(city,ac){
             $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
+
                     if(data.success){
                         $scope.c=ac;
                         $scope.add_p=[];
@@ -137,10 +155,10 @@ angular
                        $scope.cate_list=data.cate_list;
                        angular.forEach(data.cate_list,function(item, index){
                             if(type=="秀币商城"){
-                                $state.go('xiubiShop',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:$scope.shops.lat,lng:$scope.shops.lng})
+                                $state.go('xiubiShop',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }else if(item.cate_name==type){
-                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:$scope.shops.lat,lng:$scope.shops.lng})
+                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }
                         })
@@ -196,22 +214,23 @@ angular
             type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
             success: function (res) {
                 $scope.shops.lat = res.latitude;
+                sessionStorage.setItem('lat',res.latitude);
                 $scope.shops.lng = res.longitude;
-                // $scope.getIndex();
-                if(sessionStorage.getItem('area_name')==null){$scope.getIndex();}else{
-
-                $scope.area_name = sessionStorage.getItem('area_name');
-                $scope.shops.area_code = sessionStorage.getItem('area_code');
-                    //加载附近商铺
-                    $scope.shops.items = [];
-                    $scope.shops.end = false;
-                    $scope.shops.busy = false;
-                    $scope.shops.page = 1;
-                    $scope.shops.nextPage();
-                    if (sessionStorage.getItem('juli')!=null){
-                        $(document).scrollTop(sessionStorage.getItem('juli'));
-                    }
-                }
+                sessionStorage.setItem('lng',res.longitude);
+                $scope.getIndex();
+                // if(sessionStorage.getItem('area_name')==null){$scope.getIndex();}else{
+                // $scope.area_name = sessionStorage.getItem('area_name');
+                // $scope.shops.area_code = sessionStorage.getItem('area_code');
+                //     //加载附近商铺
+                //     $scope.shops.items = [];
+                //     $scope.shops.end = false;
+                //     $scope.shops.busy = false;
+                //     $scope.shops.page = 1;
+                //     $scope.shops.nextPage();
+                //     if (sessionStorage.getItem('juli')!=null){
+                //         $(document).scrollTop(sessionStorage.getItem('juli'));
+                //     }
+                // }
             },
             fail: function (res) {
                 $mdToast.show(
@@ -219,7 +238,17 @@ angular
                         .content("定位失败,请重试或手动选择地区")
                         .hideDelay(2000)
                     );
-                $scope.area_name='请选择';
+                $scope.shops.lat = 121.334349;
+                sessionStorage.setItem('lat',$scope.shops.lat);
+                $scope.shops.lng = 31.246386;
+                sessionStorage.setItem('lng',$scope.shops.lng);
+                $scope.area_name='上海市';
+                $scope.shops.area_code = 310000;
+                $scope.shops.items = [];
+                $scope.shops.end = false;
+                $scope.shops.busy = false;
+                $scope.shops.page = 1;
+                $scope.shops.nextPage();
           }
         });
     });
