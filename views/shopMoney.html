@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/assets/css/money.css">
 <link rel="stylesheet" href="/assets/css/common.css">
 <link rel="stylesheet" href="/assets/css/overflow.css">
-<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
+
 <div class="row bgc">
 	<div class="col-sm-6 col-xs-6">
 		<input type="text" placeholder="开始时间" class="kbtn input-time " id="beginTime" ng-model="beDate">
@@ -22,9 +22,10 @@
 			<p ng-cloak>时间：{{m.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</p>
 		</div>
 	</div>
+	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
 	<div ng-if='noLead' class="nullMoney">当前日期内暂无资金日志</div>
 </div>
-</div>
+
 <script>
 	$(function(){  
     	$('#beginTime').date();

@@ -1,8 +1,7 @@
 
 	<link rel="stylesheet" href="/assets/css/information.css">
 	<link rel="stylesheet" href="/assets/css/overflow.css">
-<div  cg-busy="{promise:messages.promise,templateUrl:messages.templateUrl,message:messages.message,backdrop:messages.backdrop,delay:messages.delay,minDuration:messages.minDuration}">
-<div  cg-busy="{promise:messagem.promise,templateUrl:messagem.templateUrl,message:messagem.message,backdrop:messagem.backdrop,delay:messagem.delay,minDuration:messagem.minDuration}">
+
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
@@ -15,6 +14,8 @@
 		<div class="col-sm-6 col-xs-6 pos-r" ng-class="{'border':chose2}" ng-click="chose(2)">会员信息</div>
 		<!-- <p class="cir cir2">99</p> -->
 	</div>
+	<div  cg-busy="{promise:messages.promise,templateUrl:messages.templateUrl,message:messages.message,backdrop:messages.backdrop,delay:messages.delay,minDuration:messages.minDuration}">
+	<div  cg-busy="{promise:messagem.promise,templateUrl:messagem.templateUrl,message:messagem.message,backdrop:messagem.backdrop,delay:messagem.delay,minDuration:messagem.minDuration}">
 	<div class="systemMsg"   infinite-scroll='messages.nextPage()' infinite-scroll-disabled='messages.busy' infinite-scroll-distance='1' ng-show="chose1==1">
 		<div class="Msg-now" ng-repeat="msg in messages.items" ui-sref="systemMsg({msg_id:msg.msg_id})">
 			<div ng-cloak class="Msg-now-left text-overflow">{{msg.intro}}</div>

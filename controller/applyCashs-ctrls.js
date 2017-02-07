@@ -157,7 +157,7 @@ angular
         $scope.leadMore =function(){
             $scope.beDate=$("#beginTime").val();
             $scope.endDate=$("#endTime").val();
-            $http
+            $scope.promise = $http
                     .post($config.api_uri + '/Apiuser/Money/detail',{bg_date:$scope.beDate,end_date:$scope.endDate,page:$scope.page})
                     .success(function (data) {
                         if(data.success){
