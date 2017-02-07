@@ -1,0 +1,131 @@
+
+	<link rel="stylesheet" href="/assets/css/SubmitOrder.css">
+	
+	<div class="banner navbar-fixed-top">
+		<img src="/assets/img/552cc14536532_128.png" alt=""  onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+		<span>提交订单</span>
+	</div>
+	<div class="padding"></div>
+	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
+	<div class="address">
+		<div class="address-left">
+			<img src="/assets/img/address2.png" alt="">
+		</div>
+		<div class="address-right">
+			<div class="right-person">
+			<p class="person-left text-overflow">收货人：</p>
+			<p class="person-right">1560179656</p>
+			</div>
+			<div class="right-addr"><span>收获地址：</span>
+			<img src="/assets/img/line.png" alt="">
+			</div>
+		</div>
+	</div>
+	<img src="/assets/img/submit.png" alt="" class="fenge">
+	<div class="bg"></div>
+	<div ng-cloak class="shopname">
+		{{ds.shop_name}}
+	</div>
+	<div class="bgs"></div><div class="bgs"></div>
+	<div ng-repeat="goods in order_goods_info">
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<p ng-cloak class="pr-name text-overflow">{{goods.title}}</p>
+			</div>
+			<div class="col-sm-6 col-xs-6">
+				<div class="col-sm-6 col-xs-6">
+					<p ng-cloak class="pr-num">x{{goods.num}}</p>
+				</div>
+				<div class="col-sm-6 col-xs-6">
+					<p ng-cloak class="pro-pri">￥{{goods.price/100}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bgs"></div><div class="bgs"></div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<p class="pr-name pr-color">消费金额</p>
+			</div>
+			<div class="col-sm-6 col-xs-6">
+				<div class="col-sm-6 col-xs-6"></div>
+				<div class="col-sm-6 col-xs-6">
+					<p ng-cloak class="pro-pri">￥{{msg.total_price/100}}</p>
+				</div>
+			</div>
+		</div>
+
+	<div class="bgs"></div><div class="bgs"></div>		
+	<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<p class="pr-name pr-color">优惠券抵扣</p>
+			</div>
+			<div class="col-sm-6 col-xs-6">
+				<div class="col-sm-6 col-xs-6"></div>
+				<div class="col-sm-6 col-xs-6">
+					<p class="pro-pri">-0</p>
+				</div>
+			</div>
+		</div>
+
+	<div class="bgs"></div><div class="bgs"></div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<p class="pr-name pr-color">备注</p>
+			</div>
+			<div class="col-sm-6 col-xs-6">
+				<div class="col-sm-6 col-xs-6"></div>
+				<div class="col-sm-6 col-xs-6">
+					<p class="pro-pri"></p>
+				</div>
+			</div>
+		</div>
+
+	<div class="bgs"></div><div class="bgs"></div>
+		<div class="row">
+			<div class="col-sm-6 col-xs-6">
+				<p class="pr-name pr-color">赠品消费</p>
+			</div>
+			<div class="col-sm-6 col-xs-6">
+				<div class="col-sm-6 col-xs-6">
+					
+				</div>
+				<div class="col-sm-6 col-xs-6">
+					<p class="pro-pri"></p>
+				</div>
+			</div>
+		</div>
+
+	<div class="bgs"></div><div class="bgs"></div>
+		<div class="row">
+			<div class="col-sm-4 col-xs-4">
+				<p class="pr-name pr-color">使用余额</p>
+			</div>
+			<div class="col-sm-3 col-xs-3">
+				<p class="pr-name text-left text-overflow">
+					<input class="text-overflow" type="text"style="width:100%;height: 100%;" ng-model="needgold" ng-keyup="notcut()">
+				</p>
+			</div>
+			<div class="col-sm-5 col-xs-5">
+				<p class="pr-name">剩余金额:<span ng-cloak class="span-color">{{gold}}</span></p>
+			</div>
+		</div>
+
+	<div class="bgs"></div><div class="bgs"></div>
+		<div class="row">
+			<div class="col-sm-4 col-xs-4">
+				<p class="pr-name pr-color">实付</p>
+			</div>
+			<div class="col-sm-2 col-xs-2">
+				<p ng-cloak class="pr-name text-left price-c">{{msg.total_price/100-needgold}}</p>
+			</div>
+		</div>
+
+	<div class="bgs"></div><div class="bgs"></div>
+	<div class="row">
+		<div class="col-sm-12 col-xs-12">
+			<button class="subOrder" ng-click="subOrder()">提交订单</button>
+		</div>
+	</div>
+	</div>

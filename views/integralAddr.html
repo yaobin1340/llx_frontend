@@ -4,7 +4,7 @@
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
-	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">管理收货地址</p>
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">选择收货地址</p>
 	    <img src="/assets/img/img_add.png" alt="添加收货地址" class="img_add" ui-sref="addAddress">
 	</div>
 	<div class="padding"></div>
@@ -12,25 +12,11 @@
 	<div infinite-scroll='address.nextPage()' infinite-scroll-disabled='address.busy' infinite-scroll-distance='1'>
 		<div ng-repeat="adr in address.items">
 		<div class="row">
-			<div ng-cloak class="col-sm-6 col-xs-6 address-name">{{adr.name}}</div>
+			<div ng-cloak class="col-sm-6 col-xs-6 address-name">
+			<span style="color:#00a2f2" ng-if="adr.is_default==1">[默认地址]</span>{{adr.name}}</div>
 			<div ng-cloak class="col-sm-6 col-xs-6 address-phone text-right">{{adr.mobile}}</div>
 			<div ng-cloak class="col-sm-12 col-xs-12 address">
 				{{adr.province_name}}{{adr.city_name}}{{adr.area_name}}{{adr.addr}}
-			</div>
-			<div class="col-sm-6 col-xs-6 chose">
-				<img src="/assets/img/chose.png" alt="" ng-if="adr.is_default==1" ng-click="changeImg(adr.addr_id)">
-				<img src="/assets/img/chosef.png" alt="" ng-if="adr.is_default==0" ng-click="changeImg(adr.addr_id)">
-				<p ng-class="{active:adr.is_default==1}">默认地址</p>
-			</div>
-			<div class="col-sm-6 col-xs-6 add-change">
-				<div ng-click="delect(adr.addr_id)">
-					<span>删除</span>
-					<img src="/assets/img/img_delete_black.png" alt="">
-				</div>
-				<div ui-sref="chaAddress({addr_id:adr.addr_id})">
-					<span>编辑</span>
-					<img src="/assets/img/img_edit.png" alt="" ui-sref="chaAddress">
-				</div>
 			</div>
 		<div class="bgc"></div>
 		</div>
@@ -39,9 +25,5 @@
 	<div cg-busy="{promise:address.promise,templateUrl:address.templateUrl,message:address.message,backdrop:address.backdrop,delay:address.delay,minDuration:address.minDuration}"></div>
 	<div class="home_shop_nomore" ng-show='address.end'>-暂无更多地址-</div>
 
-
-
-
 	<div class="marbom"></div>
 	</div>
-	

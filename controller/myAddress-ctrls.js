@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'MaddressCtrl', function MaddressCtrl( $scope, $injector, $rootScope) {
+    .controller( 'MaddressCtrl', function MaddressCtrl( $scope, $injector, $rootScope,Address) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -17,30 +17,9 @@ angular
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
-        
-$scope.page=1;
-        $scope.load = function(){
-            $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/Adr/index',{page:$scope.page})
-                .success(function (data) {
-                    if(data.success){
-                        $scope.address = data.addr;
-                    }else{
-                        $mdToast.show(
-                        $mdToast.simple()
-                            .content(data.error_msg)
-                            .hideDelay(1000)
-                        );
-
-                    }
-                })
-        }
-        $scope.load();
-
-
-
-
-
+    
+        $scope.scroll_switch = 1;
+        $scope.address = new Address();
 
         $scope.delect =  function(adrId){
             $scope.promise = $http
@@ -51,10 +30,10 @@ $scope.page=1;
                                 $mdToast.simple()
                                     .content(data.error_msg)
                                     .hideDelay(1000)
-                                ); 
-                        angular.forEach($scope.address,function(item, index){
+                                );
+                        angular.forEach($scope.address.items,function(item, index){
                             if(item.addr_id==adrId){
-                                $scope.address.splice(index, 1); 
+                                $scope.address.items.splice(index, 1); 
                                 return;
                             }
                         })

@@ -133,6 +133,14 @@ body {
 .add-change div {
   float: left;
 }
+.home_shop_nomore {
+  width: 100%;
+  height: 1.38888889rem;
+  text-align: center;
+  line-height: 1.38888889rem;
+  font-size: 0.45rem;
+  margin-bottom: 1.38888889rem;
+}
 .navbar-fixed-top,
 .navbar-fixed-bottom {
   z-index: 5;

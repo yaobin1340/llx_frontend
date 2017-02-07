@@ -91,13 +91,20 @@ body {
   width: 100%;
   display: inline-block;
   margin-top: -0.41666667rem;
+  position: relative;
 }
-.personal-img img {
+.personal-img .img-one {
   display: block;
   width: 1.45833333rem;
   height: 1.45833333rem;
   margin: 0 auto;
   border-radius: 50%;
+}
+.personal-img .img-two {
+  width: 0.55555556rem;
+  position: absolute;
+  left: 52%;
+  top: 68%;
 }
 .personal-img .sign {
   width: 1.66666667rem;

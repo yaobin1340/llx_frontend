@@ -75,6 +75,12 @@ angular
         templateUrl : 'views/product.html',
         controller:'productCtrl'
     };
+    this.routes['pingjia'] = {
+        url : '/pingjia?goods_id',
+        title: '商品点评',
+        templateUrl : 'views/pingjia.html',
+        controller:'pingjiaCtrl'
+    };
     this.routes['shopcart'] = {
         url : '/shopcart?message',
         title: '购物车',
@@ -325,8 +331,18 @@ angular
         templateUrl : 'views/xiubiShop.html',
         controller:'xiubiShopCtrl'
     };
-    
-
+    this.routes['integralSubmit'] = {
+        url : '/integralSubmit',
+        title:'提交订单',
+        templateUrl : 'views/integralSubmit.html',
+        controller:'integralSubmitCtrl'
+    };
+    this.routes['integralAddr'] = {
+        url : '/integralAddr',
+        title:'选择收货地址',
+        templateUrl : 'views/integralAddr.html',
+        controller:'MaddressCtrl'
+    };
 
     
     this.$get = function()

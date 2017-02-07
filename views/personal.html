@@ -7,10 +7,8 @@
 		<div class="banner-right">
 		<img src="/assets/img/img_mine_msg_icon.png" alt="" class="share" ui-sref="main.information" style="margin-top:0.2rem;margin-left:0.12rem;height:0.34722222rem;"></div>
 		<div class="personal-img">
-			<img src="http://wap.51loveshow.com/attachs/{{userMsg.face}}" alt="" ng-show="{{showup}}">
-			<div ng-hide="{{showup}}" class="sign">
-				<a ui-sref="signin">登陆</a>/<a ui-sref="signup">注册</a>
-			</div>
+			<img src="http://wap.51loveshow.com/attachs/{{userMsg.face}}" alt="" class="img-one">
+			<img ng-src="/assets/img/vip_icon{{userMsg.rank_id}}.png" alt="" class="img-two" ng-if="userMsg.rank_id!=0">
 		</div>
 		<div ng-cloak class="personal-name" ui-sref="nickname">
 			{{userMsg.nickname}}
