@@ -258,23 +258,13 @@ angular
         sessionStorage.setItem("juli",$(document).scrollTop())
         $state.go('description',{shop_id:id});
     }
-    //测试监听返回键
-     pushHistory();  
-            var bool=false;  
-            setTimeout(function(){  
-                  bool=true;  
-            },1500);  
-            window.addEventListener("popstate", function(e) {  
-              if(bool)  
-                {  
-                        alert("我监听到了浏览器的返回按钮事件啦");//根据自己的需求实现自己的功能  
-                }  
-                pushHistory();  
-                  
+    //测试监听返回键 
+    if($scope.add==1){
+        window.addEventListener("popstate", function(e) {  
+                alert("我监听到了浏览器的返回按钮事件啦");
+                window.location.reload();  
+                return;
         }, false);
-         function pushHistory (){
-           
-         }  
-
-
+    }
+         
 });
