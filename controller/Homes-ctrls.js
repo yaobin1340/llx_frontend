@@ -261,9 +261,9 @@ angular
     //测试监听返回键 
         window.addEventListener("popstate", function(e) { 
             if($scope.add==1){
-                alert("我监听到了浏览器的返回按钮事件啦");
-                window.location.reload();  
-                return;
+                // alert("我监听到了浏览器的返回按钮事件啦");
+                // event.preventDefault();
+                // return;
             }
         }, false);
          
