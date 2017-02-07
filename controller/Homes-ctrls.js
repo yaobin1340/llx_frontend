@@ -259,12 +259,12 @@ angular
         $state.go('description',{shop_id:id});
     }
     //测试监听返回键 
-    if($scope.add==1){
-        window.addEventListener("popstate", function(e) {  
+        window.addEventListener("popstate", function(e) { 
+            if($scope.add==1){
                 alert("我监听到了浏览器的返回按钮事件啦");
                 window.location.reload();  
                 return;
+            }
         }, false);
-    }
          
 });
