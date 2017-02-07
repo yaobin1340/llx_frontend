@@ -1,12 +1,13 @@
 
 	<link rel="stylesheet" href="/assets/css/shopCart.css">
-	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+	
 	<div class="banner navbar-fixed-top">
 		<img src="/assets/img/552cc14536532_128.png" alt="" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
 		<span>购物车</span>
 	</div>
 	<div class="padding"></div>
+	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="none" ng-show="!cart_list.length">您的购物车里是空的</div>
 	<div class="products" ng-show="cart_list.length"ng-repeat="carts in cart_list">
 		<div class="productItem"  >
@@ -27,3 +28,4 @@
 		<span ng-cloak>￥{{getTotalPrice()}}</span>
 		<div class="goPay" ng-click="goPay()">结算</div>
 	</footer>
+	</div>

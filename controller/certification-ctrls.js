@@ -44,7 +44,6 @@ angular
                 };
                 $scope.choseAdd = function(){
                         //调用后台，暂缺数据
-                        console.log($scope.photo);
                     $scope.message = '正在保存修改...'
                     $scope.promise = $http
                             .post($config.api_uri + '/Apishop/Audit',{photo:$scope.photo,name:$scope.name,zhucehao:$scope.zhucehao,addr:$scope.addr,pic:$scope.pic,zuzhidaima:$scope.zuzhidaima,end_date:$scope.end_date})

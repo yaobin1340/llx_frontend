@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/assets/css/allIndent.css">
-<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+<link rel="stylesheet" href="/assets/css/overflow.css">
+<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 <div class="row" ng-repeat="pr in arr">
 	<div class="col-sm-12 col-xs-12 indentMsg">
 		<div ng-cloak class="indentId">订单ID：{{pr.orders.order_id}}</div>
@@ -31,3 +32,4 @@
 	</div>
 </div>
 <div class="home_shop_nomore" ng-if='noLead'>-您已加载到底了-</div>
+</div>

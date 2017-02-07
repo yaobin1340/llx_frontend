@@ -319,6 +319,12 @@ angular
         templateUrl : 'views/shopCash.html',
         controller:'shopCashCtrl'
     };
+    this.routes['xiubiShop'] = {
+        url : '/xiubiShop?cate_id,cate_name,area_code,lat,lng',
+        title:'秀币商城',
+        templateUrl : 'views/xiubiShop.html',
+        controller:'xiubiShopCtrl'
+    };
     
 
 

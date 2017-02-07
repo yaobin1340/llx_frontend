@@ -1,31 +1,31 @@
 
 	<link rel="stylesheet" href="/assets/css/systemMsg.css">
-<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
 	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">会员信息</p>
 	</div>
 <div class="padding"></div>
+<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="sysMsg">
-		<div class="titleMsg">重要通知</div>
+		<div class="titleMsg">{{detail.title}}</div>
 		<div class="centerMsg">
-			<div class="centerMsg-name">尊敬的顾客：</div>
+			<div class="centerMsg-name">{{detail.intro}}</div>
 			<div class="centerMsg-items">
-				<p>由于是安大大阿达安捷达挖掘的阿达安捷达阿达阿达adjacent大大阿达啊啊大大  阿加挖到我大大挖到挖到挖到挖到我打打底袜大大哇哇哇 娃娃哇完哇就哇家外家阿加完哇哇今晚阿加哇哇哇文件就</p>
+				<p>{{detail.details}}</p>
 			</div>
 		</div>
 		<div class="line"></div>
 		<div class="bottomMsg clearfix">
 			<div class="bottomMsg-left">
-				2016-12-12
+				{{detail.create_time}}
 			</div>
 			<div class="bottomMsg-right">
-				12:12:12
+				
 			</div>
 		</div>
 		<div class="line"></div>
 	</div>
-
-
+</div>
 	

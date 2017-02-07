@@ -1,12 +1,12 @@
 	<link rel="stylesheet" href="/assets/css/shopMsg.css">
-	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+	
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
 	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">商户信息</p>
 	</div>
 	<div class="padding"></div>
-	
+	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="shopMsg">
 		<p class="time">营业时间：8:00-22:00</p>
 		<p ng-cloak class="addr">地址：{{detail.addr}}</p>
@@ -26,4 +26,4 @@
 			<span>暂无上传</span>
 			<img src="" alt="">
 		</div>
-	</div>
+	</div></div>

@@ -15,7 +15,7 @@ angular.module('ohapp').factory('mumber', function ($config, $http) {
         this.busy = true;
         this.promise = $http({
             method: 'POST',
-            url: $config.api_uri + '/Apiuser/Message/psmsg',
+            url: $config.api_uri + '/Apiuser/Message/vipmsg',
             data: {page:this.page},
         }).success(function (data) {
             console.log(data);

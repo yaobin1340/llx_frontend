@@ -122,15 +122,12 @@ angular
         }
 
         $scope.delect = function(id){
-            console.log(id);
             $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/order_del',{order_id:id})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                         angular.forEach($scope.arr,function(item, index){
                             if(item.orders.order_id==id){
-                                console.log(index)
                                 $scope.arr.splice(index,1);
                                 i--;
                                 return;

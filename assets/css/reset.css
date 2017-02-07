@@ -108,3 +108,6 @@ html,body{
 .shadow:hover{
   background-color: #e2e2e2;
 }
+#overflow{
+  overflow: auto;
+}

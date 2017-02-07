@@ -136,7 +136,10 @@ angular
                     if(data.success){
                        $scope.cate_list=data.cate_list;
                        angular.forEach(data.cate_list,function(item, index){
-                            if(item.cate_name==type){
+                            if(type=="秀币商城"){
+                                $state.go('xiubiShop',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:$scope.shops.lat,lng:$scope.shops.lng})
+                                return;
+                            }else if(item.cate_name==type){
                                 $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:$scope.shops.lat,lng:$scope.shops.lng})
                                 return;
                             }

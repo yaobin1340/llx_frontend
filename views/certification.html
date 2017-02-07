@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="/assets/css/information.css">
-<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
 	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">商户认证中心</p>
 	</div>
 	<div class="padding"></div>
+<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 <div class="upload">
 	<input size="100" id="fileToUpload" accept="image/*" name="fileToUpload" type="file" class="file" ng-show="show==0"/>
 	<button ng-show="show==0" >上传营业执照</button>
@@ -43,3 +44,4 @@
 </div>
 	<script src="/assets/js/localResizeIMG.js"></script>
 	<script src="/assets/js/mobileBUGFix.mini.js"></script>
+</div>

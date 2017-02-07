@@ -12,8 +12,12 @@ angular
         var $mdToast = $injector.get('$mdToast');
 
         if(JSON.stringify($session.get('log_id'))=='{}'){
-           window.location.reload();
-           return ;
+            if(confirm("获取订单失败，是否重试？")){
+              window.location.reload();
+              return;
+            }else{
+              $state.go("Mycart");
+            }
         }else{
           $scope.order_id=$session.get('order_id');
           $scope.need_pay=$session.get('need_pay');

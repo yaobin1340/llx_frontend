@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'restaurantsCtrl', function restaurantsCtrl( $scope, $injector, $rootScope,Shops,$stateParams) {
+    .controller( 'xiubiShopCtrl', function xiubiShopCtrl( $scope, $injector, $rootScope,xiubiShop,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -14,26 +14,25 @@ angular
             $scope.cate_name=$stateParams.cate_name;
             //初始化加载页面
             $scope.scroll_switch = 1;
-            $scope.shops = new Shops();
-            $scope.shops.cate_id=$stateParams.cate_id;
-            $scope.shops.cate_name=$stateParams.cate_name;
-            $scope.shops.order=$scope.order;
-            $scope.shops.lat=$stateParams.lat;
-            $scope.shops.lng=$stateParams.lng;
-            $scope.shops.area_code=$stateParams.area_code;
-            $scope.shops.items = [];
-            $scope.shops.end = false;
-            $scope.shops.busy = false;
-            $scope.shops.page = 1;
-            $scope.shops.nextPage();
+            $scope.xiubi = new xiubiShop();
+            $scope.xiubi.cate_id=$stateParams.cate_id;
+            $scope.xiubi.order=$scope.order;
+            $scope.xiubi.lat=$stateParams.lat;
+            $scope.xiubi.lng=$stateParams.lng;
+            $scope.xiubi.area_code=$stateParams.area_code;
+            $scope.xiubi.items = [];
+            $scope.xiubi.end = false;
+            $scope.xiubi.busy = false;
+            $scope.xiubi.page = 1;
+            $scope.xiubi.nextPage();
             //控制筛选
         $scope.jiazai = function(){
-            $scope.shops.order=$scope.order;
-            $scope.shops.items = [];
-            $scope.shops.end = false;
-            $scope.shops.busy = false;
-            $scope.shops.page = 1;
-            $scope.shops.nextPage();
+            $scope.xiubi.order=$scope.order;
+            $scope.xiubi.items = [];
+            $scope.xiubi.end = false;
+            $scope.xiubi.busy = false;
+            $scope.xiubi.page = 1;
+            $scope.xiubi.nextPage();
         }
         
 

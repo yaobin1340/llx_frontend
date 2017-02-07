@@ -1,11 +1,12 @@
 <link rel="stylesheet" href="/assets/css/information.css">
-<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
 	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">创建支付</p>
 	</div>
 	<div class="padding"></div>
+	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 <div class="uploadMsgs">
 	<div class="msg-items">
 		<span>会员手机</span>
@@ -29,14 +30,11 @@
 			<button class="anniu" ng-click="zp.zp_num=zp.zp_num+1">+</button>
 		</div>
 	</div>
-	
-	<!-- <div class="msg-items czhao" style="text-align: center;" ng-click="add()" ng-if="total!=undefined||total!=null">
-		+
-	</div> -->
 	<!-- 默认不显示部分 -->
 	<div class="msg-items">
 		<span style="text-indent: 1em;">备注</span>
 		<input type="text" ng-model="remark">
 	</div>
 	<button ng-click="affirm()" class="choseAdd">确认保存</button>	
+</div>
 </div>
