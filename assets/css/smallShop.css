@@ -160,6 +160,16 @@ a:hover {
 .allDish {
   margin-bottom: 2.08333333rem;
 }
+.xianshi {
+  position: fixed;
+  bottom: 1.32rem;
+  width: 100%;
+}
+.border-top {
+  border-top: 1px solid #ababab;
+  background-color: #fff;
+  padding-bottom: 0.3rem !important;
+}
 footer {
   background-color: #fff;
   position: fixed;

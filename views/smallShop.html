@@ -48,7 +48,7 @@
 		<p>本店会员:满￥100减￥{{detail.yhk1}},平台会员:满￥100减￥{{detail.yhk2}}</span>
 	</div>
 	<div class="bgc clearfix">
-		<div class="hotBuy">
+		<div class="hotBuy" name="rexiao" id="rexiao">
 			<div class="hotBuyTitle">热销</div>
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in hot_goods_list" ui-sref="product({goods_id:hot_goods.goods_id})">
@@ -61,9 +61,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="allDish">
+		<div class="allDish" name="all" id="all" >
 			<div class="hotBuyTitle">全部商品</div>
-
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="goods in goods_list" ui-sref="product({goods_id:goods.goods_id})">
 					<div class="userProducts">
@@ -77,9 +76,22 @@
 		</div>
 	</div>
 	
+
+	<div class="xianshi" ng-show="show==true">
+		<div class="row" ng-click="show=!show">
+			<div class="col-md-6 col-sm-6 col-xs-6 border-top">
+				<a class="footer-p" href="#rexiao">热销</a>
+			</div>
+		</div>
+		<div class="row" ng-click="show=!show">
+			<div class="col-md-6 col-sm-6 col-xs-6 border-top">
+				<a class="footer-p" href="#all">全部商品</a>
+			</div>
+		</div>
+	</div>
 	<footer>
 		<div class="row">
-			<div class="col-md-6 col-sm-6 col-xs-6">
+			<div class="col-md-6 col-sm-6 col-xs-6" ng-click="show=!show">
 				<p class="footer-p footer-p-img">分类</p>
 			</div>
 			<div class="col-md-6 col-sm-6 col-xs-6 ">

@@ -12,7 +12,7 @@ angular
 		var $mdToast = $injector.get('$mdToast');
 
  			var shareData,wxdata;
-
+            $scope.show=false;
             //加载动画
         $scope.delay = 0;
         $scope.minDuration = 0;
