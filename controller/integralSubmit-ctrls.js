@@ -68,7 +68,7 @@ angular
         $scope.notcut = function(){
             if($scope.needgold>0){
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
-                $scope.needgold=$scope.needgold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
+                $scope.needgold=$scope.needgold>$scope.price/100?$scope.price/100:$scope.gold;
             }else{
                 $scope.needgold=0;
             }
@@ -78,7 +78,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.msg = data.detail;
-                        $scope.needgold=$scope.gold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
+                        $scope.needgold=$scope.gold>$scope.price/100?$scope.price/100:$scope.gold;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
