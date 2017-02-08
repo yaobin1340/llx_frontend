@@ -332,16 +332,22 @@ angular
         controller:'xiubiShopCtrl'
     };
     this.routes['integralSubmit'] = {
-        url : '/integralSubmit',
+        url : '/integralSubmit?goods_id?addr_id',
         title:'提交订单',
         templateUrl : 'views/integralSubmit.html',
         controller:'integralSubmitCtrl'
     };
     this.routes['integralAddr'] = {
-        url : '/integralAddr',
+        url : '/integralAddr?goods_id',
         title:'选择收货地址',
         templateUrl : 'views/integralAddr.html',
         controller:'MaddressCtrl'
+    };
+    this.routes['xiubiProduct'] = {
+        url : '/xiubiProduct?goods_id',
+        title: '产品详情',
+        templateUrl : 'views/xiubiProduct.html',
+        controller:'xiubiProductCtrl'
     };
 
     

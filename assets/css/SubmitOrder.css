@@ -117,7 +117,10 @@ body {
   text-align: right;
   color: black;
   font-size: 0.45833333rem;
-  line-height: 0.97222222rem;
+  line-height: 0.8rem;
+  outline: none;
+  text-align: left;
+  margin-top: 0.1rem;
 }
 .span-color {
   color: #3e96c1;

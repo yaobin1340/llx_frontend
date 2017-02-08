@@ -59,7 +59,7 @@ angular
             }).success(function (data) {
                 if (data.success) {
                     $scope.area_name = data.map.name;
-                    $scope.shops.area_code = data.map.citycode;
+                    $scope.shops.area_code = data.map.code;
                     //加载附近商铺
                     $scope.shops.items = [];
                     $scope.shops.end = false;

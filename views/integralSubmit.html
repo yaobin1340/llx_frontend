@@ -14,34 +14,34 @@
 		</div>
 		<div class="address-right">
 			<div class="right-person">
-			<p class="person-left text-overflow">收货人：</p>
-			<p class="person-right">1560179656</p>
+			<p class="person-left text-overflow">收货人：{{adr.name}}</p>
+			<p class="person-right">{{adr.mobile}}</p>
 			</div>
-			<div class="right-addr"><span>收获地址：</span>
-			<img src="/assets/img/line.png" alt="">
+			<div class="right-addr"><span>收货地址：{{adr.province_name}}{{adr.city_name}}{{adr.area_name}}{{adr.addr}}</span>
+			<img src="/assets/img/line.png" alt="" ui-sref="integralAddr({goods_id:good_id})">
 			</div>
 		</div>
 	</div>
 	<img src="/assets/img/submit.png" alt="" class="fenge">
 	<div class="bg"></div>
-	<div ng-cloak class="shopname">
-		{{ds.shop_name}}
-	</div>
+<!-- 	<div ng-cloak class="shopname">
+		{{msg.shop_name}}
+	</div> -->
 	<div class="bgs"></div><div class="bgs"></div>
-	<div ng-repeat="goods in order_goods_info">
+<!-- 	<div ng-repeat="goods in order_goods_info"> -->
 		<div class="row">
 			<div class="col-sm-6 col-xs-6">
-				<p ng-cloak class="pr-name text-overflow">{{goods.title}}</p>
+				<p ng-cloak class="pr-name text-overflow">{{msg.title}}</p>
 			</div>
 			<div class="col-sm-6 col-xs-6">
 				<div class="col-sm-6 col-xs-6">
-					<p ng-cloak class="pr-num">x{{goods.num}}</p>
+					<p ng-cloak class="pr-num text-center">x{{1}}</p>
 				</div>
 				<div class="col-sm-6 col-xs-6">
-					<p ng-cloak class="pro-pri">￥{{goods.price/100}}</p>
+					<p ng-cloak class="pro-pri text-right">￥{{msg.price/100}}</p>
 				</div>
 			</div>
-		</div>
+		<!-- </div> -->
 	</div>
 	<div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
@@ -51,7 +51,7 @@
 			<div class="col-sm-6 col-xs-6">
 				<div class="col-sm-6 col-xs-6"></div>
 				<div class="col-sm-6 col-xs-6">
-					<p ng-cloak class="pro-pri">￥{{msg.total_price/100}}</p>
+					<p ng-cloak class="pro-pri">￥{{msg.price/100*1}}</p>
 				</div>
 			</div>
 		</div>
@@ -71,14 +71,11 @@
 
 	<div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
-			<div class="col-sm-6 col-xs-6">
+			<div class="col-sm-2 col-xs-2">
 				<p class="pr-name pr-color">备注</p>
 			</div>
-			<div class="col-sm-6 col-xs-6">
-				<div class="col-sm-6 col-xs-6"></div>
-				<div class="col-sm-6 col-xs-6">
-					<p class="pro-pri"></p>
-				</div>
+			<div class="col-sm-10 col-xs-10">
+				<input class="pro-pri" ng-model="remark">
 			</div>
 		</div>
 
@@ -118,7 +115,7 @@
 				<p class="pr-name pr-color">实付</p>
 			</div>
 			<div class="col-sm-2 col-xs-2">
-				<p ng-cloak class="pr-name text-left price-c">{{msg.total_price/100-needgold}}</p>
+				<p ng-cloak class="pr-name text-left price-c">{{msg.price/100*1-needgold}}</p>
 			</div>
 		</div>
 

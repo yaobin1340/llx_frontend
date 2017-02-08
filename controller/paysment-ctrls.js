@@ -16,7 +16,7 @@ angular
               window.location.reload();
               return;
             }else{
-              $state.go("Mycart");
+              $state.go("Mycart",{type:"noIndent"});
             }
         }else{
           $scope.order_id=$session.get('order_id');

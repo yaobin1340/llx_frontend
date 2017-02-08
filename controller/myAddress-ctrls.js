@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'MaddressCtrl', function MaddressCtrl( $scope, $injector, $rootScope,Address) {
+    .controller( 'MaddressCtrl', function MaddressCtrl( $scope, $injector, $rootScope,Address,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -17,9 +17,10 @@ angular
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
-    
         $scope.scroll_switch = 1;
         $scope.address = new Address();
+        //兼容选择收货地址
+        $scope.good_id=$stateParams.goods_id;
 
         $scope.delect =  function(adrId){
             $scope.promise = $http

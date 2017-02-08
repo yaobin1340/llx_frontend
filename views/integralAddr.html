@@ -11,7 +11,7 @@
 	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div infinite-scroll='address.nextPage()' infinite-scroll-disabled='address.busy' infinite-scroll-distance='1'>
 		<div ng-repeat="adr in address.items">
-		<div class="row">
+		<div class="row" ui-sref="integralSubmit({addr_id:adr.addr_id,goods_id:good_id})">
 			<div ng-cloak class="col-sm-6 col-xs-6 address-name">
 			<span style="color:#00a2f2" ng-if="adr.is_default==1">[默认地址]</span>{{adr.name}}</div>
 			<div ng-cloak class="col-sm-6 col-xs-6 address-phone text-right">{{adr.mobile}}</div>
