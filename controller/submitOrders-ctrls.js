@@ -24,7 +24,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.gold=data.gold/100;
-                        // $scope.needgold=data.gold/100;
+                        dingdan();
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -42,7 +42,8 @@ angular
                 $scope.needgold=0;
             }
         }
-        $scope.promise = $http
+        function dingdan(){
+            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Orderinfo/orderdetail',{order_id:$stateParams.order_id})
                 .success(function (data) {
                     if(data.success){
@@ -60,6 +61,8 @@ angular
                         );
                     }
                 })
+        }
+        
 
         $scope.subOrder=function(){
             $http

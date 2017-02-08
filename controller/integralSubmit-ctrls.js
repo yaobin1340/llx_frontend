@@ -26,7 +26,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.gold=data.gold/100;
-                        $scope.needgold=data.gold/100;
+                        dingdan();
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -73,7 +73,8 @@ angular
                 $scope.needgold=0;
             }
         }
-        $scope.promise = $http
+        function dingdan (){
+            $scope.promise = $http
                 .post($config.api_uri + '/Apipublic/ApiPjf/goodsdetail',{goods_id:$stateParams.goods_id})
                 .success(function (data) {
                     if(data.success){
@@ -88,6 +89,8 @@ angular
                         );
                     }
                 })
+        }
+        
 
         $scope.subOrder=function(){
             $http
@@ -100,6 +103,7 @@ angular
                                 .content("支付完成")
                                 .hideDelay(1000)
                             );
+                            // $state.go("Mycart",{type:"Indented"});
                         }else if(data.flag==2){
                             $session.set('order_id', data.logs.order_id)
                             $session.set('need_pay', data.logs.need_pay/100)
