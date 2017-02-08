@@ -21,8 +21,6 @@ angular
         $scope.isReady = false;
         $scope.$on('$viewContentLoaded', function() {
             //判断是否有缓存地址和经纬度
-            console.log(sessionStorage.getItem('area_name')+sessionStorage.getItem('lat')+sessionStorage.getItem('lng'));
-
             if(sessionStorage.getItem('area_name')==null||sessionStorage.getItem('lat')==null||sessionStorage.getItem('lng')==null){wxConfig();}else{
                 $scope.area_name = sessionStorage.getItem('area_name');
                 $scope.shops.area_code = sessionStorage.getItem('area_code');
@@ -200,7 +198,6 @@ angular
     }
 
     function wxConfig(){
-        console.log("config")
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
                 debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
@@ -212,7 +209,6 @@ angular
             });
         });
         wx.ready(function() {
-        console.log("huoqudizhi")
         wx.getLocation({
             type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
             success: function (res) {
