@@ -68,6 +68,7 @@ angular
         $scope.notcut = function(){
             if($scope.needgold>0){
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
+                $scope.needgold=$scope.needgold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
             }else{
                 $scope.needgold=0;
             }
@@ -76,7 +77,6 @@ angular
                 .post($config.api_uri + '/Apipublic/ApiPjf/goodsdetail',{goods_id:$stateParams.goods_id})
                 .success(function (data) {
                     if(data.success){
-                        console.log(data);
                         $scope.msg = data.detail;
                         $scope.needgold=$scope.gold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
                     }else{
@@ -93,7 +93,6 @@ angular
                 .post($config.api_uri + '/Apiuser/Apijf/save_order',{goods_id:$stateParams.goods_id,gold:$scope.needgold,pty:$scope.pty,addr_id:$scope.addr_id,remark:$scope.remark})
                 .success(function (data) {
                     if(data.success){
-                        console.log(data);
                         if(data.flag==1){
                             $mdToast.show(
                                 $mdToast.simple()
