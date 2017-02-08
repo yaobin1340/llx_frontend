@@ -25,6 +25,8 @@ angular
                 .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
                 .success(function (data) {
                     if(data.success){
+                        $scope.integral=data.integral;
+                        // $scope.needIntegral=data.integral;
                         $scope.gold=data.gold/100;
                         dingdan();
                     }else{
@@ -80,7 +82,15 @@ angular
                     if(data.success){
                         $scope.msg = data.detail;
                         $scope.price = data.detail.price;
-                        $scope.needgold=$scope.gold>$scope.price/100?$scope.price/100:$scope.gold;
+                        if($scope.integral/100>=$scope.price){
+                            $scope.needIntegral=$scope.price*100;
+                            return;
+                        }else{
+                            $scope.needIntegral=$scope.integral;
+                            $scope.price=$scope.price-$scope.needIntegral/100;
+                            $scope.needgold=$scope.gold>$scope.price/100?$scope.price/100:$scope.gold;
+                        }
+                        
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

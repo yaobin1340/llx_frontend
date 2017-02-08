@@ -24,9 +24,9 @@
 	</div>
 	<img src="/assets/img/submit.png" alt="" class="fenge">
 	<div class="bg"></div>
-<!-- 	<div ng-cloak class="shopname">
-		{{msg.shop_name}}
-	</div> -->
+	<div ng-cloak class="shopname">
+		积分商城
+	</div>
 	<div class="bgs"></div><div class="bgs"></div>
 <!-- 	<div ng-repeat="goods in order_goods_info"> -->
 		<div class="row">
@@ -56,20 +56,33 @@
 			</div>
 		</div>
 
-	<div class="bgs"></div><div class="bgs"></div>		
+	<div class="bgs"></div><div class="bgs"></div>
 	<div class="row">
+			<div class="col-sm-4 col-xs-4">
+				<p class="pr-name pr-color">使用秀币</p>
+			</div>
+			<div class="col-sm-3 col-xs-3">
+				<p class="pr-name text-left text-overflow">
+					<input class="text-overflow" type="text"style="width:100%;height: 100%;" ng-model="needIntegral" readonly="">
+				</p>
+			</div>
+			<div class="col-sm-5 col-xs-5">
+				<p class="pr-name">剩余秀币:<span ng-cloak class="span-color">{{integral}}</span></p>
+			</div>
+		</div>		
+	<!-- <div class="row">
 			<div class="col-sm-6 col-xs-6">
-				<p class="pr-name pr-color">优惠券抵扣</p>
+				<p class="pr-name pr-color">使用秀币</p>
 			</div>
 			<div class="col-sm-6 col-xs-6">
 				<div class="col-sm-6 col-xs-6"></div>
 				<div class="col-sm-6 col-xs-6">
-					<p class="pro-pri">-0</p>
+					<p class="pro-pri"></p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
-	<div class="bgs"></div><div class="bgs"></div>
+	<!-- <div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
 			<div class="col-sm-2 col-xs-2">
 				<p class="pr-name pr-color">备注</p>
@@ -77,9 +90,9 @@
 			<div class="col-sm-10 col-xs-10">
 				<input class="pro-pri" ng-model="remark">
 			</div>
-		</div>
+		</div> -->
 
-	<div class="bgs"></div><div class="bgs"></div>
+	<!-- <div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
 			<div class="col-sm-6 col-xs-6">
 				<p class="pr-name pr-color">赠品消费</p>
@@ -92,23 +105,23 @@
 					<p class="pro-pri"></p>
 				</div>
 			</div>
-		</div>
-
-	<div class="bgs"></div><div class="bgs"></div>
-		<div class="row">
-			<div class="col-sm-4 col-xs-4">
-				<p class="pr-name pr-color">使用余额</p>
+		</div> -->
+	<div ng-if="needgold!=undefined">
+		<div class="bgs"></div><div class="bgs"></div>
+			<div class="row">
+				<div class="col-sm-4 col-xs-4">
+					<p class="pr-name pr-color">使用余额</p>
+				</div>
+				<div class="col-sm-3 col-xs-3">
+					<p class="pr-name text-left text-overflow">
+						<input class="text-overflow" type="text"style="width:100%;height: 100%;" ng-model="needgold" ng-keyup="notcut()">
+					</p>
+				</div>
+				<div class="col-sm-5 col-xs-5">
+					<p class="pr-name">剩余金额:<span ng-cloak class="span-color">{{gold}}</span></p>
+				</div>
 			</div>
-			<div class="col-sm-3 col-xs-3">
-				<p class="pr-name text-left text-overflow">
-					<input class="text-overflow" type="text"style="width:100%;height: 100%;" ng-model="needgold" ng-keyup="notcut()">
-				</p>
-			</div>
-			<div class="col-sm-5 col-xs-5">
-				<p class="pr-name">剩余金额:<span ng-cloak class="span-color">{{gold}}</span></p>
-			</div>
-		</div>
-
+	</div>
 	<div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
 			<div class="col-sm-4 col-xs-4">
