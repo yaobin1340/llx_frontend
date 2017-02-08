@@ -56,7 +56,9 @@ angular
         　　var scrollHeight = $(document).height();
         　　var windowHeight = $(this).height();
         　　if(scrollTop + windowHeight == scrollHeight){
-        　　　　
+        　　　　if($scope.page>=$scope.maxPage){
+                    return;
+                }
                 $scope.page++;$scope.leadMore();
         　　}
         });
@@ -161,6 +163,7 @@ angular
                     .post($config.api_uri + '/Apishop/Money/detail',{bg_date:$scope.beDate,end_date:$scope.endDate,page:$scope.page})
                     .success(function (data) {
                         if(data.success){
+                            $scope.maxPage=data.maxpage;
                             if(data.list==null||!data.list.length){
                                 $scope.noLead=1;
                                 return

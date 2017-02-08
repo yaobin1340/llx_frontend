@@ -21,8 +21,8 @@
 			<p ng-cloak>时间：{{m.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</p>
 		</div>
 	</div>
-	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
-		<div ng-if='noLead' class="nullMoney">当前日期内暂无资金日志</div>
+	<div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+	<div ng-if='noLead' class="nullMoney">当前日期内暂无资金日志</div>
 
 </div>
 

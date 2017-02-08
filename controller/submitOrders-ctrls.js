@@ -24,7 +24,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.gold=data.gold/100;
-                        $scope.needgold=data.gold/100;
+                        // $scope.needgold=data.gold/100;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -35,7 +35,9 @@ angular
                 })
         $scope.notcut = function(){
             if($scope.needgold>0){
+
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
+                $scope.needgold=$scope.needgold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
             }else{
                 $scope.needgold=0;
             }
@@ -46,8 +48,10 @@ angular
                     if(data.success){
                         $scope.ds=data;
                         $scope.msg = data.detail;
+                        $scope.total_price=data.detail.total_price;
                         $scope.order_goods_info=data.order_goods_info;
                         $scope.xiubi=data.detail.can_use_integral;
+                        $scope.needgold=$scope.gold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -59,7 +63,7 @@ angular
 
         $scope.subOrder=function(){
             $http
-                .post($config.api_uri + '/Apiuser/Orderinfo/check_order',{order_id:$stateParams.order_id,gold:$scope.needgold})
+                .post($config.api_uri + '/Apiuser/Orderinfo/check_order',{order_id:$stateParams.order_id,gold:$scope.needgold*100})
                 .success(function (data) {
                     if(data.success){
                     $session.set('order_id', data.logs.order_id)
