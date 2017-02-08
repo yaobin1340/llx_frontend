@@ -78,6 +78,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.msg = data.detail;
+                        $scope.price = data.detail.price;
                         $scope.needgold=$scope.gold>$scope.price/100?$scope.price/100:$scope.gold;
                     }else{
                         $mdToast.show(
