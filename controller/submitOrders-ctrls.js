@@ -63,10 +63,10 @@ angular
 
         $scope.subOrder=function(){
             $http
-                .post($config.api_uri + '/Apiuser/Orderinfo/check_order',{order_id:$stateParams.order_id,gold:$scope.needgold*100,remark:$scope.remark})
+                .post($config.api_uri + '/Apiuser/Orderinfo/check_order',{order_id:$stateParams.order_id,gold:$scope.needgold,remark:$scope.remark})
                 .success(function (data) {
                     if(data.success){
-                        alert("使用余额："+$scope.needgold*100);
+                        alert("使用余额："+$scope.needgold);
                         alert(data.flag);
                         if(data.flag==1){
                             $mdToast.show(
