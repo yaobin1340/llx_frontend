@@ -66,21 +66,22 @@ angular
                 .post($config.api_uri + '/Apiuser/Orderinfo/check_order',{order_id:$stateParams.order_id,gold:$scope.needgold*100,remark:$scope.remark})
                 .success(function (data) {
                     if(data.success){
+                        alert("使用余额："+$scope.needgold*100);
+                        alert(data.flag);
                         if(data.flag==1){
                             $mdToast.show(
                             $mdToast.simple()
                                 .content("支付完成")
                                 .hideDelay(1000)
                             );
-                            $state.go("Mycart")
+                            $state.go("Mycart",{type:"Indented"});
                         }else if(data.flag==2){
-                            $session.set('order_id', data.logs.order_id)
-                            $session.set('need_pay', data.logs.need_pay/100)
-                            $session.set('log_id', data.logs.log_id)
-                            $session.save()
-                            $state.go('code');
+                            // $session.set('order_id', data.logs.order_id)
+                            // $session.set('need_pay', data.logs.need_pay/100)
+                            // $session.set('log_id', data.logs.log_id)
+                            // $session.save()
+                            // $state.go('code');
                         }
-                    
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

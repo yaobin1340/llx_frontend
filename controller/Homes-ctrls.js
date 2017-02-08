@@ -21,6 +21,8 @@ angular
         $scope.isReady = false;
         $scope.$on('$viewContentLoaded', function() {
             //判断是否有缓存地址和经纬度
+            console.log(sessionStorage.getItem('area_name'));
+            
             if(sessionStorage.getItem('area_name')==null||sessionStorage.getItem('lat')==null||sessionStorage.getItem('lng')==null){wxConfig();}else{
                 $scope.area_name = sessionStorage.getItem('area_name');
                 $scope.shops.area_code = sessionStorage.getItem('area_code');
