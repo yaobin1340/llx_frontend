@@ -238,17 +238,18 @@ angular
                         .content("定位失败,请重试或手动选择地区")
                         .hideDelay(2000)
                     );
-                $scope.shops.lat = 121.334349;
-                sessionStorage.setItem('lat',$scope.shops.lat);
-                $scope.shops.lng = 31.246386;
-                sessionStorage.setItem('lng',$scope.shops.lng);
-                $scope.area_name='上海市';
-                $scope.shops.area_code = 310000;
+                // $scope.shops.lat = 121.334349;
+                // sessionStorage.setItem('lat',$scope.shops.lat);
+                // $scope.shops.lng = 31.246386;
+                // sessionStorage.setItem('lng',$scope.shops.lng);
+                // $scope.area_name='上海市';
+                // $scope.shops.area_code = 310000;
                 $scope.shops.items = [];
                 $scope.shops.end = false;
                 $scope.shops.busy = false;
                 $scope.shops.page = 1;
                 $scope.shops.nextPage();
+                console.log($scope.shops.items);
           }
         });
     });

@@ -108,7 +108,7 @@ angular
                                 .hideDelay(1000)
                             );
                         }
-                        $state.go("home");
+                        $state.go("Mycart",{type:"Indented"});
                     })
         }
 
