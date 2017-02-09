@@ -34,12 +34,18 @@ angular
                     }
                 })
         $scope.notcut = function(){
+            console.log($scope.needgold>0);
             if($scope.needgold>0){
-
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
                 $scope.needgold=$scope.needgold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
+                $scope.totalNeedpay=$scope.total_price/100-$scope.needgold;
             }else{
                 $scope.needgold=0;
+                $scope.totalNeedpay=$scope.total_price/100-$scope.needgold;
+            }
+            if($scope.total_price/100-$scope.needgold<0){
+                $scope.totalNeedpay=0;
+                $scope.needgold=$scope.total_price/100;
             }
         }
         function dingdan(){
@@ -53,6 +59,7 @@ angular
                         $scope.order_goods_info=data.order_goods_info;
                         $scope.xiubi=data.detail.can_use_integral;
                         $scope.needgold=$scope.gold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
+                        $scope.totalNeedpay=$scope.total_price/100-$scope.needgold;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

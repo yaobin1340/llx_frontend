@@ -13,61 +13,61 @@
 	<nav>
 		<a ng-click="choseTWO('餐饮饭店')" >
 			<div>
-				<img src="/assets/img/restaurants.png" alt="餐饮饭店">
+				<img ng-src="/assets/img/restaurants.png" alt="餐饮饭店">
 				<span>餐饮饭店</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('酒店住宿')"  >
 			<div>
-				<img src="/assets/img/img_gv_jiudianzhusu.png" alt="酒店住宿">
+				<img ng-src="/assets/img/img_gv_jiudianzhusu.png" alt="酒店住宿">
 				<span>酒店住宿</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('休闲娱乐')" >
 			<div>
-				<img src="/assets/img/img_gv_shuiguoshengxian.png" alt="休闲娱乐">
+				<img ng-src="/assets/img/img_gv_shuiguoshengxian.png" alt="休闲娱乐">
 				<span>休闲娱乐</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('美容美发')" >
 			<div>
-				<img src="/assets/img/img_gv_meirongmeifa.png" alt="美容美发">
+				<img ng-src="/assets/img/img_gv_meirongmeifa.png" alt="美容美发">
 				<span>美容美发</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('健身娱乐')" >
 			<div>
-				<img src="/assets/img/img_gv_jianshenyule.png" alt="健身娱乐">
+				<img ng-src="/assets/img/img_gv_jianshenyule.png" alt="健身娱乐">
 				<span>健身娱乐</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('便利超市')" >
 			<div>
-				<img src="/assets/img/img_gv_bianlichaoshi.png" alt="便利超市">
+				<img ng-src="/assets/img/img_gv_bianlichaoshi.png" alt="便利超市">
 				<span>便利超市</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('母婴商店')" >
 			<div>
-				<img src="/assets/img/Maternal-and-child-supplies.png" alt="母婴商店">
+				<img ng-src="/assets/img/Maternal-and-child-supplies.png" alt="母婴商店">
 				<span>母婴商店</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('医疗健康')" >
 			<div>
-				<img src="/assets/img/img_gv_yiliaojiankang.png" alt="医疗健康">
+				<img ng-src="/assets/img/img_gv_yiliaojiankang.png" alt="医疗健康">
 				<span>医疗健康</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('秀币商城')" >
 			<div>
-				<img src="/assets/img/img_gv_jifenshangcheng.png" alt="秀币商城">
+				<img ng-src="/assets/img/img_gv_jifenshangcheng.png" alt="秀币商城">
 				<span>秀币商城</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('团购优惠')" >
 			<div>
-				<img src="/assets/img/img_gv_tuangouyouhui.png" alt="团购优惠">
+				<img ng-src="/assets/img/img_gv_tuangouyouhui.png" alt="团购优惠">
 				<span>团购优惠</span>
 			</div>
 		</a>
@@ -75,19 +75,19 @@
 	<hr class="hr-change">
 	<div class="advertisement clearfix">
 			<div class="top-left">
-				<a href=""><img src="assets/img/shili/01.png" alt=""></a>
+				<a href=""><img ng-src="assets/img/shili/01.png" alt=""></a>
 			</div>
 			<div class="top-right">
-				<a href=""><img src="assets/img/shili/02.png" alt=""></a>
+				<a href=""><img ng-src="assets/img/shili/02.png" alt=""></a>
 			</div>
 			<div class="bottom-left">
-				<a href=""><img src="assets/img/shili/03.png" alt=""></a>
+				<a href=""><img ng-src="assets/img/shili/03.png" alt=""></a>
 			</div>
 			<div class="bottom-left">
-				<a href=""><img src="assets/img/shili/04.png" alt=""></a>
+				<a href=""><img ng-src="assets/img/shili/04.png" alt=""></a>
 			</div>
 			<div class="bottom-right">
-				<a href=""><img src="assets/img/shili/05.png" alt=""></a>
+				<a href=""><img ng-src="assets/img/shili/05.png" alt=""></a>
 			</div>
 	</div>
 	<hr class="hr-change">
@@ -108,11 +108,11 @@
 					{{shop.addr|cut}}
 				</div>
 				<div class="col-sm-6 col-xs-6"style="padding:0;">
-					<img src="/assets/img/star.png" alt="" class="star">
-					<img src="/assets/img/star.png" alt="" class="star">
-					<img src="/assets/img/star.png" alt="" class="star">
-					<img src="/assets/img/star.png" alt="" class="star">
-					<img src="/assets/img/star2.png" alt="" class="star">
+					<img ng-src="/assets/img/star.png" alt="" class="star">
+					<img ng-src="/assets/img/star.png" alt="" class="star">
+					<img ng-src="/assets/img/star.png" alt="" class="star">
+					<img ng-src="/assets/img/star.png" alt="" class="star">
+					<img ng-src="/assets/img/star2.png" alt="" class="star">
 				</div>
 				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;">
 					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
@@ -129,7 +129,7 @@
 
 <div class="containers" ng-show="add==1">
 	<div class="banner">
-	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(0);">
+	    <img ng-src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(0);">
 	    <p>选择地区</p>
 	</div>
 	<div style="margin-bottom: 0.8rem;">
@@ -137,7 +137,7 @@
 			<div ng-click="province_code(p.code,p.name)" >
 				<div ng-cloak class="col-sm-10 col-xs-10">{{p.name}}</div>
 				<div class="col-sm-2 col-xs-2 text-right">
-					<img src="/assets/img/line.png" alt="" class="lines">
+					<img ng-src="/assets/img/line.png" alt="" class="lines">
 				</div>
 			</div>
 		</div>
@@ -145,7 +145,7 @@
 			<div ng-click="choseNear(c.code,c.name)" >
 				<div ng-cloak class="col-sm-10 col-xs-10">{{c.name}}</div>
 				<div class="col-sm-2 col-xs-2 text-right">
-					<img src="/assets/img/line.png" alt="" class="lines">
+					<img ng-src="/assets/img/line.png" alt="" class="lines">
 				</div>
 			</div>
 		</div>
@@ -154,7 +154,7 @@
 			<div ng-click="toacrt(n.code,n.name)" >
 				<div ng-cloak class="col-sm-10 col-xs-10">{{n.name}}</div>
 				<div class="col-sm-2 col-xs-2 text-right">
-					<img src="/assets/img/line.png" alt="" class="lines">
+					<img ng-src="/assets/img/line.png" alt="" class="lines">
 				</div>
 			</div>
 		</div>

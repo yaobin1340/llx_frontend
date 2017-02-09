@@ -68,11 +68,18 @@ angular
                 })      
 
         $scope.notcut = function(){
+
             if($scope.needgold>0){
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
-                $scope.needgold=$scope.needgold>$scope.price/100?$scope.price/100:$scope.gold;
+                $scope.needgold=$scope.gold>$scope.prices?$scope.prices:$scope.gold;
+                $scope.totalNeedpay=$scope.prices-$scope.needgold;
             }else{
                 $scope.needgold=0;
+                $scope.totalNeedpay=$scope.prices-$scope.needgold;
+            }
+            if($scope.prices-$scope.needgold<0){
+                $scope.totalNeedpay=0;
+                $scope.needgold=$scope.prices;
             }
         }
         function dingdan (){
@@ -81,16 +88,16 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.msg = data.detail;
-                        $scope.price = data.detail.price;
+                        $scope.price = data.detail.price/100;
                         if($scope.integral/100>=$scope.price){
-                            $scope.needIntegral=$scope.price*100;
+                            $scope.needIntegral=$scope.price;
                             return;
                         }else{
                             $scope.needIntegral=$scope.integral;
-                            $scope.price=$scope.price-$scope.needIntegral/100;
-                            $scope.needgold=$scope.gold>$scope.price/100?$scope.price/100:$scope.gold;
+                            $scope.prices=$scope.price-$scope.needIntegral/100;
+                            $scope.needgold=$scope.gold>$scope.prices?$scope.prices:$scope.gold;
+                            $scope.totalNeedpay=$scope.prices-$scope.needgold;
                         }
-                        
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
