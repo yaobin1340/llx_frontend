@@ -24,10 +24,10 @@
 	<div ng-repeat="zp in pay.zp_list">
 		<div class="msg-items">
 			<span style="text-indent: 1em;float: left;">赠品</span>
-			<input type="text" class="zenpin desc1" ng-model="zp.zp_name" readonly="">
-			<button class="anniu" ng-click="zp.zp_num=(zp.zp_num-1)>0?(zp.zp_num-1):0">-</button>
-			<input class="munZen" ng-model="zp.zp_num" style="min-width:1.1rem;max-width:1.8rem;height:1.2rem" readonly="">
-			<button class="anniu" ng-click="zp.zp_num=zp.zp_num+1">+</button>
+			<input type="text" class="zenpin desc1" readonly="" value="{{zp.zp_name}}{{(zp.zp_num)}}件">
+			<button class="anniu" ng-click="zp.zp_nums=(zp.zp_nums-1)>0?(zp.zp_nums-1):0">-</button>
+			<input class="munZen" ng-model="zp.zp_nums" style="min-width:1.1rem;max-width:1.8rem;height:1.2rem" readonly="" ng-init="zp.zp_nums=0">
+			<button class="anniu" ng-click="zp.zp_nums=(zp.zp_nums+1)>zp.zp_num?zp.zp_num:(zp.zp_nums+1)">+</button>
 		</div>
 	</div>
 	<!-- 默认不显示部分 -->

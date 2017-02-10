@@ -1,20 +1,24 @@
-	<link rel="stylesheet" href="/assets/css/product.css">
-<div class="discuss-cen"   infinite-scroll='evaluate.nextPage()' infinite-scroll-disabled='evaluate.busy' infinite-scroll-distance='1' >
-		<div class="contianers" ng-repeat="item in evaluate.items">
-			<div class="dis-top">
-				<img src="" alt="" class="dis-tou">
-				<span ng-cloak class="dis-name">{{item.user_nickname}}</span>
-				<img src="http://wap.51loveshow.com/attachs/{{user_face}}" alt="">
-				<span ng-cloak class="dis-data">{{item.create_time}}</span>
-			</div>
-			<p ng-cloak class="dis-cont">{{item.contents}}</p>
-			 <p class="dis-type">哈哈机打就打科技</p> 
-			<div class="row dis-photo">
-				<div class="col-sm-3" ng-repeat="p in item.pic">
-					<img ng-src="http://wap.51loveshow.com/attachs/{{p}}" alt="">
-				</div>
-			</div>
-		</div>
-	</div>
-<div  cg-busy="{promise:evaluate.promise,templateUrl:evaluate.templateUrl,message:evaluate.message,backdrop:evaluate.backdrop,delay:evaluate.delay,minDuration:evaluate.minDuration}"></div>
-<div class="home_shop_nomore" ng-show='shops.end'>-暂无更多店铺-</div>
+
+<link rel="stylesheet" href="/assets/css/pingjia.css">
+<link rel="stylesheet" href="/assets/css/overflow.css">
+<div class="banner navbar-fixed-top">
+    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">评价</p>
+</div>
+<div class="padding"></div>
+<div class="menu row">
+	<div class="col-sm-4 col-xs-4"ng-class="{'border':chose1}" ng-click="chose(1)">全部({{totalnum}})</div>
+	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose2}" ng-click="chose(2)">晒图{{totalnum_haspic}}</div>
+	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose3}"   ng-click="chose(3)">最新</div>
+</div>
+<div ng-include="'views/pingjiaAll.html'" ng-if="chose1==1" ng-controller="pingjiaAllCtrl">
+	
+</div>
+<div  ng-include="'views/pingjiaPhoto.html'" ng-if="chose2==1" ng-controller="pingjiaPhotoCtrl">
+	
+</div>
+<div ng-include="'views/pingjiaNow.html'"ng-if="chose3==1" ng-controller="pingjiaNowCtrl">
+	
+</div>
+

@@ -6,6 +6,7 @@ angular.module('ohapp').factory('evaluatePr', function ($config, $http) {
         this.page = 1;
         this.end = false;
         this.goods_id='';
+        this.orderby='';
         this.minDuration = 0;
         this.message = '正在加载...';
         this.backdrop = true;
@@ -18,7 +19,7 @@ angular.module('ohapp').factory('evaluatePr', function ($config, $http) {
         this.promise = $http({
             method: 'POST',
             url: $config.api_uri + '/Apipublic/ApiPshop/goodsdianPing',
-            data: {goods_id:this.goods_id,page:this.page},
+            data: {goods_id:this.goods_id,page:this.page,orderby:this.orderby},
         }).success(function (data) {
             console.log(data);
             if (data.success) {

@@ -1,7 +1,8 @@
 <link rel="stylesheet" href="/assets/css/allIndent.css">
 <link rel="stylesheet" href="/assets/css/overflow.css">
 
-<div class="row" ng-repeat="pr in arr">
+<div infinite-scroll='cartIndent.nextPage()' infinite-scroll-disabled='cartIndent.busy' infinite-scroll-distance='1' >
+<div class="row" ng-repeat="pr in cartIndent.items">
 	<div class="col-sm-12 col-xs-12 indentMsg">
 		<div ng-cloak class="indentId">订单ID：{{pr.orders.order_id}}</div>
 		<div ng-cloak class="indemtTime">
@@ -11,18 +12,21 @@
 	<div class="col-sm-12 col-xs-12 bgt" ng-repeat="good in pr.goods">
 		<div class="indent-center">
 			<div class="indentPhoto">
-				<img ng-src="http://wap.51loveshow.com/attachs/{{good.g_photo}}" alt="">
+				<img src="http://wap.51loveshow.com/attachs/{{good.g_photo}}" alt="">
 			</div>
 			<div class="indent-num">
 				<p ng-cloak class="text-overflow">{{good.g_title}}</p>
 				<div>小计：<span ng-cloak>￥{{good.price/100}}x{{good.num}}={{good.total_price/100}}元</span></div>
-				<!-- <div>使用秀币：<span ng-cloak>{{good.g_use_integral}}抵现：{{good.g_use_integral/100}}元</span></div> -->
+				<!-- <div>使用余额：<span ng-cloak>{{good.g_use_integral}}元</span></div> -->
 			</div>
 		</div>
 	</div>
 	<div class="col-sm-12 col-xs-12 indentMsg">
+		<div>使用余额：<span ng-cloak class="indentPrice">￥{{pr.orders.use_gold/100}}</span> 元</div>
+	</div>
+	<div class="col-sm-12 col-xs-12 indentMsg">
 		<div ng-if="pr.orders.is_daofu==0">实际支付：<span ng-cloak class="indentPrice">￥{{pr.orders.need_pay/100}}</span> 元</div>
-		<div ng-if="pr.orders.is_daofu==1">实际支付：<span ng-cloak class="indentPrice">￥{{(pr.orders.total_price-pr.orders.mobile_fan-pr.orders.use_integral)/100}}</span> 元</div>
+		<div ng-if="pr.orders.is_daofu==1">实际支付：<span ng-cloak class="indentPrice">￥{{(pr.orders.total_price-pr.orders.mobile_fan)/100}}</span> 元</div>
 	</div>
 	<div class="col-sm-12 col-xs-12 btmindent">
 		<div>
@@ -34,6 +38,6 @@
 		</div>
 	</div>
 </div>
-<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
-<div class="home_shop_nomore" ng-if='noLead'>-您已加载到底了-</div>
 </div>
+<div cg-busy="{promise:cartIndent.promise,templateUrl:cartIndent.templateUrl,message:cartIndent.message,backdrop:cartIndent.backdrop,delay:cartIndent.delay,minDuration:cartIndent.minDuration}"></div>
+	<div class="home_shop_nomore" ng-show='cartIndent.end'>-暂无更多订单-</div>

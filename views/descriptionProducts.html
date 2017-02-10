@@ -1,9 +1,10 @@
 
 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css">
+	<link rel="stylesheet" href="/assets/css/overflow.css">
 	<script src="/assets/js/qrcode.min.js"></script>
 <div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="banner" style="background: url(http://wap.51loveshow.com/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
-	background-size:auto 100%;">
+	background-size:auto 100%;height: 5.32rem;">
 			<div class="cir cir-left img-circle">
 				<img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);">
 			</div>
@@ -90,9 +91,19 @@
   			<button class="btn btnact " ng-click="change(3)" ng-if="num==3">晒图评价</button>
   			<button class="btn " ng-click="change(3)" ng-if="num!=3">晒图评价</button>
 		</div>
-		<div class="none clearfix" ng-if="list==null">暂无评论信息</div>
+		<!-- 测试评论区 -->
+		<div ng-include="'views/shopdescAll.html'" ng-if="num==1" ng-controller="shopdescAllCtrl">
+		
+		</div>
+		<div  ng-include="'views/shopdescAll.html'" ng-if="num==2" ng-controller="shopdescPhotoCtrl">
+			
+		</div>
+		<div ng-include="'views/shopdescAll.html'"ng-if="num==3" ng-controller="shopdescNowCtrl">
+			
+		</div>
+		<!-- <div class="none clearfix" ng-if="list==null">暂无评论信息</div> -->
 		<!-- 评论相关信息 -->
-		<div class="commentMsg clearfix" ng-repeat="userContent in list">
+<!-- 		<div class="commentMsg clearfix" ng-repeat="userContent in list">
 			<img ng-src="http://wap.51loveshow.com/attachs/{{userContent.user_face}}" alt="" class="userImg">
 			<div class="userContent">
 				<span ng-cloak class="userName">{{userContent.user_nickname}}</span>
@@ -115,6 +126,6 @@
 					<button ng-click="">赞</button>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>

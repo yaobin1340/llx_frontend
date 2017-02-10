@@ -21,13 +21,10 @@
 		<span ng-cloak class="zhekou">{{productMsg_list.mall_price/productMsg_list.price*10}}折</span>
 		<p ng-cloak>原价：<del ng-cloak>￥{{productMsg_list.price/100}}</del>&nbsp;月售：{{productMsg_list.sold_num}}笔 &nbsp;库存：{{productMsg_list.num}}张</p>
 	</div>
-	<div class="certification">
+	<div class="certification" ng-if="is_vs!=0">
 		<p><span ng-if="productMsg_list.is_vs1==1">认证商家</span><span ng-if="productMsg_list.is_vs2==1">正品保证</span><span ng-if="productMsg_list.is_vs3==1">假一赔十</span><span ng-if="productMsg_list.is_vs4==1">当日送达</span><span ng-if="productMsg_list.is_vs5==1">免运费</span><span ng-if="productMsg_list.is_vs6==1">货到付款</span></p>
 	</div>
-	<div class="discuss">
-		<span ng-cloak class="discuss-title">评论（{{productMsg.pingnum}}）</span>
-		<span class="see-all"ng-click="seeAll()" ui-sref="pingjia({goods_id:good_id})">查看全部评论</span>
-	</div>
+
 	<!-- <div class="discuss-cen"   infinite-scroll='evaluate.nextPage()' infinite-scroll-disabled='evaluate.busy' infinite-scroll-distance='1' >
 		<div class="contianers" ng-repeat="item in evaluate.items">
 			<div class="dis-top">
@@ -54,7 +51,11 @@
 		<p ng-bind-html="productMsg_list.details | to_trusted"></p>
 		<img ng-src="http://wap.51loveshow.com/attachs/{{productMsg.pics.photo}}" alt="">
 	</div>
+	<div class="discuss" style="margin-bottom: 1.5rem;">
+		<span ng-cloak class="discuss-title">评论（{{productMsg.pingnum||0}}）</span>
+		<span class="see-all"ng-click="seeAll()" ui-sref="pingjia({goods_id:good_id})">查看全部评论</span>
+	</div>
 	<footer class="navbar-fixed-bottom">
-		<div class="goPay" ui-sref="integralSubmit({goods_id:good_id})" style="width: 100%;">立即兑换</div>
+		<div class="goPay" ui-sref="integralSubmit({goods_id:good_id})" style="width: 100%;font-size: 0.6rem;">立即兑换</div>
 	</footer>
 	</div>

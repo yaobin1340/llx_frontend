@@ -34,7 +34,6 @@ angular
                     $scope.shops.nextPage();
                     if (sessionStorage.getItem('juli')!=null){
                         $(document).scrollTop(sessionStorage.getItem('juli'));
-                        console.log($(document).scrollTop());
                     }
                 }
             // wxConfig();
@@ -118,7 +117,7 @@ angular
         $scope.choseNear = function(city,ac){
             $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
-
+                    console.log(data);
                     if(data.success){
                         $scope.c=ac;
                         $scope.add_p=[];
@@ -158,7 +157,7 @@ angular
                                 $state.go('xiubiShop',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }else if(item.cate_name==type){
-                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
+                                $state.go('restaurant',{cate_id:item.cate_id,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }
                         })

@@ -1,34 +1,42 @@
-angular.module('ohapp').factory('Evaluate', function ($config, $http) {
-    var Evaluate = function (a) {
+angular.module('ohapp').factory('CartIndent', function ($config, $http) {
+    var CartIndent = function (a) {
         this.items = [];
         this.busy = false;
         this.after = '';
         this.page = 1;
         this.end = false;
-        this.shop_id='';
         this.orderby='';
+        this.aready='';
         this.minDuration = 0;
         this.message = '正在加载...';
         this.backdrop = true;
         this.promise = null;
     };
-    Evaluate.prototype.nextPage = function () {
+    CartIndent.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
         this.promise = $http({
             method: 'POST',
-            url: $config.api_uri + '/Apipublic/ApiPshop/shopDianPing',
-            data: {shop_id:this.shop_id,page:this.page,orderby:this.orderby},
+            url: $config.api_uri + '/Apiuser/Orderinfo/orderlist',
+            data: {page:this.page,aready:this.aready},
         }).success(function (data) {
             if (data.success) {
-                if(data.list==null||!data.list.length){
+                if(data.order_list==null||!data.order_list.length){
                     this.end = true;
                     return
                 }
-                var items = data.list;
+                var items = data.order_list;
+                var goods = data.goods;
+                var arr=[];
                 for (var i = 0; i < items.length; i++) {
-                    this.items.push(items[i]);
+                    for (var j = 0; j < goods.length; j++) {
+                        if(items[i].order_id==goods[j].order_id){
+                                arr.push(goods[j]);
+                        }
+                    }
+                    this.items.push({orders:items[i],goods:arr});
+                    arr=[];
                 }
                 this.after = "t3_" + this.items[this.items.length - 1].id;
                 this.busy = false;
@@ -40,6 +48,6 @@ angular.module('ohapp').factory('Evaluate', function ($config, $http) {
         }.bind(this))
     };
 
-    return Evaluate;
+    return CartIndent;
 
 });

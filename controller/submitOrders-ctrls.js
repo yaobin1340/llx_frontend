@@ -34,7 +34,6 @@ angular
                     }
                 })
         $scope.notcut = function(){
-            console.log($scope.needgold>0);
             if($scope.needgold>0){
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
                 $scope.needgold=$scope.needgold>$scope.total_price/100?$scope.total_price/100:$scope.gold;

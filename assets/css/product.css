@@ -61,6 +61,7 @@ footer {
 .proMsg {
   width: 100%;
   text-indent: 0.36111111rem;
+  padding-bottom: 0.2rem;
 }
 .proMsg h1 {
   margin-top: 0.97222222rem;
@@ -170,9 +171,6 @@ footer {
 }
 .discuss-cen .dis-photo {
   margin: 0.625rem 0;
-}
-.p-introduce {
-  margin-bottom: 1.38888889rem;
 }
 .p-introduce p {
   margin: 0 0.36111111rem;

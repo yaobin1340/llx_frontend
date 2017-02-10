@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'onlinePayCtrl', function onlinePayCtrl( $scope, $injector, $rootScope,$stateParams) {
+    .controller( 'jforderMsgCtrl', function jforderMsgCtrl( $scope, $injector, $rootScope,$stateParams) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -10,21 +10,20 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-
-        //加载动画
+    
+// 注释信息
         $scope.delay = 0;
         $scope.minDuration = 0;
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
-
-        //获取账号余额信息
-        $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
+        $scope.order_id=$stateParams.order_id;
+            $scope.promise = $http
+                .post($config.api_uri + '/Apiuser/Apijf/order_detail',{order_id:$stateParams.order_id})
                 .success(function (data) {
                     if(data.success){
-                        $scope.gold=data.gold/100;
-                        dingdan();
+                        $scope.msg = data.order_detail;
+                        $scope.goods_list = data.goods_list;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -32,35 +31,21 @@ angular
                             .hideDelay(1000)
                         );
                     }
-                });
+                })
 
-        //用户输入金额
-        $scope.notcut = function(){
-            if($scope.needgold>0){
-                $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
-                $scope.needgold=$scope.gold>$scope.needPay?$scope.needPay:$scope.gold;
-                $scope.totalNeedpay=$scope.needPay-$scope.needgold;
-            }else{
-                $scope.needgold=0;
-                $scope.totalNeedpay=$scope.needPay-$scope.needgold;
-            }
-            if($scope.needPay-$scope.needgold<0){
-                $scope.totalNeedpay=0;
-                $scope.needgold=$scope.needPay;
-            }
-        }
-
-        function dingdan (){
+            //删除订单
+        $scope.quxiao = function(id){
+            $scope.message = '正在取消订单...';
             $scope.promise = $http
-                .post($config.api_uri + '/Apishop/ApiSorder/pay',{id:$stateParams.pay_id,gold:$scope.needgold})
+                .post($config.api_uri + '/Apiuser/Apijf/order_delete',{order_id:id})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
-                        $scope.detail=data.detail;
-                        $scope.zp_list=data.zp_list;
-                        $scope.needPay=data.detail.total-data.detail.yhk;
-                        $scope.needgold=$scope.gold>$scope.needPay?$scope.needPay:$scope.gold;
-                        $scope.totalNeedpay=$scope.needPay-$scope.needgold;
+                        angular.forEach($scope.xiubicart.items,function(item, index){
+                                if(item.jforder_id==id){
+                                    $scope.xiubicart.items.splice(index, 1);
+                                    return;
+                                }
+                            });
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -71,18 +56,41 @@ angular
                 })
         }
 
-        $scope.affirm = function(){
+        //确认收货
+        $scope.shouhuo = function(id){
+            $scope.message = '正在确认收货...';
             $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/pay/check_pay',{id:$stateParams.pay_id,gold:$scope.needgold})
+                .post($config.api_uri + '/Apiuser/Apijf/order_sh',{order_id:id})
+                .success(function (data) {
+                    if(data.success){
+                        angular.forEach($scope.xiubicart.items,function(item, index){
+                                if(item.jforder_id==id){
+                                    $scope.xiubicart.items[index].status=4;
+                                    return;
+                                }
+                            });
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+        }
+        //立即支付
+        $scope.paynow = function(id){
+            $scope.message = '正在支付中...';
+            $scope.promise = $http
+                .post($config.api_uri + '/Apiuser/Apijf/order_pay',{order_id:id})
                 .success(function (data) {
                     if(data.success){
                         if(data.flag==1){
-                            $mdToast.show(
+                           $mdToast.show(
                             $mdToast.simple()
-                                .content("支付完成")
+                                .content("支付成功")
                                 .hideDelay(1000)
-                            );
-                            window.history.go(-1);
+                            ); 
                         }else if(data.flag==2){
                             $session.set('order_id', data.logs.order_id)
                             $session.set('need_pay', data.logs.need_pay/100)
@@ -98,7 +106,8 @@ angular
                         );
                     }
                 })
-        }
+        };
+
 
 
 

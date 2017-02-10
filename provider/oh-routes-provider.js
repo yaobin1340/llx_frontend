@@ -179,7 +179,7 @@ angular
         controller:'OpinionCtrl'
     };
     this.routes['restaurant'] = {
-        url : '/restaurant?cate_id,cate_name,area_code,lat,lng',
+        url : '/restaurant?cate_id,area_code,lat,lng',
         title: '二级菜单',
         templateUrl : 'views/restaurant.html',
         controller:'restaurantsCtrl'
@@ -348,6 +348,24 @@ angular
         title: '产品详情',
         templateUrl : 'views/xiubiProduct.html',
         controller:'xiubiProductCtrl'
+    };
+    this.routes['xiubiCart'] = {
+        url : '/xiubiCart',
+        title: '秀币商城订单',
+        templateUrl : 'views/xiubiCart.html',
+        controller:'xiubiCartCtrl'
+    };
+    this.routes['courierMsg'] = {
+        url : '/courierMsg?order_id',
+        title: '物流信息',
+        templateUrl : 'views/courierMsg.html',
+        controller:'courierMsgCtrl'
+    };
+    this.routes['jforderMsg'] = {
+        url : '/jforderMsg?order_id',
+        title: '物流信息',
+        templateUrl : 'views/jforderMsg.html',
+        controller:'jforderMsgCtrl'
     };
 
     

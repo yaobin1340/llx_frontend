@@ -72,8 +72,8 @@ angular
             var descs=[],qtys=[];
                     angular.forEach($scope.pay.zp_list,function(item, index){
                             descs.push(item.zp_name);
-                            qtys.push(item.zp_num);
-                        })
+                            qtys.push(item.zp_nums);
+                        });
             $scope.promise = $http
                     .post($config.api_uri+'/Apishop/ApiSorder/create',{mobile:$scope.mobile,remark:$scope.remark,total:$scope.total,desc:descs,qty:qtys})
                     .success(function (data) {

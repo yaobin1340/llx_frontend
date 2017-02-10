@@ -14,7 +14,7 @@
 				订单编号
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right">
-				{{msg.order_id}}
+				{{msg.jforder_id}}
 			</div>
 		</div>
 		<div class="row">
@@ -22,7 +22,15 @@
 				订单金额
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.total_price/100}}元
+				￥{{msg.total/100}}元
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-xs-4">
+				使用秀币
+			</div>
+			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
+				{{msg.integral}}抵现{{msg.integral/100}}元
 			</div>
 		</div>
 		<div class="row">
@@ -30,7 +38,7 @@
 				使用余额
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.use_gold/100}}元
+				￥{{msg.gold/100}}元
 			</div>
 		</div>
 		<div class="row">
@@ -46,11 +54,11 @@
 				下单时间
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right">
-				{{msg.c_time}}
+				{{msg.cdate}}
 			</div>
 		</div>
 		<div class="hr-tp"></div>
-		<div class="prMsg" ng-repeat="goods in order_goods_info">
+		<div class="prMsg" ng-repeat="goods in goods_list">
 			<div class="prMsg-pic">
 				<img ng-src="http://wap.51loveshow.com/attachs/{{goods.photo}}" alt="">
 			</div>
@@ -59,19 +67,16 @@
 				<span ng-cloak>￥{{goods.price/100}}</span>
 			</div>
 			<div class="prMsg-num">
-			<p ng-cloak class="text-right">x{{goods.num}}</p>
+			<p ng-cloak class="text-right">x{{goods.pty}}</p>
 			</div>
 		</div>
 	</div>
-
 	<div class="rows">
 		<div class="col-sm-12 col-xs-12">
-			<button class="success" ng-if="msg.is_daofu==0&&msg.status!=0">
-				已完成
-			</button>
-			<button class="success " ng-if="msg.is_daofu==0&&msg.status==0" ui-sref="SubmitOrder({order_id:msg.order_id})">
-				立即付款
-			</button>
-		</div>
+			<button class="success" ng-show="msg.status==1" ng-click="paynow(msg.jforder_id)">立即付款</button>
+			<button class="success" ng-show="msg.status==2">待发货</button>
+			<button class="success" ng-show="msg.status==3" ui-sref="courierMsg({order_id:msg.jforder_id})">物流信息</button>
+			<button class="success" ng-show="msg.status==4">已收货</button>
+		</div>	
 	</div>
 	</div>

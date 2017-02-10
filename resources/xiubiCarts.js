@@ -1,32 +1,32 @@
-angular.module('ohapp').factory('Evaluate', function ($config, $http) {
-    var Evaluate = function (a) {
+angular.module('ohapp').factory('xiubiCart', function ($config, $http) {
+    var xiubiCart = function (a) {
         this.items = [];
         this.busy = false;
         this.after = '';
         this.page = 1;
         this.end = false;
-        this.shop_id='';
         this.orderby='';
+        this.status='';
         this.minDuration = 0;
         this.message = '正在加载...';
         this.backdrop = true;
         this.promise = null;
     };
-    Evaluate.prototype.nextPage = function () {
+    xiubiCart.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
         this.promise = $http({
             method: 'POST',
-            url: $config.api_uri + '/Apipublic/ApiPshop/shopDianPing',
-            data: {shop_id:this.shop_id,page:this.page,orderby:this.orderby},
+            url: $config.api_uri + '/Apiuser/Apijf/order_list',
+            data: {page:this.page,status:this.status},
         }).success(function (data) {
             if (data.success) {
-                if(data.list==null||!data.list.length){
+                if(data.order_list==null||!data.order_list.length){
                     this.end = true;
                     return
                 }
-                var items = data.list;
+                var items = data.order_list;
                 for (var i = 0; i < items.length; i++) {
                     this.items.push(items[i]);
                 }
@@ -40,6 +40,6 @@ angular.module('ohapp').factory('Evaluate', function ($config, $http) {
         }.bind(this))
     };
 
-    return Evaluate;
+    return xiubiCart;
 
 });
