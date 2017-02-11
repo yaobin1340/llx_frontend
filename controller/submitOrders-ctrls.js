@@ -86,7 +86,7 @@ angular
                             // $session.set('order_id', data.logs.order_id)
                             // $session.set('need_pay', data.logs.need_pay/100)
                             // $session.set('log_id', data.logs.log_id)
-                            alert("order_id:"+$scope.order_id+"need_pay:"+$scope.need_pay+"log_id:"+$scope.log_id);
+                            alert("order_id:"+data.logs.order_id+"need_pay:"+data.logs.need_pay/100+"log_id:"+data.logs.log_id);
                             $state.go('code',{order_id:data.logs.order_id,need_pay:data.logs.need_pay/100,log_id:data.logs.log_id});
                         }
                     }else{

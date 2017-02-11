@@ -13,6 +13,7 @@ angular
         $scope.order_id=$stateParams.order_id;
         $scope.need_pay=$stateParams.need_pay;
         $scope.log_id=$stateParams.log_id;
+        alert("order_id:"+$scope.order_id+"need_pay:"+$scope.need_pay+"log_id:"+$scope.log_id);
         if(!GetRequest().code){
                 var redirect_url = 'http://llx.51loveshow.com/code';
                 location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
