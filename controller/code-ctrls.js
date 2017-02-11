@@ -11,7 +11,7 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
         if(!GetRequest().code){
-                var redirect_url = 'http://llx.51loveshow.com/home';
+                var redirect_url = 'http://llx.51loveshow.com/code';
                 location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
             }else{
                 $http({
