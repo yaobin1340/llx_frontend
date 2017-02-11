@@ -99,7 +99,7 @@ angular
                             );
                         }
                         $scope.kind=sessionStorage.getItem('kind');
-                        switch (kind) {
+                        switch ($scope.kind) {
                           case 1 :
                           $state.go("Mycart",{type:"Indented"});
                           break;
@@ -109,6 +109,9 @@ angular
                           case 3 :
                           $state.go("xiubiCart",{type:"Indented"});
                           break;
+                          default :
+                          $state.go("personal");
+
                         }
                     })
         }
