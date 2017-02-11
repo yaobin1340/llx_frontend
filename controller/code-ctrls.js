@@ -27,7 +27,6 @@ angular
                     data:{code:GetRequest().code}
                 }).success(function (data) {
                     $session.set("code",data.openid);
-                    alert(data.openid);
                     $state.go('main.homes');
                     // alert("order_id:"+$scope.order_id+"need_pay:"+$scope.need_pay+"log_id:"+$scope.log_id+"code:"+data.openid);
                     // $state.go('payment',{order_id:$scope.order_id,need_pay:$scope.need_pay,log_id:$scope.log_id,code:data.openid});
