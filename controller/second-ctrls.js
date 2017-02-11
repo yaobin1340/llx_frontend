@@ -12,6 +12,8 @@ angular
         var $mdToast = $injector.get('$mdToast');
 
             $scope.cate_name=$stateParams.cate_name;
+            $scope.cate_id=$stateParams.cate_id;
+            
             //初始化加载页面
             $scope.scroll_switch = 1;
             $scope.shops = new Shops();

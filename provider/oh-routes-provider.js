@@ -10,13 +10,6 @@ angular
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
     };
-// 修改调试
-    // this.routes['home'] = {
-    //     url : '/home',
-    //     title: '正在获取信息',
-    //     templateUrl : 'views/code.html',
-    //     controller:'codeCtrl'
-    // };
     this.routes[ 'main.home' ] =
     {
         url: '^/home',
