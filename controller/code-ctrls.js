@@ -22,6 +22,7 @@ angular
                 }).success(function (data) {
                     $session.set("code",data.openid);
                     $session.save();
+                    alert($session.get('log_id'));
                     $state.go('payment');
                 })
         }
