@@ -98,7 +98,18 @@ angular
                                 .hideDelay(1000)
                             );
                         }
-                        $state.go("Mycart",{type:"Indented"});
+                        $scope.kind=sessionStorage.getItem('kind');
+                        switch (kind) {
+                          case 1 :
+                          $state.go("Mycart",{type:"Indented"});
+                          break;
+                          case 2 :
+                          $state.go("OfferPay");
+                          break;
+                          case 3 :
+                          $state.go("xiubiCart",{type:"Indented"});
+                          break;
+                        }
                     })
         }
 

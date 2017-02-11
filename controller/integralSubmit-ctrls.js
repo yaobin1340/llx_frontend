@@ -126,6 +126,7 @@ angular
                             sessionStorage.setItem('need_pay',data.logs.need_pay/100);
                             sessionStorage.setItem('log_id',data.logs.log_id);
                             sessionStorage.setItem('type',data.logs.type);
+                            sessionStorage.setItem('kind',3);
                             $state.go('code');
                         }
                     }else{

@@ -12,17 +12,13 @@ angular
         var $mdToast = $injector.get('$mdToast');
         var i=0;
 
-        // if($stateParams.type=='noIndent'){
-        //     $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
-        //     noIndent();
-        // }else if($stateParams.type=='Indented'){
-        //     $scope.chose1=0;$scope.chose2=0;$scope.chose3=1;
-        //     Indented();
-        // }else{
-        //     $scope.chose1=1;$scope.chose2=0;$scope.chose3=0;
-        //     allIndent();
-        // }
-        $scope.chose1=1;$scope.chose2=0;$scope.chose3=0;
+        if($stateParams.type=='noIndent'){
+            $scope.chose1=0;$scope.chose2=1;$scope.chose3=0;
+        }else if($stateParams.type=='Indented'){
+            $scope.chose1=0;$scope.chose2=0;$scope.chose3=1;
+        }else{
+            $scope.chose1=1;$scope.chose2=0;$scope.chose3=0;
+        };
 
         $scope.chose = function(id){
             switch (id) {
