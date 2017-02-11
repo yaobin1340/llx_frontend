@@ -11,24 +11,14 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-        // if(JSON.stringify($session.get('log_id'))=='{}'){
-        //     if(confirm("获取订单失败，是否重试？")){
-        //       window.location.reload();
-        //       return;
-        //     }else{
-        //       $state.go("Mycart",{type:"noIndent"});
-        //     }
-        // }else{
           $scope.order_id=$stateParams.order_id;
           $scope.need_pay=$stateParams.need_pay;
           $scope.log_id=$stateParams.log_id;
+          $scope.type=$stateParams.type;
           $scope.code=$session.get("code");
-          alert($scope.code);
             $scope.zhifu = function(){
               chosepay();
             }
-        // }  
-          
         //获取构建参数信息
         function chosepay(){
                 $http

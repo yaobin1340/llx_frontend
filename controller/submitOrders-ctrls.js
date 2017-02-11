@@ -83,11 +83,7 @@ angular
                             );
                             $state.go("Mycart",{type:"Indented"});
                         }else if(data.flag==2){
-                            // $session.set('order_id', data.logs.order_id)
-                            // $session.set('need_pay', data.logs.need_pay/100)
-                            // $session.set('log_id', data.logs.log_id)
-                            // alert("order_id:"+data.logs.order_id+"need_pay:"+data.logs.need_pay/100+"log_id:"+data.logs.log_id);
-                            $state.go('payment',{order_id:data.logs.order_id,need_pay:data.logs.need_pay/100,log_id:data.logs.log_id});
+                            $state.go('payment',{order_id:data.logs.order_id,need_pay:data.logs.need_pay/100,log_id:data.logs.log_id,type:data.logs.type});
                         }
                     }else{
                         $mdToast.show(

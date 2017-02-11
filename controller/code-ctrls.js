@@ -10,13 +10,6 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
-        // if($stateParams.order_id!=undefined){
-        //     $scope.order_id=$stateParams.order_id;
-        //     $scope.need_pay=$stateParams.need_pay;
-        //     $scope.log_id=$stateParams.log_id;
-        //     $session.set("order_id",$stateParams.order_id);
-        // }
-        // alert("order_id:"+$scope.order_id+"need_pay:"+$scope.need_pay+"log_id:"+$scope.log_id);
         if(!GetRequest().code){
                 var redirect_url = 'http://llx.51loveshow.com/home';
                 location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
@@ -28,8 +21,6 @@ angular
                 }).success(function (data) {
                     $session.set("code",data.openid);
                     $state.go('main.homes');
-                    // alert("order_id:"+$scope.order_id+"need_pay:"+$scope.need_pay+"log_id:"+$scope.log_id+"code:"+data.openid);
-                    // $state.go('payment',{order_id:$scope.order_id,need_pay:$scope.need_pay,log_id:$scope.log_id,code:data.openid});
                 })
         }
 

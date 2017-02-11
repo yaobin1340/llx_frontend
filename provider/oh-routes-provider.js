@@ -95,7 +95,7 @@ angular
     };
 
     this.routes['SubmitOrder'] = {
-        url : '/SubmitOrder?goods_id,order_id,log_id',
+        url : '/SubmitOrder?goods_id,order_id,log_id,type',
         title: '提交订单',
         templateUrl : 'views/SubmitOrder.html',
         controller:'SubmitOrder'
