@@ -21,6 +21,7 @@ angular
                 }).success(function (data) {
                     // $session.set("code",data.openid);
                     sessionStorage.setItem('code',data.openid);
+                    alert(data.openid);
                     $state.go("payment");
                 })
         }
