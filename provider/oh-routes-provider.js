@@ -96,7 +96,7 @@ angular
     };
     // 修改调试
     this.routes['payment'] = {
-        url : '/payment',
+        url : '/payment?order_id,need_pay,log_id,code',
         title: '订单支付',
         templateUrl : 'views/payment.html',
         controller:'paysmentCtrl'
@@ -284,7 +284,7 @@ angular
         controller:'myTeamCtrl'
     };
     this.routes['code'] = {
-        url : '/code?order_id',
+        url : '/code?order_id,need_pay,log_id',
         title: '正在获取信息',
         templateUrl : 'views/code.html',
         controller:'codeCtrl'

@@ -11,8 +11,6 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-
-        alert($session.get('log_id'));
         // if(JSON.stringify($session.get('log_id'))=='{}'){
         //     if(confirm("获取订单失败，是否重试？")){
         //       window.location.reload();
@@ -21,14 +19,14 @@ angular
         //       $state.go("Mycart",{type:"noIndent"});
         //     }
         // }else{
-        //   $scope.order_id=$session.get('order_id');
-        //   $scope.need_pay=$session.get('need_pay');
-        //   $scope.log_id=$session.get('log_id');
-        //   $scope.code=$session.get('code');
+          $scope.order_id=$stateParams.order_id;
+          $scope.need_pay=$stateParams.need_pay;
+          $scope.log_id=$stateParams.log_id;
+          $scope.code=$stateParams.code;
         //   alert($session.get('log_id'));
-        //     $scope.zhifu = function(){
-        //       chosepay();
-        //     }
+            $scope.zhifu = function(){
+              chosepay();
+            }
         // }  
           
         //获取构建参数信息
