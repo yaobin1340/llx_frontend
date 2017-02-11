@@ -11,15 +11,15 @@ angular
         controller: 'MainCtrl'
     };
 // 修改调试
-    this.routes['home'] = {
-        url : '/home',
-        title: '正在获取信息',
-        templateUrl : 'views/code.html',
-        controller:'codeCtrl'
-    };
-    this.routes[ 'main.homes' ] =
+    // this.routes['home'] = {
+    //     url : '/home',
+    //     title: '正在获取信息',
+    //     templateUrl : 'views/code.html',
+    //     controller:'codeCtrl'
+    // };
+    this.routes[ 'main.home' ] =
     {
-        url: '^/homes',
+        url: '^/home',
         title: '首页',
         templateUrl: 'views/home.html',
         controller: 'HomesCtrl'
@@ -102,7 +102,7 @@ angular
     };
     // 修改调试
     this.routes['payment'] = {
-        url : '/payment?order_id,need_pay,log_id,type',
+        url : '/payment',
         title: '订单支付',
         templateUrl : 'views/payment.html',
         controller:'paysmentCtrl'
@@ -289,12 +289,12 @@ angular
         templateUrl : 'views/myTeam.html',
         controller:'myTeamCtrl'
     };
-    // this.routes['code'] = {
-    //     url : '/code?order_id,need_pay,log_id',
-    //     title: '正在获取信息',
-    //     templateUrl : 'views/code.html',
-    //     controller:'codeCtrl'
-    // };
+    this.routes['code'] = {
+        url : '/code?order_id,need_pay,log_id',
+        title: '正在获取信息',
+        templateUrl : 'views/code.html',
+        controller:'codeCtrl'
+    };
     this.routes['shopFans'] = {
         url : '/shopFans',
         title: '粉丝列表',
@@ -369,7 +369,7 @@ angular
     };
     this.routes['jforderMsg'] = {
         url : '/jforderMsg?order_id',
-        title: '物流信息',
+        title: '详情',
         templateUrl : 'views/jforderMsg.html',
         controller:'jforderMsgCtrl'
     };

@@ -11,11 +11,16 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-          $scope.order_id=$stateParams.order_id;
-          $scope.need_pay=$stateParams.need_pay;
-          $scope.log_id=$stateParams.log_id;
-          $scope.type=$stateParams.type;
-          $scope.code=$session.get("code");
+          // $scope.order_id=$stateParams.order_id;
+          // $scope.need_pay=$stateParams.need_pay;
+          // $scope.log_id=$stateParams.log_id;
+          // $scope.type=$stateParams.type;
+          // $scope.code=$session.get("code");
+          console.log(sessionStorage.getItem('order_id'))
+          console.log(sessionStorage.getItem('need_pay'))
+          console.log(sessionStorage.getItem('log_id'))
+          console.log(sessionStorage.getItem('type'))
+          console.log(sessionStorage.getItem('code'))
             $scope.zhifu = function(){
               chosepay();
             }
