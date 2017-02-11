@@ -18,25 +18,38 @@ angular
         $scope.backdrop = true;
         $scope.promise = null;
         $scope.order_id=$stateParams.order_id;
-            // $scope.promise = $http
-            //     .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
-            //     .success(function (data) {
-            //         if(data.success){
-            //             $scope.userMsg=data;
-            //             $session.set('face', data.face)
-            //             $session.set('nickname', data.nickname);
-            //             $session.save()
-            //             $scope.nickname=data.nickname;
-            //             $scope.phones=data.mobile;
-            //             $scope.phone=$scope.phones.slice(0,3)+"****"+$scope.phones.slice(7,11);
-            //         }else{
-            //             $mdToast.show(
-            //             $mdToast.simple()
-            //                 .content(data.error_msg)
-            //                 .hideDelay(1000)
-            //             );
-            //         }
-            //     })
+        $scope.promise = $http
+                .post($config.api_uri + '/Apiuser/Apijf/order_detail',{order_id:$stateParams.order_id})
+                .success(function (data) {
+                    if(data.success){
+                        $scope.express=data.order_detail.express_name;
+                        $scope.kd_num=data.order_detail.kd_num;
+                        wuliu();
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+
+            function wuliu(){
+                $scope.promise = $http
+                .post($config.api_uri + '/Apipublic/Apilogin/get_express_info',{express:$scope.express,kd_num:$scope.kd_num})
+                .success(function (data) {
+                    if(data.success){
+                        $scope.data=data.data;
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+            }
+            
 
 
 

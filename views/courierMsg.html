@@ -1,0 +1,35 @@
+	<link rel="stylesheet" href="/assets/css/courierMsg.css">
+	<div class="banner navbar-fixed-top">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">物流详情</p>
+	</div>
+	<div class="padding"></div>
+	<div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
+
+	<div class="wlbanner">
+		<div class="wlbanner-left">
+			<img src="" alt="">
+		</div>
+		<div class="wlbanner-right">
+			<p class="right-title">物流状态 <span class="title-color">运输中</span></p>
+			<p class="right-continer">承运公司：{{express}}</p>
+			<p class="right-continer">运单编号：{{kd_num}}</p>
+			<p class="right-continer">官方电话：<span class="title-color">11183</span></p>
+		</div>
+	</div>
+	<div class="wl-msg">
+		<div class="msg-list" ng-repeat="d in data">
+			<div class="msg-list-left">
+				<div class="linemsg"></div>
+				<div class="cirbig" ng-if="$index==0"></div>
+				<div class="cir" ng-if="$index!=0"></div>
+			</div>
+			<div class="msg-list-right">
+				<p class="right-p" ng-if="$index==0" style="color: rgb(34, 175, 91);">{{d.context}}</p>
+				<p ng-if="$index==0" style="color: rgb(34, 175, 91);">{{d.ftime}}</p>
+				<p class="right-p" ng-if="$index!=0">{{d.context}}</p>
+				<p ng-if="$index!=0">{{d.ftime}}</p>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,117 @@
+body {
+  font-family: "SimHei";
+  color: #7f8180;
+  background-color: #eff0eb;
+}
+.row {
+  margin: 0;
+  padding: 0;
+}
+.banner {
+  width: 100%;
+  height: 1.38rem;
+  background-color: #00a2f2;
+}
+.banner img {
+  width: 0.69444444rem;
+  position: absolute;
+  margin-top: 0.35rem;
+  float: left;
+  margin-left: 0.69444444rem;
+}
+.banner p {
+  text-align: center;
+  line-height: 1.38rem;
+  color: #fff;
+  font-size: 0.41666667rem;
+}
+.wlbanner {
+  height: 3.05555556rem;
+  background-color: #fff;
+}
+.wlbanner-left {
+  float: left;
+  width: 2.5rem;
+  height: 3.05555556rem;
+}
+.wlbanner-left img {
+  width: 1.94444444rem;
+  height: 1.94444444rem;
+  margin: 0.48611111rem 0 0 0.34722222rem;
+}
+.wlbanner-right {
+  float: left;
+  width: 6.94444444rem;
+  height: 3.05555556rem;
+  background-color: #red;
+}
+.wlbanner-right .right-title {
+  font-size: 0.41666667rem;
+  line-height: 0.625rem;
+  margin-top: 0.34722222rem;
+}
+.wlbanner-right .right-continer {
+  font-size: 0.38888889rem;
+  line-height: 0.55555556rem;
+}
+.wlbanner-right .title-color {
+  color: #22af5b;
+}
+.wl-msg {
+  margin-top: 0.36111111rem;
+  background-color: #fff;
+}
+.msg-list {
+  min-height: 1.97222222rem;
+  margin-bottom: 0.41666667rem;
+}
+.msg-list .msg-list-left {
+  float: left;
+  width: 1.59722222rem;
+  height: 1.97222222rem;
+  position: relative;
+}
+.msg-list .msg-list-left .linemsg {
+  width: 2px;
+  height: 100%;
+  background-color: #eff0eb;
+  margin-left: 0.76388889rem;
+}
+.msg-list .msg-list-left .cir {
+  position: absolute;
+  left: 0.59722222rem;
+  top: 0.52777778rem;
+  width: 0.34722222rem;
+  height: 0.34722222rem;
+  border: 1px solid #eff0eb;
+  border-radius: 50%;
+  background-color: #eff0eb;
+}
+.msg-list .msg-list-left .cirbig {
+  position: absolute;
+  left: 0.55555556rem;
+  top: 0.47222222rem;
+  width: 0.44444444rem;
+  height: 0.44444444rem;
+  border: 1px solid #22af5b;
+  border-radius: 50%;
+  background-color: #22af5b;
+  background-image: repeating-radial-gradient(circle 50px, #22af5b, #008000);
+}
+.msg-list .msg-list-right {
+  float: left;
+  width: 7.91666667rem;
+  height: 1.97222222rem;
+  border-bottom: 1px solid #eff0eb;
+}
+.msg-list .msg-list-right p {
+  line-height: 0.5rem;
+  font-size: 0.38888889rem;
+}
+.msg-list .msg-list-right .right-p {
+  margin-top: 0.44444444rem;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  z-index: 5;
+}
