@@ -36,21 +36,6 @@ angular
 					}
 				})
 
-			//获取用户评论信息
-			$scope.promise=$http
-				.post($config.api_uri + '/Apipublic/ApiPshop/shopDianPing',{shop_id:$stateParams.shop_id})
-				.success(function (data) {
-					if(data.success){
-						$scope.list = data.list;
-					}else{
-						$mdToast.show(
-						$mdToast.simple()
-							.content(data.error_msg)
-							.hideDelay(1000)
-						);
-					}
-				})
-
 		$scope.ewk = function(){
 				$mdDialog.show({
                     scope: $scope,

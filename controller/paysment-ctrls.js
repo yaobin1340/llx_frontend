@@ -23,12 +23,10 @@ angular
           $scope.need_pay=$session.get('need_pay');
           $scope.log_id=$session.get('log_id');
           $scope.code=$session.get('code');
-        }
-
-        //点击支付按钮
-        $scope.zhifu = function(){
-            chosepay()
-        }
+            $scope.zhifu = function(){
+              chosepay();
+            }
+        }  
           
         //获取构建参数信息
         function chosepay(){
