@@ -23,6 +23,7 @@ angular
           $scope.need_pay=$session.get('need_pay');
           $scope.log_id=$session.get('log_id');
           $scope.code=$session.get('code');
+          alert($session.save($session.get('log_id')));
             $scope.zhifu = function(){
               chosepay();
             }
