@@ -15,16 +15,15 @@ angular
                 location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1a060a56132dfff4&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
             }else{
                 alert(GetRequest().code);
-                // $http({
-                //     method: 'POST',
-                //     url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
-                //     data:{code:GetRequest().code}
-                // }).success(function (data) {
-                //     alert(JSON.stringify(data));
-                //     // $session.set("code",data.openid);
-                //     sessionStorage.setItem('code',data.openid);
-                //     $state.go("payment");
-                // })
+                $http({
+                    method: 'POST',
+                    url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
+                    data:{code:GetRequest().code}
+                }).success(function (data) {
+                    alert(JSON.stringify(data));
+                    sessionStorage.setItem('code',data.openid);
+                    $state.go("payment");
+                })
         }
 
 
