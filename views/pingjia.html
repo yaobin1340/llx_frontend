@@ -8,8 +8,8 @@
 </div>
 <div class="padding"></div>
 <div class="menu row">
-	<div class="col-sm-4 col-xs-4"ng-class="{'border':chose1}" ng-click="chose(1)">全部({{totalnum}})</div>
-	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose2}" ng-click="chose(2)">晒图{{totalnum_haspic}}</div>
+	<div class="col-sm-4 col-xs-4"ng-class="{'border':chose1}" ng-click="chose(1)">全部({{totalnum||0}})</div>
+	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose2}" ng-click="chose(2)">晒图({{totalnum_haspic||0}})</div>
 	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose3}"   ng-click="chose(3)">最新</div>
 </div>
 <div ng-include="'views/pingjiaAll.html'" ng-if="chose1==1" ng-controller="pingjiaAllCtrl">
