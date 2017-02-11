@@ -14,6 +14,7 @@ angular
             $scope.order_id=$stateParams.order_id;
             $scope.need_pay=$stateParams.need_pay;
             $scope.log_id=$stateParams.log_id;
+            $session.set("order_id",$stateParams.order_id);
         }
         alert("order_id:"+$scope.order_id+"need_pay:"+$scope.need_pay+"log_id:"+$scope.log_id);
         if(!GetRequest().code){
