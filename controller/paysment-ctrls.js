@@ -19,7 +19,7 @@ angular
         //       $state.go("Mycart",{type:"noIndent"});
         //     }
         // }else{
-          alrt($session.get("order_id"))
+          alert($session.get("order_id"))
           $scope.order_id=$stateParams.order_id;
           $scope.need_pay=$stateParams.need_pay;
           $scope.log_id=$stateParams.log_id;
