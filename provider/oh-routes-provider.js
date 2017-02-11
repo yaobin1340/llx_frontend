@@ -356,7 +356,7 @@ angular
         controller:'xiubiProductCtrl'
     };
     this.routes['xiubiCart'] = {
-        url : '/xiubiCart',
+        url : '/xiubiCart?type',
         title: '秀币商城订单',
         templateUrl : 'views/xiubiCart.html',
         controller:'xiubiCartCtrl'

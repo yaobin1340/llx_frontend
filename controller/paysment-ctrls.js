@@ -16,7 +16,7 @@ angular
           $scope.log_id=sessionStorage.getItem('log_id');
           $scope.type=sessionStorage.getItem('type');
           $scope.code=sessionStorage.getItem('code');
-          console.log(sessionStorage.getItem('code'));
+          $scope.kind=sessionStorage.getItem('kind');
             $scope.zhifu = function(){
               chosepay();
             }
@@ -62,6 +62,15 @@ angular
                                 .content("您已取消支付")
                                 .hideDelay(1000)
                             );
+                          if($scope.kind==1){
+                            $state.go("Mycart",{type:"noIndent"});
+                          }else if($scope.kind==2){
+                            $state.go("OfferPay");
+                          }else if($scope.kind==3){
+                            $state.go("xiubiCart",{type:"noIndent"});
+                          }else{
+                            $state.go("personal");
+                          };
                        }
                        else if(res.err_msg == "get_brand_wcpay_request:fail"){
                           $mdToast.show(
@@ -69,6 +78,15 @@ angular
                                 .content("支付失败")
                                 .hideDelay(1000)
                             );
+                          if($scope.kind==1){
+                            $state.go("Mycart",{type:"noIndent"});
+                          }else if($scope.kind==2){
+                            $state.go("OfferPay");
+                          }else if($scope.kind==3){
+                            $state.go("xiubiCart",{type:"noIndent"});
+                          }else{
+                            $state.go("personal");
+                          };
                        }
                    }
                ); 
@@ -98,22 +116,15 @@ angular
                                 .hideDelay(1000)
                             );
                         }
-                        $scope.kind=sessionStorage.getItem('kind');
-                        alert($scope.kind);
-                        switch ($scope.kind) {
-                          case 1 :
-                          $state.go("Mycart",{type:"Indented"});
-                          break;
-                          case 2 :
-                          $state.go("OfferPay");
-                          break;
-                          case 3 :
-                          $state.go("xiubiCart",{type:"Indented"});
-                          break;
-                          default :
-                          $state.go("personal");
-
-                        }
+                        if($scope.kind==1){
+                            $state.go("Mycart",{type:"Indented"});
+                          }else if($scope.kind==2){
+                            $state.go("OfferPay");
+                          }else if($scope.kind==3){
+                            $state.go("xiubiCart",{type:"Indented"});
+                          }else{
+                            $state.go("personal");
+                          }
                     })
         }
 

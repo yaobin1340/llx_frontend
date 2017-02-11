@@ -217,19 +217,6 @@ angular
                 $scope.shops.lng = res.longitude;
                 sessionStorage.setItem('lng',res.longitude);
                 $scope.getIndex();
-                // if(sessionStorage.getItem('area_name')==null){$scope.getIndex();}else{
-                // $scope.area_name = sessionStorage.getItem('area_name');
-                // $scope.shops.area_code = sessionStorage.getItem('area_code');
-                //     //加载附近商铺
-                //     $scope.shops.items = [];
-                //     $scope.shops.end = false;
-                //     $scope.shops.busy = false;
-                //     $scope.shops.page = 1;
-                //     $scope.shops.nextPage();
-                //     if (sessionStorage.getItem('juli')!=null){
-                //         $(document).scrollTop(sessionStorage.getItem('juli'));
-                //     }
-                // }
             },
             fail: function (res) {
                 $mdToast.show(
