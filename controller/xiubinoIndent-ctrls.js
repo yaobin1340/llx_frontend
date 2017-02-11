@@ -45,6 +45,37 @@ angular
                 })
         }
 
+        //立即支付
+        $scope.paynow = function(id){
+            $scope.message = '正在支付中...';
+            $scope.promise = $http
+                .post($config.api_uri + '/Apiuser/Apijf/order_pay',{order_id:id})
+                .success(function (data) {
+                    if(data.success){
+                        if(data.flag==1){
+                           $mdToast.show(
+                            $mdToast.simple()
+                                .content("支付成功")
+                                .hideDelay(1000)
+                            ); 
+                        }else if(data.flag==2){
+                            sessionStorage.setItem('order_id',data.logs.order_id);
+                            sessionStorage.setItem('need_pay',data.logs.need_pay/100);
+                            sessionStorage.setItem('log_id',data.logs.log_id);
+                            sessionStorage.setItem('type',data.logs.type);
+                            sessionStorage.setItem('kind',3);
+                            $state.go('code');
+                        }
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+        };
+
 
 
 

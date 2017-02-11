@@ -80,10 +80,11 @@ angular
                                 .hideDelay(1000)
                             ); 
                         }else if(data.flag==2){
-                            $session.set('order_id', data.logs.order_id)
-                            $session.set('need_pay', data.logs.need_pay/100)
-                            $session.set('log_id', data.logs.log_id)
-                            $session.save()
+                            sessionStorage.setItem('order_id',data.logs.order_id);
+                            sessionStorage.setItem('need_pay',data.logs.need_pay/100);
+                            sessionStorage.setItem('log_id',data.logs.log_id);
+                            sessionStorage.setItem('type',data.logs.type);
+                            sessionStorage.setItem('kind',3);
                             $state.go('code');
                         }
                     }else{
