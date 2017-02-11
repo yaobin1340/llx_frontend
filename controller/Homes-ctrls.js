@@ -58,6 +58,7 @@ angular
             }).success(function (data) {
                 if (data.success) {
                     $scope.area_name = data.map.name;
+                    sessionStorage.setItem('area_name',data.map.name);
                     $scope.shops.area_code = data.map.code;
                     //加载附近商铺
                     $scope.shops.items = [];
@@ -257,13 +258,5 @@ angular
         sessionStorage.setItem("juli",$(document).scrollTop())
         $state.go('description',{shop_id:id});
     }
-    //测试监听返回键 
-        window.addEventListener("popstate", function(e) { 
-            if($scope.add==1){
-                // alert("我监听到了浏览器的返回按钮事件啦");
-                // event.preventDefault();
-                // return;
-            }
-        }, false);
          
 });
