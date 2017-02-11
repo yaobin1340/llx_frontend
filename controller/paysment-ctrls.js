@@ -11,23 +11,25 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
 
-        if(JSON.stringify($session.get('log_id'))=='{}'){
-            if(confirm("获取订单失败，是否重试？")){
-              window.location.reload();
-              return;
-            }else{
-              $state.go("Mycart",{type:"noIndent"});
-            }
-        }else{
-          $scope.order_id=$session.get('order_id');
-          $scope.need_pay=$session.get('need_pay');
-          $scope.log_id=$session.get('log_id');
-          $scope.code=$session.get('code');
-          alert($session.get('log_id'));
-            $scope.zhifu = function(){
-              chosepay();
-            }
-        }  
+
+        alert($session.get('log_id'));
+        // if(JSON.stringify($session.get('log_id'))=='{}'){
+        //     if(confirm("获取订单失败，是否重试？")){
+        //       window.location.reload();
+        //       return;
+        //     }else{
+        //       $state.go("Mycart",{type:"noIndent"});
+        //     }
+        // }else{
+        //   $scope.order_id=$session.get('order_id');
+        //   $scope.need_pay=$session.get('need_pay');
+        //   $scope.log_id=$session.get('log_id');
+        //   $scope.code=$session.get('code');
+        //   alert($session.get('log_id'));
+        //     $scope.zhifu = function(){
+        //       chosepay();
+        //     }
+        // }  
           
         //获取构建参数信息
         function chosepay(){
