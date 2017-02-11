@@ -21,7 +21,6 @@ angular
                 }).success(function (data) {
                     $session.set("code",data.openid);
                     $state.go('main.homes');
-                    window.location.replace('http://llx.51loveshow.com/homes');
                 })
         }
 
