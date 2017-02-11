@@ -20,7 +20,8 @@ angular
                     data:{code:GetRequest().code}
                 }).success(function (data) {
                     $session.set("code",data.openid);
-                    $state.go('http://llx.51loveshow.com/homes');
+                    $state.go('main.homes');
+                    window.location.replace('http://llx.51loveshow.com/homes');
                 })
         }
 
