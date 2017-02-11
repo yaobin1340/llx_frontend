@@ -86,8 +86,8 @@ angular
                             // $session.set('order_id', data.logs.order_id)
                             // $session.set('need_pay', data.logs.need_pay/100)
                             // $session.set('log_id', data.logs.log_id)
-                            alert("order_id:"+data.logs.order_id+"need_pay:"+data.logs.need_pay/100+"log_id:"+data.logs.log_id);
-                            $state.go('payment',{order_id:data.logs.order_id,need_pay:data.logs.need_pay/100});
+                            // alert("order_id:"+data.logs.order_id+"need_pay:"+data.logs.need_pay/100+"log_id:"+data.logs.log_id);
+                            $state.go('payment',{order_id:data.logs.order_id,need_pay:data.logs.need_pay/100,log_id:data.logs.log_id});
                         }
                     }else{
                         $mdToast.show(
