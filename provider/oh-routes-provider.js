@@ -284,7 +284,7 @@ angular
         controller:'myTeamCtrl'
     };
     this.routes['code'] = {
-        url : '/code',
+        url : '/code?order_id',
         title: '正在获取信息',
         templateUrl : 'views/code.html',
         controller:'codeCtrl'

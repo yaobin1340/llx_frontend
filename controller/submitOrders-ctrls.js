@@ -87,7 +87,7 @@ angular
                             $session.set('need_pay', data.logs.need_pay/100)
                             $session.set('log_id', data.logs.log_id)
                             alert($session.get('log_id')+"+"+data.logs.log_id);
-                            $state.go('code');
+                            $state.go('code',{order_id:data.logs.order_id});
                         }
                     }else{
                         $mdToast.show(
