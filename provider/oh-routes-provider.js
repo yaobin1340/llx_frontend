@@ -95,14 +95,14 @@ angular
     };
 
     this.routes['SubmitOrder'] = {
-        url : '/SubmitOrder?goods_id,order_id,log_id,type',
+        url : '/SubmitOrder?goods_id,order_id,log_id',
         title: '提交订单',
         templateUrl : 'views/SubmitOrder.html',
         controller:'SubmitOrder'
     };
     // 修改调试
     this.routes['payment'] = {
-        url : '/payment?order_id,need_pay,log_id',
+        url : '/payment?order_id,need_pay,log_id,type',
         title: '订单支付',
         templateUrl : 'views/payment.html',
         controller:'paysmentCtrl'
