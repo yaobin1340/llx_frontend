@@ -84,7 +84,11 @@ angular
                             );
                             window.history.go(-1);
                         }else if(data.flag==2){
-                            $state.go('payment',{order_id:data.logs.order_id,need_pay:data.logs.need_pay/100,log_id:data.logs.log_id,type:data.logs.type});
+                            sessionStorage.setItem('order_id',data.logs.order_id);
+                            sessionStorage.setItem('need_pay',data.logs.need_pay/100);
+                            sessionStorage.setItem('log_id',data.logs.log_id);
+                            sessionStorage.setItem('type',data.logs.type);
+                            $state.go('code');
                         }
                     }else{
                         $mdToast.show(
