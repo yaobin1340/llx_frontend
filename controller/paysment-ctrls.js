@@ -99,6 +99,7 @@ angular
                             );
                         }
                         $scope.kind=sessionStorage.getItem('kind');
+                        alert($scope.kind);
                         switch ($scope.kind) {
                           case 1 :
                           $state.go("Mycart",{type:"Indented"});
