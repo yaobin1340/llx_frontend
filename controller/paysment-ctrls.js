@@ -19,12 +19,11 @@ angular
         //       $state.go("Mycart",{type:"noIndent"});
         //     }
         // }else{
-          alert($session.get("order_id"))
           $scope.order_id=$stateParams.order_id;
           $scope.need_pay=$stateParams.need_pay;
           $scope.log_id=$stateParams.log_id;
-          $scope.code=$stateParams.code;
-        //   alert($session.get('log_id'));
+          $scope.code=$session.get("code");
+          alert($scope.code);
             $scope.zhifu = function(){
               chosepay();
             }

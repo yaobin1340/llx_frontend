@@ -11,9 +11,15 @@ angular
         controller: 'MainCtrl'
     };
 // 修改调试
-    this.routes[ 'main.home' ] =
+    this.routes['home'] = {
+        url : '/home',
+        title: '正在获取信息',
+        templateUrl : 'views/code.html',
+        controller:'codeCtrl'
+    };
+    this.routes[ 'main.homes' ] =
     {
-        url: '^/home',
+        url: '^/homes',
         title: '首页',
         templateUrl: 'views/home.html',
         controller: 'HomesCtrl'
@@ -96,7 +102,7 @@ angular
     };
     // 修改调试
     this.routes['payment'] = {
-        url : '/payment?order_id,need_pay,log_id,code',
+        url : '/payment?order_id,need_pay,log_id',
         title: '订单支付',
         templateUrl : 'views/payment.html',
         controller:'paysmentCtrl'
@@ -283,12 +289,12 @@ angular
         templateUrl : 'views/myTeam.html',
         controller:'myTeamCtrl'
     };
-    this.routes['code'] = {
-        url : '/code?order_id,need_pay,log_id',
-        title: '正在获取信息',
-        templateUrl : 'views/code.html',
-        controller:'codeCtrl'
-    };
+    // this.routes['code'] = {
+    //     url : '/code?order_id,need_pay,log_id',
+    //     title: '正在获取信息',
+    //     templateUrl : 'views/code.html',
+    //     controller:'codeCtrl'
+    // };
     this.routes['shopFans'] = {
         url : '/shopFans',
         title: '粉丝列表',
