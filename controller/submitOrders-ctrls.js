@@ -81,7 +81,7 @@ angular
                                 .content("支付完成")
                                 .hideDelay(1000)
                             );
-                            $state.go("Mycart",{type:"Indented"});
+                            $state.go("main.Mycart",{type:"Indented"});
                         }else if(data.flag==2){
                             sessionStorage.setItem('order_id',data.logs.order_id);
                             sessionStorage.setItem('need_pay',data.logs.need_pay/100);

@@ -64,7 +64,7 @@ angular
                         .success(function (data) {
                              if(data.success){
                                 if(data.order_id==-1){
-                                    $state.go('Mycart', {type:'noIndent'});
+                                    $state.go('main.Mycart', {type:'noIndent'});
                                 }else{
                                     $state.go('SubmitOrder', {order_id: data.order_id});
                                 }

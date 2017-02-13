@@ -12,6 +12,7 @@ angular
         var $mdToast = $injector.get('$mdToast');
         var i=0;
 
+        $scope.$emit('changeImg', 2); 
         //加载动画
         $scope.delay = 0;
         $scope.minDuration = 0;

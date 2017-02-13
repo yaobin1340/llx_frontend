@@ -142,8 +142,8 @@ angular
         templateUrl : 'views/updataTotal.html',
         controller:'updataTotalCtrl'
     };
-    this.routes['Mycart'] = {
-        url : '/Mycart?type',
+    this.routes['main.Mycart'] = {
+        url : '^/Mycart?type',
         title: '购物订单',
         templateUrl : 'views/Mycart.html',
         controller:'MycartCtrl'

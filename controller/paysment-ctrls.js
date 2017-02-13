@@ -19,7 +19,7 @@ angular
           $scope.kind=sessionStorage.getItem('kind');
           $scope.backs = function(){
             if($scope.kind==1){
-                $state.go("Mycart",{type:"noIndent"});
+                $state.go("main.Mycart",{type:"noIndent"});
             }else if($scope.kind==2){
                 $state.go("main.OfferPay");
             }else if($scope.kind==3){
@@ -74,7 +74,7 @@ angular
                                 .hideDelay(1000)
                             );
                           if($scope.kind==1){
-                            $state.go("Mycart",{type:"noIndent"});
+                            $state.go("main.Mycart",{type:"noIndent"});
                           }else if($scope.kind==2){
                             $state.go("main.OfferPay");
                           }else if($scope.kind==3){
@@ -90,7 +90,7 @@ angular
                                 .hideDelay(1000)
                             );
                           if($scope.kind==1){
-                            $state.go("Mycart",{type:"noIndent"});
+                            $state.go("main.Mycart",{type:"noIndent"});
                           }else if($scope.kind==2){
                             $state.go("main.OfferPay");
                           }else if($scope.kind==3){
@@ -128,7 +128,7 @@ angular
                             );
                         }
                         if($scope.kind==1){
-                            $state.go("Mycart",{type:"Indented"});
+                            $state.go("main.Mycart",{type:"Indented"});
                           }else if($scope.kind==2){
                             $state.go("main.OfferPay");
                           }else if($scope.kind==3){

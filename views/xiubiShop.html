@@ -8,8 +8,11 @@
 	    <p ng-cloak style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">秀币商城</p>
 	</div>
 	<div class="padding"></div>
+	<div class="centerImgbanner">
+		<img ng-src="/assets/img/jifen.png" alt="图片区域">
+	</div>
 	<div style="margin-top: 5px;"></div>
-
+	
 	<div class="row marbtm clearfix martop"  infinite-scroll='xiubi.nextPage()' infinite-scroll-disabled='xiubi.busy' infinite-scroll-distance='1' >
 		<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in xiubi.items" ui-sref="xiubiProduct({goods_id:hot_goods.goods_id})">
