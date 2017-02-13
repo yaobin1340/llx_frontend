@@ -17,6 +17,17 @@ angular
           $scope.type=sessionStorage.getItem('type');
           $scope.code=sessionStorage.getItem('code');
           $scope.kind=sessionStorage.getItem('kind');
+          $scope.backs = function(){
+            if($scope.kind==1){
+                $state.go("Mycart",{type:"noIndent"});
+            }else if($scope.kind==2){
+                $state.go("OfferPay");
+            }else if($scope.kind==3){
+                $state.go("xiubiCart",{type:"noIndent"});
+            }else{
+              $state.go("personal");
+            };
+          }
             $scope.zhifu = function(){
               chosepay();
             }
