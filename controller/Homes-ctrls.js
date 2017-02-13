@@ -222,7 +222,7 @@ angular
                 $mdToast.show(
                     $mdToast.simple()
                         .content("定位失败,请重试或手动选择地区")
-                        .hideDelay(2000)
+                        .hideDelay(1000)
                     );
                 $scope.shops.lat = 31.2383718228;
                 sessionStorage.setItem('lat',$scope.shops.lat);
