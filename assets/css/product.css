@@ -180,7 +180,8 @@ footer {
   color: #ababab;
 }
 .p-introduce img {
-  width: 100%;
+  max-width: 100% !important;
+  height: auto;
 }
 footer {
   height: 1.25rem;
