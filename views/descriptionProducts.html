@@ -5,34 +5,25 @@
 <div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="banner" style="background: url(http://wap.51loveshow.com/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
 	background-size:auto 100%;height: 5.32rem;">
-			<div class="cir cir-left img-circle">
-				<img ng-src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);" style="  width: 0.76388889rem;margin-top: 0.06944444rem;margin-left: 0.05555556rem;">
-			</div>
-			<div class="cir cir-right img-circle">
-				<img ng-src="/assets/img/img_menu_shop_detail.png" alt="">
-			</div>
-			<div class="cir cir-right img-circle" ng-click="love()">
-				<img ng-src="/assets/img/img_collect_shop_detail.png" alt="" style="margin: 0.05rem auto auto 0.05rem;">
-			</div>
+			<div class="cir cir-left img-circle"></div>
+			<div class="cir cir-right img-circle img-s"></div>
+			<div class="cir cir-right img-circle img-r" ng-click="love()"></div>
 	</div>
 	<div ng-cloak class="res-titlt">
 		{{detail.shop_name}}
 	</div>
 	<div class="address " ng-click="daohang()">
-		<div class="address-left">
-			<img ng-src="/assets/img/address2.png" alt="" class="img-center-left">
+		<div class="address-left img-address-left">
 		</div>
 		<div class="address-center text-overflow">
 			<span ng-cloak class="address-message  text-overflow">{{detail.addr}}</span>
 		</div>
-		<div class="address-right">
-			<img ng-src="/assets/img/address.png" alt="">
+		<div class="address-right address-right-img">
 		</div>
 	</div>
 	<a href="tel:{{detail.tel}}">
-		<div class="address ">
-			<div class="address-left">
-				<img ng-src="/assets/img/tel.png" alt="" class="img-center-left">
+		<div class="address">
+			<div class="address-left img-center-left">
 			</div>
 			<div class="address-center">
 				<span ng-cloak class="address-message">{{detail.tel}}</span>
@@ -43,44 +34,38 @@
 		</div>
 	</a>
 	<div class="QRcode" ng-click="ewk()">
-		<div class="address-left">
-			<img ng-src="/assets/img/QRcode.png" alt="" class="img-center-left">
+		<div class="address-left address-left-img">
 		</div>
 		<div class="address-center">
 			<span class="address-message">二维码名片</span>
 		</div>
-		<div class="address-right">
-			<img ng-src="/assets/img/line.png" alt="">
+		<div class="address-right addresss-right">
 		</div>
 	</div>
 	<div class="QRcode " ui-sref="shopMsg({shop_id:shops_id})">
-		<div class="address-left">
-			<img ng-src="/assets/img/userMag.png" alt="" class="img-center-left">
+		<div class="address-left second-img">
 		</div>
 		<div class="address-center">
 			<span class="address-message">商户信息</span>
 		</div>
-		<div class="address-right">
-			<img ng-src="/assets/img/line.png" alt="">
+		<div class="address-right addresss-right">
 		</div>
 	</div>
 	<div class="QRcode " ui-sref="smallShop({shop_id:detail.shop_id})">
-		<div class="address-left">
-			<img ng-src="/assets/img/user.png" alt="" class="img-center-left">
+		<div class="address-left third-img">
 		</div>
 		<div class="address-center">
 			<span class="address-message">去逛逛商家微店</span>
 		</div>
-		<div class="address-right">
-			<img ng-src="/assets/img/line.png" alt="">
+		<div class="address-right addresss-right">
 		</div>
 	</div>
 	<!-- 用户评价 -->
 	<div class="user-comment">
 		<div class="user-co">
 			<span>用户评价</span>
-			<div class="address-right">
-			<img ng-src="/assets/img/line.png" alt="">
+			<div class="address-right addresss-right">
+			<!-- <img ng-src="/assets/img/line.png" alt=""> -->
 			</div>
 		</div>
 		<div class="btn-group">

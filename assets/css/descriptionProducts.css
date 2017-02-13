@@ -36,10 +36,20 @@ a {
 .banner .cir-left {
   float: left;
   margin: 0.23611111rem 0 0 0.38888889rem;
+  background: #808080 url(/assets/img/img_back_shop_detail.png) no-repeat -0.05555556rem 0.01388889rem;
+  background-size: 100%;
 }
 .banner .cir-right {
   float: right;
   margin: 0.23611111rem 0.44444444rem 0 0;
+}
+.banner .img-s {
+  background: #808080 url(/assets/img/img_menu_shop_detail.png) no-repeat -0.05555556rem 0.01388889rem;
+  background-size: 100%;
+}
+.banner .img-r {
+  background: #808080 url(/assets/img/img_collect_shop_detail.png) no-repeat -0.05555556rem 0.01388889rem;
+  background-size: 100%;
 }
 .res-titlt {
   width: 100%;
@@ -58,6 +68,10 @@ a {
   float: left;
   height: 1.25rem;
 }
+.img-address-left {
+  background: url(/assets/img/address2.png) no-repeat center 0.20833333rem;
+  background-size: 60%;
+}
 .address-center {
   width: 7.5rem;
   float: left;
@@ -69,10 +83,9 @@ a {
   float: right;
   text-align: center;
 }
-.address-right img {
-  width: 0.69444444rem;
-  height: 0.69444444rem;
-  margin: 0.26388889rem auto;
+.address-right-img {
+  background: url(/assets/img/address.png) no-repeat center 0.20833333rem;
+  background-size: 60%;
 }
 .address-right .telphone {
   display: inline-block;
@@ -88,9 +101,24 @@ a {
   width: 100%;
 }
 .img-center-left {
-  margin: 0.27777778rem auto auto 0.31944444rem;
-  width: 0.69444444rem;
-  height: 0.69444444rem;
+  background: url(/assets/img/tel.png) no-repeat center 0.27777778rem;
+  background-size: 60%;
+}
+.address-left-img {
+  background: url(/assets/img/QRcode.png) no-repeat center 0.27777778rem;
+  background-size: 60%;
+}
+.addresss-right {
+  background: url(/assets/img/line.png) no-repeat center 0.27777778rem;
+  background-size: 70%;
+}
+.third-img {
+  background: url(/assets/img/user.png) no-repeat center 0.27777778rem;
+  background-size: 60%;
+}
+.second-img {
+  background: url(/assets/img/userMag.png) no-repeat center 0.27777778rem;
+  background-size: 60%;
 }
 .QRcode {
   clear: both;
