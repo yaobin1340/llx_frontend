@@ -90,6 +90,12 @@ nav a {
   width: 20%;
   text-align: center;
 }
+nav img {
+  width: 1.40rem;
+  height: 1.40rem;
+  display: block;
+  margin: 0.264rem auto;
+}
 nav span {
   color: #000;
   font-family: "微软雅黑";
