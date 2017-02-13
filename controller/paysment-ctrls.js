@@ -21,11 +21,11 @@ angular
             if($scope.kind==1){
                 $state.go("Mycart",{type:"noIndent"});
             }else if($scope.kind==2){
-                $state.go("OfferPay");
+                $state.go("main.OfferPay");
             }else if($scope.kind==3){
                 $state.go("xiubiCart",{type:"noIndent"});
             }else{
-              $state.go("personal");
+              $state.go("main.personal");
             };
           }
             $scope.zhifu = function(){
@@ -76,11 +76,11 @@ angular
                           if($scope.kind==1){
                             $state.go("Mycart",{type:"noIndent"});
                           }else if($scope.kind==2){
-                            $state.go("OfferPay");
+                            $state.go("main.OfferPay");
                           }else if($scope.kind==3){
                             $state.go("xiubiCart",{type:"noIndent"});
                           }else{
-                            $state.go("personal");
+                            $state.go("main.personal");
                           };
                        }
                        else if(res.err_msg == "get_brand_wcpay_request:fail"){
@@ -92,11 +92,11 @@ angular
                           if($scope.kind==1){
                             $state.go("Mycart",{type:"noIndent"});
                           }else if($scope.kind==2){
-                            $state.go("OfferPay");
+                            $state.go("main.OfferPay");
                           }else if($scope.kind==3){
                             $state.go("xiubiCart",{type:"noIndent"});
                           }else{
-                            $state.go("personal");
+                            $state.go("main.personal");
                           };
                        }
                    }
@@ -130,11 +130,11 @@ angular
                         if($scope.kind==1){
                             $state.go("Mycart",{type:"Indented"});
                           }else if($scope.kind==2){
-                            $state.go("OfferPay");
+                            $state.go("main.OfferPay");
                           }else if($scope.kind==3){
                             $state.go("xiubiCart",{type:"Indented"});
                           }else{
-                            $state.go("personal");
+                            $state.go("main.personal");
                           }
                     })
         }
