@@ -38,7 +38,7 @@ angular
         $scope.notcut = function(){
             if($scope.needgold>0){
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
-                $scope.needgold=$scope.gold>$scope.needPay?$scope.needPay:$scope.gold;
+                $scope.needgold=$scope.needgold>$scope.needPay?$scope.needPay:$scope.needgold;
                 $scope.totalNeedpay=$scope.needPay-$scope.needgold;
             }else{
                 $scope.needgold=0;
