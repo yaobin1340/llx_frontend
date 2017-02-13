@@ -134,6 +134,18 @@ body {
 .span-color {
   color: #bababa;
 }
+.img-wei {
+  height: 1.2rem;
+  width: 1.1rem;
+  background: url(/assets/img/img_weixin.png) no-repeat 0.20833333rem 0.27777778rem;
+  background-size: 0.9rem;
+}
+.img-right-pay {
+  height: 1.2rem;
+  width: 4.5rem;
+  background: url(/assets/img/img_pay_checked.png) no-repeat 3.61111111rem 0.41666667rem;
+  background-size: 0.5rem;
+}
 .subOrder {
   width: 100%;
   height: 1.23611111rem;
