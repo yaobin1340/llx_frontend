@@ -90,16 +90,80 @@ nav a {
   width: 20%;
   text-align: center;
 }
-nav img {
-  width: 1.40rem;
-  height: 1.40rem;
-  display: block;
-  margin: 0.264rem auto;
-}
 nav span {
   color: #000;
   font-family: "微软雅黑";
   font-size: 0.35rem;
+}
+.chosetwo01 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/restaurants.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo02 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_jiudianzhusu.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo03 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_shuiguoshengxian.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo04 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_meirongmeifa.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo05 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_jianshenyule.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo06 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_bianlichaoshi.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo07 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/Maternal-and-child-supplies.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo08 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_yiliaojiankang.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo09 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_jifenshangcheng.png) no-repeat;
+  background-size: 100%;
+}
+.chosetwo10 {
+  width: 1.40rem;
+  height: 1.40rem;
+  margin: 0.264rem auto;
+  background: url(/assets/img/img_gv_tuangouyouhui.png) no-repeat;
+  background-size: 100%;
 }
 /* 分割线的样式 */
 .hr-change {
