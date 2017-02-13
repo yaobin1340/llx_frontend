@@ -19,7 +19,7 @@
 	<div class="proMsg clearfix">
 		<h1 ng-cloak>{{productMsg_list.title}}</h1>
 		<span ng-cloak>￥{{productMsg_list.mall_price/100}}</span>
-		<span ng-cloak class="zhekou">{{productMsg_list.mall_price/productMsg_list.price*10}}折</span>
+		<span ng-cloak class="zhekou">{{productMsg_list.mall_price/productMsg_list.price*10||number:0}}折</span>
 		<p ng-cloak>原价：<del ng-cloak>￥{{productMsg_list.price/100}}</del>&nbsp;月售：{{productMsg_list.sold_num}}笔 &nbsp;库存：{{productMsg_list.num}}张</p>
 	</div>
 	<div class="certification" ng-if="is_vs!=0">
