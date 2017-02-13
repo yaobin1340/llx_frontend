@@ -11,6 +11,7 @@ angular
         var $mdDialog = $injector.get('$mdDialog');
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
+        $scope.showlink=1;
         $scope.$emit('changeImg', 1); 
 		$scope.currentPage = 0;
         $scope.scroll_switch = 1;
