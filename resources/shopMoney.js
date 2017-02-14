@@ -1,23 +1,24 @@
-angular.module('ohapp').factory('journals', function ($config, $http) {
-    var journals = function () {
+angular.module('ohapp').factory('shopMoney', function ($config, $http) {
+    var shopMoney = function () {
         this.items = [];
         this.busy = false;
-        this.after = '';
         this.page = 1;
         this.end = false;
         this.minDuration = 0;
+        this.bg_date='';
+        this.end_date='';
         this.message = '正在加载...';
         this.backdrop = true;
         this.promise = null;
     };
-    journals.prototype.nextPage = function () {
+    shopMoney.prototype.nextPage = function () {
         if (this.busy) return;
         if (this.end) return;
         this.busy = true;
         this.promise = $http({
             method: 'POST',
-            url: $config.api_uri + '/Apiuser/Money/cashlogs',
-            data: {page:this.page},
+            url: $config.api_uri + '/Apishop/Money/detail',
+            data: {page:this.page,bg_date:this.bg_date,end_date:this.end_date},
         }).success(function (data) {
             if (data.success) {
                 if(data.list==null||!data.list.length){
@@ -38,6 +39,6 @@ angular.module('ohapp').factory('journals', function ($config, $http) {
         }.bind(this))
     };
 
-    return journals;
+    return shopMoney;
 
 });

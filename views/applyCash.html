@@ -12,10 +12,10 @@
 	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose2}" ng-click="chose(2)">提现日志</div>
 	<div class="col-sm-4 col-xs-4" ng-class="{'border':chose3}"   ng-click="chose(3)">申请提现</div>
 </div>
-<div ng-include="'views/money.html'" ng-if="chose1==1">
+<div ng-include="'views/money.html'" ng-if="chose1==1" ng-controller="moneyCtrl">
 	
 </div>
-<div  ng-include="'views/journal.html'" ng-if="chose2==1">
+<div  ng-include="'views/journal.html'" ng-if="chose2==1" ng-controller="journalCtrl">
 	
 </div>
 <div ng-include="'views/drawal.html'"ng-if="chose3==1">

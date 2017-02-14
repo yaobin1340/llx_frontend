@@ -21,6 +21,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.detail=data.detail;
+                        $scope.shop_audit=data.shop_audit;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

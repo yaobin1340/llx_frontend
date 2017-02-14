@@ -1,6 +1,5 @@
 <!-- <link rel="stylesheet" href="/assets/css/money.css"> -->
 <link rel="stylesheet" href="/assets/css/common.css">
-<link rel="stylesheet" href="/assets/css/overflow.css">
 <div class="money">
 <div class="row bgc">
 	<div class="col-sm-6 col-xs-6">
@@ -14,19 +13,17 @@
 		<button class="soso " ng-click="soso()" ng-disabled="0">搜索</button>
 	</div>
 </div>
-<div class="row mar-bo">
-	<div class="col-sm-12 col-xs-12" ng-repeat="m in arr">
+<div class="row mar-bo"  infinite-scroll='moneys.nextPage()' infinite-scroll-disabled='moneys.busy' infinite-scroll-distance='1' >
+	<div class="col-sm-12 col-xs-12" ng-repeat="m in moneys.items">
 		<div class="moneyMsg">
 			<p ng-cloak>说明：{{m.intro}}</p>
 			<p ng-cloak>资金：￥{{m.gold/100}}</p>
 			<p ng-cloak>时间：{{m.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</p>
 		</div>
 	</div>
-	<div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
-	<div ng-if='noLead' class="nullMoney">当前日期内暂无资金日志</div>
-
 </div>
-	
+<div cg-busy="{promise:moneys.promise,templateUrl:moneys.templateUrl,message:moneys.message,backdrop:moneys.backdrop,delay:moneys.delay,minDuration:moneys.minDuration}"></div>
+	<div class="nullMoney" ng-show='moneys.end'>-暂无更多日志-</div>
 </div>
 <script>
 	$(function(){  

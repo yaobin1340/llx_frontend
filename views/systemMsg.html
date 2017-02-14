@@ -17,8 +17,9 @@
 		<div class="titleMsg">{{detail.title}}</div>
 		<div class="centerMsg">
 			<div class="centerMsg-name" style="padding-bottom: 0.1rem;">{{detail.intro}}</div>
-			<div class="centerMsg-items">
+			<div class="centerMsg-items" style="padding-bottom: 0.1rem;font-size: 0.45rem;">
 				<p ng-bind-html="detail.details | to_trusted"></p>
+				<a href="{{detail.link_url}}">{{detail.link_url}}</a>
 			</div>
 		</div>
 		<div class="line"></div>

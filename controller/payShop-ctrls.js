@@ -54,6 +54,11 @@ angular
                         $scope.offerpay.busy = false;
                         $scope.offerpay.page = 1;
                         $scope.offerpay.nextPage();
+                         $mdToast.show(
+                            $mdToast.simple()
+                            .content("删除成功")
+                            .hideDelay(1000)
+                        );
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

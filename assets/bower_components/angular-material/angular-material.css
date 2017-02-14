@@ -8744,7 +8744,9 @@ md-toast {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
+  //修改代码
+  // position: absolute;
+  position: fixed;
   z-index: 90;
   box-sizing: border-box;
   -webkit-align-items: center;

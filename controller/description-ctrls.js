@@ -91,7 +91,7 @@ angular
 		        wx.openLocation({
 		              latitude: $scope.detail.lat,
 		              longitude: $scope.detail.lng,
-		              name: $scope.detail.name,
+		              name: $scope.detail.shop_name,
 		              address: $scope.detail.addr,
 		              scale: 14,
 		              infoUrl: 'http://llx.51loveshow.com/home',
@@ -100,7 +100,7 @@ angular
 		                fail: function(res) {
 		                	$mdToast.show(
 								$mdToast.simple()
-									.content('导航失败，请重试')
+									.content('导航失败，请确认打开定位功能')
 									.hideDelay(1000)
 								);
 		                } 

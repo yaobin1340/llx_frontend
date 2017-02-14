@@ -1,5 +1,5 @@
 <!-- <link rel="stylesheet" href="/assets/css/journal.css"> -->
-<link rel="stylesheet" href="/assets/css/overflow.css">
+<!-- <link rel="stylesheet" href="/assets/css/overflow.css"> -->
 <div class="journal">
 <div class="row bannerMsg ">
 	<div class="col-sm-4 col-xs-4">金额</div>
@@ -7,7 +7,7 @@
 	<div class="col-sm-4 col-xs-4">状态</div>
 </div>
 <div class="hr"></div>
-<div class="row num" infinite-scroll='journals.nextPage()' infinite-scroll-disabled='journals.busy' infinite-scroll-distance='1' >
+<div class="row" infinite-scroll='journals.nextPage()' infinite-scroll-disabled='journals.busy' infinite-scroll-distance='1' >
 	<div ng-repeat="j in journals.items">
 		<div ng-cloak  class="col-sm-4 col-xs-4">￥{{j.money}}</div>
 		<div ng-cloak class="col-sm-4 col-xs-4">{{j.addtime}}</div>

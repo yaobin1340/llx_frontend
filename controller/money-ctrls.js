@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'xiubiCtrl', function xiubiCtrl( $scope, $injector, $rootScope,xiubi) {
+    .controller( 'moneyCtrl', function moneyCtrl( $scope, $injector, $rootScope,$stateParams,money) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -11,20 +11,22 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
     
+
             $scope.scroll_switch = 1;
-            $scope.xiubis = new xiubi();
-            $scope.xiubis.bg_date=$("#beginTime").val();
-            $scope.xiubis.end_date=$("#endTime").val();
+            $scope.moneys = new money();
+            $scope.moneys.bg_date=$("#beginTime").val();
+            $scope.moneys.end_date=$("#endTime").val();
 
             $scope.soso=function(){
-                $scope.xiubis.bg_date=$("#beginTime").val();
-                $scope.xiubis.end_date=$("#endTime").val();
-                $scope.xiubis.items = [];
-                $scope.xiubis.end = false;
-                $scope.xiubis.busy = false;
-                $scope.xiubis.page = 1;
-                $scope.xiubis.nextPage();
+                $scope.moneys.bg_date=$("#beginTime").val();
+                $scope.moneys.end_date=$("#endTime").val();
+                $scope.moneys.items = [];
+                $scope.moneys.end = false;
+                $scope.moneys.busy = false;
+                $scope.moneys.page = 1;
+                $scope.moneys.nextPage();
             }
+
 
 
 

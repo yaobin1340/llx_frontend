@@ -34,6 +34,11 @@ angular
                                     return;
                                 }
                             });
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content("收货成功")
+                            .hideDelay(1000)
+                        );
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

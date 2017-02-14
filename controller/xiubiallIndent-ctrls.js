@@ -34,6 +34,11 @@ angular
                                     return;
                                 }
                             });
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content("订单取消成功")
+                            .hideDelay(1000)
+                        );
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -57,6 +62,11 @@ angular
                                     return;
                                 }
                             });
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content("收货成功")
+                            .hideDelay(1000)
+                        );
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
