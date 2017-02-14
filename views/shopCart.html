@@ -22,10 +22,10 @@
 			</div>
 		</div>
 	</div>
-	<footer class="navbar-fixed-bottom" style="background-color: #fff;">
+	<footer class="navbar-fixed-bottom" style="background-color: #fff;position: fixed;bottom: 0;left: 0;z-index: 1030;">
 	<div ng-cloak class="cir">{{getTotalAmount()}}</div>
 		<img src="/assets/img/img_shopcart.png" alt="">
-		<span ng-cloak>￥{{getTotalPrice()}}</span>
+		<span ng-cloak style="width: 30%;">￥{{getTotalPrice()}}</span>
 		<div class="goPay" ng-click="goPay()">结算</div>
 	</footer>
 	</div>
