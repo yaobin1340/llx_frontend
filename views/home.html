@@ -1,8 +1,8 @@
 
-	<link rel="stylesheet" href="/assets/css/main.css">
-	<link rel="stylesheet" href="/assets/css/choseAddress.css">
+	<!-- <link rel="stylesheet" href="/assets/css/main.css"> -->
+	<!-- <link rel="stylesheet" href="/assets/css/choseAddress.css"> -->
 	<link rel="stylesheet" href="/assets/css/overflow.css">
-
+<div class="home">
 <div ng-show="add==0">
 	<header>
 		<input ng-clock type="text" value="{{area_name}}" ng-click="choseAdd()" class="select text-overflow" placeholder="定位中">
@@ -26,11 +26,11 @@
 				<span>酒店住宿</span>
 			</div>
 		</a>
-		<a ng-click="choseTWO('休闲娱乐')">
+		<a ng-click="choseTWO('水果生鲜')">
 			<div >
-				<img src="/assets/img/img_gv_shuiguoshengxian.png" alt="休闲娱乐" >
+				<img src="/assets/img/img_gv_shuiguoshengxian.png" alt="水果生鲜" >
 				<!-- <div class="chosetwo03"></div> -->
-				<span>休闲娱乐</span>
+				<span>水果生鲜</span>
 			</div>
 		</a>
 		<a ng-click="choseTWO('美容美发')">
@@ -108,7 +108,7 @@
 			<div class="col-md-4 col-sm-4 col-xs-4" style="
 			position: relative;">
 				<img ng-src="http://wap.51loveshow.com/attachs/{{shop.photo}}" alt="" class="pro-photo">
-				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:-0.13rem;width: 2rem;" ng-if="shop.shop_class==1">
+				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:0.1rem;width: 2rem;" ng-if="shop.shop_class==1">
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
 				<div ng-cloak class="col-sm-9 col-xs-9 div-name text-overflow" style="padding:0;color:black;">{{shop.shop_name}}</div>
@@ -118,26 +118,42 @@
 				<div ng-cloak class="col-sm-12 col-xs-12 shopAddress text-overflow"style="padding:0.25rem 0 0 0;">
 					{{shop.addr|cut}}
 				</div>
+				<div ng-if="shop.shop_class==1">
 				<div class="col-sm-6 col-xs-6"style="padding:0;">
-					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score>=1">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score<1">
-					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score>=2">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score<2">
-					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score>=3">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score<3">
-					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score>=4">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score<4">
-					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score>=5">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score<5">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.1">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.1">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.2">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.2">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.3">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.3">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.4">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.4">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.5">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.5">
 				</div>
 				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;">
 					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
 				</div>
-				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p class="ourmembers">本店会员：满￥<span ng-cloak class="ourprice">{{100}}</span>减￥<span ng-cloak class="ourprice">{{shop.yhk1}}</span></p></div>
-				<div ng-if="shop.shop_class==2" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p class="ourmembers">本店会员：无减免</p></div>
-				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p  class="ourmembers">平台会员：满￥<span ng-cloak class="ourprice">{{100}}</span> 减￥<span class="ourprice">{{shop.yhk2}} </span></p>
 				</div>
-				<div ng-if="shop.shop_class==2" class="col-sm-12 col-xs-12"style="padding:0;padding-top:0.1rem;color:#585858;"><p class="ourmembers">平台会员：无减免</p>
+				<div ng-if="shop.shop_class==2">
+				<div class="col-sm-6 col-xs-6"style="padding:0;padding-top: 0.5rem;">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.1">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.1">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.2">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.2">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.3">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.3">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.4">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.4">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.5">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.5">
+				</div>
+				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;padding-top: 0.5rem;">
+					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
+				</div>
+				</div>
+				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p class="ourmembers">本店会员：满￥<span ng-cloak class="ourprice">{{100}}</span>减￥<span ng-cloak class="ourprice">{{shop.yhk1}}</span></p></div>
+				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p  class="ourmembers">平台会员：满￥<span ng-cloak class="ourprice">{{100}}</span> 减￥<span class="ourprice">{{shop.yhk2}} </span></p>
 				</div>
 			</div>
 		</div>
@@ -145,7 +161,9 @@
 	<div cg-busy="{promise:shops.promise,templateUrl:shops.templateUrl,message:shops.message,backdrop:shops.backdrop,delay:shops.delay,minDuration:shops.minDuration}"></div>
 	<div class="home_shop_nomore" ng-show='shops.end'>-暂无更多店铺-</div>
 </div>
+</div>
 
+<div class="choseAddress">
 <div class="containers" ng-show="add==1">
 	<div class="banner">
 	    <img ng-src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(0);">
@@ -179,4 +197,5 @@
 		</div>
 	</div>
 	<div class="toBottom">-到底了-</div>
+</div>
 </div>

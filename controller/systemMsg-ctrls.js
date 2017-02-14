@@ -16,9 +16,8 @@ angular
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
-
             $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/Message/vipmsgshow',{msg_id:$stateParams.msg_id})
+                .post($config.api_uri + '/Apiuser/Message/msgshow',{msg_id:$stateParams.msg_id})
                 .success(function (data) {
                     if(data.success){
                        $scope.detail=data.detail;

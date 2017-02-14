@@ -1,6 +1,11 @@
 
-	<link rel="stylesheet" href="/assets/css/systemMsg.css">
-	
+	<!-- <link rel="stylesheet" href="/assets/css/systemMsg.css"> -->
+<style>
+	body{
+		background-color: #eff0eb;
+	}
+</style>
+<div class="systemMsg">
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
@@ -11,22 +16,23 @@
 	<div class="sysMsg">
 		<div class="titleMsg">{{detail.title}}</div>
 		<div class="centerMsg">
-			<div class="centerMsg-name">{{detail.intro}}</div>
+			<div class="centerMsg-name" style="padding-bottom: 0.1rem;">{{detail.intro}}</div>
 			<div class="centerMsg-items">
-				<p>{{detail.details}}</p>
+				<p ng-bind-html="detail.details | to_trusted"></p>
 			</div>
 		</div>
 		<div class="line"></div>
 		<div class="bottomMsg clearfix">
 			<div class="bottomMsg-left">
-				{{detail.create_time}}
+				
 			</div>
 			<div class="bottomMsg-right">
-
+				<div ng-cloak class="Msg-now-time text-right" ng-if="detail.create_time==null">暂无</div>
+				<div ng-cloak class="Msg-now-time text-right" ng-if="detail.create_time!=null">{{detail.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</div>
 			</div>
 		</div>
 		<div class="line"></div>
 	</div>
 	</div>
-
+</div>
 	

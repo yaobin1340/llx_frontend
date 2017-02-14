@@ -1,7 +1,12 @@
 
-	<link rel="stylesheet" href="/assets/css/addAddress.css">
-
-<div ng-show="add==0">
+	<!-- <link rel="stylesheet" href="/assets/css/addAddress.css"> -->
+<style>
+	body{
+		color: #eff0eb;
+	}
+</style>
+<div class="addAddress">
+	<div ng-show="add==0">
 	<div class="banner navbar-fixed-top">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
   ">
@@ -41,11 +46,11 @@
 		<button class="btn-submit " ng-click="submitAdd()" ng-disabled="shoup==null||shoup==''||shoutel==null||shoutel==''||shoutear==null||shoutear==''||n==null||n==''">保存</button>
 	</div>
 </div>
+</div>
 
 
-
-<link rel="stylesheet" href="/assets/css/choseAddress.css">
-
+<div class="choseAddress">
+<!-- <link rel="stylesheet" href="/assets/css/choseAddress.css"> -->
 <div class="containers" ng-show="add==1">
 	<div class="banner">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
@@ -78,4 +83,6 @@
 	</div>
 	<div class="toBottom">-到底了-</div>
 </div>
+</div>
+	
 </div>

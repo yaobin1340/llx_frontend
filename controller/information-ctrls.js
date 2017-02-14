@@ -12,11 +12,7 @@ angular
         var $mdToast = $injector.get('$mdToast');
 
             $scope.$emit('changeImg', 4); 
-	        $scope.chose1=1;$scope.chose2=0;
-            $scope.scroll_switch = 1;
-            $scope.messages = new system();
-            $scope.scroll_switch = 1;
-            $scope.messagem = new mumber();
+         $scope.chose1=1;$scope.chose2=0;
             $scope.chose = function(id){
                 switch (id) {
                     case 1 :
@@ -24,27 +20,12 @@ angular
                         return;
                     }
                     $scope.chose1=1;$scope.chose2=0;
-                    $scope.messages.items = [];
-                    $scope.messages.end = false;
-                    $scope.messages.busy = false;
-                    $scope.messages.page = 1;
-                    $scope.messages.nextPage();
                     break;
                     case 2 :
                     if($scope.chose2==1){
                         return;
                     }
                     $scope.chose1=0;$scope.chose2=1;
-                    if($scope.messagem==undefined){
-                         $scope.scroll_switch = 1;
-                        $scope.messagem = new mumber();
-                    }else{
-                        $scope.messagem.items = [];
-                        $scope.messagem.end = false;
-                        $scope.messagem.busy = false;
-                        $scope.messagem.page = 1;
-                        $scope.messagem.nextPage();
-                    }
                     break;
                 }
             }

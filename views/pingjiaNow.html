@@ -1,4 +1,5 @@
-	<link rel="stylesheet" href="/assets/css/pingjia.css">
+	<!-- <link rel="stylesheet" href="/assets/css/pingjia.css"> -->
+<div class="pingjia">
 	<div class="discuss-cen"   infinite-scroll='evaluate.nextPage()' infinite-scroll-disabled='evaluate.busy' infinite-scroll-distance='1' >
 		<div class="contianers" ng-repeat="item in evaluate.items">
 			<div class="dis-top clearfix">
@@ -33,3 +34,4 @@
 	</div>
 <div  cg-busy="{promise:evaluate.promise,templateUrl:evaluate.templateUrl,message:evaluate.message,backdrop:evaluate.backdrop,delay:evaluate.delay,minDuration:evaluate.minDuration}"></div>
 <div class="home_shop_nomore" ng-show='evaluate.end'>-暂无更多评价-</div>
+</div>

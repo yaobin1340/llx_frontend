@@ -1,5 +1,11 @@
 
-	<link rel="stylesheet" href="/assets/css/addAddress.css">
+	<!-- <link rel="stylesheet" href="/assets/css/addAddress.css"> -->
+<style>
+	body{
+		background-color: #eff0eb;
+	}
+</style>
+<div class="addAddress">
 
 <div ng-show="add==0">
 	<div class="banner navbar-fixed-top">
@@ -47,9 +53,9 @@
 		<button class="btn-submit "ng-disabled="shoup==null||shoup==''||shoutel==null||shoutel==''||shoutear==null||shoutear==''||n==null||n==''" ng-click="baocun()">保存</button>
 	</div>
 </div>
-
-
-<link rel="stylesheet" href="/assets/css/choseAddress.css">
+</div>
+<!-- <link rel="stylesheet" href="/assets/css/choseAddress.css"> -->
+<div class="choseAddress">
 <div class="containers" ng-show="add==1">
 	<div class="banner">
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
@@ -80,5 +86,6 @@
 		</div>
 	</div>
 	<div class="toBottom">-到底了-</div>
+</div>
 </div>
 </div>

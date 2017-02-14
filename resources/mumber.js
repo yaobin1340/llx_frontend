@@ -18,9 +18,8 @@ angular.module('ohapp').factory('mumber', function ($config, $http) {
             url: $config.api_uri + '/Apiuser/Message/vipmsg',
             data: {page:this.page},
         }).success(function (data) {
-            console.log(data);
             if (data.success) {
-                if(data.list==null||!data.list.length){
+                if(data.msg==null||!data.msg.length){
                     this.end = true;
                     return
                 }

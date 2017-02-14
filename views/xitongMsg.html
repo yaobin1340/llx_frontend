@@ -1,0 +1,12 @@
+<div class="information">
+<div  cg-busy="{promise:messages.promise,templateUrl:messages.templateUrl,message:messages.message,backdrop:messages.backdrop,delay:messages.delay,minDuration:messages.minDuration}">
+	<div class="systemMsg"   infinite-scroll='messages.nextPage()' infinite-scroll-disabled='messages.busy' infinite-scroll-distance='1' ng-show="chose1==1">
+		<div class="Msg-now" ng-repeat="msg in messages.items" ui-sref="systemMsg({msg_id:msg.msg_id})">
+			<div ng-cloak class="Msg-now-left text-overflow">{{msg.title}}</div>
+			<div ng-cloak class="Msg-now-time text-right" ng-if="msg.create_time==null">暂无</div>
+			<div ng-cloak class="Msg-now-time text-right" ng-if="msg.create_time!=null">{{msg.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</div>
+		</div>
+		<div class="home_shop_nomore" ng-show='messages.end'>-暂无更多信息-</div>
+	</div>
+</div>
+</div>

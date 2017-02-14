@@ -19,9 +19,9 @@ angular.module('ohapp').factory('system', function ($config, $http) {
             url: $config.api_uri + '/Apiuser/Message/index',
             data: {page:this.page},
         }).success(function (data) {
-            console.log(data);
+            
             if (data.success) {
-                if(data.list==null||!data.list.length){
+                if(data.msg==null||!data.msg.length){
                     this.end = true;
                     return
                 }
@@ -35,7 +35,6 @@ angular.module('ohapp').factory('system', function ($config, $http) {
             } else {
 
             }
-
         }.bind(this))
     };
 

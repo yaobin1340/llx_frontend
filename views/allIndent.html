@@ -1,6 +1,11 @@
-<link rel="stylesheet" href="/assets/css/allIndent.css">
+<!-- <link rel="stylesheet" href="/assets/css/allIndent.css"> -->
+<style>
+	body{
+		background-color: #eff0eb;
+	}
+</style>
 <link rel="stylesheet" href="/assets/css/overflow.css">
-
+<div class="allIndent">
 <div infinite-scroll='cartIndent.nextPage()' infinite-scroll-disabled='cartIndent.busy' infinite-scroll-distance='1' >
 <div class="row" ng-repeat="pr in cartIndent.items">
 	<div class="col-sm-12 col-xs-12 indentMsg">
@@ -41,3 +46,4 @@
 </div>
 <div cg-busy="{promise:cartIndent.promise,templateUrl:cartIndent.templateUrl,message:cartIndent.message,backdrop:cartIndent.backdrop,delay:cartIndent.delay,minDuration:cartIndent.minDuration}"></div>
 	<div class="home_shop_nomore" ng-show='cartIndent.end'>-暂无更多订单-</div>
+</div>
