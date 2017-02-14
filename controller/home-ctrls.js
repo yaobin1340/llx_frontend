@@ -138,5 +138,4 @@ angular
             $scope.getDishes(40.77,-73.97);
         }
 
-
     });
