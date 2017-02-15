@@ -94,7 +94,7 @@ angular
                             return;
                         }else{
                             $scope.needIntegral=$scope.integral;
-                            $scope.prices=$scope.price-$scope.needIntegral/100;
+                            $scope.prices=($scope.price*100-$scope.needIntegral)/100;
                             $scope.needgold=$scope.gold>$scope.prices?$scope.prices:$scope.gold;
                             $scope.totalNeedpay=$scope.prices-$scope.needgold;
                         }
@@ -139,7 +139,6 @@ angular
                 })
             
         }
-
 
 
 
