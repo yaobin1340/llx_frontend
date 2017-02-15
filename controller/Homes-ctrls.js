@@ -33,9 +33,6 @@ angular
                     $scope.shops.busy = false;
                     $scope.shops.page = 1;
                     $scope.shops.nextPage();
-                    if (sessionStorage.getItem('juli')!=null){
-                        $(document).scrollTop(sessionStorage.getItem('juli'));
-                    }
                 }
             // wxConfig();
             // if(JSON.stringify($session.get('area_name'))=='{}'){wxConfig();}else{
@@ -238,12 +235,13 @@ angular
                 $scope.shops.nextPage();
           }
         });
+        // wx.error(function(res){
+        //     console.log(res)
+        // })
     });
     }
 
-
     $scope.choseShop = function(id){
-        sessionStorage.setItem("juli",$(document).scrollTop())
         $state.go('description',{shop_id:id});
     }
          
