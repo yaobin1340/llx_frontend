@@ -27,7 +27,7 @@ angular
                         .post($config.api_uri + '/Apiuser/Yhk/share',{shop_id:$scope.shops_id})
                         .success(function (data) {
                         	if(data.success){
-                        		$http.post(data.url,{shop_id:$scope.shops_id})
+                        		$http.post(data.url,{shop_id:$scope.shops_id,openid:$stateParams.openid})
                         			.success(function(datas){
                         				if(datas.success){
                         					$scope.detail=datas.detail;

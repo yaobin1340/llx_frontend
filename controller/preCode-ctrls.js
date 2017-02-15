@@ -19,7 +19,7 @@ angular
                     url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
                     data:{code:GetRequest().code}
                 }).success(function (data) {
-                    $state.go("description",{shop_id:$stateParams.shop_id,openid:data.openid});
+                    $state.go("description",{shop_id:$stateParams.shop_id,openid:data.openid,type:1});
                 })
         }
 
