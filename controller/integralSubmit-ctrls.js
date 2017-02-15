@@ -90,7 +90,8 @@ angular
                         $scope.msg = data.detail;
                         $scope.price = data.detail.price/100;
                         if($scope.integral/100>=$scope.price){
-                            $scope.needIntegral=$scope.price;
+                            $scope.needIntegral=$scope.price*100;
+                            $scope.totalNeedpay=0;
                             return;
                         }else{
                             $scope.needIntegral=$scope.integral;
