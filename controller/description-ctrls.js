@@ -23,20 +23,18 @@ angular
 		$scope.promise = null;
         	//获取商家详情页
         if($stateParams.type==1){
-        	alert($stateParams.shop_id+"+"+$stateParams.openid+"+"+$stateParams.img_url)
         	$scope.promise=$http
 				.post($stateParams.img_url,{shop_id:$stateParams.shop_id,openid:$stateParams.openid})
 				.success(function (data) {
-					alert(JSON.stringify(data));
-					if(datas.success){
-                        $scope.detail=datas.detail;
+					if(data.success){
+                        $scope.detail=data.detail;
                     }else{
                         $mdToast.show(
 							$mdToast.simple()
-							.content(datas.error_msg)
+							.content(data.error_msg)
 							.hideDelay(2000)
 						);
-						if(datas.img_url!=null){
+						if(data.img_url!=null){
 							$mdDialog.show({
 								scope: $scope,
 								preserveScope: true,
@@ -47,7 +45,7 @@ angular
 							});
 							var timer = setInterval(function(){
 								if($("#qrcode").html()!=undefined){
-									('img').attr("src",datas.img_url); 
+									('img').attr("src",data.img_url); 
 									clearInterval(timer);
 								}
 							},1000)
