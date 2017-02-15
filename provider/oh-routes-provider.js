@@ -57,7 +57,7 @@ angular
     };
 
      this.routes['description'] = {
-        url : '/description?shop_id,type,openid',
+        url : '/description?shop_id,type,openid,img_url',
         title: '商户信息',
         templateUrl : 'views/descriptionProducts.html',
         controller:'descriptionCrtl'
@@ -367,7 +367,7 @@ angular
         controller:'jforderMsgCtrl'
     };
     this.routes['preCode'] = {
-        url : '/preCode?shop_id',
+        url : '/preCode?shop_id,img_url',
         title: '正在获取信息',
         templateUrl : 'views/preCode.html',
         controller:'preCodeCtrl'

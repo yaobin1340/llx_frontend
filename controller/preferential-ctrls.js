@@ -48,7 +48,7 @@ angular
                                 });
                                 var timer = setInterval(function(){
                                     if($("#qrcode").html()!=undefined){
-                                        new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/preCode?shop_id='+id);
+                                        new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/preCode?shop_id='+id+"&img_url="+$scope.url);
                                          clearInterval(timer);
                                     }
                                   },1000)

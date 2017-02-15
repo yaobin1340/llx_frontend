@@ -23,40 +23,35 @@ angular
 		$scope.promise = null;
         	//获取商家详情页
         if($stateParams.type==1){
-        		$http
-                        .post($config.api_uri + '/Apiuser/Yhk/share',{shop_id:$scope.shops_id})
-                        .success(function (data) {
-                        	if(data.success){
-                        		$http.post(data.url,{shop_id:$scope.shops_id,openid:$stateParams.openid})
-                        			.success(function(datas){
-                        				if(datas.success){
-                        					$scope.detail=datas.detail;
-                        				}else{
-                        					$mdToast.show(
-											$mdToast.simple()
-												.content(datas.error_msg)
-												.hideDelay(2000)
-											);
-											if(datas.img_url!=null){
-												$mdDialog.show({
-								                    scope: $scope,
-								                    preserveScope: true,
-								                    templateUrl: 'views/mixaoxi_code.html',
-								                    parent: angular.element(document.body),
-								                    clickOutsideToClose: true,
-								                    fullscreen: true
-								                });
-								            var timer = setInterval(function(){
-								              	if($("#qrcode").html()!=undefined){
-								              		$('img').attr("src",datas.img_url); 
-								              		 clearInterval(timer);
-								              	}
-								              },1000)
-											}
-                        				}
-                        			})
-                        	}    
-                        })
+        	$scope.promise=$http
+				.post($stateParams.img_url,{shop_id:$scope.shops_id,openid:$stateParams.openid})
+				.success(function (data) {
+					if(datas.success){
+                        $scope.detail=datas.detail;
+                    }else{
+                        $mdToast.show(
+							$mdToast.simple()
+							.content(datas.error_msg)
+							.hideDelay(2000)
+						);
+						if(datas.img_url!=null){
+							$mdDialog.show({
+								scope: $scope,
+								preserveScope: true,
+								templateUrl: 'views/mixaoxi_code.html',
+								parent: angular.element(document.body),
+								clickOutsideToClose: true,
+								fullscreen: true
+							});
+							var timer = setInterval(function(){
+								if($("#qrcode").html()!=undefined){
+									('img').attr("src",datas.img_url); 
+									clearInterval(timer);
+								}
+							},1000)
+						}
+                    }
+				})
         }else{
         	$scope.promise=$http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
