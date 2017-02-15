@@ -34,9 +34,9 @@ angular
                     }
                 })
 
-            function wuliu(){
+            // function wuliu(){
                 $scope.promise = $http
-                .post($config.api_uri + '/Apipublic/Apilogin/get_express_info',{express:$scope.express,kd_num:$scope.kd_num})
+                .post($config.api_uri + '/Apipublic/Apilogin/get_express_info',{express:'yunda',kd_num:3904952703494})
                 .success(function (data) {
                     if(data.success){
                         $scope.data=data.data;
@@ -48,7 +48,7 @@ angular
                         );
                     }
                 })
-            }
+            // }
             
 
 
