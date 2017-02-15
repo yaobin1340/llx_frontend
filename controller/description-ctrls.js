@@ -45,8 +45,7 @@ angular
 							});
 							var timer = setInterval(function(){
 								if($("#qrcode").html()!=undefined){
-									alert(data.img_url);
-									('img').attr("src",data.img_url); 
+									$('img').attr("src",data.img_url); 
 									clearInterval(timer);
 								}
 							},1000)
