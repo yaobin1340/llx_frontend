@@ -48,7 +48,8 @@ angular
 								                });
 								            var timer = setInterval(function(){
 								              	if($("#qrcode").html()!=undefined){
-								              		new QRCode(document.getElementById('qrcode'), datas.img_url);
+								              		$("#qrcode").html()=datas.img_url;
+								              		// new QRCode(document.getElementById('qrcode'), datas.img_url);
 								              		 clearInterval(timer);
 								              	}
 								              },1000)
@@ -85,7 +86,7 @@ angular
                 });
             var timer = setInterval(function(){
               	if($("#qrcode").html()!=undefined){
-              		new QRCode(document.getElementById('qrcode'), window.location.href);
+              		new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/description?shop_id='+$stateParams.shop_id);
               		 clearInterval(timer);
               	}
               },1000)
