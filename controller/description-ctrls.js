@@ -48,8 +48,6 @@ angular
 								                });
 								            var timer = setInterval(function(){
 								              	if($("#qrcode").html()!=undefined){
-								              		// $("#qrcode").html()=datas.img_url;
-								              		// new QRCode(document.getElementById('qrcode'), datas.img_url);
 								              		$('img').attr("src",datas.img_url); 
 								              		 clearInterval(timer);
 								              	}
