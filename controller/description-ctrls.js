@@ -35,7 +35,7 @@ angular
                         					$mdToast.show(
 											$mdToast.simple()
 												.content(datas.error_msg)
-												.hideDelay(1000)
+												.hideDelay(2000)
 											);
 											if(datas.img_url!=null){
 												$mdDialog.show({
