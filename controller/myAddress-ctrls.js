@@ -57,11 +57,11 @@ angular
                         $http
                             .post($config.api_uri + '/Apiuser/Adr/index')
                             .success(function (data) {
-                                if(data.success){
-                                $scope.address = data.addr;
-                                }else{
-                                    window.history.go(0);
-                                }
+                                $scope.address.items = [];
+                                $scope.address.end = false;
+                                $scope.address.busy = false;
+                                $scope.address.page = 1;
+                                $scope.address.nextPage();
                             })
                     }else{
                         $mdToast.show(
