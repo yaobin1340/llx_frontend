@@ -20,6 +20,7 @@ angular
                     data:{code:GetRequest().code}
                 }).success(function (data) {
                     // sessionStorage.setItem('code',data.openid);
+                    console.log($stateParams.shop_id);
                     // $state.go("payment");
                     console.log(data.openid);
                 })
