@@ -23,7 +23,7 @@ angular
 		$scope.promise = null;
         	//获取商家详情页
         if($stateParams.type==1){
-        	console.log($stateParams.img_url);
+        	alert($stateParams.img_url);
         	$scope.promise=$http
 				.post($stateParams.img_url,{shop_id:$scope.shops_id,openid:$stateParams.openid})
 				.success(function (data) {
