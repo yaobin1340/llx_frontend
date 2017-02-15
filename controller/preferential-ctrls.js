@@ -49,7 +49,7 @@ angular
                                 });
                                 var timer = setInterval(function(){
                                     if($("#qrcode").html()!=undefined){
-                                        new QRCode(document.getElementById('qrcode'),$scope.url);
+                                        new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/description?shop_id='+id+'&type=1');
                                          clearInterval(timer);
                                     }
                                   },1000)

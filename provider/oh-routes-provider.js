@@ -57,7 +57,7 @@ angular
     };
 
      this.routes['description'] = {
-        url : '/description?shop_id',
+        url : '/description?shop_id,type',
         title: '商户信息',
         templateUrl : 'views/descriptionProducts.html',
         controller:'descriptionCrtl'
