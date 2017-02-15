@@ -366,6 +366,12 @@ angular
         templateUrl : 'views/jforderMsg.html',
         controller:'jforderMsgCtrl'
     };
+    this.routes['preCode'] = {
+        url : '/preCode?shop_id',
+        title: '正在获取信息',
+        templateUrl : 'views/preCode.html',
+        controller:'preCodeCtrl'
+    };
 
     
     this.$get = function()

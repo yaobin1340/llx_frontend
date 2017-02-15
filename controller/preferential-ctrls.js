@@ -45,7 +45,6 @@ angular
                                     parent: angular.element(document.body),
                                     clickOutsideToClose: true,
                                     fullscreen: true
-
                                 });
                                 var timer = setInterval(function(){
                                     if($("#qrcode").html()!=undefined){
