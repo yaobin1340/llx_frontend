@@ -31,7 +31,8 @@ angular
                 })
 
         $scope.tiaozhuan = function(){
-            window.location.href=$scope.detail.link_url;
+            console.log(window.location.href);
+            console.log(window.location.href=$scope.detail.link_url);
         }
 
 
