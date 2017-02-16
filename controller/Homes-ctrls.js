@@ -238,9 +238,9 @@ angular
                 $scope.shops.nextPage();
           }
         });
-        // wx.error(function(res){
-        //     console.log(res)
-        // })
+        wx.error(function(res){
+            alert(res);
+        })
     });
     }
 
