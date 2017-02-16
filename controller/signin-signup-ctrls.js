@@ -40,7 +40,7 @@ angular
 						$session.save()
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName
-						$state.go('main.personal');
+						$state.go('loginCode');
 					}else{
 						$mdToast.show(
 						$mdToast.simple()
@@ -118,6 +118,7 @@ angular
 						$rootScope.firstName = data.firstName
 						$rootScope.lastName = data.lastName
 						$mdDialog.hide();
+						$state.go('signin');
 					}else{
 						$mdToast.show(
 						$mdToast.simple()

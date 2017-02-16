@@ -55,6 +55,8 @@ angular
                 data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
             }).success(function (data) {
                 if (data.success) {
+                    $scope.citycodes=data.citycode;
+                    sessionStorage.setItem('citycodes',data.citycode);
                     $scope.area_name = data.map.name;
                     sessionStorage.setItem('area_name',data.map.name);
                     $scope.shops.area_code = data.map.code;
@@ -116,8 +118,9 @@ angular
         $scope.choseNear = function(city,ac){
             $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
+                        $scope.citycodes=city;
+                        sessionStorage.setItem('citycodes',city);
                         $scope.c=ac;
                         $scope.add_p=[];
                         $scope.add_c=[];
@@ -156,7 +159,7 @@ angular
                                 $state.go('xiubiShop',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }else if(item.cate_name==type){
-                                $state.go('restaurant',{cate_id:item.cate_id,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
+                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }
                         })
@@ -222,6 +225,8 @@ angular
                         .content("定位失败,请重试或手动选择地区")
                         .hideDelay(1000)
                     );
+                $scope.citycodes=310100;
+                sessionStorage.setItem('citycodes',$scope.citycodes);
                 $scope.shops.lat = 31.2383718228;
                 sessionStorage.setItem('lat',$scope.shops.lat);
                 $scope.shops.lng = 121.3301816158;

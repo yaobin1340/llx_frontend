@@ -178,7 +178,7 @@ angular
         controller:'OpinionCtrl'
     };
     this.routes['restaurant'] = {
-        url : '/restaurant?cate_id,area_code,lat,lng',
+        url : '/restaurant?cate_name,cate_id,area_code,lat,lng,citycode',
         title: '二级菜单',
         templateUrl : 'views/restaurant.html',
         controller:'restaurantsCtrl'
@@ -371,6 +371,12 @@ angular
         title: '正在获取信息',
         templateUrl : 'views/preCode.html',
         controller:'preCodeCtrl'
+    };
+    this.routes['loginCode'] = {
+        url : '/loginCode',
+        title: '正在登陆中...',
+        templateUrl : 'views/loginCode.html',
+        controller:'loginCodeCtrl'
     };
 
     
