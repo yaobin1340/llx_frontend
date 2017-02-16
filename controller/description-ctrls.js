@@ -24,7 +24,7 @@ angular
         	//获取商家详情页
         if($stateParams.type==1){
         	$scope.promise=$http
-				.post($stateParams.img_url,{shop_id:$stateParams.shop_id,openid:$stateParams.openid})
+				.post($stateParams.image_url,{shop_id:$stateParams.shop_id,openid:$stateParams.openid})
 				.success(function (data) {
 					if(data.success){
                         $scope.detail=data.detail;

@@ -11,7 +11,7 @@ angular
         var $mdMedia = $injector.get('$mdMedia');
         var $mdToast = $injector.get('$mdToast');
         if(!GetRequest().code){
-                var redirect_url = 'http://llx.51loveshow.com/preCode?shop_id='+$stateParams.shop_id+"&img_url="+$stateParams.img_url;
+                var redirect_url = 'http://llx.51loveshow.com/preCode?shop_id='+$stateParams.shop_id+"&image_url="+$stateParams.image_url;
                 location.href =  "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0d70247bb52ac37e&redirect_uri="+encodeURIComponent(redirect_url)+"&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect"
             }else{
                 $http({
@@ -20,7 +20,7 @@ angular
                     data:{code:GetRequest().code}
                 }).success(function (data) {
                     
-                    $state.go("description",{shop_id:$stateParams.shop_id,openid:data.openid,type:1,img_url:$stateParams.img_url});
+                    $state.go("description",{shop_id:$stateParams.shop_id,openid:data.openid,type:1,image_url:$stateParams.image_url});
                 })
         }
 
