@@ -24,7 +24,9 @@ angular
             //判断是否有缓存地址和经纬度
             if(sessionStorage.getItem('area_name')==null||sessionStorage.getItem('lat')==null||sessionStorage.getItem('lng')==null){
 
-	            $timeout(wxConfig(),5000);
+	            $timeout(function(){
+		            wxConfig()
+                },5000);
             }else{
                 $scope.area_name = sessionStorage.getItem('area_name');
                 $scope.shops.area_code = sessionStorage.getItem('area_code');
