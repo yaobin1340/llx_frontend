@@ -21,6 +21,7 @@ angular
         $scope.shops.lng = '';
         $scope.isReady = false;
         $scope.$on('$viewContentLoaded', function() {
+	        window.wxConfig();
             //判断是否有缓存地址和经纬度
             if(sessionStorage.getItem('area_name')==null||sessionStorage.getItem('lat')==null||sessionStorage.getItem('lng')==null){wxConfig();}else{
                 $scope.area_name = sessionStorage.getItem('area_name');
@@ -34,6 +35,7 @@ angular
                     $scope.shops.page = 1;
                     $scope.shops.nextPage();
                 }
+
             // wxConfig();
             // if(JSON.stringify($session.get('area_name'))=='{}'){wxConfig();}else{
             //     $scope.area_name = $session.get('area_name');
@@ -196,15 +198,10 @@ angular
         $scope.shops.nextPage();
     }
 
-    $scope.$on('$viewContentLoaded', function() {
-	    $mdToast.show(
-		    $mdToast.simple()
-			    .content('页面加载完毕')
-			    .hideDelay(1000)
-	    );
-        window.wxConfig();
-    });
-
+    // $scope.$on('$viewContentLoaded', function() {
+    //     window.wxConfig();
+    // });
+/*
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
@@ -252,7 +249,7 @@ angular
         // })
     });
     }
-
+*/
     $scope.choseShop = function(id){
         $state.go('description',{shop_id:id});
     }
