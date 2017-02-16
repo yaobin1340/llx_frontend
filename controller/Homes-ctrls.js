@@ -55,8 +55,7 @@ angular
                 data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
             }).success(function (data) {
                 if (data.success) {
-                    console.log(data);
-                    sessionStorage.setItem('citycodes',data.citycode);
+                    sessionStorage.setItem('citycodes',data.map.citycode);
                     $scope.area_name = data.map.name;
                     sessionStorage.setItem('area_name',data.map.name);
                     $scope.shops.area_code = data.map.code;
