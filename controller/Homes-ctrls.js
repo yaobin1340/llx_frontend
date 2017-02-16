@@ -197,6 +197,11 @@ angular
     }
 
     $scope.$on('$viewContentLoaded', function() {
+	    $mdToast.show(
+		    $mdToast.simple()
+			    .content('页面加载完毕')
+			    .hideDelay(1000)
+	    );
         window.wxConfig();
     });
 
