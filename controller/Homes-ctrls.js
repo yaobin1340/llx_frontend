@@ -1,6 +1,6 @@
 angular
     .module( 'ohapp' )
-    .controller( 'HomesCtrl', function HomesCtrl( $scope, $injector, $rootScope, Shops) {
+    .controller( 'HomesCtrl', function HomesCtrl( $scope, $injector, $rootScope, Shops, $timeout) {
         var $http = $injector.get( '$http' );
         var $location = $injector.get('$location');
         var $state = $injector.get( '$state' );
@@ -22,7 +22,10 @@ angular
         $scope.isReady = false;
         $scope.$on('$viewContentLoaded', function() {
             //判断是否有缓存地址和经纬度
-            if(sessionStorage.getItem('area_name')==null||sessionStorage.getItem('lat')==null||sessionStorage.getItem('lng')==null){wxConfig();}else{
+            if(sessionStorage.getItem('area_name')==null||sessionStorage.getItem('lat')==null||sessionStorage.getItem('lng')==null){
+
+	            $timeout(wxConfig(),2000);
+            }else{
                 $scope.area_name = sessionStorage.getItem('area_name');
                 $scope.shops.area_code = sessionStorage.getItem('area_code');
                 $scope.shops.lat = sessionStorage.getItem('lat');
