@@ -26,7 +26,7 @@ angular
 
 	            $timeout(function(){
 		            wxConfig()
-                },5000);
+                },1500);
             }else{
                 $scope.area_name = sessionStorage.getItem('area_name');
                 $scope.shops.area_code = sessionStorage.getItem('area_code');
