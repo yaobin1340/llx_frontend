@@ -196,6 +196,10 @@ angular
         $scope.shops.nextPage();
     }
 
+    $scope.$on('$viewContentLoaded', function() {
+        window.wxConfig();
+    });
+
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
