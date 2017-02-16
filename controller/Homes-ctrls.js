@@ -220,7 +220,7 @@ angular
             fail: function (res) {
                 $mdToast.show(
                     $mdToast.simple()
-                        .content("定位失败,请重试或手动选择地区")
+                        .content(res)
                         .hideDelay(1000)
                     );
                 $scope.citycodes=310100;
