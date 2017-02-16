@@ -55,7 +55,7 @@ angular
                 data: {lat:$scope.shops.lat,lng:$scope.shops.lng}
             }).success(function (data) {
                 if (data.success) {
-                    $scope.citycodes=data.citycode;
+                    console.log(data);
                     sessionStorage.setItem('citycodes',data.citycode);
                     $scope.area_name = data.map.name;
                     sessionStorage.setItem('area_name',data.map.name);
@@ -119,7 +119,6 @@ angular
             $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
                     if(data.success){
-                        $scope.citycodes=city;
                         sessionStorage.setItem('citycodes',city);
                         $scope.c=ac;
                         $scope.add_p=[];
