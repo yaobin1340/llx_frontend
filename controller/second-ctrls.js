@@ -137,6 +137,7 @@ angular
         //区域
         $scope.choseArea = function(id){
             $scope.Area=id;
+            $scope.trues='';
             $scope.shops.area_code=id;
             //还原筛选
             $scope.shops.cate_id=$stateParams.cate_id;
