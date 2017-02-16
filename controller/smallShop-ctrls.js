@@ -28,7 +28,7 @@ angular
 						$scope.msg=data;
                         //注册微信分享信息
                         shareData = {};  
-                        shareData.imgUrl ='http://wap.51loveshow.com/attachs/'+$scope.detail.logo;  
+                        shareData.imgUrl ='http://139.224.61.180:8080/attachs/'+$scope.detail.logo;  
                         shareData.link = window.location.href;  
                         shareData.content = '我通过拉拉秀给你分享了一个店铺，快去看看吧';  
                         shareData.title = $scope.detail.shop_name;  

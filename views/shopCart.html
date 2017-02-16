@@ -11,7 +11,7 @@
 	<div class="none" ng-show="!cart_list.length">您的购物车里是空的</div>
 	<div class="products" ng-show="cart_list.length"ng-repeat="carts in cart_list">
 		<div class="productItem"  >
-			<img ng-src="http://wap.51loveshow.com/attachs/{{carts.photo}}" alt="" class="pro-img">
+			<img ng-src="http://139.224.61.180:8080/attachs/{{carts.photo}}" alt="" class="pro-img">
 				<p ng-cloak class="pro-title">{{carts.title}}</p>
 				<span ng-cloak class="price-one">单价：￥{{carts.mall_price/100}}</span>
 				<span class="price-all">合计：<span ng-cloak class="price-one">￥{{carts.mall_price/100*carts.cart_num}}</span></span><br>

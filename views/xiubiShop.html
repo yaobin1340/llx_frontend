@@ -18,8 +18,8 @@
 		<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-6" ng-repeat="hot_goods in xiubi.items" ui-sref="xiubiProduct({goods_id:hot_goods.goods_id})">
 					<div class="userProducts">
-						<img ng-src="http://wap.51loveshow.com/attachs/{{hot_goods.photo}}" alt="">
-						<p ng-cloak>{{hot_goods.title}}</p>
+						<img ng-src="http://139.224.61.180:8080/attachs/{{hot_goods.photo}}" alt="">
+						<p ng-cloak class="text-overflow">{{hot_goods.title}}</p>
 						<span ng-cloak class="price">￥{{hot_goods.mall_price/100}}</span>
 						<span ng-cloak class="show">销量{{hot_goods.sold_num}}</span>
 					</div>

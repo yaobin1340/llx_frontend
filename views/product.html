@@ -11,7 +11,7 @@
 	<div>
 		<div uib-carousel active="active" interval="myInterval">
 			<div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-				<img ng-src="http://wap.51loveshow.com/attachs/{{slide.image}}" style="width:100%;margin:auto;">
+				<img ng-src="http://139.224.61.180:8080/attachs/{{slide.image}}" style="width:100%;margin:auto;">
 			</div>
 	</div>
 	</div>
@@ -40,14 +40,14 @@
 			<div class="dis-top">
 				<img src="" alt="" class="dis-tou">
 				<span ng-cloak class="dis-name">{{item.user_nickname}}</span>
-				<img src="http://wap.51loveshow.com/attachs/{{user_face}}" alt="">
+				<img src="http://139.224.61.180:8080/attachs/{{user_face}}" alt="">
 				<span ng-cloak class="dis-data">{{item.create_time}}</span>
 			</div>
 			<p ng-cloak class="dis-cont">{{item.contents}}</p>
 			 <p class="dis-type">哈哈机打就打科技</p> 
 			<div class="row dis-photo">
 				<div class="col-sm-3" ng-repeat="p in item.pic">
-					<img ng-src="http://wap.51loveshow.com/attachs/{{p}}" alt="">
+					<img ng-src="http://139.224.61.180:8080/attachs/{{p}}" alt="">
 				</div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@
 	<div class="p-introduce">
 	<p ng-bind-html="productMsg_list.instructions | to_trusted"></p>
 		<p ng-bind-html="productMsg_list.details | to_trusted"></p>
-		<img ng-src="http://wap.51loveshow.com/attachs/{{productMsg.pics.photo}}" alt="">
+		<img ng-src="http://139.224.61.180:8080/attachs/{{productMsg.pics.photo}}" alt="">
 	</div>
 	<div class="discuss" style="margin-bottom: 1.5rem;">
 		<span ng-cloak class="discuss-title">评论（{{productMsg.pingnum}}）</span>
