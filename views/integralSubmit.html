@@ -34,11 +34,11 @@
 				<p ng-cloak class="pr-name text-overflow">{{msg.title}}</p>
 			</div>
 			<div class="col-sm-6 col-xs-6">
-				<div class="col-sm-6 col-xs-6">
+				<div class="col-sm-2 col-xs-2">
 					<p ng-cloak class="pr-num text-center">x{{1}}</p>
 				</div>
-				<div class="col-sm-6 col-xs-6">
-					<p ng-cloak class="pro-pri text-right">￥{{msg.price/100}}</p>
+				<div class="col-sm-10 col-xs-10">
+					<p ng-cloak class="pro-pri text-right">秀币{{msg.price}}</p>
 				</div>
 			</div>
 		<!-- </div> -->
@@ -46,12 +46,12 @@
 	<div class="bgs"></div><div class="bgs"></div>
 		<div class="row">
 			<div class="col-sm-6 col-xs-6">
-				<p class="pr-name pr-color">消费金额</p>
+				<p class="pr-name pr-color">消费秀币</p>
 			</div>
 			<div class="col-sm-6 col-xs-6">
-				<div class="col-sm-6 col-xs-6"></div>
-				<div class="col-sm-6 col-xs-6">
-					<p ng-cloak class="pro-pri">￥{{msg.price/100*1}}</p>
+				<div class="col-sm-2 col-xs-2"></div>
+				<div class="col-sm-10 col-xs-10">
+					<p ng-cloak class="pro-pri">秀币{{msg.price*1}}</p>
 				</div>
 			</div>
 		</div>
@@ -67,7 +67,10 @@
 				</p>
 			</div>
 			<div class="col-sm-6 col-xs-6">
-				<p class="pr-name text-overflow">剩余秀币:<span ng-cloak class="span-color">{{integral}}</span></p>
+				<div class="col-sm-2 col-xs-2"></div>
+				<div class="col-sm-10 col-xs-10">
+					<p class="pr-name text-overflow">剩余秀币:<span ng-cloak class="span-color">{{integral}}</span></p>
+				</div>
 			</div>
 		</div>		
 	<!-- <div class="row">
