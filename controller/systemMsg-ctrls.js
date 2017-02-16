@@ -30,6 +30,10 @@ angular
                     }
                 })
 
+        $scope.tiaozhuan = function(){
+            window.location.href=$scope.detail.link_url;
+        }
+
 
 
 
