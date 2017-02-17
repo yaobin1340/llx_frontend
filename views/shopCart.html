@@ -13,8 +13,8 @@
 		<div class="productItem"  >
 			<img ng-src="http://139.224.61.180:8080/attachs/{{carts.photo}}" alt="" class="pro-img">
 				<p ng-cloak class="pro-title">{{carts.title}}</p>
-				<span ng-cloak class="price-one">单价：￥{{carts.mall_price/100}}</span>
-				<span class="price-all">合计：<span ng-cloak class="price-one">￥{{carts.mall_price/100*carts.cart_num}}</span></span><br>
+				<span ng-cloak class="price-one">单价：￥{{carts.mall_price/100|number:2}}</span>
+				<span class="price-all">合计：<span ng-cloak class="price-one">￥{{carts.mall_price/100*carts.cart_num|number:2}}</span></span><br>
 				<button ng-click="remo(carts)">-</button><input type="text" ng-model="carts.cart_num"
 				 readonly=""><button class="btn-add" ng-click="add(carts)">+</button>
 			<div ng-click="delect(carts)"  class="delect-div">
@@ -25,7 +25,7 @@
 	<footer class="navbar-fixed-bottom" style="background-color: #fff;position: fixed;bottom: 0;left: 0;z-index: 1030;">
 	<div ng-cloak class="cir">{{getTotalAmount()}}</div>
 		<img src="/assets/img/img_shopcart.png" alt="">
-		<span ng-cloak style="width: 30%;">￥{{getTotalPrice()}}</span>
+		<span ng-cloak style="width: 30%;">￥{{getTotalPrice()|number:2}}</span>
 		<div class="goPay" ng-click="goPay()">结算</div>
 	</footer>
 	</div>

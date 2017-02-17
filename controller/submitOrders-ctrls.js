@@ -34,12 +34,10 @@ angular
                     }
                 })
         $scope.notcut = function(){
-            if($scope.needgold>0){
+            if($scope.needgold>0||$scope.needgold==''){
+                $scope.needgold=$scope.needgold.replace(/(\.\d{2})\d*$/,'\$1');
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
                 $scope.needgold=$scope.needgold>$scope.total_price/100?$scope.total_price/100:$scope.needgold;
-                $scope.totalNeedpay=($scope.total_price-$scope.needgold*100)/100;
-            }else{
-                $scope.needgold=0;
                 $scope.totalNeedpay=($scope.total_price-$scope.needgold*100)/100;
             }
             if($scope.total_price/100-$scope.needgold<0){
