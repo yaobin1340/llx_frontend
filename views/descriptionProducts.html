@@ -3,12 +3,20 @@
 	<script src="/assets/js/qrcode.min.js"></script>
 <div class="descriptionProducts">
 <div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
-	<div class="banner" style="background: url(http://139.224.61.180:8080/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
+	<div class="bannerpanner">
+		<div class="banner blur" style="background: url(http://139.224.61.180:8080/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
+	background-size:100%;height: 5.32rem;">
+		</div>
+		<img ng-src="http://139.224.61.180:8080/attachs/{{detail.photo}}" alt="">
+		<div class="cir cir-left img-circle backs" onClick="javascript:history.go(-1);"></div>
+		<div class="love cir-right img-circle img-r" ng-click="love()"></div>
+	</div>
+	<!-- <div class="banner" style="background: url(http://139.224.61.180:8080/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
 	background-size:auto 100%;height: 5.32rem;">
 			<div class="cir cir-left img-circle" onClick="javascript:history.go(-1);"></div>
 			<div class="cir cir-right img-circle img-s"></div>
 			<div class="cir cir-right img-circle img-r" ng-click="love()"></div>
-	</div>
+	</div> -->
 	<div ng-cloak class="res-titlt text-overflow">
 		{{detail.shop_name}}
 	</div>

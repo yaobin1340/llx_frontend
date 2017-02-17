@@ -17,14 +17,16 @@ angular
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
-        
-        $scope.promise = $http
+
+        $scope.choseAdd = function(){
+        $http
                 .post($config.api_uri + '/Apipublic/ApiPmall/get_nprovince')
                 .success(function (data) {
                     if(data.success){
                         $scope.add_p = data.province_list;
+                        $scope.add_near=[];
                     }else{
-                       $mdToast.show(
+                        $mdToast.show(
                         $mdToast.simple()
                             .content(data.error_msg)
                             .hideDelay(1000)
@@ -32,11 +34,13 @@ angular
                     }
                 })
 
-        $scope.province_code = function(privence){
-            $scope.promise = $http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
+        $scope.province_code = function(privence,ap){
+            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
                 .success(function (data) {
                     if(data.success){
+                        $scope.p=ap;
                         $scope.add_p=[];
+                        $scope.add_near=[];
                         $scope.add_c = data.city_list;
                     }else{
                         $mdToast.show(
@@ -48,10 +52,12 @@ angular
                 })
         }
 
-        $scope.choseNear = function(city){
-            $scope.promise = $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
+        $scope.choseNear = function(city,ac){
+            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
                     if(data.success){
+                        sessionStorage.setItem('citycodes',city);
+                        $scope.c=ac;
                         $scope.add_p=[];
                         $scope.add_c=[];
                         $scope.add_near=data.area_list;
@@ -63,12 +69,20 @@ angular
                         );
                     }
                 })
-                
         }
-
-        $scope.toacrt = function(near){
-            
+        $scope.toacrt = function(near,an){
+            $scope.add=0;
+            $scope.shops.area_code = near;
+            $scope.area_name = an;
+            sessionStorage.setItem('area_code',near);
+            sessionStorage.setItem('area_name',an);
+            $scope.shops.items = [];
+            $scope.shops.end = false;
+            $scope.shops.busy = false;
+            $scope.shops.page = 1;
+            $scope.shops.nextPage();
         }
+    }
 
 
 
