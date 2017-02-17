@@ -2,29 +2,40 @@
 
 </div>
 	<footer class="navbar-fixed-bottom" style="height:1.5rem;">
-		<div ui-sref="main.home" ng-click="changeImg(1)">
-			<img src='/assets/img/Home-page.png' alt="首页" ng-if="num==1" style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<img src='/assets/img/Home-page2.png' alt="首页" ng-if="num!=1"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<span ng-if="num==1" style="color:#00a2f2;">首页</span><span ng-if="num!=1">首页</span>
-		</div>
-		<div ui-sref="main.Mycart" ng-click="changeImg(2)">
-			<img src="/assets/img/My-order.png" alt="我的订单" ng-if="num==2"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<img src="/assets/img/My-order2.png" alt="我的订单" ng-if="num!=2"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<span ng-if="num==2" style="color:#00a2f2;">我的订单</span><span ng-if="num!=2">我的订单</span>
-		</div>
-		<div ui-sref="main.OfferPay" ng-click="changeImg(3)">
-			<img src="/assets/img/Offer-to-pay.png" alt="优惠买单" ng-if="num==3"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<img src="/assets/img/Offer-to-pay2.png" alt="优惠买单" ng-if="num!=3"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<span ng-if="num==3" style="color:#00a2f2;">优惠买单</span><span ng-if="num!=3">优惠买单</span>
-		</div>
-		<div ui-sref="main.information" ng-click="changeImg(4)">
-			<img src="/assets/img/message.png" alt="消息" ng-if="num==4"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<img src="/assets/img/message2.png" alt="消息" ng-if="num!=4"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<span ng-if="num==4" style="color:#00a2f2;">消息</span><span ng-if="num!=4">消息</span>
-		</div>
-		<div ui-sref="main.personal" ng-click="changeImg(5)">
-			<img src="/assets/img/member-center.png" alt="会员中心" ng-if="num==5"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<img src="/assets/img/member-center2.png" alt="会员中心" ng-if="num!=5"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
-			<span ng-if="num==5" style="color:#00a2f2;">会员中心</span><span ng-if="num!=5">会员中心</span>
-		</div>
+		<a href="http://llx.51loveshow.com/home">
+			<div ng-click="changeImg(1)">
+				<img src='/assets/img/Home-page.png' alt="首页" ng-if="num==1" style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<img src='/assets/img/Home-page2.png' alt="首页" ng-if="num!=1"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<span ng-if="num==1" style="color:#00a2f2;">首页</span><span ng-if="num!=1">首页</span>
+			</div>
+		</a>
+		<a href="http://llx.51loveshow.com/Mycart">
+			<div ng-click="changeImg(2)">
+				<img src="/assets/img/My-order.png" alt="我的订单" ng-if="num==2"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<img src="/assets/img/My-order2.png" alt="我的订单" ng-if="num!=2"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<span ng-if="num==2" style="color:#00a2f2;">我的订单</span><span ng-if="num!=2">我的订单</span>
+			</div>
+		</a>
+		<a href="http://llx.51loveshow.com/OfferPay">
+			<div ng-click="changeImg(3)">
+				<img src="/assets/img/Offer-to-pay.png" alt="优惠买单" ng-if="num==3"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<img src="/assets/img/Offer-to-pay2.png" alt="优惠买单" ng-if="num!=3"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<span ng-if="num==3" style="color:#00a2f2;">优惠买单</span><span ng-if="num!=3">优惠买单</span>
+			</div>
+		</a>
+		<a href="http://llx.51loveshow.com/information">
+			<div ng-click="changeImg(4)">
+				<img src="/assets/img/message.png" alt="消息" ng-if="num==4"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<img src="/assets/img/message2.png" alt="消息" ng-if="num!=4"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<span ng-if="num==4" style="color:#00a2f2;">消息</span><span ng-if="num!=4">消息</span>
+			</div>
+		</a>
+		<a href="http://llx.51loveshow.com/personal">
+			<div ng-click="changeImg(5)">
+				<img src="/assets/img/member-center.png" alt="会员中心" ng-if="num==5"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<img src="/assets/img/member-center2.png" alt="会员中心" ng-if="num!=5"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
+				<span ng-if="num==5" style="color:#00a2f2;">会员中心</span><span ng-if="num!=5">会员中心</span>
+			</div>
+		</a>
+		
 	</footer>
