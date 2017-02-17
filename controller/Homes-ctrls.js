@@ -229,7 +229,7 @@ angular
             fail: function (res) {
                 $mdToast.show(
                     $mdToast.simple()
-                        .content(res)
+                        .content("定位失败,请手动选择地区或重试")
                         .hideDelay(1000)
                     );
                 $scope.citycodes=310100;
