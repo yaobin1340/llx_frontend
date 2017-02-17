@@ -98,7 +98,7 @@ angular
 
 
         $scope.drawalMoney = function(){
-            if($scope.yzms!=$scope.yzm){
+            if($("#yzm").val()!=$scope.yzm){
                 $mdToast.show(
                         $mdToast.simple()
                             .content("验证码错误")
