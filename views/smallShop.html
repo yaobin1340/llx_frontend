@@ -1,4 +1,9 @@
-	<!-- <link rel="stylesheet" href="/assets/css/smallShop.css"> -->
+
+<style>
+	body{
+		background-color: #eff0eb;
+	}
+</style>
 <div class="smallShop">
 	<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="banner">
@@ -56,7 +61,7 @@
 					<div class="userProducts">
 						<img ng-src="http://139.224.61.180:8080/attachs/{{hot_goods.photo}}" alt="">
 						<p ng-cloak>{{hot_goods.title}}</p>
-						<span ng-cloak class="price">￥{{hot_goods.mall_price/100}}</span>
+						<span ng-cloak class="price">￥{{hot_goods.mall_price/100|number:2}}</span>
 						<span ng-cloak class="show">销量{{hot_goods.sold_num}}</span>
 					</div>
 				</div>
@@ -69,7 +74,7 @@
 					<div class="userProducts">
 						<img ng-src="http://139.224.61.180:8080/attachs/{{goods.photo}}" alt="">
 						<p ng-cloak class="text-overflow">{{goods.title}}</p>
-						<span ng-cloak class="price">￥{{goods.mall_price/100}}</span>
+						<span ng-cloak class="price">￥{{goods.mall_price/100|number:2}}</span>
 						<span ng-cloak class="show">销量{{goods.sold_num}}</span>
 					</div>
 				</div>

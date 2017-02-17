@@ -22,15 +22,15 @@
 				订单金额
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.total/100}}元
+				￥{{msg.total/100|number:2}}元
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-sm-4 col-xs-4">
 				使用秀币
 			</div>
-			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				{{msg.integral}}抵现{{msg.integral/100}}元
+			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color text-overflow">
+				{{msg.integral}}抵现{{msg.integral/100|number:2}}元
 			</div>
 		</div>
 		<div class="row">
@@ -38,7 +38,7 @@
 				使用余额
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.gold/100}}元
+				￥{{msg.gold/100|number:2}}元
 			</div>
 		</div>
 		<div class="row">
@@ -46,7 +46,7 @@
 				实际支付
 			</div>
 			<div ng-cloak class="col-xm-8 col-xs-8 text-right text-color">
-				￥{{msg.need_pay/100}}元
+				￥{{msg.need_pay/100|number:2}}元
 			</div>
 		</div>
 		<div class="row">
@@ -64,7 +64,7 @@
 			</div>
 			<div class="prMsg-title text-overflow">
 				<p ng-cloak class="text-overflow">{{goods.title}}</p>
-				<span ng-cloak>￥{{goods.price/100}}</span>
+				<span ng-cloak>￥{{goods.price/100|number:2}}</span>
 			</div>
 			<div class="prMsg-num">
 			<p ng-cloak class="text-right">x{{goods.pty}}</p>

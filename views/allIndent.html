@@ -21,17 +21,17 @@
 			</div>
 			<div class="indent-num">
 				<p ng-cloak class="text-overflow">{{good.g_title}}</p>
-				<div>小计：<span ng-cloak>￥{{good.price/100}}x{{good.num}}={{good.total_price/100}}元</span></div>
+				<div>小计：<span ng-cloak>￥{{good.price/100|number:2}}x{{good.num}}={{good.total_price/100|number:2}}元</span></div>
 				<!-- <div>使用余额：<span ng-cloak>{{good.g_use_integral}}元</span></div> -->
 			</div>
 		</div>
 	</div>
 	<div class="col-sm-12 col-xs-12 indentMsg">
-		<div>使用余额：<span ng-cloak class="indentPrice">￥{{pr.orders.use_gold/100}}</span> 元</div>
+		<div>使用余额：<span ng-cloak class="indentPrice">￥{{pr.orders.use_gold/100|number:2}}</span> 元</div>
 	</div>
 	<div class="col-sm-12 col-xs-12 indentMsg">
-		<div ng-if="pr.orders.is_daofu==0">实际支付：<span ng-cloak class="indentPrice">￥{{pr.orders.need_pay/100}}</span> 元</div>
-		<div ng-if="pr.orders.is_daofu==1">实际支付：<span ng-cloak class="indentPrice">￥{{(pr.orders.total_price-pr.orders.mobile_fan)/100}}</span> 元</div>
+		<div ng-if="pr.orders.is_daofu==0">实际支付：<span ng-cloak class="indentPrice">￥{{pr.orders.need_pay/100|number:2}}</span> 元</div>
+		<div ng-if="pr.orders.is_daofu==1">实际支付：<span ng-cloak class="indentPrice">￥{{(pr.orders.total_price-pr.orders.mobile_fan)/100|number:2}}</span> 元</div>
 	</div>
 	<div class="col-sm-12 col-xs-12 btmindent">
 		<div>

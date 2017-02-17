@@ -23,7 +23,7 @@
 					<p ng-cloak class="pr-num">x{{goods.num}}</p>
 				</div>
 				<div class="col-sm-7 col-xs-7">
-					<p ng-cloak class="pro-pri">￥{{goods.price/100}}</p>
+					<p ng-cloak class="pro-pri">￥{{goods.price/100|number:2}}</p>
 				</div>
 			</div>
 		</div>
@@ -36,7 +36,7 @@
 			<div class="col-sm-6 col-xs-6">
 				<div class="col-sm-6 col-xs-6"></div>
 				<div class="col-sm-6 col-xs-6">
-					<p ng-cloak class="pro-pri">￥{{msg.total_price/100}}</p>
+					<p ng-cloak class="pro-pri">￥{{msg.total_price/100|number:2}}</p>
 				</div>
 			</div>
 		</div>
@@ -90,7 +90,7 @@
 				</p>
 			</div>
 			<div class="col-sm-6 col-xs-6">
-				<p class="pr-name text-overflow">剩余金额:<span ng-cloak class="span-color">{{gold}}</span></p>
+				<p class="pr-name text-overflow">剩余金额:<span ng-cloak class="span-color">{{gold|number:2}}</span></p>
 			</div>
 		</div>
 

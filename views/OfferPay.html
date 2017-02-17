@@ -20,8 +20,8 @@
 			</div>
 			<div class="row rowmsg">
 				<div ng-cloak class="col-sm-12 col-xs-12">商家：{{Msg.shop_name}}</div>
-				<div ng-cloak class="col-sm-12 col-xs-12">消费金额：{{Msg.total}}</div>
-				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：{{Msg.yhk}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">消费金额：{{Msg.total|number:2}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：{{Msg.yhk|number:2}}</div>
 				<div ng-cloak class="col-sm-12 col-xs-12">备注：{{Msg.rmark}}</div>
 				<div class="col-sm-12 col-xs-12">
 				<div style="float: left;">赠品消费：</div>
@@ -32,7 +32,7 @@
 			</div>
 			<div class="row rowpay">
 				<div class="col-sm-8 col-xs-8">
-					<p>实付：<span ng-cloak class="rowpay-btn">￥{{Msg.total-Msg.yhk}}</span></p>
+					<p>实付：<span ng-cloak class="rowpay-btn">￥{{Msg.total-Msg.yhk|number:2}}</span></p>
 					<p ng-cloak ng-if="Msg.status!=1&&Msg.pay_time!=null">付款时间：{{Msg.pay_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</p>
 					<p ng-cloak ng-if="Msg.status!=1&&Msg.pay_time==null">付款时间：暂无数据</p>
 					<p ng-cloak ng-if="Msg.status==1">付款时间：未支付</p>
