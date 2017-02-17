@@ -8,8 +8,8 @@
 </div>
 <div class="hr"></div>
 <div class="row" infinite-scroll='journals.nextPage()' infinite-scroll-disabled='journals.busy' infinite-scroll-distance='1' >
-	<div ng-repeat="j in journals.items">
-		<div ng-cloak  class="col-sm-4 col-xs-4">￥{{j.money}}</div>
+	<div ng-repeat="j in journals.items" class="row">
+		<div ng-cloak  class="col-sm-4 col-xs-4">￥{{j.money/100}}</div>
 		<div ng-cloak class="col-sm-4 col-xs-4">{{j.addtime}}</div>
 		<div class="col-sm-4 col-xs-4" ng-if="j.status==0">未审核</div>
 		<div class="col-sm-4 col-xs-4" ng-if="j.status==1">通过</div>
