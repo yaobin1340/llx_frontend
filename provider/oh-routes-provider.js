@@ -183,51 +183,12 @@ angular
         templateUrl : 'views/restaurant.html',
         controller:'restaurantsCtrl'
     };
-    // this.routes['hotel'] = {
-    //     url : '/hotel',
-    //     templateUrl : 'views/hotel.html',
-    //     controller:'hotelCtrl'
-    // };
-    // this.routes['fruit'] = {
-    //     url : '/fruit',
-    //     templateUrl : 'views/fruit.html',
-    //     controller:'fruitCtrl'
-    // };
-    // this.routes['hair'] = {
-    //     url : '/hair',
-    //     templateUrl : 'views/hair.html',
-    //     controller:'hairCtrl'
-    // };
-    // this.routes['fitness'] = {
-    //     url : '/fitness',
-    //     templateUrl : 'views/fitness.html',
-    //     controller:'fitnessCtrl'
-    // };
-    // this.routes['supermarket'] = {
-    //     url : '/supermarket',
-    //     templateUrl : 'views/supermarket.html',
-    //     controller:'supermarketCtrl'
-    // };
-    // this.routes['articles'] = {
-    //     url : '/articles',
-    //     templateUrl : 'views/articles.html',
-    //     controller:'articlesCtrl'
-    // };
-    // this.routes['medical'] = {
-    //     url : '/medical',
-    //     templateUrl : 'views/medical.html',
-    //     controller:'medicalCtrl'
-    // };
-    // this.routes['integral'] = {
-    //     url : '/integral',
-    //     templateUrl : 'views/integral.html',
-    //     controller:'integralCtrl'
-    // };
-    // this.routes['favorable'] = {
-    //     url : '/favorable',
-    //     templateUrl : 'views/favorable.html',
-    //     controller:'favorableCtrl'
-    // };
+    this.routes['soso'] = {
+        url : '/soso?cate_name,cate_id,area_code,lat,lng,citycode,',
+        title: '搜索',
+        templateUrl : 'views/soso.html',
+        controller:'sosoCtrl'
+    };
     this.routes['systemMsg'] = {
         url : '/systemMsg?msg_id',
         title: '系统信息',

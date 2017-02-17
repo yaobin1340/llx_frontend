@@ -73,11 +73,10 @@ angular
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
                 $scope.needgold=$scope.needgold>$scope.prices?$scope.prices:$scope.needgold;
                 $scope.totalNeedpay=$scope.prices-$scope.needgold;
+            }else{
+                $scope.needgold='';
+                $scope.totalNeedpay=$scope.prices;
             }
-            // else{
-            //     $scope.needgold=0;
-            //     $scope.totalNeedpay=$scope.prices-$scope.needgold;
-            // }
             if($scope.prices-$scope.needgold<0){
                 $scope.totalNeedpay=0;
                 $scope.needgold=$scope.prices;

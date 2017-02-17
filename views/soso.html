@@ -1,1 +1,114 @@
-soso
+
+<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+<div class="home">
+	<div class="secondbanner navbar-fixed-top">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+	    <p ng-cloak style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">{{cate_name}}</p>
+	</div>
+	<div class="padding"></div>
+	<div class="row chose">
+	<div class="col-sm-4 col-xs-4">
+			<div class="orderby" ng-click="choseStep(3)">
+				<span ng-cloak>区域</span><img src="/assets/img/line-down.png" alt="">
+			</div>
+		</div>
+		<div class="col-sm-4 col-xs-4">
+			<div class="orderby" ng-click="choseStep(1)">
+				<span ng-cloak>排序</span><img src="/assets/img/line-down.png" alt="">
+			</div>
+		</div>
+		<div class="col-sm-4 col-xs-4">
+			<div class="chosemore" ng-click="choseStep(2)">
+				<span>筛选</span><img src="/assets/img/line-down.png" alt=""></div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="clearfix chosexix" ng-if="step==2">
+				<div class="col-sm-12 col-xs-12 choseItemone"style="padding:0;">
+					<ul>
+						<li ng-repeat="cate in cate_list" ng-click="choseCate(cate.cate_id)" ng-class="{choseThis:trues==cate.cate_id}">{{cate.cate_name}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row clearfix">
+			<div class="clearfix chosexix" ng-if="step==3">
+				<div class="col-sm-12 col-xs-12 choseItemone"style="padding:0;">
+					<ul>
+						<li ng-repeat="area in area_list" ng-click="choseArea(area.code)" ng-class="{choseThis:Area==area.code}">{{area.name}}</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row clearfix">
+			<div class="clearfix chosexix" ng-if="step==1">
+				<div class="col-sm-12 col-xs-12 choseItemone"style="padding:0;">
+					<ul>
+						<li ng-click="choseStep2(11)" ng-class="{choseThis:step2==11}">智能排序</li>
+						<li ng-click="choseStep2(12)" ng-class="{choseThis:step2==12}">离我最近</li>
+						<li ng-click="choseStep2(13)" ng-class="{choseThis:step2==13}">人气最高</li>
+						<li ng-click="choseStep2(14)" ng-class="{choseThis:step2==14}">好评优先</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row marbtm"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
+		<div class="clearfix" ng-repeat="shop in shops.items"
+		ui-sref="description({shop_id:shop.shop_id})">
+			<div class="col-md-4 col-sm-4 col-xs-4" style="
+			position: relative;">
+				<img ng-src="http://139.224.61.180:8080/attachs/{{shop.logo}}" alt="" class="pro-photo">
+				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:0.1rem;width: 2rem;" ng-if="shop.shop_class==1">
+			</div>
+			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
+				<div ng-cloak class="col-sm-9 col-xs-9 div-name text-overflow" style="padding:0;color:black;">{{shop.shop_name}}</div>
+				<div ng-cloak class="col-sm-3 col-xs-3 shopDistance text-right"style="padding:0;">
+					{{shop.juli}}Km
+				</div>
+				<div ng-cloak class="col-sm-12 col-xs-12 shopAddress text-overflow"style="padding:0.25rem 0 0 0;">
+					{{shop.addr|cut}}
+				</div>
+				<div ng-if="shop.shop_class==1">
+				<div class="col-sm-6 col-xs-6"style="padding:0;">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.1">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.1">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.2">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.2">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.3">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.3">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.4">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.4">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.5">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.5">
+				</div>
+				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;">
+					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
+				</div>
+				</div>
+				<div ng-if="shop.shop_class==2">
+				<div class="col-sm-6 col-xs-6"style="padding:0;padding-top: 0.5rem;">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.1">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.1">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.2">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.2">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.3">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.3">
+					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.4">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.4">
+					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.5">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.5">
+				</div>
+				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;padding-top: 0.5rem;">
+					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
+				</div>
+				</div>
+				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p class="ourmembers">本店会员：满￥<span ng-cloak class="ourprice">{{100}}</span>减￥<span ng-cloak class="ourprice">{{shop.yhk1}}</span></p></div>
+				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p  class="ourmembers">平台会员：满￥<span ng-cloak class="ourprice">{{100}}</span> 减￥<span class="ourprice">{{shop.yhk2}} </span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div cg-busy="{promise:shops.promise,templateUrl:shops.templateUrl,message:shops.message,backdrop:shops.backdrop,delay:shops.delay,minDuration:shops.minDuration}"></div>
+	<div class="home_shop_nomore" ng-show='shops.end' style="margin-bottom: 0;">-暂无更多店铺-</div>
+</div>

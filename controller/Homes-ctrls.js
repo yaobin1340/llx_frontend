@@ -181,6 +181,7 @@ angular
     window.filterByEnter = function(e){
             if(e.keyCode==13){
                 $scope.$apply(function(){
+                    // $state.go('soso',cate_id:item.cate_id,cate_name:item.cate_name,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                     $scope.shops.cate_name = $scope.text;
                     $scope.shops.area_code = '';
                     $scope.shops.items = [];
@@ -192,14 +193,14 @@ angular
             }
         };
     $scope.soso = function(){
-        $scope.shops.cate_name = $scope.text;
-        $scope.shops.area_code = '';
-        $scope.area_name = '请选择';
-        $scope.shops.items = [];
-        $scope.shops.end = false;
-        $scope.shops.busy = false;
-        $scope.shops.page = 1;
-        $scope.shops.nextPage();
+        // $scope.shops.cate_name = $scope.text;
+        // $scope.shops.area_code = '';
+        // $scope.area_name = '请选择';
+        // $scope.shops.items = [];
+        // $scope.shops.end = false;
+        // $scope.shops.busy = false;
+        // $scope.shops.page = 1;
+        // $scope.shops.nextPage();
     }
 
     // $scope.$on('$viewContentLoaded', function() {

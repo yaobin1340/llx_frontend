@@ -37,12 +37,13 @@ angular
         //用户输入金额
         $scope.notcut = function(){
             if($scope.needgold>0){
+                $scope.needgold=$scope.needgold.replace(/(\.\d{2})\d*$/,'\$1');
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
                 $scope.needgold=$scope.needgold>$scope.needPay?$scope.needPay:$scope.needgold;
                 $scope.totalNeedpay=$scope.needPay-$scope.needgold;
             }else{
-                $scope.needgold=0;
-                $scope.totalNeedpay=$scope.needPay-$scope.needgold;
+                $scope.needgold='';
+                $scope.totalNeedpay=$scope.needPay;
             }
             if($scope.needPay-$scope.needgold<0){
                 $scope.totalNeedpay=0;
