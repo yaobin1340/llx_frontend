@@ -33,7 +33,6 @@ angular
                         );
                     }
                 });
-
         //用户输入金额
         $scope.notcut = function(){
             if($scope.needgold>=0||$scope.needgold==''){

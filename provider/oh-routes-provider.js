@@ -184,7 +184,7 @@ angular
         controller:'restaurantsCtrl'
     };
     this.routes['soso'] = {
-        url : '/soso?cate_name,cate_id,area_code,lat,lng,citycode,',
+        url : '/soso?shop_name,area_code,lat,lng,citycode,',
         title: '搜索',
         templateUrl : 'views/soso.html',
         controller:'sosoCtrl'

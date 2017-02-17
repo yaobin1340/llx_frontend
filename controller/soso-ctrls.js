@@ -19,14 +19,14 @@ angular
 
             $scope.Area=$stateParams.area_code;
             $scope.trues=false;
-            $scope.cate_name=$stateParams.cate_name;
-            $scope.cate_id=$stateParams.cate_id;
+            // $scope.cate_name=$stateParams.cate_name;
+            // $scope.cate_id=$stateParams.cate_id;
             //获取筛选分类
             $scope.promise = $http
-                .post($config.api_uri + '/Apipublic/ApiPmall/getshopscate',{parent_id:$stateParams.cate_id})
+                .post($config.api_uri + '/Apipublic/ApiPmall/getshopscate')
                 .success(function (data) {
                     if(data.success){
-                        $scope.cate_list=data.cate_list
+                        $scope.cate_list=data.cate_list;
                     }else{
                        $mdToast.show(
                         $mdToast.simple()
@@ -55,7 +55,7 @@ angular
             $scope.scroll_switch = 1;
             $scope.shops = new Shops();
             $scope.shops.cate_id=$stateParams.cate_id;
-            // $scope.shops.cate_name=$stateParams.cate_name;
+            $scope.shops.shop_name=$stateParams.shop_name;
             $scope.shops.order=$scope.order;
             $scope.shops.lat=$stateParams.lat;
             $scope.shops.lng=$stateParams.lng;
@@ -75,8 +75,6 @@ angular
             $scope.shops.nextPage();
         }
         
-
-
         $scope.step==0;
         $scope.choseStep = function(step){
             switch (step) {
@@ -149,7 +147,26 @@ angular
             $scope.step=0;
         }
 
-
+        //搜索
+    window.filterByEnter = function(e){
+            if(e.keyCode==13){
+                $scope.$apply(function(){
+                    $scope.shops.shop_name=$scope.text;
+                    $scope.shops.items = [];
+                    $scope.shops.end = false;
+                    $scope.shops.busy = false;
+                    $scope.shops.page = 1;
+                    $scope.shops.nextPage();
+                })
+            }
+        };
+    $scope.soso = function(){
+        $scope.shops.items = [];
+        $scope.shops.end = false;
+        $scope.shops.busy = false;
+        $scope.shops.page = 1;
+        $scope.shops.nextPage();
+    }
 
 
 

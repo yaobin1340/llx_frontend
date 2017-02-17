@@ -16,10 +16,9 @@ angular
 	    $scope.changeImg = function(data){
 	        $scope.num=data;
 	    }
-
         $scope.$on('changeImg', function(event, data) {  
           $scope.num = data; 
-        }); 
+        });
 
 
 

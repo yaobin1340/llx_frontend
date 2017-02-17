@@ -10,7 +10,7 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		this.area_code = '';
 		this.cate_id='';
 		this.order='';
-		this.cate_name='';
+		this.shop_name='';
 		this.message = '正在加载...';
         this.backdrop = true;
         this.promise = null;
@@ -23,7 +23,7 @@ angular.module('ohapp').factory('Shops', function ($config, $http) {
 		this.promise = $http({
 			method: 'POST',
 			url: $config.api_uri + '/Apipublic/ApiPmall/getshops',
-			data: {page:this.page,lat:this.lat,lng:this.lng,area_code:this.area_code,order:this.order,cate_id:this.cate_id,shop_name:this.cate_name},
+			data: {page:this.page,lat:this.lat,lng:this.lng,area_code:this.area_code,order:this.order,cate_id:this.cate_id,shop_name:this.shop_name},
 		}).success(function (data) {
 			if (data.success) {
 				if(data.shop_list==null||!data.shop_list.length){

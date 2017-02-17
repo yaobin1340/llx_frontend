@@ -149,6 +149,26 @@ angular
             $scope.step=0;
         }
 
+        window.filterByEnter = function(e){
+            if(e.keyCode==13){
+                $scope.$apply(function(){
+                    $scope.shops.shop_name=$scope.text;
+                    $scope.shops.items = [];
+                    $scope.shops.end = false;
+                    $scope.shops.busy = false;
+                    $scope.shops.page = 1;
+                    $scope.shops.nextPage();
+                })
+            }
+        };
+    $scope.soso = function(){
+        $scope.shops.items = [];
+        $scope.shops.end = false;
+        $scope.shops.busy = false;
+        $scope.shops.page = 1;
+        $scope.shops.nextPage();
+    }
+
 
 
 

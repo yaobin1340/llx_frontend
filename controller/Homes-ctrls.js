@@ -181,26 +181,12 @@ angular
     window.filterByEnter = function(e){
             if(e.keyCode==13){
                 $scope.$apply(function(){
-                    // $state.go('soso',cate_id:item.cate_id,cate_name:item.cate_name,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
-                    $scope.shops.cate_name = $scope.text;
-                    $scope.shops.area_code = '';
-                    $scope.shops.items = [];
-                    $scope.shops.end = false;
-                    $scope.shops.busy = false;
-                    $scope.shops.page = 1;
-                    $scope.shops.nextPage();
+                    $state.go('soso',{shop_name:$scope.text,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')});
                 })
             }
         };
     $scope.soso = function(){
-        // $scope.shops.cate_name = $scope.text;
-        // $scope.shops.area_code = '';
-        // $scope.area_name = '请选择';
-        // $scope.shops.items = [];
-        // $scope.shops.end = false;
-        // $scope.shops.busy = false;
-        // $scope.shops.page = 1;
-        // $scope.shops.nextPage();
+        $state.go('soso',{shop_name:$scope.text,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')});
     }
 
     // $scope.$on('$viewContentLoaded', function() {
@@ -240,6 +226,7 @@ angular
                 $scope.shops.lng = 121.3301816158;
                 sessionStorage.setItem('lng',$scope.shops.lng);
                 $scope.area_name='嘉定区';
+                sessionStorage.setItem('area_name',$scope.area_name);
                 $scope.shops.area_code = 310114;
                 $scope.shops.items = [];
                 $scope.shops.end = false;
