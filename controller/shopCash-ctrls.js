@@ -68,8 +68,8 @@ angular
                 })
 
             $scope.tixian = function(){
-                if($scope.dan.gold>=$scope.dan.cash_money){
-                    $scope.money=$scope.dan.gold>$scope.dan.cash_money_big?$scope.dan.cash_money_big:$scope.dan.gold;
+                if($scope.dan.gold/100>=$scope.dan.cash_money){
+                    $scope.money=$scope.dan.gold/100;
                 }else{
                     $mdToast.show(
                         $mdToast.simple()

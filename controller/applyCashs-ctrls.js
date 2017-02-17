@@ -50,7 +50,6 @@ angular
          function drawal(){
             $scope.phone=$session.get('phone');
             //获取相关提现信息
-            
            $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Money/cash')
                 .success(function (data) {
@@ -67,8 +66,8 @@ angular
                 })
 
             $scope.tixian = function(){
-                if($scope.dan.gold>=$scope.dan.cash_money){
-                    $scope.money=$scope.dan.gold>$scope.dan.cash_money_big?$scope.dan.cash_money_big:$scope.dan.gold;
+                if($scope.dan.gold/100>=$scope.dan.cash_money){
+                    $scope.money=$scope.dan.gold/100;
                 }else{
                     $mdToast.show(
                         $mdToast.simple()
