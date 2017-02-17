@@ -68,7 +68,7 @@ angular
                 })      
 
         $scope.notcut = function(){
-            if($scope.needgold>0){
+            if($scope.needgold>=0||$scope.needgold==''){
                 $scope.needgold=$scope.needgold.replace(/(\.\d{2})\d*$/,'\$1');
                 $scope.needgold=$scope.needgold>$scope.gold?$scope.gold:$scope.needgold;
                 $scope.needgold=$scope.needgold>$scope.prices?$scope.prices:$scope.needgold;
