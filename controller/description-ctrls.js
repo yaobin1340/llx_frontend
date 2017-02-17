@@ -11,10 +11,7 @@ angular
 		var $mdMedia = $injector.get('$mdMedia');
 		var $mdToast = $injector.get('$mdToast');
 
-        $scope.num=1;$scope.shops_id=$stateParams.shop_id;
-        $scope.change = function(data){
-        	 $scope.num=data;
-        }
+        $scope.shops_id=$stateParams.shop_id;
         //加载动画
         $scope.delay = 0;
 		$scope.minDuration = 0;

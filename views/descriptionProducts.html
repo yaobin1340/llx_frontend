@@ -65,28 +65,13 @@
 	<!-- 用户评价 -->
 	<div class="user-comment">
 		<div class="user-co">
-			<span>用户评价</span>
+			<span>用户评价({{totalnum_haspic||0}})</span>
 			<div class="address-right addresss-right">
 			<!-- <img ng-src="/assets/img/line.png" alt=""> -->
 			</div>
 		</div>
-		<div class="btn-group">
-  			<button class="btn btnact " ng-click="change(1)" ng-if="num==1">全部</button>
-  			<button class="btn" ng-click="change(1)" ng-if="num!=1">全部</button>
-  			<button class="btn btnact " ng-click="change(2)" ng-if="num==2">最新</button>
-  			<button class="btn" ng-click="change(2)" ng-if="num!=2">最新</button>
-  			<button class="btn btnact " ng-click="change(3)" ng-if="num==3">晒图评价</button>
-  			<button class="btn " ng-click="change(3)" ng-if="num!=3">晒图评价</button>
-		</div>
 		<!-- 测试评论区 -->
-		<div ng-include="'views/shopdescAll.html'" ng-if="num==1" ng-controller="shopdescAllCtrl">
-		
-		</div>
-		<div ng-include="'views/shopdescAll.html'" ng-if="num==2" ng-controller="shopdescPhotoCtrl">
-			
-		</div>
-		<div ng-include="'views/shopdescAll.html'"ng-if="num==3" ng-controller="shopdescNowCtrl">
-			
+		<div ng-include="'views/shopdescAll.html'" ng-controller="shopdescAllCtrl">
 		</div>
 	</div>
 </div>

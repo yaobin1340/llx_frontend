@@ -14,9 +14,6 @@ angular
         $scope.scroll_switch = 1;
         $scope.evaluate = new Evaluate();
         $scope.evaluate.shop_id=$stateParams.shop_id;
-        $scope.evaluate.orderby=1;
-
-
 
 
 
