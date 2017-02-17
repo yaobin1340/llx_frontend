@@ -108,7 +108,7 @@ angular
             }
             $scope.money=$("#money").val();
            $scope.promise = $http
-                .post($config.api_uri + 'Apishop/Money/cash',{gold:$scope.money,bank_name:$scope.info.bank_name,bank_num:$scope.info.bank_num,bank_branch:$scope.branch,bank_realname:$scope.info.bank_realname,mobile:$scope.phone})
+                .post($config.api_uri + '/Apishop/Money/cash',{gold:$scope.money,bank_name:$scope.info.bank_name,bank_num:$scope.info.bank_num,bank_branch:$scope.branch,bank_realname:$scope.info.bank_realname,mobile:$scope.phone})
                 .success(function (data) {
                     if(data.success){
                         $mdToast.show(
