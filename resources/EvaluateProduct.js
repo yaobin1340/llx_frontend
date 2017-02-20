@@ -21,7 +21,6 @@ angular.module('ohapp').factory('evaluatePr', function ($config, $http) {
             url: $config.api_uri + '/Apipublic/ApiPshop/goodsdianPing',
             data: {goods_id:this.goods_id,page:this.page,orderby:this.orderby},
         }).success(function (data) {
-            console.log(data);
             if (data.success) {
                 if(data.list==null||!data.list.length){
                     this.end = true;

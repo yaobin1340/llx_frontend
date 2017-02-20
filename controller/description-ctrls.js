@@ -139,8 +139,16 @@ angular
         });
     };
 
-    
-    
+    //获取评价数量
+
+    		$http
+				.post($config.api_uri + '/Apipublic/ApiPshop/shopDianPing',{shop_id:$stateParams.shop_id})
+				.success(function (data) {
+					if(data.success){
+						$scope.pingNum = data.totalnum_haspic;
+					}else{
+					}
+				})
 
 
 

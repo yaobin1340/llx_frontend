@@ -4,13 +4,13 @@
 		<div class="contianers" ng-repeat="item in evaluate.items">
 			<div class="dis-top clearfix">
 				<div class="dis-top-left">
-					<img ng-src="http://139.224.61.180:8080/attachs/{{item.user_face}}" alt="" class="dis-tou">
+					<img ng-src="http://139.224.61.180:8080/attachs/{{item.face}}" alt="" class="dis-tou">
 				</div>
 				<div class="dis-top-right">
 					<div class="clearfix">
 						<span ng-cloak class="dis-name" style="color:black;">{{item.user_nickname}}</span>
 						<img ng-src="/assets/img/vip_icon{{item.rank_id}}.png" alt="" class="dengji">
-						<span ng-cloak class="dis-data">{{item.create_time}}</span>
+						<span ng-cloak class="dis-data">{{item.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</span>
 					</div>
 					<div class="starContainer">
 						<img src="/assets/img/star-p.png" alt="" class="star" ng-show="item.score>=1">

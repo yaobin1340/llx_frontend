@@ -5,6 +5,7 @@ angular.module('ohapp').factory('Evaluate', function ($config, $http) {
         this.after = '';
         this.page = 1;
         this.end = false;
+        this.totalnum_haspic=0;
         this.shop_id='';
         this.minDuration = 0;
         this.message = '正在加载...';
@@ -21,6 +22,7 @@ angular.module('ohapp').factory('Evaluate', function ($config, $http) {
             data: {shop_id:this.shop_id,page:this.page},
         }).success(function (data) {
             if (data.success) {
+                this.totalnum_haspic = data.totalnum_haspic;
                 if(data.list==null||!data.list.length){
                     this.end = true;
                     return
