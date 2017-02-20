@@ -162,6 +162,7 @@ angular
             }
         };
     $scope.soso = function(){
+        $scope.shops.shop_name=$scope.text;
         $scope.shops.items = [];
         $scope.shops.end = false;
         $scope.shops.busy = false;
