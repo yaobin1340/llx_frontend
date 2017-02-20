@@ -24,7 +24,8 @@ angular
                     if(data.success){
                         $scope.express=data.order_detail.express_name;
                         $scope.kd_num=data.order_detail.kd_num;
-                        wuliu();
+                        $scope.goods_list=data.goods_list[0];
+                        // wuliu();
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

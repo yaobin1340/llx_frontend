@@ -19,6 +19,7 @@ angular
 
             $scope.Area=$stateParams.area_code;
             $scope.trues=false;
+            $scope.text=$stateParams.shop_name;
             // $scope.cate_name=$stateParams.cate_name;
             // $scope.cate_id=$stateParams.cate_id;
             //获取筛选分类

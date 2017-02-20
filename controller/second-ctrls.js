@@ -55,7 +55,6 @@ angular
             $scope.scroll_switch = 1;
             $scope.shops = new Shops();
             $scope.shops.cate_id=$stateParams.cate_id;
-            // $scope.shops.cate_name=$stateParams.cate_name;
             $scope.shops.order=$scope.order;
             $scope.shops.lat=$stateParams.lat;
             $scope.shops.lng=$stateParams.lng;
