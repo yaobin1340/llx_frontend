@@ -15,6 +15,18 @@ angular
         $scope.evaluate = new Evaluate();
         $scope.evaluate.shop_id=$stateParams.shop_id;
 
+        //点击图片放大
+        $scope.checkImg = function(index,pic){
+            var pics=[];
+            for(var i=0;i<pic.length;i++){
+                pics[i]='http://139.224.61.180:8080/attachs/'+pic[i];
+            }
+            wx.previewImage({
+              current:pics[index],
+              urls:pics,
+            });
+        }
+
 
 
 

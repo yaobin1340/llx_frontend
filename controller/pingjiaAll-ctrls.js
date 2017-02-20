@@ -17,8 +17,8 @@ angular
         $scope.evaluate.orderby=1;
 
         //点击图片放大
-        var pics=[];
         $scope.checkImg = function(index,pic){
+            var pics=[];
             for(var i=0;i<pic.length;i++){
                 pics[i]='http://139.224.61.180:8080/attachs/'+pic[i];
             }
