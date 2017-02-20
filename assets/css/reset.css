@@ -75,12 +75,12 @@ li{
 
 }
 button[disabled]{
-  background-color: gray;
-  border-color: gray;
+  background-color: gray !important;
+  border-color: gray !important;
 }
 div[disabled]{
-  background-color: gray;
-  border-color: gray;
+  background-color: gray !important;
+  border-color: gray !important;
 }
 input[type='number'] {
       -moz-appearance:textfield;
