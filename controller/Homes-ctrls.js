@@ -65,6 +65,7 @@ angular
                     $scope.area_name = data.map.name;
                     sessionStorage.setItem('area_name',data.map.name);
                     $scope.shops.area_code = data.map.code;
+                    sessionStorage.setItem('area_code',data.map.code);
                     //加载附近商铺
                     $scope.shops.items = [];
                     $scope.shops.end = false;
@@ -160,10 +161,10 @@ angular
                        $scope.cate_list=data.cate_list;
                        angular.forEach(data.cate_list,function(item, index){
                             if(type=="秀币商城"){
-                                $state.go('xiubiShop',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
+                                $state.go('xiubiShop',{cate_id:item.cate_id,cate_name:item.cate_name,area_code:sessionStorage.getItem('area_code'),lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }else if(item.cate_name==type){
-                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
+                                $state.go('restaurant',{cate_id:item.cate_id,cate_name:item.cate_name,citycode:sessionStorage.getItem('citycodes'),area_code:sessionStorage.getItem('area_code'),lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')})
                                 return;
                             }
                         })
@@ -181,12 +182,12 @@ angular
     window.filterByEnter = function(e){
             if(e.keyCode==13){
                 $scope.$apply(function(){
-                    $state.go('soso',{shop_name:$scope.text,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')});
+                    $state.go('soso',{shop_name:$scope.text,citycode:sessionStorage.getItem('citycodes'),area_code:sessionStorage.getItem('area_code'),lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')});
                 })
             }
         };
     $scope.soso = function(){
-        $state.go('soso',{shop_name:$scope.text,citycode:sessionStorage.getItem('citycodes'),area_code:$scope.shops.area_code,lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')});
+        $state.go('soso',{shop_name:$scope.text,citycode:sessionStorage.getItem('citycodes'),area_code:sessionStorage.getItem('area_code'),lat:sessionStorage.getItem('lat'),lng:sessionStorage.getItem('lng')});
     }
 
     // $scope.$on('$viewContentLoaded', function() {
@@ -228,6 +229,7 @@ angular
                 $scope.area_name='嘉定区';
                 sessionStorage.setItem('area_name',$scope.area_name);
                 $scope.shops.area_code = 310114;
+                sessionStorage.setItem('area_code',310114);
                 $scope.shops.items = [];
                 $scope.shops.end = false;
                 $scope.shops.busy = false;
