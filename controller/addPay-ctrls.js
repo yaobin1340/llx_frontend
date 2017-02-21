@@ -57,11 +57,14 @@ angular
         //优惠卡折扣信息
         $scope.jiner = function(){
             if($scope.pay.yhk.bd!=0){
-               $scope.bd = parseInt($scope.total/100)*$scope.shop_info.yhk1;
+               $scope.bd = parseInt($scope.total/100)*$scope.shop_info.yhk1>$scope.pay.yhk.bd?$scope.pay.yhk.bd:parseInt($scope.total/100)*$scope.shop_info.yhk1;
+               $scope.bds=-$scope.bd;
             }else if($scope.pay.yhk.qt!=0){
-                $scope.bd = parseInt($scope.total/100)*$scope.shop_info.yhk2;
+                $scope.bd = parseInt($scope.total/100)*$scope.shop_info.yhk1>$scope.pay.yhk.qt?$scope.pay.yhk.qt:parseInt($scope.total/100)*$scope.shop_info.yhk2;
+                $scope.bds=-$scope.bd;
             }else{
                 $scope.bd = 0;
+                $scope.bds=-$scope.bd;
             }
         }
 
