@@ -19,7 +19,6 @@ angular.module('ohapp').factory('payShop', function ($config, $http) {
             url: $config.api_uri + '/Apishop/ApiSorder/index',
             data: {page:this.page,keyword:this.mobile},
         }).success(function (data) {
-            console.log(data);
             if (data.success) {
                 if(data.list==null||!data.list.length){
                     this.end = true;

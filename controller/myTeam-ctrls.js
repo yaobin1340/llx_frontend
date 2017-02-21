@@ -17,6 +17,7 @@ angular
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
+        $scope.chose=0;
 
         $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Team/index')
@@ -32,12 +33,13 @@ angular
                     }
                 })
 
-
         $scope.selectChange = function(id){
             $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/Team/index',{shop_id:id})
                 .success(function (data) {
                     if(data.success){
+                        $scope.chose=1;
+                        $scope.fx=data;
                         $scope.team1_info = data.team1_info;
                         $scope.team2_info = data.team2_info;
                         $scope.team3_info = data.team3_info;

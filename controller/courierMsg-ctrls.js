@@ -25,7 +25,8 @@ angular
                         $scope.express=data.order_detail.express_name;
                         $scope.kd_num=data.order_detail.kd_num;
                         $scope.goods_list=data.goods_list[0];
-                        // wuliu();
+                        $scope.express_mobile=data.express_mobile;
+                        wuliu();
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -35,12 +36,13 @@ angular
                     }
                 })
 
-            // function wuliu(){
+            function wuliu(){
                 $scope.promise = $http
-                .post($config.api_uri + '/Apipublic/Apilogin/get_express_info',{express:'yunda',kd_num:3904952703494})
+                .post($config.api_uri + '/Apipublic/Apilogin/get_express_info',{express:$scope.express,kd_num:$scope.kd_num})
                 .success(function (data) {
                     if(data.success){
                         $scope.data=data.data;
+                        $scope.state = data.state;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -49,7 +51,7 @@ angular
                         );
                     }
                 })
-            // }
+            }
             
 
 

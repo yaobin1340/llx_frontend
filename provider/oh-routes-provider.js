@@ -339,6 +339,12 @@ angular
         templateUrl : 'views/loginCode.html',
         controller:'loginCodeCtrl'
     };
+    this.routes['shopdescAll'] = {
+        url : '/shopdescAll?shop_id',
+        title: '全部评价',
+        templateUrl : 'views/shopdescAll.html',
+        controller:'shopdescAllCtrl'
+    };
 
     
     this.$get = function()

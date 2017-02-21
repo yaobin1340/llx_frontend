@@ -88,14 +88,14 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.msg = data.detail;
-                        $scope.price = data.detail.price/100;
-                        if($scope.integral/100>=$scope.price){
-                            $scope.needIntegral=$scope.price*100;
+                        $scope.price = data.detail.mall_price;
+                        if($scope.integral-$scope.price>=0){
+                            $scope.needIntegral=$scope.price;
                             $scope.totalNeedpay=0;
                             return;
                         }else{
                             $scope.needIntegral=$scope.integral;
-                            $scope.prices=($scope.price*100-$scope.needIntegral)/100;
+                            $scope.prices=($scope.price-$scope.needIntegral)/100;
                             $scope.needgold=$scope.gold>$scope.prices?$scope.prices:$scope.gold;
                             $scope.totalNeedpay=$scope.prices-$scope.needgold;
                         }

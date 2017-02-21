@@ -20,6 +20,16 @@ angular
           $scope.num = data; 
         });
 
+        $scope.promise = $http
+                .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
+                .success(function (data) {
+                    if(data.success){
+                        $scope.shopflag = data.shopflag;
+                    }else{
+                        
+                    }
+                })
+
 
 
 

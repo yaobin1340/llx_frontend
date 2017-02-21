@@ -1,12 +1,7 @@
+<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
 <div class="pingjia">
-	<div class="banner navbar-fixed-top">
-	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
-  ">
-	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">全部评价</p>
-	</div>
-	<div class="padding"></div>
-	<div class="discuss-cen"   infinite-scroll='evaluate.nextPage()' infinite-scroll-disabled='evaluate.busy' infinite-scroll-distance='1' >
-		<div class="contianers" ng-repeat="item in evaluate.items">
+	<div class="discuss-cen">
+		<div class="contianers" ng-repeat="item in items">
 			<div class="dis-top clearfix">
 				<div class="dis-top-left">
 					<img ng-src="http://139.224.61.180:8080/attachs/{{item.face}}" alt="" class="dis-tou">
@@ -37,6 +32,4 @@
 			<span>商家回复：</span ng-cloak>{{item.reply}}</div>
 		</div>
 	</div>
-<div  cg-busy="{promise:evaluate.promise,templateUrl:evaluate.templateUrl,message:evaluate.message,backdrop:evaluate.backdrop,delay:evaluate.delay,minDuration:evaluate.minDuration}"></div>
-<div class="home_shop_nomore" ng-show='evaluate.end'>-暂无更多评价-</div>
 </div>

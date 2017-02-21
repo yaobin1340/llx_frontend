@@ -64,14 +64,14 @@
 	</div>
 	<!-- 用户评价 -->
 	<div class="user-comment">
-		<div class="user-co">
+		<div class="user-co" ui-sref="shopdescAll({shop_id:detail.shop_id})">
 			<span>用户评价({{pingNum||0}})</span>
 			<div class="address-right addresss-right">
 			<!-- <img ng-src="/assets/img/line.png" alt=""> -->
 			</div>
 		</div>
 		<!-- 测试评论区 -->
-		<div ng-include="'views/shopdescAll.html'" ng-controller="shopdescAllCtrl">
+		<div ng-include="'views/shopdesc.html'" ng-controller="shopdescCtrl">
 		</div>
 	</div>
 </div>
