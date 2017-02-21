@@ -14,7 +14,7 @@
 			<img src="/assets/img/My-order2.png" alt="我的订单" ng-if="num!=2"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
 			<span ng-if="num==2" style="color:#00a2f2;">我的订单</span><span ng-if="num!=2">我的订单</span>
 		</div>
-		<div ng-if="shopflag==1" ui-sref="main.OfferPay" ng-click="changeImg(3)">
+		<div ng-if="shopflag==1||shopflag=''" ui-sref="main.OfferPay" ng-click="changeImg(3)">
 			<img src="/assets/img/Offer-to-pay.png" alt="优惠买单" ng-if="num==3"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
 			<img src="/assets/img/Offer-to-pay2.png" alt="优惠买单" ng-if="num!=3"style="width: 0.6rem;height: 0.6rem;margin:0.2rem auto;">
 			<span ng-if="num==3" style="color:#00a2f2;">优惠买单</span><span ng-if="num!=3">优惠买单</span>
