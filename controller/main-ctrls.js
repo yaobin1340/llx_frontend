@@ -20,15 +20,24 @@ angular
           $scope.num = data; 
         });
 
-        $scope.promise = $http
-                .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
-                .success(function (data) {
-                    if(data.success){
-                        $scope.shopflag = data.shopflag;
-                    }else{
-                        
-                    }
-                })
+
+        $scope.chose = function(){
+            $http
+                    .post($config.api_uri + '/Apiuser/Userinfo/mainpage')
+                    .success(function (data) {
+                        if(data.success){
+                            $scope.shopflag = data.shopflag;
+                            if($scope.shopflag==1){
+                                $state.go('main.OfferPay');
+                            }else if($scope.shopflag==2){
+                                $state.go('payShop');
+                            }
+                        }else{
+                            
+                        }
+                    })
+        }
+            
 
 
 
