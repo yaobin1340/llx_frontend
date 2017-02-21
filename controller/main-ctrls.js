@@ -32,8 +32,6 @@ angular
                             }else if($scope.shopflag==2){
                                 $state.go('payShop');
                             }
-                        }else{
-                            
                         }
                     })
         }
