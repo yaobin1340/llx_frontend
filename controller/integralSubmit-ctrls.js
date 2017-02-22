@@ -100,7 +100,7 @@ angular
                             if($scope.needgold>0){
                                 $scope.type=1;
                                 $scope.needgold=data.detail.use_gold/100;
-                                $scope.totalNeedpay=$scope.prices-$scope.needgold/100;
+                                $scope.totalNeedpay=$scope.prices-$scope.needgold;
                             }else{
                                 $scope.type=0;
                                 $scope.needgold=$scope.gold>$scope.prices?$scope.prices:$scope.gold;
