@@ -15,7 +15,7 @@
 					<div class="clearfix">
 						<span ng-cloak class="dis-name" style="color:black;">{{item.user_nickname}}</span>
 						<img ng-src="/assets/img/vip_icon{{item.rank_id}}.png" alt="" class="dengji">
-						<span ng-cloak class="dis-data">{{item.create_time*1000|date:'yyyy-MM-dd hh:mm:ss'}}</span>
+						<span ng-cloak class="dis-data">{{item.cdate}}</span>
 					</div>
 					<div class="starContainer">
 						<img src="/assets/img/star-p.png" alt="" class="star" ng-show="item.score>=1">

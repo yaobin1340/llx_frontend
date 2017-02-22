@@ -19,10 +19,10 @@
 				<p ng-cloak class="pr-name text-overflow">{{goods.title}}</p>
 			</div>
 			<div class="col-sm-5 col-xs-5">
-				<div class="col-sm-5 col-xs-5">
+				<div class="col-sm-3 col-xs-3" style="padding: 0;">
 					<p ng-cloak class="pr-num">x{{goods.num}}</p>
 				</div>
-				<div class="col-sm-7 col-xs-7">
+				<div class="col-sm-9 col-xs-9" style="padding: 0;">
 					<p ng-cloak class="pro-pri">￥{{goods.price/100|number:2}}</p>
 				</div>
 			</div>
@@ -34,10 +34,9 @@
 				<p class="pr-name pr-color">消费金额</p>
 			</div>
 			<div class="col-sm-6 col-xs-6">
-				<div class="col-sm-6 col-xs-6"></div>
-				<div class="col-sm-6 col-xs-6">
+				<!-- <div class="col-sm-5 col-xs-5"> -->
 					<p ng-cloak class="pro-pri">￥{{msg.total_price/100|number:2}}</p>
-				</div>
+				<!-- </div> -->
 			</div>
 		</div>
 

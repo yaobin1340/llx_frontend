@@ -21,8 +21,8 @@
 			<div class="row rowmsg">
 				<div ng-cloak class="col-sm-12 col-xs-12">商家：{{Msg.shop_name}}</div>
 				<div ng-cloak class="col-sm-12 col-xs-12">消费金额：{{Msg.total|number:2}}</div>
-				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：{{Msg.yhk|number:2}}</div>
-				<div ng-cloak class="col-sm-12 col-xs-12">备注：{{Msg.rmark}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">优惠券抵扣：{{-Msg.yhk|number:2}}</div>
+				<div ng-cloak class="col-sm-12 col-xs-12">备注：{{Msg.remark}}</div>
 				<div class="col-sm-12 col-xs-12">
 				<div style="float: left;">赠品消费：</div>
 				<div ng-repeat="(key,value) in Msg.zp" style="float: left;">

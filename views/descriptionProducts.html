@@ -13,6 +13,18 @@
 	</div>
 	<div ng-cloak class="res-titlt text-overflow">
 		{{detail.shop_name}}
+		<div class="starsAll">
+			<img ng-src="/assets/img/star-p.png" alt="" ng-if="detail.score/100>=0.1">
+			<img ng-src="/assets/img/star-b.png" alt="" ng-if="detail.score/100<0.1&&detail.score/100>0">
+			<img ng-src="/assets/img/star-p.png" alt="" ng-if="detail.score/100>=0.2">
+			<img ng-src="/assets/img/star-b.png" alt="" ng-if="detail.score/100<0.2&&detail.score/100>0.1">
+			<img ng-src="/assets/img/star-p.png" alt=""  ng-if="detail.score/100>=0.3">
+			<img ng-src="/assets/img/star-b.png" alt="" ng-if="detail.score/100<0.3&&detail.score/100>0.2">
+			<img ng-src="/assets/img/star-p.png" alt=""  ng-if="detail.score/100>=0.4">
+			<img ng-src="/assets/img/star-b.png" alt="" ng-if="detail.score/100<0.4&&detail.score/100>0.3">
+			<img ng-src="/assets/img/star-p.png" alt="" ng-if="detail.score/100>=0.5">
+			<img ng-src="/assets/img/star-b.png" alt="" ng-if="detail.score/100<0.5&&detail.score/100>0.4">
+		</div>
 	</div>
 	<div class="address " ng-click="daohang()">
 		<div class="address-left img-address-left">

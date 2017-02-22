@@ -77,15 +77,20 @@
 				<div ng-if="shop.shop_class==1">
 				<div class="col-sm-6 col-xs-6"style="padding:0;">
 					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.1">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.1">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.1&&shop.score/100>0">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100==0">
 					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.2">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.2">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.2&&shop.score/100>0.1">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.1&&shop.score/100>=0">
 					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.3">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.3">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.3&&shop.score/100>0.2">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.2&&shop.score/100>=0">
 					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.4">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.4">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.4&&shop.score/100>0.3">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.3&&shop.score/100>=0">
 					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.5">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.5">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.5&&shop.score/100>0.4">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.4&&shop.score/100>=0">
 				</div>
 				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;">
 					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
@@ -94,15 +99,20 @@
 				<div ng-if="shop.shop_class==2">
 				<div class="col-sm-6 col-xs-6"style="padding:0;padding-top: 0.5rem;">
 					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.1">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.1">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.1&&shop.score/100>0">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100==0">
 					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.2">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.2">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.2&&shop.score/100>0.1">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.1&&shop.score/100>=0">
 					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.3">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.3">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.3&&shop.score/100>0.2">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.2&&shop.score/100>=0">
 					<img ng-src="/assets/img/star.png" alt="" class="star"  ng-if="shop.score/100>=0.4">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.4">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.4&&shop.score/100>0.3">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.3&&shop.score/100>=0">
 					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.5">
-					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<0.5">
+					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.5&&shop.score/100>0.4">
+					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.4&&shop.score/100>=0">
 				</div>
 				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;padding-top: 0.5rem;">
 					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>

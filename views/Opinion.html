@@ -15,8 +15,8 @@
 			</div>
 			<div class="proMsg-top-title">
 				<p ng-cloak>{{Msg.order_goods_info[0].title}}</p>
-				<span ng-cloak>实付金额{{Msg.detail.need_pay/100}}</span>
-				<span ng-cloak>使用积分{{Msg.detail.can_use_integral}}</span>
+				<span ng-cloak>使用余额{{Msg.detail.use_gold/100|number:2}}</span>
+				<span ng-cloak>实付金额{{Msg.detail.need_pay/100|number:2}}</span>
 			</div>
 		</div>
 		<div class="proMsg-center">
