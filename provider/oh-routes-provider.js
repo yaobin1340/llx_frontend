@@ -345,6 +345,12 @@ angular
         templateUrl : 'views/shopdescAll.html',
         controller:'shopdescAllCtrl'
     };
+    this.routes['myLike'] = {
+        url : '/myLike',
+        title: '我的收藏',
+        templateUrl : 'views/myLike.html',
+        controller:'myLikeCtrl'
+    };
 
     
     this.$get = function()

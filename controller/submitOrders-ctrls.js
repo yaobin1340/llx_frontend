@@ -58,8 +58,16 @@ angular
                         $scope.total_price=data.detail.total_price;
                         $scope.order_goods_info=data.order_goods_info;
                         $scope.xiubi=data.detail.can_use_integral;
-                        $scope.needgold=$scope.gold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
-                        $scope.totalNeedpay=($scope.total_price-$scope.needgold*100)/100;
+                        $scope.needgold=data.detail.use_gold;
+                        if($scope.needgold>0){
+                            $scope.type=1;
+                            $scope.needgold=data.detail.use_gold/100;
+                            $scope.totalNeedpay=($scope.total_price-$scope.needgold*100)/100;
+                        }else{
+                            $scope.type=0;
+                            $scope.needgold=$scope.gold>$scope.total_price/100?$scope.total_price/100:$scope.gold;
+                            $scope.totalNeedpay=($scope.total_price-$scope.needgold*100)/100;
+                        }
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

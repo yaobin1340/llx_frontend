@@ -1,0 +1,21 @@
+
+<div class="information">
+	<div class="banner navbar-fixed-top">
+	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);"style="width:0.69444444rem;position: absolute;margin-top: 0.35rem;float: left;margin-left: 0.69444444rem;
+  ">
+	    <p style="text-align: center;line-height: 1.38rem;color: #fff;font-size: 0.41666667rem;">我的收藏</p>
+	</div>
+	<div class="padding"></div>
+	<div class="menu row">
+		<div class="col-sm-6 col-xs-6 pos-r"ng-class="{'border':chose1}" ng-click="chose(1)">收藏店铺</div>
+		<!-- <p class="cir cir1">99</p> -->
+		<div class="col-sm-6 col-xs-6 pos-r" ng-class="{'border':chose2}" ng-click="chose(2)">收藏商品</div>
+		<!-- <p class="cir cir2">99</p> -->
+	</div>
+	<div ng-include="'views/likeShop.html'" ng-if="chose1==1" ng-controller="likeShopCtrl">
+	
+	</div>
+	<div ng-include="'views/likePro.html'" ng-if="chose2==1" ng-controller="likeProCtrl">
+	
+	</div>
+</div>

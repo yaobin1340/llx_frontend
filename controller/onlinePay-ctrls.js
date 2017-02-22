@@ -54,13 +54,21 @@ angular
             $scope.promise = $http
                 .post($config.api_uri + '/Apishop/ApiSorder/pay',{id:$stateParams.pay_id,gold:$scope.needgold})
                 .success(function (data) {
-                    console.log(data);
                     if(data.success){
                         $scope.detail=data.detail;
                         $scope.zp_list=data.zp_list;
                         $scope.needPay=data.detail.total-data.detail.yhk;
-                        $scope.needgold=$scope.gold>$scope.needPay?$scope.needPay:$scope.gold;
-                        $scope.totalNeedpay=$scope.needPay-$scope.needgold;
+                        $scope.needgold=data.detail.use_gold;
+                        if($scope.needgold>0){
+                            $scope.type=1;
+                            $scope.needgold=data.detail.use_gold/100;
+                            $scope.totalNeedpay=$scope.needPay-$scope.needgold/100;
+                        }else{
+                            $scope.type=0;
+                            $scope.needgold=$scope.gold>$scope.needPay?$scope.needPay:$scope.gold;
+                            $scope.totalNeedpay=$scope.needPay-$scope.needgold;
+                        }
+                        
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
@@ -70,7 +78,6 @@ angular
                     }
                 })
         }
-
         $scope.affirm = function(){
             $scope.promise = $http
                 .post($config.api_uri + '/Apiuser/pay/check_pay',{id:$stateParams.pay_id,gold:$scope.needgold})
