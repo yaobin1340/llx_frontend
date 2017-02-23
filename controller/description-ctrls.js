@@ -77,7 +77,7 @@ angular
                 });
             var timer = setInterval(function(){
               	if($("#qrcode").html()!=undefined){
-              		new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/description?shop_id='+$stateParams.shop_id);
+              		new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/description?shop_id='+$stateParams.shop_id+"&fd_id="+$stateParams.fd_id);
               		 clearInterval(timer);
               	}
               },1000)
