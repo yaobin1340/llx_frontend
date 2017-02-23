@@ -243,8 +243,8 @@ angular
     });
     }
 
-    $scope.choseShop = function(id){
-        $state.go('description',{shop_id:id});
+    $scope.choseShop = function(id,fd){
+        $state.go('description',{shop_id:id,fd_id:fd});
     }
          
 });

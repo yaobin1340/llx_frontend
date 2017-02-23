@@ -5,7 +5,7 @@
 			<div class="likeItems-left" ui-sref="description({shop_id:shop.shop_id})">
 				<img ng-src="http://139.224.61.180:8080/attachs/{{shop.logo}}" alt="">
 			</div>
-			<div class="likeItems-center" ui-sref="description({shop_id:shop.shop_id})">
+			<div class="likeItems-center" ui-sref="description({shop_id:shop.shop_id,fd_id:shop.fd_id})">
 				<p class="text-overflow p_title">{{shop.fd_name}}</p>
 				<div class="center-div text-overflow">
 					<img ng-src="/assets/img/star-p.png" alt="" ng-if="shop.score/100>=0.1">

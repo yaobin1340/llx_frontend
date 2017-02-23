@@ -57,13 +57,13 @@ angular
     };
 
      this.routes['description'] = {
-        url : '/description?shop_id,type,openid,image_url',
+        url : '/description?shop_id,fd_id,type,openid,image_url',
         title: '商户信息',
         templateUrl : 'views/descriptionProducts.html',
         controller:'descriptionCrtl'
     };
     this.routes['smallShop'] = {
-        url : '/smallShop?shop_id',
+        url : '/smallShop?shop_id,fd_id',
         title: '微店',
         templateUrl : 'views/smallShop.html',
         controller:'smallShopCrtl'
@@ -202,7 +202,7 @@ angular
         controller:'mumberMsgCtrl'
     };
     this.routes['shopMsg'] = {
-        url : '/shopMsg?shop_id',
+        url : '/shopMsg?shop_id,fd_id',
         title: '商户信息',
         templateUrl : 'views/shopMsg.html',
         controller:'shopMsgCtrl'

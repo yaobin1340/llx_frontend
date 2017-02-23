@@ -73,25 +73,25 @@
 	<hr class="hr-change">
 	<div class="advertisement clearfix">
 			<div class="top-left">
-				<a href="http://llx.51loveshow.com/smallShop?shop_id=242"><img src="assets/img/shili/001.png" alt=""></a>
+				<a href="http://localhost/smallShop?shop_id=242&fd_id=238"><img src="assets/img/shili/001.png" alt=""></a>
 			</div>
 			<div class="top-right">
-				<a href="http://llx.51loveshow.com/smallShop?shop_id=103"><img src="assets/img/shili/002.png" alt=""></a>
+				<a href="http://localhost/smallShop?shop_id=86&fd_id=91"><img src="assets/img/shili/002.png" alt=""></a>
 			</div>
 			<div class="bottom-left">
-				<a href="http://llx.51loveshow.com/smallShop?shop_id=105"><img src="assets/img/shili/003.png" alt=""></a>
+				<a href="http://localhost/smallShop?shop_id=95&fd_id=100"><img src="assets/img/shili/003.png" alt=""></a>
 			</div>
 			<div class="bottom-left">
-				<a href="http://llx.51loveshow.com/smallShop?shop_id=95"><img src="assets/img/shili/004.png" alt=""></a>
+				<a href="http://localhost/smallShop?shop_id=103&fd_id=106"><img src="assets/img/shili/004.png" alt=""></a>
 			</div>
 			<div class="bottom-right">
-				<a href="http://llx.51loveshow.com/smallShop?shop_id=102"><img src="assets/img/shili/005.png" alt=""></a>
+				<a href="http://localhost/smallShop?shop_id=102&fd_id=88"><img src="assets/img/shili/005.png" alt=""></a>
 			</div>
 	</div>
 	<hr class="hr-change">
 	<span class="shop-title">—&nbsp;附近店铺&nbsp;—</span>
 	<div class="row marbtm"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
-		<div class="clearfix" ng-repeat="shop in shops.items" ng-click="choseShop(shop.shop_id)">
+		<div class="clearfix" ng-repeat="shop in shops.items" ng-click="choseShop(shop.shop_id,shop.fd_id)">
 			<div class="col-md-4 col-sm-4 col-xs-4" style="
 			position: relative;">
 				<img ng-src="http://139.224.61.180:8080/attachs/{{shop.logo}}" alt="" class="pro-photo">

@@ -51,7 +51,7 @@ angular
 				})
         }else{
         	$scope.promise=$http
-				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
+				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
 				.success(function (data) {
 					if(data.success){
 						$scope.detail = data.detail;
@@ -84,7 +84,7 @@ angular
 		}
 		$scope.love = function(){
 			$scope.promise=$http
-				.post($config.api_uri + '/Apiuser/Sc/add_sc_fd',{fd_id:$stateParams.shop_id})
+				.post($config.api_uri + '/Apiuser/Sc/add_sc_fd',{fd_id:$stateParams.fd_id})
 				.success(function (data) {
 					if(data.success){
 						$mdToast.show(

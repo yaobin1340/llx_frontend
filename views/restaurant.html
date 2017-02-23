@@ -60,7 +60,7 @@
 
 	<div class="row marbtm"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
 		<div class="clearfix" ng-repeat="shop in shops.items"
-		ui-sref="description({shop_id:shop.shop_id})">
+		ui-sref="description({shop_id:shop.shop_id,fd_id:shop.fd_id})">
 			<div class="col-md-4 col-sm-4 col-xs-4" style="
 			position: relative;">
 				<img ng-src="http://139.224.61.180:8080/attachs/{{shop.logo}}" alt="" class="pro-photo">

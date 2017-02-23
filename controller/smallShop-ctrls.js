@@ -20,7 +20,7 @@ angular
         $scope.backdrop = true;
         $scope.promise = null;
 			$scope.promise = $http
-				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
+				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
 				.success(function (data) {
 					if(data.success){
                         $scope.area_name=data.area_name;
@@ -44,7 +44,7 @@ angular
 
 
         	 $scope.promise = $http
-				.post($config.api_uri + '/Apipublic/ApiPshop/hot_goods',{shop_id:$stateParams.shop_id})
+				.post($config.api_uri + '/Apipublic/ApiPshop/hot_goods',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
 				.success(function (data) {
 					if(data.success){
 						$scope.hot_goods_list = data.goods_list;
@@ -58,7 +58,7 @@ angular
 				})
 
 			$scope.promise = $http
-				.post($config.api_uri + '/Apipublic/ApiPshop/goods_list',{shop_id:$stateParams.shop_id})
+				.post($config.api_uri + '/Apipublic/ApiPshop/goods_list',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
 				.success(function (data) {
 					if(data.success){
 						$scope.goods_list = data.goods_list;
