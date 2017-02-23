@@ -39,7 +39,7 @@
 		<img ng-src="http://139.224.61.180:8080/attachs/{{productMsg.pics.photo}}" alt="">
 	</div>
 	<div class="discuss" style="margin-bottom: 1.5rem;">
-		<span ng-cloak class="discuss-title">评论（{{productMsg.pingnum}}）</span>
+		<span ng-cloak class="discuss-title">评论（{{totalnum}}）</span>
 		<span class="see-all" ui-sref="pingjia({goods_id:good_id})">查看全部评论</span>
 		<div class="discuss-cen">
 		<div class="contianers" ng-repeat="item in items">
@@ -80,8 +80,8 @@
 		<div class="runin " ui-sref="smallShop({shop_id:productMsg_list.shop_id})">
 			<p>进店</p>
 		</div>
-		<div class="addCart " ng-click="addCart()">加入购物车</div>
-		<div class="goPay " ng-click="gopay(good_id)">立即购买</div>
+		<div class="addCart" ng-click="addCart()">加入购物车</div>
+		<div class="goPay" ng-click="gopay(good_id)">立即购买</div>
 	</footer>
 	</div>
 </div>

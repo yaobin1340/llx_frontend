@@ -83,14 +83,13 @@ angular
               },1000)
 		}
 		$scope.love = function(){
-
 			$scope.promise=$http
-				.post($config.api_uri + '/Apiuser/Favourite/shop_favourites',{shop_id:$stateParams.shop_id})
+				.post($config.api_uri + '/Apiuser/Sc/add_sc_fd',{fd_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
 						$mdToast.show(
 						$mdToast.simple()
-							.content(data.error_msg)
+							.content("分店收藏成功")
 							.hideDelay(1000)
 						);
 					}else{

@@ -65,12 +65,12 @@ angular
 
         $scope.love = function(){
             $http
-                .post($config.api_uri + '/Apiuser/Favourite/goods_favourites',{goods_id:$stateParams.goods_id})
+                .post($config.api_uri + '/Apiuser/Sc/add_sc_good',{goods_id:$stateParams.goods_id})
                 .success(function (data) {
                     if(data.success){
                        $mdToast.show(
                         $mdToast.simple()
-                            .content(data.error_msg)
+                            .content("商品收藏成功")
                             .hideDelay(1000)
                         );
                     }else{
@@ -105,6 +105,7 @@ angular
                 .success(function (data) {
                     if(data.success){
                        $scope.items = data.list;
+                       $scope.totalnum=data.totalnum;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

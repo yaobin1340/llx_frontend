@@ -1,1 +1,24 @@
-likePro.html
+<div  cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}"></div>
+<div class="myLike">
+	<div infinite-scroll='lovepro.nextPage()' infinite-scroll-disabled='lovepro.busy' infinite-scroll-distance='1' class="clearfix">
+		<div class="likeItems" ng-repeat="shop in lovepro.items">
+			<div class="likeItems-left" ui-sref="product({goods_id:shop.goods_id})">
+				<img ng-src="http://139.224.61.180:8080/attachs/{{shop.photo}}" alt="">
+			</div>
+			<div class="likeItems-center" ui-sref="product({goods_id:shop.goods_id})">
+				<p class="text-overflow p_title">{{shop.title}}</p>
+				<div class="center-div text-overflow">
+					<span ng-bind-html="shop.details|trustHtml"></span>
+				</div>
+				<div class="price text-overflow">
+					￥{{shop.mall_price/100}}
+				</div>
+			</div>
+			<div class="likeItems-right">
+				<img src="/assets/img/img_delete.png" alt="" ng-click="delect(shop.scg_id)">
+			</div>
+		</div>
+	</div>
+	<div cg-busy="{promise:lovepro.promise,templateUrl:lovepro.templateUrl,message:lovepro.message,backdrop:lovepro.backdrop,delay:lovepro.delay,minDuration:lovepro.minDuration}"></div>
+	<div class="home_shop_nomore" ng-show='lovepro.end' style="margin-bottom: 0;">-暂无更多收藏-</div>
+</div>
