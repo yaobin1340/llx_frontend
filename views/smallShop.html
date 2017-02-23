@@ -17,18 +17,14 @@
         <!-- <div class="cir cir-right img-circle">
             <img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin:0.08rem 0 0 0.12rem;width: 0.69444444rem;" ng-click="love()">
         </div> -->
-		<table class="table-proMsg">
+		<table class="table-proMsg" style="width: 5rem;">
 		<tr>
 			<td rowspan="3"><img src="http://139.224.61.180:8080/attachs/{{detail.logo}}" alt="" class="table-img"></td>
 			<td>
-				<tr>
-					<td ng-cloak class="td-proname" style="color:white">{{detail.shop_name}}</td>
-				</tr>
-				<tr>
-					<td class="td-msg">
-						<p ng-cloak class="text-overflow" style="color:white">公告：</p>
-					</td>
-				</tr>
+				<div class="td-proname text-overflow"style="color:white;width: 7rem;">{{detail.shop_name}}({{detail.fd_name}})</div>
+				<div class="td-msg">
+					<p ng-cloak class="text-overflow" style="color:white">公告：</p>
+				</div>
 			</td>
 		</tr>
 		</table>
