@@ -118,11 +118,11 @@ angular
             });
             wx.ready(function() {
             	$("#daohang").click(function(){
-            		alert("latitude:"+$scope.detail.lat)
-            		alert("longitude:"+$scope.detail.lng)
+            		// alert("latitude:"+$scope.detail.lat)
+            		// alert("longitude:"+$scope.detail.lng)
 		            wx.openLocation({
-			            latitude: $scope.detail.lat,
-			            longitude: $scope.detail.lng,
+			            latitude: 90,
+			            longitude: 180,
 			            name: $scope.detail.shop_name,
 			            address: $scope.detail.addr,
 			            scale: 14,
