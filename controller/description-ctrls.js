@@ -10,7 +10,7 @@ angular
 		var $mdDialog = $injector.get('$mdDialog');
 		var $mdMedia = $injector.get('$mdMedia');
 		var $mdToast = $injector.get('$mdToast');
-
+		
         $scope.shops_id=$stateParams.shop_id;
         //加载动画
         $scope.delay = 0;
@@ -123,7 +123,7 @@ angular
 		              name: $scope.detail.shop_name,
 		              address: $scope.detail.addr,
 		              scale: 14,
-		              infoUrl: 'http://llx.51loveshow.com/home',
+		              infoUrl: 'http://llx.51loveshow.com/home?shop_id=104&fd_id=1271',
 		                success: function(res) { 
 		                },  
 		                fail: function(res) {
