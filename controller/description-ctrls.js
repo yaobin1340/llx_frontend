@@ -118,6 +118,8 @@ angular
             });
             wx.ready(function() {
             	$("#daohang").click(function(){
+            		alert("latitude:"+$scope.detail.lat)
+            		alert("longitude:"+$scope.detail.lng)
 		            wx.openLocation({
 			            latitude: $scope.detail.lat,
 			            longitude: $scope.detail.lng,
