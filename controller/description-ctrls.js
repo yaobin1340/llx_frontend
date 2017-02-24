@@ -136,8 +136,8 @@ angular
 			            fail: function(res) {
 				            $mdToast.show(
 					            $mdToast.simple()
-					            // .content('导航失败，请确认打开定位功能')
-						            .content(res)
+					            .content('导航失败，请刷新页面重试。')
+						            // .content(res)
 						            .hideDelay(1000)
 				            );
 			            }
