@@ -124,7 +124,7 @@ angular
 		              name: $scope.detail.shop_name,
 		              address: $scope.detail.addr,
 		              scale: 14,
-		              infoUrl: 'http://llx.51loveshow.com/home',
+		              infoUrl: window.location.href,
 		                success: function(res) { 
 		                },  
 		                fail: function(res) {
