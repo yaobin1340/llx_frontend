@@ -81,7 +81,6 @@ angular.module( 'ohapp',
         return angular.isObject(data) && String(data) !== '[object File]' ? param(data) : data;
     }];
 
-
 })
 .directive("scroll", function ($window) {
     return function(scope, element, attrs) {

@@ -19,6 +19,53 @@ angular
         $scope.message = '正在加载...';
         $scope.backdrop = true;
         $scope.promise = null;
+        if($stateParams.fd_id==-1){
+            $scope.promise = $http
+                .post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id})
+                .success(function (data) {
+                    if(data.success){
+                        $scope.area_name=data.area_name;
+                        $scope.detail=data.detail;
+                        $scope.msg=data;
+                        //注册微信分享信息
+                        shareData = {};  
+                        shareData.imgUrl ='http://139.224.61.180:8080/attachs/'+$scope.detail.logo;  
+                        shareData.link = window.location.href;  
+                        shareData.content = '我通过拉拉秀给你分享了一个店铺，快去看看吧';  
+                        shareData.title = $scope.detail.shop_name;  
+                        Share(shareData);
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+        }else{
+            $scope.promise = $http
+                .post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
+                .success(function (data) {
+                    if(data.success){
+                        $scope.area_name=data.area_name;
+                        $scope.detail=data.detail;
+                        $scope.msg=data;
+                        //注册微信分享信息
+                        shareData = {};  
+                        shareData.imgUrl ='http://139.224.61.180:8080/attachs/'+$scope.detail.logo;  
+                        shareData.link = window.location.href;  
+                        shareData.content = '我通过拉拉秀给你分享了一个店铺，快去看看吧';  
+                        shareData.title = $scope.detail.shop_name;  
+                        Share(shareData);
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
+        }
 			$scope.promise = $http
 				.post($config.api_uri + '/Apipublic/ApiPshop/shopdetail',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
 				.success(function (data) {
@@ -44,7 +91,7 @@ angular
 
 
         	 $scope.promise = $http
-				.post($config.api_uri + '/Apipublic/ApiPshop/hot_goods',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
+				.post($config.api_uri + '/Apipublic/ApiPshop/hot_goods',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
 						$scope.hot_goods_list = data.goods_list;
@@ -58,7 +105,7 @@ angular
 				})
 
 			$scope.promise = $http
-				.post($config.api_uri + '/Apipublic/ApiPshop/goods_list',{shop_id:$stateParams.shop_id,fd_id:$stateParams.fd_id})
+				.post($config.api_uri + '/Apipublic/ApiPshop/goods_list',{shop_id:$stateParams.shop_id})
 				.success(function (data) {
 					if(data.success){
 						$scope.goods_list = data.goods_list;
