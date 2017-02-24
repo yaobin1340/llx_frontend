@@ -244,7 +244,8 @@ angular
     }
 
     $scope.choseShop = function(id,fd){
-        $state.go('description',{shop_id:id,fd_id:fd});
+        location.href = 'http://llx.51loveshow.com/description?shop_id='+id+'&fd_id='+fd;
+        // $state.go('description',{shop_id:id,fd_id:fd});
     }
          
 });
