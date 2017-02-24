@@ -117,7 +117,6 @@ angular
                 jsApiList: ['openLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
             wx.ready(function() {
-            	alert(window.location.href);
 		        wx.openLocation({
 		              latitude: $scope.detail.lat,
 		              longitude: $scope.detail.lng,
