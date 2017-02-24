@@ -10,7 +10,7 @@ angular
 		var $mdDialog = $injector.get('$mdDialog');
 		var $mdMedia = $injector.get('$mdMedia');
 		var $mdToast = $injector.get('$mdToast');
-		
+
         $scope.shops_id=$stateParams.shop_id;
         //加载动画
         $scope.delay = 0;
@@ -117,13 +117,14 @@ angular
                 jsApiList: ['openLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
             wx.ready(function() {
+            	alert(window.location.href);
 		        wx.openLocation({
 		              latitude: $scope.detail.lat,
 		              longitude: $scope.detail.lng,
 		              name: $scope.detail.shop_name,
 		              address: $scope.detail.addr,
 		              scale: 14,
-		              infoUrl: 'http://llx.51loveshow.com/home?shop_id=104&fd_id=1271',
+		              infoUrl: 'http://llx.51loveshow.com/home',
 		                success: function(res) { 
 		                },  
 		                fail: function(res) {
