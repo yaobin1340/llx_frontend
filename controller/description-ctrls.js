@@ -27,9 +27,7 @@ angular
                         $scope.detail=data.detail;
 						$scope.tx_lat = data.tx_lat;
 						$scope.tx_lng = data.tx_lng;
-						$timeout(function(){
-							wxConfig()
-						},1200);
+						wxConfig()
                     }else{
                         $mdToast.show(
 							$mdToast.simple()
@@ -62,9 +60,7 @@ angular
 						$scope.detail = data.detail;
 						$scope.tx_lat = data.tx_lat;
 						$scope.tx_lng = data.tx_lng;
-						$timeout(function(){
-							wxConfig()
-						},1200);
+						wxConfig()
 					}else{
 						$mdToast.show(
 						$mdToast.simple()
