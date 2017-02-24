@@ -16,7 +16,7 @@
 				<span ng-if="shopdata.shop_info.is_renzheng==1">已认证</span>
 			</div>
 			<div class="shop-img-right">
-				<p>{{shopdata.shop_info.shop_name}}(ID:{{shopdata.shop_info.shop_id}})</p>
+				<p class="text-overflow">{{shopdata.shop_info.shop_name}}(ID:{{shopdata.shop_info.shop_id}})</p>
 				<span>暂无评价</span>
 				<span>类  型：{{shopdata.shop_cate_name}}</span>
 				<span>商户资金：￥{{shopdata.user_info.gold/100}}<a ui-sref="shopCash({type:'drawal'})">提现</a></span>

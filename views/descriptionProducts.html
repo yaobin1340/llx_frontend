@@ -12,8 +12,11 @@
 		<div class="love cir-right img-circle img-r" ng-click="love()"></div>
 	</div>
 	<div ng-cloak class="res-titlt text-overflow">
-		<div ng-if="detail.fg_id==-1">{{detail.shop_name}}</div>
-		<div ng-if="detail.fg_id!=-1">{{detail.shop_name}}({{detail.fd_name}})</div>
+		<div ng-if="detail.fg_id==-1" class="text-overflow">{{detail.shop_name}}</div>
+		<div ng-if="detail.fg_id!=-1" class="text-overflow">
+			<span>{{detail.shop_name}}</span>
+			<span ng-if="detail.fd_name!=''" style="margin-left: -0.3rem;">({{detail.fd_name}})</span>
+		</div>
 		<div class="starsAll">
 			<img ng-src="/assets/img/star-p.png" alt="" ng-if="detail.score/100>=0.1">
 			<img ng-src="/assets/img/star-b.png" alt="" ng-if="detail.score/100<0.1&&detail.score/100>0">

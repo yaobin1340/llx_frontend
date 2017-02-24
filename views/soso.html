@@ -57,11 +57,11 @@
 
 	<div class="row marbtm"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
 		<div class="clearfix" ng-repeat="shop in shops.items"
-		ui-sref="description({shop_id:shop.shop_id})">
+		ui-sref="description({shop_id:shop.shop_id,fd_id:shop.fd_id})">
 			<div class="col-md-4 col-sm-4 col-xs-4" style="
 			position: relative;">
-				<img ng-src="http://139.224.61.180:8080/attachs/{{shop.logo}}" alt="" class="pro-photo">
-				<img ng-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:0.1rem;width: 2rem;" ng-if="shop.shop_class==1">
+				<img lazy-src="http://139.224.61.180:8080/attachs/{{shop.logo}}" alt="" class="pro-photo">
+				<img lazy-src="/assets/img/meng.png" alt=""style="position: absolute; top:-0.12rem;left:0.1rem;width: 2rem;" ng-if="shop.shop_class==1">
 			</div>
 			<div class="col-md-8 col-sm-8 col-xs-8 border-t-b nearShop">
 				<div ng-cloak class="col-sm-9 col-xs-9 div-name text-overflow" style="padding:0;color:black;">{{shop.shop_name}}</div>

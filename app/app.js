@@ -12,7 +12,7 @@ angular.module( 'ohapp',
         'ngMdIcons',
         'ngAria',
         'cgBusy',
-        'me-lazyimg',
+        'me-lazyload',
         'infinite-scroll'
     ]
 )

@@ -21,7 +21,11 @@
 		<tr>
 			<td rowspan="3"><img src="http://139.224.61.180:8080/attachs/{{detail.logo}}" alt="" class="table-img"></td>
 			<td>
-				<div class="td-proname text-overflow"style="color:white;width: 7rem;">{{detail.shop_name}}({{detail.fd_name}})</div>
+				<div class="td-proname text-overflow"style="color:white;width: 7rem;">
+					<span>{{detail.shop_name}}</span>
+					<span ng-if="detail.fd_name!=''" style="margin-left: 
+					-0.3rem;">({{detail.fd_name}})</span>
+				</div>
 				<div class="td-msg">
 					<p ng-cloak class="text-overflow" style="color:white">公告：</p>
 				</div>
