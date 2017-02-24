@@ -56,6 +56,7 @@ angular
 
         //优惠卡折扣信息
         $scope.jiner = function(){
+            $scope.total=$scope.total.replace(/(\.\d{2})\d*$/,'\$1');
             if($scope.pay.yhk.bd!=0){
                $scope.bd = parseInt($scope.total/100)*$scope.shop_info.yhk1>$scope.pay.yhk.bd?$scope.pay.yhk.bd:parseInt($scope.total/100)*$scope.shop_info.yhk1;
                $scope.bds=-$scope.bd;

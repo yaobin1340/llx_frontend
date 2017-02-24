@@ -26,6 +26,7 @@ angular
 				.post($config.api_uri + '/Apipublic/ApiPshop/goodsdetail',{goods_id:$stateParams.goods_id})
 				.success(function (data) {
                     if(data.success){
+                        console.log(data);
                         $scope.is_vs=data.is_vs;
                         $scope.productMsg_list = data.detail;
                         $scope.slide=data.pics;

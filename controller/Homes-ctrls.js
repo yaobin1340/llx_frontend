@@ -247,5 +247,19 @@ angular
         location.href = 'http://llx.51loveshow.com/description?shop_id='+id+'&fd_id='+fd;
         // $state.go('description',{shop_id:id,fd_id:fd});
     }
+
+    //广告位
+    $http.post($config.api_uri + '/Apipublic/Apiajax/get_gg')
+                .success(function (data) {
+                    if(data.success){
+                       $scope.gg=data.gg_list;
+                    }else{
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content(data.error_msg)
+                            .hideDelay(1000)
+                        );
+                    }
+                })
          
 });
