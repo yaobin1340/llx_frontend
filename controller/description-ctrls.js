@@ -27,7 +27,9 @@ angular
                         $scope.detail=data.detail;
 						$scope.tx_lat = data.tx_lat;
 						$scope.tx_lng = data.tx_lng;
-						wxConfig();
+						$timeout(function(){
+							wxConfig()
+						},1200);
                     }else{
                         $mdToast.show(
 							$mdToast.simple()
@@ -60,7 +62,9 @@ angular
 						$scope.detail = data.detail;
 						$scope.tx_lat = data.tx_lat;
 						$scope.tx_lng = data.tx_lng;
-						wxConfig();
+						$timeout(function(){
+							wxConfig()
+						},1200);
 					}else{
 						$mdToast.show(
 						$mdToast.simple()
@@ -115,7 +119,7 @@ angular
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
-                debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+                debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                 appId: data.wxappId, // 必填，公众号的唯一标识
                 timestamp: data.wxtimestamp, // 必填，生成签名的时间戳
                 nonceStr: data.wxnonceStr, // 必填，生成签名的随机串
@@ -124,8 +128,6 @@ angular
             });
             wx.ready(function() {
             	$("#daohang").click(function(){
-            		console.log($scope.tx_lat)
-            		console.log($scope.tx_lng)
 		            wx.openLocation({
 			            latitude: $scope.tx_lat,
 			            longitude: $scope.tx_lng,
