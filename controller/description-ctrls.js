@@ -23,6 +23,9 @@ angular
         	$scope.promise=$http
 				.post($stateParams.image_url,{shop_id:$stateParams.shop_id,openid:$stateParams.openid})
 				.success(function (data) {
+					console.log(data);
+					console.log($stateParams.type);
+					console.log($stateParams.image_url);
 					if(data.success){
                         $scope.detail=data.detail;
                     }else{
