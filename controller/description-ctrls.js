@@ -25,6 +25,7 @@ angular
 				.success(function (data) {
 					if(data.success){
                         $scope.detail=data.detail;
+						wxConfig();
                     }else{
                         $mdToast.show(
 							$mdToast.simple()
@@ -104,7 +105,7 @@ angular
 
 		//导航
 	// $scope.daohang = function(){
-		wxConfig();
+	// 	wxConfig();
 	// }
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
