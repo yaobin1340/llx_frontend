@@ -25,6 +25,8 @@ angular
 				.success(function (data) {
 					if(data.success){
                         $scope.detail=data.detail;
+						$scope.tx_lat = data.tx_lat;
+						$scope.tx_lng = data.tx_lng;
 						wxConfig();
                     }else{
                         $mdToast.show(
@@ -56,6 +58,8 @@ angular
 				.success(function (data) {
 					if(data.success){
 						$scope.detail = data.detail;
+						$scope.tx_lat = data.tx_lat;
+						$scope.tx_lng = data.tx_lng;
 						wxConfig();
 					}else{
 						$mdToast.show(
@@ -120,11 +124,11 @@ angular
             });
             wx.ready(function() {
             	$("#daohang").click(function(){
-            		console.log($scope.detail.tx_lat)
-            		console.log($scope.detail.tx_lng)
+            		console.log($scope.tx_lat)
+            		console.log($scope.tx_lng)
 		            wx.openLocation({
-			            latitude: $scope.detail.tx_lat,
-			            longitude: $scope.detail.tx_lng,
+			            latitude: $scope.tx_lat,
+			            longitude: $scope.tx_lng,
 			            name: $scope.detail.shop_name,
 			            address: $scope.detail.addr,
 			            scale: 14,
