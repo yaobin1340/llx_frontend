@@ -103,9 +103,9 @@ angular
 		}
 
 		//导航
-	$scope.daohang = function(){
+	// $scope.daohang = function(){
 		wxConfig();
-	}
+	// }
     function wxConfig(){
         $.getJSON($config.api_uri +'/Apipublic/Apilogin/get_wxconfig',function(data){
             wx.config({
@@ -117,24 +117,27 @@ angular
                 jsApiList: ['openLocation'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
             });
             wx.ready(function() {
-		        wx.openLocation({
-		              latitude: $scope.detail.lat,
-		              longitude: $scope.detail.lng,
-		              name: $scope.detail.shop_name,
-		              address: $scope.detail.addr,
-		              scale: 14,
-		              infoUrl: 'http://llx.51loveshow.com/home',
-		                success: function(res) { 
-		                },  
-		                fail: function(res) {
-		                	$mdToast.show(
-								$mdToast.simple()
-									// .content('导航失败，请确认打开定位功能')
-									.content(res)
-									.hideDelay(1000)
-								);
-		                } 
+            	$("#daohang").click(function(){
+		            wx.openLocation({
+			            latitude: $scope.detail.lat,
+			            longitude: $scope.detail.lng,
+			            name: $scope.detail.shop_name,
+			            address: $scope.detail.addr,
+			            scale: 14,
+			            infoUrl: 'http://llx.51loveshow.com/home',
+			            success: function(res) {
+			            },
+			            fail: function(res) {
+				            $mdToast.show(
+					            $mdToast.simple()
+					            // .content('导航失败，请确认打开定位功能')
+						            .content(res)
+						            .hideDelay(1000)
+				            );
+			            }
 		            });
+	            });
+
 		    });
         });
     };
