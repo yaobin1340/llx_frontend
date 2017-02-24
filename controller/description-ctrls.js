@@ -121,8 +121,8 @@ angular
             wx.ready(function() {
             	$("#daohang").click(function(){
 		            wx.openLocation({
-			            latitude: 120.438995,
-			            longitude: 31.501288,
+			            latitude: '31.501288',
+			            longitude: '120.438995',
 			            name: $scope.detail.shop_name,
 			            address: $scope.detail.addr,
 			            scale: 14,
