@@ -17,10 +17,10 @@
 	<div class="input-phone">
 		<div>
 			<input type="tel" onkeydown="filterByEnter(event)" ng-model="mobile" placeholder="请输入昵称或手机号" >
-			<button ng-click="soso() "></button>
+			<button ng-click="soso()"></button>
 		</div>
 	</div>
-	<div class="padding"></div>
+	<div style="height:0.5rem;"></div>
 	<div class="fansList" infinite-scroll='offerpay.nextPage()' infinite-scroll-disabled='offerpay.busy' infinite-scroll-distance='1'>
 		<div class="fansitems" ng-repeat="Msg in offerpay.items">
 			<div class="fansitems-left">
