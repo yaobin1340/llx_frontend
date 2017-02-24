@@ -56,6 +56,7 @@ angular
 				.success(function (data) {
 					if(data.success){
 						$scope.detail = data.detail;
+						wxConfig();
 					}else{
 						$mdToast.show(
 						$mdToast.simple()
