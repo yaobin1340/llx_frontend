@@ -19,7 +19,6 @@ angular.module('ohapp').factory('journalShop', function ($config, $http) {
             url: $config.api_uri + '/Apishop/Money/cashlogs',
             data: {page:this.page},
         }).success(function (data) {
-            console.log(this.page)
             if (data.success) {
                 if(data.list==null||!data.list.length){
                     this.end = true;
