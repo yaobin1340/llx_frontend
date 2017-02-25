@@ -63,6 +63,11 @@ angular
                 .success(function (data) {
                     if(data.success){
                         $scope.yzm=data.yzm;
+                        $mdToast.show(
+                        $mdToast.simple()
+                            .content("验证码已发送成功")
+                            .hideDelay(1000)
+                        );
                     }else{
                         $mdToast.show(
                         $mdToast.simple()
