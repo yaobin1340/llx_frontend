@@ -150,6 +150,7 @@ angular
     };
     this.routes['choseAddress'] = {
         url : '/choseAddress',
+        title: '选择地址',
         templateUrl : 'views/choseAddress.html',
         controller:'choseAddressCtrl'
     };

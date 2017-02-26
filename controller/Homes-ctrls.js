@@ -38,7 +38,11 @@ angular
                     $scope.shops.busy = false;
                     $scope.shops.page = 1;
                     $scope.shops.nextPage();
+
+                    //是否需要使用记录上次访问位置
+                    // $("html,body").animate({"scrollTop": sessionStorage.getItem('scrollTop')}, 1000); 
                 }
+                
         });
         //获取经纬度所在地区
         $scope.getIndex = function(){
@@ -162,6 +166,7 @@ angular
     $scope.choseShop = function(id,fd){
         location.href = 'http://llx.51loveshow.com/description?shop_id='+id+'&fd_id='+fd;
         // $state.go('description',{shop_id:id,fd_id:fd});
+        // sessionStorage.setItem('scrollTop',$(document).scrollTop());
     }
 
     //广告位
