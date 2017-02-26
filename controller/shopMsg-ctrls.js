@@ -22,6 +22,7 @@ angular
                     if(data.success){
                         $scope.detail=data.detail;
                         $scope.shop_audit=data.shop_audit;
+                        $scope.ex = data.ex;
                     }else{
                         $mdToast.show(
                         $mdToast.simple()

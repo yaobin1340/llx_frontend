@@ -18,8 +18,7 @@ angular
         $scope.backdrop = true;
         $scope.promise = null;
 
-        $scope.choseAdd = function(){
-        $http
+        $scope.promise=$http
                 .post($config.api_uri + '/Apipublic/ApiPmall/get_nprovince')
                 .success(function (data) {
                     if(data.success){
@@ -35,7 +34,7 @@ angular
                 })
 
         $scope.province_code = function(privence,ap){
-            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
+            $scope.promise=$http.post($config.api_uri + '/Apipublic/ApiPmall/get_ncity',{province_code:privence})
                 .success(function (data) {
                     if(data.success){
                         $scope.p=ap;
@@ -53,7 +52,7 @@ angular
         }
 
         $scope.choseNear = function(city,ac){
-            $http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
+            $scope.promise=$http.post($config.api_uri + '/Apipublic/ApiPmall/get_narea',{city_code:city})
                 .success(function (data) {
                     if(data.success){
                         sessionStorage.setItem('citycodes',city);
@@ -71,18 +70,10 @@ angular
                 })
         }
         $scope.toacrt = function(near,an){
-            $scope.add=0;
-            $scope.shops.area_code = near;
-            $scope.area_name = an;
             sessionStorage.setItem('area_code',near);
             sessionStorage.setItem('area_name',an);
-            $scope.shops.items = [];
-            $scope.shops.end = false;
-            $scope.shops.busy = false;
-            $scope.shops.page = 1;
-            $scope.shops.nextPage();
+            window.history.back();
         }
-    }
 
 
 

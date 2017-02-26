@@ -61,6 +61,7 @@
 	    <img src="/assets/img/552cc14536532_128.png" alt="返回" onClick="javascript:history.go(-1);">
 	    <p>选择地区</p>
 	</div>
+	<div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="row rows " ng-repeat="p in add_p">
 		<div ng-click="province_code(p.code,p.name)">
 			<div ng-cloak class="col-sm-10 col-xs-10">{{p.name}}</div>
@@ -86,6 +87,7 @@
 		</div>
 	</div>
 	<div class="toBottom">-到底了-</div>
+	</div>
 </div>
 </div>
 </div>
