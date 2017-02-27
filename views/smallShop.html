@@ -20,8 +20,8 @@
 		<table class="table-proMsg" style="width: 5rem;">
 		<tr>
 			<td rowspan="3"><img src="http://139.224.61.180:8080/attachs/{{detail.logo}}" alt="" class="table-img"></td>
-			<td>
-				<div class="td-proname text-overflow"style="color:white;width: 7rem;">
+			<td style="vertical-align: top;">
+				<div class="td-proname text-overflow"style="color:white;height:auto;">
 					<span>{{detail.shop_name}}</span>
 					<span ng-if="detail.fd_name!=undefined&&detail.fd_name!=''">({{detail.fd_name}})</span>
 				</div>
@@ -51,6 +51,10 @@
 	<div class="preferential" ng-if="detail.shop_class==1">
 		<img src="/assets/img/img_jian.png" alt="">
 		<p>本店会员:满￥100减￥{{detail.yhk1}},平台会员:满￥100减￥{{detail.yhk2}}</span>
+	</div>
+	<div class="preferential" ng-if="detail.shop_class==2">
+		<img src="/assets/img/img_jian.png" alt="">
+		<p>平台会员:满￥100减￥{{detail.yhk2}}</span>
 	</div>
 	<div class="bgc clearfix">
 		<div class="hotBuy" name="rexiao" id="rexiao">
