@@ -22,7 +22,8 @@ angular
                 .post($config.api_uri + '/Apiuser/Apijf/order_detail',{order_id:$stateParams.order_id})
                 .success(function (data) {
                     if(data.success){
-                        $scope.express=data.order_detail.express_name;
+                        $scope.express_name=data.order_detail.express_name;
+                        $scope.express=data.order_detail.express;
                         $scope.kd_num=data.order_detail.kd_num;
                         $scope.goods_list=data.goods_list[0];
                         $scope.express_mobile=data.express_mobile;

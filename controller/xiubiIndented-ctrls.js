@@ -13,7 +13,7 @@ angular
         
         $scope.scroll_switch = 1;
         $scope.xiubicart = new xiubiCart();
-        $scope.xiubicart.status=2;
+        $scope.xiubicart.status=-1;
         // $scope.evaluate.goods_id=$stateParams.goods_id;
         // $scope.evaluate.orderby=1;
         $scope.delay = 0;

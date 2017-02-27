@@ -59,6 +59,7 @@ angular
                         $scope.zp_list=data.zp_list;
                         $scope.needPay=data.detail.total-data.detail.yhk;
                         $scope.needgold=data.detail.use_gold;
+                        console.log($scope.needgold);
                         if($scope.needgold>0){
                             $scope.type=1;
                             $scope.needgold=data.detail.use_gold/100;

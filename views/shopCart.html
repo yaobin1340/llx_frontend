@@ -15,8 +15,8 @@
 				<p ng-cloak class="pro-title">{{carts.title}}</p>
 				<span ng-cloak class="price-one">单价：￥{{carts.mall_price/100|number:2}}</span>
 				<span class="price-all">合计：<span ng-cloak class="price-one">￥{{carts.mall_price/100*carts.cart_num|number:2}}</span></span><br>
-				<button ng-click="remo(carts)">-</button><input type="text" ng-model="carts.cart_num"
-				 readonly=""><button class="btn-add" ng-click="add(carts)">+</button>
+				<div ng-click="remo(carts)" class="btn-div">-</div><input type="text" ng-model="carts.cart_num"
+				 readonly=""><div class="btn-add btn-div" ng-click="add(carts)">+</div>
 			<div ng-click="delect(carts)"  class="delect-div">
 				<img src="/assets/img/img_delete.png" alt="" class="delect">
 			</div>
