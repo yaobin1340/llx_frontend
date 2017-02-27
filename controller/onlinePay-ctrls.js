@@ -52,7 +52,7 @@ angular
 
         function dingdan (){
             $scope.promise = $http
-                .post($config.api_uri + '/Apishop/ApiSorder/pay',{id:$stateParams.pay_id,gold:$scope.needgold})
+                .post($config.api_uri + '/Apiuser/Pay/pay',{id:$stateParams.pay_id,gold:$scope.needgold})
                 .success(function (data) {
                     if(data.success){
                         $scope.detail=data.detail;
