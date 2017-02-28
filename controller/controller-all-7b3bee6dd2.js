@@ -662,15 +662,15 @@ angular
 							.hideDelay(2000)
 						);
 						if(data.img_url!=null){
-                            $scope.types=1;
-							// $mdDialog.show({
-							// 	scope: $scope,
-							// 	preserveScope: true,
-							// 	templateUrl: 'views/mixaoxi_code.html',
-							// 	parent: angular.element(document.body),
-							// 	clickOutsideToClose: true,
-							// 	fullscreen: true
-							// });
+                            // $scope.types=1;
+							$mdDialog.show({
+								scope: $scope,
+								preserveScope: true,
+								templateUrl: 'views/mixaoxi_code.html',
+								parent: angular.element(document.body),
+								clickOutsideToClose: true,
+								fullscreen: true
+							});
 
 							var timer = setInterval(function(){
 								if($("#qrcode").html()!=undefined){
