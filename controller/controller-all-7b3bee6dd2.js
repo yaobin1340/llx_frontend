@@ -661,7 +661,8 @@ angular
 							.content(data.error_msg)
 							.hideDelay(2000)
 						);
-                        alert($scope.types);
+                        alert(data.img_url);
+                        alert(data.img_url!=null);
 						if(data.img_url!=null){
 							$scope.types=1;
 							// $mdDialog.show({
