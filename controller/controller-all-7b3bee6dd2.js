@@ -661,11 +661,7 @@ angular
 							.content(data.error_msg)
 							.hideDelay(2000)
 						);
-                        alert(data.img_url);
-                        alert(data.img_url!=null);
 						if(data.img_url!=null){
-							$scope.types=1;
-                            alert($scope.types);
 							// $mdDialog.show({
 							// 	scope: $scope,
 							// 	preserveScope: true,
@@ -678,7 +674,6 @@ angular
 								if($("#qrcode").html()!=undefined){
 									$('#img').attr("src",data.img_url); 
 									clearInterval(timer);
-                                    alert($scope.types);
 								}
 							},1000)
 						}
