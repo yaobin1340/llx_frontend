@@ -665,6 +665,7 @@ angular
                         alert(data.img_url!=null);
 						if(data.img_url!=null){
 							$scope.types=1;
+                            alert($scope.types);
 							// $mdDialog.show({
 							// 	scope: $scope,
 							// 	preserveScope: true,
