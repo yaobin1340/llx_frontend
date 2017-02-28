@@ -650,6 +650,7 @@ angular
 				.post($stateParams.image_url,{shop_id:$stateParams.shop_id,openid:$stateParams.openid})
 				.success(function (data) {
 					console.log(data);
+                    alert(data.success);
 					if(data.success){
                         $scope.detail=data.detail;
 						$scope.tx_lat = data.tx_lat;
