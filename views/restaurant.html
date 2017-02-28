@@ -59,8 +59,7 @@
 	</div>
 
 	<div class="row marbtm"  infinite-scroll='shops.nextPage()' infinite-scroll-disabled='shops.busy' infinite-scroll-distance='1' >
-		<div class="clearfix" ng-repeat="shop in shops.items"
-		ui-sref="description({shop_id:shop.shop_id,fd_id:shop.fd_id})">
+		<div class="clearfix" ng-repeat="shop in shops.items" ng-click="choseShop(shop.shop_id,shop.fd_id)">
 			<div class="col-md-4 col-sm-4 col-xs-4" style="
 			position: relative;">
 				<img lazy-src="http://139.224.61.180:8080/attachs/{{shop.logo}}" alt="" class="pro-photo">
@@ -100,7 +99,7 @@
 				</div>
 				</div>
 				<div ng-if="shop.shop_class==2">
-				<div class="col-sm-6 col-xs-6"style="padding:0;padding-top: 0.5rem;">
+				<div class="col-sm-6 col-xs-6"style="padding:0;">
 					<img ng-src="/assets/img/star.png" alt="" class="star" ng-if="shop.score/100>=0.1">
 					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.1&&shop.score/100>0">
 					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100==0">
@@ -117,10 +116,11 @@
 					<img ng-src="/assets/img/star3.png" alt="" class="star" ng-if="shop.score/100<0.5&&shop.score/100>0.4">
 					<img ng-src="/assets/img/star2.png" alt="" class="star" ng-if="shop.score/100<=0.4&&shop.score/100>=0">
 				</div>
-				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;padding-top: 0.5rem;">
+				<div class="col-sm-6 col-xs-6 text-left"style="padding:0;">
 					<p ng-cloak class="On-sale">月售{{shop.allsold_num}}单</p>
 				</div>
 				</div>
+				<div ng-if="shop.shop_class==2" class="col-sm-12 col-xs-12"style="padding:0;color:#585858; padding-top: 0.1rem;"><p class="ourmembers">平台会员：满￥<span ng-cloak class="ourprice">{{100}}</span>减￥<span ng-cloak class="ourprice">{{shop.yhk2}}</span></p></div>
 				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p class="ourmembers">本店会员：满￥<span ng-cloak class="ourprice">{{100}}</span>减￥<span ng-cloak class="ourprice">{{shop.yhk1}}</span></p></div>
 				<div ng-if="shop.shop_class==1" class="col-sm-12 col-xs-12"style="padding:0;color:#585858;"><p  class="ourmembers">平台会员：满￥<span ng-cloak class="ourprice">{{100}}</span> 减￥<span class="ourprice">{{shop.yhk2}} </span></p>
 				</div>

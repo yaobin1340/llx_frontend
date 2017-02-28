@@ -648,6 +648,7 @@ angular
         	$scope.promise=$http
 				.post($stateParams.image_url,{shop_id:$stateParams.shop_id,openid:$stateParams.openid})
 				.success(function (data) {
+					console.log(data);
 					if(data.success){
                         $scope.detail=data.detail;
 						$scope.tx_lat = data.tx_lat;
@@ -659,7 +660,6 @@ angular
 							.content(data.error_msg)
 							.hideDelay(2000)
 						);
-                        console.log(data);
 						if(data.img_url!=null){
 							$mdDialog.show({
 								scope: $scope,
@@ -671,7 +671,7 @@ angular
 							});
 							var timer = setInterval(function(){
 								if($("#qrcode").html()!=undefined){
-									$('#img').attr("src",data.img_url);
+									$('#img').attr("src",data.img_url); 
 									clearInterval(timer);
 								}
 							},1000)
@@ -2768,7 +2768,12 @@ angular
         $scope.shops.nextPage();
     }
 
-
+    //跳转店铺
+    $scope.choseShop = function(id,fd){
+        location.href = 'http://llx.51loveshow.com/description?shop_id='+id+'&fd_id='+fd;
+        // $state.go('description',{shop_id:id,fd_id:fd});
+        // sessionStorage.setItem('scrollTop',$(document).scrollTop());
+    }
 
 
 
@@ -5656,8 +5661,8 @@ angular
                     url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
                     data:{code:GetRequest().code}
                 }).success(function (data) {
-                    
-                    $state.go("description",{shop_id:$stateParams.shop_id,openid:data.openid,type:1,image_url:$stateParams.image_url});
+                    location.href = 'http://llx.51loveshow.com/description?shop_id='+$stateParams.shop_id+'&openid='+data.openid+'&type=1'+'&image_url='+$stateParams.image_url;
+                    // $state.go("description",{shop_id:$stateParams.shop_id,openid:data.openid,type:1,image_url:$stateParams.image_url});
                 })
         }
 
@@ -5914,7 +5919,12 @@ angular
         $scope.shops.page = 1;
         $scope.shops.nextPage();
     }
-
+    //跳转店铺
+    $scope.choseShop = function(id,fd){
+        location.href = 'http://llx.51loveshow.com/description?shop_id='+id+'&fd_id='+fd;
+        // $state.go('description',{shop_id:id,fd_id:fd});
+        // sessionStorage.setItem('scrollTop',$(document).scrollTop());
+    }
 
 
 
