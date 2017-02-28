@@ -676,6 +676,7 @@ angular
 								if($("#qrcode").html()!=undefined){
 									$('#img').attr("src",data.img_url); 
 									clearInterval(timer);
+                                    alert($scope.types);
 								}
 							},1000)
 						}
