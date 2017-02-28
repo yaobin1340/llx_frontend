@@ -668,13 +668,17 @@ angular
 								clickOutsideToClose: true,
 								fullscreen: true
 							});
-							var timer = setInterval(function(){
-								if($("#qrcode").html()!=undefined){
-									$('#img').attr("src",data.img_url);
-									clearInterval(timer);
-                                    alert(data.img_url);
-								}
-							},1000)
+                            $('#img').attr("src",data.img_url);
+                            alert(data.img_url);
+                            alert($('#img')[0].src);
+							// var timer = setInterval(function(){
+							// 	if($("#qrcode").html()!=undefined){
+
+							// 		$('#img').attr("src",data.img_url);
+							// 		clearInterval(timer);
+       //                              alert(data.img_url);
+							// 	}
+							// },1000)
 						}
                     }
 				})
