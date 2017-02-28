@@ -2,9 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="296648db-8aef-4de0-8508-99f698aa34be" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/controller-all-5e34e78b64.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/Homes-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/Indented-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/accounts-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/addAddress-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/addEnvironment-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/addPay-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/allIndent-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/applyCashs-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/basic-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/certification-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/chaAddress-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/changePwd-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/choseAddress-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/code-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/courierMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/description-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/drawal-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/forgot-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/home-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/huiyuanMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/indentMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/information-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/integralSubmit-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/jforderMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/journal-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/likePro-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/likeShop-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/loginCode-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/main-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/money-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/mumberMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/myAddress-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/myCarts-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/myLike-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/myTeam-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/nickname-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/noIndent-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/offerPay-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/onlinePay-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/opinion-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/outlinePay-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/payShop-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/paysment-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/personal-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/pingjia-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/pingjiaAll-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/pingjiaNow-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/pingjiaPhoto-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/preCode-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/preferential-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/product-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/second-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopCart-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopCash-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopCenter-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopDrawal-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopFans-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopJournal-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopMoney-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopdesc-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/shopdescAll-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/signin-signup-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/smallShop-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/soso-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/submitOrders-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/systemMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/updaTatotals-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xitongMsg-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xiubi-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xiubiCart-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xiubiIndented-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xiubiProduct-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xiubiShop-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xiubiallIndent-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/controller/xiubinoIndent-ctrls.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/EvaluateProduct.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/address.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/cartIndent.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/evaluate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/journal.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/journalShops.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/lovePro.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/loveShop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/money.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/mumber.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/offerPays.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/payshop.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/shopFans.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/shopMoney.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/shopPing.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/shops.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/system.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/xiubi.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/xiubiCarts.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/xiubiShop.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="$PROJECT_DIR$/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/controller-all-5f086f069f.js" afterPath="$PROJECT_DIR$/controller/controller-all-5f086f069f.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/resources-all-ce82cb7ed8.js" afterPath="$PROJECT_DIR$/resources/resources-all-ce82cb7ed8.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/smallShop.html" afterPath="$PROJECT_DIR$/views/smallShop.html" />
     </list>
     <ignored path="llx_frontend_test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,7 +126,7 @@
     <favorites_list name="llx_frontend_test" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -43,6 +145,7 @@
         <option value="$PROJECT_DIR$/views/restaurant.html" />
         <option value="$PROJECT_DIR$/views/soso.html" />
         <option value="$PROJECT_DIR$/views/home.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
@@ -84,8 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -106,11 +207,13 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="F:/llx_frontend" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -212,10 +315,10 @@
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2263868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833022" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962519" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29711375" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29711375" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -326,13 +429,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.1818182">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/resources-all-ce82cb7ed8.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -348,39 +444,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6213873">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.04606526">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="13" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.13994169">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13994169">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller-all-5f086f069f.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6094987">
+          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3465704">
-          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.5801749">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04606526">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.51445085">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48554912">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>

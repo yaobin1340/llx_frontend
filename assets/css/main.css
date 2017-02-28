@@ -4584,8 +4584,15 @@ footer span {
 .smallShop .table-proMsg {
   position: absolute;
   top: 1.22222222rem;
+  width: 10rem;
   height: 1.80555556rem;
   margin-right: 1rem;
+}
+.smallShop .table-proMsg .table-proMsg-left {
+  float: left;
+}
+.smallShop .table-proMsg .table-proMsg-right {
+  float: left;
 }
 .smallShop .table-proMsg .table-img {
   width: 1.73611111rem;
@@ -4598,19 +4605,15 @@ footer span {
   vertical-align: middle;
   height: 1.06944444rem;
   overflow: hidden;
+  padding-top: 0.3rem;
   padding-left: 0.5rem;
 }
-.smallShop .table-proMsg .td-msg {
-  padding-left: 0.5rem;
-  vertical-align: top;
-  margin-top: -0.6rem;
-}
-.smallShop .table-proMsg .td-msg p {
-  margin-top: 0.34722222rem;
+.smallShop .table-proMsg .table-p {
+  padding-top: 0.34722222rem;
   font-size: 0.34722222rem;
-  width: 4.44444444rem;
-  height: 0.34722222rem;
+  width: 7rem;
   overflow: hidden;
+  padding-left: 0.5rem;
 }
 .smallShop .hotBuyTitle {
   display: inline-block;

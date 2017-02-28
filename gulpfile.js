@@ -6,14 +6,16 @@
  var uglify = require('gulp-uglify');
  var jshint = require('gulp-jshint');
  var csso = require('gulp-csso');
+ var debug = require('gulp-strip-debug');
  gulp.task('default',function() {
- 	var jsFilter = filter('/resources/*.js',{restore:true});
+ 	var jsFilter = filter('/resou/*.js',{restore:true});
  	var cssFilter = filter('**/*.css',{restore:true});
  	var indexHtmlFilter = filter(['**/*','!**/index.html'],{restore:true});
  	return gulp.src('index.html')
  		.pipe(jshint())
  		.pipe(useref())
  		.pipe(jsFilter)
+		.pipe(debug())
  		.pipe(uglify())
  		.pipe(jsFilter.restore)
  		.pipe(cssFilter)
@@ -27,13 +29,14 @@
  });
 
  gulp.task('controller',function() {
- 	var jsFilters = filter('/controller/*.js',{restore:true});
+ 	var jsFilters = filter('/contro/*.js',{restore:true});
  	var cssFilter = filter('**/*.css',{restore:true});
  	var indexHtmlFilter = filter(['**/*','!**/index.html'],{restore:true});
  	return gulp.src('index.html')
  		.pipe(jshint())
  		.pipe(useref())
  		.pipe(jsFilters)
+		.pipe(debug())
  		.pipe(uglify())
  		.pipe(jsFilters.restore)
  		.pipe(cssFilter)

@@ -11,26 +11,18 @@
         <div class="cir cir-left img-circle">
             <img src="/assets/img/img_back_shop_detail.png" alt="" onClick="javascript:history.go(-1);" style="width: 0.69444444rem;margin: 0.11111111rem 0 0 0.057rem;">
         </div>
-        <!-- <div class="cir cir-right img-circle" ng-click="shareBtn()">
-            <img src="/assets/img/img_fenxiang.png" alt=""style="width: 0.69444444rem;margin: 0.11111111rem 0 0 0.05555556rem;">
-        </div> -->
-        <!-- <div class="cir cir-right img-circle">
-            <img src="/assets/img/img_collect_shop_detail.png" alt="" style="margin:0.08rem 0 0 0.12rem;width: 0.69444444rem;" ng-click="love()">
-        </div> -->
-		<table class="table-proMsg" style="width: 5rem;">
-		<tr>
-			<td rowspan="3"><img src="http://139.224.61.180:8080/attachs/{{detail.logo}}" alt="" class="table-img"></td>
-			<td style="vertical-align: top;">
+		<div class="table-proMsg">
+			<div class="table-proMsg-left">
+				<img ng-src="http://139.224.61.180:8080/attachs/{{detail.logo}}" alt="" class="table-img">
+			</div>
+			<div class="table-proMsg-right">
 				<div class="td-proname text-overflow"style="color:white;height:auto;width: 7rem;">
 					<span>{{detail.shop_name}}</span>
 					<span ng-if="detail.fd_name!=undefined&&detail.fd_name!=''">({{detail.fd_name}})</span>
 				</div>
-				<div class="td-msg">
-					<p ng-cloak class="text-overflow" style="color:white">公告：</p>
-				</div>
-			</td>
-		</tr>
-		</table>
+				<p ng-cloak class="text-overflow table-p" style="color:white">公告：</p>
+			</div>
+		</div>
 	</div>
 	<div class="bannerBar">
 		<div class="row">
