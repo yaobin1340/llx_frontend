@@ -651,7 +651,6 @@ angular
 				.success(function (data) {
 					console.log(data);
 					if(data.success){
-
                         $scope.detail=data.detail;
 						$scope.tx_lat = data.tx_lat;
 						$scope.tx_lng = data.tx_lng;
@@ -662,6 +661,7 @@ angular
 							.content(data.error_msg)
 							.hideDelay(2000)
 						);
+                        alert($scope.types);
 						if(data.img_url!=null){
 							$scope.types=1;
 							// $mdDialog.show({
