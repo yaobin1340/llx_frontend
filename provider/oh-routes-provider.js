@@ -56,11 +56,17 @@ angular
         controller:'forgotCtrl'
     };
 
-     this.routes['description'] = {
+    this.routes['description'] = {
         url : '/description?shop_id,fd_id,type,openid,image_url',
         title: '商户信息',
         templateUrl : 'views/descriptionProducts.html',
         controller:'descriptionCrtl'
+    };
+    this.routes['descriptions'] = {
+        url : '/descriptions?shop_id,openid,image_url',
+        title: '商户信息',
+        templateUrl : 'views/descriptionProductss.html',
+        controller:'descriptionsCrtl'
     };
     this.routes['smallShop'] = {
         url : '/smallShop?shop_id,fd_id',
