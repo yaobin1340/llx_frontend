@@ -6082,6 +6082,10 @@ angular
                     }
                 })
         };
+        
+        $scope.choseShop = function(fd,sp){
+            location.href = 'http://llx.51loveshow.com/description?shop_id='+sp+'&fd_id='+fd;
+        }
 
 
 
