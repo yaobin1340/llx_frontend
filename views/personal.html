@@ -11,7 +11,7 @@
 			<img src="http://139.224.61.180:8080/attachs/{{userMsg.face}}" alt="" class="img-one">
 			<img ng-src="/assets/img/vip_icon{{userMsg.rank_id}}.png" alt="" class="img-two">
 		</div>
-		<div ng-cloak class="personal-name" ui-sref="nickname">
+		<div ng-cloak class="personal-name">
 			{{userMsg.nickname}}
 		</div>
 		<div class="personMsg">
@@ -73,10 +73,22 @@
 	<div class="bgs"></div>
 	<div class="row " ui-sref="main.Mycart">
 		<div class="col-sm-1 col-xs-1">
-			<img src="/assets/img/img_mine_wodedingdan.png" alt="">
+			<img src="/assets/img/myCart.png" alt="" style="width: .45rem;margin-left:.05rem;">
 		</div>
 		<div class="col-sm-9 col-xs-9">
 			我的订单
+		</div>
+		<div class="col-sm-2 col-xs-2 text-right">
+			<img src="/assets/img/line.png" alt="" class="lines">
+		</div>
+	</div>
+	<div class="bgs"></div>
+	<div class="row " ui-sref="shopcart">
+		<div class="col-sm-1 col-xs-1">
+			<img src="/assets/img/img_mine_wodedingdan.png" alt="">
+		</div>
+		<div class="col-sm-9 col-xs-9">
+			我的购物车
 		</div>
 		<div class="col-sm-2 col-xs-2 text-right">
 			<img src="/assets/img/line.png" alt="" class="lines">
