@@ -662,7 +662,7 @@ angular
 							.hideDelay(2000)
 						);
 						if(data.img_url!=null){
-                            $scope.types=1;
+                            // $scope.types=1;
 							// $mdDialog.show({
 							// 	scope: $scope,
 							// 	preserveScope: true,
