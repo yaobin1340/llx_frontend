@@ -662,7 +662,7 @@ angular
 							.hideDelay(2000)
 						);
 						if(data.img_url!=null){
-                            // $scope.types=1;
+                            $scope.types=1;
 							// $mdDialog.show({
 							// 	scope: $scope,
 							// 	preserveScope: true,
@@ -671,12 +671,12 @@ angular
 							// 	clickOutsideToClose: true,
 							// 	fullscreen: true
 							// });
-							// var timer = setInterval(function(){
-							// 	if($("#qrcode").html()!=undefined){
-							// 		$('#img').attr("src",data.img_url); 
-							// 		clearInterval(timer);
-							// 	}
-							// },1000)
+							var timer = setInterval(function(){
+								if($("#qrcode").html()!=undefined){
+									$('#img').attr("src",data.img_url); 
+									clearInterval(timer);
+								}
+							},1000)
 						}
                     }
 				})

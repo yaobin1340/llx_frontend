@@ -2,7 +2,7 @@
 <!-- 	<link rel="stylesheet" href="/assets/css/descriptionProducts.css"> -->
 <script src="/assets/js/qrcode.min.js"></script>
 <div class="descriptionProducts">
-<div>
+<div ng-show="types==0">
 <div cg-busy="{promise:promise,templateUrl:templateUrl,message:message,backdrop:backdrop,delay:delay,minDuration:minDuration}">
 	<div class="bannerpanner">
 		<div class="banner blur" style="background: url(http://139.224.61.180:8080/attachs/{{detail.photo}}) no-repeat center top;-webkit-background-size: 100%;
@@ -95,7 +95,7 @@
 </div>
 </div>
 <style>
-	/*.banners{
+	.banners{
 		width: 100%;
     	height: 1.38rem;
     	background-color: #00a2f2;
@@ -107,13 +107,13 @@
     color: #fff;
     font-size: .41666667rem;
     margin-bottom: .02777778rem;
-	}*/
+	}
 </style>
-<!-- <div ng-show="types==1">
+<div ng-show="types==1">
 		<div class="banners">
 		    <p>欢迎关注拉拉秀公众号</p>
 		</div>
 		<div id="qrcode">
 			<img src="assets/img/leading.gif" alt="" class="leading" id="img">
 		</div>
-</div> -->
+</div>
