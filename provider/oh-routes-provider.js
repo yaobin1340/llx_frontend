@@ -352,11 +352,6 @@ angular
         templateUrl : 'views/myLike.html',
         controller:'myLikeCtrl'
     };
-    // this.routes['Qrcode'] = {
-    //     url : '/Qrcode',
-    //     title: '拉拉秀二维码',
-    //     templateUrl : 'views/llx_Qr.html'
-    // };
 
     
     this.$get = function()

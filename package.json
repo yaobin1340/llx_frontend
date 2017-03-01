@@ -7,6 +7,7 @@
     "gulp": "^3.9.1"
   },
   "devDependencies": {
+    "cordova": "^6.5.0",
     "gulp": "^3.9.1",
     "gulp-csso": "^2.0.0",
     "gulp-filter": "^5.0.0",
