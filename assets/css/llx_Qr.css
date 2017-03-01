@@ -10,15 +10,17 @@ body {
   background-size: 100%;
 }
 .llx_bg img {
+  display: block;
   height: 7.33333333rem;
-  margin: 0.8rem 0 0 1.33333333rem;
+  margin: 1.33333333rem auto 0 auto;
 }
 .llx_bg h1 {
   text-align: center;
   padding-top: 0.66666667rem;
+  font-size: 0.46666667rem;
 }
 .llx_bg p {
   text-indent: 2em;
-  margin: 2.26666667rem 0.8rem auto 0.8rem !important;
+  margin: 2.2rem 0.8rem auto 0.8rem !important;
   line-height: 0.66666667rem;
 }
