@@ -8,8 +8,8 @@
 	background-size:100%;height: 5.32rem;">
 		</div>
 		<img ng-src="http://139.224.61.180:8080/attachs/{{detail.photo}}" alt="">
-		<div class="cir cir-left img-circle backs" onClick="javascript:history.go(-1);" ng-show="type!=1"></div>
-		<div class="cir cir-left img-circle backs" onClick="alert('关闭');window.opener=null;window.open('','_self');window.close();" ng-show="type==1"></div>
+		<!-- <div class="cir cir-left img-circle backs" onClick="javascript:history.go(-1);" ng-show="type!=1"></div> -->
+		<div class="cir cir-left img-circle backs" ng-click="close()"></div>
 		<div class="love cir-right img-circle img-r" ng-click="love()"></div>
 	</div>
 	<div ng-cloak class="res-titlt text-overflow">
