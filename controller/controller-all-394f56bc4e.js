@@ -699,10 +699,8 @@ angular
     	$scope.close = function(){
     		if($stateParams.type==1){
     			wx.closeWindow();
-                console.log(1)
     		}else{
     			window.history.go(-1);
-                console.log(2);
     		}
     	};
     	// window.addEventListener("popstate", function(e) {
