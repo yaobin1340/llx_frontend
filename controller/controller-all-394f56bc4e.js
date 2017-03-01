@@ -703,11 +703,11 @@ angular
     			window.history.go(-1);
     		}
     	};
-    	window.addEventListener("popstate", function(e) {
-            if($stateParams.type==1){
-                wx.closeWindow();
-            };
-        }, false);
+    	// window.addEventListener("popstate", function(e) {
+     //        if($stateParams.type==1){
+     //            wx.closeWindow();
+     //        };
+     //    }, false);
         
 		$scope.ewk = function(){
 				$mdDialog.show({
