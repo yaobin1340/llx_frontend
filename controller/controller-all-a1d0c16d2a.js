@@ -527,7 +527,7 @@ angular
                     friendcallback(res); 
                 },  
                 fail: function(res) {  
-                    alert(JSON.stringify(res));  
+                    // alert(JSON.stringify(res));  
                 }  
             });  
         });  
@@ -545,7 +545,7 @@ angular
                     friendcallback(res); 
                 },    
                 fail: function(res) {  
-                    alert(JSON.stringify(res));  
+                    // alert(JSON.stringify(res));  
                 }    
             });  
         });  
@@ -562,7 +562,7 @@ angular
                     friendcallback(res); 
                 },  
                 fail: function(res) {  
-                    alert(JSON.stringify(res));  
+                    // alert(JSON.stringify(res));  
                 }   
             });  
         });  
@@ -580,7 +580,7 @@ angular
                     friendcallback(res); 
                 },   
                 fail: function(res) {  
-                    alert(JSON.stringify(res));  
+                    // alert(JSON.stringify(res));  
                 }  
             });  
         });  
@@ -598,7 +598,7 @@ angular
                     friendcallback(res); 
                 },    
                 fail: function(res) {  
-                    alert(JSON.stringify(res));  
+                    // alert(JSON.stringify(res));  
                 }  
   
   
@@ -697,7 +697,7 @@ angular
         }
     	//关闭返回按钮
     	$scope.close = function(){
-            if(history.length==0){
+            if(history.length==1){
                 wx.closeWindow();
                 return;
             }
