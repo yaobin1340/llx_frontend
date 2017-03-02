@@ -703,11 +703,6 @@ angular
     			window.history.go(-1);
     		}
     	};
-    	window.addEventListener("popstate", function(e) {
-            if($stateParams.type==1){
-                wx.closeWindow();
-            }
-        }, false);
         
 		$scope.ewk = function(){
 				$mdDialog.show({
@@ -795,6 +790,18 @@ angular
 					}else{
 					}
 				})
+
+	//监听安卓的物理返回按键
+        if($stateParams.type==1){
+            location.hash = "win";
+            var win=0;
+            window.addEventListener("hashchange", function(){
+                win++;
+                if(win==2){
+                    wx.closeWindow();
+                }
+            },false);
+        };
 
 
 
@@ -3500,7 +3507,8 @@ angular
                     data:{code:GetRequest().code}
                 }).success(function (data) {
                     sessionStorage.setItem('code',data.openid);
-                    $state.go("payment");
+                    // $state.go("payment");
+                    location.href = 'http://llx.51loveshow.com/payment';
                 })
         }
 
@@ -3892,20 +3900,23 @@ angular
               $state.go("main.personal");
             };
           }
-
-          //安卓物理返回
-          window.addEventListener("popstate", function(e) {
-            if($scope.kind==1){
-                $state.go("main.Mycart",{type:"noIndent"});
-            }else if($scope.kind==2){
-                $state.go("main.OfferPay");
-            }else if($scope.kind==3){
-                $state.go("xiubiCart",{type:"noIndent"});
-            }else{
-              $state.go("main.personal");
-            };
-          }, false);
-
+          //监听安卓物理按键
+            location.hash = "win";
+            var is=0;
+            window.addEventListener("hashchange", function(){
+                is++;
+                if(is==2){
+                    if($scope.kind==1){
+                        $state.go("main.Mycart",{type:"noIndent"});
+                    }else if($scope.kind==2){
+                        $state.go("main.OfferPay");
+                    }else if($scope.kind==3){
+                        $state.go("xiubiCart",{type:"noIndent"});
+                    }else{
+                        $state.go("main.personal");
+                    };
+                };
+            },false);
             $scope.zhifu = function(){
               chosepay();
             }
