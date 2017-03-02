@@ -694,19 +694,20 @@ angular
 						);
 					}
 				})
-        }
+        };
     	//关闭返回按钮
     	$scope.close = function(){
-            if(history.length==1){
+            if($stateParams.type==1){
                 wx.closeWindow();
-                return;
+            }else{
+                if(history.go(-1)==undefined){
+                    wx.closeWindow();
+                    return;
+                }else{
+                    window.history.go(-1);
+                }
             }
-    		if($stateParams.type==1){
-    			wx.closeWindow();
-    		}else{
-    			window.history.go(-1);
-    		}
-    	};
+        };
         
 		$scope.ewk = function(){
 				$mdDialog.show({
