@@ -700,12 +700,12 @@ angular
             if($stateParams.type==1){
                 wx.closeWindow();
             }else{
-                if(history.go(-1)==undefined){
-                    wx.closeWindow();
-                    return;
-                }else{
+                // if(history.go(-1)==undefined){
+                //     wx.closeWindow();
+                //     return;
+                // }else{
                     window.history.go(-1);
-                }
+                // }
             }
         };
         
