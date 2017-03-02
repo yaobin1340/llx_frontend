@@ -697,6 +697,10 @@ angular
         }
     	//关闭返回按钮
     	$scope.close = function(){
+            if(history.length==0){
+                wx.closeWindow();
+                return;
+            }
     		if($stateParams.type==1){
     			wx.closeWindow();
     		}else{
