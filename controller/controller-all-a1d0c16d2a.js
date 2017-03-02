@@ -697,15 +697,10 @@ angular
         };
     	//关闭返回按钮
     	$scope.close = function(){
-            if($stateParams.type==1){
+            if($stateParams.type==1||$stateParams.back==1){
                 wx.closeWindow();
             }else{
-                // if(history.go(-1)==undefined){
-                //     wx.closeWindow();
-                //     return;
-                // }else{
-                    window.history.go(-1);
-                // }
+                window.history.go(-1);
             }
         };
         
@@ -720,7 +715,7 @@ angular
                 });
             var timer = setInterval(function(){
               	if($("#qrcode").html()!=undefined){
-              		new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/description?shop_id='+$stateParams.shop_id+"&fd_id="+$stateParams.fd_id);
+              		new QRCode(document.getElementById('qrcode'),'http://llx.51loveshow.com/description?shop_id='+$stateParams.shop_id+"&fd_id="+$stateParams.fd_id+"&back=1");
               		 clearInterval(timer);
               	}
               },1000)
@@ -797,7 +792,7 @@ angular
 				})
 
 	//监听安卓的物理返回按键
-        if($stateParams.type==1){
+        if($stateParams.type==1||$stateParams.back==1){
             location.hash = "win";
             var win=0;
             window.addEventListener("hashchange", function(){
