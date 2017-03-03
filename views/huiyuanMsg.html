@@ -1,9 +1,1 @@
-<div class="information">
-	<div class="systemMsg"  infinite-scroll='messagem.nextPage()' infinite-scroll-disabled='messagem.busy' infinite-scroll-distance='1' ng-show="chose2==1">
-		<div class="Msg-now" ng-repeat="msg in messagem.items" ui-sref="mumberMsg({msg_id:msg.msg_id})">
-			<div ng-cloak class="Msg-now-left text-overflow">{{msg.title}}</div>
-			<div ng-cloak class="Msg-now-time">{{msg.create_time}}</div>
-		</div>
-		<div class="home_shop_nomore" ng-show='messagem.end'>-暂无更多信息-</div>
-	</div>
-</div>
+<div class="information"><div class="systemMsg" infinite-scroll="messagem.nextPage()" infinite-scroll-disabled="messagem.busy" infinite-scroll-distance="1" ng-show="chose2==1"><div class="Msg-now" ng-repeat="msg in messagem.items" ui-sref="mumberMsg({msg_id:msg.msg_id})"><div ng-cloak class="Msg-now-left text-overflow">{{msg.title}}</div><div ng-cloak class="Msg-now-time">{{msg.create_time}}</div></div><div class="home_shop_nomore" ng-show="messagem.end">-暂无更多信息-</div></div></div>

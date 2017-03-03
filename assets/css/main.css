@@ -2774,6 +2774,7 @@ footer span {
 .myTeam .teamItems .listitems .itemstotal-list-left img {
   width: 1.13888889rem;
   height: 1.13888889rem;
+  border-radius: 50%;
 }
 .myTeam .teamItems .listitems .itemstotal-list-right {
   float: left;
@@ -3059,6 +3060,7 @@ footer span {
   width: 1.34722222rem;
   height: 1.34722222rem;
   margin: 0.29166667rem 0 0.29166667rem 0.55555556rem;
+  border-radius: 50%;
 }
 .OfferPay .fansList .fansitems-right {
   float: left;
