@@ -165,15 +165,13 @@ body {
   height: 0.85rem;
 }
 .home .div-name {
-  height: 0.390625rem;
   font-size: 0.406rem;
-  margin-top: 0.34rem;
+  padding-top: 0.3rem !important;
 }
 .home .shopDistance {
   font-size: 0.38rem;
   color: #b6b6b6;
-  height: 0.390625rem;
-  margin-top: 0.34rem;
+  padding-top: 0.3rem !important;
 }
 .home .row {
   margin: 0;
