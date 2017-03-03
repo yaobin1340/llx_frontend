@@ -1,7 +1,7 @@
 
 <div class="home">
 	<header>
-		<input ng-clock type="text" value="{{area_name}}" ui-sref="choseAddress" class="select text-overflow" placeholder="定位中" readonly="">
+		<input ng-clock type="text" value="{{area_name||'定位中'}}" ui-sref="choseAddress" class="select text-overflow" readonly="">
 		<div class="soso">
 			<input type="text" placeholder="输入商家/商品/商圈关键字" ng-model="text" onkeydown="filterByEnter(event)">
 			<span class="search-shop" ng-click="soso()"></span>
