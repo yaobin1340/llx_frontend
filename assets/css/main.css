@@ -739,6 +739,7 @@ footer span {
   height: 1.01388889rem;
   line-height: 1.01388889rem;
   width: 40%;
+  font-size: .4rem;
 }
 .information .Msg-now-time,
 .information .Msg-old-time {
@@ -746,7 +747,7 @@ footer span {
   height: 1.01388889rem;
   float: left;
   margin-left: 0.13888889rem;
-  font-size: 0.27777778rem;
+  font-size: .4rem;
 }
 .information .Msg-now-left,
 .information .Msg-now-time {
@@ -914,14 +915,16 @@ footer span {
 }
 .information .upload {
   position: relative;
-  height: 2.34722222rem;
+  min-height: 2.34722222rem;
   border-bottom: 0.31944444rem solid #eff0eb;
   background-color: #fff;
+  width: 100%;
+  display: inline-block;
 }
 .information .upload input {
   position: absolute;
-  left: 3.2rem;
-  top: 0.63888889rem;
+  left: 3.6rem;
+  bottom: 0.63888889rem;
   display: block;
   width: 2.75rem;
   height: 0.77777778rem;
@@ -930,30 +933,32 @@ footer span {
 }
 .information .upload button {
   background-color: #fff;
-  display: inline-block;
+  display: block;
   height: 0.77777778rem;
   border: 2px solid #00a2f2;
   margin: 0 auto;
   font-size: 0.38888889rem;
   color: #00a2f2;
-  margin: 0.63888889rem 0 0 3.2rem;
+  margin: 0.59722222rem auto;
 }
 .information .upload img {
   display: block;
   margin: 0 auto;
-  height: 100%;
-  width: 2.34722222rem;
+  max-height: 100%;
+  max-width: 100%;
 }
 .information .uploads {
   position: relative;
-  height: 2.34722222rem;
+  min-height: 2.34722222rem;
   border-bottom: 0.31944444rem solid #eff0eb;
   background-color: #fff;
+  width: 100%;
+  display: inline-block;
 }
 .information .uploads input {
   position: absolute;
-  left: 3rem;
-  top: 0.63888889rem;
+  left: 3.5rem;
+  bottom: 0.63888889rem;
   display: block;
   width: 3.2rem;
   height: 0.77777778rem;
@@ -962,19 +967,19 @@ footer span {
 }
 .information .uploads button {
   background-color: #fff;
-  display: inline-block;
+  display: block;
   height: 0.77777778rem;
   border: 2px solid #00a2f2;
   margin: 0 auto;
   font-size: 0.38888889rem;
   color: #00a2f2;
-  margin: 0.63888889rem 0 0 3rem;
+  margin: 0.59722222rem auto;
 }
 .information .uploads img {
   display: block;
   margin: 0 auto;
-  height: 100%;
-  width: 2.34722222rem;
+  max-height: 100%;
+  max-width: 100%;
 }
 .information .uploadMsgs {
   border-top: 0.27777778rem solid #eff0eb;
@@ -2509,6 +2514,9 @@ footer span {
   min-height: 1px;
   padding-right: 0.20833333rem;
   padding-left: 0.20833333rem;
+}
+.money #datePage {
+  top: 110px;
 }
 .money .input-time {
   margin-top: 0.33333333rem;
@@ -4491,8 +4499,7 @@ footer span {
 .smallShop {
   font-family: "SimHei";
 }
-.smallShop .bgc,
-.smallShop .hotBuy {
+.smallShop .bgc {
   background-color: #f5f5f5;
 }
 .smallShop .userProducts {

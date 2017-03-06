@@ -34,7 +34,7 @@ gulp.task('html',function(){
 		minifyJS:true,
 		minifyCSS:true
 	};
-	gulp.src('views/*.html')
+	gulp.src('view/*.html')
 		.pipe(htmlmin(options))
 		.pipe(gulp.dest('views/'));
 });

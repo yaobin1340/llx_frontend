@@ -4,7 +4,7 @@
  * V1.1
  */
 (function ($) {      
-    $.fn.date = function (options,Ycallback,Ncallback) {   
+    $.fn.date = function (options,Ycallback) {
         //插件默认选项
         var that = $(this);
         var docType = $(this).is('input');
@@ -22,7 +22,7 @@
         var HourScroll=null,MinuteScroll=null,SecondScroll=null;
         $.fn.date.defaultOptions = {
             beginyear:2000,                 //日期--年--份开始
-            endyear:2020,                   //日期--年--份结束
+            endyear:2050,                   //日期--年--份结束
             beginmonth:1,                   //日期--月--份结束
             endmonth:12,                    //日期--月--份结束
             beginday:1,                     //日期--日--份结束
@@ -81,6 +81,7 @@
             MinuteScroll.scrollTo(0, initI*40, 100, true);   
             initH=parseInt(nowdate.getHours());
         }
+
 	function resetIndex(){
             indexY=1;
             indexM=1;
@@ -105,7 +106,7 @@
                      }else{
                         $("#Hourwrapper ul li:eq("+indexH+")").html(parseInt($("#Hourwrapper ul li:eq("+indexH+")").html().substr(0,$("#Hourwrapper ul li:eq("+indexH+")").html().length-1)))
                      }
-                     datestr+=" "+$("#Hourwrapper ul li:eq("+indexH+")").html().substr(0,$("#Minutewrapper ul li:eq("+indexH+")").html().length-1)+":"+
+                     datestr=$("#Hourwrapper ul li:eq("+indexH+")").html().substr(0,$("#Minutewrapper ul li:eq("+indexH+")").html().length-1)+":"+
                              $("#Minutewrapper ul li:eq("+indexI+")").html().substr(0,$("#Minutewrapper ul li:eq("+indexI+")").html().length-1);
                          indexS=0;
                 }
@@ -121,7 +122,7 @@
             $("#datecancle").click(function () {
                 $("#datePage").hide(); 
 		$("#dateshadow").hide();
-                Ncallback(false);
+                //Ncallback(false);
             });
         }		
         function extendOptions(){
@@ -154,7 +155,8 @@
         function showdatetime(){
             init_iScroll_datetime();
             addTimeStyle();
-            $("#datescroll_datetime").show(); 
+            $('#datescroll').hide();
+            $("#datescroll_datetime").show();
             $("#Hourwrapper ul").html(createHOURS_UL());
             $("#Minutewrapper ul").html(createMINUTE_UL());
             $("#Secondwrapper ul").html(createSECOND_UL());
@@ -179,15 +181,15 @@
             }})
         } 
         function checkdays (year,month){
-            var new_year = year;    //取当前的年份        
-            var new_month = month++;//取下一个月的第一天，方便计算（最后一天不固定）        
-            if(month>12)            //如果当前大于12月，则年份转到下一年        
-            {        
-                new_month -=12;        //月份减        
-                new_year++;            //年份增        
-            }        
-            var new_date = new Date(new_year,new_month,1);                //取当年当月中的第一天        
-            return (new Date(new_date.getTime()-1000*60*60*24)).getDate();//获取当月最后一天日期    
+            var new_year = year;    //取当前的年份
+            var new_month = month++;//取下一个月的第一天，方便计算（最后一天不固定）
+            if(month>12)            //如果当前大于12月，则年份转到下一年
+            {
+                new_month -=12;        //月份减
+                new_year++;            //年份增
+            }
+            var new_date = new Date(new_year,new_month,1);                //取当年当月中的第一天
+            return (new Date(new_date.getTime()-1000*60*60*24)).getDate();//获取当月最后一天日期
         }
         function  createUL(){
             CreateDateUI();
@@ -200,7 +202,7 @@
                 '<div id="dateshadow"></div>'+
                 '<div id="datePage" class="page">'+
                     '<section>'+
-                        '<div id="datetitle"><h1>请选择日期</h1></div>'+
+                        '<div id="datetitle"><h1>请选择时间</h1></div>'+
                         '<div id="datemark"><a id="markyear"></a><a id="markmonth"></a><a id="markday"></a></div>'+
                         '<div id="timemark"><a id="markhour"></a><a id="markminut"></a><a id="marksecond"></a></div>'+
                         '<div id="datescroll">'+
@@ -238,7 +240,7 @@
             $("#datePlugin").html(str);
         }
         function addTimeStyle(){
-            $("#datePage").css("height","380px");
+            //$("#datePage").css("height","380px");
             $("#datePage").css("top","60px");
             $("#yearwrapper").css("position","absolute");
             $("#yearwrapper").css("bottom","200px");
@@ -273,7 +275,7 @@
                 for(var i=opts.beginday;i<=opts.endday;i++){
                 str+='<li>'+i+'日</li>'
             }
-            return str+"<li>&nbsp;</li>";;                     
+            return str+"<li>&nbsp;</li>";;
         }
         //创建 --时-- 列表
         function createHOURS_UL(){
