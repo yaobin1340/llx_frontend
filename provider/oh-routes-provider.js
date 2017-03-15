@@ -352,6 +352,18 @@ angular
         templateUrl : 'views/myLike.html',
         controller:'myLikeCtrl'
     };
+     this.routes['weichart'] = {
+         url : '/weichart?type',
+         title: '提现到微信',
+         templateUrl : 'views/weichart.html',
+         controller:'weichartCtrl'
+     };
+     this.routes['weiCode'] = {
+         url : '/weichart?name,amount',
+         title: '正在验证信息...',
+         templateUrl : 'views/weiCode.html',
+         controller:'weiCodeCtrl'
+     };
 
     
     this.$get = function()
