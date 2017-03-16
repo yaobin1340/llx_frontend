@@ -24,12 +24,12 @@ angular
             url: 'http://be.51loveshow.com/Apipublic/WxPay/get_openidbycode',
             data:{code:GetRequest().code}
         }).success(function (data) {
-            alert(JSON.stringify(data));
             $scope.promise = $http
-            .post( $config.api_uri + '/Apipublic/WxPay/aj_transfers',{openid:data.openid,amount:$stateParams.amount,re_user_name:$stateParams.name})
+            .post( 'http://be.51loveshow.com/Apipublic/WxPay/aj_transfers',{openid:data.openid,amount:$stateParams.amount,re_user_name:$stateParams.name})
             .success(function (data) {
                 if(data.success){
                     $state.go("weichart",{type:1})
+                    console.log(data);
                 }else{
                     $mdToast.show(
                         $mdToast.simple()
@@ -37,6 +37,7 @@ angular
                         .hideDelay(1000)
                         );
                     $state.go("weichart")
+                    console.log(data);
                 }
             })  
         })
