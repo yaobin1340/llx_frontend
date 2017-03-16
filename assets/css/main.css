@@ -178,9 +178,11 @@ body {
   padding: 0;
 }
 .home .pro-photo {
-  width: 115%;
-  height: 100%;
+  width: 2.8rem;
+  height: 2.8rem;
   margin-top: .21rem;
+  background: url(/assets/img/noline.png) no-repeat center;
+  background-size: 100%;
 }
 .home .shopAddress {
   color: #585858;
