@@ -854,7 +854,7 @@ angular
         		$mdToast.show(
                         $mdToast.simple()
                             .content('您输入的验证码不正确')
-                            .hideDelay(1000)
+                            .hideDelay(1000000)
                         );
         		return;
         	}

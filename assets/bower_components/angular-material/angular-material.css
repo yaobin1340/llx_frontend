@@ -8757,10 +8757,10 @@ md-toast {
   padding-right: 24px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   border-radius: 2px;
-  font-size: 0.5rem;
+  font-size: 14px;
   cursor: default;
   height: 0px;
-  // max-height: 168px;
+  max-height: 168px;
   width: 100%;
   overflow: hidden;
   opacity: 1;
