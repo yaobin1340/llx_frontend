@@ -359,7 +359,7 @@ angular
          controller:'weichartCtrl'
      };
      this.routes['weiCode'] = {
-         url : '/weichart?name,amount',
+         url : '/weiCode?name,amount',
          title: '正在验证信息...',
          templateUrl : 'views/weiCode.html',
          controller:'weiCodeCtrl'
