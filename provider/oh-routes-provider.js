@@ -364,6 +364,12 @@ angular
          templateUrl : 'views/weiCode.html',
          controller:'weiCodeCtrl'
      };
+     this.routes['shenhe'] = {
+         url : '/shenhe?name,amount,id',
+         title: '正在审核中...',
+         templateUrl : 'views/shenhe.html',
+         controller:'shenheCtrl'
+     };
 
     
     this.$get = function()
