@@ -29,7 +29,8 @@ angular
                         .content(datas.error_msg)
                         .hideDelay(1000)
                         );
-                    $state.go("weichart");
+                    // $state.go("weichart");
+                    location.href = 'http://llx.51loveshow.com/weichart';
                 }
             })
 
