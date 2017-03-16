@@ -25,20 +25,7 @@ angular
             data:{code:GetRequest().code}
         }).success(function (data) {
             alert(JSON.stringify(data));
-            $scope.promise = $http
-            .post( $config.api_uri + '/Apipublic/WxPay/aj_transfers',{openid:data.openid,amount:$stateParams.amount,re_user_name:$stateParams.name})
-            .success(function (data) {
-                if(data.success){
-                    $state.go("weichart",{type:1})
-                }else{
-                    $mdToast.show(
-                        $mdToast.simple()
-                        .content(data.error_msg)
-                        .hideDelay(1000)
-                        );
-                    $state.go("weichart")
-                }
-            })  
+            $state.go('main.personal',{datas:data.openid});  
         })
     }
 
