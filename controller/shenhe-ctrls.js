@@ -17,19 +17,18 @@ angular
             .post( 'http://be.51loveshow.com/Apipublic/WxPay/aj_transfers',{openid:$stateParams.id,amount:$stateParams.amount,re_user_name:$stateParams.name})
             .success(function (datas) {
                 if(datas.success){
-                    $state.go("weichart",{type:1})
                     $mdToast.show(
                         $mdToast.simple()
                         .content("微信提现成功")
                         .hideDelay(1000)
                         );
+                    location.href = 'http://llx.51loveshow.com/weichart&type='+'1';
                 }else{
                     $mdToast.show(
                         $mdToast.simple()
                         .content(datas.error_msg)
-                        .hideDelay(1000)
+                        .hideDelay(100000)
                         );
-                    // $state.go("weichart");
                     location.href = 'http://llx.51loveshow.com/weichart';
                 }
             })
