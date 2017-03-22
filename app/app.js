@@ -191,6 +191,11 @@ angular.module( 'ohapp',
         return $sce.trustAsHtml(text);
     };
 }])
+.filter('trustedVideo', ['$sce', function ($sce) {
+    return function(url) {
+        return $sce.trustAsResourceUrl(url);
+    };
+}])
 .filter('cut', function () {
     return function (value, wordwise, max, tail) {
         if (!value) return '';
@@ -226,4 +231,3 @@ angular.module( 'ohapp',
     };
 }
 )
-
