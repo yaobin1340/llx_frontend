@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="/assets/css/reset.css">
 
     <link rel="stylesheet" href="/assets/css/angular-busy.min.css">
-    <link rel="stylesheet" href="/assets/css/main-edc468b0a3.css">
+    <link rel="stylesheet" href="/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="/assets/css/main-09192cc4b6.css">
     <script src="./assets/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
     <script src="./assets/bower_components/angular/angular.min.js"></script>
@@ -22,7 +23,7 @@
     <script src="./assets/bower_components/angular-cookie/angular-cookie.js"></script>
     <script src="./assets/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="./assets/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    
+
     <script src="./assets/bower_components/angular-material/angular-material.min.js"></script>
     <script src="./assets/bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="./assets/bower_components/angular-aria/angular-aria.min.js"></script>
@@ -31,6 +32,8 @@
     <script src="./assets/js/angular-busy.min.js"></script>
     <script src="./assets/js/date.js"></script>
     <script src="./assets/js/iscroll.js"></script>
+    <script src="/assets/js/fastclick.js"></script>
+    <script src="/assets/js/swiper.jquery.min.js"></script>
     <script src="./assets/js/me-lazyload.js"></script>
     <script src="app/app.js"></script>
 
@@ -40,15 +43,21 @@
 
     <script src="services/auth-interceptor.js"></script>
     <script src="services/session.js"></script>
-    <script src="resources/resources-all-4ba8b1fdd1.js"></script>
-    <script src="controller/controller-all-10631ae399.js"></script>
+    <script src="resources/resources-all-2d3ba3dabb.js"></script>
+    <script src="controller/controller-all-59871417af.js"></script>
     <script src="/assets/js/flexible.js"></script>
     <title ng-bind="$state.current.title"></title>
+    <script>if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+            FastClick.attach(document.body);
+        }, false);
+    }</script>
 </head>
 <body>
-<div ui-view ng-cloak scroll style="height: 100%;">
-    
-</div>
+    <div style="font-size: 25px;margin: 10px 0 0 10px;" ng-if="htmls!=1">leading...</div>
+    <div ui-view ng-cloak scroll ng-init="htmls=1">
+
+    </div>
 </body>
 
 </html>

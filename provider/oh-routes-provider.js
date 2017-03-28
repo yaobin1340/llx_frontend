@@ -370,7 +370,25 @@ angular
          templateUrl : 'views/shenhe.html',
          controller:'shenheCtrl'
      };
-
+      //2.0
+     this.routes['loveshow'] = {
+         url : '/loveshow?type',
+         title: '秀',
+         templateUrl : 'views/loveshow.html',
+         controller:'loveshowCtrl'
+     };
+     this.routes['showProduct'] = {
+         url : '/showProduct?type,id',
+         title: '评论',
+         templateUrl : 'views/showProduct.html',
+         controller:'showProductCtrl'
+     };
+     this.routes['myShow'] = {
+         url : '/myShow',
+         title: '秀一秀',
+         templateUrl : 'views/myShow.html',
+         controller:'myShowCtrl'
+     };
     
     this.$get = function()
     {

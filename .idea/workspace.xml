@@ -2,7 +2,99 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="296648db-8aef-4de0-8508-99f698aa34be" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/noline.png" afterPath="$PROJECT_DIR$/assets/img/noline.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="$PROJECT_DIR$/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Account.html" afterPath="$PROJECT_DIR$/views/Account.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Forgot-password.html" afterPath="$PROJECT_DIR$/views/Forgot-password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/IndentMsg.html" afterPath="$PROJECT_DIR$/views/IndentMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Indented.html" afterPath="$PROJECT_DIR$/views/Indented.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Maddress.html" afterPath="$PROJECT_DIR$/views/Maddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Mycart.html" afterPath="$PROJECT_DIR$/views/Mycart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/OfferPay.html" afterPath="$PROJECT_DIR$/views/OfferPay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Opinion.html" afterPath="$PROJECT_DIR$/views/Opinion.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SubmitOrder.html" afterPath="$PROJECT_DIR$/views/SubmitOrder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addAddress.html" afterPath="$PROJECT_DIR$/views/addAddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addEnvironment.html" afterPath="$PROJECT_DIR$/views/addEnvironment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addPay.html" afterPath="$PROJECT_DIR$/views/addPay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/allIndent.html" afterPath="$PROJECT_DIR$/views/allIndent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/applyCash.html" afterPath="$PROJECT_DIR$/views/applyCash.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/basic.html" afterPath="$PROJECT_DIR$/views/basic.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/basicMsg.html" afterPath="$PROJECT_DIR$/views/basicMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/certification.html" afterPath="$PROJECT_DIR$/views/certification.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/chaAddress.html" afterPath="$PROJECT_DIR$/views/chaAddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/changePwd.html" afterPath="$PROJECT_DIR$/views/changePwd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/choseAddress.html" afterPath="$PROJECT_DIR$/views/choseAddress.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/code.html" afterPath="$PROJECT_DIR$/views/code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/courierMsg.html" afterPath="$PROJECT_DIR$/views/courierMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/descriptionProducts.html" afterPath="$PROJECT_DIR$/views/descriptionProducts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/descriptionProductss.html" afterPath="$PROJECT_DIR$/views/descriptionProductss.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/download.html" afterPath="$PROJECT_DIR$/views/download.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/drawal.html" afterPath="$PROJECT_DIR$/views/drawal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/environmentMsg.html" afterPath="$PROJECT_DIR$/views/environmentMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/erweima.html" afterPath="$PROJECT_DIR$/views/erweima.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.html" afterPath="$PROJECT_DIR$/views/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/huiyuanMsg.html" afterPath="$PROJECT_DIR$/views/huiyuanMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/information.html" afterPath="$PROJECT_DIR$/views/information.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/integralAddr.html" afterPath="$PROJECT_DIR$/views/integralAddr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/integralSubmit.html" afterPath="$PROJECT_DIR$/views/integralSubmit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/jforderMsg.html" afterPath="$PROJECT_DIR$/views/jforderMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/journal.html" afterPath="$PROJECT_DIR$/views/journal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/likePro.html" afterPath="$PROJECT_DIR$/views/likePro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/likeShop.html" afterPath="$PROJECT_DIR$/views/likeShop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/llx_Qr.html" afterPath="$PROJECT_DIR$/views/llx_Qr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/loginCode.html" afterPath="$PROJECT_DIR$/views/loginCode.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main.html" afterPath="$PROJECT_DIR$/views/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mixaoxi_code.html" afterPath="$PROJECT_DIR$/views/mixaoxi_code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/money.html" afterPath="$PROJECT_DIR$/views/money.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mumberMsg.html" afterPath="$PROJECT_DIR$/views/mumberMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myLike.html" afterPath="$PROJECT_DIR$/views/myLike.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myTeam.html" afterPath="$PROJECT_DIR$/views/myTeam.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/nickname.html" afterPath="$PROJECT_DIR$/views/nickname.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/noIndent.html" afterPath="$PROJECT_DIR$/views/noIndent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/onlinePay.html" afterPath="$PROJECT_DIR$/views/onlinePay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/outlinePay.html" afterPath="$PROJECT_DIR$/views/outlinePay.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/payShop.html" afterPath="$PROJECT_DIR$/views/payShop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/payment.html" afterPath="$PROJECT_DIR$/views/payment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/personal.html" afterPath="$PROJECT_DIR$/views/personal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjia.html" afterPath="$PROJECT_DIR$/views/pingjia.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjiaAll.html" afterPath="$PROJECT_DIR$/views/pingjiaAll.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjiaNow.html" afterPath="$PROJECT_DIR$/views/pingjiaNow.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjiaPhoto.html" afterPath="$PROJECT_DIR$/views/pingjiaPhoto.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/preCode.html" afterPath="$PROJECT_DIR$/views/preCode.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/preferential.html" afterPath="$PROJECT_DIR$/views/preferential.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/product.html" afterPath="$PROJECT_DIR$/views/product.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/restaurant.html" afterPath="$PROJECT_DIR$/views/restaurant.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopCart.html" afterPath="$PROJECT_DIR$/views/shopCart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopCash.html" afterPath="$PROJECT_DIR$/views/shopCash.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopCenter.html" afterPath="$PROJECT_DIR$/views/shopCenter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopDrawal.html" afterPath="$PROJECT_DIR$/views/shopDrawal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopFans.html" afterPath="$PROJECT_DIR$/views/shopFans.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopJournal.html" afterPath="$PROJECT_DIR$/views/shopJournal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopMoney.html" afterPath="$PROJECT_DIR$/views/shopMoney.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopMsg.html" afterPath="$PROJECT_DIR$/views/shopMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shop_code.html" afterPath="$PROJECT_DIR$/views/shop_code.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopdesc.html" afterPath="$PROJECT_DIR$/views/shopdesc.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopdescAll.html" afterPath="$PROJECT_DIR$/views/shopdescAll.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signin.html" afterPath="$PROJECT_DIR$/views/signin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signup.html" afterPath="$PROJECT_DIR$/views/signup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/smallShop.html" afterPath="$PROJECT_DIR$/views/smallShop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/soso.html" afterPath="$PROJECT_DIR$/views/soso.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/systemMsg.html" afterPath="$PROJECT_DIR$/views/systemMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/updataTotal.html" afterPath="$PROJECT_DIR$/views/updataTotal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/weiDrawal.html" afterPath="$PROJECT_DIR$/views/weiDrawal.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/weiMoney.html" afterPath="$PROJECT_DIR$/views/weiMoney.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/weichart.html" afterPath="$PROJECT_DIR$/views/weichart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xitongMsg.html" afterPath="$PROJECT_DIR$/views/xitongMsg.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubi.html" afterPath="$PROJECT_DIR$/views/xiubi.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiCart.html" afterPath="$PROJECT_DIR$/views/xiubiCart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiIndented.html" afterPath="$PROJECT_DIR$/views/xiubiIndented.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiProduct.html" afterPath="$PROJECT_DIR$/views/xiubiProduct.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiShop.html" afterPath="$PROJECT_DIR$/views/xiubiShop.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiallIndent.html" afterPath="$PROJECT_DIR$/views/xiubiallIndent.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubinoIndent.html" afterPath="$PROJECT_DIR$/views/xiubinoIndent.html" />
     </list>
     <ignored path="llx_frontend_test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -198,12 +290,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22571002" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22503726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962519" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29711375" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2970297" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />

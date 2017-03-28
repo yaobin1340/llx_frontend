@@ -13,7 +13,8 @@ html, body {
 body {
   margin: 0;
   padding: 0; }
-
+$(".beijing").animate({'bottom':'-8.9rem'},500);
+                        $(".bgcs").animate({'bottom':'-8.9rem'},500);
 [tabindex='-1']:focus {
   outline: none; }
 
@@ -8747,7 +8748,7 @@ md-toast {
   //修改代码
   // position: absolute;
   position: fixed;
-  z-index: 90;
+  z-index: 9999;
   box-sizing: border-box;
   -webkit-align-items: center;
       -ms-flex-align: center;
@@ -8757,10 +8758,10 @@ md-toast {
   padding-right: 24px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
   border-radius: 2px;
-  font-size: 14px;
+  // font-size: 0.5rem;
   cursor: default;
   height: 0px;
-  max-height: 168px;
+  // max-height: 168px;
   width: 100%;
   overflow: hidden;
   opacity: 1;

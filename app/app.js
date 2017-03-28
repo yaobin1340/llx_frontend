@@ -94,6 +94,22 @@ angular.module( 'ohapp',
         });
     };
 })
+.directive('errSrc', function() {
+  return {
+    link: function(scope, element, attrs) {
+      element.bind('error', function() {
+        if (attrs.src != attrs.errSrc) {
+            //防止加载失败的图片叶获取不到
+            var img = new Image(); 
+            img.src = attrs.errSrc;
+            img.onload = function(){ 
+                attrs.$set('src', img.src);
+            };
+        }
+      });
+    }
+  }
+})
     .directive('timerbutton', function($timeout, $interval){
         return {
             restrict: 'AE',
@@ -161,6 +177,19 @@ angular.module( 'ohapp',
             template: '<button ng-click="getYzm()" ng-disabled="timer" class="btn-sty"><span ng-if="showTimer">{{ timerCount }}</span>{{text}}</button>'
         };
     })
+.directive('overflow',function($timeout){
+    return {
+        restrict: 'AE',
+        template: '<div class="dis-conts"><span class="center-msg" ng-class="{overflow:testAll==true}" ng-bind="i.remark||item.contents"></span></div><span class="alltext dis-conts"  ng-click="testAll=!testAll" ng-show="testAll==true">全文</span><span class="alltext dis-conts"  ng-click="testAll=!testAll" ng-show="testAll==false">折叠</span>',
+        link: function(scope, element, attrs) {
+            scope.testAll='aaa';
+            $timeout(function(){
+                element.children().children()[0].offsetWidth+20>=element.children()[0].offsetWidth?scope.testAll=true:scope.testAll='adadd';
+                // console.log(element.children().children()[0].offsetWidth+20+"="+element.children()[0].offsetWidth) 
+            },1);
+        }
+    };
+})
 .run( function( $injector )
 {
     var $rootScope = $injector.get( '$rootScope' );
