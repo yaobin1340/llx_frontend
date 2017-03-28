@@ -180,12 +180,15 @@ angular.module( 'ohapp',
 .directive('overflow',function($timeout){
     return {
         restrict: 'AE',
-        template: '<div class="dis-conts"><span class="center-msg" ng-class="{overflow:testAll==true}" ng-bind="i.remark||item.contents"></span></div><span class="alltext dis-conts"  ng-click="testAll=!testAll" ng-show="testAll==true">全文</span><span class="alltext dis-conts"  ng-click="testAll=!testAll" ng-show="testAll==false">折叠</span>',
+        template: '<div class="dis-conts"><span class="center-msg" ng-class="{overflow:testAll==true}" ng-bind="i.remark||item.contents"></span></div><span class="alltext dis-conts"  ng-click="testAll=!testAll;testAlls=!testAlls" ng-show="testAlls==true">全文</span><span class="alltext dis-conts"  ng-click="testAll=!testAll;testAlls=!testAlls" ng-show="testAll==false">折叠</span>',
         link: function(scope, element, attrs) {
-            scope.testAll='aaa';
+            scope.testAll=true;
             $timeout(function(){
-                element.children().children()[0].offsetWidth+20>=element.children()[0].offsetWidth?scope.testAll=true:scope.testAll='adadd';
-                // console.log(element.children().children()[0].offsetWidth+20+"="+element.children()[0].offsetWidth) 
+                if(element.children().children()[0].offsetWidth+20>=element.children()[0].offsetWidth){
+                    scope.testAll=true;scope.testAlls=true;
+                }else{
+                    scope.testAll='a';scope.testAlls='a';
+                }
             },1);
         }
     };
