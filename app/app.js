@@ -183,9 +183,8 @@ angular.module( 'ohapp',
         template: '<div class="dis-conts"><span class="center-msg" ng-class="{overflow:testAll==true}" ng-bind="i.remark||item.contents"></span></div><span class="alltext dis-conts"  ng-click="testAll=!testAll" ng-show="testAll==true">全文</span><span class="alltext dis-conts"  ng-click="testAll=!testAll" ng-show="testAll==false">折叠</span>',
         link: function(scope, element, attrs) {
             scope.testAll='aaa';
-            element.children().children()[0].offsetWidth+20>=element.children()[0].offsetWidth?scope.testAll=true:scope.testAll='adadd';
             $timeout(function(){
-                
+                element.children().children()[0].offsetWidth+20>=element.children()[0].offsetWidth?scope.testAll=true:scope.testAll='adadd';
                 // console.log(element.children().children()[0].offsetWidth+20+"="+element.children()[0].offsetWidth) 
             },1);
         }
