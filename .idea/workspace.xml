@@ -2,99 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="296648db-8aef-4de0-8508-99f698aa34be" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/img/noline.png" afterPath="$PROJECT_DIR$/assets/img/noline.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/main.css" afterPath="$PROJECT_DIR$/assets/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Account.html" afterPath="$PROJECT_DIR$/views/Account.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Forgot-password.html" afterPath="$PROJECT_DIR$/views/Forgot-password.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/IndentMsg.html" afterPath="$PROJECT_DIR$/views/IndentMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Indented.html" afterPath="$PROJECT_DIR$/views/Indented.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Maddress.html" afterPath="$PROJECT_DIR$/views/Maddress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Mycart.html" afterPath="$PROJECT_DIR$/views/Mycart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/OfferPay.html" afterPath="$PROJECT_DIR$/views/OfferPay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Opinion.html" afterPath="$PROJECT_DIR$/views/Opinion.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/SubmitOrder.html" afterPath="$PROJECT_DIR$/views/SubmitOrder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addAddress.html" afterPath="$PROJECT_DIR$/views/addAddress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addEnvironment.html" afterPath="$PROJECT_DIR$/views/addEnvironment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/addPay.html" afterPath="$PROJECT_DIR$/views/addPay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/allIndent.html" afterPath="$PROJECT_DIR$/views/allIndent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/applyCash.html" afterPath="$PROJECT_DIR$/views/applyCash.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/basic.html" afterPath="$PROJECT_DIR$/views/basic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/basicMsg.html" afterPath="$PROJECT_DIR$/views/basicMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/certification.html" afterPath="$PROJECT_DIR$/views/certification.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/chaAddress.html" afterPath="$PROJECT_DIR$/views/chaAddress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/changePwd.html" afterPath="$PROJECT_DIR$/views/changePwd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/choseAddress.html" afterPath="$PROJECT_DIR$/views/choseAddress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/code.html" afterPath="$PROJECT_DIR$/views/code.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/courierMsg.html" afterPath="$PROJECT_DIR$/views/courierMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/descriptionProducts.html" afterPath="$PROJECT_DIR$/views/descriptionProducts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/descriptionProductss.html" afterPath="$PROJECT_DIR$/views/descriptionProductss.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/download.html" afterPath="$PROJECT_DIR$/views/download.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/drawal.html" afterPath="$PROJECT_DIR$/views/drawal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/environmentMsg.html" afterPath="$PROJECT_DIR$/views/environmentMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/erweima.html" afterPath="$PROJECT_DIR$/views/erweima.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/home.html" afterPath="$PROJECT_DIR$/views/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/huiyuanMsg.html" afterPath="$PROJECT_DIR$/views/huiyuanMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/information.html" afterPath="$PROJECT_DIR$/views/information.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/integralAddr.html" afterPath="$PROJECT_DIR$/views/integralAddr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/integralSubmit.html" afterPath="$PROJECT_DIR$/views/integralSubmit.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/jforderMsg.html" afterPath="$PROJECT_DIR$/views/jforderMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/journal.html" afterPath="$PROJECT_DIR$/views/journal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/likePro.html" afterPath="$PROJECT_DIR$/views/likePro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/likeShop.html" afterPath="$PROJECT_DIR$/views/likeShop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/llx_Qr.html" afterPath="$PROJECT_DIR$/views/llx_Qr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/loginCode.html" afterPath="$PROJECT_DIR$/views/loginCode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/main.html" afterPath="$PROJECT_DIR$/views/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mixaoxi_code.html" afterPath="$PROJECT_DIR$/views/mixaoxi_code.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/money.html" afterPath="$PROJECT_DIR$/views/money.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mumberMsg.html" afterPath="$PROJECT_DIR$/views/mumberMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myLike.html" afterPath="$PROJECT_DIR$/views/myLike.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myTeam.html" afterPath="$PROJECT_DIR$/views/myTeam.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/nickname.html" afterPath="$PROJECT_DIR$/views/nickname.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/noIndent.html" afterPath="$PROJECT_DIR$/views/noIndent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/onlinePay.html" afterPath="$PROJECT_DIR$/views/onlinePay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/outlinePay.html" afterPath="$PROJECT_DIR$/views/outlinePay.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/payShop.html" afterPath="$PROJECT_DIR$/views/payShop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/payment.html" afterPath="$PROJECT_DIR$/views/payment.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/personal.html" afterPath="$PROJECT_DIR$/views/personal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjia.html" afterPath="$PROJECT_DIR$/views/pingjia.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjiaAll.html" afterPath="$PROJECT_DIR$/views/pingjiaAll.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjiaNow.html" afterPath="$PROJECT_DIR$/views/pingjiaNow.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/pingjiaPhoto.html" afterPath="$PROJECT_DIR$/views/pingjiaPhoto.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/preCode.html" afterPath="$PROJECT_DIR$/views/preCode.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/preferential.html" afterPath="$PROJECT_DIR$/views/preferential.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/product.html" afterPath="$PROJECT_DIR$/views/product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/restaurant.html" afterPath="$PROJECT_DIR$/views/restaurant.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopCart.html" afterPath="$PROJECT_DIR$/views/shopCart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopCash.html" afterPath="$PROJECT_DIR$/views/shopCash.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopCenter.html" afterPath="$PROJECT_DIR$/views/shopCenter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopDrawal.html" afterPath="$PROJECT_DIR$/views/shopDrawal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopFans.html" afterPath="$PROJECT_DIR$/views/shopFans.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopJournal.html" afterPath="$PROJECT_DIR$/views/shopJournal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopMoney.html" afterPath="$PROJECT_DIR$/views/shopMoney.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopMsg.html" afterPath="$PROJECT_DIR$/views/shopMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shop_code.html" afterPath="$PROJECT_DIR$/views/shop_code.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopdesc.html" afterPath="$PROJECT_DIR$/views/shopdesc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/shopdescAll.html" afterPath="$PROJECT_DIR$/views/shopdescAll.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signin.html" afterPath="$PROJECT_DIR$/views/signin.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signup.html" afterPath="$PROJECT_DIR$/views/signup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/smallShop.html" afterPath="$PROJECT_DIR$/views/smallShop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/soso.html" afterPath="$PROJECT_DIR$/views/soso.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/systemMsg.html" afterPath="$PROJECT_DIR$/views/systemMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/updataTotal.html" afterPath="$PROJECT_DIR$/views/updataTotal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/weiDrawal.html" afterPath="$PROJECT_DIR$/views/weiDrawal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/weiMoney.html" afterPath="$PROJECT_DIR$/views/weiMoney.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/weichart.html" afterPath="$PROJECT_DIR$/views/weichart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xitongMsg.html" afterPath="$PROJECT_DIR$/views/xitongMsg.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubi.html" afterPath="$PROJECT_DIR$/views/xiubi.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiCart.html" afterPath="$PROJECT_DIR$/views/xiubiCart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiIndented.html" afterPath="$PROJECT_DIR$/views/xiubiIndented.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiProduct.html" afterPath="$PROJECT_DIR$/views/xiubiProduct.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiShop.html" afterPath="$PROJECT_DIR$/views/xiubiShop.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubiallIndent.html" afterPath="$PROJECT_DIR$/views/xiubiallIndent.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/xiubinoIndent.html" afterPath="$PROJECT_DIR$/views/xiubinoIndent.html" />
     </list>
     <ignored path="llx_frontend_test.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -105,7 +13,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -123,6 +30,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>width: 800,height:800,quality: 0.9,</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -139,26 +51,18 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" />
-  <component name="JsBuildToolPackageJson" detection-done="true" />
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="width" value="1304" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -184,6 +88,24 @@
               <option name="myItemId" value="llx_frontend_test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llx_frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llx_frontend_test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="llx_frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -191,7 +113,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="G:/llx_test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -214,6 +136,18 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://G:/llx_frontend/views/home.html" />
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <method />
@@ -221,14 +155,29 @@
     <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
       <method />
     </configuration>
     <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
@@ -238,6 +187,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
       <node-options />
       <gulpfile />
       <tasks />
@@ -246,12 +196,14 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
     <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter />
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
@@ -264,7 +216,9 @@
       <method />
     </configuration>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration>C:\Users\Dell\AppData\Roaming\Subversion</configuration>
   </component>
@@ -273,9 +227,14 @@
       <changelist id="296648db-8aef-4de0-8508-99f698aa34be" name="Default" comment="" />
       <created>1487819122375</created>
       <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
       <updated>1487819122375</updated>
+      <workItem from="1490841694556" duration="101000" />
     </task>
     <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="101000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -287,28 +246,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1304" height="728" extended-state="1" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22503726" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22460318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32767403" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962519" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2970297" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2975352" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -331,127 +292,125 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="3" column="7" lean-forward="false" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/provider/oh-routes-provider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.762533">
-          <caret line="157" column="26" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="157" column="26" lean-forward="false" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/restaurant.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5454545">
-          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="74" column="34" lean-forward="false" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/soso.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.3636365">
-          <caret line="71" column="34" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="71" column="34" lean-forward="false" selection-start-line="71" selection-start-column="34" selection-end-line="71" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/resources-all-ce82cb7ed8.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/resources-all-36729792fa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/resources-all-ce82cb7ed8.js" />
+    <entry file="file://$PROJECT_DIR$/resources/resources-all-36729792fa.js" />
     <entry file="file://$PROJECT_DIR$/views/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04606526">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+        <state relative-caret-position="0">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13994169">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="0">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13994169">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+        <state relative-caret-position="0">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller-all-5f086f069f.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6094987">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller-all-5f086f069f.js" />
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5801749">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+        <state relative-caret-position="0">
+          <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51445085">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48554912">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="15" column="5" lean-forward="false" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contro/addAddress-ctrls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contro/accounts-ctrls.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
