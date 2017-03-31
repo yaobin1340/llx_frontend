@@ -185,7 +185,6 @@ body {
 .home .imgbg {
   width: 2.8rem;
   height: 2.8rem;
-  margin-top: .21rem;
   background: url(/assets/img/noline.png) no-repeat center;
   background-size: 100%;
 }
@@ -2353,7 +2352,7 @@ footer span {
   font-size: 0.45833333rem;
   margin-left: 0.27777778rem;
   background: url(/assets/img/img_store.png) no-repeat center left;
-  background-size: 0.55555556rem;
+  background-size: 0.41666667rem;
   text-indent: 0.69444444rem;
 }
 .SubmitOrder .bg {
@@ -5049,7 +5048,6 @@ footer span {
   font-size: 0.33333333rem;
 }
 .xiubiShop .userProducts span {
-  margin: 0.41666667rem 0.16666667rem auto 0.41666667rem;
   display: inline-block;
 }
 .xiubiShop .userProducts .price {
@@ -5057,12 +5055,14 @@ footer span {
   color: #f80423;
   font-size: 0.41666667rem;
   line-height: 0.55555556rem;
+  margin: 0.41666667rem 0 auto 0.41666667rem;
 }
 .xiubiShop .userProducts .show {
   float: right;
   color: #ababab;
   font-size: 0.27777778rem;
   line-height: 0.55555556rem;
+  margin: 0.41666667rem 0.16666667rem auto 0;
 }
 .xiubiShop .allDish {
   margin-bottom: 2.08333333rem;
@@ -5393,6 +5393,23 @@ footer span {
 .showPay .itemList-center .delme {
   font-size: 0.41832669rem;
   padding-bottom: 0.2rem;
+}
+.showPay .itemList-center .shopName {
+  display: inline-block;
+  max-width: 7.30411687rem;
+  font-size: 0.3187251rem;
+  color: #7ca9ff;
+  background: url(/assets/img/showbq.png) no-repeat left center;
+  background-size: 0.5312085rem;
+  line-height: 0.49136786rem;
+  text-indent: 0.66401062rem;
+}
+.showPay .itemList-center .shop_items {
+  margin-top: 0.19920319rem;
+  font-size: 0.3187251rem;
+  color: #999;
+  margin-bottom: 0.4249668rem;
+  line-height: 0.5312085rem;
 }
 .showPay .bgc {
   position: fixed;
